@@ -8,6 +8,6 @@ export const CheckboxWrapperStyle = styled.article`
     
     .checkbox-label {
         font-size: 1.4rem;
-        color: ${({ theme }) => theme.textColors.primary};
+        color: red;
     }
 `
