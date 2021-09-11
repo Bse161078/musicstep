@@ -1,2 +1,5 @@
 export * from "./HeroSection"
+export * from "./InputBox"
+export * from "./InputCheckbox"
 export * from "./Navbar"
+export * from "./SelectBox"
