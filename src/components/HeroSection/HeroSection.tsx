@@ -6,7 +6,7 @@ import { HeroSectionStyle } from "./HeroSection.style"
 const HeroSection = () => {
     return (
         <HeroSectionStyle>
-            <img alt="hero image" className="hero-logo" src="/images/hero/header-logo.png" />
+            <img alt="hero logo" className="hero-logo" src="/images/hero/header-logo.png" />
 
             <article className="header-content-wrapper">
                 <h3 className="hero-heading">The App For All Things Music & Dance.</h3>
