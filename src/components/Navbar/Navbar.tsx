@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 
-import { GetMusicButtonSVG } from "../../assets";
 import { navItems, NavItemType } from "../../mockData/navItems";
 import { FilledButtonStyle } from "../../styles/Common.style";
 import { NavbarStyle } from "./Navbar.style";
@@ -37,7 +36,7 @@ const Navbar = () => {
       <section className="navbar-wrapper ">
         <article className="branding-wrapper">
           <a href="/">
-            <img loading="lazy" className="logo" src="/images/logo.png" />
+            <img loading="lazy" alt="loading" className="logo" src="/images/logo.png" />
           </a>
 
           <button className="menu-toggle-button " onClick={toggle}>
@@ -55,6 +54,7 @@ const Navbar = () => {
                   <li key={`nav-item-${index}`}>
                     <a
                       target={type ? "_blank" : ""}
+                      rel="noreferrer"
                       href={url}
                       onClick={toggle}
                     >

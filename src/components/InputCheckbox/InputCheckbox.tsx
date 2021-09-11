@@ -14,7 +14,7 @@ const InputCheckbox = (props: CheckboxProps) => {
     const [field, meta] = useField({ name })
     const invalid = field['value'] && !field['value'].length && Boolean(meta.error && meta.touched) ? '#ff3d3d' : '#dcdcdc'
     const check = isCorrectOption ? undefined : invalid
-
+    console.log("check: ", check)
     return (
         <CheckboxWrapperStyle className={className} onClick={onClick}>
             {/* <TickIcon fill={check} /> */}
