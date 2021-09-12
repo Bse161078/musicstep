@@ -1,12 +1,13 @@
 import React, {Fragment} from 'react'
 import { useField } from 'formik'
-import { TextFieldStyle, TextFieldErrorStyle } from './InputBox.style'
+import { TextFieldStyle, TextFieldErrorStyle, InputBoxStyle } from './InputBox.style'
 
 const InputBox = (props: any) => {
     const [field, meta] = useField(props)
 
     return (
-        <Fragment>
+        <InputBoxStyle>
+            <label className="input-label">{props.label}</label>
             <TextFieldStyle
                 className={props.className}
                 name={field.name}
@@ -18,7 +19,7 @@ const InputBox = (props: any) => {
                 {...props}
             />
             {meta.touched && meta.error ? <TextFieldErrorStyle>{meta.error}</TextFieldErrorStyle> : null}
-        </Fragment>
+        </InputBoxStyle>
     )
 }
 

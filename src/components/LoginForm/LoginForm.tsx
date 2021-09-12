@@ -2,7 +2,7 @@ import React, { Fragment } from "react"
 import { Form, Formik } from "formik"
 
 import { LoginFormStyle } from "./LoginForm.style"
-import { FilledButtonStyle } from "../../styles/Common.style"
+import { FilledButtonStyle, OutlineButtonStyle } from "../../styles/Common.style"
 import { loginInitialValues } from "./intialValues"
 import { InputBox, InputCheckbox } from ".."
 
@@ -18,24 +18,24 @@ const LoginForm = () => {
                 onSubmit={handleLoginSubmit}
             >
                 {({ values, setFieldValue }) => (
-                    <Form>
-                        <InputBox name="userName" />
-                            <InputBox name="password" />
-                            <InputCheckbox name=""
-                                onClick={() => { }}
-                                className=""
-                                isCorrectOption={false}
-                            />
+                    <Form className="login-form-wrapper">
+                        <InputBox label="Username" name="userName" />
+                        <InputBox label="Password" name="password" />
+                        <InputCheckbox name="remember-password"
+                            onClick={() => { }}
+                            className=""
+                            isCorrectOption={false}
+                        />
 
-                        <FilledButtonStyle>Login</FilledButtonStyle>
+                        <FilledButtonStyle width="100%" height="60px">Login</FilledButtonStyle>
                     </Form>
                 )}
             </Formik>
 
-            <p>Not a member yet?</p>
-            <FilledButtonStyle>Try For Free</FilledButtonStyle>
+            <p className="not-a-member">Not a member yet?</p>
+            <OutlineButtonStyle width="100%" height="60px">Try For Free</OutlineButtonStyle>
 
-            <a>Partner Dashboard Login</a>
+            <a className="partner-login">Partner Dashboard Login</a>
         </LoginFormStyle>
     )
 }
