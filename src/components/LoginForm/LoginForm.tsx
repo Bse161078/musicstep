@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React from "react"
 import { Form, Formik } from "formik"
 
 import { LoginFormStyle } from "./LoginForm.style"

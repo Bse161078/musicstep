@@ -1,7 +1,4 @@
-import { Formik } from "formik";
 import React from "react"
-import { InputBox, InputCheckbox } from "..";
-import { FilledButtonStyle } from "../../styles/Common.style";
 
 import { FormWrapperStyle } from "./FormWrapper.style";
 
