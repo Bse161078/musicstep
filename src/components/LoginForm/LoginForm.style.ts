@@ -1,3 +1,4 @@
+import { darken } from "polished"
 import styled from "styled-components"
 import { FilledButtonStyle, OutlineButtonStyle } from "../../styles/Common.style"
 
@@ -32,5 +33,21 @@ export const LoginFormStyle = styled.article`
         margin-bottom: 10px;
         font-size: 14px;
         color: #0C0C0C;
+    }
+
+    .checkbox-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .forgot-password {
+        font-size: 16px;
+        cursor: pointer;
+        color: #0c0c0c;
+        transition: all 200ms linear;
+
+        &:hover {
+            color: ${darken(0.2, "#0c0c0c")};
+        }
     }
 `

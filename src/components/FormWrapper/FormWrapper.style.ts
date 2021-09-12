@@ -1,22 +1,39 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const FormWrapperStyle = styled.section`
-    .top-heading {
-        font-size: 80px;
-        color: #0C0C0C;
-        margin-bottom: 30px;
-    }
+  margin-top: 96px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  grid-column-gap: 100px;
 
-    .form-wrapper {
-        background: #F7F7F7;
-        border-radius: 32px;
-        padding: 30px;
-        max-width: 560px;
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
 
-        .form-heading {
-            font-size: 36px;
-            color: #0C0C0C;
-            margin-bottom: 30px;
-        }
+  .side-image {
+    max-width: 860px;
+    width: 100%;
+
+    @media (max-width: 767px) {
+      display: none;
     }
-`
+  }
+  .top-heading {
+    font-size: 80px;
+    color: #0c0c0c;
+    margin-bottom: 30px;
+  }
+
+  .form-wrapper {
+    background: #f7f7f7;
+    border-radius: 32px;
+    padding: 30px;
+    max-width: 560px;
+
+    .form-heading {
+      font-size: 36px;
+      color: #0c0c0c;
+      margin-bottom: 30px;
+    }
+  }
+`;

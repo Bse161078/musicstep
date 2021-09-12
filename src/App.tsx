@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 
+import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 import { Navbar } from './components';
 import { Home, Login } from './pages';
 

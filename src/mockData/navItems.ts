@@ -13,7 +13,7 @@ export const navItems = [
     },
     {
         name: "Login",
-        url: "#"
+        url: "/login"
     },
 ]
 
