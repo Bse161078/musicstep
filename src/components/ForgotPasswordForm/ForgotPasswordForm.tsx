@@ -47,7 +47,7 @@ const ForgotPasswordForm = (props: ForgotPasswordFormProps) => {
         Login Page
       </OutlineButtonStyle>
 
-      <a className="partner-login">Partner Dashboard Login</a>
+      <a className="partner-login" href="/">Partner Dashboard Login</a>
       <MessageModal
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}

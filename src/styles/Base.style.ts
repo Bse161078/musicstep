@@ -13,6 +13,7 @@ export const BaseStyle = createGlobalStyle`
                 list-style: none;
                 box-sizing: border-box;
                 text-decoration: none;
+                line-height: 1.3;
             }
 
             .App {

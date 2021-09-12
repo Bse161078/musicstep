@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 import { navItems, NavItemType } from "../../mockData/navItems";
 import { FilledButtonStyle } from "../../styles/Common.style";
@@ -36,7 +37,12 @@ const Navbar = () => {
       <section className="navbar-wrapper ">
         <article className="branding-wrapper">
           <a href="/">
-            <img loading="lazy" alt="loading" className="logo" src="/images/logo.png" />
+            <img
+              loading="lazy"
+              alt="loading"
+              className="logo"
+              src="/images/logo.png"
+            />
           </a>
 
           <button className="menu-toggle-button " onClick={toggle}>
@@ -51,28 +57,28 @@ const Navbar = () => {
             const { name, url, type } = data;
 
             return (
-                  <li key={`nav-item-${index}`}>
-                    <a
-                      target={type ? "_blank" : ""}
-                      rel="noreferrer"
-                      href={url}
-                      onClick={toggle}
-                    >
-                      {name}
-                    </a>
-                  </li>
+              <li key={`nav-item-${index}`}>
+                <a
+                  target={type ? "_blank" : ""}
+                  rel="noreferrer"
+                  href={url}
+                  onClick={toggle}
+                >
+                  {name}
+                </a>
+              </li>
             );
           })}
 
           <li>
-              <FilledButtonStyle>
-                  Get Musicpass
-              </FilledButtonStyle>
+            <NavLink to="/free-trial">
+              <FilledButtonStyle as="span">Get Musicpass</FilledButtonStyle>
+            </NavLink>
           </li>
         </ul>
       </section>
     </NavbarStyle>
-  )
-}
+  );
+};
 
 export default Navbar;

@@ -8,6 +8,9 @@ type FilledButtonStyleProps = {
 }
 
 export const FilledButtonStyle = styled.button<FilledButtonStyleProps>`
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: #f3c;
     outline: none;
     border: 0;

@@ -54,7 +54,7 @@ const LoginForm = (props: LoginFormProps) => {
         Try For Free
       </OutlineButtonStyle>
 
-      <a className="partner-login">Partner Dashboard Login</a>
+      <a href="/" className="partner-login">Partner Dashboard Login</a>
     </LoginFormStyle>
   );
 };

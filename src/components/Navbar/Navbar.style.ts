@@ -94,6 +94,12 @@ export const NavbarStyle = styled.nav<NavbarStyleProps>`
         border-radius: 8px;
         font-size: 16px;
 
+        &:last-child {
+          &:hover {
+            background-color: transparent;
+          }
+        }
+        
         &:hover {
           background: ${rgba("#f3c", 0.1)};
           color: #f3c;
