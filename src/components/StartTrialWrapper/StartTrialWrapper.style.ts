@@ -11,6 +11,7 @@ export const StartTrialWrapperStyle = styled.section`
 
     @media( max-width: 767px ) {
         grid-template-columns: 1fr;
+    margin: 100px 15px;
     }
 
     .left-section {
