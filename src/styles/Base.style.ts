@@ -1,5 +1,4 @@
 import {createGlobalStyle} from "styled-components"
-
 export const BaseStyle = createGlobalStyle`
     html {
         body {
@@ -18,6 +17,11 @@ export const BaseStyle = createGlobalStyle`
 
             .App {
                 min-height: 100vh;
+            }
+            .ant-divider-horizontal {
+                background: red;
+                width:1380px;
+                margin-right:60px;
             }
 
         }

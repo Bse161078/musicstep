@@ -10,3 +10,5 @@ export * from "./SelectBox"
 export * from "./StartTrialWrapper"
 export * from "./TrialForm"
 export * from "./TrialFormWrapper"
+export * from "./SideBar"
+export * from './AdminNavBar'
