@@ -7,6 +7,7 @@ export const TextFieldStyle = styled.input`
     outline:  0;
     padding: 15px 25px;
     font-size: 18px;
+    width: 100%;
 `
 export const TextFieldErrorStyle = styled.div`
     color: #dc3545;

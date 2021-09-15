@@ -58,14 +58,14 @@ const Navbar = () => {
 
             return (
               <li key={`nav-item-${index}`}>
-                <a
+                <NavLink
                   target={type ? "_blank" : ""}
                   rel="noreferrer"
-                  href={url}
+                  to={url}
                   onClick={toggle}
                 >
                   {name}
-                </a>
+                </NavLink>
               </li>
             );
           })}
