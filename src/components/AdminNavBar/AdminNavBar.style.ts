@@ -1,13 +1,11 @@
 import styled from "styled-components";
 
 export const AdminNavBarStyle = styled.nav`
-  top: 0px;
-  left: 0px;
-  width: 1920px;
+  display: flex;
+  justify-content: space-between;
   height: 80px;
+  padding: 20px 60px;
   .navbar-logo {
-    margin-top: 30px;
-    margin-left: 60px;
     width: 233px;
     height: 24px;
   }
@@ -24,7 +22,7 @@ export const AdminNavBarStyle = styled.nav`
     border-radius: 30px;
     opacity: 1;
     font: normal normal bold 14px/18px Montserrat;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
   }
   .logout-button:hover {
     cursor: pointer;

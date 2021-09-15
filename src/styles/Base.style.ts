@@ -5,7 +5,6 @@ export const BaseStyle = createGlobalStyle`
             min-height: 100vh;
             margin: 0;
             padding: 0;
-
             * {
                 margin: 0;
                 padding: 0;
@@ -14,13 +13,13 @@ export const BaseStyle = createGlobalStyle`
                 text-decoration: none;
                 line-height: 1.3;
             }
-
             .App {
                 min-height: 100vh;
             }
             .ant-divider-horizontal {
-                background: red;
-                width:1200px;
+                background: #000000;
+                width:1372px;
+                opacity: 0.5;
                 margin-right:60px;
             }
 

@@ -6,8 +6,7 @@ import {Divider} from 'antd'
 const BasicInfo = () => {
     return(
         <BasicInfoStyle>
-             <h1 className="basicInfo-title">Basic Info</h1>
-             <Divider />
+             <h1 className="basicinfo-title">Basic Info</h1>
         </BasicInfoStyle>
     )
 }

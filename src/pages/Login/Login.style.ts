@@ -12,7 +12,6 @@ export const LoginStyle = styled.main`
     .side-image {
         max-width: 860px;
         width: 100%;
-
         @media ( max-width: 767px) {
             display: none;
         }
