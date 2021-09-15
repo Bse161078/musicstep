@@ -20,7 +20,7 @@ export const BaseStyle = createGlobalStyle`
             }
             .ant-divider-horizontal {
                 background: red;
-                width:1380px;
+                width:1200px;
                 margin-right:60px;
             }
 
