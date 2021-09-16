@@ -1,8 +1,6 @@
 import React from "react";
-import { BasicInfoStyle } from "./BasicInfo.style";
-import 'antd/dist/antd.css'
-import {Divider} from 'antd'
 
+import { BasicInfoStyle } from "./BasicInfo.style";
 const BasicInfo = () => {
     return(
         <BasicInfoStyle>

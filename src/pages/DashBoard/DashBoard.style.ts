@@ -1,7 +1,7 @@
 import styled from "styled-components";
 export const DashBoardStyle = styled.div`
   
-   .wrapper {
+   .dashboard-section-wrapper{
        display: grid;
        grid-template-columns: 360px auto;
        gap: 60px;

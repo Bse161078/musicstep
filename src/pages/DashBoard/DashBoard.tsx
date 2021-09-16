@@ -1,17 +1,19 @@
 import React from "react";
-import { DashBoardStyle } from "./DashBoard.style";
+
 import { SideBar, AdminNavBar } from "../../components";
 import { BasicInfo } from "../BasicInfo";
 
-const DashBoard = () => {
+import { DashBoardStyle } from "./DashBoard.style";
+
+const Dashboard = () => {
   return (
     <DashBoardStyle>
       <AdminNavBar />
-      <div className="wrapper">
+      <div className="dashboard-section-wrapper">
         <SideBar />
         <BasicInfo />
       </div>
     </DashBoardStyle>
   );
 };
-export default DashBoard;
+export default Dashboard;

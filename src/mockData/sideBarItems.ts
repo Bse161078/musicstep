@@ -1,4 +1,4 @@
-export const sidebaritems  = [
+export const sidebarItems  = [
      {
          name:'Metrics', 
          url:'#'

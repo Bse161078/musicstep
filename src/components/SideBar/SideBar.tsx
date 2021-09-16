@@ -1,17 +1,19 @@
 import React from "react";
-import { SideBarStyle } from "./SideBar.style";
-import { sidebaritems } from "../../mockData/sideBarItems";
 import { Link } from "react-router-dom";
+
+import { sidebarItems } from "../../mockData/sideBarItems";
+
+import { SideBarStyle } from "./SideBar.style";
 
 const SideBar = () => {
     return (
         <SideBarStyle>
-              <div className="sideBar-container"> 
+              <div className="sidebar-container"> 
                   <ul>
                       {
-                          sidebaritems.map((item,index) => {
+                          sidebarItems.map((item,index) => {
                               return(
-                                 <Link to="#"><li className="list">{item.name}</li></Link>
+                                 <Link to="#"><li>{item.name}</li></Link>
                               )
                           })
                       }

@@ -1,1 +1,4 @@
-export { default as DashBoard} from './DashBoard'
+export { default as Dashboard} from './DashBoard'
+
+
+
