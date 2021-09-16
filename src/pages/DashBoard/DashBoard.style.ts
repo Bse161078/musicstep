@@ -7,6 +7,6 @@ export const DashBoardStyle = styled.div`
        gap: 60px;
        max-width: 1920px;
        margin: auto;
-       padding-right:60px;
+       padding: 0 60px;
    }
 `;

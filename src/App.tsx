@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
-import { Navbar } from "./components";
+// import { Navbar } from "./components";
 import { FreeTrial, Home, Login, Dashboard, PartnerLogin } from "./pages";
 
 import { BaseStyle } from "./styles/Base.style";
