@@ -24,6 +24,7 @@ export const HeroSectionStyle = styled.header`
         .hero-heading {
             font-size: 48px;
             margin-bottom: 20px;
+            color: #fff;
         }
 
         .hero-description {

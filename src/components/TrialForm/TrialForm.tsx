@@ -15,10 +15,18 @@ const IconWithText = () => {
   );
 };
 
-const TrialForm = () => {
-  const handleFreeTrialEmail = () => {};
+type TrialFormProps = {
+  setCurrentForm: any
+}
+
+const TrialForm = (props: TrialFormProps) => {
+  const { setCurrentForm } = props;
+
+  const handleFreeTrialEmailSubmit = () => {
+    setCurrentForm("general-info")
+  };
   return (
-    <TrialFormWrapper>
+    <TrialFormWrapper heading="Your Trial Includes">
       <TrialFormStyle>
         <h1 className="trial-price">$O</h1>
         <h4 className="price-description">For 7 Days</h4>
@@ -30,7 +38,7 @@ const TrialForm = () => {
         <Formik
           enableReinitialize={true}
           initialValues={{ email: "" }}
-          onSubmit={handleFreeTrialEmail}
+          onSubmit={handleFreeTrialEmailSubmit}
         >
           {({ values }) => (
             <Form className="trial-form-wrapper">
