@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const DashBoardStyle = styled.div`
+export const DashboardStyle = styled.div`
   
    .dashboard-section-wrapper{
        display: grid;

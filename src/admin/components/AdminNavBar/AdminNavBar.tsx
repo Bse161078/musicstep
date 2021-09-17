@@ -1,5 +1,5 @@
 import React from "react";
-import { OutlineButtonStyle } from "../../styles/Common.style";
+import { OutlineButtonStyle } from "../../../styles/Common.style";
 import { AdminNavBarStyle } from "./AdminNavBar.style";
 
 const AdminNavBar = () => {

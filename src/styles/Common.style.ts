@@ -5,13 +5,14 @@ type FilledButtonStyleProps = {
     width?: string;
     height?: string;
     fontSize?: string;
+    buttonType?: "dark" | "light"
 }
 
 export const FilledButtonStyle = styled.button<FilledButtonStyleProps>`
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f3c;
+    background: ${props => props.buttonType === "dark" ? "#100840" : "#f3c"};
     outline: none;
     border: 0;
     color: #fff;
@@ -29,7 +30,7 @@ export const FilledButtonStyle = styled.button<FilledButtonStyleProps>`
     }
 
     &:hover {
-        background: ${darken(0.2, "#f3c")};
+        background: ${props => darken(0.2, props.buttonType === "dark"  ? "#100840" : "#f3c")};
     }
 `
 

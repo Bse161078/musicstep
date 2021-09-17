@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { FilledButtonStyle } from "../../styles/Common.style"
 
 export const HeroSectionStyle = styled.header`
     background-image: url(/images/hero/hero-background.png);
@@ -6,6 +7,10 @@ export const HeroSectionStyle = styled.header`
     background-size: cover;
     padding: 120px 0;
     margin-top: 96px;
+
+    ${FilledButtonStyle} {
+        margin: auto;
+    }
 
     .hero-logo {
         width: 400px;
