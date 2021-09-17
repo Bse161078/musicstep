@@ -1,5 +1,5 @@
 import { darken } from "polished"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 type FilledButtonStyleProps = {
     width?: string;
@@ -55,5 +55,42 @@ export const OutlineButtonStyle = styled.button<FilledButtonStyleProps>`
     &:hover {
         background: #100840;
         color: #fff;
+    }
+`
+
+export const TableRowStyle = css`
+    background: #F7F7F7;
+    border-radius: 16px;
+    padding: 20px 30px;
+
+    .thumb-with-content {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-column-gap: 20px;
+    }
+
+    .profile-thumanail {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 100%;
+    }
+
+    .heading {
+        color: #0C0C0C;
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .description {
+        color: #0C0C0C;
+        opacity: 0.5;
+        font-size: 14px;
+    }
+
+    .action-buttons-wrapper {
+        display: flex;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 10px;
     }
 `
