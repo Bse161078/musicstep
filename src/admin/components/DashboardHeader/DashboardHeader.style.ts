@@ -13,6 +13,16 @@ export const DashboardHeaderStyle = styled.header`
     color: #0c0c0c;
   }
 
+  .heading {
+    font-size: 48px
+  }
+
+  .description {
+    color: #0C0C0C;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
   .back-button {
       font-size: 16px;
       display: flex;

@@ -5,7 +5,7 @@ import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 // import { Navbar } from "./components";
 import { FreeTrial, Home, Login, PartnerLogin } from "./pages";
 
-import { BasicInfo } from "./admin/pages";
+import { BasicInfo, PaymentInfo, TeamManagement } from "./admin/pages";
 import { Navbar } from "./components";
 import { BaseStyle } from "./styles/Base.style";
 
@@ -23,6 +23,8 @@ function App() {
 
           {/* Admin routes */}
           <Route path="/admin/basic-info" component={BasicInfo} />
+          <Route path="/admin/team-management" component={TeamManagement} />
+          <Route path="/admin/payment-information" component={PaymentInfo} />
         </Switch>
       </BrowserRouter>
     </div>

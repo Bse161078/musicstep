@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import { sidebarItems } from "../../../mockData/sideBarItems";
 
@@ -12,13 +12,13 @@ const SideBar = () => {
         <ul className="sidebar-items">
           {sidebarItems.map((item, index) => {
             return (
-              <Link
+              <NavLink
                 key={`sidebar-item-${index}`}
-                to="#"
+                to={item.url}
                 className="side-bar-item"
               >
                 <li>{item.name}</li>
-              </Link>
+              </NavLink>
             );
           })}
         </ul>

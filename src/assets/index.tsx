@@ -229,3 +229,160 @@ export const EditButtonIcon = () => (
     </g>
   </svg>
 );
+
+export const SearchIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="53"
+    height="53"
+    viewBox="0 0 53 53"
+  >
+    <defs>
+      <clipPath id="a">
+        <rect
+          fill="#fff"
+          width="27"
+          height="27"
+          transform="translate(1004 326)"
+        />
+      </clipPath>
+    </defs>
+    <g transform="translate(-994 -312)">
+      <rect
+        fill="#100840"
+        width="53"
+        height="53"
+        rx="26.5"
+        transform="translate(994 312)"
+      />
+      <g clipPath="url(#a)" transform="translate(3 -1)">
+        <path
+          fill="#fff"
+          stroke="#fff"
+          d="M20.56,19.608a11.789,11.789,0,1,0-.969.969L23.8,24.79a.675.675,0,0,0,.488.2.7.7,0,0,0,.488-.2.685.685,0,0,0,0-.969ZM1.367,11.787a10.4,10.4,0,1,1,10.4,10.4A10.411,10.411,0,0,1,1.367,11.787Zm0,0"
+          transform="translate(1005.011 326.999)"
+        />
+      </g>
+    </g>
+  </svg>
+);
+
+export const DeleteIcon = () => (
+  <svg
+    id="Small_Icon_Button"
+    data-name="Small Icon Button"
+    xmlns="http://www.w3.org/2000/svg"
+    width="48"
+    height="48"
+  >
+    <defs>
+      <clipPath id="clip-path">
+        <path
+          id="Rectangle_474"
+          data-name="Rectangle 474"
+          transform="translate(12 12)"
+          fill="#100840"
+          stroke="#fff"
+          d="M0 0h24v24H0z"
+        />
+      </clipPath>
+    </defs>
+    <rect
+      id="Rectangle_473"
+      data-name="Rectangle 473"
+      width="48"
+      height="48"
+      rx="24"
+      fill="#fff"
+    />
+    <g id="Mask_Group_20" data-name="Mask Group 20" clipPath="url(#clip-path)">
+      <g id="Page-1" transform="translate(12 13.63)">
+        <g
+          id="_045---Delete-Message"
+          data-name="045---Delete-Message"
+          transform="translate(-5.801 -4.03)"
+        >
+          <path
+            id="Shape"
+            d="M26.262 5.6H23.4l-.991-1.874a2.544 2.544 0 0 0-2.27-1.326h-4.678a2.544 2.544 0 0 0-2.27 1.326L12.2 5.6H9.338A2.472 2.472 0 0 0 6.8 8v.8a1.648 1.648 0 0 0 1.692 1.6h.085l1.464 13.84a2.482 2.482 0 0 0 2.522 2.16h10.475a2.482 2.482 0 0 0 2.526-2.16l1.463-13.84h.08A1.648 1.648 0 0 0 28.8 8.8V8a2.472 2.472 0 0 0-2.538-2.4zM14.7 4.442A.847.847 0 0 1 15.461 4h4.678a.847.847 0 0 1 .756.442l.613 1.158h-7.416zm9.18 19.638a.83.83 0 0 1-.846.72H12.562a.83.83 0 0 1-.842-.72L10.273 10.4h15.058zM26.262 8.8H8.492V8a.824.824 0 0 1 .846-.8h16.924a.824.824 0 0 1 .846.8v.8z"
+            strokeWidth=".4px"
+            fill="#100840"
+            stroke="#fff"
+          />
+          <path
+            id="Path"
+            fill="#100840"
+            stroke="#fff"
+            strokeWidth=".4px"
+            fillRule="evenodd"
+            d="M11.246 17.2a.824.824 0 0 0 .846-.8v-8a.847.847 0 0 0-1.692 0v8a.824.824 0 0 0 .846.8z"
+            transform="translate(4.015 5.2)"
+          />
+          <path
+            id="Path-2"
+            data-name="Path"
+            fill="#100840"
+            stroke="#fff"
+            strokeWidth=".4px"
+            fillRule="evenodd"
+            d="M13.646 17.2a.824.824 0 0 0 .846-.8v-8a.847.847 0 0 0-1.692 0v8a.824.824 0 0 0 .846.8z"
+            transform="translate(6.692 5.2)"
+          />
+        </g>
+      </g>
+    </g>
+  </svg>
+);
+
+export const CalenderIcon = () => (
+  <svg
+    id="Small_Icon_Button"
+    data-name="Small Icon Button"
+    xmlns="http://www.w3.org/2000/svg"
+    width="48"
+    height="48"
+  >
+    <defs>
+      <clipPath id="clip-path">
+        <path
+          id="Rectangle_474"
+          data-name="Rectangle 474"
+          transform="translate(12 12)"
+          fill="#100840"
+          d="M0 0h24v24H0z"
+        />
+      </clipPath>
+      <style>.cls-4{}</style>
+    </defs>
+    <rect
+      id="Rectangle_473"
+      data-name="Rectangle 473"
+      width="48"
+      height="48"
+      rx="24"
+      fill="#fff"
+    />
+    <g id="Mask_Group_21" data-name="Mask Group 21" clipPath="url(#clip-path)">
+      <g
+        id="calendar_3_"
+        data-name="calendar (3)"
+        transform="translate(10.286 10.286)"
+      >
+        <path
+          id="Path_1929"
+          data-name="Path 1929"
+          fill="#100840"
+          fillRule="evenodd"
+          d="M13.143 18.02A2.286 2.286 0 1 0 14.286 20v-6.585l2.645 1.058a.571.571 0 1 0 .424-1.061l-3.429-1.371a.571.571 0 0 0-.784.531zM12 18.857A1.143 1.143 0 1 0 13.143 20 1.143 1.143 0 0 0 12 18.857z"
+        />
+        <path
+          id="Path_1930"
+          data-name="Path 1930"
+          fill="#100840"
+          fillRule="evenodd"
+          d="M21.143 2.286a.571.571 0 0 0-1.143 0V4H7.429V2.286a.571.571 0 1 0-1.143 0V4H4.571a2.857 2.857 0 0 0-2.857 2.857v16a2.857 2.857 0 0 0 2.857 2.857h18.286a2.857 2.857 0 0 0 2.857-2.857v-16A2.857 2.857 0 0 0 22.857 4h-1.714zM4.571 5.143a1.714 1.714 0 0 0-1.714 1.714v1.714h21.714V6.857a1.714 1.714 0 0 0-1.714-1.714zM2.857 22.857V9.714h21.714v13.143a1.714 1.714 0 0 1-1.714 1.714H4.571a1.714 1.714 0 0 1-1.714-1.714z"
+        />
+      </g>
+    </g>
+  </svg>
+);

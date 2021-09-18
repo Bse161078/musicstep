@@ -5,14 +5,14 @@ export const sidebarItems  = [
      },
      {
         name:'Basic info', 
-        url:'#'
+        url:'/admin/basic-info'
     },     {
         name:'Team Management', 
-        url:'#'
+        url:'/admin/team-management'
     },
     {
         name:'Payment Information', 
-        url:'#'
+        url:'/admin/payment-information'
     },     {
         name:'Payouts', 
         url:'#'

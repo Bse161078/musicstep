@@ -17,6 +17,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
     <OrganizationProfileFormStyle>
       <DashboardHeader
         handleBackClick={() => setCurrentPage("preview")}
+        backButtonText="Back To Basic Info"
         heading="Add Organizer Profile"
         handleCancelClick={() => setCurrentPage("preview")}
       />

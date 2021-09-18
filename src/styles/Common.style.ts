@@ -1,4 +1,4 @@
-import { darken } from "polished"
+import { darken, rgba } from "polished"
 import styled, { css } from "styled-components"
 
 type FilledButtonStyleProps = {
@@ -55,6 +55,18 @@ export const OutlineButtonStyle = styled.button<FilledButtonStyleProps>`
     &:hover {
         background: #100840;
         color: #fff;
+    }
+`
+
+export const TableHeaderStyle = css`
+    padding: 20px 30px;
+    background: ${rgba("#100840", 0.1)};
+    border-radius: 16px;
+    
+    .header-title {
+        font-size: 16px;
+        color: #0C0C0C;
+        opacity: 0.7;
     }
 `
 
