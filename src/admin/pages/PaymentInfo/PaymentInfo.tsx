@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 
-import { Dashboard, PaymentInfoContent, PaymentMethod } from "../../components";
+import { Dashboard, NewPaymentMethod, PaymentInfoContent, PaymentMethod } from "../../components";
 import { PaymentInfoStyle } from "./PaymentInfo.style";
 
 export default function PaymentInfo() {
@@ -13,6 +13,9 @@ export default function PaymentInfo() {
 
       case "payment-method":
         return <PaymentMethod setCurrentPage={setCurrentPage} />;
+
+      case "new-payment-method":
+        return <NewPaymentMethod setCurrentPage={setCurrentPage} />;
       default:
         return <PaymentInfoContent setCurrentPage={setCurrentPage} />;
     }

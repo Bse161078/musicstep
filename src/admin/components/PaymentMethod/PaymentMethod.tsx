@@ -1,9 +1,9 @@
 import { Form, Formik } from "formik";
 import React from "react";
-import { ContentHeader, DashboardHeader } from "..";
+
+import { CheckboxWithIcon, ContentHeader, DashboardHeader } from "..";
 import { InputBox } from "../../../components";
 import { FilledButtonStyle } from "../../../styles/Common.style";
-
 import { PaymentMethodStyle } from "./PaymentMethod.style";
 
 type PaymentMethodProps = {
@@ -13,7 +13,9 @@ type PaymentMethodProps = {
 const PaymentMethod = (props: PaymentMethodProps) => {
   const { setCurrentPage } = props;
 
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+    setCurrentPage("new-payment-method")
+  };
 
   return (
     <PaymentMethodStyle>
@@ -40,6 +42,12 @@ const PaymentMethod = (props: PaymentMethodProps) => {
         heading="Payout Schedule"
         description="Manage when you get paid for your events. MusicPass typically issues payouts after each event ends, but you can apply receive scheduled payouts instead. Changes to your schedule apply to all current and future events."
       />
+
+      <div className="schedule-checks-wrapper">
+        <CheckboxWithIcon />
+        <CheckboxWithIcon />
+        <CheckboxWithIcon />
+      </div>
     </PaymentMethodStyle>
   );
 };
