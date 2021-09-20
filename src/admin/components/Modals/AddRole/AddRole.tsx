@@ -13,13 +13,13 @@ const AddRole = () => {
     >
       <Formik
         initialValues={{
-          Role: "",
+          AddRole: "",
         }}
         onSubmit={handleSubmit}
       >
         <AddRoleStyle>
           <Form className="form-wrapper">
-            <InputBox name="Role" label="Title" placeholder="Manager" />
+            <InputBox name="AddRole" label="Title" placeholder="Manager" />
           </Form>
         </AddRoleStyle>
       </Formik>

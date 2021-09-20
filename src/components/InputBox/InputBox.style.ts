@@ -25,7 +25,7 @@ export const InputBoxStyle = styled.div`
     .input-label {
         font-size: 14px;
         color: #0C0C0C;
-        font-weight: 400;
+        font-weight: 500;
         margin-left: 15px;
     }
 

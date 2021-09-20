@@ -8,6 +8,8 @@ const SelectBox = (props: any) => {
     const invalid = Boolean(!field.value && meta.touched)
 
     return (
+        <>
+        <label className="input-label">{props.label}</label>
         <SelectStyle
             name={field.name}
             color="primary"
@@ -16,6 +18,7 @@ const SelectBox = (props: any) => {
             value={field.value}
             onBlur={field.onBlur}
             onChange={field.onChange}
+            
             inputProps={{
                 min: props.type === 'number' ? 0 : undefined
             }}
@@ -23,6 +26,7 @@ const SelectBox = (props: any) => {
         >
             {props.children}
         </SelectStyle>
+        </>
     )
 }
 
