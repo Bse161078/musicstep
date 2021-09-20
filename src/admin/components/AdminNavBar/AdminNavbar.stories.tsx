@@ -1,10 +1,12 @@
-import React from "react"
-import { storiesOf } from "@storybook/react"
-import { AdminNavBar } from ".."
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import { AdminNavBar } from "..";
 
-storiesOf("AdminNavbar", module)
-    .add("Normal",()=>{
-        return (
-            <AdminNavBar />
-        )
-    })
+storiesOf("Admin Navbar", module).add("Normal", () => {
+  return (
+    <>
+      <button>asdas</button>
+      <AdminNavBar />
+    </>
+  );
+});

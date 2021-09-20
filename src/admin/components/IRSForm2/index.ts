@@ -1,0 +1,1 @@
+export { default as IRSForm2 } from "./IRSForm2"

@@ -5,17 +5,17 @@ import { DashboardStyle } from "./Dashboard.style";
 
 type DashboardProps = {
   children?: any;
-}
+};
 
 const Dashboard = (props: DashboardProps) => {
   const { children } = props;
-  
+
   return (
     <DashboardStyle>
       <AdminNavBar />
       <div className="dashboard-section-wrapper">
         <SideBar />
-        {children}
+        <>{children}</>
       </div>
     </DashboardStyle>
   );
