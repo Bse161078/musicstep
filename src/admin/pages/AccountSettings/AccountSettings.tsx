@@ -9,8 +9,11 @@ import {
 } from "../../../assets";
 import {
   ChangePassword,
+  CloseAccount,
+  ContactInfoForm,
   Dashboard,
   DashboardHeader,
+  EmailPreference,
   IconWithHeading,
 } from "../../components";
 
@@ -26,14 +29,22 @@ const AccountSettingInitial = (props: AccountSettingInitialProps) => {
     <div>
       <DashboardHeader heading="Account Settings" />
       <AccountSettingsStyle>
-        <IconWithHeading icon={<ContactIcon />} heading="Contact Info" />
+        <IconWithHeading
+          onClick={() => setCurrentPage("contact-info")}
+          icon={<ContactIcon />}
+          heading="Contact Info"
+        />
 
         <IconWithHeading
           onClick={() => setCurrentPage("change-password")}
           icon={<PasswordLockIcon />}
           heading="Change Password"
         />
-        <IconWithHeading icon={<EmailIcon />} heading="Email Preference" />
+        <IconWithHeading
+          onClick={() => setCurrentPage("email-preferences")}
+          icon={<EmailIcon />}
+          heading="Email Preference"
+        />
 
         <Link to="/admin/basic-info">
           <IconWithHeading
@@ -41,7 +52,12 @@ const AccountSettingInitial = (props: AccountSettingInitialProps) => {
             heading="Organization Settings"
           />
         </Link>
-        <IconWithHeading icon={<AccountIcon />} heading="Close Account" />
+
+        <IconWithHeading
+          onClick={() => setCurrentPage("close-account")}
+          icon={<AccountIcon />}
+          heading="Close Account"
+        />
       </AccountSettingsStyle>
     </div>
   );
@@ -52,12 +68,19 @@ export default function AccountSettings() {
 
   const CurrentPage = useMemo(() => {
     switch (currentPage) {
+      case "contact-info":
+        return <ContactInfoForm />;
       case "account-settings":
         return <AccountSettingInitial setCurrentPage={setCurrentPage} />;
 
       case "change-password":
         return <ChangePassword />;
 
+      case "email-preferences":
+        return <EmailPreference setCurrentPage={setCurrentPage} />;
+
+      case "close-account":
+        return <CloseAccount />;
       default:
         return <AccountSettingInitial setCurrentPage={setCurrentPage} />;
     }

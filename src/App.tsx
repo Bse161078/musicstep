@@ -3,7 +3,15 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 // import { Navbar } from "./components";
-import { FreeTrial, Home, Login, PartnerLogin } from "./pages";
+import {
+  ExploreVenue,
+  FreeTrial,
+  Home,
+  Login,
+  PartnerLogin,
+  Pricing,
+  ProcessPayment,
+} from "./pages";
 
 import {
   AccountSettings,
@@ -27,6 +35,9 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/free-trial" component={FreeTrial} />
           <Route path="/partner-login" component={PartnerLogin} />
+          <Route exact path="/pricing" component={Pricing} />
+          <Route path="/pricing/process-payment" component={ProcessPayment} />
+          <Route path="/explore-venue" component={ExploreVenue} />
 
           {/* Admin routes */}
           <Route path="/admin/basic-info" component={BasicInfo} />
