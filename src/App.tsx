@@ -11,6 +11,7 @@ import {
   PartnerLogin,
   Pricing,
   ProcessPayment,
+  VenueDetails,
 } from "./pages";
 
 import {
@@ -37,7 +38,8 @@ function App() {
           <Route path="/partner-login" component={PartnerLogin} />
           <Route exact path="/pricing" component={Pricing} />
           <Route path="/pricing/process-payment" component={ProcessPayment} />
-          <Route path="/explore-venue" component={ExploreVenue} />
+          <Route exact path="/explore-venue" component={ExploreVenue} />
+          <Route path="/explore-venue/venue-details" component={VenueDetails} />
 
           {/* Admin routes */}
           <Route path="/admin/basic-info" component={BasicInfo} />
