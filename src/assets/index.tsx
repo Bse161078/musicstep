@@ -974,3 +974,13 @@ export const DirectionIcon = () => (
     </g>
   </svg>
 );
+
+export const ChevronFilledIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+    <path
+      data-name="Path 2016"
+      d="M9 0a9 9 0 1 0 9 9 9.01 9.01 0 0 0-9-9zm2.78 9.53-3.75 3.75a.75.75 0 0 1-1.06-1.06L10.19 9 6.97 5.78a.75.75 0 0 1 1.06-1.06l3.75 3.75a.749.749 0 0 1 0 1.06z"
+      fill="#100840"
+    />
+  </svg>
+);

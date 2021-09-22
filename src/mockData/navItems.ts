@@ -1,7 +1,7 @@
 export const navItems = [
     {
         name: "Explore Venues",
-        url: "#"
+        url: "/explore-venue"
     },
     {
         name: "How it works",

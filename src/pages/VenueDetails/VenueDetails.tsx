@@ -1,6 +1,10 @@
 import React from "react";
 import { DirectionIcon } from "../../assets";
-import { CustomCarousel, LogoWithHeading } from "../../components";
+import {
+  CustomCarousel,
+  LogoWithHeading,
+  UpcomingEvents,
+} from "../../components";
 import { OutlineButtonStyle } from "../../styles/Common.style";
 import { TabPaneStyle, TabsStyle } from "../../styles/Fields.style";
 
@@ -53,7 +57,9 @@ export default function VenueDetails() {
               ]}
             />
           </TabPaneStyle>
-          <TabPaneStyle tab="Upcoming Events" key="2"></TabPaneStyle>
+          <TabPaneStyle tab="Upcoming Events" key="2">
+            <UpcomingEvents />
+          </TabPaneStyle>
         </TabsStyle>
       </div>
 

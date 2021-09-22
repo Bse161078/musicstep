@@ -24,6 +24,7 @@ import {
 } from "./admin/pages";
 import { Navbar } from "./components";
 import { BaseStyle } from "./styles/Base.style";
+import { UserHome } from "./userDashboard/pages";
 
 function App() {
   return (
@@ -48,6 +49,9 @@ function App() {
           <Route path="/admin/payouts" component={Payouts} />
           <Route path="/admin/tax-payer-information" component={TaxPayerInfo} />
           <Route path="/admin/account-settings" component={AccountSettings} />
+
+          {/* User Admin Routes */}
+          <Route path="/dashboard/home" component={UserHome} />
         </Switch>
       </BrowserRouter>
     </div>
