@@ -1,3 +1,4 @@
+export * from "./BillingInformationForm"
 export * from "./CardWithContent"
 export * from "./ChangePasswordForm"
 export * from "./Dashboard"

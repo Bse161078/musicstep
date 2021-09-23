@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { HeadingTab } from "..";
 import { EditButtonIcon } from "../../../assets";
 
@@ -16,9 +17,9 @@ const UserSidebar = () => {
           />
 
           <div className="action-buttons-wrapper">
-            <span>
+            <Link to="/dashboard/basic-info">
               <EditButtonIcon />
-            </span>
+            </Link>
             <span>
               <EditButtonIcon />
             </span>

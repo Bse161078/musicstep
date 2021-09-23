@@ -9,7 +9,7 @@ export const userSidebarItems = [
     },
     {
       name: "Billing Information",
-      url: "#",
+      url: "/dashboard/billing-information",
     },
   ];
   

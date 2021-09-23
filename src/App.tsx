@@ -24,7 +24,7 @@ import {
 } from "./admin/pages";
 import { Navbar } from "./components";
 import { BaseStyle } from "./styles/Base.style";
-import { ChangePassword, EditProfile, UserHome } from "./userDashboard/pages";
+import { BillingInformation, ChangePassword, EditProfile, UserHome } from "./userDashboard/pages";
 
 function App() {
   return (
@@ -54,6 +54,7 @@ function App() {
           <Route path="/dashboard/home" component={UserHome} />
           <Route path="/dashboard/basic-info" component={EditProfile} />
           <Route path="/dashboard/change-password" component={ChangePassword} />
+          <Route path="/dashboard/billing-information" component={BillingInformation} />
         </Switch>
       </BrowserRouter>
     </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { DashboardHeader, SideBar } from "../../../admin/components";
 import { LeftChevronIcon } from "../../../assets";
 import { userSidebarItems } from "../../../mockData/userSidebarItems";
@@ -15,9 +16,9 @@ const Dashboard = (props: DashboardProps) => {
   return (
     <DashboardStyle>
       <div className="left-side">
-        <span className="back-button">
+        <Link to="/dashboard/home" className="back-button">
           <LeftChevronIcon /> Back To Profile
-        </span>
+        </Link>
 
         <SideBar sidebarItems={userSidebarItems} />
       </div>
