@@ -1,3 +1,6 @@
+export * from "./CardWithContent"
 export * from "./Dashboard"
 export * from "./HeadingTab"
+export * from "./SectionHeading"
+export * from "./UpcomingEvents"
 export * from "./UserSidebar"
