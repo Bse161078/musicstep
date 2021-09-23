@@ -24,7 +24,7 @@ import {
 } from "./admin/pages";
 import { Navbar } from "./components";
 import { BaseStyle } from "./styles/Base.style";
-import { UserHome } from "./userDashboard/pages";
+import { ChangePassword, EditProfile, UserHome } from "./userDashboard/pages";
 
 function App() {
   return (
@@ -52,6 +52,8 @@ function App() {
 
           {/* User Admin Routes */}
           <Route path="/dashboard/home" component={UserHome} />
+          <Route path="/dashboard/basic-info" component={EditProfile} />
+          <Route path="/dashboard/change-password" component={ChangePassword} />
         </Switch>
       </BrowserRouter>
     </div>

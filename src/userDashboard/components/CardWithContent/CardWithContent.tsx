@@ -18,7 +18,7 @@ const CardWithContent = () => {
             <p className="description">Alternative, Classical</p>
           </div>
 
-          <FilledButtonStyle width="100px" height="54px">
+          <FilledButtonStyle buttonType="dark" width="100px" height="54px">
             Cancel
           </FilledButtonStyle>
         </div>
