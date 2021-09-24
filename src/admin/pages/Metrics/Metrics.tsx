@@ -19,9 +19,9 @@ const Metrics = () => {
 
         <ContentHeader heading="Charts" actionButtons={<>Events Filter</>} />
         <div className="charts-wrapper">
-            <img src="/images/metrics/payouts-chart.svg" className="chart" />
-            <img src="/images/metrics/reservation-chart.svg" className="chart" />
-            <img src="/images/metrics/event-chart.svg" className="chart" />
+            <img alt="chart" src="/images/metrics/payouts-chart.svg" className="chart" />
+            <img alt="chart" src="/images/metrics/reservation-chart.svg" className="chart" />
+            <img alt="chart" src="/images/metrics/event-chart.svg" className="chart" />
         </div>
       </MetricsStyle>
     </Dashboard>
