@@ -1,19 +1,21 @@
-import React from "react"
+import React from "react";
 import { OutlineButtonStyle } from "../../styles/Common.style";
 
 import { HeadingWithButtonStyle } from "./HeadingWithButton.style";
 
 const HeadingWithButton = () => {
-    return (
-        <HeadingWithButtonStyle>
-            <h2 className="heading">Have You Ever Wished Attending Concerts Was More Affordable?</h2>
+  return (
+    <HeadingWithButtonStyle>
+      <p className="description">
+        Introducing <span>Music</span>Pass. <br />
+        Tap into the dance nation participating across the United States.
+      </p>
 
-            <p className="description"></p>
-            <p className="description"></p>
-
-            <OutlineButtonStyle buttonType="dark">Explore Music Events Near Me</OutlineButtonStyle>
-        </HeadingWithButtonStyle>
-    )
-}
+      <OutlineButtonStyle width="380px" height="60px">
+        Explore Music Events Near Me
+      </OutlineButtonStyle>
+    </HeadingWithButtonStyle>
+  );
+};
 
 export default HeadingWithButton;
