@@ -17,6 +17,7 @@ import {
 import {
   AccountSettings,
   BasicInfo,
+  Metrics,
   PaymentInfo,
   Payouts,
   TaxPayerInfo,
@@ -49,6 +50,7 @@ function App() {
           <Route path="/admin/payouts" component={Payouts} />
           <Route path="/admin/tax-payer-information" component={TaxPayerInfo} />
           <Route path="/admin/account-settings" component={AccountSettings} />
+          <Route path="/admin/metrics" component={Metrics} />
 
           {/* User Admin Routes */}
           <Route path="/dashboard/home" component={UserHome} />
