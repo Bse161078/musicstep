@@ -1,6 +1,7 @@
 import React from "react";
 
 import { AdminNavBar, SideBar } from "..";
+import { sidebarItems } from "../../../mockData/sideBarItems";
 import { DashboardStyle } from "./Dashboard.style";
 
 type DashboardProps = {
@@ -14,7 +15,7 @@ const Dashboard = (props: DashboardProps) => {
     <DashboardStyle>
       <AdminNavBar />
       <div className="dashboard-section-wrapper">
-        <SideBar />
+        <SideBar sidebarItems={sidebarItems} />
         <>{children}</>
       </div>
     </DashboardStyle>

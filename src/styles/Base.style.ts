@@ -13,6 +13,7 @@ export const BaseStyle = createGlobalStyle`
                 box-sizing: border-box;
                 text-decoration: none;
                 line-height: 1.3;
+                font-family: 'Montserrat', sans-serif;
             }
             .App {
                 min-height: 100vh;

@@ -1,7 +1,7 @@
 export const navItems = [
     {
         name: "Explore Venues",
-        url: "#"
+        url: "/explore-venue"
     },
     {
         name: "How it works",
@@ -9,7 +9,7 @@ export const navItems = [
     },
     {
         name: "Pricing",
-        url: "#"
+        url: "/pricing"
     },
     {
         name: "Login",
