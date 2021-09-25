@@ -1,15 +1,13 @@
 import styled from "styled-components";
 
 export const EventDetailsModalStyle = styled.div`
-  display: grid;
-  width: 480px;
-  padding-right: 38px;
-  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
   .image-wrapper {
-    margin-right: 50px;
-    width: 480px;
     img {
-      width: 480px;
+      max-width: 480px;
+      width: 100%;
       border-radius: 16px;
     }
   }
@@ -19,10 +17,12 @@ export const EventDetailsModalStyle = styled.div`
   #event-name {
      font-size: 24px;
      font-weight: 800;
+     margin-left: 0px;
   }
   #below-eventname {
      font-size:19px;
      opacity: 0.5;
+     margin-top: -10px;
   }
   #location-text{
      font-size: 19px;
@@ -30,9 +30,16 @@ export const EventDetailsModalStyle = styled.div`
   }
   #event-dateTime {
      font-size: 24px;
-     width: 240pxv;
+     width: 240px;
+     font-weight: 500;
   }
   #credits{
      font-size: 19px;
   }
+  #cancel-text{
+     font-size: 15px;
+     opacity: 0.5;
+     margin-top: -10px;
+  }
+
 `;

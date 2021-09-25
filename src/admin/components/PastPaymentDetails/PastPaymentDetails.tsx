@@ -15,8 +15,6 @@ const PastPaymentDetails = () => {
         </div>
         <div>
           <FilledButtonStyle
-            buttonType="dark"
-            color="#FFF"
             width="100px"
             height="43px"
           >

@@ -1,3 +1,4 @@
+import { FilledButtonStyle } from './../../../styles/Common.style';
 import styled from "styled-components";
 
 export const PastPaymentDetailsStyle = styled.div`
@@ -12,8 +13,8 @@ export const PastPaymentDetailsStyle = styled.div`
   }
   .payment-timeDate {
     font-size: 16px;
-    font-weight: 200;
-    opacity: 0.5;
+    font-weight: 290;
+    opacity: 1;
     color: #0c0c0c;
   }
   .title-date {
@@ -24,5 +25,10 @@ export const PastPaymentDetailsStyle = styled.div`
   .payment-wrapper {
     display: flex;
     justify-content: space-between;
+  }
+  ${FilledButtonStyle} {
+    background: #F7F7F7;
+    border: none;
+    color: black;
   }
 `;

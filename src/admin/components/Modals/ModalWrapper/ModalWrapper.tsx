@@ -8,7 +8,7 @@ import {
 
 type ModalWrapperProps = {
   children: any;
-  heading: string;
+  heading?: string;
   leftButtonTitle?: string;
   rightButtonTitle?: string;
   button?: React.ReactNode;
@@ -16,6 +16,8 @@ type ModalWrapperProps = {
   isModalVisible?: boolean
   setIsModalVisible?: any
   height?:string
+  handleOkClick?:any
+  isFooter?:boolean
 };
 const ModalWrapper = (props: ModalWrapperProps) => {
   const {
@@ -27,7 +29,8 @@ const ModalWrapper = (props: ModalWrapperProps) => {
     width,
     isModalVisible,
     setIsModalVisible,
-
+    handleOkClick,
+    isFooter = true
   } = props;
 
 
@@ -56,6 +59,7 @@ const ModalWrapper = (props: ModalWrapperProps) => {
      
 
         footer={
+          isFooter ? 
           button
             ? button
             : [
@@ -69,11 +73,12 @@ const ModalWrapper = (props: ModalWrapperProps) => {
                 <FilledButtonStyle
                   width="290px"
                   height="60px"
-                  onClick={handleOk}
+                  onClick={handleOkClick? handleOkClick :  handleOk }
                 >
                   {rightButtonTitle}
                 </FilledButtonStyle>,
-              ]
+              ] 
+              : null
             
         }
       >
