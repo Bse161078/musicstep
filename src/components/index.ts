@@ -1,5 +1,6 @@
 export * from "./BillingInformation"
 export * from "./CustomCarousel"
+export * from "./Footer"
 export * from "./ForgotPasswordForm"
 export * from "./FormWrapper"
 export * from "./HeadingWithButton"
