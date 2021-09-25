@@ -1,8 +1,10 @@
 import React, { useMemo, useState } from "react";
 import {
+  BillingInformation,
   RedeemOfferForm,
   RedeemOfferStep2Form,
   StartTrialWrapper,
+  TrialBillingInfoForm,
   TrialForm,
   TrialGeneralInfo,
   TrialSetPassword,
@@ -28,13 +30,24 @@ export default function FreeTrial() {
 
       case "redeem-offer-verify":
         return <RedeemOfferStep2Form setCurrentForm={setCurrentForm} />;
+
+      case "trial-billing-information":
+        return <TrialBillingInfoForm />;
       default:
         return <TrialForm setCurrentForm={setCurrentForm} />;
     }
   }, [currentForm]);
   return (
     <FreeTrialStyle>
-      <StartTrialWrapper>{CurrentTrialStep}</StartTrialWrapper>
+      <StartTrialWrapper
+        leftContent={
+          currentForm === "trial-billing-information" ? (
+            <BillingInformation />
+          ) : null
+        }
+      >
+        {CurrentTrialStep}
+      </StartTrialWrapper>
     </FreeTrialStyle>
   );
 }

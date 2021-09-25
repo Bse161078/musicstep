@@ -1,7 +1,7 @@
 import { Form, Formik } from "formik";
 import React from "react";
 
-import { InputBox, TrialFormWrapper } from "..";
+import { InputBox, SelectBox, TrialFormWrapper } from "..";
 import { FilledButtonStyle } from "../../styles/Common.style";
 import { RedeemOfferFormStyle } from "./RedeemOfferForm.style";
 
@@ -32,10 +32,15 @@ const RedeemOfferForm = (props: TrailSetPasswordProps) => {
           }}
           onSubmit={handleSetPasswordSubmit}
         >
-          {({ values }) => (
+          {({ values, setFieldValue }) => (
             <Form className="set-password-wrapper">
               <div className="input-wrapper">
-                <InputBox label="Country Code" name="countryCode" />
+                <SelectBox
+                  label="Country Code"
+                  name="countryCode"
+                  options={[{ key: "Option 1", value: "Option 1" }]}
+                  setFieldValue={setFieldValue}
+                />
                 <InputBox label="Phone Number" name="phoneNumber" />
               </div>
 

@@ -1472,3 +1472,9 @@ export const WorldIcon = () => (
     </g>
   </svg>
 );
+
+export const ArrowDownIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="9" viewBox="0 0 18 9">
+    <path fill="#0c0c0c" d="M9,13.5l9,9,9-9Z" transform="translate(-9 -13.5)"/>
+  </svg>
+)
