@@ -78,7 +78,12 @@ const Footer = () => {
                 const { icon, url } = data;
 
                 return (
-                  <a target="_blank" key={`social-icon-${index}`} href={url}>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    key={`social-icon-${index}`}
+                    href={url}
+                  >
                     <img src={icon} className="social-icon" alt="social icon" />
                   </a>
                 );
