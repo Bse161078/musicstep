@@ -4,8 +4,12 @@ import { ModalWrapper } from "../ModalWrapper";
 import { InviteModalStyle } from "../InviteModal/InviteModal.style";
 import { roleItems } from "../../../../mockData/roleItems";
 
-
-const EditUserModal = () => {
+type EditUserModalProps = {
+  isModalVisible?: boolean;
+  setIsModalVisible?: any;
+};
+const EditUserModal = (props: EditUserModalProps) => {
+  const { isModalVisible, setIsModalVisible } = props;
   const handleSubmit = () => {};
   return (
     <>
@@ -13,6 +17,8 @@ const EditUserModal = () => {
         heading="Edit Users"
         rightButtonTitle="Update"
         leftButtonTitle="Cancel"
+        isModalVisible={isModalVisible}
+        setIsModalVisible={setIsModalVisible}
       >
         <Formik
           initialValues={{

@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from "react";
+import { MessageModal } from "../../../components";
 import {
   FilledButtonStyle,
   OutlineButtonStyle,
@@ -16,6 +17,7 @@ import {
 import { TaxPayerInfoStyle } from "./TaxPayerInfo.style";
 
 export default function TaxPayerInfo() {
+  const [isModalVisible,setIsModalVisible] = useState(false)
   const [currentStep, setCurrentStep] = useState(1);
   const customDot = (dot: any) => <div>{dot}</div>;
 
@@ -84,7 +86,7 @@ export default function TaxPayerInfo() {
 
             {currentStep === 4 && (
               <FilledButtonStyle
-                onClick={() => {}}
+              onClick={() => setIsModalVisible(true)}
                 buttonType="dark"
                 width="150px"
                 height="53px"
@@ -92,6 +94,11 @@ export default function TaxPayerInfo() {
                 Submit
               </FilledButtonStyle>
             )}
+            <MessageModal
+              isModalVisible={isModalVisible}
+              setIsModalVisible={setIsModalVisible}
+              message="Thank you. Your Taxpayer Information has been saved and submitted."
+            />
           </div>
         </div>
 

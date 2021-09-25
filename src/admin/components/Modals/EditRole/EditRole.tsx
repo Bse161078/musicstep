@@ -3,13 +3,20 @@ import { InputBox, SelectBox } from "../../../../components";
 import { Field, Form, Formik } from "formik";
 import { ModalWrapper } from "../ModalWrapper";
 import { EditRoleStyle } from "./EditRole.style";
-const AddRole = () => {
+type EditRoleModalProps = {
+  isModalVisible?: boolean;
+  setIsModalVisible?: any;
+};
+const EditRole = (props: EditRoleModalProps) => {
+  const { isModalVisible, setIsModalVisible } = props;
   const handleSubmit = () => {};
   return (
     <ModalWrapper
       heading="Edit Role"
       rightButtonTitle="Edit"
       leftButtonTitle="Cancel"
+      isModalVisible={isModalVisible}
+      setIsModalVisible={setIsModalVisible}
     >
       <Formik
         initialValues={{
@@ -26,4 +33,4 @@ const AddRole = () => {
     </ModalWrapper>
   );
 };
-export default AddRole;
+export default EditRole;

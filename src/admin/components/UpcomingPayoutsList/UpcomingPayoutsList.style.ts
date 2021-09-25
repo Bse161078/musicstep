@@ -16,8 +16,9 @@ export const UpcomingPayoutsListStyle = styled.div`
 
 export const UpcomingPayoutsListItemStyle = styled.div`
   ${TableRowStyle};
-
+  
   display: grid;
+ 
   grid-template-columns: 200px 1fr 75px;
   .payout-detail {
     text-align: right;
@@ -34,5 +35,6 @@ export const UpcomingPayoutsListItemStyle = styled.div`
       font-weight: bold;
       color: #0c0c0c;
     }
+    
   }
 `;

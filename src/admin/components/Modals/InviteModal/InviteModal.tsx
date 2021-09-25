@@ -5,14 +5,23 @@ import { InviteModalStyle } from "./InviteModal.style";
 
 import { roleItems } from "../../../../mockData/roleItems";
 
-const InviteModal = () => {
+
+type InviteModalProps = {
+  isModalVisible?: boolean;
+  setIsModalVisible?: any;
+};
+const InviteModal = (props: InviteModalProps) => {
+  const { isModalVisible, setIsModalVisible } = props;
   const handleSubmit = () => {};
+
   return (
     <>
       <ModalWrapper
         heading="Invite Users"
         rightButtonTitle="Invite"
         leftButtonTitle="Cancel"
+        isModalVisible={isModalVisible}
+        setIsModalVisible={setIsModalVisible}
       >
         <Formik
           initialValues={{

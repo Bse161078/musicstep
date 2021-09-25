@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import { PaymentMethod, PaymentMethodDetails } from "..";
 import { CalenderIcon, DeleteIcon } from "../../../assets";
+
 
 import { PaymentInfoListItemStyle } from "./PaymentInfoContent.style";
 
@@ -9,6 +11,7 @@ type PaymentInfoListItemProps = {
 
 export const PaymentInfoListItem = (props: PaymentInfoListItemProps) => {
   const { setCurrentPage } = props;
+  const [isModalVisible, setIsModalVisible] = useState(false)
   return (
     <PaymentInfoListItemStyle>
       <div className="content-wrapper">
@@ -25,11 +28,11 @@ export const PaymentInfoListItem = (props: PaymentInfoListItemProps) => {
 
       <div className="action-buttons-wrapper">
         <DeleteIcon />
-
-        <span onClick={() => setCurrentPage("payment-method")}>
-          <CalenderIcon />
+        <span onClick={() => setIsModalVisible(true)}>
+          <CalenderIcon  />
         </span>
       </div>
+      <PaymentMethodDetails isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}  />
     </PaymentInfoListItemStyle>
   );
 };

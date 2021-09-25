@@ -9,13 +9,28 @@ import {
 type ModalWrapperProps = {
   children: any;
   heading: string;
-  leftButtonTitle: string;
-  rightButtonTitle: string;
+  leftButtonTitle?: string;
+  rightButtonTitle?: string;
+  button?: React.ReactNode;
+  width?:string
+  isModalVisible?: boolean
+  setIsModalVisible?: any
+  height?:string
 };
 const ModalWrapper = (props: ModalWrapperProps) => {
-  const { children, heading, leftButtonTitle, rightButtonTitle } = props;
+  const {
+    children,
+    heading,
+    leftButtonTitle,
+    rightButtonTitle,
+    button,
+    width,
+    isModalVisible,
+    setIsModalVisible,
 
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  } = props;
+
+
 
   const showModal = () => {
     setIsModalVisible(true);
@@ -30,22 +45,37 @@ const ModalWrapper = (props: ModalWrapperProps) => {
   };
   return (
     <>
-      <OutlineButtonStyle onClick={showModal}>Invite</OutlineButtonStyle>
+
       <ModalWrapperStyle
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
         className="target"
         title={heading}
-        width="660px"
-        footer={[
-          <OutlineButtonStyle width="290px" height="60px" onClick={handleOk}>
-            {leftButtonTitle}
-          </OutlineButtonStyle>,
-          <FilledButtonStyle width="290px" height="60px" onClick={handleOk}>
-            {rightButtonTitle}
-          </FilledButtonStyle>,
-        ]}
+        width={width ? width : '660px'}
+     
+
+        footer={
+          button
+            ? button
+            : [
+                <OutlineButtonStyle
+                  width="290px"
+                  height="60px"
+                  onClick={handleOk}
+                >
+                  {leftButtonTitle}
+                </OutlineButtonStyle>,
+                <FilledButtonStyle
+                  width="290px"
+                  height="60px"
+                  onClick={handleOk}
+                >
+                  {rightButtonTitle}
+                </FilledButtonStyle>,
+              ]
+            
+        }
       >
         {children}
       </ModalWrapperStyle>

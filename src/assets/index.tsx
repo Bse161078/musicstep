@@ -1,5 +1,5 @@
 import React from "react";
-
+import './index.css'
 export const GetMusicButtonSVG = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
