@@ -7,10 +7,12 @@ import {
   ExploreVenue,
   FreeTrial,
   Home,
+  HowItWorks,
   Login,
   PartnerLogin,
   Pricing,
   ProcessPayment,
+  TermsAndConditions,
   VenueDetails,
 } from "./pages";
 
@@ -42,6 +44,8 @@ function App() {
           <Route path="/pricing/process-payment" component={ProcessPayment} />
           <Route exact path="/explore-venue" component={ExploreVenue} />
           <Route path="/explore-venue/venue-details" component={VenueDetails} />
+          <Route path="/how-it-works" component={HowItWorks} />
+          <Route path="/terms-conditions" component={TermsAndConditions} />
 
           {/* Admin routes */}
           <Route path="/admin/basic-info" component={BasicInfo} />

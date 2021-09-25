@@ -10,6 +10,10 @@ export const ValueWithButtonStyle = styled.div`
     font-weight: 800;
     line-height: 1.22;
     color: #0c0c0c;
+
+    @media ( max-width: 767px ) {
+      font-size: 100px;
+    }
   }
 
   .value-description {

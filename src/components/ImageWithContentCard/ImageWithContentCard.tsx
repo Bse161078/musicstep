@@ -6,7 +6,7 @@ type ImageWithContentCardProps = {
   image: string;
   heading: string;
   description: string;
-  icon: React.ReactNode;
+  icon: string;
   type?: "left" | "right";
 };
 
@@ -15,7 +15,7 @@ const ImageWithContentCard = (props: ImageWithContentCardProps) => {
 
   return (
     <ImageWithContentCardStyle type={type}>
-      <span className="icon-wrapper">{icon}</span>
+      <span className="icon-wrapper"><img src={icon} /></span>
 
       <div className="visual-wrapper">
         <img src={image} className="image" alt="card visual" />

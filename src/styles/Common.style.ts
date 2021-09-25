@@ -1,6 +1,10 @@
 import { darken, rgba } from "polished";
 import styled, { css } from "styled-components";
 
+export const ContainerStyle = css`
+  margin-top: 80px;
+`;
+
 type FilledButtonStyleProps = {
   width?: string;
   height?: string;

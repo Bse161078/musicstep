@@ -5,7 +5,7 @@ export const navItems = [
     },
     {
         name: "How it works",
-        url: "#"
+        url: "/how-it-works"
     },
     {
         name: "Pricing",

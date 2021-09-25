@@ -46,7 +46,7 @@ export const NavbarStyle = styled.nav<NavbarStyleProps>`
 
     display: flex;
     justify-content: space-between;
-    padding: ${props => (props.isNavSticky ? "15px 50px" : "28px 50px")};
+    padding: ${props => (props.isNavSticky ? "15px 60px" : "20px 60px")};
     transition: all 0.3s ease-in-out;
 
     @media (max-width: 767px) {
@@ -88,7 +88,7 @@ export const NavbarStyle = styled.nav<NavbarStyleProps>`
       a {
         display: flex;
         align-items: center;
-        padding: 5px 10px;
+        padding: 0;
         color: #5c6774;
         transition: all 200ms linear;
         border-radius: 8px;

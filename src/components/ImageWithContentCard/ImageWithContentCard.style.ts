@@ -14,8 +14,20 @@ export const ImageWithContentCardStyle = styled.div<ImageWithContentCardStylePro
     type === "right" ? "16px 0 0 16px" : "0 16px 16px 0"};
   padding: 30px;
 
+  @media (max-width: 767px) {
+    flex-direction: column;
+    grid-gap: 20px;
+  }
+
   .icon-wrapper {
     margin-top: ${({ type }) => (type === "right" ? "0" : "auto")};
+
+    img {
+      @media (max-width: 767px) {
+        width: 50px;
+        height: 50px;
+      }
+    }
   }
 
   .image {

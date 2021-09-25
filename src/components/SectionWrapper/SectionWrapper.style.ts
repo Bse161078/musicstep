@@ -13,5 +13,9 @@ export const SectionWrapperStyle = styled.section<SectionWrapperStyleProps>`
     font-weight: bold;
     text-align: center;
     color: #0c0c0c;
+
+    @media ( max-width: 767px ) {
+      font-size: 28px;
+    }
   }
 `;

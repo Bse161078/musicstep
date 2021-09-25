@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  LocationIcon,
-  ShareIcon,
-} from "../../assets";
+import { LocationIcon, ShareIcon } from "../../assets";
 
 import {
   HeadingWithButton,
@@ -61,14 +58,14 @@ export default function Home() {
         <ImageWithContentCard
           heading="Share & Read Experiences."
           description="See what other members are saying about music brands & venues. Learn insider tips."
-          icon={<ShareIcon />}
+          icon="/images/hero/share-icon.svg"
           image="/images/hero/share-image.png"
         />
         <ImageWithContentCard
           type="right"
           heading="Know Music Events wherever you go."
           description="Real-time technology offers visibility to upcoming events in your area."
-          icon={<LocationIcon />}
+          icon="/images/hero/location-icon.svg"
           image="/images/hero/events.png"
         />
       </SectionWrapper>
