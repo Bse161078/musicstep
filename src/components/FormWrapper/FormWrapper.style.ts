@@ -22,6 +22,11 @@ export const FormWrapperStyle = styled.section`
     font-size: 80px;
     color: #0c0c0c;
     margin-bottom: 30px;
+
+    @media (max-width: 1200px) {
+      font-size: 30px;
+      text-align: center;
+    }
   }
 
   .form-wrapper {
@@ -34,6 +39,11 @@ export const FormWrapperStyle = styled.section`
       font-size: 36px;
       color: #0c0c0c;
       margin-bottom: 30px;
+
+      @media (max-width: 1200px) {
+        font-size: 22px;
+        text-align: center;
+      }
     }
   }
 `;

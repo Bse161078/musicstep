@@ -1,5 +1,5 @@
 import React from "react";
-import { DirectionIcon } from "../../assets";
+import { DirectionIcon, PhoneIcon, WorldIcon } from "../../assets";
 import {
   CustomCarousel,
   LogoWithHeading,
@@ -78,18 +78,18 @@ export default function VenueDetails() {
         </div>
 
         <div className="icon-with-content">
-          <DirectionIcon />
-          <span>1020 NW 183rd St, Miami, Florida(FL), 33169</span>
+          <PhoneIcon />
+          <span>+1 305 705 2747</span>
+        </div>
+
+        <div className="icon-with-content">
+          <WorldIcon />
+          <span>www.website.com</span>
         </div>
 
         <div className="icon-with-content">
           <DirectionIcon />
-          <span>1020 NW 183rd St, Miami, Florida(FL), 33169</span>
-        </div>
-
-        <div className="icon-with-content">
-          <DirectionIcon />
-          <span>1020 NW 183rd St, Miami, Florida(FL), 33169</span>
+          <span>@instagram</span>
         </div>
 
         <div className="icon-with-content">

@@ -5,6 +5,13 @@ import styled from "styled-components";
 export const CustomCarouselStyle = styled(Flickity)`
   max-width: 880px;
   padding: 0 78px;
+  margin-bottom: 30px;
+  outline: none;
+  margin-left: -70px;
+
+  @media ( max-width: 768px ) {
+    margin-left: 0;
+  }
 
   img {
     width: 100%;

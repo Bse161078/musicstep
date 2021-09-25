@@ -7,16 +7,19 @@ import {
   ExploreVenue,
   FreeTrial,
   Home,
+  HowItWorks,
   Login,
   PartnerLogin,
   Pricing,
   ProcessPayment,
+  TermsAndConditions,
   VenueDetails,
 } from "./pages";
 
 import {
   AccountSettings,
   BasicInfo,
+  Metrics,
   PaymentInfo,
   Payouts,
   TaxPayerInfo,
@@ -42,6 +45,8 @@ function App() {
           <Route path="/pricing/process-payment" component={ProcessPayment} />
           <Route exact path="/explore-venue" component={ExploreVenue} />
           <Route path="/explore-venue/venue-details" component={VenueDetails} />
+          <Route path="/how-it-works" component={HowItWorks} />
+          <Route path="/terms-conditions" component={TermsAndConditions} />
 
           {/* Admin routes */}
           <Route path="/admin/basic-info" component={BasicInfo} />
@@ -50,6 +55,7 @@ function App() {
           <Route path="/admin/payouts" component={Payouts} />
           <Route path="/admin/tax-payer-information" component={TaxPayerInfo} />
           <Route path="/admin/account-settings" component={AccountSettings} />
+          <Route path="/admin/metrics" component={Metrics} />
 
           {/* User Admin Routes */}
           <Route path="/dashboard/home" component={UserHome} />

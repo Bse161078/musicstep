@@ -1,7 +1,7 @@
 export const sidebarItems = [
   {
     name: "Metrics",
-    url: "#",
+    url: "/admin/metrics",
   },
   {
     name: "Basic info",

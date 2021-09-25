@@ -7,10 +7,11 @@ type ContentHeaderProps = {
   heading: string;
   description?: string;
   handleButtonClick?: () => void;
+  actionButtons?: React.ReactNode;
 };
 
 const ContentHeader = (props: ContentHeaderProps) => {
-  const { heading, description, handleButtonClick } = props;
+  const { heading, description, handleButtonClick, actionButtons } = props;
 
   return (
     <ContentHeaderStyle>
@@ -29,6 +30,8 @@ const ContentHeader = (props: ContentHeaderProps) => {
             Add Organization Profile
           </OutlineButtonStyle>
         )}
+
+        {actionButtons && actionButtons}
       </div>
     </ContentHeaderStyle>
   );

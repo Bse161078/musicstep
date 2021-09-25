@@ -1,11 +1,12 @@
 import React from "react";
 
-import 'flickity/dist/flickity.min.css';
+import "flickity/dist/flickity.min.css";
 import { CustomCarouselStyle } from "./CustomCarousel.style";
 
 const CustomCarousel = () => {
   const flickityOptions = {
     initialIndex: 2,
+    pageDots: false,
   };
 
   return (
