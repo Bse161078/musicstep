@@ -9,8 +9,22 @@ export const VenueDetailsStyle = styled.div`
   align-items: flex-start;
   margin-top: 106px;
 
+  @media ( max-width: 1600px ) {
+    grid-template-columns: 1.5fr 1fr;
+  }
+
+  @media ( max-width: 768px ) {
+    grid-template-columns: 1fr;
+    grid-gap: 50px;
+  }
+
   .left-side {
     padding: 0 60px;
+    padding-left: 120px;
+
+    @media ( max-width: 768px ) {
+      padding-left: 30px;
+    }
   }
 
   .buttons-wrapper {

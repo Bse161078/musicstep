@@ -1,23 +1,35 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { OutlineButtonStyle } from "../../styles/Common.style";
 
 import { PriceCardStyle } from "./PriceCard.style";
 
-const PriceCard = () => {
+type PriceCardProps = {
+  price: string;
+  musicType: string;
+  credits: string;
+  eventsCount: string;
+};
+
+const PriceCard = (props: PriceCardProps) => {
+  const { price, musicType, credits, eventsCount } = props;
+
   return (
     <PriceCardStyle>
-      <h1 className="price">$15</h1>
+      <h1 className="price">{price}</h1>
 
       <h3 className="music-type">
-        Music <span>Dip</span>
+        Music <span>{musicType}</span>
       </h3>
 
-      <p className="credits">Credits: 6</p>
+      <p className="credits">Credits: {credits}</p>
 
-      <p className="events-info">Events per month: 1</p>
+      <p className="events-info">Events per month: {eventsCount}</p>
       <p className="additional-info">(Approximately)</p>
 
-      <OutlineButtonStyle buttonType="dark">That's Me</OutlineButtonStyle>
+      <Link to="/pricing/process-payment">
+        <OutlineButtonStyle buttonType="dark">That's Me</OutlineButtonStyle>
+      </Link>
     </PriceCardStyle>
   );
 };

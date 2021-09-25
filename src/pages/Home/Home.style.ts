@@ -25,7 +25,7 @@ export const HomeStyle = styled.main`
     grid-gap: 30px;
     margin-top: 60px;
 
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
       grid-template-columns: 1fr;
     }
   }

@@ -1,5 +1,4 @@
 import React from "react";
-import { LocationIcon, ShareIcon } from "../../assets";
 
 import {
   HeadingWithButton,

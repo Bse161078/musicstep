@@ -5,10 +5,15 @@ export const BillingInformationStyle = styled.div`
   padding: 30px;
   border-radius: 32px;
   background-color: #fff;
+
   .heading {
     font-size: 48px;
     color: #0c0c0c;
     margin-bottom: 40px;
+
+    @media (max-width: 1280px) {
+      font-size: 28px;
+    }
   }
 
   .icon-with-description {
@@ -16,10 +21,24 @@ export const BillingInformationStyle = styled.div`
     align-items: center;
     margin-bottom: 20px;
 
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: flex-start;
+      grid-gap: 30px;
+    }
+
     .description {
       margin-left: 30px;
       font-size: 20px;
       color: #0c0c0c;
+
+      @media (max-width: 1280px) {
+        font-size: 18px;
+      }
+
+      @media (max-width: 767px) {
+        margin-left: 0;
+      }
     }
   }
 

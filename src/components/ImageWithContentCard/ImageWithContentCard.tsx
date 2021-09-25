@@ -15,7 +15,7 @@ const ImageWithContentCard = (props: ImageWithContentCardProps) => {
 
   return (
     <ImageWithContentCardStyle type={type}>
-      <span className="icon-wrapper"><img src={icon} /></span>
+      <span className="icon-wrapper"><img src={icon} alt="icon" /></span>
 
       <div className="visual-wrapper">
         <img src={image} className="image" alt="card visual" />
