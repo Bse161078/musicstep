@@ -1,11 +1,8 @@
 import styled from "styled-components";
-import { ContainerStyle } from "../../styles/Common.style";
 
 export const ExploreVenueStyle = styled.main`
-  ${ContainerStyle};
-
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 2fr 1fr;
   grid-gap: 30px;
   padding: 60px;
 
@@ -34,3 +31,11 @@ export const ExploreVenueStyle = styled.main`
     top: 80px;
   }
 `;
+
+export const DropdownsListStyle = styled.div`
+  .drodown-form-wrapper {
+    display: flex;
+    grid-gap: 30px;
+    flex-wrap: wrap;
+  }
+`

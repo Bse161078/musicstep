@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   FilledButtonStyle,
   OutlineButtonStyle,
@@ -18,15 +19,19 @@ const SectionWithButtons = () => {
           </p>
 
           <article>
-            <FilledButtonStyle width="380px" height="60px">
-              Sign Up Now
-            </FilledButtonStyle>
+            <Link to="/free-trial">
+              <FilledButtonStyle width="380px" height="60px">
+                Sign Up Now
+              </FilledButtonStyle>
+            </Link>
           </article>
 
           <article>
-            <OutlineButtonStyle buttonType="dark" width="380px" height="60px">
-              View Packages
-            </OutlineButtonStyle>
+            <Link to="/pricing">
+              <OutlineButtonStyle buttonType="dark" width="380px" height="60px">
+                View Packages
+              </OutlineButtonStyle>
+            </Link>
           </article>
         </article>
 
