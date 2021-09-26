@@ -8,6 +8,7 @@ import {
 } from "../../styles/Common.style";
 import { loginInitialValues } from "./intialValues";
 import { InputBox, InputCheckbox } from "..";
+import { Link } from "react-router-dom";
 
 type LoginFormProps = {
   setCurrentSection: (data: string) => void;
@@ -39,7 +40,12 @@ const LoginForm = (props: LoginFormProps) => {
                 isCorrectOption={false}
               />
 
-              <span className="forgot-password" onClick={() => setCurrentSection("forgot-password")}>Forgot Password?</span>
+              <span
+                className="forgot-password"
+                onClick={() => setCurrentSection("forgot-password")}
+              >
+                Forgot Password?
+              </span>
             </div>
 
             <FilledButtonStyle width="100%" height="60px">
@@ -50,11 +56,16 @@ const LoginForm = (props: LoginFormProps) => {
       </Formik>
 
       <p className="not-a-member">Not a member yet?</p>
-      <OutlineButtonStyle width="100%" height="60px">
-        Try For Free
-      </OutlineButtonStyle>
 
-      <a href="/" className="partner-login">Partner Dashboard Login</a>
+      <Link to="/free-trial">
+        <OutlineButtonStyle width="100%" height="60px">
+          Try For Free
+        </OutlineButtonStyle>
+      </Link>
+
+      <a href="/partner-login" className="partner-login">
+        Partner Dashboard Login
+      </a>
     </LoginFormStyle>
   );
 };

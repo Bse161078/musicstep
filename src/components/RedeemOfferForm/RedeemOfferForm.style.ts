@@ -58,11 +58,16 @@ export const RedeemOfferFormStyle = styled.article`
   }
 
   .input-wrapper {
-      display: flex;
-      grid-template-columns: 120px 1fr;
+    display: flex;
+    grid-template-columns: 120px 1fr;
+    grid-gap: 20px;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
   }
 
   ${FilledButtonStyle} {
-      background: #1981FC;
+    background: #1981fc;
   }
 `;

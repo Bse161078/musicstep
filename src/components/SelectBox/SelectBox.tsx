@@ -1,33 +1,75 @@
-import React from 'react'
-import { useField } from 'formik'
+import React from "react";
+import { Select } from "antd";
+import { useField } from "formik";
 
-import { SelectStyle } from './SelectBox.style'
+import { SelectBoxStyle, SelectInputStyle } from "./SelectBox.style";
+import { ArrowDownIcon } from "../../assets";
 
-const SelectBox = (props: any) => {
-    const [field, meta] = useField(props)
-    const invalid = Boolean(!field.value && meta.touched)
+const { Option } = Select;
 
-    return (
-        <>
-        <label className="input-label">{props.label}</label>
-        <SelectStyle
-            name={field.name}
-            color="primary"
-            error={invalid}
-            helperText={invalid && meta.error}
-            value={field.value}
-            onBlur={field.onBlur}
-            onChange={field.onChange}
-            
-            inputProps={{
-                min: props.type === 'number' ? 0 : undefined
-            }}
-            {...props}
-        >
-            {props.children}
-        </SelectStyle>
-        </>
-    )
-}
+type options = {
+  key: string;
+  value: string;
+  disabled?: boolean;
+};
+
+type SelectBoxProps = {
+  name: string;
+  defaultValue?: string;
+  options: options[];
+  width?: string;
+  setFieldValue?: (field: string, value: any) => void;
+  initializeSettingsData?: any;
+  values?: any;
+  disabled?: boolean;
+  label?: any;
+};
+
+const SelectBox = (props: SelectBoxProps) => {
+  const [field] = useField(props);
+
+  const {
+    options,
+    width,
+    setFieldValue,
+    initializeSettingsData,
+    values,
+    defaultValue,
+    disabled = false,
+    label,
+  } = props;
+
+  const handleChange = (value: any) => {
+    setFieldValue && setFieldValue(field.name, value);
+    initializeSettingsData && initializeSettingsData(value, undefined, values);
+  };
+  return (
+    <SelectInputStyle>
+      {label && <label className="select-label">{label}</label>}
+
+      <SelectBoxStyle
+        suffixIcon={<ArrowDownIcon />}
+        name={field.name}
+        width={width}
+        defaultValue={field.value || defaultValue}
+        value={field.value || defaultValue}
+        onChange={handleChange}
+        disabled={disabled}
+      >
+        {options.map(
+          (option: { key: string; value: string; disabled?: boolean }) => (
+            <Option
+              key={option.key}
+              value={option.key}
+              disabled={option.disabled}
+            >
+              {option.value}
+            </Option>
+          )
+        )}
+      </SelectBoxStyle>
+    </SelectInputStyle>
+  );
+};
 
 export default SelectBox;

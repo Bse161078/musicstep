@@ -1,5 +1,8 @@
 import styled from "styled-components";
-import { FilledButtonStyle } from "../../styles/Common.style";
+import {
+  FilledButtonStyle,
+  OutlineButtonStyle,
+} from "../../styles/Common.style";
 
 export const RedeemOfferStep2FormStyle = styled.article`
   .steps-count {
@@ -60,9 +63,37 @@ export const RedeemOfferStep2FormStyle = styled.article`
   .input-wrapper {
     display: flex;
     margin-bottom: 30px;
+    grid-gap: 20px;
+
+    input {
+      text-align: center;
+
+      @media ( max-width: 767px ) {
+        padding: 5px;
+      }
+    }
   }
 
   ${FilledButtonStyle} {
     background: #1981fc;
+  }
+
+  ${OutlineButtonStyle} {
+    border-color: #1981fc;
+    color: #1981fc;
+
+    &:hover {
+      background: #1981fc;
+      color: #fff;
+    }
+  }
+
+  .buttons-wrapper {
+    display: flex;
+    grid-gap: 20px;
+
+    @media ( max-width: 767px ) {
+      flex-direction: column;
+    }
   }
 `;

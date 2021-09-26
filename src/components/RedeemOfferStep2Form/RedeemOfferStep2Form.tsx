@@ -16,12 +16,12 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
   const { setCurrentForm } = props;
 
   const handleSetPasswordSubmit = () => {
-    setCurrentForm("set-password");
+    setCurrentForm("trial-billing-information");
   };
 
   const handleChangeButtonClick = () => {
-    setCurrentForm("redeem-offer")
-  }
+    setCurrentForm("redeem-offer");
+  };
   return (
     <TrialFormWrapper heading="Redeem Your Offer">
       <RedeemOfferStep2FormStyle>
@@ -57,8 +57,19 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
         </Formik>
 
         <p className="info-details">Didn't receive a code?</p>
-        <OutlineButtonStyle onClick={handleChangeButtonClick}>Change Number</OutlineButtonStyle>
-        <OutlineButtonStyle>Resend Code</OutlineButtonStyle>
+
+        <div className="buttons-wrapper">
+          <OutlineButtonStyle
+            width="250px"
+            height="60px"
+            onClick={handleChangeButtonClick}
+          >
+            Change Number
+          </OutlineButtonStyle>
+          <OutlineButtonStyle width="250px" height="60px">
+            Resend Code
+          </OutlineButtonStyle>
+        </div>
         <p className="info-details">
           We need to verify using your phone number because we only allow one
           account per person
