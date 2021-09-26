@@ -1,6 +1,12 @@
 import React from "react";
+import { NavbarWithSearch } from "../../../components";
 
-import { CardWithContent, SectionHeading, UpcomingEvents, UserSidebar } from "../../components";
+import {
+  CardWithContent,
+  SectionHeading,
+  UpcomingEvents,
+  UserSidebar,
+} from "../../components";
 import { EventReservationStyle, UserHomeStyle } from "./UserHome.style";
 
 const EventReservation = () => {
@@ -16,16 +22,19 @@ const EventReservation = () => {
 
 export default function UserHome() {
   return (
-    <UserHomeStyle>
-      <UserSidebar />
+    <>
+      <NavbarWithSearch />
+      <UserHomeStyle>
+        <UserSidebar />
 
-      <div>
-        <EventReservation />
-        <div className="divider" />
+        <div>
+          <EventReservation />
+          <div className="divider" />
 
-        <UpcomingEvents />
-        <UpcomingEvents />
-      </div>
-    </UserHomeStyle>
+          <UpcomingEvents />
+          <UpcomingEvents />
+        </div>
+      </UserHomeStyle>
+    </>
   );
 }

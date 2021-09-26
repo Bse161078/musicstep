@@ -1,9 +1,17 @@
 import styled from "styled-components";
 
 export const FooterStyle = styled.footer`
-  padding: 50px 15px;
+  padding: 50px 60px;
   background: #000;
   color: #fff;
+
+  @media (max-width: 1024px) {
+    padding: 30px;
+  }
+
+  @media (max-width: 767px) {
+    padding: 30px 20px;
+  }
 
   .footer-top {
     display: grid;

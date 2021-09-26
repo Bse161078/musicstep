@@ -7,9 +7,15 @@ export const SectionWithButtonsStyle = styled.section`
     display: grid;
     grid-template-columns: 1fr auto;
     grid-gap: 50px;
+    padding: 0 60px;
+
+    @media (max-width: 1024px) {
+      padding: 0 30px;
+    }
 
     @media (max-width: 767px) {
       grid-template-columns: 1fr;
+      padding: 0 20px;
     }
   }
 

@@ -8,14 +8,17 @@ export const HomeStyle = styled.main`
     display: flex;
     grid-gap: 90px;
     margin-top: 60px;
+    padding: 0 60px;
 
     @media (max-width: 1024px) and (min-width: 767px) {
       display: grid;
       grid-template-columns: 1fr 1fr;
+    padding: 0 30px;
     }
 
     @media (max-width: 767px) {
       flex-direction: column;
+    padding: 0 20px;
     }
   }
 

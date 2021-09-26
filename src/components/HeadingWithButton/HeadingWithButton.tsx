@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { OutlineButtonStyle } from "../../styles/Common.style";
 
 import { HeadingWithButtonStyle } from "./HeadingWithButton.style";
@@ -11,9 +12,11 @@ const HeadingWithButton = () => {
         Tap into the dance nation participating across the United States.
       </p>
 
-      <OutlineButtonStyle width="380px" height="60px">
-        Explore Music Events Near Me
-      </OutlineButtonStyle>
+      <Link to="/explore-venue">
+        <OutlineButtonStyle width="380px" height="60px">
+          Explore Music Events Near Me
+        </OutlineButtonStyle>
+      </Link>
     </HeadingWithButtonStyle>
   );
 };

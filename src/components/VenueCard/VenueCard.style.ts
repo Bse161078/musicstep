@@ -4,9 +4,9 @@ import styled from "styled-components";
 export const VenueCardStyle = styled.div`
   display: grid;
   grid-template-columns: auto 1fr 460px;
-  grid-column-gap: 30px;
+  grid-gap: 30px;
 
-  @media ( max-width: 1280px ) {
+  @media ( max-width: 1440px ) {
     grid-template-columns: 1fr;
   }
 
