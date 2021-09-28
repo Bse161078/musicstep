@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { PayoutDetailsStyle } from "./PayoutDetails.style";
 import { ModalWrapper } from "../ModalWrapper";
 import { FilledButtonStyle } from "../../../../styles/Common.style";

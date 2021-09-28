@@ -1,4 +1,4 @@
-import react, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { ReservationConfirmedModal } from "..";
 import { ModalWrapper } from "../ModalWrapper";
 import { CheckingAvailablityModalStyle } from "./CheckingAvailablityModal.style";
@@ -14,12 +14,13 @@ const CheckingAvailablityModal = (props: CheckingAvailablityModalProps) => {
     isReservationConfirmedModalVisible,
     setIsReservationConfirmedModalVisible,
   ] = useState(false);
+
   useEffect(() => {
     setTimeout(() => {
       setIsReservationConfirmedModalVisible(true);
       setIsModalVisible(false);
     }, 2000);
-  }, []);
+  }, [setIsReservationConfirmedModalVisible, setIsModalVisible]);
   return (
     <>
       <ModalWrapper
@@ -30,7 +31,7 @@ const CheckingAvailablityModal = (props: CheckingAvailablityModalProps) => {
       >
         <CheckingAvailablityModalStyle>
           <h1>Checking Availability, Please Wait...</h1>
-          <img src="/images/loading.svg" />
+          <img alt="loading" src="/images/loading.svg" />
         </CheckingAvailablityModalStyle>
       </ModalWrapper>
       <ReservationConfirmedModal

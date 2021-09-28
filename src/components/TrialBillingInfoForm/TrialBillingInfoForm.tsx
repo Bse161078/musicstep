@@ -1,11 +1,17 @@
 import { Form, Formik } from "formik";
-import React from "react";
-import { InputBox } from "..";
+import React, { useState } from "react";
+import { CongratulationsModal, InputBox } from "..";
 import { FilledButtonStyle } from "../../styles/Common.style";
 
 import { TrialBillingInfoFormStyle } from "./TrialBillingInfoForm.style";
 
 const TrialBillingInfoForm = () => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const handleFormSubmit = () => {
+    setIsModalVisible(true);
+  };
+
   return (
     <TrialBillingInfoFormStyle>
       <h3 className="form-heading">Save Your Billing Information</h3>
@@ -13,7 +19,7 @@ const TrialBillingInfoForm = () => {
 
       <Formik
         initialValues={{ nameOnCard: "", cardNumber: "", date: "", cvc: "" }}
-        onSubmit={() => {}}
+        onSubmit={handleFormSubmit}
       >
         {() => (
           <Form className="form-wrapper">
@@ -45,6 +51,11 @@ const TrialBillingInfoForm = () => {
           </Form>
         )}
       </Formik>
+
+      <CongratulationsModal
+        isModalVisible={isModalVisible}
+        setIsModalVisible={setIsModalVisible}
+      />
     </TrialBillingInfoFormStyle>
   );
 };

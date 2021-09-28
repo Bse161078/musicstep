@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import { MessageModal } from "../../../components";
+import React from "react";
+
 import { FilledButtonStyle } from "../../../styles/Common.style";
 
 import { PastPaymentDetailsStyle } from "./PastPaymentDetails.style";

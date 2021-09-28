@@ -1,6 +1,6 @@
 import React from "react";
-import { InputBox, SelectBox } from "../../../../components";
-import { Field, Form, Formik } from "formik";
+import { InputBox } from "../../../../components";
+import { Form, Formik } from "formik";
 import { ModalWrapper } from "../ModalWrapper";
 import { AddRoleStyle } from "./AddRole.style";
 type AddRoleModalProps = {

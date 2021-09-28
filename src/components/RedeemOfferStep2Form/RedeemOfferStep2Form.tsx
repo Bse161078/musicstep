@@ -1,7 +1,7 @@
 import { Form, Formik } from "formik";
-import React from "react";
+import React, { useState } from "react";
 
-import { InputBox, TrialFormWrapper } from "..";
+import { InputBox, MessageModal, TrialFormWrapper } from "..";
 import {
   FilledButtonStyle,
   OutlineButtonStyle,
@@ -15,8 +15,11 @@ type TrailSetPasswordProps = {
 const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
   const { setCurrentForm } = props;
 
+  const [isCodeSend, setCodeSend] = useState(false);
+  const [isContinueModal, setContinueModal] = useState(false);
+
   const handleSetPasswordSubmit = () => {
-    setCurrentForm("trial-billing-information");
+    setContinueModal(true);
   };
 
   const handleChangeButtonClick = () => {
@@ -66,7 +69,13 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
           >
             Change Number
           </OutlineButtonStyle>
-          <OutlineButtonStyle width="250px" height="60px">
+          <OutlineButtonStyle
+            width="250px"
+            height="60px"
+            onClick={() => {
+              setCodeSend(true);
+            }}
+          >
             Resend Code
           </OutlineButtonStyle>
         </div>
@@ -78,6 +87,24 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
           <span>Questions or Need Help?</span>
         </p>
       </RedeemOfferStep2FormStyle>
+
+      <MessageModal
+        type="light"
+        isModalVisible={isCodeSend}
+        setIsModalVisible={setCodeSend}
+        message="4-digit code has been successfully sent to your phone number again."
+      />
+
+      <MessageModal
+        type="light"
+        isModalVisible={isContinueModal}
+        setIsModalVisible={setContinueModal}
+        message="You have been verified successfully."
+        handleOkClick={() => {
+          setCurrentForm("trial-billing-information");
+        }}
+        buttonText="Continue"
+      />
     </TrialFormWrapper>
   );
 };

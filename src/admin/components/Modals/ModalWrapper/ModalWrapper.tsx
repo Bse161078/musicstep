@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ModalWrapperStyle } from "./ModalWrapper.style";
 
 import {
@@ -35,9 +35,9 @@ const ModalWrapper = (props: ModalWrapperProps) => {
 
 
 
-  const showModal = () => {
-    setIsModalVisible(true);
-  };
+  // const showModal = () => {
+  //   setIsModalVisible(true);
+  // };
 
   const handleOk = () => {
     setIsModalVisible(false);

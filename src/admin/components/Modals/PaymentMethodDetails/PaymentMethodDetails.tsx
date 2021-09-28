@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 import { ModalWrapper } from "../ModalWrapper";
-import { PaymentMethodDetailsStyle } from "./PaymentMethodDetails.style";
 import { FilledButtonStyle } from "../../../../styles/Common.style";
 import { TabsStyle } from "../../../../styles/Fields.style";
 import { TabPaneStyle } from "../../../../styles/Fields.style";

@@ -1,16 +1,19 @@
-import React, { useState } from "react";
-import { SubscriptionDetailsModalStyle } from "./SubscriptionDetailsModal.style";
+import React from "react";
 import { ModalWrapper } from "../ModalWrapper";
 import {
   FilledButtonStyle,
   OutlineButtonStyle,
 } from "../../../../styles/Common.style";
+import { SubscriptionDetailsModalStyle } from "./SubscriptionDetailsModal.style";
+
 type SubscriptionDetailsModalProps = {
   isModalVisible?: boolean;
   setIsModalVisible?: any;
 };
+
 const SubscriptionDetailsModal = (props: SubscriptionDetailsModalProps) => {
   const { isModalVisible, setIsModalVisible } = props;
+
   return (
     <ModalWrapper
       heading="Subscription Details"
@@ -26,10 +29,11 @@ const SubscriptionDetailsModal = (props: SubscriptionDetailsModalProps) => {
       <SubscriptionDetailsModalStyle>
         <div className="detail-wrapper">
           <span className="title-wrapper">
-            <h1>MUSIC</h1>
-            <h1 className="eth-title">ENTHUSIAST</h1>
+            <h1 className="heading">
+              MUSIC <span>ENTHUSIAST</span>
+            </h1>
           </span>
-          <p>Credits: 48</p>
+          <p className="credits">Credits: 48</p>
           <div className="event-per-months-wraper">
             <p>Events Per Month: 3-4</p>
             <p>(Approximately)</p>

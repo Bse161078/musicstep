@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import React, { useState } from "react";
 import { ChangePasswordPromptStyle } from "./ChangePasswordPrompt.style";
 import { ModalWrapper } from "../ModalWrapper";
 import { MessageModal } from "../../../../components";

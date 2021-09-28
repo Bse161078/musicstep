@@ -5,6 +5,10 @@ export const SideBarStyle = styled.aside`
   border-radius: 32px;
   padding: 60px 15px;
 
+  @media ( max-width: 767px ) {
+    padding: 20px 15px;
+  }
+
   .sidebar-items {
     li {
       padding: 15px 30px;

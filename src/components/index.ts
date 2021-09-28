@@ -1,4 +1,5 @@
 export * from "./BillingInformation"
+export * from "./CongratulationsModals"
 export * from "./CustomCarousel"
 export * from "./Footer"
 export * from "./ForgotPasswordForm"

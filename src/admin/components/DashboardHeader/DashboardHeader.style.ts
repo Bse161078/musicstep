@@ -14,7 +14,11 @@ export const DashboardHeaderStyle = styled.header`
   }
 
   .heading {
-    font-size: 48px
+    font-size: 48px;
+
+    @media ( max-width: 767px ) {
+      font-size: 38px;
+    }
   }
 
   .description {

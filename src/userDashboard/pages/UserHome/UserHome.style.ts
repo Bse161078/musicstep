@@ -5,6 +5,13 @@ export const UserHomeStyle = styled.main`
   display: grid;
   grid-template-columns: 360px 1fr;
   grid-gap: 60px;
+  padding: 0 60px 60px;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    padding: 0 20px 20px;
+    margin-top: 30px;
+  }
 
   .divider {
     height: 1px;
@@ -19,4 +26,8 @@ export const UserHomeStyle = styled.main`
 export const EventReservationStyle = styled.div`
   display: flex;
   grid-gap: 20px;
+
+  @media (max-width: 1440px) {
+    flex-direction: column;
+  }
 `;

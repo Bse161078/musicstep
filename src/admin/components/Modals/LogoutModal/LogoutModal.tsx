@@ -1,7 +1,8 @@
-import react from "react";
+import React from "react";
 
 import { ModalWrapper } from "../ModalWrapper";
 import { LogoutStyle } from "./LogoutModal.style";
+
 type LogoutModalProps = {
   isModalVisible?: boolean;
   setIsModalVisible?: any;

@@ -1,10 +1,13 @@
-import react from "react";
+import React from "react";
+
 import { ModalWrapper } from "../ModalWrapper";
 import { CreditHistoryModalStyle } from "./CreditHistoryModal.style";
+
 type CreditHistoryModalProps = {
   isModalVisible?: boolean;
   setIsModalVisible?: any;
 };
+
 const CreditHistoryModal = (props: CreditHistoryModalProps) => {
   const { isModalVisible, setIsModalVisible } = props;
 

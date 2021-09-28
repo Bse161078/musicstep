@@ -38,11 +38,15 @@ const EditUserModal = (props: EditUserModalProps) => {
                 />
               </div>
               <div>
-                <SelectBox label="User Role" name="userRole" as="select">
-                  {roleItems.map((item, index) => {
-                    <option>{item.name}</option>;
-                  })}
-                </SelectBox>
+                <SelectBox
+                  label="User Role"
+                  name="userRole"
+                  options={[
+                    ...roleItems.map((item) => {
+                      return { key: item.name, value: item.name };
+                    }),
+                  ]}
+                />
               </div>
               <div style={{ display: "flex" }}>
                 <Field type="checkbox" name="eventaccess" />

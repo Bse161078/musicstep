@@ -8,10 +8,19 @@ export const CardWithContentStyle = styled.div`
   border-radius: 32px;
   padding: 20px;
 
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+
   .row-wrapper {
     display: flex;
     justify-content: space-between;
     grid-gap: 20px;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
   }
 
   .heading {

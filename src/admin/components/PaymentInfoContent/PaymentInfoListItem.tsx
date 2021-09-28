@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PaymentMethod, PaymentMethodDetails } from "..";
+import { PaymentMethodDetails } from "..";
 import { CalenderIcon, DeleteIcon } from "../../../assets";
 
 
@@ -12,6 +12,8 @@ type PaymentInfoListItemProps = {
 export const PaymentInfoListItem = (props: PaymentInfoListItemProps) => {
   const { setCurrentPage } = props;
   const [isModalVisible, setIsModalVisible] = useState(false)
+
+  console.log(setCurrentPage)
   return (
     <PaymentInfoListItemStyle>
       <div className="content-wrapper">

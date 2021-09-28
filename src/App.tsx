@@ -49,6 +49,8 @@ const RoutesList = (props: any) => {
       default:
         setShowNavbar(true);
     }
+
+    window.scrollTo(0, 0);
   }, [pathname]);
 
   const isAdminSide = pathname.includes("/admin");

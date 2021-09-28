@@ -1,7 +1,7 @@
-import { Formik, Form } from "formik";
 import React from "react";
-import { InputBox } from "../../../../components/InputBox";
+import { Formik, Form } from "formik";
 
+import { InputBox } from "../../../../components/InputBox";
 import {
   FilledButtonStyle,
   OutlineButtonStyle,
@@ -26,11 +26,11 @@ const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
       button={<FilledButtonStyle height="54px"  width="557px">Okay</FilledButtonStyle>}
     >
       <ReservationConfirmedModalStyle>
-        <img className="qrcode-img" src="/images/qrcodee.png" />
+        <img alt="code" className="qrcode-img" src="/images/qrcodee.png" />
 
         <div className="time-wrapper">
           <h1>You're booked for 8-March-2021 at 7:00 PM</h1>
-          <img src="/images/ad.svg" />
+          <img alt="ad" src="/images/ad.svg" />
         </div>
         <FilledButtonStyle width="557px" height="54px" >
           Download & Save QR Code

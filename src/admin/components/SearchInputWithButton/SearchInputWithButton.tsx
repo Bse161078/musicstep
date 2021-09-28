@@ -1,5 +1,6 @@
+import React from "react";
 import { Form, Formik } from "formik";
-import React, { useState } from "react";
+
 import { SearchIcon } from "../../../assets";
 import { InputBox } from "../../../components";
 import { FilledButtonStyle } from "../../../styles/Common.style";

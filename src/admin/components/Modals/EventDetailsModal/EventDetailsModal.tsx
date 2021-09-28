@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import React, { useState } from "react";
 import { CheckingAvailablityModal } from "..";
 import { FilledButtonStyle } from "../../../../styles/Common.style";
 import { ModalWrapper } from "../ModalWrapper";
@@ -29,7 +29,7 @@ const EventDetailsModal = (props: EventDetailsModalProps) => {
       >
         <EventDetailsModalStyle>
           <div className="image-wrapper">
-            <img src="/images/NoPath - Copy (5).png" />
+            <img alt="thumb" src="/images/NoPath - Copy (5).png" />
           </div>
           <div className="text-wrapper">
             <div>
