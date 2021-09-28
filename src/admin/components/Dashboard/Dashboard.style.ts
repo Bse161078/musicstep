@@ -8,5 +8,10 @@ export const DashboardStyle = styled.div`
        max-width: 1920px;
        margin: auto;
        padding: 0 60px;
+
+       @media ( max-width: 767px ) {
+           grid-template-columns: 1fr;
+           padding: 20px;
+       }
    }
 `;

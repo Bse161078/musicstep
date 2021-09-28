@@ -5,6 +5,7 @@ export const TileStyle = styled.div`
     border-radius: 16px;
     background: ${rgba("#100840", 0.1)};
     padding: 20px;
+    width: 100%;
 
     .heading {
         color: #0C0C0C;

@@ -1,6 +1,11 @@
 import styled from "styled-components";
+import { OrganizationDetailsFormStyle } from "../OrganizationDetailsForm/OrganizationDetailsForm.style";
 
 export const OrganizationProfileFormStyle = styled.main`
+  ${OrganizationDetailsFormStyle} {
+    border-bottom: 0;
+  }
+
   .bio-wrapper {
     display: grid;
     grid-gap: 30px;
