@@ -1,29 +1,36 @@
-import { Form, Formik } from "formik";
 import React from "react";
+import { Form, Formik } from "formik";
+
 import { InputBox, TrialFormWrapper } from "..";
 import { UpcomingEventsIcon } from "../../assets";
 import { FilledButtonStyle } from "../../styles/Common.style";
 import { IconWithTextStyle, TrialFormStyle } from "./TrialForm.style";
 
-const IconWithText = () => {
+type IconWithTextProps = {
+  heading: string;
+  icon: React.ReactNode;
+};
+
+const IconWithText = (props: IconWithTextProps) => {
+  const { heading, icon } = props;
+
   return (
     <IconWithTextStyle>
-      <UpcomingEventsIcon />
-
-      <figcaption>Get XX credits to book upcoming events.</figcaption>
+      {icon}
+      <figcaption>{heading}</figcaption>
     </IconWithTextStyle>
   );
 };
 
 type TrialFormProps = {
-  setCurrentForm: any
-}
+  setCurrentForm: any;
+};
 
 const TrialForm = (props: TrialFormProps) => {
   const { setCurrentForm } = props;
 
   const handleFreeTrialEmailSubmit = () => {
-    setCurrentForm("general-info")
+    setCurrentForm("general-info");
   };
   return (
     <TrialFormWrapper heading="Your Trial Includes">
@@ -31,9 +38,20 @@ const TrialForm = (props: TrialFormProps) => {
         <h1 className="trial-price">$O</h1>
         <h4 className="price-description">For 7 Days</h4>
 
-        <IconWithText />
-        <IconWithText />
-        <IconWithText />
+        <IconWithText
+          heading="Get XX credits to book upcoming events."
+          icon={<UpcomingEventsIcon />}
+        />
+
+        <IconWithText
+          heading="We'll remind you two days before your trial ends."
+          icon={<img alt="icon" src="/images/icons/reminder-icon.svg" />}
+        />
+
+        <IconWithText
+          heading="Get XX credits to book upcoming events."
+          icon={<img alt="icon" src="/images/icons/cancel-lock-icon.svg" />}
+        />
 
         <Formik
           enableReinitialize={true}
@@ -45,7 +63,7 @@ const TrialForm = (props: TrialFormProps) => {
               <InputBox label="Email Address" name="email" />
 
               <FilledButtonStyle width="100%" height="60px">
-                  Try For Free
+                Try For Free
               </FilledButtonStyle>
             </Form>
           )}

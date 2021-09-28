@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ModalWrapperStyle } from "./ModalWrapper.style";
 
 import {
@@ -8,18 +8,36 @@ import {
 
 type ModalWrapperProps = {
   children: any;
-  heading: string;
-  leftButtonTitle: string;
-  rightButtonTitle: string;
+  heading?: string;
+  leftButtonTitle?: string;
+  rightButtonTitle?: string;
+  button?: React.ReactNode;
+  width?:string
+  isModalVisible?: boolean
+  setIsModalVisible?: any
+  height?:string
+  handleOkClick?:any
+  isFooter?:boolean
 };
 const ModalWrapper = (props: ModalWrapperProps) => {
-  const { children, heading, leftButtonTitle, rightButtonTitle } = props;
+  const {
+    children,
+    heading,
+    leftButtonTitle,
+    rightButtonTitle,
+    button,
+    width,
+    isModalVisible,
+    setIsModalVisible,
+    handleOkClick,
+    isFooter = true
+  } = props;
 
-  const [isModalVisible, setIsModalVisible] = useState(false);
 
-  const showModal = () => {
-    setIsModalVisible(true);
-  };
+
+  // const showModal = () => {
+  //   setIsModalVisible(true);
+  // };
 
   const handleOk = () => {
     setIsModalVisible(false);
@@ -30,22 +48,39 @@ const ModalWrapper = (props: ModalWrapperProps) => {
   };
   return (
     <>
-      <OutlineButtonStyle onClick={showModal}>Invite</OutlineButtonStyle>
+
       <ModalWrapperStyle
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
         className="target"
         title={heading}
-        width="660px"
-        footer={[
-          <OutlineButtonStyle width="290px" height="60px" onClick={handleOk}>
-            {leftButtonTitle}
-          </OutlineButtonStyle>,
-          <FilledButtonStyle width="290px" height="60px" onClick={handleOk}>
-            {rightButtonTitle}
-          </FilledButtonStyle>,
-        ]}
+        width={width ? width : '660px'}
+     
+
+        footer={
+          isFooter ? 
+          button
+            ? button
+            : [
+                <OutlineButtonStyle
+                  width="290px"
+                  height="60px"
+                  onClick={handleOk}
+                >
+                  {leftButtonTitle}
+                </OutlineButtonStyle>,
+                <FilledButtonStyle
+                  width="290px"
+                  height="60px"
+                  onClick={handleOkClick? handleOkClick :  handleOk }
+                >
+                  {rightButtonTitle}
+                </FilledButtonStyle>,
+              ] 
+              : null
+            
+        }
       >
         {children}
       </ModalWrapperStyle>

@@ -16,7 +16,7 @@ const getInputWidth = (width: string) => {
     case "medium":
       return "width: 266px";
     case "fill":
-      return null;
+      return "width: 100%";
     default:
       return "width: 266px";
   }

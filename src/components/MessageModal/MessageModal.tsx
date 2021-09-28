@@ -7,10 +7,20 @@ type MessageModalProps = {
   isModalVisible: boolean;
   setIsModalVisible: (data: boolean) => void;
   message?: string;
+  type?: "light" | "dark";
+  handleOkClick?: any;
+  buttonText?: string;
 };
 
 const MessageModal = (props: MessageModalProps) => {
-  const { isModalVisible, setIsModalVisible, message } = props;
+  const {
+    isModalVisible,
+    handleOkClick,
+    setIsModalVisible,
+    message,
+    type = "dark",
+    buttonText="Okay"
+  } = props;
 
   const handleOk = () => {
     setIsModalVisible(false);
@@ -21,14 +31,19 @@ const MessageModal = (props: MessageModalProps) => {
   };
   return (
     <MessageModalStyle
+      type={type}
       title="Success"
       visible={isModalVisible}
       onOk={handleOk}
       onCancel={handleCancel}
       footer={[
-        <FilledButtonStyle width="100%" height="60px" onClick={handleOk}>
-          Okay
-        </FilledButtonStyle>
+        <FilledButtonStyle
+          width="100%"
+          height="60px"
+          onClick={handleOkClick || handleOk}
+        >
+          {buttonText}
+        </FilledButtonStyle>,
       ]}
     >
       <SuccessIcon />

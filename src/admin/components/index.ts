@@ -30,3 +30,4 @@ export * from "./TeamRolesList"
 export * from "./TeamUsersList"
 export * from "./UpcomingPayoutsList"
 export * from "./UploadFile"
+export * from '../components/Modals/index'

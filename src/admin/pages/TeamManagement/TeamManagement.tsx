@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { TabPaneStyle, TabsStyle } from "../../../styles/Fields.style";
+import { InviteModal, AddRole } from "../../components";
 
 import {
   Dashboard,
@@ -8,9 +9,13 @@ import {
   TeamRolesList,
   TeamUsersList,
 } from "../../components";
+
 import { TeamManagementStyle } from "./TeamManagement.style";
 
 export default function TeamManagement() {
+  const [isUserVisible, setUserVisible] = useState(false);
+  const [isRoleVisible, setRoleVisible] = useState(false);
+
   return (
     <Dashboard>
       <TeamManagementStyle>
@@ -18,20 +23,31 @@ export default function TeamManagement() {
           heading="Team Management"
           description="Easily manage your team by inviting team members into default or customized roles."
         />
-
         <TabsStyle defaultActiveKey="1">
           <TabPaneStyle tab="Users" key="1">
-            <SearchInputWithButton />
+            <SearchInputWithButton
+              handleButtonClick={() => {setUserVisible(true)}}
+              buttonTitle="Invite" 
+            />
             <TeamUsersList />
           </TabPaneStyle>
 
           <TabPaneStyle tab="Roles" key="2">
-            <SearchInputWithButton />
+            <SearchInputWithButton
+              handleButtonClick={() => setRoleVisible(true)}
+              buttonTitle="Add Role" 
+            />
 
             <TeamRolesList />
           </TabPaneStyle>
         </TabsStyle>
       </TeamManagementStyle>
+
+      <InviteModal
+        isModalVisible={isUserVisible}
+        setIsModalVisible={setUserVisible}
+      />
+      <AddRole isModalVisible={isRoleVisible} setIsModalVisible={setRoleVisible} />
     </Dashboard>
   );
 }

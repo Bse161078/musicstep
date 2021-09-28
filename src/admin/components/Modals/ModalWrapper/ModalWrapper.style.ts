@@ -1,7 +1,9 @@
 import { Modal } from "antd";
 import styled from "styled-components";
 import { FilledButtonStyle } from "../../../../styles/Common.style";
-
+// type ModalWrapperStyleProps = {
+//   isCustomFooter?: boolean
+// }
 export const ModalWrapperStyle = styled(Modal)`
  
   .ant-modal-content {
@@ -35,8 +37,9 @@ export const ModalWrapperStyle = styled(Modal)`
     }
 
     .ant-modal-footer {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
+      justify-content: center;
+      gap: 20px;
       border-top: 0;
     }
     label {

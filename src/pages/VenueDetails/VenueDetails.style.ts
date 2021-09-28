@@ -22,7 +22,8 @@ export const VenueDetailsStyle = styled.div`
     padding-left: 120px;
 
     @media ( max-width: 768px ) {
-      padding-left: 30px;
+      padding-left: 20px;
+      padding-right: 20px;
     }
   }
 
@@ -75,6 +76,10 @@ export const VenueDetailsStyle = styled.div`
     border-left: 1px solid ${rgba("#0c0c0c", 0.3)};
     position: sticky;
     top: 106px;
+
+    @media ( max-width: 767px ) {
+      padding: 0 20px;
+    }
   }
 
   .map-wrapper {

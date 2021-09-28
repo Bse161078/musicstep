@@ -5,7 +5,6 @@ import { AdminNavBar } from "..";
 storiesOf("Admin Navbar", module).add("Normal", () => {
   return (
     <>
-      <button>asdas</button>
       <AdminNavBar />
     </>
   );

@@ -22,7 +22,7 @@ export const PaymentInfoContentStyle = styled.div`
 
 export const PaymentInfoListItemStyle = styled.div`
   ${TableRowStyle};
-
+   
   display: grid;
   grid-template-columns: 2.5fr 1fr 1fr 106px;
   align-items: center;
@@ -31,6 +31,9 @@ export const PaymentInfoListItemStyle = styled.div`
   .team-role {
     color: #0c0c0c;
     font-size: 20px;
+  }
+  .team-role:hover{
+    cursor: pointer;
   }
 `;
 

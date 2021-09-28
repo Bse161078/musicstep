@@ -16,7 +16,7 @@ export const PayoutsListStyle = styled.div`
 
 export const PayoutsListItemStyle = styled.div`
   ${TableRowStyle};
-
+  cursor: pointer;
   display: grid;
   grid-template-columns: 200px 1fr 75px;
   .payout-detail {

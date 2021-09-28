@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Formik } from "formik";
 
 import { UploadFile } from "..";
-import { InputBox } from "../../../components";
+import { InputBox, SelectBox } from "../../../components";
 import { OrganizationDetailsFormStyle } from "./OrganizationDetailsForm.style";
 
 const OrganizationDetailsForm = () => {
@@ -20,7 +20,12 @@ const OrganizationDetailsForm = () => {
           {() => (
             <Form className="organization-details-form">
               <InputBox label="Organization Name" name="organizationName" />
-              <InputBox label="Preffered Country" name="perefferedCountry" />
+              <SelectBox
+                width="fill"
+                options={[{ key: "", value: "" }]}
+                label="Preffered Country"
+                name="perefferedCountry"
+              />
             </Form>
           )}
         </Formik>

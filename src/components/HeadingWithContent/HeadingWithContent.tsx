@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { LeftChevronIcon } from "../../assets";
 
 import { HeadingWithContentStyle } from "./HeadingWithContent.style";
@@ -14,9 +15,11 @@ const HeadingWithContent = (props: HeadingWithContentProps) => {
 
   return (
     <HeadingWithContentStyle>
-      <div className="button-wrapper" onClick={handleButtonClick}>
-        <LeftChevronIcon /> Back To Previous Page
-      </div>
+      <Link to="/">
+        <div className="button-wrapper" onClick={handleButtonClick}>
+          <LeftChevronIcon /> Back To Previous Page
+        </div>
+      </Link>
 
       <h2 className="heading">{heading}</h2>
 

@@ -9,17 +9,21 @@ const BillingInformation = () => {
 
       <div className="icon-with-description">
         <MusicIcon />
-        <p className="description">68 Credits To Book As Many As 5-6 Reservations.</p>
+        <p className="description">
+          68 Credits To Book As Many As 5-6 Reservations.
+        </p>
+      </div>
+
+      <div className="icon-with-description">
+        <img alt="icon" src="/images/icons/reminder-icon.svg" />
+        <p className="description">
+          We'll remind you two days before your trial ends.
+        </p>
       </div>
 
       <div className="icon-with-description">
         <MusicIcon />
-        <p className="description">68 Credits To Book As Many As 5-6 Reservations.</p>
-      </div>
-
-      <div className="icon-with-description">
-        <MusicIcon />
-        <p className="description">68 Credits To Book As Many As 5-6 Reservations.</p>
+        <p className="description">You're never locked in. Cancel anytime.</p>
       </div>
 
       <div className="billing-footer">
