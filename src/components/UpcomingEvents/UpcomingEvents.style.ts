@@ -21,6 +21,7 @@ export const UpcomingEventsStyle = styled.div`
     grid-gap: 30px;
     padding: 15px 0;
     margin: 0 30px;
+    margin-right: 5px;
     border-bottom: solid 1px ${rgba("#0c0c0c", 0.3)};
 
     .time {
