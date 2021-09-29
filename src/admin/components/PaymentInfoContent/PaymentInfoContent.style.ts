@@ -2,6 +2,14 @@ import styled from "styled-components";
 import { TableHeaderStyle, TableRowStyle } from "../../../styles/Common.style";
 
 export const PaymentInfoContentStyle = styled.div`
+  .table-wrapper {
+    @media (max-width: 767px) {
+      overflow: auto;
+      width: 90vw;
+      display: grid;
+    }
+  }
+  
   .filter {
     font-size: 14px;
     font-weight: bold;
@@ -22,7 +30,7 @@ export const PaymentInfoContentStyle = styled.div`
 
 export const PaymentInfoListItemStyle = styled.div`
   ${TableRowStyle};
-   
+
   display: grid;
   grid-template-columns: 2.5fr 1fr 1fr 106px;
   align-items: center;
@@ -32,8 +40,7 @@ export const PaymentInfoListItemStyle = styled.div`
     color: #0c0c0c;
     font-size: 20px;
   }
-  .team-role:hover{
+  .team-role:hover {
     cursor: pointer;
   }
 `;
-

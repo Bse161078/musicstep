@@ -8,6 +8,12 @@ export const DashboardHeaderStyle = styled.header`
   border-bottom: 1px solid #c0c0c0;
   margin-bottom: 30px;
 
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: flex-start;
+    grid-gap: 20px;
+  }
+
   .heading-wrapper {
     font-size: 48px;
     color: #0c0c0c;
@@ -16,31 +22,35 @@ export const DashboardHeaderStyle = styled.header`
   .heading {
     font-size: 48px;
 
-    @media ( max-width: 767px ) {
+    @media (max-width: 767px) {
       font-size: 38px;
     }
   }
 
   .description {
-    color: #0C0C0C;
+    color: #0c0c0c;
     font-size: 14px;
     margin-top: 5px;
   }
 
   .back-button {
-      font-size: 16px;
-      display: flex;
-      align-items: center;
-      cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 
-      svg {
-          margin-right: 5px;
-      }
+    svg {
+      margin-right: 5px;
+    }
   }
 
   .header-buttons-wrapper {
     display: flex;
     justify-content: flex-end;
     grid-column-gap: 20px;
+
+    @media ( max-width: 767px ) {
+      width: 100%;
+    }
   }
 `;

@@ -23,5 +23,9 @@ export const OrganizationProfileFormStyle = styled.main`
     display: grid;
     grid-gap: 30px;
     grid-template-columns: 1fr 1fr;
+
+    @media ( max-width: 767px ) {
+      grid-template-columns: 1fr;
+    }
   }
 `;
