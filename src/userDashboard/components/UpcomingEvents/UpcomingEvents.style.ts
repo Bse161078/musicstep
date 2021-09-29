@@ -2,9 +2,14 @@ import { rgba } from "polished";
 import styled from "styled-components";
 
 export const UpcomingEventsStyle = styled.div`
+  @media (max-width: 950px) {
+    overflow: auto;
+    width: 54vw;
+    display: grid;
+  }
+
   @media (max-width: 767px) {
     width: 90vw;
-    overflow-x: auto;
   }
 `;
 

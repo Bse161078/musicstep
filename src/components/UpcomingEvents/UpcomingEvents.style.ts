@@ -13,6 +13,11 @@ export const UpcomingEventsStyle = styled.div`
     font-size: 16px;
     font-weight: bold;
     color: #0c0c0c;
+
+    @media (max-width: 767px) {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+    }
   }
 
   .row-wrapper {
@@ -23,6 +28,11 @@ export const UpcomingEventsStyle = styled.div`
     margin: 0 30px;
     margin-right: 5px;
     border-bottom: solid 1px ${rgba("#0c0c0c", 0.3)};
+
+    @media (max-width: 767px) {
+      display: grid;
+      grid-template-columns: 210px 1fr 1fr;
+    }
 
     .time {
       font-size: 20px;

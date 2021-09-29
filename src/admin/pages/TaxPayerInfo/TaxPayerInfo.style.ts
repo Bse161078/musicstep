@@ -6,7 +6,7 @@ export const TaxPayerInfoStyle = styled.main`
     justify-content: space-between;
     align-items: flex-end;
 
-    @media (max-width: 767px) {
+    @media (max-width: 1024px) {
         flex-direction: column;
         align-items: flex-start;
         margin-bottom: 20px;
@@ -20,7 +20,7 @@ export const TaxPayerInfoStyle = styled.main`
   }
 
   .ant-steps-item-content {
-    @media (max-width: 767px) {
+    @media (max-width: 1024px) {
       width: 100%;
 
       .ant-steps-item-title {

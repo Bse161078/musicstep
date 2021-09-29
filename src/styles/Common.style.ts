@@ -87,7 +87,7 @@ export const TableRowStyle = css`
     grid-template-columns: auto 1fr;
     grid-gap: 20px;
 
-    @media ( max-width: 767px ) {
+    @media ( max-width: 1024px ) {
       grid-template-columns: 1fr;
     }
   }

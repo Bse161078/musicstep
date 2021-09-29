@@ -10,7 +10,11 @@ export const TeamUsersListStyle = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 48px;
 
-    @media ( max-width: 767px ) {
+    @media (max-width: 1024px) {
+      grid-template-columns: 1.5fr 1fr 48px;
+    }
+
+    @media (max-width: 767px) {
       grid-template-columns: 2.2fr 1fr 48px;
     }
   }
@@ -25,7 +29,7 @@ export const TeamUsersListItemStyle = styled.div`
   margin-top: 10px;
 
   .team-role {
-    color: #0C0C0C;
+    color: #0c0c0c;
     font-size: 20px;
   }
 `;

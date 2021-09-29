@@ -46,8 +46,8 @@ export const UserSidebarStyle = styled.div`
         display: flex;
         flex-direction: column;
 
-        @media ( max-width: 767px ) {
-          right: -55px;
+        @media ( max-width: 1024px ) {
+          right: -50px;
         }
       }
     }

@@ -14,6 +14,10 @@ export const DashboardHeaderStyle = styled.header`
     grid-gap: 20px;
   }
 
+  @media (max-width: 767px) {
+    padding: 5px 0 0 0;
+  }
+
   .heading-wrapper {
     font-size: 48px;
     color: #0c0c0c;
@@ -49,7 +53,7 @@ export const DashboardHeaderStyle = styled.header`
     justify-content: flex-end;
     grid-column-gap: 20px;
 
-    @media ( max-width: 767px ) {
+    @media (max-width: 767px) {
       width: 100%;
     }
   }

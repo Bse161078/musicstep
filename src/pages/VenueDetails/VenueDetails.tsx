@@ -61,7 +61,9 @@ export default function VenueDetails() {
               />
             </TabPaneStyle>
             <TabPaneStyle tab="Upcoming Events" key="2">
-              <UpcomingEvents />
+              <div className="table-wrapper">
+                <UpcomingEvents />
+              </div>
             </TabPaneStyle>
           </TabsStyle>
         </div>
@@ -76,38 +78,32 @@ export default function VenueDetails() {
           </div>
 
           <div className="icon-with-content">
-            <img
-              alt="icon" src="/images/icons/address-icon.svg" />
+            <img alt="icon" src="/images/icons/address-icon.svg" />
             <span>1020 NW 183rd St, Miami, Florida(FL), 33169</span>
           </div>
 
           <div className="icon-with-content">
-            <img
-              alt="icon" src="/images/icons/phone-icon.svg" />
+            <img alt="icon" src="/images/icons/phone-icon.svg" />
             <span>+1 305 705 2747</span>
           </div>
 
           <div className="icon-with-content">
-            <img
-              alt="icon" src="/images/icons/website-icon.svg" />
+            <img alt="icon" src="/images/icons/website-icon.svg" />
             <span>www.website.com</span>
           </div>
 
           <div className="icon-with-content">
-            <img
-              alt="icon" src="/images/icons/instagram-icon.svg" />
+            <img alt="icon" src="/images/icons/instagram-icon.svg" />
             <span>@instagram</span>
           </div>
 
           <div className="icon-with-content">
-            <img
-              alt="icon" src="/images/icons/facebook-icon.svg" />
+            <img alt="icon" src="/images/icons/facebook-icon.svg" />
             <span>@facebook</span>
           </div>
 
           <div className="icon-with-content">
-            <img
-              alt="icon" src="/images/icons/twitter-icon.svg" />
+            <img alt="icon" src="/images/icons/twitter-icon.svg" />
             <span>@twitter</span>
           </div>
         </div>

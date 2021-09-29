@@ -8,20 +8,28 @@ export const VenueDetailsStyle = styled.div`
   grid-template-columns: 1fr auto;
   align-items: flex-start;
 
-  @media ( max-width: 1600px ) {
+  @media (max-width: 1600px) {
     grid-template-columns: 1.5fr 1fr;
   }
 
-  @media ( max-width: 768px ) {
+  @media (max-width: 768px) {
     grid-template-columns: 1fr;
     grid-gap: 50px;
+  }
+
+  .table-wrapper {
+    @media (max-width: 767px) {
+      overflow: auto;
+      width: 85vw;
+      display: grid;
+    }
   }
 
   .left-side {
     padding: 0 60px;
     padding-left: 120px;
 
-    @media ( max-width: 768px ) {
+    @media (max-width: 768px) {
       padding-left: 20px;
       padding-right: 20px;
     }
@@ -77,7 +85,7 @@ export const VenueDetailsStyle = styled.div`
     position: sticky;
     top: 106px;
 
-    @media ( max-width: 767px ) {
+    @media (max-width: 767px) {
       padding: 0 20px;
     }
   }

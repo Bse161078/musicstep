@@ -7,6 +7,11 @@ export const UserHomeStyle = styled.main`
   grid-gap: 60px;
   padding: 0 60px 60px;
 
+  @media (max-width: 1024px) {
+    padding: 0 20px 20px;
+    grid-template-columns: 250px 1fr;
+  }
+
   @media (max-width: 767px) {
     grid-template-columns: 1fr;
     padding: 0 20px 20px;

@@ -9,6 +9,10 @@ export const TeamRolesListStyle = styled.div`
 
     display: grid;
     grid-template-columns: 180px 1fr 1fr 106px;
+
+    @media (min-width: 766px) and (max-width: 1024px) {
+      grid-template-columns: 50px 1fr 1fr 106px;
+    }
   }
 `;
 
@@ -19,6 +23,10 @@ export const TeamRoleListItemStyle = styled.div`
   grid-template-columns: 180px 1fr 1fr 106px;
   align-items: center;
   margin-top: 10px;
+
+  @media (min-width: 766px) and (max-width: 1024px) {
+    grid-template-columns: 50px 1fr 1fr 106px;
+  }
 
   .team-role {
     color: #0c0c0c;

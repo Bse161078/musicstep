@@ -3,10 +3,12 @@ import styled from "styled-components";
 export const EditProfileFormStyle = styled.div`
   .form-wrapper {
     display: grid;
-    grid-template-columns: 470px 250px;
+    grid-template-columns: 1fr auto;
+    max-width: 840px;
     grid-gap: 125px;
+    margin-right: 20px;
 
-    @media (max-width: 767px) {
+    @media (max-width: 1024px) {
       display: flex;
       flex-direction: column;
       grid-template-columns: 1fr;
