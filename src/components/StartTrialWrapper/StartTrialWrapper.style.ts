@@ -9,6 +9,11 @@ export const StartTrialWrapperStyle = styled.section`
   margin: 100px 50px;
   border-radius: 32px;
 
+  @media ( max-width: 1024px ) {
+    grid-template-columns: 0.5fr 1fr;
+    align-items: flex-start;
+  }
+
   @media (max-width: 767px) {
     grid-template-columns: 1fr;
     margin: 100px 15px;
@@ -31,7 +36,7 @@ export const StartTrialWrapperStyle = styled.section`
       font-size: 48px;
       color: #0c0c0c;
 
-      @media (max-width: 767px) {
+      @media (max-width: 1024px) {
         font-size: 28px;
       }
     }
@@ -40,7 +45,7 @@ export const StartTrialWrapperStyle = styled.section`
       font-size: 20px;
       color: #0c0c0c;
 
-      @media (max-width: 767px) {
+      @media (max-width: 1024px) {
         font-size: 14px;
       }
     }

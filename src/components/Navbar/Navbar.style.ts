@@ -94,6 +94,10 @@ export const NavbarStyle = styled.nav<NavbarStyleProps>`
         border-radius: 8px;
         font-size: 16px;
 
+        @media ( max-width: 900px) and (min-width: 768px ) {
+          font-size: 10px;
+        }
+
         &:last-child {
           &:hover {
             background-color: transparent;
