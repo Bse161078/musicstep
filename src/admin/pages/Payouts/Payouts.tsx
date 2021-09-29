@@ -15,14 +15,20 @@ export default function Payouts() {
     <Dashboard>
       <PayoutsStyle>
         <DashboardHeader heading="Payouts" />
+
         <TabsStyle defaultActiveKey="1">
           <TabPaneStyle tab="Payouts" key="1">
             <SearchInputWithButton />
-            <PayoutsList />
+            <div className="table-wrapper">
+              <PayoutsList />
+            </div>
           </TabPaneStyle>
+
           <TabPaneStyle tab="Upcoming Payouts" key="2">
             <SearchInputWithButton />
-            <UpcomingPayoutsList />
+            <div className="table-wrapper">
+              <UpcomingPayoutsList />
+            </div>
           </TabPaneStyle>
         </TabsStyle>
       </PayoutsStyle>

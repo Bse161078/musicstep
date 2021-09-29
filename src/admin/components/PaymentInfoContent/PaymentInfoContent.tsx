@@ -33,15 +33,17 @@ const PaymentInfoContent = (props: PaymentInfoContentProps) => {
         </Formik>
       </div>
 
-      <div className="table-header">
-        <h3 className="header-title">Payment Methods</h3>
-        <h3 className="header-title">Type</h3>
-        <h3 className="header-title">Events</h3>
-      </div>
+      <div className="table-wrapper">
+        <div className="table-header">
+          <h3 className="header-title">Payment Methods</h3>
+          <h3 className="header-title">Type</h3>
+          <h3 className="header-title">Events</h3>
+        </div>
 
-      <PaymentInfoListItem setCurrentPage={setCurrentPage} />
-      <PaymentInfoListItem setCurrentPage={setCurrentPage} />
-      <PaymentInfoListItem setCurrentPage={setCurrentPage} />
+        <PaymentInfoListItem setCurrentPage={setCurrentPage} />
+        <PaymentInfoListItem setCurrentPage={setCurrentPage} />
+        <PaymentInfoListItem setCurrentPage={setCurrentPage} />
+      </div>
     </PaymentInfoContentStyle>
   );
 };

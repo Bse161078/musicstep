@@ -10,6 +10,10 @@ export const IconWithHeadingStyle = styled.div`
   grid-column-gap: 20px;
   cursor: pointer;
 
+  @media ( max-width: 767px ) {
+    width: 100%;
+  }
+
   .heading {
     font-size: 20px;
     font-weight: bold;

@@ -85,7 +85,11 @@ export const TableRowStyle = css`
   .thumb-with-content {
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-column-gap: 20px;
+    grid-gap: 20px;
+
+    @media ( max-width: 767px ) {
+      grid-template-columns: 1fr;
+    }
   }
 
   .profile-thumanail {

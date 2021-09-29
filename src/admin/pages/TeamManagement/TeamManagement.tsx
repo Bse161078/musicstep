@@ -26,19 +26,26 @@ export default function TeamManagement() {
         <TabsStyle defaultActiveKey="1">
           <TabPaneStyle tab="Users" key="1">
             <SearchInputWithButton
-              handleButtonClick={() => {setUserVisible(true)}}
-              buttonTitle="Invite" 
+              handleButtonClick={() => {
+                setUserVisible(true);
+              }}
+              buttonTitle="Invite"
             />
-            <TeamUsersList />
+
+            <div className="table-wrapper">
+              <TeamUsersList />
+            </div>
           </TabPaneStyle>
 
           <TabPaneStyle tab="Roles" key="2">
             <SearchInputWithButton
               handleButtonClick={() => setRoleVisible(true)}
-              buttonTitle="Add Role" 
+              buttonTitle="Add Role"
             />
 
-            <TeamRolesList />
+            <div className="table-wrapper">
+              <TeamRolesList />
+            </div>
           </TabPaneStyle>
         </TabsStyle>
       </TeamManagementStyle>
@@ -47,7 +54,10 @@ export default function TeamManagement() {
         isModalVisible={isUserVisible}
         setIsModalVisible={setUserVisible}
       />
-      <AddRole isModalVisible={isRoleVisible} setIsModalVisible={setRoleVisible} />
+      <AddRole
+        isModalVisible={isRoleVisible}
+        setIsModalVisible={setRoleVisible}
+      />
     </Dashboard>
   );
 }

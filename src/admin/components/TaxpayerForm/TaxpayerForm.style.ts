@@ -16,5 +16,9 @@ export const TaxpayerFormStyle = styled.div`
     display: grid;
     grid-template-columns: 700px 1fr 1fr;
     grid-gap: 20px;
+
+    @media ( max-width: 767px ) {
+      grid-template-columns: 1fr;
+    }
   }
 `;
