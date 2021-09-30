@@ -30,12 +30,12 @@ export const SelectBoxStyle = styled(Select)<SelectBoxStyleProps>`
     color: #5d5d5d;
 
     .ant-select-arrow {
-        right: 25px;
+      right: 25px;
     }
 
     .ant-select-selection-item {
-        font-size: 18px;
-        color: #0C0C0C;
+      font-size: 18px;
+      color: #0c0c0c;
     }
 
     .ant-select-selector {
@@ -70,9 +70,17 @@ export const SelectHoverInputStyle = styled(Select)<any>`
   }
 `;
 
-export const SelectInputStyle = styled.div`
+type SelectInputStyleProps = {
+  type?: string;
+};
+
+export const SelectInputStyle = styled.div<SelectInputStyleProps>`
   display: grid;
   grid-gap: 5px;
+  grid-template-columns: ${(props) =>
+    props.type === "horizontal" ? "auto auto" : "1fr"};
+  align-items: center;
+  justify-content: flex-start;
 
   .select-label {
     font-size: 14px;

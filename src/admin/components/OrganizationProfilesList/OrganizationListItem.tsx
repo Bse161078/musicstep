@@ -20,7 +20,7 @@ export const OrganizationListItem = () => {
       </div>
 
       <div className="action-buttons-wrapper">
-        <EditButtonIcon />
+        <img src="/images/icons/preview-icon.svg" alt="preview" />
         <EditButtonIcon />
       </div>
     </OrganizationListItemStyle>

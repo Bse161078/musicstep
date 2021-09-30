@@ -8,4 +8,17 @@ export const PayoutsStyle = styled.main`
       display: grid;
     }
   }
+
+  .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    grid-gap: 30px;
+
+    .dropdowns-form {
+      display: flex;
+      grid-gap: 30px;
+      flex-wrap: wrap;
+    }
+  }
 `;

@@ -23,6 +23,7 @@ type SelectBoxProps = {
   values?: any;
   disabled?: boolean;
   label?: any;
+  type?: "horizontal" | "vertical";
 };
 
 const SelectBox = (props: SelectBoxProps) => {
@@ -37,6 +38,7 @@ const SelectBox = (props: SelectBoxProps) => {
     defaultValue,
     disabled = false,
     label,
+    type = "vertical",
   } = props;
 
   const handleChange = (value: any) => {
@@ -44,7 +46,7 @@ const SelectBox = (props: SelectBoxProps) => {
     initializeSettingsData && initializeSettingsData(value, undefined, values);
   };
   return (
-    <SelectInputStyle>
+    <SelectInputStyle type={type}>
       {label && <label className="select-label">{label}</label>}
 
       <SelectBoxStyle

@@ -1,5 +1,5 @@
 import React ,{useState} from "react";
-import { EditButtonIcon } from "../../../assets";
+
 import { EditUserModal } from "..";
 
 
@@ -23,7 +23,7 @@ export const TeamUsersListItem = () => {
       <div className="team-role">Regional Directives Analyst</div>
 
       <div className="action-buttons-wrapper" onClick={()=>{setShowEditUserModal(true)}}>
-        <EditButtonIcon />
+        <img src="/images/icons/edit-profile-icon.svg" alt="edit" />
         <EditUserModal
           isModalVisible={showEditUserModal}
           setIsModalVisible={setShowEditUserModal}

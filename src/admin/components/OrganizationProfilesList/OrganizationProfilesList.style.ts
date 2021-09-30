@@ -22,6 +22,7 @@ export const OrganizationListItemStyle = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    grid-gap: 20px;
 
     @media ( max-width: 767px ) {
         align-items: flex-start;

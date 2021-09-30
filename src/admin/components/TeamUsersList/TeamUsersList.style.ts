@@ -32,4 +32,8 @@ export const TeamUsersListItemStyle = styled.div`
     color: #0c0c0c;
     font-size: 20px;
   }
+
+  .action-buttons-wrapper {
+    cursor: pointer;
+  }
 `;

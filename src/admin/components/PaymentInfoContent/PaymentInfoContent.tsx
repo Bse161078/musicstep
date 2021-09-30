@@ -1,7 +1,7 @@
 import { Form, Formik } from "formik";
 import React from "react";
 import { DashboardHeader } from "..";
-import { InputBox } from "../../../components";
+import { SelectBox } from "../../../components";
 
 import { PaymentInfoContentStyle } from "./PaymentInfoContent.style";
 import { PaymentInfoListItem } from "./PaymentInfoListItem";
@@ -27,7 +27,7 @@ const PaymentInfoContent = (props: PaymentInfoContentProps) => {
         <Formik initialValues={{ type: "" }} onSubmit={handleFilterSubmit}>
           {() => (
             <Form>
-              <InputBox name="type" />
+              <SelectBox options={[{key: "", value: "All"}]} name="type" />
             </Form>
           )}
         </Formik>
