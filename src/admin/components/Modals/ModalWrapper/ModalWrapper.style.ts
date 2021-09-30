@@ -20,6 +20,10 @@ export const ModalWrapperStyle = styled(Modal)`
         font-weight: 700;
         font-size: 36px;
         text-align: center;
+
+        @media ( max-width: 767px ) {
+          font-size: 24px;
+        }
       }
     }
 

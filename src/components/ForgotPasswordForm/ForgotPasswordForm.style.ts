@@ -14,6 +14,12 @@ export const ForgotPasswordFormStyle = styled.article`
     margin-bottom: 40px;
   }
 
+  .form-description {
+    font-size: 20px;
+    color: #0C0C0C;
+    margin-bottom: 40px;
+  }
+
   ${FilledButtonStyle} {
     background: #100840;
   }

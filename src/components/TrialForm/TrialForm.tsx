@@ -49,7 +49,7 @@ const TrialForm = (props: TrialFormProps) => {
         />
 
         <IconWithText
-          heading="Get XX credits to book upcoming events."
+          heading="You're never locked in. Cancel anytime."
           icon={<img alt="icon" src="/images/icons/cancel-lock-icon.svg" />}
         />
 

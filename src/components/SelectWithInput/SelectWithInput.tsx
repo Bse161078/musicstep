@@ -8,7 +8,18 @@ import { SearchIcon } from "../../assets";
 const SelectWithInput = () => {
   return (
     <SelectWithInputStyle>
-      <Formik initialValues={{ location: "", search: "" }} onSubmit={() => {}}>
+      <Formik
+        initialValues={{
+          location: (
+            <>
+              <img src="/images/icons/location-icon.svg" alt="location" /> South
+              Miami, FL, USA
+            </>
+          ),
+          search: "",
+        }}
+        onSubmit={() => {}}
+      >
         {() => (
           <Form className="search-form-wrapper">
             <span className="select-wrapper">

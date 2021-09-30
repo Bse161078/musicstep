@@ -11,6 +11,10 @@ export const BillingInformationStyle = styled.div`
     color: #0c0c0c;
     margin-bottom: 40px;
 
+    span {
+      font-family: "Covered By Your Grace", cursive;
+    }
+
     @media (max-width: 1280px) {
       font-size: 28px;
     }

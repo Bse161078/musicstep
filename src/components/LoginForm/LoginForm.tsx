@@ -30,13 +30,14 @@ const LoginForm = (props: LoginFormProps) => {
         {({ values, setFieldValue }) => (
           <Form className="login-form-wrapper">
             <InputBox label="Username" name="userName" />
-            <InputBox label="Password" name="password" />
+            <InputBox type="password" label="Password" name="password" />
 
             <div className="checkbox-wrapper">
               <InputCheckbox
                 name="remember-password"
                 onClick={() => {}}
                 className=""
+                label="Remember Me"
                 isCorrectOption={false}
               />
 

@@ -6,7 +6,7 @@ import { ProcessPaymentStyle } from "./ProcessPayment.style"
 export default function ProcessPayment() {
     return (
         <ProcessPaymentStyle>
-            <BillingInformation />
+            <BillingInformation leftHeading="Your Free Trial Offer Includes" />
             
             <ProcessPaymentForm />
         </ProcessPaymentStyle>

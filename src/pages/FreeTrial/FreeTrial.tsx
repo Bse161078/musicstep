@@ -42,7 +42,13 @@ export default function FreeTrial() {
       <StartTrialWrapper
         leftContent={
           currentForm === "trial-billing-information" ? (
-            <BillingInformation />
+            <BillingInformation
+              leftHeading={
+                <>
+                  Music <span>Fan</span> Includes
+                </>
+              }
+            />
           ) : null
         }
       >

@@ -2,10 +2,16 @@ import React from "react";
 import { MusicIcon } from "../../assets";
 import { BillingInformationStyle } from "./BillingInformation.style";
 
-const BillingInformation = () => {
+type BillingInformationProps = {
+  leftHeading?: React.ReactNode;
+};
+
+const BillingInformation = (props: BillingInformationProps) => {
+  const { leftHeading } = props;
+
   return (
     <BillingInformationStyle>
-      <h2 className="heading">Music Fan Includes</h2>
+      <h2 className="heading">{leftHeading}</h2>
 
       <div className="icon-with-description">
         <MusicIcon />
@@ -22,7 +28,7 @@ const BillingInformation = () => {
       </div>
 
       <div className="icon-with-description">
-        <MusicIcon />
+        <img alt="icon" src="/images/icons/lock-icon.svg" />
         <p className="description">You're never locked in. Cancel anytime.</p>
       </div>
 

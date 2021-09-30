@@ -1,13 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { HeadingTab } from "..";
-import { LogoutModal, SubscriptionDetailsModal } from "../../../admin/components";
+import {
+  CreditHistoryModal,
+  EventHistoryModal,
+  LogoutModal,
+  SubscriptionDetailsModal,
+} from "../../../admin/components";
 
 import { UserSidebarStyle } from "./UserSidebar.style";
 
 const UserSidebar = () => {
   const [isLogoutVisible, setLogoutVisible] = useState(false);
-  const [isSubscriptionVisible, setSubscriptionVisible] = useState(false)
+  const [isSubscriptionVisible, setSubscriptionVisible] = useState(false);
+  const [isCreditModalVisible, setCreditModalVisible] = useState(false);
+  const [isEventsModalVisible, setEventsModalVisible] = useState(false);
 
   return (
     <UserSidebarStyle>
@@ -34,7 +41,7 @@ const UserSidebar = () => {
       <h4 className="heading">Subscription Details</h4>
 
       <div className="cards-wrapper">
-        <span onClick={()=>setSubscriptionVisible(true)}>
+        <span onClick={() => setSubscriptionVisible(true)}>
           <HeadingTab
             heading="Music Enthusiast"
             description="Expires in 21 days."
@@ -42,8 +49,14 @@ const UserSidebar = () => {
         </span>
 
         <div className="divider" />
-        <HeadingTab icon={"Icon"} heading="Credits History" />
-        <HeadingTab icon={"Icon"} heading="Events History" />
+
+        <span onClick={() => setCreditModalVisible(true)}>
+          <HeadingTab icon={"Icon"} heading="Credits History" />
+        </span>
+
+        <span onClick={() => setEventsModalVisible(true)}>
+          <HeadingTab icon={"Icon"} heading="Events History" />
+        </span>
 
         <div className="divider" />
         <HeadingTab heading="Events in Resevation" count={14} />
@@ -57,7 +70,20 @@ const UserSidebar = () => {
         setIsModalVisible={setLogoutVisible}
       />
 
-      <SubscriptionDetailsModal isModalVisible={isSubscriptionVisible} setIsModalVisible={setSubscriptionVisible} />
+      <SubscriptionDetailsModal
+        isModalVisible={isSubscriptionVisible}
+        setIsModalVisible={setSubscriptionVisible}
+      />
+
+      <CreditHistoryModal
+        isModalVisible={isCreditModalVisible}
+        setIsModalVisible={setCreditModalVisible}
+      />
+
+      <EventHistoryModal
+        isModalVisible={isEventsModalVisible}
+        setIsModalVisible={setEventsModalVisible}
+      />
     </UserSidebarStyle>
   );
 };

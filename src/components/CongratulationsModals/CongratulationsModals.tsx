@@ -25,7 +25,7 @@ const CongratulationsModal = (props: CongratulationsModalProps) => {
         <img src="/images/party.svg" alt="party" />
         <p className="description">You are now a member of MusicPass.</p>
 
-        <FilledButtonStyle buttonType="light" width="100%" height="60px">
+        <FilledButtonStyle onClick={()=>setIsModalVisible(false)} buttonType="light" width="100%" height="60px">
           Explore MusicPass
         </FilledButtonStyle>
       </CongratulationsModalStyle>

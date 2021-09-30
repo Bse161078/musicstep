@@ -11,3 +11,5 @@ export * from './EventDetailsModal'
 export * from './CheckingAvailablityModal'
 export * from './ReservationConfirmedModal'
 export * from "./SubscriptionDetailsModal"
+export * from "./CreditHistoryModal"
+export * from "./EventHistoryModal"

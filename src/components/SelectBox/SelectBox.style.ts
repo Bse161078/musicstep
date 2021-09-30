@@ -29,6 +29,10 @@ export const SelectBoxStyle = styled(Select)<SelectBoxStyleProps>`
     font-size: 1.3rem;
     color: #5d5d5d;
 
+    .ant-select-selection-search {
+      padding-left: 30px;
+    }
+
     .ant-select-arrow {
       right: 25px;
     }

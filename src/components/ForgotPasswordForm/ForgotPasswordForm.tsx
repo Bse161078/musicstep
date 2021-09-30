@@ -29,6 +29,10 @@ const ForgotPasswordForm = (props: ForgotPasswordFormProps) => {
 
   return (
     <ForgotPasswordFormStyle>
+      <p className="form-description">
+        Enter the email address associated with your account and we'll send you
+        a link to reset your password.
+      </p>
       <Formik
         enableReinitialize={true}
         initialValues={forgotPasswordInitialValues}
