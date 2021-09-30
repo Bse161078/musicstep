@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useField } from "formik";
 import {
   TextFieldStyle,
@@ -9,10 +9,20 @@ import {
 const InputBox = (props: any) => {
   const [field, meta] = useField(props);
 
+  const inputRef = useRef(null);
+
+  const handlePasswordIconClick = () => {
+    if (inputRef && props.type === "password") {
+      // console.log(inputRef?.current?.type);
+    }
+  };
+
   return (
     <InputBoxStyle>
       <label className="input-label">{props.label}</label>
+
       <TextFieldStyle
+        ref={inputRef}
         className={props.className}
         name={field.name}
         color="primary"
@@ -23,6 +33,12 @@ const InputBox = (props: any) => {
         width={props.width}
         {...props}
       />
+
+      {props.type === "password" && (
+        <span onClick={handlePasswordIconClick} className="password-icon">
+          <img src="/images/icons/Password-hide-icon.svg" />
+        </span>
+      )}
       {meta.touched && meta.error ? (
         <TextFieldErrorStyle>{meta.error}</TextFieldErrorStyle>
       ) : null}

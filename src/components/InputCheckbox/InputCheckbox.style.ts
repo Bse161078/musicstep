@@ -12,6 +12,14 @@ export const CheckboxWrapperStyle = styled(Checkbox)`
     color: red;
   }
 
+  .ant-checkbox {
+    &:hover {
+      .ant-checkbox-inner {
+        border-color: transparent;
+      }
+    }
+  }
+
   .ant-checkbox-inner {
     border-radius: 100%;
     width: 24px;
@@ -20,16 +28,22 @@ export const CheckboxWrapperStyle = styled(Checkbox)`
 
   .ant-checkbox-input {
     &:focus {
-      border-color: transparent;
+      + .ant-checkbox-inner {
+        border-color: transparent;
+      }
     }
   }
 
   .ant-checkbox-checked {
+    &:after {
+      border-color: transparent;
+    }
     .ant-checkbox-input {
       &:focus {
         border-color: transparent;
       }
     }
+    
     .ant-checkbox-inner {
       background: lightgray;
       border-color: lightgray;
