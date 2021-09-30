@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { OutlineButtonStyle } from "../../styles/Common.style";
 
 import { UpcomingEventsStyle } from "./UpcomingEvents.style";
@@ -22,9 +23,11 @@ const UpcomingEvents = () => {
           <span className="hour">Alternative, Classical</span>
         </div>
 
-        <OutlineButtonStyle width="150px" height="43px">
-          See Pricing
-        </OutlineButtonStyle>
+        <Link className="pricing" to="/pricing">
+          <OutlineButtonStyle width="150px" height="43px">
+            See Pricing
+          </OutlineButtonStyle>
+        </Link>
       </div>
 
       <div className="row-wrapper">
@@ -37,9 +40,11 @@ const UpcomingEvents = () => {
           <span className="hour">Alternative, Classical</span>
         </div>
 
-        <OutlineButtonStyle width="150px" height="43px">
-          See Pricing
-        </OutlineButtonStyle>
+        <Link className="pricing" to="/pricing">
+          <OutlineButtonStyle width="150px" height="43px">
+            See Pricing
+          </OutlineButtonStyle>
+        </Link>
       </div>
 
       <div className="row-wrapper">
@@ -52,9 +57,11 @@ const UpcomingEvents = () => {
           <span className="hour">Alternative, Classical</span>
         </div>
 
-        <OutlineButtonStyle width="150px" height="43px">
-          See Pricing
-        </OutlineButtonStyle>
+        <Link className="pricing" to="/pricing">
+          <OutlineButtonStyle width="150px" height="43px">
+            See Pricing
+          </OutlineButtonStyle>
+        </Link>
       </div>
 
       <div className="row-wrapper">
@@ -67,9 +74,11 @@ const UpcomingEvents = () => {
           <span className="hour">Alternative, Classical</span>
         </div>
 
-        <OutlineButtonStyle width="150px" height="43px">
-          See Pricing
-        </OutlineButtonStyle>
+        <Link className="pricing" to="/pricing">
+          <OutlineButtonStyle width="150px" height="43px">
+            See Pricing
+          </OutlineButtonStyle>
+        </Link>
       </div>
 
       <div className="row-wrapper">
@@ -82,9 +91,11 @@ const UpcomingEvents = () => {
           <span className="hour">Alternative, Classical</span>
         </div>
 
-        <OutlineButtonStyle width="150px" height="43px">
-          See Pricing
-        </OutlineButtonStyle>
+        <Link className="pricing" to="/pricing">
+          <OutlineButtonStyle width="150px" height="43px">
+            See Pricing
+          </OutlineButtonStyle>
+        </Link>
       </div>
 
       <div className="row-wrapper">
@@ -97,9 +108,11 @@ const UpcomingEvents = () => {
           <span className="hour">Alternative, Classical</span>
         </div>
 
-        <OutlineButtonStyle width="150px" height="43px">
-          See Pricing
-        </OutlineButtonStyle>
+        <Link className="pricing" to="/pricing">
+          <OutlineButtonStyle width="150px" height="43px">
+            See Pricing
+          </OutlineButtonStyle>
+        </Link>
       </div>
 
       <div className="row-wrapper">
@@ -112,9 +125,11 @@ const UpcomingEvents = () => {
           <span className="hour">Alternative, Classical</span>
         </div>
 
-        <OutlineButtonStyle width="150px" height="43px">
-          See Pricing
-        </OutlineButtonStyle>
+        <Link className="pricing" to="/pricing">
+          <OutlineButtonStyle width="150px" height="43px">
+            See Pricing
+          </OutlineButtonStyle>
+        </Link>
       </div>
 
       <div className="row-wrapper">
@@ -127,9 +142,11 @@ const UpcomingEvents = () => {
           <span className="hour">Alternative, Classical</span>
         </div>
 
-        <OutlineButtonStyle width="150px" height="43px">
-          See Pricing
-        </OutlineButtonStyle>
+        <Link className="pricing" to="/pricing">
+          <OutlineButtonStyle width="150px" height="43px">
+            See Pricing
+          </OutlineButtonStyle>
+        </Link>
       </div>
     </UpcomingEventsStyle>
   );

@@ -34,7 +34,7 @@ export const PaymentInfoListItem = (props: PaymentInfoListItemProps) => {
           <CalenderIcon  />
         </span>
       </div>
-      <PaymentMethodDetails isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}  />
+      <PaymentMethodDetails setCurrentPage={setCurrentPage} isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}  />
     </PaymentInfoListItemStyle>
   );
 };

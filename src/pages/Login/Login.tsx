@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 
-import { ForgotPasswordForm, FormWrapper, LoginForm } from "../../components";
+import { ForgotPasswordForm, FormWrapper, LoginForm, ResetPasswordForm } from "../../components";
 import { LoginStyle } from "./Login.style";
 
 const LoginSection = ({ setCurrentSection }: any) => {
@@ -34,7 +34,7 @@ const ResetPasswordSection = ({ setCurrentSection }: any) => {
       topHeading="Reset Password"
       formHeading="Hey John Doe!"
     >
-      <LoginForm setCurrentSection={setCurrentSection} />
+      <ResetPasswordForm setCurrentSection={setCurrentSection} />
     </FormWrapper>
   );
 };

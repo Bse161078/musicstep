@@ -19,7 +19,12 @@ const ForgotPasswordForm = (props: ForgotPasswordFormProps) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const handleForgotSubmit = () => {
-    setIsModalVisible(true)
+    setIsModalVisible(true);
+  };
+
+  const successModalClose = () => {
+    setCurrentSection("reset-password");
+    setIsModalVisible(false);
   };
 
   return (
@@ -33,7 +38,13 @@ const ForgotPasswordForm = (props: ForgotPasswordFormProps) => {
           <Form className="forgot-form-wrapper">
             <InputBox label="Email Address" name="email" />
 
-            <FilledButtonStyle as="input" type="submit" value="Send Link" width="100%" height="60px" />
+            <FilledButtonStyle
+              as="input"
+              type="submit"
+              value="Send Link"
+              width="100%"
+              height="60px"
+            />
           </Form>
         )}
       </Formik>
@@ -47,8 +58,11 @@ const ForgotPasswordForm = (props: ForgotPasswordFormProps) => {
         Login Page
       </OutlineButtonStyle>
 
-      <a className="partner-login" href="/">Partner Dashboard Login</a>
+      <a className="partner-login" href="/">
+        Partner Dashboard Login
+      </a>
       <MessageModal
+        handleOkClick={successModalClose}
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}
         message="We have successfully sent your password reset link on your email address. Please open the link from your email to reset your password."

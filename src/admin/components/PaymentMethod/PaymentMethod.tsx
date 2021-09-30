@@ -2,7 +2,7 @@ import { Form, Formik } from "formik";
 import React from "react";
 
 import { CheckboxWithIcon, ContentHeader, DashboardHeader } from "..";
-import { InputBox } from "../../../components";
+import { InputBox, SelectBox } from "../../../components";
 import { FilledButtonStyle } from "../../../styles/Common.style";
 import { PaymentMethodStyle } from "./PaymentMethod.style";
 
@@ -14,7 +14,7 @@ const PaymentMethod = (props: PaymentMethodProps) => {
   const { setCurrentPage } = props;
 
   const handleSubmit = () => {
-    setCurrentPage("new-payment-method")
+    setCurrentPage("new-payment-method");
   };
 
   return (
@@ -30,8 +30,17 @@ const PaymentMethod = (props: PaymentMethodProps) => {
       <Formik initialValues={{ sendTo: "" }} onSubmit={handleSubmit}>
         {() => (
           <Form className="send-payment-form">
-            <InputBox name="sendTo" />
-            <FilledButtonStyle buttonType="dark" width="270px" height="60px">
+            <SelectBox
+              width="fill"
+              options={[{ key: "", value: "" }]}
+              name="sendTo"
+            />
+            <FilledButtonStyle
+              onClick={() => setCurrentPage("new-payment-method")}
+              buttonType="dark"
+              width="270px"
+              height="60px"
+            >
               Add New Payment Method
             </FilledButtonStyle>
           </Form>

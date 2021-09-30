@@ -7,6 +7,8 @@ export const VenueDetailsStyle = styled.div`
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: flex-start;
+  padding-top: 50px;
+  padding-bottom: 50px;
 
   @media (max-width: 1600px) {
     grid-template-columns: 1.5fr 1fr;

@@ -1,18 +1,21 @@
 import { Form, Formik } from "formik";
-import React from "react";
+import React, { useState } from "react";
 import { InputBox } from "..";
 import { FilledButtonStyle } from "../../styles/Common.style";
+import CongratulationsModals from "../CongratulationsModals/CongratulationsModals";
 
 import { ProcessPaymentFormStyle } from "./ProcessPaymentForm.style";
 
 const ProcessPaymentForm = () => {
+  const [isCongratulationsVisible, setCongratulationsVisible] = useState(false);
+  
   return (
     <ProcessPaymentFormStyle>
       <h3 className="form-heading">Process Payment</h3>
 
       <Formik
         initialValues={{ nameOnCard: "", cardNumber: "", date: "", cvc: "" }}
-        onSubmit={() => {}}
+        onSubmit={() => {setCongratulationsVisible(true)}}
       >
         {() => (
           <Form className="form-wrapper">
@@ -35,10 +38,16 @@ const ProcessPaymentForm = () => {
               Notice applies.
             </p>
 
-            <FilledButtonStyle width="100%" height="60px">Proceed To Payment</FilledButtonStyle>
+            <FilledButtonStyle width="100%" height="60px">
+              Proceed To Payment
+            </FilledButtonStyle>
           </Form>
         )}
       </Formik>
+      <CongratulationsModals
+        isModalVisible={isCongratulationsVisible}
+        setIsModalVisible={setCongratulationsVisible}
+      />
     </ProcessPaymentFormStyle>
   );
 };

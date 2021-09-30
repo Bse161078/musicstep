@@ -32,8 +32,8 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
                 number or symbols.
               </h3>
 
-              <InputBox label="Password" name="password" />
-              <InputBox label="Confirm Password" name="confirmPassword" />
+              <InputBox label="Password" type="password" name="password" />
+              <InputBox label="Confirm Password" type="password" name="confirmPassword" />
 
               <FilledButtonStyle width="100%" height="60px">Continue</FilledButtonStyle>
             </Form>

@@ -4,8 +4,7 @@ import { FilledButtonStyle } from "../../../styles/Common.style";
 
 import { PastPaymentDetailsStyle } from "./PastPaymentDetails.style";
 
-const PastPaymentDetails = () => {
- 
+const PastPaymentDetails = ({ setCurrentPage }: any) => {
   return (
     <PastPaymentDetailsStyle>
       <div className="payment-wrapper">
@@ -17,12 +16,13 @@ const PastPaymentDetails = () => {
           <FilledButtonStyle
             width="100px"
             height="43px"
+            onClick={() => setCurrentPage("payment-method")}
           >
             Manage
           </FilledButtonStyle>
         </div>
       </div>
-      <div  className="payment-wrapper">
+      <div className="payment-wrapper">
         <div className="title-date">
           <p className="payment-title">Visualize Plug-And-Play Technologies</p>
           <p className="payment-timeDate">July 16Th, 01:38:17 PM</p>
@@ -32,11 +32,10 @@ const PastPaymentDetails = () => {
             color="#FFF"
             width="100px"
             height="43px"
-            
+            onClick={() => setCurrentPage("payment-method")}
           >
             Manage
           </FilledButtonStyle>
-        
         </div>
       </div>
     </PastPaymentDetailsStyle>

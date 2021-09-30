@@ -23,7 +23,7 @@ const LoginForm = (props: LoginFormProps) => {
   return (
     <LoginFormStyle>
       <Formik
-        enableReinitialize={true}
+        // enableReinitialize={true}
         initialValues={loginInitialValues}
         onSubmit={handleLoginSubmit}
       >
@@ -48,9 +48,11 @@ const LoginForm = (props: LoginFormProps) => {
               </span>
             </div>
 
-            <FilledButtonStyle width="100%" height="60px">
-              Login
-            </FilledButtonStyle>
+            <Link to="/explore-venue">
+              <FilledButtonStyle width="100%" height="60px">
+                Login
+              </FilledButtonStyle>
+            </Link>
           </Form>
         )}
       </Formik>

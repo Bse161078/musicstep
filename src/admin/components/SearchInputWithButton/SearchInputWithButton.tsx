@@ -6,13 +6,12 @@ import { InputBox } from "../../../components";
 import { FilledButtonStyle } from "../../../styles/Common.style";
 import { SearchInputWithButtonStyle } from "./SearchInputWithButton.style";
 
-
 type SearchInputWithButtonProps = {
-  handleButtonClick?: any
-  buttonTitle?: string
+  handleButtonClick?: any;
+  buttonTitle?: string;
 };
 const SearchInputWithButton = (props: SearchInputWithButtonProps) => {
-  const { handleButtonClick, buttonTitle  }= props; 
+  const { handleButtonClick, buttonTitle } = props;
 
   const handleSearchSubmit = () => {};
 
@@ -32,15 +31,17 @@ const SearchInputWithButton = (props: SearchInputWithButtonProps) => {
           </Form>
         )}
       </Formik>
-      <FilledButtonStyle
-        buttonType="dark"
-        width="150px"
-        height="60px"
-        onClick={handleButtonClick}
-      >
-       {buttonTitle}
-      </FilledButtonStyle>
-    
+
+      {buttonTitle && (
+        <FilledButtonStyle
+          buttonType="dark"
+          width="150px"
+          height="60px"
+          onClick={handleButtonClick}
+        >
+          {buttonTitle}
+        </FilledButtonStyle>
+      )}
     </SearchInputWithButtonStyle>
   );
 };

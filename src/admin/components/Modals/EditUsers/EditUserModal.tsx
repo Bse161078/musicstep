@@ -39,6 +39,7 @@ const EditUserModal = (props: EditUserModalProps) => {
               </div>
               <div>
                 <SelectBox
+                  width="fill"
                   label="User Role"
                   name="userRole"
                   options={[

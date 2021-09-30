@@ -47,8 +47,11 @@ export const UpcomingEventsStyle = styled.div`
       }
     }
 
-    ${OutlineButtonStyle} {
+    .pricing {
       margin-left: auto;
+      
+      ${OutlineButtonStyle} {
+      }
     }
   }
 `;

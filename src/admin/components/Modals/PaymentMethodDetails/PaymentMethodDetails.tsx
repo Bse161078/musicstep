@@ -10,13 +10,14 @@ import PastPaymentDetails from "../../PastPaymentDetails/PastPaymentDetails";
 type PaymentMethodDetailsProps = {
   isModalVisible?: boolean;
   setIsModalVisible?: any;
+  setCurrentPage: any;
 };
 const PaymentMethodDetails = (props: PaymentMethodDetailsProps) => {
-  const { isModalVisible, setIsModalVisible } = props;
+  const { isModalVisible, setIsModalVisible, setCurrentPage } = props;
   return (
     <ModalWrapper
       heading="Events Using Well Fargo *****9021"
-      button={<FilledButtonStyle width="500px">Okay</FilledButtonStyle>}
+      button={<FilledButtonStyle width="500px" height="60px">Okay</FilledButtonStyle>}
       width="920px"
       height="620px"
       isModalVisible={isModalVisible}
@@ -30,7 +31,7 @@ const PaymentMethodDetails = (props: PaymentMethodDetailsProps) => {
           <Drafts />
         </TabPaneStyle>
         <TabPaneStyle tab="Past(13)" key="3">
-          <PastPaymentDetails />
+          <PastPaymentDetails setCurrentPage={setCurrentPage} />
         </TabPaneStyle>
       </TabsStyle>
     </ModalWrapper>

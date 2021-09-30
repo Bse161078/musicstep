@@ -4,5 +4,5 @@ import "antd/dist/antd.css";
 import PaymentMethodDetails from "./PaymentMethodDetails";
 
 storiesOf("PaymentMethodDetails Modal", module).add("Modal", () => {
-  return <PaymentMethodDetails />;
+  return <PaymentMethodDetails setCurrentPage={() => {}} />;
 });

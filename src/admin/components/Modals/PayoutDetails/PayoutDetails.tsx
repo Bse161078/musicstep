@@ -13,7 +13,11 @@ const PayoutDetails = (props: PayoutDetailsProps) => {
     <ModalWrapper
       heading="Payout Details"
       width="920px"
-      button={<FilledButtonStyle width="500px">Okay</FilledButtonStyle>}
+      button={
+        <FilledButtonStyle width="500px" height="60px">
+          Okay
+        </FilledButtonStyle>
+      }
       isModalVisible={isModalVisible}
       setIsModalVisible={setIsModalVisible}
     >
@@ -61,16 +65,16 @@ const PayoutDetails = (props: PayoutDetailsProps) => {
         </div>
         <div className="right-section">
           <div>
-          <h3>Sent date</h3>
-          <p>03 Mar 2020</p>
+            <h3>Sent date</h3>
+            <p>03 Mar 2020</p>
           </div>
           <div>
-          <h3>Expected arrival date</h3>
-          <p>08 Jun 2020</p>
+            <h3>Expected arrival date</h3>
+            <p>08 Jun 2020</p>
           </div>
           <div>
-          <h3>Payout period</h3>
-          <p>03 Mar 2020 - 08 Jun 2020</p>
+            <h3>Payout period</h3>
+            <p>03 Mar 2020 - 08 Jun 2020</p>
           </div>
           <div className="payments-wrapper" id="bottom-top-borders">
             <div>
