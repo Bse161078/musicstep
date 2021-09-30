@@ -13,8 +13,18 @@ const EventReservation = () => {
   return (
     <SectionHeading heading="Events In Reservation">
       <EventReservationStyle>
-        <CardWithContent />
-        <CardWithContent />
+        <CardWithContent
+          heading="Franklin Kub's concert"
+          time="10:51 AM"
+          footerText="Cancelation Time Left: 22:32:09"
+          buttonType="filled"
+        />
+        <CardWithContent
+          buttonText="Reserved"
+          heading="Franklin Kub's Concert"
+          time="10:51 AM"
+          footerText="Cannot Be Canceled."
+        />
       </EventReservationStyle>
     </SectionHeading>
   );

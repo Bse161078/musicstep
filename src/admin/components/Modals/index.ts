@@ -10,3 +10,4 @@ export * from './LogoutModal'
 export * from './EventDetailsModal'
 export * from './CheckingAvailablityModal'
 export * from './ReservationConfirmedModal'
+export * from "./SubscriptionDetailsModal"

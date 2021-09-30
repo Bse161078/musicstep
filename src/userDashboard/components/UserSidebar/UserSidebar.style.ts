@@ -45,9 +45,14 @@ export const UserSidebarStyle = styled.div`
         right: -70px;
         display: flex;
         flex-direction: column;
+        grid-gap: 10px;
 
         @media ( max-width: 1024px ) {
           right: -50px;
+        }
+
+        img {
+          cursor: pointer;
         }
       }
     }

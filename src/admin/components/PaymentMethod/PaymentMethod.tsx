@@ -2,7 +2,7 @@ import { Form, Formik } from "formik";
 import React from "react";
 
 import { CheckboxWithIcon, ContentHeader, DashboardHeader } from "..";
-import { InputBox, SelectBox } from "../../../components";
+import { SelectBox } from "../../../components";
 import { FilledButtonStyle } from "../../../styles/Common.style";
 import { PaymentMethodStyle } from "./PaymentMethod.style";
 

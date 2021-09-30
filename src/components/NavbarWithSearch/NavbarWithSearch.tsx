@@ -16,7 +16,9 @@ const NavbarWithSearch = () => {
       <div className="links-wrapper">
         <span>Upcoming Itinerary</span>
         <span>15 Credits</span>
-        <span>Icon</span>
+        <Link to="/dashboard/home">
+          <span><img alt="profile" src="/images/icons/profile-icon.svg" /></span>
+        </Link>
       </div>
     </NavbarWithSearchStyle>
   );

@@ -22,6 +22,7 @@ export const NavbarWithSearchStyle = styled.nav`
     grid-gap: 60px;
     margin-left: auto;
     justify-self: flex-end;
+    align-items: center;
 
     @media (max-width: 1024px) {
       margin-right: auto;
@@ -31,6 +32,11 @@ export const NavbarWithSearchStyle = styled.nav`
         flex-direction: column;
         grid-row-gap: 20px;
         text-align: center;
+    }
+
+    span, a {
+      font-size: 17px;
+      color: #100837;
     }
   }
 `;

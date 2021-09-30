@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { HeadingTab } from "..";
-import { EditButtonIcon } from "../../../assets";
+import { LogoutModal, SubscriptionDetailsModal } from "../../../admin/components";
 
 import { UserSidebarStyle } from "./UserSidebar.style";
 
 const UserSidebar = () => {
+  const [isLogoutVisible, setLogoutVisible] = useState(false);
+  const [isSubscriptionVisible, setSubscriptionVisible] = useState(false)
+
   return (
     <UserSidebarStyle>
       <figure className="person-info-wrapper">
@@ -18,10 +21,10 @@ const UserSidebar = () => {
 
           <div className="action-buttons-wrapper">
             <Link to="/dashboard/basic-info">
-              <EditButtonIcon />
+              <img alt="profile" src="/images/icons/edit-profile-icon.svg" />
             </Link>
-            <span>
-              <EditButtonIcon />
+            <span onClick={() => setLogoutVisible(true)}>
+              <img alt="logout" src="/images/icons/logout-icon.svg" />
             </span>
           </div>
         </div>
@@ -31,10 +34,12 @@ const UserSidebar = () => {
       <h4 className="heading">Subscription Details</h4>
 
       <div className="cards-wrapper">
-        <HeadingTab
-          heading="Music Enthusiast"
-          description="Expires in 21 days."
-        />
+        <span onClick={()=>setSubscriptionVisible(true)}>
+          <HeadingTab
+            heading="Music Enthusiast"
+            description="Expires in 21 days."
+          />
+        </span>
 
         <div className="divider" />
         <HeadingTab icon={"Icon"} heading="Credits History" />
@@ -46,6 +51,13 @@ const UserSidebar = () => {
 
         <HeadingTab heading="Total Canceled Events" count={1} />
       </div>
+
+      <LogoutModal
+        isModalVisible={isLogoutVisible}
+        setIsModalVisible={setLogoutVisible}
+      />
+
+      <SubscriptionDetailsModal isModalVisible={isSubscriptionVisible} setIsModalVisible={setSubscriptionVisible} />
     </UserSidebarStyle>
   );
 };

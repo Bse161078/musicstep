@@ -1,8 +1,22 @@
 import React from "react";
-import { FilledButtonStyle } from "../../../styles/Common.style";
+import {
+  FilledButtonStyle,
+  OutlineButtonStyle,
+} from "../../../styles/Common.style";
 import { CardWithContentStyle } from "./CardWithContent.style";
 
-const CardWithContent = () => {
+type CardWithContentProps = {
+  heading: string;
+  time: string;
+  footerText: string;
+  buttonType?: "filled" | "outlined";
+  buttonText?: string;
+  onButtonClick?: any;
+};
+
+const CardWithContent = (props: CardWithContentProps) => {
+  const { heading, time, footerText, buttonType, buttonText } = props;
+
   return (
     <CardWithContentStyle>
       <img
@@ -14,22 +28,27 @@ const CardWithContent = () => {
       <div>
         <div className="row-wrapper">
           <div>
-            <h4 className="heading">Franklin Kub's concert</h4>
+            <h4 className="heading">{heading}</h4>
             <p className="description">Alternative, Classical</p>
           </div>
-
-          <FilledButtonStyle buttonType="dark" width="100px" height="54px">
-            Cancel
-          </FilledButtonStyle>
+          {buttonType === "filled" ? (
+            <FilledButtonStyle buttonType="dark" width="100px" height="54px">
+              {buttonText ? buttonText : "Cancel"}
+            </FilledButtonStyle>
+          ) : (
+            <OutlineButtonStyle width="100px" height="54px">
+              {buttonText ? buttonText : "Cancel"}
+            </OutlineButtonStyle>
+          )}
         </div>
 
         <div className="row-wrapper">
           <div>
-            <h4 className="heading">10:51 AM</h4>
+            <h4 className="heading">{time}</h4>
             <p className="description">1 Hour</p>
           </div>
 
-          <span className="content">Cancelation Time Left: 22:32:09</span>
+          <span className="content">{footerText}</span>
         </div>
       </div>
     </CardWithContentStyle>
