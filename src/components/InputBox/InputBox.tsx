@@ -36,7 +36,7 @@ const InputBox = (props: any) => {
 
       {props.type === "password" && (
         <span onClick={handlePasswordIconClick} className="password-icon">
-          <img src="/images/icons/Password-hide-icon.svg" />
+          <img alt="icon" src="/images/icons/Password-hide-icon.svg" />
         </span>
       )}
       {meta.touched && meta.error ? (
