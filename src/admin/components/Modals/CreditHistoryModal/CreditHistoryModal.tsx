@@ -33,16 +33,18 @@ const CreditHistoryModal = (props: CreditHistoryModalProps) => {
       width="920px"
     >
       <CreditHistoryModalStyle>
-        <TableHeader />
-        <TableRow rowLabel3="9 Credits" />
-        <TableRow rowLabel3="9 Credits" />
-        <TableRow rowLabel3="9 Credits" />
-        <TableRow rowLabel3="9 Credits" />
-        <TableRow rowLabel3="9 Credits" />
-        <TableRow rowLabel3="9 Credits" />
-        <TableRow rowLabel3="9 Credits" />
-        <TableRow rowLabel3="9 Credits" />
-        <TableRow rowLabel3="9 Credits" />
+        <div className="table-wrapper">
+          <TableHeader />
+          <TableRow rowLabel3="9 Credits" />
+          <TableRow rowLabel3="9 Credits" />
+          <TableRow rowLabel3="9 Credits" />
+          <TableRow rowLabel3="9 Credits" />
+          <TableRow rowLabel3="9 Credits" />
+          <TableRow rowLabel3="9 Credits" />
+          <TableRow rowLabel3="9 Credits" />
+          <TableRow rowLabel3="9 Credits" />
+          <TableRow rowLabel3="9 Credits" />
+        </div>
       </CreditHistoryModalStyle>
     </ModalWrapper>
   );

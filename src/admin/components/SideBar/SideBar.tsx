@@ -1,14 +1,17 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 import { SideBarStyle } from "./SideBar.style";
 
 type SideBarProps = {
   sidebarItems: any;
-}
+};
 
 const SideBar = (props: SideBarProps) => {
   const { sidebarItems } = props;
+
+  const location = useLocation();
+  console.log(location.pathname);
   return (
     <SideBarStyle>
       <div className="sidebar-container">
@@ -20,7 +23,9 @@ const SideBar = (props: SideBarProps) => {
                 to={item.url}
                 className="side-bar-item"
               >
-                <li>{item.name}</li>
+                <li className={location.pathname === item.url ? "active" : ""}>
+                  {item.name}
+                </li>
               </NavLink>
             );
           })}

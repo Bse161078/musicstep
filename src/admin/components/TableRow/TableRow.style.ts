@@ -9,6 +9,10 @@ export const TableRowStyle = styled.div`
   border-bottom: 1px solid #0000004d;
   text-align: left;
 
+  @media ( max-width: 767px ) {
+    grid-template-columns: 90px 100px auto;
+  }
+
   .heading {
     font-size: 20px;
     font-weight: bold;

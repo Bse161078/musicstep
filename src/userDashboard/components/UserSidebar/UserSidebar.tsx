@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { HeadingTab } from "..";
 import {
   CreditHistoryModal,
@@ -7,6 +7,11 @@ import {
   LogoutModal,
   SubscriptionDetailsModal,
 } from "../../../admin/components";
+import { MessageModal } from "../../../components";
+import {
+  FilledButtonStyle,
+  OutlineButtonStyle,
+} from "../../../styles/Common.style";
 
 import { UserSidebarStyle } from "./UserSidebar.style";
 
@@ -15,6 +20,24 @@ const UserSidebar = () => {
   const [isSubscriptionVisible, setSubscriptionVisible] = useState(false);
   const [isCreditModalVisible, setCreditModalVisible] = useState(false);
   const [isEventsModalVisible, setEventsModalVisible] = useState(false);
+  const [isCancelSubscriptionVisible, setCancelSubscriptionVisible] = useState(
+    false
+  );
+
+  const history = useHistory();
+
+  const handleModalCancelClick = () => {
+    setCancelSubscriptionVisible(false);
+  };
+
+  const handleModalOkClick = () => {
+    setCancelSubscriptionVisible(false);
+  };
+
+  const subscriptionCancelClick = () => {
+    setSubscriptionVisible(false);
+    setCancelSubscriptionVisible(true);
+  };
 
   return (
     <UserSidebarStyle>
@@ -51,11 +74,19 @@ const UserSidebar = () => {
         <div className="divider" />
 
         <span onClick={() => setCreditModalVisible(true)}>
-          <HeadingTab icon={"Icon"} heading="Credits History" />
+          <HeadingTab
+            icon={
+              <img src="/images/icons/credit-history-icon.svg" alt="icon" />
+            }
+            heading="Credits History"
+          />
         </span>
 
         <span onClick={() => setEventsModalVisible(true)}>
-          <HeadingTab icon={"Icon"} heading="Events History" />
+          <HeadingTab
+            icon={<img src="/images/icons/event-history-icon.svg" alt="icon" />}
+            heading="Events History"
+          />
         </span>
 
         <div className="divider" />
@@ -68,11 +99,17 @@ const UserSidebar = () => {
       <LogoutModal
         isModalVisible={isLogoutVisible}
         setIsModalVisible={setLogoutVisible}
+        handleOk={()=>{
+          history.push("/login")
+          setLogoutVisible(false)
+        }}
       />
 
       <SubscriptionDetailsModal
         isModalVisible={isSubscriptionVisible}
         setIsModalVisible={setSubscriptionVisible}
+        handleCancelClick={subscriptionCancelClick}
+        handleChangeClick={() => history.push("/pricing")}
       />
 
       <CreditHistoryModal
@@ -83,6 +120,29 @@ const UserSidebar = () => {
       <EventHistoryModal
         isModalVisible={isEventsModalVisible}
         setIsModalVisible={setEventsModalVisible}
+      />
+
+      <MessageModal
+        isModalVisible={isCancelSubscriptionVisible}
+        setIsModalVisible={setCancelSubscriptionVisible}
+        heading="Cancel Subscription?"
+        message="Are you sure you want to cancel this subscription?"
+        buttons={[
+          <OutlineButtonStyle
+            width="100%"
+            height="60px"
+            onClick={handleModalCancelClick}
+          >
+            No
+          </OutlineButtonStyle>,
+          <FilledButtonStyle
+            width="100%"
+            height="60px"
+            onClick={handleModalOkClick}
+          >
+            Cancel Subscription
+          </FilledButtonStyle>,
+        ]}
       />
     </UserSidebarStyle>
   );

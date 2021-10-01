@@ -2,6 +2,8 @@ import { rgba } from "polished";
 import styled from "styled-components";
 
 export const MetricsStyle = styled.main`
+  padding-bottom: 80px;
+
   .tiles-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;

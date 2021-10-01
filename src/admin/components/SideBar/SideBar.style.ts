@@ -5,7 +5,7 @@ export const SideBarStyle = styled.aside`
   border-radius: 32px;
   padding: 60px 15px;
 
-  @media ( max-width: 767px ) {
+  @media (max-width: 767px) {
     padding: 20px 15px;
   }
 
@@ -23,6 +23,13 @@ export const SideBarStyle = styled.aside`
         color: #100840;
         border-radius: 25px;
         opacity: 1;
+      }
+
+      &.active {
+        background: #fff;
+        color: #100840;
+        border-radius: 25px;
+        opacity: 0.75;
       }
     }
   }

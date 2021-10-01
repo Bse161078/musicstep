@@ -28,6 +28,10 @@ export const SubscriptionDetailsModalStyle = styled.div`
   .button-wrapper {
     display: flex;
     grid-gap: 20px;
+
+    @media ( max-width: 767px ) {
+      display: grid;
+    }
   }
 
   .event-per-months-wraper {

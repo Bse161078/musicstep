@@ -6,10 +6,11 @@ import { LogoutStyle } from "./LogoutModal.style";
 type LogoutModalProps = {
   isModalVisible?: boolean;
   setIsModalVisible?: any;
+  handleOk?: any;
 };
 
 const LogoutModal = (props: LogoutModalProps) => {
-  const { isModalVisible, setIsModalVisible } = props;
+  const { isModalVisible, setIsModalVisible, handleOk } = props;
   return (
     <ModalWrapper
       heading="Logout?"
@@ -17,6 +18,7 @@ const LogoutModal = (props: LogoutModalProps) => {
       rightButtonTitle="Logout"
       isModalVisible={isModalVisible}
       setIsModalVisible={setIsModalVisible}
+      handleOkClick={handleOk}
     >
       <LogoutStyle>
         <img src="/images/logout.svg" alt="logout" />

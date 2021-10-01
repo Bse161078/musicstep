@@ -22,30 +22,36 @@ const EventHistoryModal = (props: EventHistoryModalProps) => {
       <EventHistoryModelStyle>
         <TabsStyle defaultActiveKey="1">
           <TabPaneStyle tab="All" key="1">
-            <TableRow rowLabel3="Canceled" />
-            <TableRow rowLabel3="Reserved" />
-            <TableRow rowLabel3="Canceled" />
-            <TableRow rowLabel3="Reserved" />
-            <TableRow rowLabel3="Canceled" />
-            <TableRow rowLabel3="Reserved" />
+            <div className="table-wrapper">
+              <TableRow rowLabel3="Canceled" />
+              <TableRow rowLabel3="Reserved" />
+              <TableRow rowLabel3="Canceled" />
+              <TableRow rowLabel3="Reserved" />
+              <TableRow rowLabel3="Canceled" />
+              <TableRow rowLabel3="Reserved" />
+            </div>
           </TabPaneStyle>
 
           <TabPaneStyle tab="Reserved" key="2">
-            <TableRow rowLabel3="Reserved" />
-            <TableRow rowLabel3="Reserved" />
-            <TableRow rowLabel3="Reserved" />
-            <TableRow rowLabel3="Reserved" />
-            <TableRow rowLabel3="Reserved" />
-            <TableRow rowLabel3="Reserved" />
+            <div className="table-wrapper">
+              <TableRow rowLabel3="Reserved" />
+              <TableRow rowLabel3="Reserved" />
+              <TableRow rowLabel3="Reserved" />
+              <TableRow rowLabel3="Reserved" />
+              <TableRow rowLabel3="Reserved" />
+              <TableRow rowLabel3="Reserved" />
+            </div>
           </TabPaneStyle>
 
           <TabPaneStyle tab="Canceled" key="3">
-            <TableRow rowLabel3="Canceled" />
-            <TableRow rowLabel3="Canceled" />
-            <TableRow rowLabel3="Canceled" />
-            <TableRow rowLabel3="Canceled" />
-            <TableRow rowLabel3="Canceled" />
-            <TableRow rowLabel3="Canceled" />
+            <div className="table-wrapper">
+              <TableRow rowLabel3="Canceled" />
+              <TableRow rowLabel3="Canceled" />
+              <TableRow rowLabel3="Canceled" />
+              <TableRow rowLabel3="Canceled" />
+              <TableRow rowLabel3="Canceled" />
+              <TableRow rowLabel3="Canceled" />
+            </div>
           </TabPaneStyle>
         </TabsStyle>
       </EventHistoryModelStyle>

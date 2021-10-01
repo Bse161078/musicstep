@@ -5,14 +5,22 @@ import {
   OutlineButtonStyle,
 } from "../../../../styles/Common.style";
 import { SubscriptionDetailsModalStyle } from "./SubscriptionDetailsModal.style";
+import { Link } from "react-router-dom";
 
 type SubscriptionDetailsModalProps = {
   isModalVisible?: boolean;
   setIsModalVisible?: any;
+  handleCancelClick?: any;
+  handleChangeClick?: any;
 };
 
 const SubscriptionDetailsModal = (props: SubscriptionDetailsModalProps) => {
-  const { isModalVisible, setIsModalVisible } = props;
+  const {
+    isModalVisible,
+    setIsModalVisible,
+    handleCancelClick,
+    handleChangeClick,
+  } = props;
 
   return (
     <ModalWrapper
@@ -21,9 +29,11 @@ const SubscriptionDetailsModal = (props: SubscriptionDetailsModalProps) => {
       isModalVisible={isModalVisible}
       setIsModalVisible={setIsModalVisible}
       button={
-        <FilledButtonStyle height="54px" width="557px">
-          Buy More Credits
-        </FilledButtonStyle>
+        <Link to="/pricing">
+          <FilledButtonStyle height="54px" width="557px">
+            Buy More Credits
+          </FilledButtonStyle>
+        </Link>
       }
     >
       <SubscriptionDetailsModalStyle>
@@ -41,10 +51,18 @@ const SubscriptionDetailsModal = (props: SubscriptionDetailsModalProps) => {
           <h1>Price: $99</h1>
         </div>
         <div className="button-wrapper">
-          <OutlineButtonStyle width="245px" height="60px">
+          <OutlineButtonStyle
+            onClick={handleCancelClick}
+            width="245px"
+            height="60px"
+          >
             Cancel Subscription
           </OutlineButtonStyle>
-          <OutlineButtonStyle width="245px" height="60px">
+          <OutlineButtonStyle
+            onClick={handleChangeClick}
+            width="245px"
+            height="60px"
+          >
             Change Subscription
           </OutlineButtonStyle>
         </div>

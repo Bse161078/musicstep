@@ -1,15 +1,17 @@
 import styled from "styled-components";
 
 export const TaxPayerInfoStyle = styled.main`
+  padding-bottom: 80px;
+
   .steps-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 
     @media (max-width: 1024px) {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 20px;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 20px;
     }
 
     .buttons-wrapper {

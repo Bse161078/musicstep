@@ -1,4 +1,3 @@
-import { Modal } from "antd";
 import styled from "styled-components";
 import { FilledButtonStyle } from "../../styles/Common.style";
 
@@ -6,7 +5,7 @@ type MessageModalStyleProps = {
   type?: "light" | "dark";
 };
 
-export const MessageModalStyle = styled(Modal)<MessageModalStyleProps>`
+export const MessageModalStyle = styled.div<MessageModalStyleProps>`
   .ant-modal-content {
     border-radius: 32px;
     box-shadow: 0px 0px 99px #0000004d;

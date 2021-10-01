@@ -33,6 +33,11 @@ export const ModalWrapperStyle = styled(Modal)`
       font-weight: 600;
       padding: 0 30px;
       padding-bottom: 30px;
+
+      @media ( max-width: 767px ) {
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
 
     .modal-message {
