@@ -1,5 +1,7 @@
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+
 import { CongratulationsModal, InputBox } from "..";
 import { FilledButtonStyle } from "../../styles/Common.style";
 
@@ -7,6 +9,13 @@ import { TrialBillingInfoFormStyle } from "./TrialBillingInfoForm.style";
 
 const TrialBillingInfoForm = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
+  
+  const history = useHistory();
+
+  const handleCongratulationsButtonClick = () => {
+    history.push('/explore-venue')
+    setIsModalVisible(false)
+  }
 
   const handleFormSubmit = () => {
     setIsModalVisible(true);
@@ -55,6 +64,8 @@ const TrialBillingInfoForm = () => {
       <CongratulationsModal
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}
+        message="You have redeemed your trial successfully."
+        handleButtonClick={handleCongratulationsButtonClick}
       />
     </TrialBillingInfoFormStyle>
   );

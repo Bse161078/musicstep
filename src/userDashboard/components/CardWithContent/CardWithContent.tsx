@@ -12,10 +12,11 @@ type CardWithContentProps = {
   buttonType?: "filled" | "outlined";
   buttonText?: string;
   onButtonClick?: any;
+  handleButtonClick?: any;
 };
 
 const CardWithContent = (props: CardWithContentProps) => {
-  const { heading, time, footerText, buttonType, buttonText } = props;
+  const { heading, time, footerText, buttonType, buttonText, handleButtonClick } = props;
 
   return (
     <CardWithContentStyle>
@@ -32,11 +33,11 @@ const CardWithContent = (props: CardWithContentProps) => {
             <p className="description">Alternative, Classical</p>
           </div>
           {buttonType === "filled" ? (
-            <FilledButtonStyle buttonType="dark" width="100px" height="54px">
+            <FilledButtonStyle onClick={handleButtonClick} buttonType="dark" width="100px" height="54px">
               {buttonText ? buttonText : "Cancel"}
             </FilledButtonStyle>
           ) : (
-            <OutlineButtonStyle width="100px" height="54px">
+            <OutlineButtonStyle onClick={handleButtonClick} width="100px" height="54px">
               {buttonText ? buttonText : "Cancel"}
             </OutlineButtonStyle>
           )}

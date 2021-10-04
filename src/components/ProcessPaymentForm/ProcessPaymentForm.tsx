@@ -1,5 +1,6 @@
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 import { InputBox } from "..";
 import { FilledButtonStyle } from "../../styles/Common.style";
 import CongratulationsModals from "../CongratulationsModals/CongratulationsModals";
@@ -9,6 +10,13 @@ import { ProcessPaymentFormStyle } from "./ProcessPaymentForm.style";
 const ProcessPaymentForm = () => {
   const [isCongratulationsVisible, setCongratulationsVisible] = useState(false);
   
+  const history = useHistory();
+
+  const handleCongratulationsButtonClick = () => {
+    history.push('/explore-venue')
+    setCongratulationsVisible(true)
+  }
+
   return (
     <ProcessPaymentFormStyle>
       <h3 className="form-heading">Process Payment</h3>
@@ -47,6 +55,8 @@ const ProcessPaymentForm = () => {
       <CongratulationsModals
         isModalVisible={isCongratulationsVisible}
         setIsModalVisible={setCongratulationsVisible}
+        message="You are now a member of MusicPass."
+        handleButtonClick={handleCongratulationsButtonClick}
       />
     </ProcessPaymentFormStyle>
   );

@@ -12,6 +12,7 @@ export const BillingInformationStyle = styled.div`
     margin-bottom: 40px;
 
     span {
+      color: #f3c;
       font-family: "Covered By Your Grace", cursive;
     }
 

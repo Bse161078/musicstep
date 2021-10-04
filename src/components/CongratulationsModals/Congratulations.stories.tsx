@@ -4,5 +4,5 @@ import "antd/dist/antd.css";
 import CongratulationsModal from './CongratulationsModals'
 
 storiesOf("Congratulations Modal", module).add("Modal", () => {
-  return <CongratulationsModal />;
+  return <CongratulationsModal message="test" />;
 });

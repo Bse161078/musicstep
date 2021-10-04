@@ -1,5 +1,9 @@
-import React from "react";
-import { NavbarWithSearch } from "../../../components";
+import React, { useState } from "react";
+import { MessageModal, NavbarWithSearch } from "../../../components";
+import {
+  FilledButtonStyle,
+  OutlineButtonStyle,
+} from "../../../styles/Common.style";
 
 import {
   CardWithContent,
@@ -10,6 +14,9 @@ import {
 import { EventReservationStyle, UserHomeStyle } from "./UserHome.style";
 
 const EventReservation = () => {
+  const [isCancelModalVisible, setCancelModalVisible] = useState(false);
+  const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
+
   return (
     <SectionHeading heading="Events In Reservation">
       <EventReservationStyle>
@@ -18,6 +25,7 @@ const EventReservation = () => {
           time="10:51 AM"
           footerText="Cancelation Time Left: 22:32:09"
           buttonType="filled"
+          handleButtonClick={() => setCancelModalVisible(true)}
         />
         <CardWithContent
           buttonText="Reserved"
@@ -26,6 +34,40 @@ const EventReservation = () => {
           footerText="Cannot Be Canceled."
         />
       </EventReservationStyle>
+
+      <MessageModal
+        isModalVisible={isCancelModalVisible}
+        setIsModalVisible={setCancelModalVisible}
+        icon={<img src="/images/icons/cancel-icon.svg" alt="icon" />}
+        heading="Cancel Reservation?"
+        message="Are you sure you want to cancel this reservation?"
+        buttons={[
+          <OutlineButtonStyle
+            width="100%"
+            height="60px"
+            onClick={() => setCancelModalVisible(false)}
+          >
+            No
+          </OutlineButtonStyle>,
+          <FilledButtonStyle
+            width="100%"
+            height="60px"
+            onClick={() => {
+              setCancelModalVisible(false);
+              setSuccessModalVisible(true);
+            }}
+          >
+            Cancel
+          </FilledButtonStyle>,
+        ]}
+      />
+
+      <MessageModal
+        isModalVisible={isSuccessModalVisible}
+        setIsModalVisible={setSuccessModalVisible}
+        heading="Success"
+        message="Reservation canceled successfully."
+      />
     </SectionHeading>
   );
 };

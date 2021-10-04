@@ -5,10 +5,17 @@ import { FilledButtonStyle } from "../../styles/Common.style";
 type CongratulationsModalProps = {
   isModalVisible?: boolean;
   setIsModalVisible?: any;
+  message: string;
+  handleButtonClick?: any;
 };
 
 const CongratulationsModal = (props: CongratulationsModalProps) => {
-  const { isModalVisible, setIsModalVisible } = props;
+  const {
+    isModalVisible,
+    setIsModalVisible,
+    message,
+    handleButtonClick,
+  } = props;
   return (
     <ModalWrapper
       isFooter={false}
@@ -23,9 +30,18 @@ const CongratulationsModal = (props: CongratulationsModalProps) => {
     >
       <CongratulationsModalStyle>
         <img src="/images/party.svg" alt="party" />
-        <p className="description">You are now a member of MusicPass.</p>
+        <p className="description">{message}</p>
 
-        <FilledButtonStyle onClick={()=>setIsModalVisible(false)} buttonType="light" width="100%" height="60px">
+        <FilledButtonStyle
+          onClick={
+            handleButtonClick
+              ? handleButtonClick
+              : () => setIsModalVisible(false)
+          }
+          buttonType="light"
+          width="100%"
+          height="60px"
+        >
           Explore MusicPass
         </FilledButtonStyle>
       </CongratulationsModalStyle>
