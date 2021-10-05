@@ -19,39 +19,39 @@ export const UpcomingEventsStyle = styled.div`
       grid-template-columns: 210px 1fr;
     }
   }
+`;
 
-  .row-wrapper {
-    display: flex;
-    grid-template-columns: auto auto 1fr;
-    grid-gap: 30px;
-    padding: 15px 0;
-    margin: 0 30px;
-    margin-right: 5px;
-    border-bottom: solid 1px ${rgba("#0c0c0c", 0.3)};
+export const TabRowStyle = styled.div`
+  display: flex;
+  grid-template-columns: auto auto 1fr;
+  grid-gap: 30px;
+  padding: 15px 0;
+  margin: 0 30px;
+  margin-right: 5px;
+  border-bottom: solid 1px ${rgba("#0c0c0c", 0.3)};
 
-    @media (max-width: 767px) {
-      display: grid;
-      grid-template-columns: 210px 1fr 1fr;
-    }
+  @media (max-width: 767px) {
+    display: grid;
+    grid-template-columns: 210px 1fr 1fr;
+  }
 
-    .time {
-      font-size: 20px;
-      font-weight: bold;
+  .time {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0c0c0c;
+    display: grid;
+
+    .hour {
+      font-size: 16px;
       color: #0c0c0c;
-      display: grid;
-
-      .hour {
-        font-size: 16px;
-        color: #0c0c0c;
-        opacity: 0.5;
-      }
+      opacity: 0.5;
     }
+  }
 
-    .pricing {
-      margin-left: auto;
-      
-      ${OutlineButtonStyle} {
-      }
+  .pricing {
+    margin-left: auto;
+
+    ${OutlineButtonStyle} {
     }
   }
 `;

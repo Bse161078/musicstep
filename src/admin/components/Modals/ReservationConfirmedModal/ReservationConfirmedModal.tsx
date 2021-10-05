@@ -16,14 +16,15 @@ type ReservationConfirmedModalProps = {
 
 const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
   const { isModalVisible, setIsModalVisible } = props;
-  const handleSubmit = () => {};
+  const handleSubmit = () => {
+  };
   return (
     <ModalWrapper
       heading="Reservation Confirmed"
       width="617px"
       isModalVisible={isModalVisible}
       setIsModalVisible={setIsModalVisible}
-      button={<FilledButtonStyle height="54px"  width="557px">Okay</FilledButtonStyle>}
+      button={[]}
     >
       <ReservationConfirmedModalStyle>
         <img alt="code" className="qrcode-img" src="/images/qrcodee.png" />
@@ -32,11 +33,11 @@ const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
           <h1>You're booked for 8-March-2021 at 7:00 PM</h1>
           <img alt="ad" src="/images/ad.svg" />
         </div>
-        <FilledButtonStyle width="557px" height="54px" >
+        <FilledButtonStyle width="100%" height="54px" >
           Download & Save QR Code
         </FilledButtonStyle>
         <div className="border-div">
-          <p>
+          <p className="description">
             Want free events? Refer a friend and get $30 worth credits when your
             friend becomes a paid subscriber. Limited time offer. Terms &
             Conditions apply.
@@ -52,7 +53,7 @@ const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
                 <Form>
                   <InputBox
                     label="Invite Link"
-                    width="450px"
+                    width="100%"
                     name="inviteLink"
                   />
                 </Form>
@@ -68,7 +69,7 @@ const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
             <p>---------------- or ----------------</p>
             </div>
           <div>
-            <OutlineButtonStyle height="54px" width="557px">Email Invite</OutlineButtonStyle>
+            <OutlineButtonStyle onClick={handleSubmit} height="54px" width="100%">Email Invite</OutlineButtonStyle>
           </div>
         </div>
       </ReservationConfirmedModalStyle>

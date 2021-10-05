@@ -23,6 +23,7 @@ const UserSidebar = () => {
   const [isCancelSubscriptionVisible, setCancelSubscriptionVisible] = useState(
     false
   );
+  const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
 
   const history = useHistory();
 
@@ -31,6 +32,7 @@ const UserSidebar = () => {
   };
 
   const handleModalOkClick = () => {
+    setSuccessModalVisible(true);
     setCancelSubscriptionVisible(false);
   };
 
@@ -99,9 +101,9 @@ const UserSidebar = () => {
       <LogoutModal
         isModalVisible={isLogoutVisible}
         setIsModalVisible={setLogoutVisible}
-        handleOk={()=>{
-          history.push("/login")
-          setLogoutVisible(false)
+        handleOk={() => {
+          history.push("/login");
+          setLogoutVisible(false);
         }}
       />
 
@@ -143,6 +145,14 @@ const UserSidebar = () => {
             Cancel Subscription
           </FilledButtonStyle>,
         ]}
+      />
+
+      <MessageModal
+        isModalVisible={isSuccessModalVisible}
+        setIsModalVisible={setSuccessModalVisible}
+        heading="Success"
+        message="Subscription canceled successfully."
+        handleOkClick={()=>{history.push("/")}}
       />
     </UserSidebarStyle>
   );

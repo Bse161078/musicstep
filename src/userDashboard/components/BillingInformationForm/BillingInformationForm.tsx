@@ -1,11 +1,13 @@
 import { Form, Formik } from "formik";
-import React from "react";
-import { InputBox } from "../../../components";
+import React, { useState } from "react";
+import { InputBox, MessageModal } from "../../../components";
 import { FilledButtonStyle } from "../../../styles/Common.style";
 
 import { BillingInformationFormStyle } from "./BillingInformationForm.style";
 
 const BillingInformationForm = () => {
+  const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
+
   return (
     <BillingInformationFormStyle>
       <Formik
@@ -15,7 +17,9 @@ const BillingInformationForm = () => {
           cardMonth: "",
           cvc: "",
         }}
-        onSubmit={() => {}}
+        onSubmit={() => {
+          setSuccessModalVisible(true);
+        }}
       >
         {() => (
           <Form className="form-wrapper">
@@ -33,6 +37,13 @@ const BillingInformationForm = () => {
           </Form>
         )}
       </Formik>
+
+      <MessageModal
+        isModalVisible={isSuccessModalVisible}
+        setIsModalVisible={setSuccessModalVisible}
+        heading="Success"
+        message="Billing information updated"
+      />
     </BillingInformationFormStyle>
   );
 };

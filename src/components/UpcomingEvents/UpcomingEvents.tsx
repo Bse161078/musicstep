@@ -1,10 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { OutlineButtonStyle } from "../../styles/Common.style";
+import React, { useState } from "react";
+import { EventDetailsModal } from "../../admin/components";
 
+import { TabRow } from "./TabRow";
 import { UpcomingEventsStyle } from "./UpcomingEvents.style";
 
 const UpcomingEvents = () => {
+  const [isEventModalVisible, setEventModalVisible] = useState(false);
+
   return (
     <UpcomingEventsStyle>
       <div className="list-header">
@@ -13,141 +15,28 @@ const UpcomingEvents = () => {
         <span>Availability</span>
       </div>
 
-      <div className="row-wrapper">
-        <div className="time">
-          <span>10:51AM</span>
-          <span className="hour">1 Hour</span>
-        </div>
-        <div className="time">
-          <span>Franklin Kub's Concert</span>
-          <span className="hour">Alternative, Classical</span>
-        </div>
+      <TabRow
+        buttonType="filled"
+        buttonText="11 Credits"
+        buttonClick={() => setEventModalVisible(true)}
+      />
 
-        <Link className="pricing" to="/pricing">
-          <OutlineButtonStyle width="150px" height="43px">
-            See Pricing
-          </OutlineButtonStyle>
-        </Link>
-      </div>
+      <TabRow />
 
-      <div className="row-wrapper">
-        <div className="time">
-          <span>10:51AM</span>
-          <span className="hour">1 Hour</span>
-        </div>
-        <div className="time">
-          <span>Franklin Kub's Concert</span>
-          <span className="hour">Alternative, Classical</span>
-        </div>
+      <TabRow />
 
-        <Link className="pricing" to="/pricing">
-          <OutlineButtonStyle width="150px" height="43px">
-            See Pricing
-          </OutlineButtonStyle>
-        </Link>
-      </div>
+      <TabRow />
 
-      <div className="row-wrapper">
-        <div className="time">
-          <span>10:51AM</span>
-          <span className="hour">1 Hour</span>
-        </div>
-        <div className="time">
-          <span>Franklin Kub's Concert</span>
-          <span className="hour">Alternative, Classical</span>
-        </div>
+      <TabRow />
 
-        <Link className="pricing" to="/pricing">
-          <OutlineButtonStyle width="150px" height="43px">
-            See Pricing
-          </OutlineButtonStyle>
-        </Link>
-      </div>
+      <TabRow />
 
-      <div className="row-wrapper">
-        <div className="time">
-          <span>10:51AM</span>
-          <span className="hour">1 Hour</span>
-        </div>
-        <div className="time">
-          <span>Franklin Kub's Concert</span>
-          <span className="hour">Alternative, Classical</span>
-        </div>
+      <TabRow />
 
-        <Link className="pricing" to="/pricing">
-          <OutlineButtonStyle width="150px" height="43px">
-            See Pricing
-          </OutlineButtonStyle>
-        </Link>
-      </div>
-
-      <div className="row-wrapper">
-        <div className="time">
-          <span>10:51AM</span>
-          <span className="hour">1 Hour</span>
-        </div>
-        <div className="time">
-          <span>Franklin Kub's Concert</span>
-          <span className="hour">Alternative, Classical</span>
-        </div>
-
-        <Link className="pricing" to="/pricing">
-          <OutlineButtonStyle width="150px" height="43px">
-            See Pricing
-          </OutlineButtonStyle>
-        </Link>
-      </div>
-
-      <div className="row-wrapper">
-        <div className="time">
-          <span>10:51AM</span>
-          <span className="hour">1 Hour</span>
-        </div>
-        <div className="time">
-          <span>Franklin Kub's Concert</span>
-          <span className="hour">Alternative, Classical</span>
-        </div>
-
-        <Link className="pricing" to="/pricing">
-          <OutlineButtonStyle width="150px" height="43px">
-            See Pricing
-          </OutlineButtonStyle>
-        </Link>
-      </div>
-
-      <div className="row-wrapper">
-        <div className="time">
-          <span>10:51AM</span>
-          <span className="hour">1 Hour</span>
-        </div>
-        <div className="time">
-          <span>Franklin Kub's Concert</span>
-          <span className="hour">Alternative, Classical</span>
-        </div>
-
-        <Link className="pricing" to="/pricing">
-          <OutlineButtonStyle width="150px" height="43px">
-            See Pricing
-          </OutlineButtonStyle>
-        </Link>
-      </div>
-
-      <div className="row-wrapper">
-        <div className="time">
-          <span>10:51AM</span>
-          <span className="hour">1 Hour</span>
-        </div>
-        <div className="time">
-          <span>Franklin Kub's Concert</span>
-          <span className="hour">Alternative, Classical</span>
-        </div>
-
-        <Link className="pricing" to="/pricing">
-          <OutlineButtonStyle width="150px" height="43px">
-            See Pricing
-          </OutlineButtonStyle>
-        </Link>
-      </div>
+      <EventDetailsModal
+        isModalVisible={isEventModalVisible}
+        setIsModalVisible={setEventModalVisible}
+      />
     </UpcomingEventsStyle>
   );
 };

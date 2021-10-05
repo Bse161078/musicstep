@@ -17,10 +17,13 @@ const CheckingAvailablityModal = (props: CheckingAvailablityModalProps) => {
 
   useEffect(() => {
     setTimeout(() => {
-      setIsReservationConfirmedModalVisible(true);
-      setIsModalVisible(false);
+      if (isModalVisible) {
+        setIsReservationConfirmedModalVisible(true);
+        setIsModalVisible(false);
+        console.log("WORKING");
+      }
     }, 2000);
-  }, [setIsReservationConfirmedModalVisible, setIsModalVisible]);
+  }, [setIsModalVisible, isModalVisible]);
   return (
     <>
       <ModalWrapper

@@ -42,19 +42,24 @@ const EventDetailsModal = (props: EventDetailsModalProps) => {
           </div>
           <FilledButtonStyle
             onClick={handleCheckingAvailablityModalVisible}
-            width="480px"
+            width="100%"
+            height="60px"
           >
             Reserve Event
           </FilledButtonStyle>
           <div>
-            <p id="cancel-text">Cancel Up To 24 Hours In Advance.</p>
             <p id="cancel-text">
+              Cancel Up To 24 Hours In Advance.
+              <br />
               QR Code For Entry Will Be Issued Within 24 Hours Of Event.
             </p>
           </div>
         </EventDetailsModalStyle>
       </ModalWrapper>
-      <CheckingAvailablityModal isModalVisible={isCheckingAvailablityModalVisible} setIsModalVisible={setIsCheckingAvailablityModalVisible} />
+      <CheckingAvailablityModal
+        isModalVisible={isCheckingAvailablityModalVisible}
+        setIsModalVisible={setIsCheckingAvailablityModalVisible}
+      />
     </>
   );
 };

@@ -22,16 +22,18 @@ export const EventDetailsModalStyle = styled.div`
   #below-eventname {
      font-size:19px;
      opacity: 0.5;
-     margin-top: -10px;
+     margin-bottom: 20px;
   }
   #location-text{
-     font-size: 19px;
+     font-size: 16px;
      font-weight: 500;
+     margin-bottom: 20px;
   }
   #event-dateTime {
      font-size: 24px;
      width: 240px;
      font-weight: 500;
+     margin-bottom: 20px;
   }
   #credits{
      font-size: 19px;
@@ -39,7 +41,7 @@ export const EventDetailsModalStyle = styled.div`
   #cancel-text{
      font-size: 15px;
      opacity: 0.5;
-     margin-top: -10px;
+      margin-top: 20px;
   }
 
 `;
