@@ -31,7 +31,7 @@ export const PriceCardStyle = styled.div`
     color: #0c0c0c;
 
     @media (max-width: 1600px) {
-      font-size: 20px;
+      /* font-size: 20px; */
     }
 
     span {
@@ -41,7 +41,7 @@ export const PriceCardStyle = styled.div`
       font-family: 'Covered By Your Grace', cursive;
 
       @media (max-width: 1600px) {
-        font-size: 20px;
+        /* font-size: 20px; */
       }
     }
   }
