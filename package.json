@@ -13,6 +13,7 @@
     "@types/react-router-dom": "^5.1.8",
     "@types/styled-components": "^5.1.14",
     "antd": "^4.16.13",
+    "axios": "^0.24.0",
     "flickity": "^2.2.2",
     "formik": "^2.2.9",
     "polished": "^4.1.3",

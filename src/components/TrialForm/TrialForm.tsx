@@ -5,6 +5,7 @@ import { InputBox, TrialFormWrapper } from "..";
 import { UpcomingEventsIcon } from "../../assets";
 import { FilledButtonStyle } from "../../styles/Common.style";
 import { IconWithTextStyle, TrialFormStyle } from "./TrialForm.style";
+import axios from "axios";
 
 type IconWithTextProps = {
   heading: string;
@@ -29,8 +30,13 @@ type TrialFormProps = {
 const TrialForm = (props: TrialFormProps) => {
   const { setCurrentForm } = props;
 
-  const handleFreeTrialEmailSubmit = () => {
-    setCurrentForm("general-info");
+  const handleFreeTrialEmailSubmit = (e: any) => {
+    axios
+      .post("https://music-pass-backend.herokuapp.com/v1/users", {
+        email: e.email,
+      })
+      .then(setCurrentForm("general-info"))
+      .catch((error) => console.log("error"));
   };
   return (
     <TrialFormWrapper heading="Your Trial Includes">
@@ -57,6 +63,7 @@ const TrialForm = (props: TrialFormProps) => {
           enableReinitialize={true}
           initialValues={{ email: "" }}
           onSubmit={handleFreeTrialEmailSubmit}
+          validateOnChange={true}
         >
           {({ values }) => (
             <Form className="trial-form-wrapper">
