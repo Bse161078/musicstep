@@ -7,6 +7,13 @@ export const TrialFormStyle = styled.div`
     text-align: center;
   }
 
+  .error-message {
+    font-size: 12px;
+    color: #ff5151;
+    margin-top: 15px;
+    margin-left: 25px;
+  }
+
   .price-description {
     font-size: 20px;
     text-align: center;

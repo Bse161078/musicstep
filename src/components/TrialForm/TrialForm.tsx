@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, Formik } from "formik";
 
-import { InputBox, TrialFormWrapper } from "..";
+import { InputBox, Loading, TrialFormWrapper } from "..";
 import { UpcomingEventsIcon } from "../../assets";
 import { FilledButtonStyle } from "../../styles/Common.style";
 import { IconWithTextStyle, TrialFormStyle } from "./TrialForm.style";
@@ -30,16 +30,32 @@ type TrialFormProps = {
 const TrialForm = (props: TrialFormProps) => {
   const { setCurrentForm } = props;
 
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleFreeTrialEmailSubmit = (e: any) => {
+    setLoading(true);
+
     axios
       .post("https://music-pass-backend.herokuapp.com/v1/users", {
         email: e.email,
       })
-      .then(setCurrentForm("general-info"))
-      .catch((error) => console.log("error"));
+      .then((response) => {
+        setLoading(false);
+        console.log(response);
+        setCurrentForm("general-info");
+      })
+      .catch((error) => {
+        setErrorMessage("Email already exist!");
+        setLoading(false);
+        console.log("error");
+      });
   };
+
   return (
     <TrialFormWrapper heading="Your Trial Includes">
+      {loading && <Loading />}
+
       <TrialFormStyle>
         <h1 className="trial-price">$O</h1>
         <h4 className="price-description">For 7 Days</h4>
@@ -67,7 +83,12 @@ const TrialForm = (props: TrialFormProps) => {
         >
           {({ values }) => (
             <Form className="trial-form-wrapper">
-              <InputBox label="Email Address" name="email" />
+              <div>
+                <InputBox label="Email Address" name="email" />
+                {errorMessage !== "" && (
+                  <p className="error-message">{errorMessage}</p>
+                )}
+              </div>
 
               <FilledButtonStyle width="100%" height="60px">
                 Try For Free
