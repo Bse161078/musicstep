@@ -1,7 +1,9 @@
+import axios from "axios";
 import { Form, Formik } from "formik";
-import React from "react";
+import React, { useState } from "react";
 
-import { InputBox, TrialFormWrapper } from "..";
+import { InputBox, Loading, TrialFormWrapper } from "..";
+import { useUserContext } from "../../context/userContext";
 import { FilledButtonStyle } from "../../styles/Common.style";
 import { TrialSetPasswordStyle } from "./TrialSetPassword.style";
 
@@ -12,11 +14,49 @@ type TrailSetPasswordProps = {
 const TrialSetPassword = (props: TrailSetPasswordProps) => {
   const { setCurrentForm } = props;
 
-  const handleSetPasswordSubmit = () => {
-    setCurrentForm("redeem-offer");
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const {
+    state: { id },
+    dispatch,
+  } = useUserContext();
+
+  const handleSetPasswordSubmit = (e: any) => {
+    setLoading(true);
+
+    if (e.password === e.confirmPassword) {
+      axios
+        .patch(
+          `https://music-pass-backend.herokuapp.com/v1/users/createPassword/${id}`,
+          {
+            password: e.password
+          }
+        )
+        .then((response) => {
+          setLoading(false);
+          console.log(response);
+          dispatch({
+            type: "SUBMIT_GENERAL_INFO",
+            payload: {
+              firstName: e.firstName,
+              lastName: e.lastName,
+              dob: e.dob,
+            },
+          });
+          setCurrentForm("redeem-offer");
+        })
+        .catch((error) => {
+          setErrorMessage("Error while submitting data!");
+          setLoading(false);
+          console.log("error");
+        });
+    }
   };
   return (
     <TrialFormWrapper heading="Set Your Password">
+      {loading && <Loading />}
+      
       <TrialSetPasswordStyle>
         <Formik
           initialValues={{
@@ -33,9 +73,15 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
               </h3>
 
               <InputBox label="Password" type="password" name="password" />
-              <InputBox label="Confirm Password" type="password" name="confirmPassword" />
+              <InputBox
+                label="Confirm Password"
+                type="password"
+                name="confirmPassword"
+              />
 
-              <FilledButtonStyle width="100%" height="60px">Continue</FilledButtonStyle>
+              <FilledButtonStyle width="100%" height="60px">
+                Continue
+              </FilledButtonStyle>
             </Form>
           )}
         </Formik>

@@ -1,6 +1,8 @@
+import axios from "axios";
 import { Form, Formik } from "formik";
-import React from "react";
-import { InputBox, TrialFormWrapper } from "..";
+import React, { useState } from "react";
+import { InputBox, Loading, TrialFormWrapper } from "..";
+import { useUserContext } from "../../context/userContext";
 import { FilledButtonStyle } from "../../styles/Common.style";
 import { TrialGeneralInfoStyle } from "./TrialGeneralInfo.style";
 
@@ -11,11 +13,48 @@ type TrailGeneralInfoProps = {
 const TrialGeneralInfo = (props: TrailGeneralInfoProps) => {
   const { setCurrentForm } = props;
 
-  const handleGeneralInfoSubmit = () => {
-    setCurrentForm("set-password");
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const {
+    state: { id },
+    dispatch,
+  } = useUserContext();
+
+  const handleGeneralInfoSubmit = (e: any) => {
+    setLoading(true);
+    axios
+      .patch(
+        `https://music-pass-backend.herokuapp.com/v1/users/createPersonalInfo/${id}`,
+        {
+          firstName: e.firstName,
+          lastName: e.lastName,
+          dob: e.dob,
+        }
+      )
+      .then((response) => {
+        setLoading(false);
+        console.log(response);
+        dispatch({
+          type: "SUBMIT_GENERAL_INFO",
+          payload: {
+            firstName: e.firstName,
+            lastName: e.lastName,
+            dob: e.dob,
+          },
+        });
+        setCurrentForm("set-password");
+      })
+      .catch((error) => {
+        setErrorMessage("Error while submitting data!");
+        setLoading(false);
+        console.log("error");
+      });
   };
   return (
     <TrialFormWrapper heading="General Info">
+      {loading && <Loading />}
+
       <TrialGeneralInfoStyle>
         <Formik
           initialValues={{
@@ -29,7 +68,7 @@ const TrialGeneralInfo = (props: TrailGeneralInfoProps) => {
             <Form className="general-info-wrapper">
               <InputBox label="First Name" name="firstName" />
               <InputBox label="Last Name" name="lastName" />
-              <InputBox label="Date of birth" name="email" />
+              <InputBox label="Date of birth" name="dob" />
 
               <FilledButtonStyle width="100%" height="60px">
                 Next
@@ -50,7 +89,9 @@ const TrialGeneralInfo = (props: TrailGeneralInfoProps) => {
           which point credit use is deemed permanent.
         </p>
 
-        <h4 className="info-footer-heading">I'm in <span>Miami/South Florida</span></h4>
+        <h4 className="info-footer-heading">
+          I'm in <span>Miami/South Florida</span>
+        </h4>
       </TrialGeneralInfoStyle>
     </TrialFormWrapper>
   );

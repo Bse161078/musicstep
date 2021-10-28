@@ -32,6 +32,7 @@ import {
   EditProfile,
   UserHome,
 } from "./userDashboard/pages";
+import { UserContextProvider } from "./context/userContext";
 
 const RoutesList = (props: any) => {
   const { pathname } = useLocation();
@@ -96,11 +97,13 @@ const RoutesList = (props: any) => {
 function App() {
   return (
     <div className="App">
-      <BaseStyle />
-      <BrowserRouter>
-        <RoutesList />
-        <Footer />
-      </BrowserRouter>
+      <UserContextProvider>
+        <BaseStyle />
+        <BrowserRouter>
+          <RoutesList />
+          <Footer />
+        </BrowserRouter>
+      </UserContextProvider>
     </div>
   );
 }

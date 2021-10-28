@@ -6,6 +6,7 @@ import { UpcomingEventsIcon } from "../../assets";
 import { FilledButtonStyle } from "../../styles/Common.style";
 import { IconWithTextStyle, TrialFormStyle } from "./TrialForm.style";
 import axios from "axios";
+import { useUserContext } from "../../context/userContext";
 
 type IconWithTextProps = {
   heading: string;
@@ -33,6 +34,8 @@ const TrialForm = (props: TrialFormProps) => {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
+  const { dispatch } = useUserContext();
+
   const handleFreeTrialEmailSubmit = (e: any) => {
     setLoading(true);
 
@@ -43,6 +46,13 @@ const TrialForm = (props: TrialFormProps) => {
       .then((response) => {
         setLoading(false);
         console.log(response);
+        dispatch({
+          type: "SUBMIT_EMAIL",
+          payload: {
+            email: e.email,
+            id: response.data.id
+          }
+        })
         setCurrentForm("general-info");
       })
       .catch((error) => {
