@@ -1,7 +1,9 @@
+import axios from "axios";
 import { Form, Formik } from "formik";
-import React from "react";
+import React, { useState } from "react";
 
-import { InputBox, SelectBox, TrialFormWrapper } from "..";
+import { InputBox, Loading, SelectBox, TrialFormWrapper } from "..";
+import { useUserContext } from "../../context/userContext";
 import { FilledButtonStyle } from "../../styles/Common.style";
 import { RedeemOfferFormStyle } from "./RedeemOfferForm.style";
 
@@ -12,11 +14,45 @@ type TrailSetPasswordProps = {
 const RedeemOfferForm = (props: TrailSetPasswordProps) => {
   const { setCurrentForm } = props;
 
-  const handleSetPasswordSubmit = () => {
-    setCurrentForm("redeem-offer-verify");
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const {
+    state: { id },
+    dispatch,
+  } = useUserContext();
+
+  const handleSetPasswordSubmit = (e: any) => {
+    console.log("EVENTS: ", e);
+    setLoading(true);
+
+    console.log("id: ", id, `${e.countryCode}${e.phoneNumber}`)
+
+    axios
+      .patch(`https://music-pass-backend.herokuapp.com/v1/users/createPhonenumber/${id}`, {
+        phoneNumber: `${e.countryCode}${e.phoneNumber}`,
+      })
+      .then((response) => {
+        setLoading(false);
+        console.log(response);
+        dispatch({
+          type: "SUBMIT_PHONE_NUMBER",
+          payload: {
+            email: e.email,
+          },
+        });
+        setCurrentForm("redeem-offer-verify");
+      })
+      .catch((error) => {
+        setErrorMessage("Email already exist!");
+        setLoading(false);
+        console.log("error");
+      });
   };
   return (
     <TrialFormWrapper heading="Redeem Your Offer">
+      {loading && <Loading />}
+
       <RedeemOfferFormStyle>
         <h3 className="steps-count">Step 1 of 2</h3>
 
@@ -27,8 +63,8 @@ const RedeemOfferForm = (props: TrailSetPasswordProps) => {
         </h3>
         <Formik
           initialValues={{
-            password: "",
-            confirmPassword: "",
+            countryCode: "",
+            phoneNumber: "",
           }}
           onSubmit={handleSetPasswordSubmit}
         >
@@ -38,10 +74,13 @@ const RedeemOfferForm = (props: TrailSetPasswordProps) => {
                 <SelectBox
                   label="Country Code"
                   name="countryCode"
-                  options={[{ key: "Option 1", value: "Option 1" }]}
+                  options={[{ key: "+92", value: "+92" }]}
                   setFieldValue={setFieldValue}
                 />
                 <InputBox label="Phone Number" name="phoneNumber" />
+                {errorMessage !== "" && (
+                  <p className="error-message">{errorMessage}</p>
+                )}
               </div>
 
               <p className="standard-message">

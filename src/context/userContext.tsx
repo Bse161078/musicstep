@@ -1,12 +1,22 @@
 import React, { createContext, Dispatch, useContext, useReducer } from "react";
 
-type UserAction = | {
-  type: "SUBMIT_EMAIL";
-  payload: any;
-} | {
-    type: "SUBMIT_GENERAL_INFO";
-    payload: any;
-};
+type UserAction =
+  | {
+      type: "SUBMIT_EMAIL";
+      payload: any;
+    }
+  | {
+      type: "SUBMIT_GENERAL_INFO";
+      payload: any;
+    }
+  | {
+      type: "SUBMIT_PHONE_NUMBER";
+      payload: any;
+    }
+    | {
+        type: "SUBMIT_TRIAL_BILLING";
+        payload: any;
+      };
 
 export type UserContextType = {
   state: any;
@@ -24,6 +34,10 @@ const initialContent: any = {
   lastName: "",
   dob: "",
   id: "",
+  phoneNumber: "",
+  expiryDate: "",
+  cardNumber: "",
+  cvc: ""
 };
 
 export const UserContext = createContext<UserContextType>({
@@ -40,16 +54,30 @@ const reducer = (state: any, action: any) => {
       return {
         ...state,
         email: action.payload.email,
-        id: action.payload.id
+        id: action.payload.id,
       };
 
     case "SUBMIT_GENERAL_INFO":
-        return {
-            ...state,
-            firstName: action.payload.firstName,
-            lastName: action.payload.lastName,
-            dob: action.payload.dob
-        }
+      return {
+        ...state,
+        firstName: action.payload.firstName,
+        lastName: action.payload.lastName,
+        dob: action.payload.dob,
+      };
+
+    case "SUBMIT_PHONE_NUMBER":
+      return {
+        ...state,
+        phoneNumber: action.payload.phoneNumber,
+      };
+
+    case "SUBMIT_TRIAL_BILLING":
+      return {
+        ...state,
+        cardNumber: action.payload.cardNumber,
+        expiryDate: action.payload.date,
+        cvc: action.payload.date,
+      }
     default:
       return state;
   }

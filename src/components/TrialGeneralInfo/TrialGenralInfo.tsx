@@ -69,7 +69,9 @@ const TrialGeneralInfo = (props: TrailGeneralInfoProps) => {
               <InputBox label="First Name" name="firstName" />
               <InputBox label="Last Name" name="lastName" />
               <InputBox label="Date of birth" name="dob" />
-
+              {errorMessage !== "" && (
+                <p className="error-message">{errorMessage}</p>
+              )}
               <FilledButtonStyle width="100%" height="60px">
                 Next
               </FilledButtonStyle>

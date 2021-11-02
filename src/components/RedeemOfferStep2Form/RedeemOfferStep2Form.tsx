@@ -2,6 +2,7 @@ import { Form, Formik } from "formik";
 import React, { useState } from "react";
 
 import { InputBox, MessageModal, TrialFormWrapper } from "..";
+import { useUserContext } from "../../context/userContext";
 import {
   FilledButtonStyle,
   OutlineButtonStyle,
@@ -25,6 +26,11 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
   const handleChangeButtonClick = () => {
     setCurrentForm("redeem-offer");
   };
+  
+  const {
+    state: { phoneNumber }
+  } = useUserContext();
+  
   return (
     <TrialFormWrapper heading="Redeem Your Offer">
       <RedeemOfferStep2FormStyle>
@@ -34,7 +40,7 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
         <h3 className="form-wrapper-heading">
           Please enter the 4-digit code on your phone now.
           <br />
-          Code sent on: +44 7700 900077
+          Code sent on: {phoneNumber}
         </h3>
         <Formik
           initialValues={{

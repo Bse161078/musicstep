@@ -1,28 +1,66 @@
+import axios from "axios";
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-import { CongratulationsModal, InputBox } from "..";
+import { CongratulationsModal, InputBox, Loading } from "..";
+import { useUserContext } from "../../context/userContext";
 import { FilledButtonStyle } from "../../styles/Common.style";
 
 import { TrialBillingInfoFormStyle } from "./TrialBillingInfoForm.style";
 
 const TrialBillingInfoForm = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
-  
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
   const history = useHistory();
 
   const handleCongratulationsButtonClick = () => {
-    history.push('/explore-venue')
-    setIsModalVisible(false)
-  }
+    history.push("/explore-venue");
+    setIsModalVisible(false);
+  };
 
-  const handleFormSubmit = () => {
-    setIsModalVisible(true);
+  const {
+    state: { id },
+    dispatch,
+  } = useUserContext();
+
+  const handleFormSubmit = (e: any) => {
+    setLoading(true);
+
+    axios
+      .patch(
+        `https://music-pass-backend.herokuapp.com/v1/users/createBillingInformation/${id}`,
+        {
+          fullName: e.nameOnCard,
+          cardNumber: e.cardNumber,
+          expiryDate: e.date,
+          cvc: e.cvc,
+        }
+      )
+      .then((response) => {
+        setLoading(false);
+        console.log(response);
+        dispatch({
+          type: "SUBMIT_TRIAL_BILLING",
+          payload: {
+            email: e.email,
+          },
+        });
+        setIsModalVisible(true);
+      })
+      .catch((error) => {
+        setErrorMessage("Email already exist!");
+        setLoading(false);
+        console.log("error");
+      });
   };
 
   return (
     <TrialBillingInfoFormStyle>
+      {loading && <Loading />}
+      
       <h3 className="form-heading">Save Your Billing Information</h3>
       <p className="form-info">Why do you need my billing info?</p>
 
@@ -54,6 +92,9 @@ const TrialBillingInfoForm = () => {
               Notice applies.
             </p>
 
+            {errorMessage !== "" && (
+              <p className="error-message">{errorMessage}</p>
+            )}
             <FilledButtonStyle width="100%" height="60px">
               Redeem Now
             </FilledButtonStyle>

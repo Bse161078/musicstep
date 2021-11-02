@@ -30,7 +30,7 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
         .patch(
           `https://music-pass-backend.herokuapp.com/v1/users/createPassword/${id}`,
           {
-            password: e.password
+            password: e.password,
           }
         )
         .then((response) => {
@@ -56,7 +56,7 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
   return (
     <TrialFormWrapper heading="Set Your Password">
       {loading && <Loading />}
-      
+
       <TrialSetPasswordStyle>
         <Formik
           initialValues={{
@@ -78,6 +78,9 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
                 type="password"
                 name="confirmPassword"
               />
+              {errorMessage !== "" && (
+                <p className="error-message">{errorMessage}</p>
+              )}
 
               <FilledButtonStyle width="100%" height="60px">
                 Continue
