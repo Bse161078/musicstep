@@ -73,7 +73,7 @@ export default function Home() {
 
       <SectionWrapper type="dark" heading="Monthly Membership Starts As Low As">
         <ValueWithButton
-          value="$99"
+          value="$15"
           description="Change, freeze or cancel your plan anytime."
           buttonLink="/free-trial"
         />
