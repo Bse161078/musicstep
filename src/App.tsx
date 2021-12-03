@@ -24,7 +24,7 @@ import {
   TaxPayerInfo,
   TeamManagement,
 } from "./admin/pages";
-import { Footer, Navbar } from "./components";
+import { AuthenticatedRoute, Footer, Navbar } from "./components";
 import { BaseStyle } from "./styles/Base.style";
 import {
   BillingInformation,
@@ -33,6 +33,7 @@ import {
   UserHome,
 } from "./userDashboard/pages";
 import { UserContextProvider } from "./context/userContext";
+import { LoginContextProvider } from "./context/authenticationContext";
 
 const RoutesList = (props: any) => {
   const { pathname } = useLocation();
@@ -66,29 +67,37 @@ const RoutesList = (props: any) => {
         <Route path="/free-trial" component={FreeTrial} />
         <Route path="/partner-login" component={PartnerLogin} />
         <Route exact path="/pricing" component={Pricing} />
-        <Route path="/pricing/process-payment" component={ProcessPayment} />
-        <Route exact path="/explore-venue" component={ExploreVenue} />
         <Route path="/explore-venue/venue-details" component={VenueDetails} />
         <Route path="/how-it-works" component={HowItWorks} />
         <Route path="/terms-conditions" component={TermsAndConditions} />
 
+        <Route exact path="/dashboard/basic-info" component={EditProfile} />
+          <Route
+            path="/dashboard/billing-information"
+            exact
+            component={BillingInformation}
+          />
+          <Route path="/dashboard/change-password" component={ChangePassword} />
+        <AuthenticatedRoute redirectTo="/login">
+          <Route path="/pricing/process-payment" component={ProcessPayment} />
+          <Route exact path="/explore-venue" component={ExploreVenue} />
+        </AuthenticatedRoute>
+
         {/* Admin routes */}
-        <Route path="/admin/basic-info" component={BasicInfo} />
-        <Route path="/admin/team-management" component={TeamManagement} />
-        <Route path="/admin/payment-information" component={PaymentInfo} />
-        <Route path="/admin/payouts" component={Payouts} />
-        <Route path="/admin/tax-payer-information" component={TaxPayerInfo} />
-        <Route path="/admin/account-settings" component={AccountSettings} />
-        <Route path="/admin/metrics" component={Metrics} />
+        <AuthenticatedRoute redirectTo="/partner-login">
+          <Route path="/admin/basic-info" component={BasicInfo} />
+          <Route path="/admin/team-management" component={TeamManagement} />
+          <Route path="/admin/payment-information" component={PaymentInfo} />
+          <Route path="/admin/payouts" component={Payouts} />
+          <Route path="/admin/tax-payer-information" component={TaxPayerInfo} />
+          <Route path="/admin/account-settings" component={AccountSettings} />
+          <Route path="/admin/metrics" component={Metrics} />
+        </AuthenticatedRoute>
 
         {/* User Admin Routes */}
-        <Route path="/dashboard/home" component={UserHome} />
-        <Route path="/dashboard/basic-info" component={EditProfile} />
-        <Route path="/dashboard/change-password" component={ChangePassword} />
-        <Route
-          path="/dashboard/billing-information"
-          component={BillingInformation}
-        />
+        <AuthenticatedRoute redirectTo="/partner-login">
+          <Route path="/dashboard/home" component={UserHome} />
+        </AuthenticatedRoute>
       </Switch>
     </>
   );
@@ -97,13 +106,15 @@ const RoutesList = (props: any) => {
 function App() {
   return (
     <div className="App">
-      <UserContextProvider>
-        <BaseStyle />
-        <BrowserRouter>
-          <RoutesList />
-          <Footer />
-        </BrowserRouter>
-      </UserContextProvider>
+      <LoginContextProvider>
+        <UserContextProvider>
+          <BaseStyle />
+          <BrowserRouter>
+            <RoutesList />
+            <Footer />
+          </BrowserRouter>
+        </UserContextProvider>
+      </LoginContextProvider>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useField } from "formik";
 import {
   TextFieldStyle,
@@ -9,11 +9,21 @@ import {
 const InputBox = (props: any) => {
   const [field, meta] = useField(props);
 
-  const inputRef = useRef(null);
+  const inputRef = useRef();
+  const [showPassword, setShowPassword] = useState(false)
 
   const handlePasswordIconClick = () => {
-    if (inputRef && props.type === "password") {
-      // console.log(inputRef?.current?.type);
+    if (inputRef.current && props.type === "password") {
+      //@ts-ignore
+      if (inputRef.current?.type === "password") {
+        //@ts-ignore
+        inputRef.current.type = "text";
+        setShowPassword(true)
+      } else {
+        //@ts-ignore
+        inputRef.current.type = "password";
+        setShowPassword(false)
+      }
     }
   };
 
@@ -34,11 +44,16 @@ const InputBox = (props: any) => {
         {...props}
       />
 
-      {props.type === "password" && (
-        <span onClick={handlePasswordIconClick} className="password-icon">
-          <img alt="icon" src="/images/icons/Password-hide-icon.svg" />
-        </span>
-      )}
+      {props.type === "password" &&
+        (showPassword ? (
+          <span onClick={handlePasswordIconClick} className="password-icon">
+            <img alt="icon" src="/images/icons/Password-hide-icon.svg" />
+          </span>
+        ) : (
+          <span onClick={handlePasswordIconClick} className="password-icon">
+            <img alt="icon" src="/images/icons/password-show-icon.svg" />
+          </span>
+        ))}
       {meta.touched && meta.error ? (
         <TextFieldErrorStyle>{meta.error}</TextFieldErrorStyle>
       ) : null}

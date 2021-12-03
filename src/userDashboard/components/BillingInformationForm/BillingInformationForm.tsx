@@ -1,12 +1,31 @@
+import axios from "axios";
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import { InputBox, MessageModal } from "../../../components";
+import { useLoginContext } from "../../../context/authenticationContext";
 import { FilledButtonStyle } from "../../../styles/Common.style";
 
 import { BillingInformationFormStyle } from "./BillingInformationForm.style";
 
 const BillingInformationForm = () => {
   const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
+  const { state } = useLoginContext();
+
+  const handleBillingFormSubmit = (e: any) => {
+    axios
+      .put(
+        "https://music-pass-backend.herokuapp.com/v1/users/updateBillingInformation",
+        {
+          fullName: e.nameOnCard,
+          cardNumber: e.cardNumber,
+          expiryDate: e.cardMonth,
+          cvc: e.cvc,
+        },
+        { headers: { Authorization: `Bearer ${state.authToken}` } }
+      )
+      .then(() => setSuccessModalVisible(true))
+      .catch(()=> alert("Error while submitting data"));
+  };
 
   return (
     <BillingInformationFormStyle>
@@ -17,9 +36,7 @@ const BillingInformationForm = () => {
           cardMonth: "",
           cvc: "",
         }}
-        onSubmit={() => {
-          setSuccessModalVisible(true);
-        }}
+        onSubmit={handleBillingFormSubmit}
       >
         {() => (
           <Form className="form-wrapper">

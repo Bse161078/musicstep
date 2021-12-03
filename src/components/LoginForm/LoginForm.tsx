@@ -8,7 +8,9 @@ import {
 } from "../../styles/Common.style";
 import { loginInitialValues } from "./intialValues";
 import { InputBox, InputCheckbox } from "..";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { useLoginContext } from "../../context/authenticationContext";
+import axios from "axios";
 
 type LoginFormProps = {
   setCurrentSection: (data: string) => void;
@@ -17,8 +19,31 @@ type LoginFormProps = {
 const LoginForm = (props: LoginFormProps) => {
   const { setCurrentSection } = props;
 
+  const history = useHistory();
+  
+  const {
+    state: { isLoggedIn },
+    dispatch
+  } = useLoginContext();
+
   const handleLoginSubmit = () => {
-    console.log("Working");
+    axios.post("https://music-pass-backend.herokuapp.com/v1/auth/login", {
+      email:"aqeeltest1@gmail.com",
+      password: "Password@7722"
+    })
+    .then((response) => {
+      console.log("RESPONSE: ", response)
+      dispatch({
+        type: "LOGIN_USER",
+        payload: {
+          isLoggedIn: true,
+          token: response.data.tokens.access.token
+        }
+      })
+      history.push("explore-venue")
+    })
+    .catch((error) => console.log("error: ", error))
+    
   };
   return (
     <LoginFormStyle>
@@ -49,11 +74,9 @@ const LoginForm = (props: LoginFormProps) => {
               </span>
             </div>
 
-            <Link to="/explore-venue">
-              <FilledButtonStyle width="100%" height="60px">
-                Login
-              </FilledButtonStyle>
-            </Link>
+            <FilledButtonStyle width="100%" height="60px">
+              Login
+            </FilledButtonStyle>
           </Form>
         )}
       </Formik>

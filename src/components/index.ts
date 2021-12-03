@@ -1,3 +1,4 @@
+export * from "./AuthenticatedRoute"
 export * from "./BillingInformation"
 export * from "./CongratulationsModals"
 export * from "./CustomCarousel"

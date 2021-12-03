@@ -1,6 +1,8 @@
+import axios from "axios";
 import { Form, Formik } from "formik";
 import React from "react";
 import { InputBox } from "../../../components";
+import { useLoginContext } from "../../../context/authenticationContext";
 import {
   FilledButtonStyle,
   OutlineButtonStyle,
@@ -8,6 +10,21 @@ import {
 import { EditProfileFormStyle } from "./EditProfileForm.style";
 
 const EditProfileForm = () => {
+  const { state } = useLoginContext();
+  const handleEditProfile = (e: any) => {
+    axios.put(
+      "https://music-pass-backend.herokuapp.com/v1/users/updatePersonalInformation",
+      {
+        firstName: e.firstName,
+        lastName: e.lastName,
+        dob: e.dateOfBirth,
+        email: e.email,
+        phoneNumber: e.phone,
+      },
+      {headers: { Authorization: `Bearer ${state.authToken}` }}
+    );
+  };
+
   return (
     <EditProfileFormStyle>
       <Formik
@@ -20,7 +37,7 @@ const EditProfileForm = () => {
           phone: "",
           photo: "",
         }}
-        onSubmit={() => {}}
+        onSubmit={handleEditProfile}
       >
         {() => (
           <Form className="form-wrapper">

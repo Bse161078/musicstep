@@ -44,9 +44,9 @@ const RedeemOfferForm = (props: TrailSetPasswordProps) => {
         setCurrentForm("redeem-offer-verify");
       })
       .catch((error) => {
-        setErrorMessage("Email already exist!");
+        setErrorMessage(error.message);
         setLoading(false);
-        console.log("error");
+        console.log("error", error);
       });
   };
   return (
