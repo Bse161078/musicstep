@@ -55,12 +55,12 @@ const RoutesList = (props: any) => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  const isAdminSide = pathname.includes("/admin");
-  const isDashboardSide = pathname.includes("/dashboard");
+  // const isAdminSide = pathname.includes("/admin");
+  // const isDashboardSide = pathname.includes("/dashboard");
 
   return (
     <>
-      {!isAdminSide && !isDashboardSide && showNavbar ? <Navbar /> : ""}
+      {/* {!isAdminSide && !isDashboardSide && showNavbar ? <Navbar /> : ""} */}
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/login" component={Login} />
@@ -78,13 +78,13 @@ const RoutesList = (props: any) => {
             component={BillingInformation}
           />
           <Route path="/dashboard/change-password" component={ChangePassword} />
-        <AuthenticatedRoute redirectTo="/login">
+        {/* <AuthenticatedRoute redirectTo="/login"> */}
           <Route path="/pricing/process-payment" component={ProcessPayment} />
           <Route exact path="/explore-venue" component={ExploreVenue} />
-        </AuthenticatedRoute>
+        {/* </AuthenticatedRoute> */}
 
         {/* Admin routes */}
-        <AuthenticatedRoute redirectTo="/partner-login">
+        {/* <AuthenticatedRoute redirectTo="/partner-login"> */}
           <Route path="/admin/basic-info" component={BasicInfo} />
           <Route path="/admin/team-management" component={TeamManagement} />
           <Route path="/admin/payment-information" component={PaymentInfo} />
@@ -92,12 +92,12 @@ const RoutesList = (props: any) => {
           <Route path="/admin/tax-payer-information" component={TaxPayerInfo} />
           <Route path="/admin/account-settings" component={AccountSettings} />
           <Route path="/admin/metrics" component={Metrics} />
-        </AuthenticatedRoute>
+        {/* </AuthenticatedRoute> */}
 
         {/* User Admin Routes */}
-        <AuthenticatedRoute redirectTo="/partner-login">
+        {/* <AuthenticatedRoute redirectTo="/partner-login"> */}
           <Route path="/dashboard/home" component={UserHome} />
-        </AuthenticatedRoute>
+        {/* </AuthenticatedRoute> */}
       </Switch>
     </>
   );

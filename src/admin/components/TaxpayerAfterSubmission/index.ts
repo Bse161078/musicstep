@@ -1,0 +1,1 @@
+export { default as TaxPayerAfterSubmission } from './TaxPayerAfterSubmisson'

@@ -4,7 +4,7 @@ import {
   FilledButtonStyle,
   OutlineButtonStyle,
 } from "../../../styles/Common.style";
-
+import { TaxPayerAfterSubmission } from "../../components/TaxpayerAfterSubmission";
 import { StepsStyle, StepStyle } from "../../../styles/Fields.style";
 import {
   Dashboard,
@@ -52,7 +52,7 @@ export default function TaxPayerInfo() {
           heading="Taxpayer Information"
           description="Choose a tax status that represents you the best. If you need help, check the IRS Definition or visit our Tax Help Center."
         />
-
+        <TaxPayerAfterSubmission />
         <div className="steps-wrapper">
           <StepsStyle current={currentStep} progressDot={customDot}>
             <StepStyle title={`Step ${currentStep} of 4`} />
