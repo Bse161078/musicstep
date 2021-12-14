@@ -45,7 +45,7 @@ export const LoginContextProvider = (props: any) => {
   
   useEffect(()=>{
     const token = localStorage.getItem("authToken");
-    if(token !== undefined) {
+    if(token !== undefined && token !== null) {
       // alert("in if")
       dispatch({
         type: "LOGIN_USER",
