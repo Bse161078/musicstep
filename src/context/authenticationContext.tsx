@@ -43,8 +43,8 @@ export const LoginContextProvider = (props: any) => {
   
   const [state, dispatch] = useReducer(reducer, initialContent);
   
+  const token = localStorage.getItem("authToken");
   useEffect(()=>{
-    const token = localStorage.getItem("authToken");
     if(token !== undefined && token !== null) {
       // alert("in if")
       dispatch({
@@ -55,7 +55,7 @@ export const LoginContextProvider = (props: any) => {
         }
       })
     }
-  },[localStorage.getItem("authToken")])
+  },[token])
   return (
     <LoginContext.Provider value={{ state, dispatch }}>
       {children}

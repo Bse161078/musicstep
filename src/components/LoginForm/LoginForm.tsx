@@ -22,7 +22,6 @@ const LoginForm = (props: LoginFormProps) => {
   const history = useHistory();
   
   const {
-    state: { isLoggedIn },
     dispatch
   } = useLoginContext();
 
