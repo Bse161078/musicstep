@@ -5,3 +5,5 @@ export * from "./PaymentInfo"
 export * from "./Payouts"
 export * from "./TaxPayerInfo"
 export * from "./TeamManagement"
+export * from '../components/SubmitEventStep1'
+export * from './EventsManagment'
