@@ -6,6 +6,7 @@ import { InputBox, Loading, TrialFormWrapper } from "..";
 import { useUserContext } from "../../context/userContext";
 import { FilledButtonStyle } from "../../styles/Common.style";
 import { TrialSetPasswordStyle } from "./TrialSetPassword.style";
+import { TrialInfoValidationSchema } from "./validation";
 
 type TrailSetPasswordProps = {
   setCurrentForm: (data: string) => void;
@@ -53,7 +54,6 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
         });
     } else {
       setLoading(false);
-      setErrorMessage("Password missmatched!");
     }
   };
   return (
@@ -66,6 +66,8 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
             password: "",
             confirmPassword: "",
           }}
+          validationSchema={TrialInfoValidationSchema}
+          validateOnChange={false}
           onSubmit={handleSetPasswordSubmit}
         >
           {({ values }) => (

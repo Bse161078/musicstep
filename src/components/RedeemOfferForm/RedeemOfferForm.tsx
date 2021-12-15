@@ -38,7 +38,7 @@ const RedeemOfferForm = (props: TrailSetPasswordProps) => {
         dispatch({
           type: "SUBMIT_PHONE_NUMBER",
           payload: {
-            email: e.email,
+            phoneNumber: `${e.countryCode}${e.phoneNumber}`,
           },
         });
         setCurrentForm("redeem-offer-verify");
