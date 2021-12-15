@@ -81,6 +81,7 @@ type SelectInputStyleProps = {
 
 export const SelectInputStyle = styled.div<SelectInputStyleProps>`
   display: grid;
+  width: 100%;
   grid-gap: 5px;
   grid-template-columns: ${(props) =>
     props.type === "horizontal" ? "auto auto" : "1fr"};
