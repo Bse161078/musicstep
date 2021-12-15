@@ -71,33 +71,117 @@ const RoutesList = (props: any) => {
         <Route path="/how-it-works" component={HowItWorks} />
         <Route path="/terms-conditions" component={TermsAndConditions} />
 
-        <Route exact path="/dashboard/basic-info" component={EditProfile} />
-          <Route
-            path="/dashboard/billing-information"
-            exact
-            component={BillingInformation}
-          />
-          <Route path="/dashboard/change-password" component={ChangePassword} />
-        <AuthenticatedRoute redirectTo="/login">
-          <Route path="/pricing/process-payment" component={ProcessPayment} />
-          <Route exact path="/explore-venue" component={ExploreVenue} />
-        </AuthenticatedRoute>
+        <Route
+          path="/admin/basic-info"
+          render={() => (
+            <AuthenticatedRoute redirectTo="/partner-login">
+              <BasicInfo />
+            </AuthenticatedRoute>
+          )}
+        />
+
+        <Route
+          path="/pricing/process-payment"
+          render={() => (
+            <AuthenticatedRoute redirectTo="/login">
+              <ProcessPayment />
+            </AuthenticatedRoute>
+          )}
+        />
+        <Route
+          exact
+          path="/explore-venue"
+          render={() => (
+            <AuthenticatedRoute redirectTo="/login">
+              <ExploreVenue />
+            </AuthenticatedRoute>
+          )}
+        />
 
         {/* Admin routes */}
-        <AuthenticatedRoute redirectTo="/partner-login">
-          <Route path="/admin/basic-info" component={BasicInfo} />
-          <Route path="/admin/team-management" component={TeamManagement} />
-          <Route path="/admin/payment-information" component={PaymentInfo} />
-          <Route path="/admin/payouts" component={Payouts} />
-          <Route path="/admin/tax-payer-information" component={TaxPayerInfo} />
-          <Route path="/admin/account-settings" component={AccountSettings} />
-          <Route path="/admin/metrics" component={Metrics} />
-        </AuthenticatedRoute>
+        <Route
+          path="/admin/team-management"
+          render={() => (
+            <AuthenticatedRoute redirectTo="/partner-login">
+              <TeamManagement />
+            </AuthenticatedRoute>
+          )}
+        />
+        <Route
+          path="/admin/payment-information"
+          render={() => (
+            <AuthenticatedRoute redirectTo="/partner-login">
+              <PaymentInfo />
+            </AuthenticatedRoute>
+          )}
+        />
+        <Route
+          path="/admin/payouts"
+          render={() => (
+            <AuthenticatedRoute redirectTo="/partner-login">
+              <Payouts />
+            </AuthenticatedRoute>
+          )}
+        />
+        <Route
+          path="/admin/tax-payer-information"
+          render={() => (
+            <AuthenticatedRoute redirectTo="/partner-login">
+              <TaxPayerInfo />
+            </AuthenticatedRoute>
+          )}
+        />
+        <Route
+          path="/admin/account-settings"
+          render={() => (
+            <AuthenticatedRoute redirectTo="/partner-login">
+              <AccountSettings />
+            </AuthenticatedRoute>
+          )}
+        />
+        <Route
+          path="/admin/metrics"
+          render={() => (
+            <AuthenticatedRoute redirectTo="/partner-login">
+              <Metrics />
+            </AuthenticatedRoute>
+          )}
+        />
 
         {/* User Admin Routes */}
-        <AuthenticatedRoute redirectTo="/partner-login">
-          <Route path="/dashboard/home" component={UserHome} />
-        </AuthenticatedRoute>
+        <Route
+          path="/dashboard/home"
+          render={() => (
+            <AuthenticatedRoute redirectTo="/login">
+              <UserHome />
+            </AuthenticatedRoute>
+          )}
+        />
+        <Route
+          path="/dashboard/basic-info"
+          render={() => (
+            <AuthenticatedRoute redirectTo="/login">
+              <EditProfile />
+            </AuthenticatedRoute>
+          )}
+        />
+        <Route
+          path="/dashboard/billing-information"
+          exact
+          render={() => (
+            <AuthenticatedRoute redirectTo="/login">
+              <BillingInformation />
+            </AuthenticatedRoute>
+          )}
+        />
+        <Route
+          path="/dashboard/change-password"
+          render={() => (
+            <AuthenticatedRoute redirectTo="/login">
+              <ChangePassword />
+            </AuthenticatedRoute>
+          )}
+        />
       </Switch>
     </>
   );

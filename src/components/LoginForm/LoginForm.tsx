@@ -22,14 +22,13 @@ const LoginForm = (props: LoginFormProps) => {
   const history = useHistory();
   
   const {
-    state: { isLoggedIn },
     dispatch
   } = useLoginContext();
 
-  const handleLoginSubmit = () => {
+  const handleLoginSubmit = (e: any) => {
     axios.post("https://music-pass-backend.herokuapp.com/v1/auth/login", {
-      email:"aqeeltest1@gmail.com",
-      password: "Password@7722"
+      email:e.userName,
+      password: e.password
     })
     .then((response) => {
       console.log("RESPONSE: ", response)
@@ -40,7 +39,8 @@ const LoginForm = (props: LoginFormProps) => {
           token: response.data.tokens.access.token
         }
       })
-      history.push("explore-venue")
+      // history.push("/explore-venue")
+      history.push("/dashboard/basic-info")
     })
     .catch((error) => console.log("error: ", error))
     

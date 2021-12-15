@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Redirect } from "react-router";
 
 import { useLoginContext } from "../../context/authenticationContext";
@@ -8,8 +8,11 @@ const AuthenticatedRoute = ({children, redirectTo}: any) => {
         isLoggedIn
     } } = useLoginContext();
     
-    console.log("redirectTo: ", redirectTo)
-    return !localStorage.getItem("authToken") ?  (
+    useEffect(()=>{
+        
+    },[])
+    console.log({isLoggedIn, redirectTo})
+    return !isLoggedIn ?  (
         <Redirect exact to={redirectTo} />
         ) : (
         children
