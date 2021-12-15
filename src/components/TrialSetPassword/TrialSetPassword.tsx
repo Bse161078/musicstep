@@ -35,7 +35,6 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
         )
         .then((response) => {
           setLoading(false);
-          console.log(response);
           dispatch({
             type: "SUBMIT_GENERAL_INFO",
             payload: {
@@ -47,10 +46,14 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
           setCurrentForm("redeem-offer");
         })
         .catch((error) => {
-          setErrorMessage("Error while submitting data!");
+          console.log({error})
+          setErrorMessage(error.message);
           setLoading(false);
           console.log("error");
         });
+    } else {
+      setLoading(false);
+      setErrorMessage("Password missmatched!");
     }
   };
   return (
