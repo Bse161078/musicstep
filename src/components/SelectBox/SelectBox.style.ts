@@ -19,6 +19,10 @@ const getInputWidth = (width: string) => {
       return "max-width: 100%";
     default:
       return "max-width: 266px";
+    case "large":
+      return "max-width: 600px";
+      case "350px":
+      return "max-width: 350px";
   }
 };
 
