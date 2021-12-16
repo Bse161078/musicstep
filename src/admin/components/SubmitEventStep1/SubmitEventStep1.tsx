@@ -1,14 +1,14 @@
 import React from "react";
 import { SubmitEventStep1Style } from "./SubmitEventStep1.style";
-import { DashboardHeader } from "..";
 import { Form, Formik } from "formik";
+import { SubmitEvent1Header } from "..";
 import { InputBox, SelectBox } from "../../../components";
 import { OutlineButtonStyle } from "../../../styles/Common.style";
 const SubmitEvent = () => {
   const handleFormSubmit = (e: any) => {};
   return (
     <SubmitEventStep1Style>
-      <DashboardHeader heading="Submit an Event" />
+      <SubmitEvent1Header />
       <Formik
         initialValues={{
           eventtitle: "",

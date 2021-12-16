@@ -9,7 +9,7 @@ const EventsManagement = () => {
   return (
     <Dashboard>
       <EventsManagementStyle>
-        <SubmitEventStep1 />
+        <SubmitEventStep2 />
       </EventsManagementStyle>
     </Dashboard>
   );
