@@ -13,6 +13,7 @@ import {
   ProcessPayment,
   TermsAndConditions,
   VenueDetails,
+  PartnerSignup,
 } from "./pages";
 
 import {
@@ -180,6 +181,15 @@ const RoutesList = (props: any) => {
             <AuthenticatedRoute redirectTo="/login">
               <ChangePassword />
             </AuthenticatedRoute>
+          )}
+        />
+        <Route
+          path="/partner/login"
+          exact
+          render={() => (
+            // <AuthenticatedRoute redirectTo="partner/login">
+              <PartnerSignup />
+            // </AuthenticatedRoute>
           )}
         />
       </Switch>

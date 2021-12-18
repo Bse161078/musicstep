@@ -41,7 +41,9 @@ export const StartTrialWrapperStyle = styled.section`
         font-size: 28px;
       }
     }
-
+     .image{
+       width: 100%;
+     }
     .trail-description {
       font-size: 20px;
       color: #0c0c0c;

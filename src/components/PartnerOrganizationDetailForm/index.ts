@@ -1,0 +1,1 @@
+export {default as PartnerOrganizationDetailForm } from './PartnerOrganizationDetailForm'
