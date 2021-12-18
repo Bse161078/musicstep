@@ -94,7 +94,7 @@ const TrialForm = (props: TrialFormProps) => {
           {({ values }) => (
             <Form className="trial-form-wrapper">
               <div>
-                <InputBox label="Email Address" name="email" />
+                <InputBox label="Email Address" name="email" type="email" required />
                 {errorMessage !== "" && (
                   <p className="error-message">{errorMessage}</p>
                 )}

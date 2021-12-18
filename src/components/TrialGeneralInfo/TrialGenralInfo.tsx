@@ -5,6 +5,7 @@ import { InputBox, Loading, TrialFormWrapper } from "..";
 import { useUserContext } from "../../context/userContext";
 import { FilledButtonStyle } from "../../styles/Common.style";
 import { TrialGeneralInfoStyle } from "./TrialGeneralInfo.style";
+import { TrialGeneralInfoValidationSchema } from "./validation";
 
 type TrailGeneralInfoProps = {
   setCurrentForm: (data: string) => void;
@@ -60,15 +61,16 @@ const TrialGeneralInfo = (props: TrailGeneralInfoProps) => {
           initialValues={{
             firstName: "",
             lastName: "",
-            email: "",
+            dob: ""
           }}
+          validationSchema={TrialGeneralInfoValidationSchema}
           onSubmit={handleGeneralInfoSubmit}
         >
-          {({ values }) => (
+          {({ values, errors }) => (
             <Form className="general-info-wrapper">
-              <InputBox label="First Name" name="firstName" />
-              <InputBox label="Last Name" name="lastName" />
-              <InputBox label="Date of birth" name="dob" />
+              <InputBox label="First Name" name="firstName"  />
+              <InputBox label="Last Name" name="lastName"  />
+              <InputBox label="Date of birth" name="dob"  />
               {errorMessage !== "" && (
                 <p className="error-message">{errorMessage}</p>
               )}

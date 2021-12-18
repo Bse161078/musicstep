@@ -44,8 +44,10 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
         </h3>
         <Formik
           initialValues={{
-            password: "",
-            confirmPassword: "",
+            digit1: "",
+            digit2: "",
+            digit3: "",
+            digit4: ""
           }}
           onSubmit={handleSetPasswordSubmit}
         >
