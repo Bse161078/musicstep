@@ -4,11 +4,17 @@ import { Form, Formik } from "formik";
 import { SubmitEvent1Header } from "..";
 import { InputBox, SelectBox } from "../../../components";
 import { OutlineButtonStyle } from "../../../styles/Common.style";
-const SubmitEvent = () => {
+import { EventManagmenPhotoScroller } from "../EventManagmenPhotoScroller";
+
+type SubmitEventStep1Props = { 
+     setCurrentStep: any;
+}
+
+const SubmitEvent = (props: SubmitEventStep1Props ) => {
   const handleFormSubmit = (e: any) => {};
   return (
     <SubmitEventStep1Style>
-      <SubmitEvent1Header />
+      <SubmitEvent1Header setCurrentStep={props.setCurrentStep} />
       <Formik
         initialValues={{
           eventtitle: "",
@@ -86,6 +92,7 @@ const SubmitEvent = () => {
           </div>
         </Form>
       </Formik>
+      <EventManagmenPhotoScroller />
     </SubmitEventStep1Style>
   );
 };

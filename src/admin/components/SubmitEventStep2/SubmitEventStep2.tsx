@@ -2,12 +2,13 @@ import React from "react";
 import { SubmitEventStep2Style } from "./SubmitEventStep2.style";
 import { CreateTicket, TicketInfoDiv, DashboardHeader } from "..";
 import SubmitEventStep2Header from "../EventManagmentHeaders/SubmitEventStep2Header";
-
-const SubmitEventStep2 = () => {
+type SubmitEventStep2Props = { 
+     setCurrentStep: any;
+}
+const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
   return (
     <>
-      <DashboardHeader heading="Submit an Event" />
-      <SubmitEventStep2Header />
+      <SubmitEventStep2Header setCurrentStep={props.setCurrentStep} />
       <SubmitEventStep2Style>
         <div className="text-wrapper">
           <h3>Events Tickets</h3>

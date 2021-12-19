@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const SubmitEventStep1Style = styled.div`
-width: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: 30px;
   .form-wrapper {
     display: flex;
     flex-direction: column;
