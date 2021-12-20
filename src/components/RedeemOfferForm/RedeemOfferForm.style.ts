@@ -58,8 +58,8 @@ export const RedeemOfferFormStyle = styled.article`
   }
 
   .input-wrapper {
-    display: flex;
-    grid-template-columns: 120px 1fr;
+    display: grid;
+    grid-template-columns: minmax(10px, 120px) 1fr;
     grid-gap: 20px;
 
     @media (max-width: 767px) {

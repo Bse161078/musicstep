@@ -25,7 +25,7 @@ export const InputBoxStyle = styled.div`
 
   .password-icon {
     position: absolute;
-    bottom: 15px;
+    top: 35px;
     right: 20px;
   }
 
