@@ -18,8 +18,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
           </p>
         </div>
         <div className="tickets-wrapper">
-          <CreateTicket />
-
+          <CreateTicket  />
           <TicketInfoDiv
             heading="Premium Ticket"
             creditNo="15"

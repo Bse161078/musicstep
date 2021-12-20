@@ -9,6 +9,7 @@ export const CreateTicketStyle  = styled.div`
   height: 100%;
   border-radius: 32px;
   align-items:center;
+  cursor: pointer;
   
   .create-ticket {
     opacity: 1;
@@ -16,6 +17,7 @@ export const CreateTicketStyle  = styled.div`
     font-weight: Bold;
     font-size: 16px;
     padding:20px;
+
   }
   .add-icon {
     font-size:100px;

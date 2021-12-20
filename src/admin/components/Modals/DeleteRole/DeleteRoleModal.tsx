@@ -1,12 +1,14 @@
+import { message } from "antd";
 import React from "react";
 import { ModalWrapper } from "../ModalWrapper";
 import { DeleteRoleModalStyle } from "./DeleteRole.style";
 type DeleteRoleModalProps = {
   isModalVisible?: boolean;
   setIsModalVisible?: any;
+  message?: any;
 };
 const DeleteRoleModal = (props: DeleteRoleModalProps) => {
-  const { isModalVisible, setIsModalVisible } = props;
+  const { isModalVisible, setIsModalVisible, message } = props;
   return (
     <ModalWrapper
       heading="Delete Role?"
@@ -21,7 +23,11 @@ const DeleteRoleModal = (props: DeleteRoleModalProps) => {
           className="delete-role"
           src="/images/DeleteRole.svg"
         />
-        <p>Are you sure you want to delete this role?</p>
+        {message ? (
+          <p>{message}</p>
+        ) : (
+          <p>Are you sure you want to delete this role?</p>
+        )}
       </DeleteRoleModalStyle>
     </ModalWrapper>
   );
