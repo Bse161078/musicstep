@@ -73,7 +73,12 @@ export const RedeemOfferStep2FormStyle = styled.article`
       }
     }
   }
-
+   .error-wrapper {
+      text-align: center;
+      font-size: 18px;
+      color: red;
+      padding-bottom: 10px;
+   }
   ${FilledButtonStyle} {
     background: #1981fc;
   }
