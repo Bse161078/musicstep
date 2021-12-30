@@ -1,1 +1,1 @@
-export { default as EventsManagmentList } from "./EventsManagment"
+export { default as EventsManagment } from "./EventsManagment"
