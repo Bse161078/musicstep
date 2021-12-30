@@ -19,7 +19,7 @@ const InviteModal = (props: InviteModalProps) => {
       <ModalWrapper
         heading="Invite Users"
         rightButtonTitle="Invite"
-      leftButtonTitle="Cancel"
+        leftButtonTitle="Cancel"
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}
       >

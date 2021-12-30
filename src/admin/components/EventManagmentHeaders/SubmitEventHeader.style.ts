@@ -6,31 +6,31 @@ const SubmitEventStep1HeaderStyle = styled.div`
   padding: 5px 0 30px 0;
   border-bottom: 1px solid #c0c0c0;
   margin-bottom: 30px;
-  gap:30px;
-  .prev-text{
-      cursor: pointer;
+  gap: 30px;
+
+  .prev-text {
+    cursor: pointer;
   }
   .header {
-      font-size: 48px;
+    font-size: 48px;
   }
 
-  .heading-button-wrapper{
-      display: flex;
-      width: 100%;
-      justify-content: space-between;
-      margin-top: 20px;
+  .heading-button-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
   }
   .btn-wrapper {
     display: flex;
     justify-content: center;
-    gap:30px;
+    gap: 30px;
   }
-  .nxtstep-btn {
-      margin-top: 3px;
+  .next-step-button {
+    margin-top: 3px;
   }
 `;
 
 const SubmitEventStep2HeaderStyle = styled.div``;
-// export default {  SubmitEventStep2HeaderStyle,SubmitEventStep1HeaderStyle }
 
 export { SubmitEventStep1HeaderStyle, SubmitEventStep2HeaderStyle };

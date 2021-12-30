@@ -26,7 +26,9 @@ const DeleteRoleModal = (props: DeleteRoleModalProps) => {
         {message ? (
           <p>{message}</p>
         ) : (
-          <p>Are you sure you want to delete this role?</p>
+          <p>
+            {message ? message : "Are you sure you want to delete this role?"}
+          </p>
         )}
       </DeleteRoleModalStyle>
     </ModalWrapper>

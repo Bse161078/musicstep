@@ -1,8 +1,7 @@
 import React, { useState } from "react";
+import { Dashboard, SubmitEventStep1, SubmitEventStep2 } from "../../components";
 import { EventsManagementStyle } from "./EventsManagment.style";
-import { SubmitEventStep1 } from "..";
-import { SubmitEventStep2 } from "../../components";
-import { Dashboard } from "../../components";
+
 const EventsManagement = () => {
   const [currentStep, setCurrentStep] = useState(1);
   return (

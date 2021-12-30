@@ -61,7 +61,7 @@ const RoutesList = (props: any) => {
 
   return (
     <>
-      {/* {!isAdminSide && !isDashboardSide && showNavbar ? <Navbar /> : ""} */}
+      {!isAdminSide && !isDashboardSide && showNavbar ? <Navbar /> : ""}
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/login" component={Login} />

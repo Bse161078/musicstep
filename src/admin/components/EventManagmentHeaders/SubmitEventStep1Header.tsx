@@ -16,7 +16,7 @@ const SubmitEventStep1Header = (props: SubmitEventStep1Props ) => {
       <h3 className="prev-text">{backtick} Back to Events Managment</h3>
       <div className="heading-button-wrapper">
         <h1 className="header">Submit An Event</h1>
-        <FilledButtonStyle onClick={handleStepChange} className="nxtstep-btn" height="53px" buttonType="dark">
+        <FilledButtonStyle onClick={handleStepChange} className="next-step-button" height="53px" buttonType="dark">
           Next Step(1/2)
         </FilledButtonStyle>
       </div>
