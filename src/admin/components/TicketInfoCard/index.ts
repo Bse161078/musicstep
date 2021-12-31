@@ -1,0 +1,1 @@
+export {default as TicketInfoCard } from './TicketInfoCard'

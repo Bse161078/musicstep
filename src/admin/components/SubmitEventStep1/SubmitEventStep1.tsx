@@ -1,20 +1,34 @@
 import React from "react";
-import { SubmitEventStep1Style } from "./SubmitEventStep1.style";
+
 import { Form, Formik } from "formik";
-import { SubmitEvent1Header } from "..";
+
 import { InputBox, SelectBox } from "../../../components";
 import { OutlineButtonStyle } from "../../../styles/Common.style";
 import { EventManagmenPhotoScroller } from "../EventManagmenPhotoScroller";
+import { SubmitEventStep1Style } from "./SubmitEventStep1.style";
+import { DashboardHeader } from "..";
 
-type SubmitEventStep1Props = { 
-     setCurrentStep: any;
-}
+type SubmitEventStep1Props = {
+  setCurrentStep: any;
+};
 
-const SubmitEvent = (props: SubmitEventStep1Props ) => {
+const SubmitEvent = (props: SubmitEventStep1Props) => {
   const handleFormSubmit = (e: any) => {};
+  const { setCurrentStep} = props; 
   return (
     <SubmitEventStep1Style>
-      <SubmitEvent1Header setCurrentStep={props.setCurrentStep} />
+      <DashboardHeader
+        heading="Submit An Event"
+        backButtonText="Back To Events Management"
+        handleSaveClick={() => {
+          setCurrentStep(2);
+        }}
+        handleBackClick={() => {
+          // on back button go to events managment page
+        }}
+        saveButtonText="Next Step(1/2)"
+        saveButtonWidth="190px" 
+      />
       <Formik
         initialValues={{
           eventtitle: "",
@@ -64,7 +78,7 @@ const SubmitEvent = (props: SubmitEventStep1Props ) => {
               width="large"
               options={[{ key: "", value: "United States of America" }]}
             />
-
+             {/* onClick go to add venue page */}
             <OutlineButtonStyle
               buttonType="light"
               name="addvenue"
@@ -72,6 +86,7 @@ const SubmitEvent = (props: SubmitEventStep1Props ) => {
               width="153px;"
               height="53px"
               className="addvenue-btn"
+      
             >
               Add Venue
             </OutlineButtonStyle>

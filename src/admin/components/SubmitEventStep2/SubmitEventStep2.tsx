@@ -1,14 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { SubmitEventStep2Style } from "./SubmitEventStep2.style";
-import { CreateTicket, TicketInfoDiv, DashboardHeader } from "..";
-import SubmitEventStep2Header from "../EventManagmentHeaders/SubmitEventStep2Header";
-type SubmitEventStep2Props = { 
-     setCurrentStep: any;
-}
+import { CreateTicket, TicketInfoCard, DashboardHeader } from "..";
+import { MessageModal } from "../../../components";
+
+type SubmitEventStep2Props = {
+  setCurrentStep: any;
+};
+
 const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
+
+  const { setCurrentStep } = props;
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
   return (
     <>
-      <SubmitEventStep2Header setCurrentStep={props.setCurrentStep} />
+      <DashboardHeader
+        heading="Submit An Event"
+        backButtonText="Back To Step 1"
+        handleSaveClick={() => {
+          setIsModalVisible(true);
+        }}
+        handleCancelClick={() => {
+          setCurrentStep(1);
+        }}
+        handleBackClick={() => {
+          setCurrentStep(1);
+        }}
+        saveButtonText="Submit Event"
+        cancelButtonText="Back"
+        saveButtonWidth="190px"
+      />
+
       <SubmitEventStep2Style>
         <div className="text-wrapper">
           <h3>Events Tickets</h3>
@@ -18,20 +40,22 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
           </p>
         </div>
         <div className="tickets-wrapper">
-          <CreateTicket  />
-          <TicketInfoDiv
+
+          <CreateTicket />
+
+          <TicketInfoCard
             heading="Premium Ticket"
             creditNo="15"
             availableTickets={44}
             description="Possimus Sunt Vitae Aut Ut Eaque Earum. Est At Cum. Qui Sit Quia Omnis Enim Ex Quos."
           />
-          <TicketInfoDiv
+          <TicketInfoCard
             heading="Golden Ticket"
             creditNo="15"
             availableTickets={44}
             description="Possimus Sunt Vitae Aut Ut Eaque Earum. Est At Cum. Qui Sit Quia Omnis Enim Ex Quos."
           />
-          <TicketInfoDiv
+          <TicketInfoCard
             heading="Basic Ticket"
             creditNo="15"
             availableTickets={44}
@@ -39,6 +63,14 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
           />
         </div>
       </SubmitEventStep2Style>
+
+      <MessageModal
+        heading="success"
+        message="Your event is now live!"
+        isModalVisible={isModalVisible}
+        setIsModalVisible={setIsModalVisible}
+      />
+
     </>
   );
 };

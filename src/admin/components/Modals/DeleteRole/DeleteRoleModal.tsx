@@ -1,4 +1,4 @@
-import { message } from "antd";
+
 import React from "react";
 import { ModalWrapper } from "../ModalWrapper";
 import { DeleteRoleModalStyle } from "./DeleteRole.style";

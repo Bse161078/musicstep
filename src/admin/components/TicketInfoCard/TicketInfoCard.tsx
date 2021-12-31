@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TicketInfoDivStyle from "./TicketInfoDiv.style";
+import TicketInfoDivStyle from "./TicketInfoCardstyle";
 import { DeleteIcon, EditButtonIcon } from "../../../assets";
 import { DeleteRoleModal } from "..";
 import { CreateTicketModal } from "../../../components";
