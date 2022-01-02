@@ -30,7 +30,7 @@ const ContactInfoForm = () => {
             <div className="headings-with-inputs">
               <ContentHeader heading="Full Name" />
               <div className="inputs-wrapper">
-                <InputBox label="Prefix" name="prefix" width="220px" />
+                <InputBox label="Prefix" name="prefix" width="690px" />
                 <InputBox label="First Name" name="firstName" width="400px" />
                 <InputBox label="Last Name" name="lastName" width="350px" />
                 <InputBox label="Suffix" name="suffix" width="250px" />
