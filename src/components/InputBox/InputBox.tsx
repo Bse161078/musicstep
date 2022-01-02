@@ -41,6 +41,7 @@ const InputBox = (props: any) => {
         onChange={field.onChange}
         placeholder={props.label}
         width={props.width}
+        height={props.height}
         {...props}
       />
 
