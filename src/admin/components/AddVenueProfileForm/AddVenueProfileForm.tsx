@@ -12,10 +12,15 @@ import { amenties } from "../../../mockData/amenties";
 
 import { DashboardHeader } from "..";
 import { initialValues } from "./initialValues";
+import { useHistory } from "react-router-dom";
 
 const AddVenueProfileForm = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
+
   const onSubmit = () => {};
+
+  const history = useHistory();
+
   return (
     <>
       <Dashboard>
@@ -25,12 +30,12 @@ const AddVenueProfileForm = () => {
             handleSaveClick={() => {
               setIsModalVisible(true);
             }}
-            backButtonText="Back to Events Managment"
+            backButtonText="Back To Submit An Event"
             handleBackClick={() => {
-              // jump to event managment page
+              history.push('/admin/events-managment')
             }}
             handleCancelClick={() => {
-              // jump to submit event step 1.
+              history.push('/admin/events-managment')
             }}
           />
           <div className="file-wrapper">
