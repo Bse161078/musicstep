@@ -1,4 +1,5 @@
 import React from "react";
+import { StarIcon } from "../../assets";
 import { ReviewsListStyle } from "./Reviews.style";
 
 const ReviewsList = () => {
@@ -10,7 +11,7 @@ const ReviewsList = () => {
           <p>3 Days Ago</p>
         </span>
         <span>
-          <h3>Rating: 2.3</h3>
+          <h3>Rating: 2.3 <StarIcon /> <StarIcon /> <StarIcon /> <StarIcon /> <StarIcon /> </h3>
         </span>
       </div>
       <div>
