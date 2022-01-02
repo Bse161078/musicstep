@@ -45,8 +45,10 @@ export const AddVenueProfileFormStyle = styled.div`
   .policy-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    label {
+
+    label.ant-checkbox-wrapper  {
       font-size: 20px;
+      margin-left: 0;
     }
   }
 
@@ -54,8 +56,10 @@ export const AddVenueProfileFormStyle = styled.div`
     display: grid;
     border-radius: 1px solid red;
     grid-template-columns: 1fr 1fr;
+
     label {
       font-size: 20px;
+      margin-left: 0;
     }
   }
 `;
