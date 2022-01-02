@@ -23,7 +23,7 @@ import {
   Payouts,
   TaxPayerInfo,
   TeamManagement,
-  EventsManagement,
+  EventsManagementSteps,
 } from "./admin/pages";
 import { AuthenticatedRoute, Footer, Navbar } from "./components";
 import { BaseStyle } from "./styles/Base.style";
@@ -35,6 +35,7 @@ import {
 } from "./userDashboard/pages";
 import { UserContextProvider } from "./context/userContext";
 import { LoginContextProvider } from "./context/authenticationContext";
+import { EventsManagment } from "./admin/components";
 
 const RoutesList = (props: any) => {
   const { pathname } = useLocation();
@@ -63,6 +64,12 @@ const RoutesList = (props: any) => {
     <>
       {!isAdminSide && !isDashboardSide && showNavbar ? <Navbar /> : ""}
       <Switch>
+        <Route
+          path="/admin/events-management"
+          exact
+          render={() => (<EventsManagment />)}
+        />
+
         <Route path="/" exact component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/free-trial" component={FreeTrial} />
@@ -141,10 +148,10 @@ const RoutesList = (props: any) => {
           )}
         />
         <Route
-          path="/admin/events-managment"
+          path="/admin/events-managment-home"
           render={() => (
             // <AuthenticatedRoute redirectTo="/partner-login">
-              <EventsManagement/>
+              <EventsManagementSteps/>
             // </AuthenticatedRoute>
           )}
         />
