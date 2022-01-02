@@ -10,15 +10,19 @@ type SelectBoxStyleProps = {
 const getInputWidth = (width: string) => {
   switch (width) {
     case "xs":
-      return "width: 170px";
+      return "max-width: 170px";
     case "small":
-      return "width: 238px";
+      return "max-width: 238px";
     case "medium":
-      return "width: 266px";
+      return "max-width: 266px";
     case "fill":
-      return "width: 100%";
+      return "max-width: 100%";
     default:
-      return "width: 266px";
+      return "max-width: 266px";
+    case "large":
+      return "max-width: 600px";
+      case "350px":
+      return "max-width: 350px";
   }
 };
 
@@ -26,8 +30,9 @@ export const SelectBoxStyle = styled(Select)<SelectBoxStyleProps>`
   &.ant-select {
     ${(props) => getInputWidth((props.width && props.width) || "xs")};
     margin: 5px 0;
-    font-size: 1.3rem;
+    font-size: 13px;
     color: #5d5d5d;
+    width: 100%;
 
     .ant-select-selection-search {
       padding-left: 30px;
@@ -80,6 +85,7 @@ type SelectInputStyleProps = {
 
 export const SelectInputStyle = styled.div<SelectInputStyleProps>`
   display: grid;
+  width: 100%;
   grid-gap: 5px;
   grid-template-columns: ${(props) =>
     props.type === "horizontal" ? "auto auto" : "1fr"};

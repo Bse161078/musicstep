@@ -5,6 +5,7 @@ import {
   LogoWithHeading,
   NavbarWithSearch,
   UpcomingEvents,
+  Reviews
 } from "../../components";
 import { OutlineButtonStyle } from "../../styles/Common.style";
 import { TabPaneStyle, TabsStyle } from "../../styles/Fields.style";
@@ -63,6 +64,11 @@ export default function VenueDetails() {
             <TabPaneStyle tab="Upcoming Events" key="2">
               <div className="table-wrapper">
                 <UpcomingEvents />
+              </div>
+            </TabPaneStyle>
+            <TabPaneStyle tab="Reviews" key="3">
+              <div className="table-wrapper">
+                <Reviews />
               </div>
             </TabPaneStyle>
           </TabsStyle>

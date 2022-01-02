@@ -6,6 +6,7 @@ import { InputBox, Loading, TrialFormWrapper } from "..";
 import { useUserContext } from "../../context/userContext";
 import { FilledButtonStyle } from "../../styles/Common.style";
 import { TrialSetPasswordStyle } from "./TrialSetPassword.style";
+import { TrialInfoValidationSchema } from "./validation";
 
 type TrailSetPasswordProps = {
   setCurrentForm: (data: string) => void;
@@ -35,7 +36,6 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
         )
         .then((response) => {
           setLoading(false);
-          console.log(response);
           dispatch({
             type: "SUBMIT_GENERAL_INFO",
             payload: {
@@ -47,10 +47,13 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
           setCurrentForm("redeem-offer");
         })
         .catch((error) => {
-          setErrorMessage("Error while submitting data!");
+          console.log({error})
+          setErrorMessage(error.message);
           setLoading(false);
           console.log("error");
         });
+    } else {
+      setLoading(false);
     }
   };
   return (
@@ -63,6 +66,8 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
             password: "",
             confirmPassword: "",
           }}
+          validationSchema={TrialInfoValidationSchema}
+          validateOnChange={false}
           onSubmit={handleSetPasswordSubmit}
         >
           {({ values }) => (

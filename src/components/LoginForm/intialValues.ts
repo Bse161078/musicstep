@@ -1,4 +1,5 @@
 export const loginInitialValues = {
     userName: "",
-    password: ""
+    password: "",
+    rememberPassword: false
 }

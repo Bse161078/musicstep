@@ -8,11 +8,12 @@ import { useUserContext } from "../../context/userContext";
 import { FilledButtonStyle } from "../../styles/Common.style";
 
 import { TrialBillingInfoFormStyle } from "./TrialBillingInfoForm.style";
+import { TrialBillingInfoValidationSchema } from "./validation";
 
 const TrialBillingInfoForm = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
+  // const [errorMessage, setErrorMessage] = useState("");
 
   const history = useHistory();
 
@@ -51,7 +52,7 @@ const TrialBillingInfoForm = () => {
         setIsModalVisible(true);
       })
       .catch((error) => {
-        setErrorMessage("Email already exist!");
+        // setErrorMessage("Email already exist!");
         setLoading(false);
         console.log("error");
       });
@@ -67,6 +68,7 @@ const TrialBillingInfoForm = () => {
       <Formik
         initialValues={{ nameOnCard: "", cardNumber: "", date: "", cvc: "" }}
         onSubmit={handleFormSubmit}
+        validationSchema={TrialBillingInfoValidationSchema}
       >
         {() => (
           <Form className="form-wrapper">
@@ -92,9 +94,9 @@ const TrialBillingInfoForm = () => {
               Notice applies.
             </p>
 
-            {errorMessage !== "" && (
+            {/* {errorMessage !== "" && (
               <p className="error-message">{errorMessage}</p>
-            )}
+            )} */}
             <FilledButtonStyle width="100%" height="60px">
               Redeem Now
             </FilledButtonStyle>

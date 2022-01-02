@@ -1,16 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, Formik } from "formik";
+import axios from "axios";
 
-import { LoginFormStyle } from "./LoginForm.style";
 import {
   FilledButtonStyle,
   OutlineButtonStyle,
 } from "../../styles/Common.style";
-import { loginInitialValues } from "./intialValues";
-import { InputBox, InputCheckbox } from "..";
+import { InputBox, InputCheckbox, Loading } from "..";
 import { Link, useHistory } from "react-router-dom";
 import { useLoginContext } from "../../context/authenticationContext";
-import axios from "axios";
+import { addLoginInfoToStorage, getLoginInfoFromStorage } from "../../utils";
+import { LoginFormStyle } from "./LoginForm.style";
 
 type LoginFormProps = {
   setCurrentSection: (data: string) => void;
@@ -19,20 +19,25 @@ type LoginFormProps = {
 const LoginForm = (props: LoginFormProps) => {
   const { setCurrentSection } = props;
 
+  const [loading, setLoading] = useState(false)
+
   const history = useHistory();
   
   const {
-    state: { isLoggedIn },
     dispatch
   } = useLoginContext();
 
-  const handleLoginSubmit = () => {
+  const handleLoginSubmit = (e: any) => {
+    setLoading(true);
     axios.post("https://music-pass-backend.herokuapp.com/v1/auth/login", {
-      email:"aqeeltest1@gmail.com",
-      password: "Password@7722"
+      email: e.userName,
+      password: e.password
     })
     .then((response) => {
-      console.log("RESPONSE: ", response)
+      setLoading(false);
+      if(e.rememberPassword) {
+        addLoginInfoToStorage(e.userName, e.password, e.rememberPassword)
+      }
       dispatch({
         type: "LOGIN_USER",
         payload: {
@@ -40,16 +45,29 @@ const LoginForm = (props: LoginFormProps) => {
           token: response.data.tokens.access.token
         }
       })
-      history.push("explore-venue")
+      // history.push("/explore-venue")
+      history.push("/dashboard/basic-info")
     })
-    .catch((error) => console.log("error: ", error))
+    .catch((error) => {
+      setLoading(false)
+    })
     
   };
+  console.log(getLoginInfoFromStorage().email)
   return (
     <LoginFormStyle>
+      {
+        loading && (
+          <Loading />
+        )
+      }
       <Formik
         // enableReinitialize={true}
-        initialValues={loginInitialValues}
+        initialValues={{
+          userName: getLoginInfoFromStorage().email || "",
+          password: getLoginInfoFromStorage().password || "",
+          rememberPassword: getLoginInfoFromStorage().rememberPassword || false
+      }}
         onSubmit={handleLoginSubmit}
       >
         {({ values, setFieldValue }) => (
@@ -59,11 +77,11 @@ const LoginForm = (props: LoginFormProps) => {
 
             <div className="checkbox-wrapper">
               <InputCheckbox
-                name="remember-password"
-                onClick={() => {}}
+                name="rememberPassword"
+                onClick={() => setFieldValue("rememberPassword", !values.rememberPassword)}
                 className=""
                 label="Remember Me"
-                isCorrectOption={false}
+                isCorrectOption={values.rememberPassword}
               />
 
               <span

@@ -2,17 +2,20 @@ import styled from "styled-components";
 
 type TextFieldStyleProps = {
   width?: string;
+  height?: string;
+  radiusType?: string;
 };
 
 export const TextFieldStyle = styled.input<TextFieldStyleProps>`
-  height: 53px;
-  border-radius: 50px;
+   height: ${(props) => (props.height ? props.height : "53px")};
+  border-radius: ${(props) => (props.radiusType ? props.radiusType : "50px")};
   border: 1px solid #0c0c0c;
   outline: 0;
   padding: 15px 25px;
   font-size: 18px;
   width: 100%;
   max-width: ${(props) => (props.width ? props.width : "unset")};
+}
 `;
 export const TextFieldErrorStyle = styled.div`
   color: #dc3545;
@@ -25,7 +28,7 @@ export const InputBoxStyle = styled.div`
 
   .password-icon {
     position: absolute;
-    bottom: 15px;
+    top: 35px;
     right: 20px;
   }
 
