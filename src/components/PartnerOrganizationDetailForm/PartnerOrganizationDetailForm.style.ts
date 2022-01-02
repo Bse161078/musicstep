@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import BecomePartnerLoginFormStyle from "../PartneSignupForm/PartnerSignupForm.style";
 
 const PartnerOrganizationDetailFormStyle = styled.div`
   .form-wrapper {
