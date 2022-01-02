@@ -56,12 +56,6 @@ const AddVenueProfileForm = () => {
           <Formik initialValues={initialValues} onSubmit={onSubmit}>
             {() => (
               <Form className="form-wrapper">
-                <InputCheckbox
-                  name=""
-                  onClick={() => {}}
-                  className="hello"
-                  isCorrectOption={true}
-                />
                 <div>
                   <LabelWithTag label="Category Tages" tagType="Recomended" />
                   <InputBox
