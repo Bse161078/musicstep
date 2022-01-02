@@ -73,7 +73,7 @@ export const TableHeaderStyle = css`
   .header-title {
     font-size: 16px;
     color: #0c0c0c;
-    opacity: 0.7;
+    opacity: 0.7; 
   }
 `;
 

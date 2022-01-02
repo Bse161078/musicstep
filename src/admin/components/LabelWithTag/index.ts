@@ -1,1 +1,1 @@
-export {default as Label} from './LabelWithTag.style'
+export {default as LabelWithTag} from './LabelWithTag'

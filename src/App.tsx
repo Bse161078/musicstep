@@ -22,7 +22,8 @@ import {
   PaymentInfo,
   Payouts,
   TaxPayerInfo,
-  TeamManagement
+  TeamManagement,
+  EventsManagement,
 } from "./admin/pages";
 import { AddVenueProfileForm } from "./admin/components";
 import { AuthenticatedRoute, Footer, Navbar } from "./components";
@@ -145,6 +146,14 @@ const RoutesList = (props: any) => {
           render={() => (
             // <AuthenticatedRoute redirectTo="/partner-login">
               <AddVenueProfileForm />
+            // </AuthenticatedRoute>
+          )}
+        />
+        <Route
+          path="/admin/events-managment"
+          render={() => (
+            // <AuthenticatedRoute redirectTo="/partner-login">
+              <EventsManagement/>
             // </AuthenticatedRoute>
           )}
         />
