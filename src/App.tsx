@@ -23,7 +23,7 @@ import {
   Payouts,
   TaxPayerInfo,
   TeamManagement,
-  EventsManagement,
+  EventsManagementSteps,
 } from "./admin/pages";
 import { AuthenticatedRoute, Footer, Navbar } from "./components";
 import { BaseStyle } from "./styles/Base.style";
@@ -151,7 +151,7 @@ const RoutesList = (props: any) => {
           path="/admin/events-managment-home"
           render={() => (
             // <AuthenticatedRoute redirectTo="/partner-login">
-              <EventsManagement/>
+              <EventsManagementSteps/>
             // </AuthenticatedRoute>
           )}
         />
