@@ -1,5 +1,5 @@
-import { Dispatch } from 'react';
 import styled from "styled-components";
+
 export const TaxPayerAfterSubmissionStyle = styled.div`
   display: grid;
   grid-template-columns:12% 76% 12%;
