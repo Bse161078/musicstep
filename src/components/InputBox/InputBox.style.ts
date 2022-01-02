@@ -7,7 +7,7 @@ type TextFieldStyleProps = {
 };
 
 export const TextFieldStyle = styled.input<TextFieldStyleProps>`
-  height: ${(props) => (props.height ? props.height : "unset")};
+   height: ${(props) => (props.height ? props.height : "53px")};
   border-radius: ${(props) => (props.radiusType ? props.radiusType : "50px")};
   border: 1px solid #0c0c0c;
   outline: 0;
