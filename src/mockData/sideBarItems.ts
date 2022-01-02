@@ -9,7 +9,7 @@ export const sidebarItems = [
   },
   {
     name: "Events Managment",
-    url: "/admin/events-managment",
+    url: "/admin/events-management",
   },
   {
     name: "Team Management",

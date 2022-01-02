@@ -32,10 +32,10 @@ const AddVenueProfileForm = () => {
             }}
             backButtonText="Back To Submit An Event"
             handleBackClick={() => {
-              history.push('/admin/events-managment')
+              history.push('/admin/events-managment-home')
             }}
             handleCancelClick={() => {
-              history.push('/admin/events-managment')
+              history.push('/admin/events-managment-home')
             }}
           />
           <div className="file-wrapper">
