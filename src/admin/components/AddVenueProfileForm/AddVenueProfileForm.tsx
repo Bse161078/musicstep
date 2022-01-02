@@ -4,7 +4,7 @@ import { Form, Formik } from "formik";
 
 import { AddVenueProfileFormStyle } from "./AddVenueProfileForm.style";
 import { Dashboard, UploadFile } from "..";
-import { InputBox } from "../../../components";
+import { InputBox, InputCheckbox } from "../../../components";
 import LabelWithTag from "../LabelWithTag/LabelWithTag";
 import { MessageModal } from "../../../components";
 
@@ -29,10 +29,10 @@ const AddVenueProfileForm = () => {
             }}
             backButtonText="Back to Events Managment"
             handleBackClick={() => {
-                // jump to event managment page
+              // jump to event managment page
             }}
             handleCancelClick={() => {
-                // jump to submit event step 1.
+              // jump to submit event step 1.
             }}
           />
           <div className="file-wrapper">
@@ -58,6 +58,12 @@ const AddVenueProfileForm = () => {
           <Formik initialValues={initialValues} onSubmit={onSubmit}>
             {() => (
               <Form className="form-wrapper">
+                <InputCheckbox
+                  name=""
+                  onClick={() => {}}
+                  className="hello"
+                  isCorrectOption={true}
+                />
                 <div>
                   <LabelWithTag label="Category Tages" tagType="Recomended" />
                   <InputBox
@@ -103,17 +109,19 @@ const AddVenueProfileForm = () => {
                       description="Help users know what to expect at your venue."
                       tagType="none"
                     />
-                    <Radio.Group>
+                    <div className="list-wrapper">
                       {amenties.map((index) => {
                         return (
-                          <Radio value={index.name} id={index.id}>
-                            <div className="radio-text">
-                              <span>{index.name}</span>
-                            </div>
-                          </Radio>
+                          <InputCheckbox
+                            name={index.name}
+                            onClick={() => {}}
+                            className=""
+                            label={index.name}
+                            isCorrectOption={true}
+                          />
                         );
                       })}
-                    </Radio.Group>
+                    </div>
                   </div>
                 </div>
                 <div className="saftey-policies-wrapper">
@@ -123,15 +131,17 @@ const AddVenueProfileForm = () => {
                     tagType="Recomended"
                   />
                   <div className="policy-list">
-                    <Radio.Group>
-                      {policies.map((index) => {
-                        return (
-                          <Radio value={index.name} id={index.id}>
-                            {index.name}
-                          </Radio>
-                        );
-                      })}
-                    </Radio.Group>
+                    {policies.map((index) => {
+                      return (
+                        <InputCheckbox
+                          name={index.name}
+                          onClick={() => {}}
+                          className=""
+                          label={index.name}
+                          isCorrectOption={true}
+                        />
+                      );
+                    })}
                   </div>
                 </div>
                 <div className="socialMedia-wrapper">

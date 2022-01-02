@@ -31,4 +31,12 @@ export const amenties = [
     id: "059",
     name: "Amenity 08",
   },
+  {
+    id: "060",
+    name: "Amenity 09",
+  },
+  {
+    id: "061",
+    name: "Amenity 10",
+  },
 ];

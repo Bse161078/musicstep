@@ -33,3 +33,4 @@ export * from "./UpcomingPayoutsList"
 export * from "./UploadFile"
 export * from '../components/Modals/index'
 export * from './LabelWithTag'
+export * from './AddVenueProfileForm'
