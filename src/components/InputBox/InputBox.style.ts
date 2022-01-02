@@ -15,6 +15,7 @@ export const TextFieldStyle = styled.input<TextFieldStyleProps>`
   font-size: 18px;
   width: 100%;
   max-width: ${(props) => (props.width ? props.width : "unset")};
+}
 `;
 export const TextFieldErrorStyle = styled.div`
   color: #dc3545;

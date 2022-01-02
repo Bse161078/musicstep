@@ -8,9 +8,14 @@ export const sidebarItems = [
     url: "/admin/basic-info",
   },
   {
+    name: "Events Managment",
+    url: "/admin/events-management",
+  },
+  {
     name: "Team Management",
     url: "/admin/team-management",
   },
+
   {
     name: "Payment Information",
     url: "/admin/payment-information",
