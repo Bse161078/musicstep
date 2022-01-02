@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { Dashboard, SubmitEventStep1, SubmitEventStep2 } from "../../components";
-import { EventsManagementStyle } from "./EventsManagment.style";
+import { EventsManagementStepsStyle } from "./EventsManagementSteps.style";
 
-const EventsManagement = () => {
+const EventsManagementSteps = () => {
   const [currentStep, setCurrentStep] = useState(1);
   return (
     <Dashboard>
-      <EventsManagementStyle>
+      <EventsManagementStepsStyle>
         {currentStep === 1 && <SubmitEventStep1  setCurrentStep={setCurrentStep} />}
         {currentStep === 2 && <SubmitEventStep2 setCurrentStep={setCurrentStep} />}
-      </EventsManagementStyle>
+      </EventsManagementStepsStyle>
     </Dashboard>
   );
 };
-export default EventsManagement;
+export default EventsManagementSteps;

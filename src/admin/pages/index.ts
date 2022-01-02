@@ -5,4 +5,4 @@ export * from "./PaymentInfo"
 export * from "./Payouts"
 export * from "./TaxPayerInfo"
 export * from "./TeamManagement"
-export * from './EventsManagment'
+export * from './EventsManagmentSteps'

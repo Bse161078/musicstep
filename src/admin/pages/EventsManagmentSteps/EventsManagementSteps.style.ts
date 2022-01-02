@@ -1,5 +1,5 @@
 import  styled  from 'styled-components';
-export const EventsManagementStyle = styled.div`
+export const EventsManagementStepsStyle = styled.div`
   display: flex;
   flex-direction: column;
 `
