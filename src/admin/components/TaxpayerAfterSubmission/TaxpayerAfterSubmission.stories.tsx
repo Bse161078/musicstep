@@ -6,6 +6,6 @@ import "antd/dist/antd.css";
 storiesOf("taxpayer as", module)
     .add("Modal",()=>{
         return (
-            <TaxpayerAfterSubmission />
+            <TaxpayerAfterSubmission handleEditClick={()=>{}} />
         )
     })
