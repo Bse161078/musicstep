@@ -15,7 +15,7 @@ type TrailSetPasswordProps = {
 
 const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
   const { setCurrentForm } = props;
-  const check = true;
+  
   const {
     state: { id },
     dispatch,
