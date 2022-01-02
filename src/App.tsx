@@ -12,7 +12,8 @@ import {
   Pricing,
   ProcessPayment,
   TermsAndConditions,
-  VenueDetails
+  VenueDetails,
+  PartnerSignup,
 } from "./pages";
 
 import {
@@ -75,6 +76,7 @@ const RoutesList = (props: any) => {
         <Route path="/login" component={Login} />
         <Route path="/free-trial" component={FreeTrial} />
         <Route path="/partner-login" component={PartnerLogin} />
+        <Route path="/partner-detail" component={PartnerSignup} />
         <Route exact path="/pricing" component={Pricing} />
         <Route path="/explore-venue/venue-details" component={VenueDetails} />
         <Route path="/how-it-works" component={HowItWorks} />
@@ -205,6 +207,15 @@ const RoutesList = (props: any) => {
             <AuthenticatedRoute redirectTo="/login">
               <ChangePassword />
             </AuthenticatedRoute>
+          )}
+        />
+        <Route
+          path="/partner-signup"
+          exact
+          render={() => (
+            // <AuthenticatedRoute redirectTo="partner/login">
+              <PartnerSignup />
+            // </AuthenticatedRoute>
           )}
         />
       </Switch>
