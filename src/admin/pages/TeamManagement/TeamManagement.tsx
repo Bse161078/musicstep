@@ -36,7 +36,6 @@ export default function TeamManagement() {
               <TeamUsersList />
             </div>
           </TabPaneStyle>
-
           <TabPaneStyle tab="Roles" key="2">
             <SearchInputWithButton
               handleButtonClick={() => setRoleVisible(true)}
