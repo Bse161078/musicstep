@@ -1,4 +1,3 @@
-import { Page } from "./../../stories/Page";
 import styled from "styled-components";
 
 export const ReviewsStyle = styled.div`
