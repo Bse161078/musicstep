@@ -7,10 +7,8 @@ import { Dashboard, UploadFile } from "..";
 import { InputBox, InputCheckbox } from "../../../components";
 import LabelWithTag from "../LabelWithTag/LabelWithTag";
 import { MessageModal } from "../../../components";
-
 import { policies } from "../../../mockData/policies";
 import { amenties } from "../../../mockData/amenties";
-import { Radio } from "antd";
 
 import { DashboardHeader } from "..";
 import { initialValues } from "./initialValues";
