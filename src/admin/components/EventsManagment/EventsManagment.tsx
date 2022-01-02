@@ -3,8 +3,11 @@ import { EventsManagmentStyle } from "./EventsManagment.style";
 import { Dashboard, DashboardHeader, SearchInputWithButton } from "..";
 import { OutlineButtonStyle } from "../../../styles/Common.style";
 import EventsManagmentList from "./EventsManagmentList";
+import { useHistory } from "react-router-dom";
 
 const EventsManagment = () => {
+  const history = useHistory();
+  
   return (
     <Dashboard>
       <EventsManagmentStyle>
@@ -14,7 +17,7 @@ const EventsManagment = () => {
         />
         <div className="searchbar-wrapper">
           <SearchInputWithButton/>
-          <OutlineButtonStyle name="submitEvent" height="54px">
+          <OutlineButtonStyle name="submitEvent" height="54px" onClick={() => history.push("/admin/events-managment-home")}>
             Submit An Event
           </OutlineButtonStyle>
         </div>

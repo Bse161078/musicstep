@@ -7,6 +7,7 @@ import { OutlineButtonStyle } from "../../../styles/Common.style";
 import { EventManagmenPhotoScroller } from "../EventManagmenPhotoScroller";
 import { SubmitEventStep1Style } from "./SubmitEventStep1.style";
 import { DashboardHeader } from "..";
+import { useHistory } from "react-router-dom";
 
 type SubmitEventStep1Props = {
   setCurrentStep: any;
@@ -15,6 +16,9 @@ type SubmitEventStep1Props = {
 const SubmitEvent = (props: SubmitEventStep1Props) => {
   const handleFormSubmit = (e: any) => {};
   const { setCurrentStep} = props; 
+
+  const history = useHistory();
+
   return (
     <SubmitEventStep1Style>
       <DashboardHeader
@@ -24,7 +28,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
           setCurrentStep(2);
         }}
         handleBackClick={() => {
-          // on back button go to events managment page
+          history.push("/admin/events-management")
         }}
         saveButtonText="Next Step(1/2)"
         saveButtonWidth="190px" 
@@ -86,7 +90,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
               width="153px;"
               height="53px"
               className="addvenue-btn"
-      
+              onClick={()=> history.push("/admin/add-venueprofile")}
             >
               Add Venue
             </OutlineButtonStyle>

@@ -12,7 +12,7 @@ import {
   Pricing,
   ProcessPayment,
   TermsAndConditions,
-  VenueDetails,
+  VenueDetails
 } from "./pages";
 
 import {
@@ -25,6 +25,7 @@ import {
   TeamManagement,
   EventsManagementSteps,
 } from "./admin/pages";
+import { AddVenueProfileForm } from "./admin/components";
 import { AuthenticatedRoute, Footer, Navbar } from "./components";
 import { BaseStyle } from "./styles/Base.style";
 import {
@@ -145,6 +146,14 @@ const RoutesList = (props: any) => {
             <AuthenticatedRoute redirectTo="/partner-login">
               <AccountSettings />
             </AuthenticatedRoute>
+          )}
+        />
+          <Route
+          path="/admin/add-venueprofile"
+          render={() => (
+            // <AuthenticatedRoute redirectTo="/partner-login">
+              <AddVenueProfileForm />
+            // </AuthenticatedRoute>
           )}
         />
         <Route
