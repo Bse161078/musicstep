@@ -5,10 +5,16 @@ import { Form, Formik } from "formik";
 import { TrialFormWrapper } from "..";
 import { FilledButtonStyle } from "../../styles/Common.style";
 import { SelectBox } from "..";
+import { Link, useHistory } from "react-router-dom";
 
 const PartnerSignupForm = () => {
   const initialValues = {};
-  const handlePartnerSignup = () => {};
+  const history = useHistory();
+
+  const handlePartnerSignup = () => {
+    history.push("/partner-detail");
+  };
+
   return (
     <TrialFormWrapper heading="Become A Partner">
       <BecomePartnerLoginStyle>
@@ -49,12 +55,19 @@ const PartnerSignupForm = () => {
                 SignUp For Free
               </FilledButtonStyle>
               <div className="footer-wrapper">
-                <h3 className="already-text">Already have an account?<span className="login-link-text"> Login</span></h3>
+                <h3 className="already-text">
+                  Already have an account?{" "}
+                  <span className="login-link-text">
+                    <Link to="/partner-login  ">Login</Link>
+                  </span>
+                </h3>
                 <p className="foooter-text">
                   We'll use the information you submit to tell you about
                   partnership opportunities and provide other updates. By
-                  submitting this form, you agree to the <span className="terms-text">Terms of Use & Privacy
-                  Policy.</span>
+                  submitting this form, you agree to the{" "}
+                  <span className="terms-text">
+                    Terms of Use & Privacy Policy.
+                  </span>
                 </p>
               </div>
               <p className="Support">Support</p>

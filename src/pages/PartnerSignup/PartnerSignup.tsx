@@ -1,9 +1,11 @@
 import React from "react";
-import { StartTrialWrapper } from "../../components";
-import {
-  PartnerSignupForm,
-} from "../../components";
+import { useHistory } from "react-router-dom";
+import { PartnerOrganizationDetailForm, StartTrialWrapper } from "../../components";
+import { PartnerSignupForm } from "../../components";
 const PartnerSignup = () => {
+  const history = useHistory();
+  console.log(history.location.pathname);
+  
   return (
     <StartTrialWrapper
       leftContent={
@@ -13,11 +15,21 @@ const PartnerSignup = () => {
             Are you looking to get more attendees and earn more revenue? Sign up
             with MusicPass for free and list your live events.
           </p>
-          <img className="image" src='/images/Group 492.png' alt="left visual"/>
+          <img
+            className="image"
+            src="/images/Group 492.png"
+            alt="left visual"
+          />
         </>
       }
     >
-      <PartnerSignupForm/>
+      {
+        history.location.pathname === "/partner-signup" ? (
+          <PartnerSignupForm />
+        ) : (
+          <PartnerOrganizationDetailForm />
+        )
+      }
     </StartTrialWrapper>
   );
 };
