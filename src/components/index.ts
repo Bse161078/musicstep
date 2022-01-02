@@ -37,3 +37,4 @@ export * from "./TrialSetPassword"
 export * from "./UpcomingEvents"
 export * from "./ValueWithButton"
 export * from "./VenueCard"
+export * from './CreateTicketModal'
