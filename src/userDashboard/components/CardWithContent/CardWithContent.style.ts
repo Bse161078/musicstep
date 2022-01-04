@@ -15,6 +15,7 @@ export const CardWithContentStyle = styled.div`
   .row-wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: end;
     grid-gap: 20px;
 
     @media (max-width: 767px) {
@@ -37,5 +38,14 @@ export const CardWithContentStyle = styled.div`
 
   .content {
     margin-top: 20px;
+  }
+
+  .view-guest-list-text{
+    font-size: 16px;
+    cursor: pointer;
+    color:#100840;
+  }
+  .cancel-text{
+    font-size: 16px;
   }
 `;

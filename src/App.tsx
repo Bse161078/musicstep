@@ -152,9 +152,9 @@ const RoutesList = (props: any) => {
         <Route
           path="/dashboard/home"
           render={() => (
-            <AuthenticatedRoute redirectTo="/login">
+            // <AuthenticatedRoute redirectTo="/login">
               <UserHome />
-            </AuthenticatedRoute>
+            // </AuthenticatedRoute>
           )}
         />
         <Route
