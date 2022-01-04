@@ -12,6 +12,7 @@ import {
   FilledButtonStyle,
   OutlineButtonStyle,
 } from "../../../styles/Common.style";
+import { NotificationModal } from "../Modals/NotificationModal";
 
 import { UserSidebarStyle } from "./UserSidebar.style";
 
@@ -24,6 +25,7 @@ const UserSidebar = () => {
     false
   );
   const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
+  const [isNotificationModalVisible, setNotificationModalVisible] = useState(false);
 
   const history = useHistory();
 
@@ -58,6 +60,10 @@ const UserSidebar = () => {
             <span onClick={() => setLogoutVisible(true)}>
               <img alt="logout" src="/images/icons/logout-icon.svg" />
             </span>
+            <span onClick={() => setNotificationModalVisible(true)}>
+              <img alt="logout" src="/images/icons/logout-icon.svg" />
+            </span>
+            
           </div>
         </div>
         <figcaption className="person-name">John Doe</figcaption>
@@ -153,6 +159,11 @@ const UserSidebar = () => {
         heading="Success"
         message="Subscription canceled successfully."
         handleOkClick={()=>{history.push("/")}}
+      />
+      <NotificationModal 
+        isModalVisible={isNotificationModalVisible}
+        setIsModalVisible={setNotificationModalVisible}
+
       />
     </UserSidebarStyle>
   );

@@ -22,7 +22,6 @@ const FormWrapper = (props: FormWrapperProps) => {
 
       <section className="right-side">
         {topHeading && <h1 className="top-heading">{topHeading}</h1>}
-
         <article className="form-wrapper">
           {formHeading && <h3 className="form-heading">{formHeading}</h3>}
 
