@@ -1,9 +1,7 @@
 import { Modal } from "antd";
 import styled from "styled-components";
 import { FilledButtonStyle } from "../../../../styles/Common.style";
-// type ModalWrapperStyleProps = {
-//   isCustomFooter?: boolean
-// }
+
 export const ModalWrapperStyle = styled(Modal)`
  
   .ant-modal-content {
@@ -69,6 +67,12 @@ export const ModalWrapperStyle = styled(Modal)`
     font-size: 17px;
     color: black;
     font-weight: 250;
+    padding-bottom: 30px;
+  }
+  .bold-description {
+    font-size: 17px;
+    color: #FF33CC;
+    font-weight: 700;
     padding-bottom: 30px;
   }
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import PeopleWithMutualFreindsModalStyle from './PeopleWithMutualFreindsModal.style'
 import { ModalWrapper } from '../../../../admin/components/Modals/ModalWrapper'
 import { ProfileModal } from '..'
+import { PeopleList } from './PeopleList'
 
 type PeopleWithMutualFreindsModalProps = {
   isModalVisible: boolean
@@ -21,10 +22,11 @@ const PeopleWithMutualFreindsModal = (
         heading="People With Mutual Freinds"
         width="875px"
         height="710px"
+        boldDescription="Manage My Public Profile"
       >
         <PeopleWithMutualFreindsModalStyle>
           <PublicProfileOff />
-          {/* <PublicProfileON /> */}
+          <PeopleList />
         </PeopleWithMutualFreindsModalStyle>
       </ModalWrapper>
       <ProfileModal
@@ -47,14 +49,5 @@ const PublicProfileOff = () => {
         </p>
       </p>
     </div>
-  )
-}
-
-
-const PublicProfileON = () => {
-  return (
-      <div>
-        nothing
-      </div>
   )
 }

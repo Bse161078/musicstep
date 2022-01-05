@@ -19,6 +19,7 @@ type ModalWrapperProps = {
   height?: string
   handleOkClick?: any
   isFooter?: boolean
+  boldDescription?: string
 }
 const ModalWrapper = (props: ModalWrapperProps) => {
   const {
@@ -32,6 +33,7 @@ const ModalWrapper = (props: ModalWrapperProps) => {
     setIsModalVisible,
     handleOkClick,
     description,
+    boldDescription,
     isFooter = true,
   } = props
 
@@ -78,7 +80,12 @@ const ModalWrapper = (props: ModalWrapperProps) => {
             : null
         }
       >
-        <p className="description">{description}</p>
+        {description ? (
+          <p className="description">{description}</p>
+        ) : (
+          <p className="bold-description">{boldDescription}</p>
+        )}
+
         {children}
       </ModalWrapperStyle>
     </>

@@ -9,12 +9,10 @@ const ShareYourExperinceModalStyle = styled.div`
   }
 
   .description-wrapper {
-
     display: flex;
     flex-direction: column;
     gap: 10px;
     text-align: start;
-    height: 187px;
 
     .concert-name{
 
@@ -39,7 +37,6 @@ const ShareYourExperinceModalStyle = styled.div`
 
     .organizedBy-text {
       color: #100840;
-
        .link {
          text-decoration: underline;
          cursor: pointer;

@@ -85,9 +85,9 @@ const RoutesList = (props: any) => {
         <Route
           path="/admin/basic-info"
           render={() => (
-            <AuthenticatedRoute redirectTo="/partner-login">
+            // <AuthenticatedRoute redirectTo="/partner-login">
               <BasicInfo />
-            </AuthenticatedRoute>
+            // </AuthenticatedRoute>
           )}
         />
 
