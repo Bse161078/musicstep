@@ -7,3 +7,4 @@ export * from "./HeadingTab"
 export * from "./SectionHeading"
 export * from "./UpcomingEvents"
 export * from "./UserSidebar"
+export * from  './personListItem'
