@@ -14,6 +14,10 @@ type DashboardHeaderProps = {
   heading: string;
   description?: string;
   backButtonText?: string;
+  saveButtonText?: string;
+  cancelButtonText?: string;
+  saveButtonWidth?:string;
+  cancelButtonWidth?: string;
 };
 
 const DashboardHeader = (props: DashboardHeaderProps) => {
@@ -23,41 +27,51 @@ const DashboardHeader = (props: DashboardHeaderProps) => {
     handleBackClick,
     heading,
     description,
-    backButtonText
+    backButtonText,
+    saveButtonText,
+    cancelButtonText,
+    saveButtonWidth,
+    cancelButtonWidth
   } = props;
   return (
     <DashboardHeaderStyle>
-      <div className="heading-wrapper">
+      
+      <div>
         {handleBackClick && (
           <h3 className="back-button" onClick={handleBackClick}>
             <LeftChevronIcon /> {backButtonText}
           </h3>
         )}
-        <h1 className="heading">{heading}</h1>
-        <p className="description">{description}</p>
       </div>
 
       <div className="header-buttons-wrapper">
-        {handleCancelClick && (
-          <OutlineButtonStyle
-            onClick={handleCancelClick}
-            width="150px"
-            height="60px"
-          >
-            Cancel
-          </OutlineButtonStyle>
-        )}
+        <div>
+          <h1 className="heading">{heading}</h1>
+          <p className="description">{description}</p>
+        </div>
+        <div className="button-wrapper">
+          {handleCancelClick && (
+            <OutlineButtonStyle
+              onClick={handleCancelClick}
+              width={ cancelButtonWidth ?  cancelButtonWidth : '150px'}
+              height="60px"
+            >
+              {cancelButtonText ? cancelButtonText : "Cancel"}
+            </OutlineButtonStyle>
+          )}
 
-        {handleSaveClick && (
-          <FilledButtonStyle
-            onClick={handleSaveClick}
-            buttonType="dark"
-            width="150px"
-            height="60px"
-          >
-            Save
-          </FilledButtonStyle>
-        )}
+          {handleSaveClick && (
+            <FilledButtonStyle
+              onClick={handleSaveClick}
+              buttonType="dark"
+              width={ saveButtonWidth ?  saveButtonWidth : '150px'}
+              height='60px'
+            >
+              {saveButtonText ? saveButtonText : "Save"}
+            </FilledButtonStyle>
+          )}
+        </div>
+        
       </div>
     </DashboardHeaderStyle>
   );

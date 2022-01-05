@@ -1,13 +1,13 @@
-import { Form, Formik } from "formik";
 import React, { useState } from "react";
-
-import { InputBox, MessageModal, TrialFormWrapper } from "..";
+import axios from "axios";
+import { MessageModal, TrialFormWrapper } from "..";
 import { useUserContext } from "../../context/userContext";
 import {
   FilledButtonStyle,
   OutlineButtonStyle,
 } from "../../styles/Common.style";
 import { RedeemOfferStep2FormStyle } from "./RedeemOfferStep2Form.style";
+import OtpInput from "react-otp-input";
 
 type TrailSetPasswordProps = {
   setCurrentForm: (data: string) => void;
@@ -15,22 +15,53 @@ type TrailSetPasswordProps = {
 
 const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
   const { setCurrentForm } = props;
-
+  
+  const {
+    state: { id },
+    dispatch,
+  } = useUserContext();
   const [isCodeSend, setCodeSend] = useState(false);
   const [isContinueModal, setContinueModal] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [otp, setOtp] = useState();
 
-  const handleSetPasswordSubmit = () => {
-    setContinueModal(true);
+  const handleButtonSubmit = (e: any) => {
+    axios
+      .patch(
+        `https://music-pass-backend.herokuapp.com/v1/users/createCode/${id}`,
+        {
+          code: otp,
+        }
+      )
+      .then((res) => {
+        setContinueModal(true);
+        dispatch({
+          type: "SUBMIT_GENERAL_INFO",
+          payload: {
+            firstName: e.firstName,
+            lastName: e.lastName,
+            dob: e.dob,
+            phoneNumber: e.phoneNumber,
+            email: e.email,
+          },
+        });
+        if (res.data.isVerified === true) {
+          setContinueModal(true);
+        }
+      })
+      .catch((error) => {
+        setErrorMessage(error.response?.data.message);
+      });
   };
 
   const handleChangeButtonClick = () => {
     setCurrentForm("redeem-offer");
   };
-  
+
   const {
-    state: { phoneNumber }
+    state: { phoneNumber },
   } = useUserContext();
-  
+
   return (
     <TrialFormWrapper heading="Redeem Your Offer">
       <RedeemOfferStep2FormStyle>
@@ -42,30 +73,38 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
           <br />
           Code sent on: {phoneNumber}
         </h3>
-        <Formik
-          initialValues={{
-            digit1: "",
-            digit2: "",
-            digit3: "",
-            digit4: ""
-          }}
-          onSubmit={handleSetPasswordSubmit}
-        >
-          {({ values }) => (
-            <Form className="set-password-wrapper">
-              <div className="input-wrapper">
-                <InputBox name="digit1" />
-                <InputBox name="digit2" />
-                <InputBox name="digit3" />
-                <InputBox name="digit4" />
-              </div>
-
-              <FilledButtonStyle width="100%" height="60px">
-                Continue
-              </FilledButtonStyle>
-            </Form>
+        <div className="input-wrapper">
+          <OtpInput
+            onChange={(otp: any) => {
+              setOtp(otp);
+            }}
+            numInputs={4}
+            placeholder="0000"
+            separator={<span>&nbsp;&nbsp;&nbsp;</span>}
+            value={otp}
+            inputStyle={{
+              height: "53px",
+              width: "100%",
+              border: "1px solid #0c0c0c",
+              padding: "15px 25px",
+              "border-radius": "50px",
+              "font-size": "18px",
+            }}
+            isInputNum={true}
+          />
+        </div>
+        <div className="error-wrapper">
+          {errorMessage !== "" && (
+            <p>{errorMessage}</p>
           )}
-        </Formik>
+        </div>
+        <FilledButtonStyle
+          width="100%"
+          height="60px"
+          onClick={handleButtonSubmit}
+        >
+          Continue
+        </FilledButtonStyle>
 
         <p className="info-details">Didn't receive a code?</p>
 

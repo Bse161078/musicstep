@@ -12,7 +12,6 @@ const CheckboxWithContent = () => {
   return (
     <CheckboxWithContentStyle checked={checked} onClick={toggleClick}>
       <FilledTickIcon />
-
       <div className="checkbox-content-wrapper">
         <h4 className="checkbox-heading">U.S. Person</h4>
         <p className="checkbox-description">

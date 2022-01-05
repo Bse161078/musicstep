@@ -32,3 +32,12 @@ export * from "./TeamUsersList"
 export * from "./UpcomingPayoutsList"
 export * from "./UploadFile"
 export * from '../components/Modals/index'
+export * from "./LabelWithTag"
+export * from './AddVenueProfileForm'
+export * from './EventsManagment'
+export * from './SubmitEventStep1'
+export * from './SubmitEventStep2'
+export * from "./TaxpayerInfoSteps"
+export * from './TicketInfoCard'
+export * from './CreateTicket'
+export * from './EventManagmenPhotoScroller'

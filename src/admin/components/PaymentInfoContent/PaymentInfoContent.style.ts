@@ -40,6 +40,7 @@ export const PaymentInfoListItemStyle = styled.div`
     color: #0c0c0c;
     font-size: 20px;
   }
+  
   .team-role:hover {
     cursor: pointer;
   }
