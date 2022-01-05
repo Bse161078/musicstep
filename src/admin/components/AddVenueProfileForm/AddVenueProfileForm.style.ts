@@ -42,6 +42,7 @@ export const AddVenueProfileFormStyle = styled.div`
     background: #f7f7f7;
     border-radius: 32px;
     padding: 20px;
+
   }
 
   .policy-list {

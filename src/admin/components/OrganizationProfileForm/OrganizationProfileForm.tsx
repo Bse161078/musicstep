@@ -7,7 +7,7 @@ import { UploadFile } from '..'
 import { OrganizationProfileFormStyle } from './OrganizationProfileForm.style'
 import ShowCaseYourEvents from './ShowCaseYourEvent'
 import { policies } from '../../../mockData/policies'
-
+import { attributesList } from './OrganizationAttributesList'
 type OrganizationProfileFormProps = {
   setCurrentPage: (data: string) => void
 }
@@ -59,6 +59,39 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
       >
         {() => (
           <Form>
+            <div>
+              <LabelWithTag
+                label="Organizer Bio"
+                description="Describe who you are, the types of events you host, or your mission. The bio is displayed on your organizer profile."
+              />
+              <InputBox
+                radiusType="27px"
+                height="118px"
+                width="1380px"
+                name="name"
+                placeholder="Enter Your name here"
+              />
+            </div>
+            <div className="attributes-wrapper">
+              <LabelWithTag
+                label="Amenities"
+                description="Help users know what to expect at your venue."
+                tagType="none"
+              />
+              <div className="list-wrapper">
+                {attributesList.map((index) => {
+                  return (
+                    <InputCheckbox
+                      name={index.name}
+                      onClick={() => {}}
+                      className=""
+                      label={index.name}
+                      isCorrectOption={true}
+                    />
+                  )
+                })}
+              </div>
+            </div>
             <div className="saftey-policies-wrapper">
               <LabelWithTag
                 label="Safety & Cleanliness"

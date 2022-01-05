@@ -71,5 +71,11 @@ export const OrganizationProfileFormStyle = styled.main`
       margin-left: 0;
     }
   }
-  
+     .attributes-wrapper {
+    background: #f7f7f7;
+    border-radius: 32px;
+    padding: 20px;
+    max-width: 675px;
+    max-height: 322px;
+  }
 `
