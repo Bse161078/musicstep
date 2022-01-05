@@ -64,4 +64,12 @@ export const ModalWrapperStyle = styled(Modal)`
   ${FilledButtonStyle} {
     background-color: #100840;
   }
+  
+  .description {
+    font-size: 17px;
+    color: black;
+    font-weight: 250;
+    padding-bottom: 30px;
+  }
+
 `;

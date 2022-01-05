@@ -1,21 +1,21 @@
-import React, { useState } from "react";
-import { MessageModal, NavbarWithSearch } from "../../../components";
+import React, { useState } from 'react'
+import { MessageModal, NavbarWithSearch } from '../../../components'
 import {
   FilledButtonStyle,
   OutlineButtonStyle,
-} from "../../../styles/Common.style";
+} from '../../../styles/Common.style'
 
 import {
   CardWithContent,
   SectionHeading,
   UpcomingEvents,
   UserSidebar,
-} from "../../components";
-import { EventReservationStyle, UserHomeStyle } from "./UserHome.style";
+} from '../../components'
+import { EventReservationStyle, UserHomeStyle } from './UserHome.style'
 
 const EventReservation = () => {
-  const [isCancelModalVisible, setCancelModalVisible] = useState(false);
-  const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
+  const [isCancelModalVisible, setCancelModalVisible] = useState(false)
+  const [isSuccessModalVisible, setSuccessModalVisible] = useState(false)
 
   return (
     <SectionHeading heading="Events In Reservation">
@@ -31,7 +31,7 @@ const EventReservation = () => {
           buttonText="Reserved"
           heading="Franklin Kub's Concert"
           time="10:51 AM"
-          footerText="Cannot Be Canceled."
+          footerText="(Click to View Guest List)"
         />
       </EventReservationStyle>
 
@@ -53,8 +53,8 @@ const EventReservation = () => {
             width="100%"
             height="60px"
             onClick={() => {
-              setCancelModalVisible(false);
-              setSuccessModalVisible(true);
+              setCancelModalVisible(false)
+              setSuccessModalVisible(true)
             }}
           >
             Cancel
@@ -69,8 +69,8 @@ const EventReservation = () => {
         message="Reservation canceled successfully."
       />
     </SectionHeading>
-  );
-};
+  )
+}
 
 export default function UserHome() {
   return (
@@ -78,15 +78,13 @@ export default function UserHome() {
       <NavbarWithSearch />
       <UserHomeStyle>
         <UserSidebar />
-
         <div>
           <EventReservation />
           <div className="divider" />
-
           <UpcomingEvents />
           <UpcomingEvents />
         </div>
       </UserHomeStyle>
     </>
-  );
+  )
 }

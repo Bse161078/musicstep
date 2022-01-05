@@ -181,7 +181,7 @@ const RoutesList = (props: any) => {
           render={() => (
             // <AuthenticatedRoute redirectTo="/login">
               <UserHome />
-            /* </AuthenticatedRoute> */
+            // </AuthenticatedRoute>
           )}
         />
         <Route
