@@ -179,17 +179,17 @@ const RoutesList = (props: any) => {
         <Route
           path="/dashboard/home"
           render={() => (
-            <AuthenticatedRoute redirectTo="/login">
+            // <AuthenticatedRoute redirectTo="/login">
               <UserHome />
-            </AuthenticatedRoute>
+            /* </AuthenticatedRoute> */
           )}
         />
         <Route
           path="/dashboard/basic-info"
           render={() => (
-            <AuthenticatedRoute redirectTo="/login">
+            // <AuthenticatedRoute redirectTo="/login">
               <EditProfile />
-            </AuthenticatedRoute>
+            // </AuthenticatedRoute>
           )}
         />
         <Route

@@ -28,7 +28,6 @@ const ShareYourExperinceModal = (props: ShareYourExperinceModalProps) => {
             height="60px"
             onClick={() => {
               setMessageModalVisible(true)
-              
             }}
           >
             Post Reviews
@@ -95,18 +94,24 @@ const ShareYourExperinceModal = (props: ShareYourExperinceModalProps) => {
                   name="eventReview"
                   label="Event Review"
                   placeholder="Type here..."
+                  radiusType="27px"
+                  height="65px"
                 />
                 <Stars />
                 <InputBox
                   name="organizerRreview"
                   label="Venue Review"
                   placeholder="Type here..."
+                  radiusType="27px"
+                  height="65px"
                 />
                 <Stars />
                 <InputBox
                   name="eventReview"
                   label="Organizer Review"
                   placeholder="Type here..."
+                  radiusType="27px"
+                  height="65px"
                 />
                 <Stars />
               </Form>
@@ -120,6 +125,7 @@ const ShareYourExperinceModal = (props: ShareYourExperinceModalProps) => {
         heading="Success"
         message="Your reviews are posted successfully."
       />
+     
     </>
   )
 }

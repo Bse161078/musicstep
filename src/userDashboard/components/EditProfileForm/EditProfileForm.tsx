@@ -64,7 +64,6 @@ const EditProfileForm = () => {
                   alt="avatar"
                   className="avatar"
                 />
-
                 <OutlineButtonStyle width="250px" height="60px">
                   Change Photo
                 </OutlineButtonStyle>

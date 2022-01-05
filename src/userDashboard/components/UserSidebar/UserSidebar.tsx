@@ -1,47 +1,53 @@
-import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
-import { HeadingTab } from "..";
+import React, { useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
+import { HeadingTab } from '..'
 import {
   CreditHistoryModal,
   EventHistoryModal,
   LogoutModal,
   SubscriptionDetailsModal,
-} from "../../../admin/components";
-import { MessageModal } from "../../../components";
+} from '../../../admin/components'
+import { MessageModal } from '../../../components'
+import { NotificationModal, PeopleWithMutualFreindsModal } from '../Modals'
 import {
   FilledButtonStyle,
   OutlineButtonStyle,
-} from "../../../styles/Common.style";
-import { NotificationModal } from "../Modals/NotificationModal";
+} from '../../../styles/Common.style'
 
-import { UserSidebarStyle } from "./UserSidebar.style";
+import { UserSidebarStyle } from './UserSidebar.style'
 
 const UserSidebar = () => {
-  const [isLogoutVisible, setLogoutVisible] = useState(false);
-  const [isSubscriptionVisible, setSubscriptionVisible] = useState(false);
-  const [isCreditModalVisible, setCreditModalVisible] = useState(false);
-  const [isEventsModalVisible, setEventsModalVisible] = useState(false);
+  const [isLogoutVisible, setLogoutVisible] = useState(false)
+  const [isSubscriptionVisible, setSubscriptionVisible] = useState(false)
+  const [isCreditModalVisible, setCreditModalVisible] = useState(false)
+  const [isEventsModalVisible, setEventsModalVisible] = useState(false)
   const [isCancelSubscriptionVisible, setCancelSubscriptionVisible] = useState(
-    false
-  );
-  const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
-  const [isNotificationModalVisible, setNotificationModalVisible] = useState(false);
+    false,
+  )
+  const [isSuccessModalVisible, setSuccessModalVisible] = useState(false)
+  const [isNotificationModalVisible, setNotificationModalVisible] = useState(
+    false,
+  )
+  const [
+    isPeopelWithMutualFreindsModalVisible,
+    setPeopelWithMutualFreindsModalVisible,
+  ] = useState(false)
 
-  const history = useHistory();
+  const history = useHistory()
 
   const handleModalCancelClick = () => {
-    setCancelSubscriptionVisible(false);
-  };
+    setCancelSubscriptionVisible(false)
+  }
 
   const handleModalOkClick = () => {
-    setSuccessModalVisible(true);
-    setCancelSubscriptionVisible(false);
-  };
+    setSuccessModalVisible(true)
+    setCancelSubscriptionVisible(false)
+  }
 
   const subscriptionCancelClick = () => {
-    setSubscriptionVisible(false);
-    setCancelSubscriptionVisible(true);
-  };
+    setSubscriptionVisible(false)
+    setCancelSubscriptionVisible(true)
+  }
 
   return (
     <UserSidebarStyle>
@@ -63,7 +69,6 @@ const UserSidebar = () => {
             <span onClick={() => setNotificationModalVisible(true)}>
               <img alt="logout" src="/images/icons/logout-icon.svg" />
             </span>
-            
           </div>
         </div>
         <figcaption className="person-name">John Doe</figcaption>
@@ -80,7 +85,15 @@ const UserSidebar = () => {
         </span>
 
         <div className="divider" />
-
+        <span onClick={() => setPeopelWithMutualFreindsModalVisible(true)}>
+          <HeadingTab
+            heading="People With Mutual Freinds"
+            icon={
+              <img src="/images/icons/credit-history-icon.svg" alt="icon" />
+            }
+          />
+        </span>
+        <div className="divider" />
         <span onClick={() => setCreditModalVisible(true)}>
           <HeadingTab
             icon={
@@ -108,8 +121,8 @@ const UserSidebar = () => {
         isModalVisible={isLogoutVisible}
         setIsModalVisible={setLogoutVisible}
         handleOk={() => {
-          history.push("/login");
-          setLogoutVisible(false);
+          history.push('/login')
+          setLogoutVisible(false)
         }}
       />
 
@@ -117,7 +130,7 @@ const UserSidebar = () => {
         isModalVisible={isSubscriptionVisible}
         setIsModalVisible={setSubscriptionVisible}
         handleCancelClick={subscriptionCancelClick}
-        handleChangeClick={() => history.push("/pricing")}
+        handleChangeClick={() => history.push('/pricing')}
       />
 
       <CreditHistoryModal
@@ -158,15 +171,20 @@ const UserSidebar = () => {
         setIsModalVisible={setSuccessModalVisible}
         heading="Success"
         message="Subscription canceled successfully."
-        handleOkClick={()=>{history.push("/")}}
+        handleOkClick={() => {
+          history.push('/')
+        }}
       />
-      <NotificationModal 
+      <NotificationModal
         isModalVisible={isNotificationModalVisible}
         setIsModalVisible={setNotificationModalVisible}
-
+      />
+      <PeopleWithMutualFreindsModal
+        isModalVisible={isPeopelWithMutualFreindsModalVisible}
+        setIsModalVisible={setPeopelWithMutualFreindsModalVisible}
       />
     </UserSidebarStyle>
-  );
-};
+  )
+}
 
-export default UserSidebar;
+export default UserSidebar

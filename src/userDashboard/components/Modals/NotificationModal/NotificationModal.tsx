@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import NotificationModalStyle from './NotificationsModal.style'
 import { ModalWrapper } from '../../../../admin/components/Modals/ModalWrapper'
-import { ShareYourExperinceModal } from '../ShareYourExperinceModal'
-
+import { ShareYourExperinceModal, ProfileModal } from '../../Modals'
 
 type NotificationModalProps = {
   isModalVisible: boolean
@@ -10,7 +9,11 @@ type NotificationModalProps = {
 }
 const NotificationModal = (props: NotificationModalProps) => {
   const { isModalVisible, setIsModalVisible } = props
-  const [isShareYourExperinceModalVisible, setIsShareYourExperinceModalVisible] = useState(false);
+  const [
+    isShareYourExperinceModalVisible,
+    setIsShareYourExperinceModalVisible,
+  ] = useState(false)
+  const [isProfileModalVisible, setIsProfileModalVisible] = useState(false)
   return (
     <>
       <ModalWrapper
@@ -21,23 +24,40 @@ const NotificationModal = (props: NotificationModalProps) => {
         width="610px"
       >
         <NotificationModalStyle>
-          <div className="content-wrapper" onClick={() => {
-            setIsShareYourExperinceModalVisible(true);
-          }}>
+          <div
+            className="content-wrapper"
+            onClick={() => {
+              setIsShareYourExperinceModalVisible(true)
+            }}
+          >
             <span className="notification-text">
               How was your event? Let the community know by posting a review
               about the event, venue and event organizers.
             </span>
             <p className="date-text">20 Days Ago</p>
           </div>
+          
+          {/* profile modal form notification  */}
+
           <div className="content-wrapper">
-            <span className="notification-text">
+            <span
+              className="notification-text"
+              onClick={() => {
+                setIsProfileModalVisible(true)
+              }}
+            >
               You have 12 new people with mutual events history.
             </span>
             <p className="date-text">20 Days Ago</p>
           </div>
+
           <div className="content-wrapper">
-            <span className="notification-text">
+            <span
+              className="notification-text"
+              onClick={() => {
+                setIsProfileModalVisible(true)
+              }}
+            >
               You have 12 new people with mutual events history.
             </span>
             <p className="date-text">20 Days Ago</p>
@@ -49,7 +69,6 @@ const NotificationModal = (props: NotificationModalProps) => {
             </span>
             <p className="date-text">20 Days Ago</p>
           </div>
-
           <div className="content-wrapper">
             <span className="notification-text">
               You have 12 new people with mutual events history.
@@ -65,10 +84,14 @@ const NotificationModal = (props: NotificationModalProps) => {
           </div>
         </NotificationModalStyle>
       </ModalWrapper>
-      <ShareYourExperinceModal 
+      <ShareYourExperinceModal
         isModalVisible={isShareYourExperinceModalVisible}
         setIsModalVisible={setIsShareYourExperinceModalVisible}
-        
+      />
+      <ProfileModal
+        isModalVisible={isProfileModalVisible}
+        setIsModalVisible={setIsProfileModalVisible}
+        nextEventDisable={true}
       />
     </>
   )
