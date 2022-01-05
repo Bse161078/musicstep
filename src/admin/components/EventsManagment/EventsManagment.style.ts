@@ -13,9 +13,27 @@ export const EventsManagmentStyle = styled.div`
 `;
 
 export const EventsManagmentListStyle = styled.div`
-   display: flex;
-   flex-direction: column;
-   gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .event-date {
+    color: #0c0c0c;
+    opacity: 0.7;
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    grid-gap: 30px;
+    margin: 20px 0 10px;
+    padding-left: 30px;
+    
+    .date-border {
+      border-bottom: 2px solid #0C0C0C;
+      opacity: 0.5;
+    }
+  }
+
   .table-header {
     padding: 20px 30px;
     background: rgba(16, 8, 64, 0.1);

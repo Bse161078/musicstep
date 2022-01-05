@@ -24,9 +24,9 @@ const PartnerOrganizationDetailForm = () => {
               <InputBox label="Organization Name" name="Sunrise Event Organizers"  width="520px" />
               <SelectBox
                 width="fill"
-                name="countryCode"
+                name="organizationType"
                 options={[{ key: "", value: "+44 (UK)" }]}
-                label="Country Code"
+                label="Organization Type"
               />
               <InputBox
                 label="Organization URL"

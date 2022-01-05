@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const AddVenueProfileFormStyle = styled.div`
+  padding-bottom: 120px;
+
   .file-wrapper {
     display: flex;
     gap: 30px;
@@ -46,7 +48,7 @@ export const AddVenueProfileFormStyle = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    label.ant-checkbox-wrapper  {
+    label.ant-checkbox-wrapper {
       font-size: 20px;
       margin-left: 0;
     }
