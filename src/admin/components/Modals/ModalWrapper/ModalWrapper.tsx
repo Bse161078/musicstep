@@ -50,6 +50,7 @@ const ModalWrapper = (props: ModalWrapperProps) => {
     <>
       <ModalWrapperStyle
         visible={isModalVisible}
+        centered
         onOk={handleOk}
         onCancel={handleCancel}
         className="target"
