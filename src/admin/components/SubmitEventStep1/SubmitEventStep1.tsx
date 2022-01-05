@@ -78,8 +78,9 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
           <div className="thirdrow-wrapper">
             <SelectBox
               name="venue"
-              label="Status"
+              label="Venue"
               width="large"
+              placeholder="Select a venue"
               options={[{ key: "", value: "United States of America" }]}
             />
              {/* onClick go to add venue page */}

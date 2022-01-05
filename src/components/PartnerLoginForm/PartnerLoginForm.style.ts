@@ -28,6 +28,7 @@ export const PartnerLoginFormStyle = styled.article`
       color: #0c0c0c;
       font-size: 36px;
       margin-bottom: 20px;
+      font-weight: normal;
     }
 
     ${FilledButtonStyle} {

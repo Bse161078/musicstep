@@ -27,6 +27,7 @@ const AddVenueProfileForm = () => {
         <AddVenueProfileFormStyle>
           <DashboardHeader
             heading="Add Venue Profile"
+            saveButtonText="Add"
             handleSaveClick={() => {
               setIsModalVisible(true);
             }}

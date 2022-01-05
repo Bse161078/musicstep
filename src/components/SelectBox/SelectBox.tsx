@@ -24,6 +24,7 @@ type SelectBoxProps = {
   disabled?: boolean;
   label?: any;
   type?: "horizontal" | "vertical";
+  placeholder?: string;
 };
 
 const SelectBox = (props: SelectBoxProps) => {
@@ -39,6 +40,7 @@ const SelectBox = (props: SelectBoxProps) => {
     disabled = false,
     label,
     type = "vertical",
+    placeholder,
   } = props;
 
   const handleChange = (value: any) => {
@@ -57,6 +59,7 @@ const SelectBox = (props: SelectBoxProps) => {
         value={field.value || defaultValue}
         onChange={handleChange}
         disabled={disabled}
+        placeholder={placeholder}
       >
         {options.map(
           (option: { key: string; value: string; disabled?: boolean }) => (
