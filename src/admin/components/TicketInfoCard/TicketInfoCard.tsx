@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import TicketInfoCardStyle from './TicketInfoCardstyle'
 import { DeleteIcon, EditButtonIcon } from '../../../assets'
-import { DeleteRoleModal, EventDetailsModal } from '..'
+import { DeleteRoleModal } from '..'
 import { CreateTicketModal } from '../../../components'
 import { OutlineButtonStyle } from '../../../styles/Common.style'
+import { TicketModal } from '../../../components/TicketModal'
 
 type TicketInfoCardProps = {
   heading?: string
@@ -12,36 +13,45 @@ type TicketInfoCardProps = {
   description?: string
   outlineButton?: boolean
   disableTicketsAvailbilty?: boolean
-   
 }
 
 const TicketInfoCard = (props: TicketInfoCardProps) => {
   const [isModalVisible, setIsModalVisible] = useState(false)
-  const [isTicketModalVisible, setIsTicketModalVisible] = useState(false)
-  const [state, setState] = useState(false)
-
+  const [
+    isCricketTicketModalVisible,
+    setIsCricketTicketModalVisible,
+  ] = useState(false)
+  const [isTicketModalVisible, setTicketModalVisible] = useState(false)
 
   const handleDeleteModal = () => {
     setIsModalVisible(true)
   }
   const handleEditTicketModal = () => {
-    setIsTicketModalVisible(true)
+    setIsCricketTicketModalVisible(true)
   }
   return (
     <>
-    <EventDetailsModal isModalVisible={state} setIsModalVisible={setState} />
-      <TicketInfoCardStyle disableTicketsAvailbilty >
+      <TicketModal
+        isModalVisible={isTicketModalVisible}
+        setIsModalVisible={setTicketModalVisible}
+      />
+      <TicketInfoCardStyle disableTicketsAvailbilty>
         <h2>{props.heading}</h2>
         <p className="credits">Credits: {props.creditNo}</p>
         {props.disableTicketsAvailbilty ? null : (
-          <p className="tickets">
-            Tickets Available: {props.availableTickets}
-          </p>
+          <p className="tickets">Tickets Available: {props.availableTickets}</p>
         )}
         <p className="description">{props.description}</p>
         <div className="button-wrapper">
           {props.outlineButton ? (
-            <OutlineButtonStyle height="53px" onClick={() => {setState(true)}}>Reserve</OutlineButtonStyle>
+            <OutlineButtonStyle
+              height="53px"
+              onClick={() => {
+                setTicketModalVisible(true)
+              }}
+            >
+              Reserve
+            </OutlineButtonStyle>
           ) : (
             <>
               <div onClick={handleDeleteModal}>
@@ -60,8 +70,8 @@ const TicketInfoCard = (props: TicketInfoCardProps) => {
         setIsModalVisible={setIsModalVisible}
       />
       <CreateTicketModal
-        isModalVisible={isTicketModalVisible}
-        setIsModalVisible={setIsTicketModalVisible}
+        isModalVisible={isCricketTicketModalVisible}
+        setIsModalVisible={setIsCricketTicketModalVisible}
       />
     </>
   )

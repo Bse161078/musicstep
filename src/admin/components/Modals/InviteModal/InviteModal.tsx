@@ -16,13 +16,13 @@ const InviteModal = (props: InviteModalProps) => {
 
   return (
     <>
-      <ModalWrapper
+<ModalWrapper
         heading="Invite Users"
         rightButtonTitle="Invite"
         leftButtonTitle="Cancel"
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}
-      >
+      >      
         <Formik
           initialValues={{
             email: "",
