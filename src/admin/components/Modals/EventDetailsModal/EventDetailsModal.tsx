@@ -39,6 +39,7 @@ const EventDetailsModal = (props: EventDetailsModalProps) => {
             <p id="location-text">E11EVEN Miami Nightclub</p>
             <p id="event-dateTime">Friday, August 27 7:00 PM - 7:45 Pm</p>
             <p id="credits">6 Credits</p>
+            
           </div>
           <FilledButtonStyle
             onClick={handleCheckingAvailablityModalVisible}
