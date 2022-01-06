@@ -23,7 +23,7 @@ const PartnerLoginForm = () => {
               Partner Dashboard Login
             </h2>
             <InputBox name="userName" label="Username" />
-            <InputBox name="password" label="Password" />
+            <InputBox name="password" type="password" label="Password" />
 
             <Link to="/admin/metrics">
               <FilledButtonStyle width="100%" height="60px">
