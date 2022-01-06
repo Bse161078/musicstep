@@ -1,30 +1,30 @@
-import { Form, Formik } from 'formik'
-import React from 'react'
-import { ContentHeader, DashboardHeader } from '..'
-import { InputBox, InputCheckbox } from '../../../components'
-import LabelWithTag from '../LabelWithTag/LabelWithTag'
-import { UploadFile } from '..'
-import { OrganizationProfileFormStyle } from './OrganizationProfileForm.style'
-import ShowCaseYourEvents from './ShowCaseYourEvent'
-import { policies } from '../../../mockData/policies'
-import { attributesList } from './OrganizationAttributesList'
+import { Form, Formik } from "formik";
+import React from "react";
+import { ContentHeader, DashboardHeader } from "..";
+import { CustomCarousel, InputBox, InputCheckbox } from "../../../components";
+import LabelWithTag from "../LabelWithTag/LabelWithTag";
+import { UploadFile } from "..";
+import { OrganizationProfileFormStyle } from "./OrganizationProfileForm.style";
+import ShowCaseYourEvents from "./ShowCaseYourEvent";
+import { policies } from "../../../mockData/policies";
+import { attributesList } from "./OrganizationAttributesList";
 type OrganizationProfileFormProps = {
-  setCurrentPage: (data: string) => void
-}
+  setCurrentPage: (data: string) => void;
+};
 const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
-  const { setCurrentPage } = props
+  const { setCurrentPage } = props;
 
-  const handleProfileForm = () => {}
+  const handleProfileForm = () => {};
 
   return (
     <OrganizationProfileFormStyle>
       <DashboardHeader
-        handleBackClick={() => setCurrentPage('preview')}
+        handleBackClick={() => setCurrentPage("preview")}
         handleSaveClick={() => {}}
         backButtonText="Back To Basic Info"
         saveButtonText="Add"
         heading="Add Organizer Profile"
-        handleCancelClick={() => setCurrentPage('preview')}
+        handleCancelClick={() => setCurrentPage("preview")}
       />
 
       <ShowCaseYourEvents />
@@ -42,17 +42,25 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         </div>
         <div>
           <LabelWithTag label="Your Additinoal Photos" tagType="Recomended" />
-          <UploadFile buttonType="large" />
+          <CustomCarousel
+            options={{
+              freeScroll: true,
+              contain: true,
+              initialIndex: 0,
+              prevNextButtons: false,
+              pageDots: false,
+            }}
+          />
         </div>
       </div>
 
       <Formik
         initialValues={{
-          organizerBio: '',
-          facebookLink: '',
-          twitterLink: '',
-          instagramLink: '',
-          youtubeLink: '',
+          organizerBio: "",
+          facebookLink: "",
+          twitterLink: "",
+          instagramLink: "",
+          youtubeLink: "",
         }}
         onSubmit={handleProfileForm}
       >
@@ -87,7 +95,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                       label={index.name}
                       isCorrectOption={true}
                     />
-                  )
+                  );
                 })}
               </div>
             </div>
@@ -107,7 +115,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                       label={index.name}
                       isCorrectOption={true}
                     />
-                  )
+                  );
                 })}
               </div>
             </div>
@@ -157,7 +165,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         )}
       </Formik>
     </OrganizationProfileFormStyle>
-  )
-}
+  );
+};
 
-export default OrganizationProfileForm
+export default OrganizationProfileForm;

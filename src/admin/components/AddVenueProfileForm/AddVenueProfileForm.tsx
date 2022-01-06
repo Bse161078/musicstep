@@ -1,24 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-import { Form, Formik } from 'formik'
+import { Form, Formik } from "formik";
 
-import { AddVenueProfileFormStyle } from './AddVenueProfileForm.style'
-import { Dashboard, UploadFile } from '..'
-import { InputBox, InputCheckbox } from '../../../components'
-import LabelWithTag from '../LabelWithTag/LabelWithTag'
-import { MessageModal } from '../../../components'
-import { policies } from '../../../mockData/policies'
-import { amenties } from '../../../mockData/amenties'
+import { AddVenueProfileFormStyle } from "./AddVenueProfileForm.style";
+import { Dashboard, UploadFile } from "..";
+import { CustomCarousel, InputBox, InputCheckbox } from "../../../components";
+import LabelWithTag from "../LabelWithTag/LabelWithTag";
+import { MessageModal } from "../../../components";
+import { policies } from "../../../mockData/policies";
+import { amenties } from "../../../mockData/amenties";
 
-import { DashboardHeader } from '..'
-import { initialValues } from './initialValues'
-import { useHistory } from 'react-router-dom'
+import { DashboardHeader } from "..";
+import { initialValues } from "./initialValues";
+import { useHistory } from "react-router-dom";
 
 const AddVenueProfileForm = () => {
-  const [isModalVisible, setIsModalVisible] = useState(false)
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
-  const onSubmit = () => {}
-  const history = useHistory()
+  const onSubmit = () => {};
+  const history = useHistory();
 
   return (
     <>
@@ -28,14 +28,14 @@ const AddVenueProfileForm = () => {
             heading="Add Venue Profile"
             saveButtonText="Add"
             handleSaveClick={() => {
-              setIsModalVisible(true)
+              setIsModalVisible(true);
             }}
             backButtonText="Back To Submit An Event"
             handleBackClick={() => {
-              history.push('/admin/events-managment-home')
+              history.push("/admin/events-managment-home");
             }}
             handleCancelClick={() => {
-              history.push('/admin/events-managment-home')
+              history.push("/admin/events-managment-home");
             }}
           />
           <div className="file-wrapper">
@@ -54,7 +54,15 @@ const AddVenueProfileForm = () => {
                 label="Your Additinoal Photos"
                 tagType="Recomended"
               />
-              <UploadFile buttonType="large" />
+              <CustomCarousel
+                options={{
+                  freeScroll: true,
+                  contain: true,
+                  initialIndex: 0,
+                  prevNextButtons: false,
+                  pageDots: false,
+                }}
+              />
             </div>
           </div>
 
@@ -116,7 +124,7 @@ const AddVenueProfileForm = () => {
                             label={index.name}
                             isCorrectOption={true}
                           />
-                        )
+                        );
                       })}
                     </div>
                   </div>
@@ -137,7 +145,7 @@ const AddVenueProfileForm = () => {
                           label={index.name}
                           isCorrectOption={true}
                         />
-                      )
+                      );
                     })}
                   </div>
                 </div>
@@ -186,7 +194,7 @@ const AddVenueProfileForm = () => {
         message="Venue profile has been added successfully."
       />
     </>
-  )
-}
+  );
+};
 
-export default AddVenueProfileForm
+export default AddVenueProfileForm;
