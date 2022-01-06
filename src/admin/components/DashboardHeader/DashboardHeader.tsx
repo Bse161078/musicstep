@@ -16,7 +16,7 @@ type DashboardHeaderProps = {
   backButtonText?: string;
   saveButtonText?: string;
   cancelButtonText?: string;
-  saveButtonWidth?:string;
+  saveButtonWidth?: string;
   cancelButtonWidth?: string;
 };
 
@@ -31,18 +31,17 @@ const DashboardHeader = (props: DashboardHeaderProps) => {
     saveButtonText,
     cancelButtonText,
     saveButtonWidth,
-    cancelButtonWidth
+    cancelButtonWidth,
   } = props;
   return (
     <DashboardHeaderStyle>
-      
-      <div>
-        {handleBackClick && (
+      {handleBackClick && (
+        <div>
           <h3 className="back-button" onClick={handleBackClick}>
             <LeftChevronIcon /> {backButtonText}
           </h3>
-        )}
-      </div>
+        </div>
+      )}
 
       <div className="header-buttons-wrapper">
         <div>
@@ -53,7 +52,7 @@ const DashboardHeader = (props: DashboardHeaderProps) => {
           {handleCancelClick && (
             <OutlineButtonStyle
               onClick={handleCancelClick}
-              width={ cancelButtonWidth ?  cancelButtonWidth : '150px'}
+              width={cancelButtonWidth ? cancelButtonWidth : "150px"}
               height="60px"
             >
               {cancelButtonText ? cancelButtonText : "Cancel"}
@@ -64,14 +63,13 @@ const DashboardHeader = (props: DashboardHeaderProps) => {
             <FilledButtonStyle
               onClick={handleSaveClick}
               buttonType="dark"
-              width={ saveButtonWidth ?  saveButtonWidth : '150px'}
-              height='60px'
+              width={saveButtonWidth ? saveButtonWidth : "150px"}
+              height="60px"
             >
               {saveButtonText ? saveButtonText : "Save"}
             </FilledButtonStyle>
           )}
         </div>
-        
       </div>
     </DashboardHeaderStyle>
   );

@@ -14,21 +14,15 @@ export default function ExploreVenue() {
         <div />
 
         <section className="venues-list">
-          <Link to="/explore-venue/venue-details">
-            <VenueCard />
-          </Link>
-          <Link to="/explore-venue/venue-details">
-            <VenueCard />
-          </Link>
-          <Link to="/explore-venue/venue-details">
-            <VenueCard />
-          </Link>
-          <Link to="/explore-venue/venue-details">
-            <VenueCard />
-          </Link>
-          <Link to="/explore-venue/venue-details">
-            <VenueCard />
-          </Link>
+          <VenueCard pageUrl="/explore-venue/venue-details" />
+
+          <VenueCard pageUrl="/explore-venue/venue-details" />
+
+          <VenueCard pageUrl="/explore-venue/venue-details" />
+
+          <VenueCard pageUrl="/explore-venue/venue-details" />
+
+          <VenueCard pageUrl="/explore-venue/venue-details" />
         </section>
 
         <section>

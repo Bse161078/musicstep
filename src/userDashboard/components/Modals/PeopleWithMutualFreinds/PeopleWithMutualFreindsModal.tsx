@@ -32,7 +32,7 @@ const PeopleWithMutualFreindsModal = (
         }}
       >
         <PeopleWithMutualFreindsModalStyle>
-          {isPublicProfileVisible ? <PeopleList /> : <PublicProfileOff />}
+          {isPublicProfileVisible || true ? <PeopleList /> : <PublicProfileOff />}
         </PeopleWithMutualFreindsModalStyle>
       </ModalWrapper>
       <ProfileModal

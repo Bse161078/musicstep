@@ -5,7 +5,7 @@ import { TabsStyle } from "../../styles/Fields.style";
 
 export const VenueDetailsStyle = styled.div`
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr minmax(auto, 400px);
   align-items: flex-start;
   padding-top: 50px;
   padding-bottom: 50px;

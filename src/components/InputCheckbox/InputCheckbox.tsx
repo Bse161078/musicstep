@@ -19,9 +19,9 @@ const InputCheckbox = (props: CheckboxProps) => {
     Boolean(meta.error && meta.touched)
       ? "#ff3d3d"
       : "#dcdcdc";
-  const check = isCorrectOption ? undefined : invalid;
+  // const check = isCorrectOption ? undefined : invalid;
   return (
-    <CheckboxWrapperStyle className={className} onClick={onClick}>
+    <CheckboxWrapperStyle checked={isCorrectOption} className={className} onClick={onClick}>
       <span>{label}</span>
     </CheckboxWrapperStyle>
   );

@@ -1,3 +1,4 @@
+import { Collapse } from "antd";
 import { rgba } from "polished";
 import styled from "styled-components";
 
@@ -5,6 +6,7 @@ export const VenueCardStyle = styled.div`
   display: grid;
   grid-template-columns: auto 1fr 460px;
   grid-gap: 30px;
+  cursor: pointer;
 
   @media ( max-width: 1440px ) {
     grid-template-columns: 1fr;
@@ -68,3 +70,18 @@ export const VenueCardStyle = styled.div`
     border-left: solid 1px ${rgba("#0c0c0c", 0.3)};
   }
 `;
+
+export const CollapseStyle = styled(Collapse)`
+  background: #F7F7F7;
+  border: 0;
+  border-radius: 24px;
+
+  .ant-collapse-header {
+    color: #100840;
+    font-weight: bold;
+  }
+
+  .ant-collapse-content {
+    background: transparent;
+  }
+`

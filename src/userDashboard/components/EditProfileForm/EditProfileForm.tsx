@@ -60,12 +60,12 @@ const EditProfileForm = () => {
                 </div>
                 <InputCheckbox
                   name="phoneno"
+                  className="dont-show-phone"
                   onClick={() => {}}
-                  className=""
                   label="Don't show my phone number in public profile."
                   isCorrectOption={true}
                 />
-                <div>
+                <div className='public-info'>
                   <h1>
                     Public Info
                     <Switch  onChange={handleToggleChange} />
@@ -81,7 +81,7 @@ const EditProfileForm = () => {
                     your profile.
                   </p>
                 </div>
-                <div>
+                <div className='public-info'>
                   <InputBox
                     label="Bio"
                     name="bio"
@@ -90,7 +90,7 @@ const EditProfileForm = () => {
                     placeholder="Dolor rem non inventore. Non rerum nostrum. Sit consectetur dolorem voluptatem sit dolorem. Deleniti vel sit dolorem illo sed culpa."
                   />
                 </div>
-                <div>
+                <div className='public-info column-3'>
                   <InputBox
                     label="Instagram"
                     name="instagram"
@@ -107,7 +107,7 @@ const EditProfileForm = () => {
                     name="twitter"
                   />
                 </div>
-                <div>
+                <div className='public-info'>
                   <h1>
                     <InputCheckbox
                       name="phoneno"
