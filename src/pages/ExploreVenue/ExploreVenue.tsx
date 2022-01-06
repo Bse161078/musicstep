@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import { NavbarWithSearch, VenueCard } from "../../components";
 import { DropdownsList } from "./DropdownsList";
@@ -14,21 +13,15 @@ export default function ExploreVenue() {
         <div />
 
         <section className="venues-list">
-          <Link to="/explore-venue/venue-details">
-            <VenueCard />
-          </Link>
-          <Link to="/explore-venue/venue-details">
-            <VenueCard />
-          </Link>
-          <Link to="/explore-venue/venue-details">
-            <VenueCard />
-          </Link>
-          <Link to="/explore-venue/venue-details">
-            <VenueCard />
-          </Link>
-          <Link to="/explore-venue/venue-details">
-            <VenueCard />
-          </Link>
+          <VenueCard pageUrl="/explore-venue/venue-details" />
+
+          <VenueCard pageUrl="/explore-venue/venue-details" />
+
+          <VenueCard pageUrl="/explore-venue/venue-details" />
+
+          <VenueCard pageUrl="/explore-venue/venue-details" />
+
+          <VenueCard pageUrl="/explore-venue/venue-details" />
         </section>
 
         <section>

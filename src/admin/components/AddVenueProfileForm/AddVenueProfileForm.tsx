@@ -4,7 +4,7 @@ import { Form, Formik } from "formik";
 
 import { AddVenueProfileFormStyle } from "./AddVenueProfileForm.style";
 import { Dashboard, UploadFile } from "..";
-import { InputBox, InputCheckbox } from "../../../components";
+import { CustomCarousel, InputBox, InputCheckbox } from "../../../components";
 import LabelWithTag from "../LabelWithTag/LabelWithTag";
 import { MessageModal } from "../../../components";
 import { policies } from "../../../mockData/policies";
@@ -18,7 +18,6 @@ const AddVenueProfileForm = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const onSubmit = () => {};
-
   const history = useHistory();
 
   return (
@@ -33,10 +32,10 @@ const AddVenueProfileForm = () => {
             }}
             backButtonText="Back To Submit An Event"
             handleBackClick={() => {
-              history.push('/admin/events-managment-home')
+              history.push("/admin/events-managment-home");
             }}
             handleCancelClick={() => {
-              history.push('/admin/events-managment-home')
+              history.push("/admin/events-managment-home");
             }}
           />
           <div className="file-wrapper">
@@ -55,7 +54,15 @@ const AddVenueProfileForm = () => {
                 label="Your Additinoal Photos"
                 tagType="Recomended"
               />
-              <UploadFile buttonType="large" />
+              <CustomCarousel
+                options={{
+                  freeScroll: true,
+                  contain: true,
+                  initialIndex: 0,
+                  prevNextButtons: false,
+                  pageDots: false,
+                }}
+              />
             </div>
           </div>
 

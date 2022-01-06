@@ -25,6 +25,10 @@ export const AddVenueProfileFormStyle = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+
+    @media ( max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   .location-wrapper {
@@ -42,6 +46,7 @@ export const AddVenueProfileFormStyle = styled.div`
     background: #f7f7f7;
     border-radius: 32px;
     padding: 20px;
+
   }
 
   .policy-list {

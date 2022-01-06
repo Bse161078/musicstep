@@ -1,11 +1,11 @@
 import React from "react";
 
 import {
-  CustomCarousel,
   LogoWithHeading,
   NavbarWithSearch,
   UpcomingEvents,
-  Reviews
+  Reviews,
+  ImagesBanner
 } from "../../components";
 import { OutlineButtonStyle } from "../../styles/Common.style";
 import { TabPaneStyle, TabsStyle } from "../../styles/Fields.style";
@@ -32,15 +32,27 @@ const HeadingWithContent = (props: HeadingWithContentProps) => {
   );
 };
 
+const imagesList = [
+  "/images/explore-venue/image4.png",
+  "/images/explore-venue/image1.png",
+  "/images/explore-venue/image2.png",
+  "/images/explore-venue/image3.png",
+  "/images/explore-venue/image4.png",
+  "/images/explore-venue/image1.png",
+  "/images/explore-venue/image2.png",
+  "/images/explore-venue/image3.png",
+]
+
 export default function VenueDetails() {
   return (
     <>
       <NavbarWithSearch />
       <VenueDetailsStyle>
         <div className="left-side">
-          <CustomCarousel />
-
           <LogoWithHeading />
+
+          <ImagesBanner imagesList={imagesList} />
+          {/* <CustomCarousel /> */}
 
           <div className="buttons-wrapper">
             <OutlineButtonStyle>Night Club</OutlineButtonStyle>

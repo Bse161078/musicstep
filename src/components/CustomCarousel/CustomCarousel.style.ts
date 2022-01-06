@@ -3,7 +3,7 @@ import Flickity from "react-flickity-component";
 import styled from "styled-components";
 
 export const CustomCarouselStyle = styled(Flickity)`
-  max-width: 880px;
+  max-width: 100%;
   padding: 0 78px;
   margin-bottom: 30px;
   outline: none;
@@ -16,8 +16,10 @@ export const CustomCarouselStyle = styled(Flickity)`
 
   img {
     width: 100%;
-    max-width: 880px;
+    max-width: 400px;
     border-radius: 16px;
+    margin-right: 20px;
+    height: 100%;
   }
 
   .flickity-prev-next-button {

@@ -12,6 +12,10 @@ export const DashboardStyle = styled.div`
     margin: 20px;
   }
 
+  .left-side {
+    padding-top: 15px;
+  }
+
   .back-button {
     color: #100840;
     display: flex;
@@ -19,7 +23,7 @@ export const DashboardStyle = styled.div`
     grid-gap: 5px;
     font-size: 16px;
     font-weight: bold;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
 
     @media (max-width: 767px) {
       margin-bottom: 20px;

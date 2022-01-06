@@ -19,6 +19,8 @@ type ModalWrapperProps = {
   height?: string
   handleOkClick?: any
   isFooter?: boolean
+  boldDescription?: string
+  handleDescriptionClick?: () => void
 }
 const ModalWrapper = (props: ModalWrapperProps) => {
   const {
@@ -32,6 +34,8 @@ const ModalWrapper = (props: ModalWrapperProps) => {
     setIsModalVisible,
     handleOkClick,
     description,
+    boldDescription,
+    handleDescriptionClick,
     isFooter,
   } = props
 
@@ -42,7 +46,6 @@ const ModalWrapper = (props: ModalWrapperProps) => {
   const handleOk = () => {
     setIsModalVisible(false)
   }
-
   const handleCancel = () => {
     setIsModalVisible(false)
   }
@@ -79,7 +82,14 @@ const ModalWrapper = (props: ModalWrapperProps) => {
             : null
         }
       >
-        <p className="description">{description}</p>
+        {description ? (
+          <p className="description">{description}</p>
+        ) : (
+          <p className="bold-description" onClick={handleDescriptionClick}>
+            {boldDescription}
+          </p>
+        )}
+
         {children}
       </ModalWrapperStyle>
     </>
