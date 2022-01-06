@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const EditProfileFormStyle = styled.div`
   .form-wrapper {
@@ -22,6 +22,7 @@ export const EditProfileFormStyle = styled.div`
 
     .multi-column {
       display: grid;
+
       grid-template-columns: 1fr 1fr;
       grid-gap: 20px;
 
@@ -39,6 +40,9 @@ export const EditProfileFormStyle = styled.div`
         grid-template-columns: 1fr;
       }
     }
+    .red-text {
+      color: red;
+    }
 
     .avatar-wrapper {
       display: grid;
@@ -52,4 +56,4 @@ export const EditProfileFormStyle = styled.div`
       }
     }
   }
-`;
+`

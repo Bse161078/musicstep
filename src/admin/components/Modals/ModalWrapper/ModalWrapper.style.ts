@@ -1,9 +1,8 @@
-import { Modal } from "antd";
-import styled from "styled-components";
-import { FilledButtonStyle } from "../../../../styles/Common.style";
+import { Modal } from 'antd'
+import styled from 'styled-components'
+import { FilledButtonStyle } from '../../../../styles/Common.style'
 
 export const ModalWrapperStyle = styled(Modal)`
- 
   .ant-modal-content {
     border-radius: 32px;
     box-shadow: 0px 0px 99px #0000004d;
@@ -19,20 +18,20 @@ export const ModalWrapperStyle = styled(Modal)`
         font-size: 36px;
         text-align: center;
 
-        @media ( max-width: 767px ) {
+        @media (max-width: 767px) {
           font-size: 24px;
         }
       }
     }
 
     .ant-modal-body {
-      font-family: "Montserrat", sans-serif;
+      font-family: 'Montserrat', sans-serif;
       text-align: center;
       font-weight: 600;
       padding: 0 30px;
       padding-bottom: 30px;
 
-      @media ( max-width: 767px ) {
+      @media (max-width: 767px) {
         padding-left: 0;
         padding-right: 0;
       }
@@ -62,7 +61,7 @@ export const ModalWrapperStyle = styled(Modal)`
   ${FilledButtonStyle} {
     background-color: #100840;
   }
-  
+
   .description {
     font-size: 17px;
     color: black;
@@ -71,9 +70,9 @@ export const ModalWrapperStyle = styled(Modal)`
   }
   .bold-description {
     font-size: 17px;
-    color: #FF33CC;
+    color: #ff33cc;
     font-weight: 700;
     padding-bottom: 30px;
+    cursor: pointer;
   }
-
-`;
+`
