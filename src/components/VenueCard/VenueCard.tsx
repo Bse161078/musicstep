@@ -1,6 +1,7 @@
 import { Collapse } from "antd";
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { UpcomingEvents } from "..";
 
 import { SafetySheildIcon, StarIcon } from "../../assets";
 import { CollapseStyle, VenueCardStyle } from "./VenueCard.style";
@@ -49,6 +50,7 @@ const VenueCard = ({pageUrl}: any) => {
       </VenueCardStyle>
       <CollapseStyle>
         <Panel header="9 upcoming events" key="1">
+          <UpcomingEvents />
           <p>
             A dog is a type of domesticated animal. Known for its loyalty and
             faithfulness, it can be found as a welcome guest in many households
