@@ -32,7 +32,7 @@ const ModalWrapper = (props: ModalWrapperProps) => {
     setIsModalVisible,
     handleOkClick,
     description,
-    isFooter = true,
+    isFooter,
   } = props
 
   // const showModal = () => {

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const TicketInfoDivStyle = styled.div`
+const TicketInfoCardStyle = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,4 +35,4 @@ const TicketInfoDivStyle = styled.div`
   }
 `;
 
-export default TicketInfoDivStyle;
+export default TicketInfoCardStyle;

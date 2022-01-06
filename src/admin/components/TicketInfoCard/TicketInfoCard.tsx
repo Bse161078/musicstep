@@ -1,41 +1,49 @@
-import React, { useState } from "react";
-import TicketInfoDivStyle from "./TicketInfoCardstyle";
-import { DeleteIcon, EditButtonIcon } from "../../../assets";
-import { DeleteRoleModal } from "..";
-import { CreateTicketModal } from "../../../components";
-type TicketInfoDivProps = {
-  heading: string;
-  creditNo: string;
-  availableTickets: number;
-  description: string;
-};
+import React, { useState } from 'react'
+import TicketInfoCardStyle from './TicketInfoCardstyle'
+import { DeleteIcon, EditButtonIcon } from '../../../assets'
+import { DeleteRoleModal } from '..'
+import { CreateTicketModal } from '../../../components'
+import { OutlineButtonStyle } from '../../../styles/Common.style'
+type TicketInfoCardProps = {
+  heading?: string
+  creditNo?: string
+  availableTickets?: number
+  description?: string
+  outlineButton?: boolean
+}
 
-const TicketInfoDiv = (props: TicketInfoDivProps) => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [isTicketModalVisible, setIsTicketModalVisible] = useState(false);
+const TicketInfoCard = (props: TicketInfoCardProps) => {
+  const [isModalVisible, setIsModalVisible] = useState(false)
+  const [isTicketModalVisible, setIsTicketModalVisible] = useState(false)
 
   const handleDeleteModal = () => {
-    setIsModalVisible(true);
-  };
+    setIsModalVisible(true)
+  }
   const handleEditTicketModal = () => {
-    setIsTicketModalVisible(true);
-  };
+    setIsTicketModalVisible(true)
+  }
   return (
     <>
-      <TicketInfoDivStyle>
+      <TicketInfoCardStyle>
         <h2>{props.heading}</h2>
         <p className="credits">Credits: {props.creditNo}</p>
         <p className="tickets">Tickets Available: {props.availableTickets}</p>
         <p className="description">{props.description}</p>
         <div className="button-wrapper">
-          <div onClick={handleDeleteModal}>
-            <DeleteIcon />
-          </div>
-          <div onClick={handleEditTicketModal}>
-            <EditButtonIcon />
-          </div>
+          {props.outlineButton ? (
+            <OutlineButtonStyle height='53px'>Reserve</OutlineButtonStyle>
+          ) : (
+            <>
+              <div onClick={handleDeleteModal}>
+                <DeleteIcon />
+              </div>
+              <div onClick={handleEditTicketModal}>
+                <EditButtonIcon />
+              </div>
+            </>
+          )}
         </div>
-      </TicketInfoDivStyle>
+      </TicketInfoCardStyle>
       <DeleteRoleModal
         message="Are you sure you want to delete this type of tickets?"
         isModalVisible={isModalVisible}
@@ -46,7 +54,7 @@ const TicketInfoDiv = (props: TicketInfoDivProps) => {
         setIsModalVisible={setIsTicketModalVisible}
       />
     </>
-  );
-};
+  )
+}
 
-export default TicketInfoDiv;
+export default TicketInfoCard

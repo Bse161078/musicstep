@@ -22,13 +22,14 @@ export const UpcomingEventsStyle = styled.div`
 `;
 
 export const TabRowStyle = styled.div`
-  display: flex;
-  grid-template-columns: auto auto 1fr;
+  display: grid;
+  grid-template-columns: auto 1fr 0.3fr auto;
   grid-gap: 30px;
   padding: 15px 0;
   margin: 0 30px;
   margin-right: 5px;
   border-bottom: solid 1px ${rgba("#0c0c0c", 0.3)};
+  align-items: center;
 
   @media (max-width: 767px) {
     display: grid;
@@ -53,5 +54,11 @@ export const TabRowStyle = styled.div`
 
     ${OutlineButtonStyle} {
     }
+  }
+  .person-number {
+    color:#100840;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 20px;
   }
 `;
