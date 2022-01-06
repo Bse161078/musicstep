@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import { NavbarWithSearch, VenueCard } from "../../components";
 import { DropdownsList } from "./DropdownsList";
