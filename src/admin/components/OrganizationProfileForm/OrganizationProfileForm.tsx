@@ -28,7 +28,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
       />
 
       <ShowCaseYourEvents />
-      {/* <OrganizationDetailsForm /> */}
+
       <div className="file-wrapper">
         <div className="child-Filewrapper">
           <div>
@@ -49,7 +49,6 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
       <Formik
         initialValues={{
           organizerBio: '',
-          organizerDescription: '',
           facebookLink: '',
           twitterLink: '',
           instagramLink: '',
@@ -58,7 +57,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         onSubmit={handleProfileForm}
       >
         {() => (
-          <Form>
+          <Form className="form-wrapper">
             <div>
               <LabelWithTag
                 label="Organizer Bio"
@@ -74,8 +73,8 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
             </div>
             <div className="attributes-wrapper">
               <LabelWithTag
-                label="Amenities"
-                description="Help users know what to expect at your venue."
+                label="Organization Attributes"
+                description="Let Music Pass members know more about your organization."
                 tagType="none"
               />
               <div className="list-wrapper">
