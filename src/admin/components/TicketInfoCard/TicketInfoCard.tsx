@@ -1,20 +1,25 @@
 import React, { useState } from 'react'
 import TicketInfoCardStyle from './TicketInfoCardstyle'
 import { DeleteIcon, EditButtonIcon } from '../../../assets'
-import { DeleteRoleModal } from '..'
+import { DeleteRoleModal, EventDetailsModal } from '..'
 import { CreateTicketModal } from '../../../components'
 import { OutlineButtonStyle } from '../../../styles/Common.style'
+
 type TicketInfoCardProps = {
   heading?: string
   creditNo?: string
   availableTickets?: number
   description?: string
   outlineButton?: boolean
+  disableTicketsAvailbilty?: boolean
+   
 }
 
 const TicketInfoCard = (props: TicketInfoCardProps) => {
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [isTicketModalVisible, setIsTicketModalVisible] = useState(false)
+  const [state, setState] = useState(false)
+
 
   const handleDeleteModal = () => {
     setIsModalVisible(true)
@@ -24,14 +29,19 @@ const TicketInfoCard = (props: TicketInfoCardProps) => {
   }
   return (
     <>
-      <TicketInfoCardStyle>
+    <EventDetailsModal isModalVisible={state} setIsModalVisible={setState} />
+      <TicketInfoCardStyle disableTicketsAvailbilty >
         <h2>{props.heading}</h2>
         <p className="credits">Credits: {props.creditNo}</p>
-        <p className="tickets">Tickets Available: {props.availableTickets}</p>
+        {props.disableTicketsAvailbilty ? null : (
+          <p className="tickets">
+            Tickets Available: {props.availableTickets}
+          </p>
+        )}
         <p className="description">{props.description}</p>
         <div className="button-wrapper">
           {props.outlineButton ? (
-            <OutlineButtonStyle height='53px'>Reserve</OutlineButtonStyle>
+            <OutlineButtonStyle height="53px" onClick={() => {setState(true)}}>Reserve</OutlineButtonStyle>
           ) : (
             <>
               <div onClick={handleDeleteModal}>

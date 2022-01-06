@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { EventDetailsModal } from '..'
+
 import {
   FilledButtonStyle,
   OutlineButtonStyle,
 } from '../../styles/Common.style'
+import { EventDetailsModal } from '../EventDetailsModal'
 import { TabRowStyle } from './UpcomingEvents.style'
 
 type TabRowProps = {
@@ -13,8 +14,9 @@ type TabRowProps = {
 }
 
 export const TabRow = (props: TabRowProps) => {
-  const { buttonType, buttonText, buttonClick } = props
+  const { buttonType, buttonText } = props
   const [isEventDetailsModalVisibel, setIsEventDetailsModalVisibel] = useState(false)
+  const [isTicketsAvailabe, setIsTicketsAvailabe] =  useState(true)
 
   return (
     <>
@@ -36,7 +38,10 @@ export const TabRow = (props: TabRowProps) => {
             buttonType="dark"
             width="150px"
             height="43px"
-            onClick={buttonClick}
+             onClick={() => {
+                setIsEventDetailsModalVisibel(true)
+                setIsTicketsAvailabe(false)
+              }}
             className="pricing"
           >
             {buttonText}
@@ -49,6 +54,7 @@ export const TabRow = (props: TabRowProps) => {
               className="pricing"
               onClick={() => {
                 setIsEventDetailsModalVisibel(true)
+                 setIsTicketsAvailabe(true)
               }}
             >
               {buttonText}
@@ -59,6 +65,7 @@ export const TabRow = (props: TabRowProps) => {
       <EventDetailsModal
         isModalVisible={isEventDetailsModalVisibel}
         setIsModalVisible={setIsEventDetailsModalVisibel}
+        isTicketsAvailable={isTicketsAvailabe}
       />
     </>
   )

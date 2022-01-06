@@ -1,6 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-const TicketInfoCardStyle = styled.div`
+type TicketInfoCardStyleProps = {
+  disableTicketsAvailbilty: boolean
+}
+const TicketInfoCardStyle = styled.div<TicketInfoCardStyleProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,13 +22,14 @@ const TicketInfoCardStyle = styled.div`
 
   .tickets {
     color: #0c0c0c;
-    font-size: 16px;
+    font-size: 25px;
+    font-weight: 500;
   }
 
   .description {
     color: #373737;
-    font-size: 16px;
-    opacity: 0.5;
+    font-size: ${(props) => (props.disableTicketsAvailbilty ? '13px' : '16px')};
+    opacity: 1;
   }
 
   .button-wrapper {
@@ -33,6 +37,6 @@ const TicketInfoCardStyle = styled.div`
     justify-content: center;
     gap: 07px;
   }
-`;
+`
 
-export default TicketInfoCardStyle;
+export default TicketInfoCardStyle
