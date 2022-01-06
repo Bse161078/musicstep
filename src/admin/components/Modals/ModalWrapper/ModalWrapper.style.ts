@@ -31,7 +31,7 @@ export const ModalWrapperStyle = styled(Modal)`
       font-family: "Montserrat", sans-serif;
       text-align: center;
       font-weight: 600;
-      /* padding: 0 30px; */
+      padding: 0 30px;
       padding-bottom: 30px;
 
       @media ( max-width: 767px ) {
