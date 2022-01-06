@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { CheckingAvailablityModal } from '../../admin/components'
 import { ModalWrapper } from '../../admin/components/Modals/ModalWrapper'
 import { FilledButtonStyle } from '../../styles/Common.style'
 import TicketModalStyle from './TicketModal.style'
@@ -8,6 +9,10 @@ type TicketModalProps = {
   setIsModalVisible?: any
 }
 const TicketModal = (props: TicketModalProps) => {
+  const [
+    isCheckingAvailablityModalVisible,
+    setIsCheckingAvailablityModalVisible,
+  ] = useState(false)
   const { isModalVisible, setIsModalVisible } = props
 
   return (
@@ -50,7 +55,13 @@ const TicketModal = (props: TicketModalProps) => {
           </div>
         </div>
 
-        <FilledButtonStyle width="480px" height="60px">
+        <FilledButtonStyle
+          width="480px"
+          height="60px"
+          onClick={() => {
+            setIsCheckingAvailablityModalVisible(true)
+          }}
+        >
           Reserved
         </FilledButtonStyle>
         <div>
@@ -61,6 +72,10 @@ const TicketModal = (props: TicketModalProps) => {
           </p>
         </div>
       </TicketModalStyle>
+      <CheckingAvailablityModal
+        isModalVisible={isCheckingAvailablityModalVisible}
+        setIsModalVisible={setIsCheckingAvailablityModalVisible}
+      />
     </ModalWrapper>
   )
 }
