@@ -1,12 +1,9 @@
-import React, { useState } from "react";
-import { EventDetailsModal } from "../../admin/components";
+import React from 'react'
 
-import { TabRow } from "./TabRow";
-import { UpcomingEventsStyle } from "./UpcomingEvents.style";
+import { TabRow } from './TabRow'
+import { UpcomingEventsStyle } from './UpcomingEvents.style'
 
 const UpcomingEvents = () => {
-  const [isEventModalVisible, setEventModalVisible] = useState(false);
-
   return (
     <UpcomingEventsStyle>
       <div className="list-header">
@@ -14,31 +11,17 @@ const UpcomingEvents = () => {
 
         <span>Availability</span>
       </div>
-
-      <TabRow
-        buttonType="filled"
-        buttonText="11 Credits"
-        buttonClick={() => setEventModalVisible(true)}
-      />
-
-      <TabRow />
-
-      <TabRow />
-
-      <TabRow />
-
-      <TabRow />
-
-      <TabRow />
-
-      <TabRow />
-
-      <EventDetailsModal
-        isModalVisible={isEventModalVisible}
-        setIsModalVisible={setEventModalVisible}
-      />
+      <TabRow buttonType="filled" buttonText="Reservation Full" />
+      <TabRow buttonText="11 Credits" />
+      <TabRow buttonType="filled" buttonText="Reservation Full" />
+      <TabRow buttonText="11 Credits" />
+      <TabRow buttonType="filled" buttonText="Reservation Full" />
+      <TabRow buttonText="11 Credits" />
+      <TabRow buttonText="13 Credits" />
+      <TabRow buttonText="11 Credits" />
+      <TabRow buttonText="11 Credits" />
     </UpcomingEventsStyle>
-  );
-};
+  )
+}
 
-export default UpcomingEvents;
+export default UpcomingEvents

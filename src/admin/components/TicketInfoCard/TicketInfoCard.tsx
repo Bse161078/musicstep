@@ -1,52 +1,80 @@
-import React, { useState } from "react";
-import TicketInfoDivStyle from "./TicketInfoCardstyle";
-import { DeleteIcon, EditButtonIcon } from "../../../assets";
-import { DeleteRoleModal } from "..";
-import { CreateTicketModal } from "../../../components";
-type TicketInfoDivProps = {
-  heading: string;
-  creditNo: string;
-  availableTickets: number;
-  description: string;
-};
+import React, { useState } from 'react'
+import TicketInfoCardStyle from './TicketInfoCardstyle'
+import { DeleteIcon, EditButtonIcon } from '../../../assets'
+import { DeleteRoleModal } from '..'
+import { CreateTicketModal } from '../../../components'
+import { OutlineButtonStyle } from '../../../styles/Common.style'
+import { TicketModal } from '../../../components/TicketModal'
 
-const TicketInfoDiv = (props: TicketInfoDivProps) => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [isTicketModalVisible, setIsTicketModalVisible] = useState(false);
+type TicketInfoCardProps = {
+  heading?: string
+  creditNo?: string
+  availableTickets?: number
+  description?: string
+  outlineButton?: boolean
+  disableTicketsAvailbilty?: boolean
+}
+
+const TicketInfoCard = (props: TicketInfoCardProps) => {
+  const [isModalVisible, setIsModalVisible] = useState(false)
+  const [
+    isCricketTicketModalVisible,
+    setIsCricketTicketModalVisible,
+  ] = useState(false)
+  const [isTicketModalVisible, setTicketModalVisible] = useState(false)
 
   const handleDeleteModal = () => {
-    setIsModalVisible(true);
-  };
+    setIsModalVisible(true)
+  }
   const handleEditTicketModal = () => {
-    setIsTicketModalVisible(true);
-  };
+    setIsCricketTicketModalVisible(true)
+  }
   return (
     <>
-      <TicketInfoDivStyle>
+      <TicketModal
+        isModalVisible={isTicketModalVisible}
+        setIsModalVisible={setTicketModalVisible}
+      />
+      <TicketInfoCardStyle disableTicketsAvailbilty>
         <h2>{props.heading}</h2>
         <p className="credits">Credits: {props.creditNo}</p>
-        <p className="tickets">Tickets Available: {props.availableTickets}</p>
+        {props.disableTicketsAvailbilty ? null : (
+          <p className="tickets">Tickets Available: {props.availableTickets}</p>
+        )}
         <p className="description">{props.description}</p>
         <div className="button-wrapper">
-          <div onClick={handleDeleteModal}>
-            <DeleteIcon />
-          </div>
-          <div onClick={handleEditTicketModal}>
-            <EditButtonIcon />
-          </div>
+          {props.outlineButton ? (
+            <OutlineButtonStyle
+              height="53px"
+              onClick={() => {
+                setTicketModalVisible(true)
+              }}
+            >
+              Reserve
+            </OutlineButtonStyle>
+          ) : (
+            <>
+              <div onClick={handleDeleteModal}>
+                <DeleteIcon />
+              </div>
+              <div onClick={handleEditTicketModal}>
+                <EditButtonIcon />
+              </div>
+            </>
+          )}
         </div>
-      </TicketInfoDivStyle>
+      </TicketInfoCardStyle>
       <DeleteRoleModal
         message="Are you sure you want to delete this type of tickets?"
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}
       />
       <CreateTicketModal
-        isModalVisible={isTicketModalVisible}
-        setIsModalVisible={setIsTicketModalVisible}
+        isModalVisible={isCricketTicketModalVisible}
+        setIsModalVisible={setIsCricketTicketModalVisible}
       />
     </>
-  );
-};
+  )
+}
 
-export default TicketInfoDiv;
+export default TicketInfoCard
