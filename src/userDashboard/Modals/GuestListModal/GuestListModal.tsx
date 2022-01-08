@@ -195,6 +195,72 @@ const GuestListModal = (props: InviteModalProps) => {
             nextEventName="Enim Concert"
             listType="normal"
           />
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
         </GuestListModalStyle>
       </ModalWrapper>
     </>

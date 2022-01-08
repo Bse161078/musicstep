@@ -21,18 +21,27 @@ export const FormHeaderStyle = styled.div`
   border-radius: 24px;
   padding: 15px 85px;
   display: grid;
-  grid-template-columns: auto 225px 1fr;
+  grid-template-columns:0.2fr 0.5fr 1fr;
   grid-gap: 30px;
 `;
 
 export const FormRowStyle = styled.div`
   display: flex;
-  grid-template-columns: auto 120px 370px 1fr;
+  grid-template-columns: 1fr 1fr 2fr 1fr;
+  align-items: center;
   grid-gap: 30px;
   padding: 20px 0;
   border-bottom: 1px solid ${rgba("#0c0c0c", 0.3)};
 
   .thumbnail {
     max-width: 56px;
+  }
+  .button-wrapper {
+    display: flex;
+    gap:20px;
+  }
+  .event-name {
+    font-size: 20px;
+    font-weight: 500;
   }
 `;

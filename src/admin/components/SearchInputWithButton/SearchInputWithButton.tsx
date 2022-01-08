@@ -25,7 +25,7 @@ const SearchInputWithButton = (props: SearchInputWithButtonProps) => {
       >
         {() => (
           <Form className="search-wrapper">
-            <InputBox name="search" placeholder='Search' />
+            <InputBox name="search" placeholder='Search' width="427px"/>
 
             <SearchIcon />
           </Form>
