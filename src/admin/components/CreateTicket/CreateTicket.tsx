@@ -10,7 +10,7 @@ const CreateTicket = () => {
     <>
       <CreateTicketStyle onClick={handleModalVisiblity} className="create-ticket-wrapper">
         <p className="add-icon">+</p>
-        <p className="create-ticket">Create Ticket</p>
+        <p className="create-ticket">Create a Ticket</p>
       </CreateTicketStyle>
       <CreateTicketModal isModalVisible={isModalVisible} setIsModalVisible={setModalVisible} />
     </>

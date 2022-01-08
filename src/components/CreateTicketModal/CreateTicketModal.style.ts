@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const CreateTicketModalStyle = styled.div`
   .form-wrapper {
@@ -11,7 +11,8 @@ const CreateTicketModalStyle = styled.div`
   }
 
   .first-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
     gap: 20px;
   }
   .second-row {
@@ -25,7 +26,12 @@ const CreateTicketModalStyle = styled.div`
       gap: 20px;
     }
   }
+  .bottom-text {
+    font-size: 14px;
+    color: #ccc;
+  }
   .price-holder {
+    width: 260px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     text-align: left;
@@ -44,5 +50,5 @@ const CreateTicketModalStyle = styled.div`
       border-bottom: 1px solid #c0c0c0;
     }
   }
-`;
-export default CreateTicketModalStyle;
+`
+export default CreateTicketModalStyle
