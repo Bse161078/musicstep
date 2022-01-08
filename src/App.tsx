@@ -14,6 +14,7 @@ import {
   TermsAndConditions,
   VenueDetails,
   PartnerSignup,
+  OrganizerProfile
 } from "./pages";
 
 import {
@@ -79,8 +80,10 @@ const RoutesList = (props: any) => {
         <Route path="/partner-detail" component={PartnerSignup} />
         <Route exact path="/pricing" component={Pricing} />
         <Route path="/explore-venue/venue-details" component={VenueDetails} />
+        <Route path="/explore-venue/organizer-profile" component={OrganizerProfile} />
         <Route path="/how-it-works" component={HowItWorks} />
         <Route path="/terms-conditions" component={TermsAndConditions} />
+        
 
         <Route
           path="/admin/basic-info"

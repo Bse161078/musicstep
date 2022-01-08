@@ -8,7 +8,7 @@ const CustomCarousel = ({ options = {} }: any) => {
   const flickityOptions = {
     initialIndex: 2,
     pageDots: false,
-    ...options,
+    ...options
   };
 
   return (
