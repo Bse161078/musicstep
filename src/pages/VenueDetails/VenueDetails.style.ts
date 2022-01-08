@@ -19,6 +19,18 @@ export const VenueDetailsStyle = styled.div`
     grid-gap: 50px;
   }
 
+  .attributes-wrapper {
+    .header {
+      font-size: 24px;
+      margin-top: 50px;
+      margin-bottom: 10px;
+    }
+
+    .ant-checkbox-wrapper  {
+      margin-left: 0;
+    }
+  }
+
   .table-wrapper {
     @media (max-width: 767px) {
       overflow: auto;

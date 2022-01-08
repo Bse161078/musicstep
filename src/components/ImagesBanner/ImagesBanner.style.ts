@@ -6,7 +6,7 @@ export const ImagesBannerStyle = styled.div`
   grid-gap: 15px;
   margin-top: 20px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 1200px) {
     grid-template-columns: 1fr;
   }
 

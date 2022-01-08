@@ -1,11 +1,15 @@
+import { Form, Formik } from "formik";
 import React from "react";
+import { LabelWithTag } from "../../admin/components";
+import { attributesList } from "../../admin/components/OrganizationProfileForm/OrganizationAttributesList";
 
 import {
   LogoWithHeading,
   NavbarWithSearch,
   UpcomingEvents,
   Reviews,
-  ImagesBanner
+  ImagesBanner,
+  InputCheckbox,
 } from "../../components";
 import { OutlineButtonStyle } from "../../styles/Common.style";
 import { TabPaneStyle, TabsStyle } from "../../styles/Fields.style";
@@ -41,7 +45,7 @@ const imagesList = [
   "/images/explore-venue/image1.png",
   "/images/explore-venue/image2.png",
   "/images/explore-venue/image3.png",
-]
+];
 
 export default function VenueDetails() {
   return (
@@ -124,6 +128,30 @@ export default function VenueDetails() {
             <img alt="icon" src="/images/icons/twitter-icon.svg" />
             <span>@twitter</span>
           </div>
+
+          <Formik initialValues={{}} onSubmit={() => {}}>
+            {() => (
+              <Form className="attributes-wrapper">
+                <LabelWithTag
+                  label="Attributes"
+                  tagType="none"
+                />
+                <div className="list-wrapper">
+                  {attributesList.map((index) => {
+                    return (
+                      <InputCheckbox
+                        name={index.name}
+                        onClick={() => {}}
+                        className=""
+                        label={index.name}
+                        isCorrectOption={true}
+                      />
+                    );
+                  })}
+                </div>
+              </Form>
+            )}
+          </Formik>
         </div>
       </VenueDetailsStyle>
     </>
