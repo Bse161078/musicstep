@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-import { SelectWithInput } from "..";
-import { NavbarWithSearchStyle } from "./NavbarWithSearch.style";
+import { SelectWithInput } from '..'
+import { NavbarWithSearchStyle } from './NavbarWithSearch.style'
 
 const NavbarWithSearch = () => {
   return (
@@ -17,11 +17,17 @@ const NavbarWithSearch = () => {
         <span>Upcoming Itinerary</span>
         <span>15 Credits</span>
         <Link to="/dashboard/home">
-          <span><img className="image" alt="profile" src="/images/profile-image.png" /></span>
+          <span>
+            <img
+              className="image"
+              alt="profile"
+              src="/images/profile-image.png"
+            />
+          </span>
         </Link>
       </div>
     </NavbarWithSearchStyle>
-  );
-};
+  )
+}
 
-export default NavbarWithSearch;
+export default NavbarWithSearch

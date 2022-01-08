@@ -72,7 +72,7 @@ export default function VenueDetails() {
             </TabPaneStyle>
             <TabPaneStyle tab="Reviews" key="3">
               <div className="table-wrapper">
-                <Reviews />
+                <Reviews /> 
               </div>
             </TabPaneStyle>
           </TabsStyle>
