@@ -11,7 +11,7 @@ const NavbarWithSearch = () => {
         <img src="/images/logo.png" alt="logo" />
       </Link>
 
-      <SelectWithInput />
+      <SelectWithInput placeholder="Find a venue or event 24/7" />
 
       <div className="links-wrapper">
         <span>Upcoming Itinerary</span>

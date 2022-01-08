@@ -62,25 +62,28 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                     name="discount"
                     options={[{ key: "", value: "" }]}
                   />
-              
                 </div>
                 <div>
                   {" "}
-                  <p className="bottom-text">You can offer minimum 50% discount of retail.</p>
+                  <p className="bottom-text">
+                    You can offer minimum 50% discount of retail.
+                  </p>
                 </div>
               </div>
 
               <div className="price-holder">
                 <div>
                   <div className="retail-price">
-                    <p>Retail Price</p>
+                    <p className="price-label">Retail Price</p>
                     <h3 className="title">50$</h3>
                   </div>
-                  <p>Payout to brand</p>
-                  <h3 className="title">25$(50%)</h3>
+                  <div className="payout-price">
+                    <p className="price-label">Payout to brand</p>
+                    <h3 className="title">25$(50%)</h3>
+                  </div>
                 </div>
                 <div className="right-section">
-                  <p>Value in Musicpass Credits</p>
+                  <p className="price-label">Value in Musicpass Credits</p>
                   <h3 className="title">7 Credits</h3>
                 </div>
               </div>

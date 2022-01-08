@@ -18,7 +18,7 @@ const GuestListModal = (props: InviteModalProps) => {
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}
         isFooter={false}
-        width="968px"
+        width="904px"
       >
         <GuestListModalStyle>
           <PersonListItem
@@ -151,6 +151,154 @@ const GuestListModal = (props: InviteModalProps) => {
             nextEventName="Enim Concert"
             listType="normal"
           />
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+          <PersonListItem
+            personName="Lynda Gusikowski"
+            imageLink="/images/person.png"
+            recentEventName="Voluptas Enim Concert"
+            nextEventName="Enim Concert"
+            listType="normal"
+          />
+
           <PersonListItem
             personName="Lynda Gusikowski"
             imageLink="/images/person.png"

@@ -10,7 +10,7 @@ export const SliderStyle = styled.div`
   &:-webkit-scrollbar {
     width: 10px;
   }
-  ::-webkit-scrollbar {
+  &:-webkit-scrollbar {
     width: 20px;
   }
 
@@ -22,7 +22,7 @@ export const SliderStyle = styled.div`
 
   /* Handle */
   &:-webkit-scrollbar-thumb {
-    background: red;
+    /* background: red; */
     border-radius: 10px;
   }
 
