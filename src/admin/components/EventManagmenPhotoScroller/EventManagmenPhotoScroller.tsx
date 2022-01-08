@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Radio } from "antd";
 import { EventManagmenPhotoScrollerStyle } from "./EventManagmenPhotoScroller.style";
 import { RadioButtonStyle } from "../RadioButton/RadioButton.style";
-import { UploadFile } from "..";
+import { CustomCarousel } from "../../../components";
 
 const EventManagmenPhotoScroller = () => {
   const onChange = (e: any) => {
@@ -23,11 +23,18 @@ const EventManagmenPhotoScroller = () => {
             <span className="radio-description">Add Specific Photos</span>
           </Radio>
         </Radio.Group>
-        <div className="scroller-div"> 
-           <UploadFile  />
+        <div className="scroller-div">
+          <CustomCarousel
+            options={{
+              freeScroll: true,
+              contain: true,
+              initialIndex: 0,
+              prevNextButtons: false,
+              pageDots: false,
+            }}
+          />
         </div>
       </RadioButtonStyle>
-
     </EventManagmenPhotoScrollerStyle>
   );
 };
