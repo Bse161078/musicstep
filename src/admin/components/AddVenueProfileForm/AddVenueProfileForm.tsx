@@ -4,7 +4,7 @@ import { Form, Formik } from "formik";
 
 import { AddVenueProfileFormStyle } from "./AddVenueProfileForm.style";
 import { Dashboard, UploadFile } from "..";
-import { CustomCarousel, InputBox, InputCheckbox } from "../../../components";
+import { Slider, InputBox, InputCheckbox } from "../../../components";
 import LabelWithTag from "../LabelWithTag/LabelWithTag";
 import { MessageModal } from "../../../components";
 import { policies } from "../../../mockData/policies";
@@ -51,18 +51,10 @@ const AddVenueProfileForm = () => {
             </div>
             <div>
               <LabelWithTag
-                label="Your Additinoal Photos"
+                label="Add Additional Photos"
                 tagType="Recomended"
               />
-              <CustomCarousel
-                options={{
-                  freeScroll: true,
-                  contain: true,
-                  initialIndex: 0,
-                  prevNextButtons: false,
-                  pageDots: false,
-                }}
-              />
+              <Slider />
             </div>
           </div>
 

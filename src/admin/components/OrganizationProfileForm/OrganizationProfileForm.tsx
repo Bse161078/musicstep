@@ -1,7 +1,7 @@
 import { Form, Formik } from "formik";
 import React from "react";
 import { ContentHeader, DashboardHeader } from "..";
-import { CustomCarousel, InputBox, InputCheckbox } from "../../../components";
+import { Slider, InputBox, InputCheckbox } from "../../../components";
 import LabelWithTag from "../LabelWithTag/LabelWithTag";
 import { UploadFile } from "..";
 import { OrganizationProfileFormStyle } from "./OrganizationProfileForm.style";
@@ -41,16 +41,8 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
           </div>
         </div>
         <div>
-          <LabelWithTag label="Your Additinoal Photos" tagType="Recomended" />
-          <CustomCarousel
-            options={{
-              freeScroll: true,
-              contain: true,
-              initialIndex: 0,
-              prevNextButtons: false,
-              pageDots: false,
-            }}
-          />
+          <LabelWithTag label="Your Additional Photos" tagType="Recomended" />
+          <Slider />
         </div>
       </div>
 

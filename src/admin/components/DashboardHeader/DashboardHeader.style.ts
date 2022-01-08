@@ -5,6 +5,10 @@ export const DashboardHeaderStyle = styled.header`
   gap: 30px;
   border-bottom: 1px solid #c0c0c0;
   margin-bottom: 30px;
+  position: sticky;
+  top: 80px;
+  background: #fff;
+  z-index: 100;
   
   @media (max-width: 1024px) {
     flex-direction: column;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 import { navItems, NavItemType } from "../../mockData/navItems";
 import { FilledButtonStyle } from "../../styles/Common.style";
@@ -8,11 +8,16 @@ import { NavbarStyle } from "./Navbar.style";
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
 
+  const { pathname } = useLocation();
+
+  console.log({ pathname });
+
   const toggle = () => {
     if (window.innerWidth < 768) {
       setShowDropdown(!showDropdown);
     }
   };
+
   const [isNavSticky, setStickyNav] = useState(false);
 
   useEffect(() => {
@@ -53,22 +58,23 @@ const Navbar = () => {
         </article>
 
         <ul className="nav-items">
-          {navItems.map((data: NavItemType, index: number) => {
-            const { name, url, type } = data;
+          {pathname !== "/partner-login" &&
+            navItems.map((data: NavItemType, index: number) => {
+              const { name, url, type } = data;
 
-            return (
-              <li key={`nav-item-${index}`}>
-                <NavLink
-                  target={type ? "_blank" : ""}
-                  rel="noreferrer"
-                  to={url}
-                  onClick={toggle}
-                >
-                  {name}
-                </NavLink>
-              </li>
-            );
-          })}
+              return (
+                <li key={`nav-item-${index}`}>
+                  <NavLink
+                    target={type ? "_blank" : ""}
+                    rel="noreferrer"
+                    to={url}
+                    onClick={toggle}
+                  >
+                    {name}
+                  </NavLink>
+                </li>
+              );
+            })}
 
           <li>
             <NavLink to="/free-trial">

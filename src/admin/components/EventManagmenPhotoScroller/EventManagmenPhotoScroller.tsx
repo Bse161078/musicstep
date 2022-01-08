@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Radio } from "antd";
 import { EventManagmenPhotoScrollerStyle } from "./EventManagmenPhotoScroller.style";
 import { RadioButtonStyle } from "../RadioButton/RadioButton.style";
-import { CustomCarousel } from "../../../components";
+import { Slider } from "../../../components";
 
 const EventManagmenPhotoScroller = () => {
   const onChange = (e: any) => {
@@ -24,15 +24,7 @@ const EventManagmenPhotoScroller = () => {
           </Radio>
         </Radio.Group>
         <div className="scroller-div">
-          <CustomCarousel
-            options={{
-              freeScroll: true,
-              contain: true,
-              initialIndex: 0,
-              prevNextButtons: false,
-              pageDots: false,
-            }}
-          />
+          <Slider />
         </div>
       </RadioButtonStyle>
     </EventManagmenPhotoScrollerStyle>

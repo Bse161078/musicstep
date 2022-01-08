@@ -4,6 +4,8 @@ export const SideBarStyle = styled.aside`
   background-color: #f7f7f7;
   border-radius: 32px;
   padding: 60px 15px;
+  position: sticky;
+  top: 80px;
 
   @media (max-width: 767px) {
     padding: 20px 15px;
