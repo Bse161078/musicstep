@@ -80,7 +80,6 @@ const CardWithContent = (props: CardWithContentProps) => {
       <GuestListModal
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}
-       
       />
     </>
   );
