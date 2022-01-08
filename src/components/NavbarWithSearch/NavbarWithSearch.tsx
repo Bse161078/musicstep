@@ -17,7 +17,7 @@ const NavbarWithSearch = () => {
         <span>Upcoming Itinerary</span>
         <span>15 Credits</span>
         <Link to="/dashboard/home">
-          <span><img alt="profile" src="/images/icons/profile-icon.svg" /></span>
+          <span><img className="image" alt="profile" src="/images/profile-image.png" /></span>
         </Link>
       </div>
     </NavbarWithSearchStyle>

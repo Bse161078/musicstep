@@ -10,7 +10,10 @@ export const NavbarWithSearchStyle = styled.nav`
   position: sticky;
   top: 0;
   z-index: 100;
-
+  .image {
+    width: 48px;
+    height:48px;
+  }
   @media (max-width: 1024px) {
     flex-direction: column;
     align-items: center;
