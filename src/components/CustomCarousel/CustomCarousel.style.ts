@@ -17,10 +17,8 @@ export const CustomCarouselStyle = styled(Flickity)`
 
   img {
     width: 100%;
-    max-width: 400px;
     border-radius: 16px;
     margin-right: 20px;
-    height: 100%;
   }
 
   .flickity-prev-next-button {

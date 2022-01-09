@@ -42,9 +42,8 @@ export default function VenueDetails() {
       <NavbarWithSearch />
       <VenueDetailsStyle>
         <div className="left-side">
-          <LogoWithHeading />
-
           <CustomCarousel />
+          <LogoWithHeading />
 
           <div className="buttons-wrapper">
             <OutlineButtonStyle>Night Club</OutlineButtonStyle>
