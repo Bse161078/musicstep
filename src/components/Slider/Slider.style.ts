@@ -1,15 +1,11 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-const GuestListModalStyle = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  max-height: 768px;
-  gap: 10px;
-  padding-top: 15px;
-  border-top: 2px solid #ccc;
-  max-height: 555px;
+export const SliderStyle = styled.div`
+  display: flex;
+  width: 100%;
   overflow: auto;
-  height: 100%;
+  gap: 20px;
+  margin-top: 30px;
 
   &:-webkit-scrollbar {
     width: 10px;
@@ -29,5 +25,12 @@ const GuestListModalStyle = styled.div`
     /* background: red; */
     border-radius: 10px;
   }
+
+  .carousel-image {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 16px;
+    margin-right: 20px;
+    height: 100%;
+  }
 `;
-export default GuestListModalStyle;

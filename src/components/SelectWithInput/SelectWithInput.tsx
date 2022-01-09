@@ -5,7 +5,7 @@ import { InputBox, SelectBox } from "..";
 import { SelectWithInputStyle } from "./SelectWithInput.style";
 import { SearchIcon } from "../../assets";
 
-const SelectWithInput = () => {
+const SelectWithInput = ({placeholder}: any) => {
   return (
     <SelectWithInputStyle>
       <Formik
@@ -27,7 +27,7 @@ const SelectWithInput = () => {
             </span>
 
             <span className="input-wrapper">
-              <InputBox name="search" />
+              <InputBox name="search" placeholder={placeholder} />
             </span>
 
             <span className="search-button">

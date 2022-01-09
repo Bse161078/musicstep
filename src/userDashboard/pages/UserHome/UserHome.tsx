@@ -11,13 +11,16 @@ import {
   UpcomingEvents,
   UserSidebar,
 } from '../../components'
+import { GuestListModal } from '../../Modals'
 import { EventReservationStyle, UserHomeStyle } from './UserHome.style'
 
 const EventReservation = () => {
   const [isCancelModalVisible, setCancelModalVisible] = useState(false)
   const [isSuccessModalVisible, setSuccessModalVisible] = useState(false)
+    const [isModalVisible, setIsModalVisible] = useState(false);
 
   return (
+    <>
     <SectionHeading heading="Events In Reservation">
       <EventReservationStyle>
         <CardWithContent
@@ -32,6 +35,7 @@ const EventReservation = () => {
           heading="Franklin Kub's Concert"
           time="10:51 AM"
           footerText="(Click to View Guest List)"
+          handleButtonClick={() => {setIsModalVisible(true)}}
         />
       </EventReservationStyle>
 
@@ -69,6 +73,12 @@ const EventReservation = () => {
         message="Reservation canceled successfully."
       />
     </SectionHeading>
+       <GuestListModal
+        isModalVisible={isModalVisible}
+        setIsModalVisible={setIsModalVisible}
+       
+      />
+    </>
   )
 }
 

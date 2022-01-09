@@ -9,3 +9,4 @@ export * from "./ProcessPayment"
 export * from "./TermsAndConditions"
 export * from "./VenueDetails"
 export * from './PartnerSignup'
+export * from './OrganizerProfile'

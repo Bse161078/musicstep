@@ -13,15 +13,15 @@ export default function ExploreVenue() {
         <div />
 
         <section className="venues-list">
-          <VenueCard pageUrl="/explore-venue/venue-details" />
+          <VenueCard pageUrl="/explore-venue/organizer-profile" />
 
-          <VenueCard pageUrl="/explore-venue/venue-details" />
+          <VenueCard pageUrl="/explore-venue/organizer-profile" />
 
-          <VenueCard pageUrl="/explore-venue/venue-details" />
+          <VenueCard pageUrl="/explore-venue/organizer-profile" />
 
-          <VenueCard pageUrl="/explore-venue/venue-details" />
+          <VenueCard pageUrl="/explore-venue/organizer-profile" />
 
-          <VenueCard pageUrl="/explore-venue/venue-details" />
+          <VenueCard pageUrl="/explore-venue/organizer-profile" />
         </section>
 
         <section>

@@ -87,7 +87,7 @@ const UserSidebar = () => {
         <div className="divider" />
         <span onClick={() => setPeopelWithMutualFreindsModalVisible(true)}>
           <HeadingTab
-            heading="People With Mutual Freinds"
+            heading="People With Mutual Friends"
             icon={
               <img src="/images/icons/credit-history-icon.svg" alt="icon" />
             }
@@ -111,7 +111,7 @@ const UserSidebar = () => {
         </span>
 
         <div className="divider" />
-        <HeadingTab heading="Events in Resevation" count={14} />
+        <HeadingTab heading="Events in Reservation" count={14} />
         <HeadingTab heading="Total Events Attended" count={14} />
 
         <HeadingTab heading="Total Canceled Events" count={1} />

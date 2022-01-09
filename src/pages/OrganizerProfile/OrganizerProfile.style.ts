@@ -1,9 +1,9 @@
-import { rgba } from "polished";
-import styled from "styled-components";
-import { OutlineButtonStyle } from "../../styles/Common.style";
-import { TabsStyle } from "../../styles/Fields.style";
+import { rgba } from 'polished'
+import styled from 'styled-components'
+import { OutlineButtonStyle } from '../../styles/Common.style'
+import { TabsStyle } from '../../styles/Fields.style'
 
-export const VenueDetailsStyle = styled.div`
+export const OrganizerProfileStyle = styled.div`
   display: grid;
   grid-template-columns: 1fr minmax(auto, 400px);
   align-items: flex-start;
@@ -26,7 +26,7 @@ export const VenueDetailsStyle = styled.div`
       margin-bottom: 10px;
     }
 
-    .ant-checkbox-wrapper  {
+    .ant-checkbox-wrapper {
       margin-left: 0;
     }
   }
@@ -40,6 +40,9 @@ export const VenueDetailsStyle = styled.div`
   }
 
   .left-side {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     padding: 0 60px;
     padding-left: 120px;
 
@@ -95,7 +98,7 @@ export const VenueDetailsStyle = styled.div`
 
   .venue-info-wrapper {
     padding: 0 60px;
-    border-left: 1px solid ${rgba("#0c0c0c", 0.3)};
+    border-left: 1px solid ${rgba('#0c0c0c', 0.3)};
     position: sticky;
     top: 106px;
 
@@ -112,7 +115,7 @@ export const VenueDetailsStyle = styled.div`
       width: 100%;
     }
   }
-`;
+`
 
 export const HeadingWithContentStyle = styled.div`
   .heading {
@@ -126,4 +129,4 @@ export const HeadingWithContentStyle = styled.div`
     opacity: 0.5;
     font-size: 20px;
   }
-`;
+`

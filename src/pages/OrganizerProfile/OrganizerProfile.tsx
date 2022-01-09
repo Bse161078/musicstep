@@ -8,16 +8,16 @@ import {
   NavbarWithSearch,
   UpcomingEvents,
   Reviews,
+  ImagesBanner,
   InputCheckbox,
-  CustomCarousel,
 } from '../../components'
-import { OutlineButtonStyle } from '../../styles/Common.style'
+
 import { TabPaneStyle, TabsStyle } from '../../styles/Fields.style'
 
 import {
   HeadingWithContentStyle,
-  VenueDetailsStyle,
-} from './VenueDetails.style'
+  OrganizerProfileStyle,
+} from './OrganizerProfile.style'
 
 type HeadingWithContentProps = {
   heading?: string
@@ -30,25 +30,31 @@ const HeadingWithContent = (props: HeadingWithContentProps) => {
   return (
     <HeadingWithContentStyle>
       <h3 className="heading">{heading}</h3>
-
       <p className="description">{description}</p>
     </HeadingWithContentStyle>
   )
 }
 
-export default function VenueDetails() {
+const imagesList = [
+  '/images/explore-venue/image4.png',
+  '/images/explore-venue/image1.png',
+  '/images/explore-venue/image2.png',
+  '/images/explore-venue/image3.png',
+  '/images/explore-venue/image4.png',
+  '/images/explore-venue/image1.png',
+  '/images/explore-venue/image2.png',
+  '/images/explore-venue/image3.png',
+]
+
+export default function OrganizerProfile() {
   return (
     <>
       <NavbarWithSearch />
-      <VenueDetailsStyle>
+      <OrganizerProfileStyle>
         <div className="left-side">
-          <CustomCarousel />
           <LogoWithHeading />
 
-          <div className="buttons-wrapper">
-            <OutlineButtonStyle>Night Club</OutlineButtonStyle>
-            <OutlineButtonStyle>Special Permit</OutlineButtonStyle>
-          </div>
+          <ImagesBanner imagesList={imagesList} />
 
           <TabsStyle defaultActiveKey="1">
             <TabPaneStyle tab="Info" key="1">
@@ -71,26 +77,13 @@ export default function VenueDetails() {
             </TabPaneStyle>
             <TabPaneStyle tab="Reviews" key="3">
               <div className="table-wrapper">
-                <Reviews /> 
+                <Reviews />
               </div>
             </TabPaneStyle>
           </TabsStyle>
         </div>
 
         <div className="venue-info-wrapper">
-          <div className="map-wrapper">
-            <img
-              src="/images/explore-venue/map-2.png"
-              className="map"
-              alt="map"
-            />
-          </div>
-
-          <div className="icon-with-content">
-            <img alt="icon" src="/images/icons/address-icon.svg" />
-            <span>1020 NW 183rd St, Miami, Florida(FL), 33169</span>
-          </div>
-
           <div className="icon-with-content">
             <img alt="icon" src="/images/icons/phone-icon.svg" />
             <span>+1 305 705 2747</span>
@@ -137,7 +130,7 @@ export default function VenueDetails() {
             )}
           </Formik>
         </div>
-      </VenueDetailsStyle>
+      </OrganizerProfileStyle>
     </>
   )
 }

@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { BrowserRouter, Route, Switch, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from 'react'
+import { BrowserRouter, Route, Switch, useLocation } from 'react-router-dom'
 
-import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
+import 'antd/dist/antd.css' // or 'antd/dist/antd.less'
 import {
   ExploreVenue,
   FreeTrial,
@@ -14,7 +14,8 @@ import {
   TermsAndConditions,
   VenueDetails,
   PartnerSignup,
-} from "./pages";
+  OrganizerProfile,
+} from './pages'
 
 import {
   AccountSettings,
@@ -25,53 +26,53 @@ import {
   TaxPayerInfo,
   TeamManagement,
   EventsManagementSteps,
-} from "./admin/pages";
-import { AddVenueProfileForm } from "./admin/components";
-import { AuthenticatedRoute, Footer, Navbar } from "./components";
-import { BaseStyle } from "./styles/Base.style";
+} from './admin/pages'
+import { AddVenueProfileForm } from './admin/components'
+import { AuthenticatedRoute, Footer, Navbar } from './components'
+import { BaseStyle } from './styles/Base.style'
 import {
   BillingInformation,
   ChangePassword,
   EditProfile,
   UserHome,
-} from "./userDashboard/pages";
-import { UserContextProvider } from "./context/userContext";
-import { LoginContextProvider } from "./context/authenticationContext";
-import { EventsManagment } from "./admin/components";
+} from './userDashboard/pages'
+import { UserContextProvider } from './context/userContext'
+import { LoginContextProvider } from './context/authenticationContext'
+import { EventsManagment } from './admin/components'
 
 const RoutesList = (props: any) => {
-  const { pathname } = useLocation();
-  const [showNavbar, setShowNavbar] = useState(true);
+  const { pathname } = useLocation()
+  const [showNavbar, setShowNavbar] = useState(true)
 
   useEffect(() => {
     switch (pathname) {
-      case "/explore-venue":
-        setShowNavbar(false);
-        break;
-      case "/explore-venue/venue-details":
-        setShowNavbar(false);
-        break;
+      case '/explore-venue':
+        setShowNavbar(false)
+        break
+      case '/explore-venue/venue-details':
+        setShowNavbar(false)
+        break
 
       default:
-        setShowNavbar(true);
+        setShowNavbar(true)
     }
 
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    window.scrollTo(0, 0)
+  }, [pathname])
 
-  const isAdminSide = pathname.includes("/admin");
-  const isDashboardSide = pathname.includes("/dashboard");
+  const isAdminSide = pathname.includes('/admin')
+  const isDashboardSide = pathname.includes('/dashboard')
 
   return (
     <>
-      {!isAdminSide && !isDashboardSide && showNavbar ? <Navbar /> : ""}
+      {!isAdminSide && !isDashboardSide && showNavbar ? <Navbar /> : ''}
       <Switch>
         <Route
           path="/admin/events-management"
           exact
-          render={() => (<EventsManagment />)}
+          render={() => <EventsManagment />}
         />
-
+       
         <Route path="/" exact component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/free-trial" component={FreeTrial} />
@@ -79,6 +80,10 @@ const RoutesList = (props: any) => {
         <Route path="/partner-detail" component={PartnerSignup} />
         <Route exact path="/pricing" component={Pricing} />
         <Route path="/explore-venue/venue-details" component={VenueDetails} />
+        <Route
+          path="/explore-venue/organizer-profile"
+          component={OrganizerProfile}
+        />
         <Route path="/how-it-works" component={HowItWorks} />
         <Route path="/terms-conditions" component={TermsAndConditions} />
 
@@ -86,7 +91,7 @@ const RoutesList = (props: any) => {
           path="/admin/basic-info"
           render={() => (
             // <AuthenticatedRoute redirectTo="/partner-login">
-              <BasicInfo />
+            <BasicInfo />
             // </AuthenticatedRoute>
           )}
         />
@@ -150,11 +155,11 @@ const RoutesList = (props: any) => {
             </AuthenticatedRoute>
           )}
         />
-          <Route
+        <Route
           path="/admin/add-venueprofile"
           render={() => (
             // <AuthenticatedRoute redirectTo="/partner-login">
-              <AddVenueProfileForm />
+            <AddVenueProfileForm />
             // </AuthenticatedRoute>
           )}
         />
@@ -162,7 +167,7 @@ const RoutesList = (props: any) => {
           path="/admin/events-managment-home"
           render={() => (
             // <AuthenticatedRoute redirectTo="/partner-login">
-              <EventsManagementSteps/>
+            <EventsManagementSteps />
             // </AuthenticatedRoute>
           )}
         />
@@ -180,7 +185,7 @@ const RoutesList = (props: any) => {
           path="/dashboard/home"
           render={() => (
             // <AuthenticatedRoute redirectTo="/login">
-              <UserHome />
+            <UserHome />
             // </AuthenticatedRoute>
           )}
         />
@@ -188,7 +193,7 @@ const RoutesList = (props: any) => {
           path="/dashboard/basic-info"
           render={() => (
             // <AuthenticatedRoute redirectTo="/login">
-              <EditProfile />
+            <EditProfile />
             // </AuthenticatedRoute>
           )}
         />
@@ -214,14 +219,14 @@ const RoutesList = (props: any) => {
           exact
           render={() => (
             // <AuthenticatedRoute redirectTo="partner/login">
-              <PartnerSignup />
+            <PartnerSignup />
             // </AuthenticatedRoute>
           )}
         />
       </Switch>
     </>
-  );
-};
+  )
+}
 
 function App() {
   return (
@@ -236,6 +241,6 @@ function App() {
         </UserContextProvider>
       </LoginContextProvider>
     </div>
-  );
+  )
 }
-export default App;
+export default App
