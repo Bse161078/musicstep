@@ -2,8 +2,10 @@ import { rgba } from "polished";
 import styled from "styled-components";
 
 export const UpcomingEventsStyle = styled.div`
+  overflow: auto;
+  max-width: 90vw;
+  
   @media (max-width: 950px) {
-    overflow: auto;
     width: 54vw;
     display: grid;
   }
@@ -21,13 +23,13 @@ export const FormHeaderStyle = styled.div`
   border-radius: 24px;
   padding: 15px 85px;
   display: grid;
-  grid-template-columns:0.2fr 0.5fr 1fr;
+  grid-template-columns: 140px 220px 200px;
   grid-gap: 30px;
 `;
 
 export const FormRowStyle = styled.div`
-  display: flex;
-  grid-template-columns: 1fr 1fr 2fr 1fr;
+  display: grid;
+  grid-template-columns: auto 140px 220px 200px 1fr;
   align-items: center;
   grid-gap: 30px;
   padding: 20px 0;

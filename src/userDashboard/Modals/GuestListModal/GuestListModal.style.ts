@@ -11,23 +11,23 @@ const GuestListModalStyle = styled.div`
   overflow: auto;
   height: 100%;
 
-  &:-webkit-scrollbar {
-    width: 10px;
+  &::-webkit-scrollbar {
+    width: 5px;
   }
-  &:-webkit-scrollbar {
-    width: 20px;
+  &::-webkit-scrollbar {
+    width: 5px;
   }
 
   /* Track */
-  &:-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey;
-    border-radius: 10px;
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px transparent;
+    border-radius: 0;
   }
 
   /* Handle */
-  &:-webkit-scrollbar-thumb {
-    /* background: red; */
-    border-radius: 10px;
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 0px;
   }
 `;
 export default GuestListModalStyle;

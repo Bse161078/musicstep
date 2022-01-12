@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const SelectWithInputStyle = styled.div`
+  max-width: 900px;
+  width: 100%;
+
   .search-form-wrapper {
     display: flex;
     align-items: center;
@@ -48,6 +51,9 @@ export const SelectWithInputStyle = styled.div`
     }
 
     .input-wrapper {
+      display: block;
+      width: 100%;
+
       input {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
@@ -68,7 +74,7 @@ export const SelectWithInputStyle = styled.div`
     align-items: center;
 
     @media (max-width: 767px) {
-          width: 30px;
+      width: 30px;
     }
   }
 `;
