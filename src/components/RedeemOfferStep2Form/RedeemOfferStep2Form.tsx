@@ -15,7 +15,7 @@ type TrailSetPasswordProps = {
 
 const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
   const { setCurrentForm } = props;
-  
+
   const {
     state: { id },
     dispatch,
@@ -27,12 +27,9 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
 
   const handleButtonSubmit = (e: any) => {
     axios
-      .patch(
-        `https://music-pass-backend.herokuapp.com/v1/users/createCode/${id}`,
-        {
-          code: otp,
-        }
-      )
+      .patch(`/users/createCode/${id}`, {
+        code: otp,
+      })
       .then((res) => {
         setContinueModal(true);
         dispatch({
@@ -94,9 +91,7 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
           />
         </div>
         <div className="error-wrapper">
-          {errorMessage !== "" && (
-            <p>{errorMessage}</p>
-          )}
+          {errorMessage !== "" && <p>{errorMessage}</p>}
         </div>
         <FilledButtonStyle
           width="100%"

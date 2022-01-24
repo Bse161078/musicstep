@@ -16,7 +16,7 @@ const ChangePasswordForm = () => {
     if (e.newPassword === e.confirmPassword)
       axios
         .put(
-          "https://music-pass-backend.herokuapp.com/v1/users/updatePassword",
+          "/users/updatePassword",
           {
             password: e.currentPassword,
             newPassword: e.confirmPassword,

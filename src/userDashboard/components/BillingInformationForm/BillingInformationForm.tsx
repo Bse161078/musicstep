@@ -14,7 +14,7 @@ const BillingInformationForm = () => {
   const handleBillingFormSubmit = (e: any) => {
     axios
       .put(
-        "https://music-pass-backend.herokuapp.com/v1/users/updateBillingInformation",
+        "/users/updateBillingInformation",
         {
           fullName: e.nameOnCard,
           cardNumber: e.cardNumber,
@@ -24,7 +24,7 @@ const BillingInformationForm = () => {
         { headers: { Authorization: `Bearer ${state.authToken}` } }
       )
       .then(() => setSuccessModalVisible(true))
-      .catch(()=> alert("Error while submitting data"));
+      .catch(() => alert("Error while submitting data"));
   };
 
   return (

@@ -40,7 +40,7 @@ const TrialForm = (props: TrialFormProps) => {
     setLoading(true);
 
     axios
-      .post("https://music-pass-backend.herokuapp.com/v1/users", {
+      .post("/users", {
         email: e.email,
       })
       .then((response) => {
@@ -50,9 +50,9 @@ const TrialForm = (props: TrialFormProps) => {
           type: "SUBMIT_EMAIL",
           payload: {
             email: e.email,
-            id: response.data.id
-          }
-        })
+            id: response.data.id,
+          },
+        });
         setCurrentForm("general-info");
       })
       .catch((error) => {
@@ -94,7 +94,12 @@ const TrialForm = (props: TrialFormProps) => {
           {({ values }) => (
             <Form className="trial-form-wrapper">
               <div>
-                <InputBox label="Email Address" name="email" type="email" required />
+                <InputBox
+                  label="Email Address"
+                  name="email"
+                  type="email"
+                  required
+                />
                 {errorMessage !== "" && (
                   <p className="error-message">{errorMessage}</p>
                 )}

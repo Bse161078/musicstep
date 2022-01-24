@@ -77,8 +77,18 @@ const Navbar = () => {
             })}
 
           <li>
-            <NavLink to="/free-trial">
-              <FilledButtonStyle as="span">{pathname === "/partner-login" ? "Sign Up For Free" : "Get Musicpass" }</FilledButtonStyle>
+            <NavLink
+              to={
+                pathname === "/partner-login"
+                  ? "/partner-signup"
+                  : "/free-trial"
+              }
+            >
+              <FilledButtonStyle as="span">
+                {pathname === "/partner-login"
+                  ? "Sign Up For Free"
+                  : "Get Musicpass"}
+              </FilledButtonStyle>
             </NavLink>
           </li>
         </ul>

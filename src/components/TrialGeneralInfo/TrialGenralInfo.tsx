@@ -25,14 +25,11 @@ const TrialGeneralInfo = (props: TrailGeneralInfoProps) => {
   const handleGeneralInfoSubmit = (e: any) => {
     setLoading(true);
     axios
-      .patch(
-        `https://music-pass-backend.herokuapp.com/v1/users/createPersonalInfo/${id}`,
-        {
-          firstName: e.firstName,
-          lastName: e.lastName,
-          dob: e.dob,
-        }
-      )
+      .patch(`/users/createPersonalInfo/${id}`, {
+        firstName: e.firstName,
+        lastName: e.lastName,
+        dob: e.dob,
+      })
       .then((response) => {
         setLoading(false);
         console.log(response);
@@ -61,16 +58,16 @@ const TrialGeneralInfo = (props: TrailGeneralInfoProps) => {
           initialValues={{
             firstName: "",
             lastName: "",
-            dob: ""
+            dob: "",
           }}
           validationSchema={TrialGeneralInfoValidationSchema}
           onSubmit={handleGeneralInfoSubmit}
         >
           {({ values, errors }) => (
             <Form className="general-info-wrapper">
-              <InputBox label="First Name" name="firstName"  />
-              <InputBox label="Last Name" name="lastName"  />
-              <InputBox label="Date of birth" name="dob"  />
+              <InputBox label="First Name" name="firstName" />
+              <InputBox label="Last Name" name="lastName" />
+              <InputBox label="Date of birth" name="dob" />
               {errorMessage !== "" && (
                 <p className="error-message">{errorMessage}</p>
               )}

@@ -1,23 +1,23 @@
-import axios from 'axios'
-import { Form, Formik } from 'formik'
-import React, { useState } from 'react'
-import { InputBox, InputCheckbox } from '../../../components'
-import { useLoginContext } from '../../../context/authenticationContext'
-import { OutlineButtonStyle } from '../../../styles/Common.style'
-import { Switch } from 'antd'
-import { EditProfileFormStyle } from './EditProfileForm.style'
-import { PeopleWithMutualFreindsModal } from '../Modals'
+import axios from "axios";
+import { Form, Formik } from "formik";
+import React, { useState } from "react";
+import { InputBox, InputCheckbox } from "../../../components";
+import { useLoginContext } from "../../../context/authenticationContext";
+import { OutlineButtonStyle } from "../../../styles/Common.style";
+import { Switch } from "antd";
+import { EditProfileFormStyle } from "./EditProfileForm.style";
+import { PeopleWithMutualFreindsModal } from "../Modals";
 
 const EditProfileForm = () => {
-  const { state } = useLoginContext()
-  const [isPublicProfileVisible, setPublicProfileVisible] = useState()
+  const { state } = useLoginContext();
+  const [isPublicProfileVisible, setPublicProfileVisible] = useState();
   const handleToggleChange = (checked: any) => {
-    console.log(checked)
-    setPublicProfileVisible(checked)
-  }
+    console.log(checked);
+    setPublicProfileVisible(checked);
+  };
   const handleEditProfile = (e: any) => {
     axios.put(
-      'https://music-pass-backend.herokuapp.com/v1/users/updatePersonalInformation',
+      "https://music-pass-backend.herokuapp.com/v1/users/updatePersonalInformation",
       {
         firstName: e.firstName,
         lastName: e.lastName,
@@ -25,22 +25,22 @@ const EditProfileForm = () => {
         email: e.email,
         phoneNumber: e.phone,
       },
-      { headers: { Authorization: `Bearer ${state.authToken}` } },
-    )
-  }
+      { headers: { Authorization: `Bearer ${state.authToken}` } }
+    );
+  };
 
   return (
     <>
       <EditProfileFormStyle>
         <Formik
           initialValues={{
-            firstName: '',
-            lastName: '',
-            dateOfBirth: '',
-            email: '',
-            countryCode: '',
-            phone: '',
-            photo: '',
+            firstName: "",
+            lastName: "",
+            dateOfBirth: "",
+            email: "",
+            countryCode: "",
+            phone: "",
+            photo: "",
           }}
           onSubmit={handleEditProfile}
         >
@@ -65,10 +65,10 @@ const EditProfileForm = () => {
                   label="Don't show my phone number in public profile."
                   isCorrectOption={true}
                 />
-                <div className='public-info'>
+                <div className="public-info">
                   <h1>
                     Public Info
-                    <Switch  onChange={handleToggleChange} />
+                    <Switch onChange={handleToggleChange} />
                   </h1>
                   <p className="red-text">
                     (Turning off this will not show your profile publicly in
@@ -81,7 +81,7 @@ const EditProfileForm = () => {
                     your profile.
                   </p>
                 </div>
-                <div className='public-info'>
+                <div className="public-info">
                   <InputBox
                     label="Bio"
                     name="bio"
@@ -90,7 +90,7 @@ const EditProfileForm = () => {
                     placeholder="Dolor rem non inventore. Non rerum nostrum. Sit consectetur dolorem voluptatem sit dolorem. Deleniti vel sit dolorem illo sed culpa."
                   />
                 </div>
-                <div className='public-info column-3'>
+                <div className="public-info column-3">
                   <InputBox
                     label="Instagram"
                     name="instagram"
@@ -107,7 +107,7 @@ const EditProfileForm = () => {
                     name="twitter"
                   />
                 </div>
-                <div className='public-info'>
+                <div className="public-info">
                   <h1>
                     <InputCheckbox
                       name="phoneno"
@@ -145,7 +145,7 @@ const EditProfileForm = () => {
         isPublicProfileVisible={isPublicProfileVisible}
       />
     </>
-  )
-}
+  );
+};
 
-export default EditProfileForm
+export default EditProfileForm;
