@@ -26,10 +26,10 @@ const RedeemOfferForm = (props: TrailSetPasswordProps) => {
     console.log("EVENTS: ", e);
     setLoading(true);
 
-    console.log("id: ", id, `${e.countryCode}${e.phoneNumber}`)
+    console.log("id: ", id, `${e.countryCode}${e.phoneNumber}`);
 
     axios
-      .patch(`https://music-pass-backend.herokuapp.com/v1/users/createPhonenumber/${id}`, {
+      .patch(`/users/createPhonenumber/${id}`, {
         phoneNumber: `${e.countryCode}${e.phoneNumber}`,
       })
       .then((response) => {

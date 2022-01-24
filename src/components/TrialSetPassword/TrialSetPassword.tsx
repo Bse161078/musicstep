@@ -28,12 +28,9 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
 
     if (e.password === e.confirmPassword) {
       axios
-        .patch(
-          `https://music-pass-backend.herokuapp.com/v1/users/createPassword/${id}`,
-          {
-            password: e.password,
-          }
-        )
+        .patch(`/users/createPassword/${id}`, {
+          password: e.password,
+        })
         .then((response) => {
           setLoading(false);
           dispatch({
@@ -47,7 +44,7 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
           setCurrentForm("redeem-offer");
         })
         .catch((error) => {
-          console.log({error})
+          console.log({ error });
           setErrorMessage(error.message);
           setLoading(false);
           console.log("error");

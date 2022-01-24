@@ -31,15 +31,12 @@ const TrialBillingInfoForm = () => {
     setLoading(true);
 
     axios
-      .patch(
-        `https://music-pass-backend.herokuapp.com/v1/users/createBillingInformation/${id}`,
-        {
-          fullName: e.nameOnCard,
-          cardNumber: e.cardNumber,
-          expiryDate: e.date,
-          cvc: e.cvc,
-        }
-      )
+      .patch(`/users/createBillingInformation/${id}`, {
+        fullName: e.nameOnCard,
+        cardNumber: e.cardNumber,
+        expiryDate: e.date,
+        cvc: e.cvc,
+      })
       .then((response) => {
         setLoading(false);
         console.log(response);
@@ -61,7 +58,7 @@ const TrialBillingInfoForm = () => {
   return (
     <TrialBillingInfoFormStyle>
       {loading && <Loading />}
-      
+
       <h3 className="form-heading">Save Your Billing Information</h3>
       <p className="form-info">Why do you need my billing info?</p>
 
