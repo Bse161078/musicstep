@@ -8,21 +8,23 @@ import { SelectBox } from "..";
 import { Link, useHistory } from "react-router-dom";
 import { PartnerSignupFormValidationSchema } from "./validation";
 import axios from "axios";
+import { usePartnerContext } from "../../context/partnerContext ";
 
 const PartnerSignupForm = () => {
+  const { state, dispatch } = usePartnerContext();
+
   const initialValues = {
-    firstName: "",
-    lastName: "",
-    emailAddress: "",
-    countryCode: "",
-    phoneNumber: "",
+    firstName: state.firstName,
+    lastName: state.lastName,
+    emailAddress: state.emailAddress,
+    countryCode: state.countryCod,
+    phoneNumber: state.phoneNumber,
   };
   const history = useHistory();
 
   const handlePartnerSignup = (value: any) => {
-    console.log(value);
     console.log(value.countryCode + parseInt(value.phoneNumber));
-
+    console.log(value.countryCode);
     axios
       .post(`/partners`, {
         email: value.emailAddress,
@@ -32,20 +34,18 @@ const PartnerSignupForm = () => {
       })
       .then((res) => {
         // setContinueModal(true);
-        // dispatch({
-        //   type: "SUBMIT_GENERAL_INFO",
-        //   payload: {
-        //     firstName: e.firstName,
-        //     lastName: e.lastName,
-        //     dob: e.dob,
-        //     phoneNumber: e.phoneNumber,
-        //     email: e.email,
-        //   },
-        // });
-        console.log(res);
-        if (res.data.isVerified === true) {
-          // setContinueModal(true);
-        }
+        dispatch({
+          type: "SUBMIT_GENERAL_INFO",
+          payload: {
+            id: res.data.id,
+            firstName: value.firstName,
+            lastName: value.lastName,
+            emailAddress: value.emailAddress,
+            countryCode: value.countryCod,
+            phoneNumber: value.phoneNumber,
+          },
+        });
+
         history.push("/partner-detail");
       })
       .catch((error) => {
@@ -85,7 +85,6 @@ const PartnerSignupForm = () => {
                   value={values.emailAddress}
                 />
               </div>
-              {console.log(values)}
               <div className="selectbox-wrapper">
                 <SelectBox
                   width="medium"

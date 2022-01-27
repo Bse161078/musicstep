@@ -5,6 +5,10 @@ type UserAction =
       type: "LOGIN_USER";
       payload: any;
     }
+    | {
+      type: "LOGOUT";
+      payload: any;
+    } 
 
 export type LoginContextType = {
   state: any;
@@ -33,6 +37,13 @@ const reducer = (state: any, action: any) => {
         isLoggedIn: action.payload.isLoggedIn,
         authToken: action.payload.token,
       };
+      case "LOGOUT":
+        localStorage.clear();
+        return {
+          ...state,
+          isLoggedIn: false,
+          authToken: "",
+        };
     default:
       return state;
   }

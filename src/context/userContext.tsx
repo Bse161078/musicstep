@@ -13,10 +13,10 @@ type UserAction =
       type: "SUBMIT_PHONE_NUMBER";
       payload: any;
     }
-    | {
-        type: "SUBMIT_TRIAL_BILLING";
-        payload: any;
-      };
+  | {
+      type: "SUBMIT_TRIAL_BILLING";
+      payload: any;
+    };
 
 export type UserContextType = {
   state: any;
@@ -37,7 +37,7 @@ const initialContent: any = {
   phoneNumber: "",
   expiryDate: "",
   cardNumber: "",
-  cvc: ""
+  cvc: "",
 };
 
 export const UserContext = createContext<UserContextType>({
@@ -77,7 +77,7 @@ const reducer = (state: any, action: any) => {
         cardNumber: action.payload.cardNumber,
         expiryDate: action.payload.date,
         cvc: action.payload.date,
-      }
+      };
     default:
       return state;
   }

@@ -9,11 +9,25 @@ import {
   TrialGeneralInfo,
   TrialSetPassword,
 } from "../../components";
+import { useHistory } from "react-router-dom";
 import { FreeTrialStyle } from "./FreeTrial.style";
+import { usePartnerContext } from "../../context/partnerContext ";
 
 export default function FreeTrial() {
-  const [currentForm, setCurrentForm] = useState("trial-info");
-
+  const history = useHistory();
+  let initialLoadFormName = "trial-info";
+  let stateObj: any = history.location?.state;
+  if (stateObj && stateObj.previousPath === "/partner-detail") {
+    initialLoadFormName = "set-password";
+  }
+  const [currentForm, setCurrentForm] = useState(initialLoadFormName);
+  const { dispatch } = usePartnerContext();
+  const resetPartnerForm = () => {
+    dispatch({
+      type: "RESETFROM",
+      payload: {},
+    });
+  };
   const CurrentTrialStep = useMemo(() => {
     switch (currentForm) {
       case "trial-info":
@@ -23,7 +37,13 @@ export default function FreeTrial() {
         return <TrialGeneralInfo setCurrentForm={setCurrentForm} />;
 
       case "set-password":
-        return <TrialSetPassword setCurrentForm={setCurrentForm} />;
+        return (
+          <TrialSetPassword
+            partnerId={stateObj && stateObj.partnerId}
+            resetPartnerForm={resetPartnerForm}
+            setCurrentForm={setCurrentForm}
+          />
+        );
 
       case "redeem-offer":
         return <RedeemOfferForm setCurrentForm={setCurrentForm} />;

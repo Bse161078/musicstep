@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { BrowserRouter, Route, Switch, useLocation } from 'react-router-dom'
+import React, { useEffect, useState } from "react";
+import { BrowserRouter, Route, Switch, useLocation } from "react-router-dom";
 
-import 'antd/dist/antd.css' // or 'antd/dist/antd.less'
+import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 import {
   ExploreVenue,
   FreeTrial,
@@ -15,7 +15,7 @@ import {
   VenueDetails,
   PartnerSignup,
   OrganizerProfile,
-} from './pages'
+} from "./pages";
 
 import {
   AccountSettings,
@@ -26,53 +26,54 @@ import {
   TaxPayerInfo,
   TeamManagement,
   EventsManagementSteps,
-} from './admin/pages'
-import { AddVenueProfileForm } from './admin/components'
-import { AuthenticatedRoute, Footer, Navbar } from './components'
-import { BaseStyle } from './styles/Base.style'
+} from "./admin/pages";
+import { AddVenueProfileForm } from "./admin/components";
+import { AuthenticatedRoute, Footer, Navbar } from "./components";
+import { BaseStyle } from "./styles/Base.style";
 import {
   BillingInformation,
   ChangePassword,
   EditProfile,
   UserHome,
-} from './userDashboard/pages'
-import { UserContextProvider } from './context/userContext'
-import { LoginContextProvider } from './context/authenticationContext'
-import { EventsManagment } from './admin/components'
+} from "./userDashboard/pages";
+import { UserContextProvider } from "./context/userContext";
+import { PartnerContextProvider } from "./context/partnerContext ";
+import { LoginContextProvider } from "./context/authenticationContext";
+import { EventsManagment } from "./admin/components";
 
 const RoutesList = (props: any) => {
-  const { pathname } = useLocation()
-  const [showNavbar, setShowNavbar] = useState(true)
+  const { pathname } = useLocation();
+  const [showNavbar, setShowNavbar] = useState(true);
 
   useEffect(() => {
     switch (pathname) {
-      case '/explore-venue':
-        setShowNavbar(false)
-        break
-      case '/explore-venue/venue-details':
-        setShowNavbar(false)
-        break
+      case "/explore-venue":
+        setShowNavbar(false);
+        break;
+      case "/explore-venue/venue-details":
+        setShowNavbar(false);
+        break;
 
       default:
-        setShowNavbar(true)
+        setShowNavbar(true);
     }
 
-    window.scrollTo(0, 0)
-  }, [pathname])
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
-  const isAdminSide = pathname.includes('/admin')
-  const isDashboardSide = pathname.includes('/dashboard')
+  const isAdminSide = pathname.includes("/admin");
+  const isDashboardSide = pathname.includes("/dashboard");
 
   return (
     <>
-      {!isAdminSide && !isDashboardSide && showNavbar ? <Navbar /> : ''}
+      {!isAdminSide && !isDashboardSide && showNavbar ? <Navbar /> : ""}
       <Switch>
         <Route
           path="/admin/events-management"
           exact
           render={() => <EventsManagment />}
         />
-       
+
         <Route path="/" exact component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/free-trial" component={FreeTrial} />
@@ -225,22 +226,24 @@ const RoutesList = (props: any) => {
         />
       </Switch>
     </>
-  )
-}
+  );
+};
 
 function App() {
   return (
     <div className="App">
       <LoginContextProvider>
         <UserContextProvider>
-          <BaseStyle />
-          <BrowserRouter>
-            <RoutesList />
-            <Footer />
-          </BrowserRouter>
+          <PartnerContextProvider>
+            <BaseStyle />
+            <BrowserRouter>
+              <RoutesList />
+              <Footer />
+            </BrowserRouter>
+          </PartnerContextProvider>
         </UserContextProvider>
       </LoginContextProvider>
     </div>
-  )
+  );
 }
-export default App
+export default App;

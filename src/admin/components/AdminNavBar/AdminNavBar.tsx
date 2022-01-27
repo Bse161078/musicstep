@@ -4,11 +4,22 @@ import { Link, useHistory } from "react-router-dom";
 import { OutlineButtonStyle } from "../../../styles/Common.style";
 import { LogoutModal } from "..";
 import { AdminNavBarStyle } from "./AdminNavBar.style";
-
+import { useLoginContext } from "../../../context/authenticationContext";
 const AdminNavBar = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const history = useHistory();
+
+  const {dispatch} =useLoginContext()
+const logOut=()=>{
+  dispatch({
+    type: "LOGOUT",
+    payload: {
+     
+    },
+  });
+  history.push("/partner-login");
+}
 
   return (
     <>
@@ -30,8 +41,8 @@ const AdminNavBar = () => {
       </AdminNavBarStyle>
       <LogoutModal
         handleOk={() => {
-          history.push("/partner-login");
           setIsModalVisible(false);
+          logOut();
         }}
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}

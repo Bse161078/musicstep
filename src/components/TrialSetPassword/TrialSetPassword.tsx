@@ -7,14 +7,16 @@ import { useUserContext } from "../../context/userContext";
 import { FilledButtonStyle } from "../../styles/Common.style";
 import { TrialSetPasswordStyle } from "./TrialSetPassword.style";
 import { TrialInfoValidationSchema } from "./validation";
-
+import { useHistory } from "react-router-dom";
 type TrailSetPasswordProps = {
   setCurrentForm: (data: string) => void;
+  resetPartnerForm: () => void;
+  partnerId: string;
 };
 
 const TrialSetPassword = (props: TrailSetPasswordProps) => {
-  const { setCurrentForm } = props;
-
+  const { setCurrentForm, partnerId, resetPartnerForm } = props;
+  const history = useHistory();
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -28,20 +30,30 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
 
     if (e.password === e.confirmPassword) {
       axios
-        .patch(`/users/createPassword/${id}`, {
-          password: e.password,
-        })
+        .patch(
+          `${
+            partnerId ? "partners/createPassword/" : "/users/createPassword/"
+          }${partnerId ? partnerId : id}`,
+          {
+            password: e.password,
+          }
+        )
         .then((response) => {
           setLoading(false);
-          dispatch({
-            type: "SUBMIT_GENERAL_INFO",
-            payload: {
-              firstName: e.firstName,
-              lastName: e.lastName,
-              dob: e.dob,
-            },
-          });
-          setCurrentForm("redeem-offer");
+          if (partnerId) {
+            resetPartnerForm();
+            history.replace("/partner-login");
+          } else {
+            dispatch({
+              type: "SUBMIT_GENERAL_INFO",
+              payload: {
+                firstName: e.firstName,
+                lastName: e.lastName,
+                dob: e.dob,
+              },
+            });
+            setCurrentForm("redeem-offer");
+          }
         })
         .catch((error) => {
           console.log({ error });
