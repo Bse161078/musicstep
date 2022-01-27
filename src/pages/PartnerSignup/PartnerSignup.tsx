@@ -1,11 +1,14 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { PartnerOrganizationDetailForm, StartTrialWrapper } from "../../components";
+import {
+  PartnerOrganizationDetailForm,
+  StartTrialWrapper,
+} from "../../components";
 import { PartnerSignupForm } from "../../components";
 const PartnerSignup = () => {
   const history = useHistory();
-  console.log(history.location.pathname);
-  
+  // console.log(history.location.pathname);
+
   return (
     <StartTrialWrapper
       leftContent={
@@ -23,13 +26,11 @@ const PartnerSignup = () => {
         </>
       }
     >
-      {
-        history.location.pathname === "/partner-signup" ? (
-          <PartnerSignupForm />
-        ) : (
-          <PartnerOrganizationDetailForm />
-        )
-      }
+      {history.location.pathname === "/partner-signup" ? (
+        <PartnerSignupForm />
+      ) : (
+        <PartnerOrganizationDetailForm />
+      )}
     </StartTrialWrapper>
   );
 };
