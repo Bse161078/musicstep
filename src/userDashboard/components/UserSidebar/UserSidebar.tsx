@@ -15,8 +15,9 @@ import {
 } from "../../../styles/Common.style";
 
 import { UserSidebarStyle } from "./UserSidebar.style";
-
+import { useLoginContext } from "../../../context/authenticationContext";
 const UserSidebar = () => {
+  const { dispatch, state } = useLoginContext();
   const [isLogoutVisible, setLogoutVisible] = useState(false);
   const [isSubscriptionVisible, setSubscriptionVisible] = useState(false);
   const [isCreditModalVisible, setCreditModalVisible] = useState(false);
@@ -129,6 +130,10 @@ const UserSidebar = () => {
         isModalVisible={isLogoutVisible}
         setIsModalVisible={setLogoutVisible}
         handleOk={() => {
+          dispatch({
+            type: "LOGOUT",
+            payload: {},
+          });
           history.push("/login");
           setLogoutVisible(false);
         }}

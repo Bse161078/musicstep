@@ -44,10 +44,16 @@ const PartnerSignupFormStyle = styled.div`
       font-weight: 700;
       color: #1981fc;
     }
-    .feild-wrapper{
+    .feild-wrapper {
       display: grid;
       gap: 20px;
       grid-template-columns: 1fr 1fr;
+    }
+    .error-message {
+      font-size: 12px;
+      color: #ff5151;
+      margin-top: 15px;
+      margin-left: 25px;
     }
   }
 `;

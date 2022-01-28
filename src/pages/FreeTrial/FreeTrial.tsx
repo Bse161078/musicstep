@@ -17,7 +17,8 @@ export default function FreeTrial() {
   const history = useHistory();
   let initialLoadFormName = "trial-info";
   let stateObj: any = history.location?.state;
-  if (stateObj && stateObj.previousPath === "/partner-detail") {
+  if (stateObj && stateObj.previousPath.includes("/partner-detail")) {
+    console.log(stateObj);
     initialLoadFormName = "set-password";
   }
   const [currentForm, setCurrentForm] = useState(initialLoadFormName);

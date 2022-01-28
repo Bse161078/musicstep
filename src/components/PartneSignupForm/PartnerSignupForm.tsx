@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BecomePartnerLoginStyle from "./PartnerSignupForm.style";
 import { InputBox } from "..";
 import { Form, Formik } from "formik";
@@ -12,7 +12,7 @@ import { usePartnerContext } from "../../context/partnerContext ";
 
 const PartnerSignupForm = () => {
   const { state, dispatch } = usePartnerContext();
-
+  const [errorMessage, setErrorMessage] = useState("");
   const initialValues = {
     firstName: state.firstName,
     lastName: state.lastName,
@@ -46,10 +46,10 @@ const PartnerSignupForm = () => {
           },
         });
 
-        history.push("/partner-detail");
+        history.push(`/partner-detail/${res.data.id}`);
       })
       .catch((error) => {
-        // setErrorMessage(error.response?.data.message);
+        setErrorMessage(error.response?.data.message);
       });
   };
 
@@ -84,6 +84,9 @@ const PartnerSignupForm = () => {
                   placeholder="john.doe.34@gmail.com"
                   value={values.emailAddress}
                 />
+                {errorMessage !== "" && (
+                  <p className="error-message">{errorMessage}</p>
+                )}
               </div>
               <div className="selectbox-wrapper">
                 <SelectBox

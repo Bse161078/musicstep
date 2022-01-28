@@ -15,6 +15,7 @@ const EditProfileForm = () => {
     console.log(checked);
     setPublicProfileVisible(checked);
   };
+  //na
   const handleEditProfile = (e: any) => {
     axios.put(
       "https://music-pass-backend.herokuapp.com/v1/users/updatePersonalInformation",

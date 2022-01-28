@@ -8,12 +8,13 @@ import { SelectBox } from "..";
 import { PartnerOrganizationDetailFormValidationSchema } from "./validation";
 import axios from "axios";
 import { usePartnerContext } from "../../context/partnerContext ";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation, useParams } from "react-router-dom";
 const PartnerOrganizationDetailForm = () => {
   const { state, dispatch } = usePartnerContext();
 
   const history = useHistory();
-
+  const params: any = useParams();
+  console.log(params);
   const initialValues = {
     organizationName: state.organizationName,
     organizationType: state.organizationType,
@@ -23,7 +24,7 @@ const PartnerOrganizationDetailForm = () => {
   };
   const handleDetailsSubmit = (value: any) => {
     axios
-      .patch(`/partners/createOrganizationInformation/${state.id}`, {
+      .patch(`/partners/createOrganizationInformation/${params.partnerId}`, {
         organizationName: value.organizationName,
         organizationType: value.organizationType,
         organizationURL: value.organizationURL,
@@ -44,11 +45,13 @@ const PartnerOrganizationDetailForm = () => {
         });
 
         // history.push("/free-trial");
+
+        localStorage.setItem("partnerId", params.id);
         history.push({
           pathname: "/free-trial",
           state: {
             previousPath: history.location.pathname,
-            partnerId: state.id,
+            partnerId: params.partnerId,
           },
         });
       })

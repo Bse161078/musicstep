@@ -78,7 +78,7 @@ const RoutesList = (props: any) => {
         <Route path="/login" component={Login} />
         <Route path="/free-trial" component={FreeTrial} />
         <Route path="/partner-login" component={PartnerLogin} />
-        <Route path="/partner-detail" component={PartnerSignup} />
+        <Route path="/partner-detail/:partnerId" component={PartnerSignup} />
         <Route exact path="/pricing" component={Pricing} />
         <Route path="/explore-venue/venue-details" component={VenueDetails} />
         <Route

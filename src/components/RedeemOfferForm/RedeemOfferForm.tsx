@@ -27,7 +27,7 @@ const RedeemOfferForm = (props: TrailSetPasswordProps) => {
     setLoading(true);
 
     console.log("id: ", id, `${e.countryCode}${e.phoneNumber}`);
-
+    //d
     axios
       .patch(`/users/createPhonenumber/${id}`, {
         phoneNumber: `${e.countryCode}${e.phoneNumber}`,

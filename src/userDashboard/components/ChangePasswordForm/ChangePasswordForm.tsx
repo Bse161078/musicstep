@@ -14,6 +14,7 @@ const ChangePasswordForm = () => {
 
   const handlePasswordSubmit = (e: any) => {
     if (e.newPassword === e.confirmPassword)
+      //na
       axios
         .put(
           "/users/updatePassword",

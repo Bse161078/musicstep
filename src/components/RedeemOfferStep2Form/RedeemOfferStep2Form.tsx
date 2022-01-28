@@ -26,6 +26,7 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
   const [otp, setOtp] = useState();
 
   const handleButtonSubmit = (e: any) => {
+    //d
     axios
       .patch(`/users/createCode/${id}`, {
         code: otp,

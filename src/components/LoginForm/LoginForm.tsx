@@ -11,6 +11,7 @@ import { Link, useHistory } from "react-router-dom";
 import { useLoginContext } from "../../context/authenticationContext";
 import { addLoginInfoToStorage, getLoginInfoFromStorage } from "../../utils";
 import { LoginFormStyle } from "./LoginForm.style";
+import { LoginFormValidationSchema } from "./validation";
 
 type LoginFormProps = {
   setCurrentSection: (data: string) => void;
@@ -18,13 +19,24 @@ type LoginFormProps = {
 
 const LoginForm = (props: LoginFormProps) => {
   const { setCurrentSection } = props;
-
+  const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
   const history = useHistory();
 
-  const { dispatch } = useLoginContext();
+  const { dispatch, state } = useLoginContext();
 
+  // if (
+  //   state.data &&
+  //   state.isLoggedIn &&
+  //   state.authToken &&
+  //   state.data.role === "user" &&
+  //   state.data.isOrganizer === false
+  // ) {
+  //   alert("yoo");
+  //   history.push("/dashboard/basic-info");
+  // }
+  console.log(state);
   const handleLoginSubmit = (e: any) => {
     setLoading(true);
     axios
@@ -42,16 +54,19 @@ const LoginForm = (props: LoginFormProps) => {
           payload: {
             isLoggedIn: true,
             token: response.data.tokens.access.token,
+            data: response.data.user,
           },
         });
         // history.push("/explore-venue")
-        history.push("/dashboard/basic-info");
+
+        // history.push("/dashboard/basic-info");
       })
       .catch((error) => {
+        setErrorMessage(error.response?.data.message);
         setLoading(false);
       });
   };
-  console.log(getLoginInfoFromStorage().email);
+  // console.log(getLoginInfoFromStorage().email);
   return (
     <LoginFormStyle>
       {loading && <Loading />}
@@ -63,6 +78,8 @@ const LoginForm = (props: LoginFormProps) => {
           rememberPassword: getLoginInfoFromStorage().rememberPassword || false,
         }}
         onSubmit={handleLoginSubmit}
+        validationSchema={LoginFormValidationSchema}
+        validateOnChange={true}
       >
         {({ values, setFieldValue }) => (
           <Form className="login-form-wrapper">
@@ -87,7 +104,9 @@ const LoginForm = (props: LoginFormProps) => {
                 Forgot Password?
               </span>
             </div>
-
+            {errorMessage !== "" && (
+              <p className="error-message">{errorMessage}</p>
+            )}
             <FilledButtonStyle width="100%" height="60px">
               Login
             </FilledButtonStyle>

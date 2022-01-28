@@ -29,7 +29,7 @@ const TrialBillingInfoForm = () => {
 
   const handleFormSubmit = (e: any) => {
     setLoading(true);
-
+    //d
     axios
       .patch(`/users/createBillingInformation/${id}`, {
         fullName: e.nameOnCard,

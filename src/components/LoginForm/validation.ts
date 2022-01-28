@@ -1,7 +1,7 @@
 import moment from "moment";
 import * as yup from "yup";
 
-export const PartnerLoginFormValidationSchema = yup.object().shape({
+export const LoginFormValidationSchema = yup.object().shape({
   userName: yup
     .string()
     .email("Invalid email address")

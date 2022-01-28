@@ -12,6 +12,7 @@ const BillingInformationForm = () => {
   const { state } = useLoginContext();
 
   const handleBillingFormSubmit = (e: any) => {
+    //na
     axios
       .put(
         "/users/updateBillingInformation",

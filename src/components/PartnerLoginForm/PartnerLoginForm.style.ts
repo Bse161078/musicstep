@@ -35,4 +35,10 @@ export const PartnerLoginFormStyle = styled.article`
       background-color: #100840;
     }
   }
+  .error-message {
+    font-size: 12px;
+    color: #ff5151;
+    margin-top: 15px;
+    margin-left: 25px;
+  }
 `;

@@ -8,7 +8,7 @@ import {
   OutlineButtonStyle,
 } from "../../styles/Common.style";
 import { ForgotPasswordFormStyle } from "./ForgotPasswordForm.style";
-
+import { ForgotPasswordFormValidationSchema } from "./validation";
 type ForgotPasswordFormProps = {
   setCurrentSection: (data: string) => void;
 };
@@ -37,6 +37,8 @@ const ForgotPasswordForm = (props: ForgotPasswordFormProps) => {
         enableReinitialize={true}
         initialValues={forgotPasswordInitialValues}
         onSubmit={handleForgotSubmit}
+        validationSchema={ForgotPasswordFormValidationSchema}
+        validateOnChange={true}
       >
         {({ values, setFieldValue }) => (
           <Form className="forgot-form-wrapper">
