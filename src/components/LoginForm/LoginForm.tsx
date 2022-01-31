@@ -33,7 +33,7 @@ const LoginForm = (props: LoginFormProps) => {
   //   state.data.role === "user" &&
   //   state.data.isOrganizer === false
   // ) {
-  //   alert("yoo");
+ 
   //   history.push("/dashboard/basic-info");
   // }
   console.log(state);
@@ -59,7 +59,7 @@ const LoginForm = (props: LoginFormProps) => {
         });
         // history.push("/explore-venue")
 
-        // history.push("/dashboard/basic-info");
+        history.push("/dashboard/basic-info");
       })
       .catch((error) => {
         setErrorMessage(error.response?.data.message);
