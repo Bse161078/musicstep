@@ -41,7 +41,7 @@ const reducer = (state: any, action: any) => {
       localStorage.setItem("authToken", action.payload.token);
       // localStorage.setItem("data", JSON.stringify(action.payload.data));
       localStorage.setItem("isLoggedIn", action.payload.isLoggedIn);
-alert("LOGIN_USER");
+
       return {
         ...state,
         isLoggedIn: action.payload.isLoggedIn,
