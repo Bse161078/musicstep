@@ -193,9 +193,9 @@ const RoutesList = (props: any) => {
         <Route
           path="/dashboard/basic-info"
           render={() => (
-            // <AuthenticatedRoute redirectTo="/login">
+            <AuthenticatedRoute redirectTo="/login">
             <EditProfile />
-            // </AuthenticatedRoute>
+           </AuthenticatedRoute>
           )}
         />
         <Route
