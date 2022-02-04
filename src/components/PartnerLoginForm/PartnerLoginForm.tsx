@@ -24,7 +24,7 @@ const PartnerLoginForm = () => {
   const handlePartnerLoginSubmit = (value: any) => {
     if (getLoginInfoFromStorage()) setLoading(true);
     axios
-      .post("/auth/partner-login", {
+      .post("/v1/auth/partner-login", {
         email: value.userName,
         password: value.password,
       })

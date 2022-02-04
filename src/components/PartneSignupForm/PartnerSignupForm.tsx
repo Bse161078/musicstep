@@ -26,7 +26,7 @@ const PartnerSignupForm = () => {
     console.log(value.countryCode + parseInt(value.phoneNumber));
     console.log(value.countryCode);
     axios
-      .post(`/partners`, {
+      .post(`/v1/partners`, {
         email: value.emailAddress,
         firstName: value.firstName,
         lastName: value.lastName,

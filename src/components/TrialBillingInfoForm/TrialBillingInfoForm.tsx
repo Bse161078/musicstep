@@ -31,7 +31,7 @@ const TrialBillingInfoForm = () => {
     setLoading(true);
     //d
     axios
-      .patch(`/users/createBillingInformation/${id}`, {
+      .patch(`/v1/users/createBillingInformation/${id}`, {
         fullName: e.nameOnCard,
         cardNumber: e.cardNumber,
         expiryDate: e.date,

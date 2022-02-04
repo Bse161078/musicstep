@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link, useHistory } from "react-router-dom";
 import {
   HeadingWithButton,
   HeroSection,
@@ -11,7 +11,22 @@ import {
 } from "../../components";
 import { HomeStyle } from "./Home.style";
 
+import { useLoginContext } from "../../context/authenticationContext";
+
 export default function Home() {
+  const history = useHistory();
+  const { dispatch, state } = useLoginContext();
+
+  if (
+    state.data &&
+    state.isLoggedIn &&
+    // state.authToken &&
+    state.data.role === "user" &&
+    state.data.isOrganizer === false
+  ) {
+    history.push("/dashboard/home");
+  }
+
   return (
     <HomeStyle>
       <HeroSection />

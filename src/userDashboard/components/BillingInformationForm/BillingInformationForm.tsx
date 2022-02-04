@@ -9,13 +9,16 @@ import { BillingInformationFormStyle } from "./BillingInformationForm.style";
 
 const BillingInformationForm = () => {
   const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
-  const { state } = useLoginContext();
+  const { state, dispatch } = useLoginContext();
 
+  console.log(state);
+  const { billingInformation } = state.data;
+  console.log(billingInformation);
   const handleBillingFormSubmit = (e: any) => {
     //na
     axios
       .put(
-        "/users/updateBillingInformation",
+        "/v1/users/updateBillingInformation",
         {
           fullName: e.nameOnCard,
           cardNumber: e.cardNumber,
@@ -24,7 +27,11 @@ const BillingInformationForm = () => {
         },
         { headers: { Authorization: `Bearer ${state.authToken}` } }
       )
-      .then(() => setSuccessModalVisible(true))
+      .then((res) => {
+        setSuccessModalVisible(true);
+        console.log(res.data);
+        dispatch({ type: "UPDATE_USER", payload: { data: res.data } });
+      })
       .catch(() => alert("Error while submitting data"));
   };
 
@@ -32,10 +39,10 @@ const BillingInformationForm = () => {
     <BillingInformationFormStyle>
       <Formik
         initialValues={{
-          nameOnCard: "",
-          cardNumber: "",
-          cardMonth: "",
-          cvc: "",
+          nameOnCard: billingInformation.fullName || "",
+          cardNumber: billingInformation.cardNumber || "",
+          cardMonth: billingInformation.expiryDate || "",
+          cvc: billingInformation.cvc || "",
         }}
         onSubmit={handleBillingFormSubmit}
       >

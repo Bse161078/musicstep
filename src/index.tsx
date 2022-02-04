@@ -5,7 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import axios from "axios";
 
 // axios.defaults.baseURL = "https://music-pass-backend.herokuapp.com/v1";
-axios.defaults.baseURL = "http://localhost:3000/v1";
+axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
 // axios.defaults.headers.common["Authorization"] = "AUTH TOKEN";
 // axios.defaults.headers.post["Content-Type"] = "application/json";
 

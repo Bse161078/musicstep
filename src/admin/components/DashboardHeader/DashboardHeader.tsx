@@ -18,6 +18,7 @@ type DashboardHeaderProps = {
   cancelButtonText?: string;
   saveButtonWidth?: string;
   cancelButtonWidth?: string;
+  submitButton?: any;
 };
 
 const DashboardHeader = (props: DashboardHeaderProps) => {
@@ -33,6 +34,7 @@ const DashboardHeader = (props: DashboardHeaderProps) => {
     saveButtonWidth,
     cancelButtonWidth,
   } = props;
+
   return (
     <DashboardHeaderStyle>
       {handleBackClick && (
@@ -65,6 +67,7 @@ const DashboardHeader = (props: DashboardHeaderProps) => {
               buttonType="dark"
               width={saveButtonWidth ? saveButtonWidth : "150px"}
               height="60px"
+              type="submit"
             >
               {saveButtonText ? saveButtonText : "Save"}
             </FilledButtonStyle>

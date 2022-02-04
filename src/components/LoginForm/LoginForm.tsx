@@ -26,21 +26,20 @@ const LoginForm = (props: LoginFormProps) => {
 
   const { dispatch, state } = useLoginContext();
 
-  // if (
-  //   state.data &&
-  //   state.isLoggedIn &&
-  //   state.authToken &&
-  //   state.data.role === "user" &&
-  //   state.data.isOrganizer === false
-  // ) {
- 
-  //   history.push("/dashboard/basic-info");
-  // }
+  if (
+    state.data &&
+    state.isLoggedIn &&
+    // state.authToken &&
+    state.data.role === "user" &&
+    state.data.isOrganizer === false
+  ) {
+    history.push("/dashboard/basic-info");
+  }
   console.log(state);
   const handleLoginSubmit = (e: any) => {
     setLoading(true);
     axios
-      .post("/auth/login", {
+      .post("/v1/auth/login", {
         email: e.userName,
         password: e.password,
       })
@@ -59,7 +58,7 @@ const LoginForm = (props: LoginFormProps) => {
         });
         // history.push("/explore-venue")
 
-        history.push("/dashboard/basic-info");
+        // history.push("/dashboard/basic-info");
       })
       .catch((error) => {
         setErrorMessage(error.response?.data.message);
