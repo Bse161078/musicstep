@@ -40,7 +40,7 @@ const TrialForm = (props: TrialFormProps) => {
     setLoading(true);
 
     axios
-      .post("/users", {
+      .post("/v1/users", {
         email: e.email,
       })
       .then((response) => {

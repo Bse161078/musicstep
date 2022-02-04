@@ -17,7 +17,7 @@ const ChangePasswordForm = () => {
       //na
       axios
         .put(
-          "/users/updatePassword",
+          "/v1/users/updatePassword",
           {
             password: e.currentPassword,
             newPassword: e.confirmPassword,

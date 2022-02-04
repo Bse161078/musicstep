@@ -9,7 +9,7 @@ import { ChangePasswordStyle } from "./ChangePassword.style";
 
 export default function ChangePassword() {
   return (
-    <Dashboard>
+    <Dashboard handleSubmit={null}>
       <ChangePasswordStyle>
         <SectionHeading heading="Change Password">
           <ChangePasswordForm />

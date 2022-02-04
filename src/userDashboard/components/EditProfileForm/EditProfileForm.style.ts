@@ -73,11 +73,16 @@ export const EditProfileFormStyle = styled.div`
       display: grid;
       justify-content: center;
       grid-gap: 30px;
+      max-height: 450px;
+      height: 100%;
 
       .avatar {
         margin: auto;
-        max-width: 250px;
+        max-width: 220px;
         width: 100%;
+        height: 100%;
+        max-height: 250px;
+        border-radius: 50%;
       }
     }
   }

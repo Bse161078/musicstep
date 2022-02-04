@@ -28,7 +28,7 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
   const handleButtonSubmit = (e: any) => {
     //d
     axios
-      .patch(`/users/createCode/${id}`, {
+      .patch(`/v1/users/createCode/${id}`, {
         code: otp,
       })
       .then((res) => {

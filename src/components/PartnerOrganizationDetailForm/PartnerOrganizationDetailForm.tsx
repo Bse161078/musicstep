@@ -24,7 +24,7 @@ const PartnerOrganizationDetailForm = () => {
   };
   const handleDetailsSubmit = (value: any) => {
     axios
-      .patch(`/partners/createOrganizationInformation/${params.partnerId}`, {
+      .patch(`/v1/partners/createOrganizationInformation/${params.partnerId}`, {
         organizationName: value.organizationName,
         organizationType: value.organizationType,
         organizationURL: value.organizationURL,

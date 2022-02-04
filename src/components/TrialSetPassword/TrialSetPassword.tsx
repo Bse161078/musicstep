@@ -32,7 +32,9 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
       axios
         .patch(
           `${
-            partnerId ? "partners/createPassword/" : "/users/createPassword/"
+            partnerId
+              ? "/v1/partners/createPassword/"
+              : "/v1/users/createPassword/"
           }${partnerId ? partnerId : id}`,
           {
             password: e.password,

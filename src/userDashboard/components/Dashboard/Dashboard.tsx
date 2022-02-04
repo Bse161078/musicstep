@@ -9,10 +9,11 @@ import { DashboardStyle } from "./Dashboard.style";
 
 type DashboardProps = {
   children: any;
+  handleSubmit: any;
 };
 
 const Dashboard = (props: DashboardProps) => {
-  const { children } = props;
+  const { children, handleSubmit } = props;
 
   return (
     <>
@@ -27,7 +28,10 @@ const Dashboard = (props: DashboardProps) => {
         </div>
 
         <div className="right-side">
-          <DashboardHeader heading="Edit Profile" />
+          <DashboardHeader
+            heading="Edit Profile"
+            handleSaveClick={handleSubmit}
+          />
 
           <div>{children}</div>
         </div>

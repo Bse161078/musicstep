@@ -25,7 +25,7 @@ const TrialGeneralInfo = (props: TrailGeneralInfoProps) => {
   const handleGeneralInfoSubmit = (e: any) => {
     setLoading(true);
     axios
-      .patch(`/users/createPersonalInfo/${id}`, {
+      .patch(`/v1/users/createPersonalInfo/${id}`, {
         firstName: e.firstName,
         lastName: e.lastName,
         dob: e.dob,
