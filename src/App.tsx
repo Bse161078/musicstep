@@ -44,7 +44,7 @@ import { EventsManagment } from "./admin/components";
 const RoutesList = (props: any) => {
   const { pathname } = useLocation();
   const [showNavbar, setShowNavbar] = useState(true);
-
+  //use
   useEffect(() => {
     switch (pathname) {
       case "/explore-venue":
@@ -194,8 +194,8 @@ const RoutesList = (props: any) => {
           path="/dashboard/basic-info"
           render={() => (
             <AuthenticatedRoute redirectTo="/login">
-            <EditProfile />
-           </AuthenticatedRoute>
+              <EditProfile />
+            </AuthenticatedRoute>
           )}
         />
         <Route
