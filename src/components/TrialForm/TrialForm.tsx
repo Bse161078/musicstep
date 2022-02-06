@@ -39,7 +39,7 @@ const TrialForm = (props: TrialFormProps) => {
   const handleFreeTrialEmailSubmit = (e: any) => {
     setLoading(true);
 
-    axios
+    const res = axios
       .post("/v1/users", {
         email: e.email,
       })
@@ -56,10 +56,12 @@ const TrialForm = (props: TrialFormProps) => {
         setCurrentForm("general-info");
       })
       .catch((error) => {
-        setErrorMessage("Email already exist!");
+        setErrorMessage(error.response.data.message);
         setLoading(false);
-        console.log("error");
+        console.log(error.response.data.message);
       });
+
+    console.log(res);
   };
 
   return (

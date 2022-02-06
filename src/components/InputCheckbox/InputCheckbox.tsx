@@ -4,7 +4,7 @@ import { useField } from "formik";
 import { CheckboxWrapperStyle } from "./InputCheckbox.style";
 type CheckboxProps = {
   name: string;
-  onClick: () => void;
+  onClick: (e: any) => void;
   className: string;
   isCorrectOption: boolean;
   label?: string;

@@ -4,6 +4,8 @@ import { UploadFileStyle } from "./UploadFile.style";
 
 type UploadFileProps = {
   buttonType?: string;
+  handleClick?: (e: any) => void;
+  previewProfileImage?: string;
 };
 
 const UploadFile = (props: UploadFileProps) => {
@@ -11,10 +13,18 @@ const UploadFile = (props: UploadFileProps) => {
     <UploadFileStyle
       src={
         props.buttonType === "large"
-          ? "/images/group69.svg"
-          : "/images/icons/drag-drop-icon.svg"
+          ? !props.previewProfileImage ||
+            props.previewProfileImage?.includes("null") ||
+            props.previewProfileImage?.includes("undefined")
+            ? "/images/group69.svg"
+            : props.previewProfileImage
+          : props.previewProfileImage?.includes("null") ||
+            props.previewProfileImage?.includes("undefined")
+          ? "/images/icons/drag-drop-icon.svg"
+          : props.previewProfileImage
       }
       alt="drag drop"
+      onClick={props.handleClick}
     />
   );
 };
