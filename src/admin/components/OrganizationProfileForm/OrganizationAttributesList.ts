@@ -1,34 +1,48 @@
 export const attributesList = [
   {
-    id: '051',
-    name: 'Asian-owned',
+    id: "asianOwned",
+    name: "Asian-owned",
+    value: false,
   },
   {
-    id: '052',
-    name: 'LGBTQ-friendly',
+    id: "indigenousOwned",
+    name: "Indigenous-owned",
+    value: false,
   },
   {
-    id: '053',
-    name: 'Hispanic/Latinx-owned',
+    id: "veteranOwned",
+    name: "veteranOwned",
+    value: false,
   },
   {
-    id: '054',
-    name: 'Women-owned',
+    id: "blackOwned",
+    name: "Black-Owned",
+    value: false,
   },
   {
-    id: '056',
-    name: 'Indigenous-owned',
+    id: "LGBTQfriendly",
+    name: "LGBTQ-friendly",
+    value: false,
   },
   {
-    id: '057',
-    name: 'Black-owned',
+    id: "wheelchairAccessible",
+    name: "Wheelchair accessible",
+    value: false,
   },
   {
-    id: '058',
-    name: 'Wheelchair accessible',
+    id: "hispanicLatinxOwned",
+    name: "Hispanic/Latinx-owned",
+    value: false,
   },
   {
-    id: '059',
-    name: 'LGBTQ-owned',
+    id: "LGBTQowned",
+    name: "LGBTQ-owned",
+    value: false,
   },
-]
+
+  {
+    id: "womenOwned",
+    name: "Women-Owned",
+    value: false,
+  },
+];

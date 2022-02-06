@@ -1,7 +1,13 @@
-import React from "react";
-
-import { ContentHeader, DashboardHeader, OrganizationDetailsForm, OrganizationProfilesList } from "..";
+import React, { createRef, useEffect, useState } from "react";
+import axios from "axios";
+import {
+  ContentHeader,
+  DashboardHeader,
+  OrganizationDetailsForm,
+  OrganizationProfilesList,
+} from "..";
 import { PreviewOrganizationInfoStyle } from "./PreviewOrganizationInfo.style";
+import { useLoginContext } from "../../../context/authenticationContext";
 
 type PreviewOrganizationInfoProps = {
   setCurrentPage: (data: string) => void;
@@ -9,13 +15,32 @@ type PreviewOrganizationInfoProps = {
 
 const PreviewOrganizationInfo = (props: PreviewOrganizationInfoProps) => {
   const { setCurrentPage } = props;
+  const { state } = useLoginContext();
+  const [profilesList, setProfilesList] = useState(null);
 
+  useEffect(() => {
+    axios
+      .get("/v1/organizer/All", {
+        headers: { Authorization: `Bearer ${state.authToken}` },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setProfilesList(res.data);
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+  }, []);
+
+  const submitBasicInfoRef: any = createRef();
   return (
     <PreviewOrganizationInfoStyle>
       <DashboardHeader
         heading="Basic Info"
         handleCancelClick={() => {}}
-        handleSaveClick={() => {}}
+        handleSaveClick={() => {
+          submitBasicInfoRef.current.click();
+        }}
       />
 
       <ContentHeader
@@ -23,7 +48,7 @@ const PreviewOrganizationInfo = (props: PreviewOrganizationInfoProps) => {
         description="Details that apply across your events and venues."
       />
 
-      <OrganizationDetailsForm />
+      <OrganizationDetailsForm ref={submitBasicInfoRef} />
 
       <ContentHeader
         heading="Organizer Profiles"
@@ -31,7 +56,7 @@ const PreviewOrganizationInfo = (props: PreviewOrganizationInfoProps) => {
         handleButtonClick={() => setCurrentPage("add-organization")}
       />
 
-      <OrganizationProfilesList profilesList={[{}, {}]} />
+      <OrganizationProfilesList profilesList={profilesList} />
     </PreviewOrganizationInfoStyle>
   );
 };

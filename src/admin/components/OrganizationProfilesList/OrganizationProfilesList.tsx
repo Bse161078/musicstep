@@ -14,8 +14,9 @@ const OrganizationProfilesList = (props: OrganizationProfilesListProps) => {
       {profilesList?.length === 0 ? (
         <p className="no-data-message">No organizer profile added yet.</p>
       ) : (
+        profilesList &&
         profilesList.map((data: any, index: number) => {
-          return <OrganizationListItem />;
+          return <OrganizationListItem organizer={data} />;
         })
       )}
     </OrganizationProfilesListStyle>

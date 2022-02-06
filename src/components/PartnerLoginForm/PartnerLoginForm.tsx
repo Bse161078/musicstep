@@ -38,13 +38,16 @@ const PartnerLoginForm = () => {
             value.rememberPassword
           );
         }
+
         dispatch({
           type: "LOGIN_USER",
           payload: {
             isLoggedIn: true,
             token: response.data.tokens.access.token,
+            data: response.data.partner,
           },
         });
+
         // history.push("/explore-venue")
         history.push("/admin/metrics");
       })

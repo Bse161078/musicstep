@@ -53,15 +53,17 @@ const reducer = (state: any, action: any) => {
         data: action.payload.data,
       };
     case "UPDATE_USER":
-      localStorage.setItem("data", JSON.stringify(action.payload.data));
+      localStorage.setItem(
+        "data",
+        JSON.stringify({ ...state.data, ...action.payload.data })
+      );
 
       return {
         ...state,
-        data: action.payload.data,
+        data: { ...state.data, ...action.payload.data },
       };
     case "LOGOUT":
       localStorage.clear();
-
       return {
         ...state,
         isLoggedIn: false,

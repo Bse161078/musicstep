@@ -1,26 +1,235 @@
-import { Form, Formik } from "formik";
-import React from "react";
+import { Form, Formik, useFormikContext } from "formik";
+import axios from "axios";
+import React, { useState } from "react";
 import { ContentHeader, DashboardHeader } from "..";
-import { Slider, InputBox, InputCheckbox } from "../../../components";
+import {
+  Slider,
+  InputBox,
+  InputCheckbox,
+  MessageModal,
+} from "../../../components";
+import { useHistory } from "react-router-dom";
 import LabelWithTag from "../LabelWithTag/LabelWithTag";
 import { UploadFile } from "..";
 import { OrganizationProfileFormStyle } from "./OrganizationProfileForm.style";
 import ShowCaseYourEvents from "./ShowCaseYourEvent";
 import { policies } from "../../../mockData/policies";
 import { attributesList } from "./OrganizationAttributesList";
+import { OrganizerFormValidationSchema } from "./validation";
+import {
+  LoginContext,
+  useLoginContext,
+} from "../../../context/authenticationContext";
 type OrganizationProfileFormProps = {
   setCurrentPage: (data: string) => void;
 };
 const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
   const { setCurrentPage } = props;
+  const history = useHistory();
+  const [message, setMessage] = useState("");
+  const [heading, setHeading] = useState("");
+  //Ref
+  let logoUpload: any = React.createRef();
+  let coverPhotoUpload: any = React.createRef();
+  let additionalPhotoUpload: any = React.createRef();
+  let submitRef: any = React.createRef();
 
-  const handleProfileForm = () => {};
+  //State
+  const { state } = useLoginContext();
+  const [attributesListState, setAttributesListState] = useState(
+    attributesList
+  );
+  const [policiesState, setPoliciesState] = useState(policies);
+
+  const [previewLogoImage, setLogoImage] = useState<string>(
+    process.env.REACT_APP_BASE_URL + "/" + "null"
+    // state.data.imageUrl
+  );
+
+  const [previewCoverImage, setCoverImage] = useState<string>(
+    process.env.REACT_APP_BASE_URL + "/" + "null"
+    // state.data.imageUrl
+  );
+  const [previewAdditionalImage, setAdditionalImage] = useState<[]>([]);
+  const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
+
+  //Handler
+  const handleattributesList = (currentValue: any, index: any) => {
+    const item = { ...currentValue };
+    const tempAttributesListState = [...attributesListState];
+    item.value = !item.value;
+    tempAttributesListState[index] = { ...item };
+    setAttributesListState(tempAttributesListState);
+  };
+
+  const handlePolicies = (currentValue: any, index: any) => {
+    const item = { ...currentValue };
+    const tempPoliciesState = [...policiesState];
+    item.value = !item.value;
+    tempPoliciesState[index] = { ...item };
+    setPoliciesState(tempPoliciesState);
+  };
+  //Upload images
+
+  const handleClickLogo = (e: any) => {
+    logoUpload.current.click();
+  };
+
+  const handleClickCover = (e: any) => {
+    coverPhotoUpload.current.click();
+  };
+  const handleAdditionalPhoto = () => {
+    additionalPhotoUpload.current.click();
+  };
+
+  //Handle Upload logo
+  const handleLogoUpload = (event: any, form: any) => {
+    form.setFieldValue("logo", event.target.files[0]);
+    let reader = new FileReader();
+    let file = event.target.files[0];
+    if (file) {
+      reader.onloadend = () => {
+        const imagePreview: any = reader.result;
+        setLogoImage(imagePreview);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  //Handle Upload Coever
+  const handleCoverUpload = (event: any, form: any) => {
+    form.setFieldValue("coverPhoto", event.target.files[0]);
+    let reader = new FileReader();
+    let file = event.target.files[0];
+    if (file) {
+      reader.onloadend = () => {
+        const imagePreview: any = reader.result;
+        setCoverImage(imagePreview);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  //Handle Additional photo
+  const handleAdditionalPhotoUpload = (event: any, form: any) => {
+    form.setFieldValue("additionalPhotos", event.target.files);
+
+    // const files = event.target.files;
+    // // previewAdditionalImage, setAdditionalImage
+    // for (let i = 0; i < files.length; i++) {
+    //   alert(i);
+
+    //   let reader = new FileReader();
+    //   let file = event.target.files[0];
+    //   if (file) {
+    //     reader.onloadend = () => {
+    //       const imagePreview: any = reader.result;
+    //       const images = { ...previewAdditionalImage, imagePreview };
+    //       setAdditionalImage(images);
+    //     };
+    //     reader.readAsDataURL(file);
+    //   }
+    // }
+
+    if (event.target.files) {
+      /* Get files in array form */
+      const files = Array.from(event.target.files);
+
+      /* Map each file to a promise that resolves to an array of image URI's */
+      Promise.all(
+        files.map((file: any) => {
+          return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.addEventListener("load", (ev) => {
+              resolve(ev.target?.result);
+            });
+            reader.addEventListener("error", reject);
+            reader.readAsDataURL(file);
+          });
+        })
+      ).then(
+        (images: any) => {
+          /* Once all promises are resolved, update state with image URI array */
+          // this.setState({ imageArray: images });
+          setAdditionalImage(images);
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+    }
+  };
+  //
+  const handleProfileForm = async (e: any) => {
+    const organizationAttributes: any = {};
+    attributesListState.forEach((currentValue: any) => {
+      organizationAttributes[currentValue.id] = currentValue.value;
+    });
+
+    const saftyAndCleaness: any = {};
+    policiesState.forEach((currentValue: any) => {
+      saftyAndCleaness[currentValue.id] = currentValue.value;
+    });
+
+    const socialMediaAndMarketingLinks: any = {
+      phoneNumber: e.phoneNumber,
+      twitter: e.twitter,
+      facebook: e.facebook,
+      youtube: e.youtube,
+      instagram: e.instagram,
+    };
+
+    /////form Data
+    const bodyData = new FormData();
+
+    bodyData.append("organizerBio", e.organizerBio);
+    bodyData.append(
+      "organizationAttributes",
+      JSON.stringify(organizationAttributes)
+    );
+    bodyData.append("saftyAndCleaness", JSON.stringify(saftyAndCleaness));
+    bodyData.append(
+      "socialMediaAndMarketingLinks",
+      JSON.stringify(socialMediaAndMarketingLinks)
+    );
+
+    //Photos
+    bodyData.append("logo", e.logo);
+    bodyData.append("coverPhoto", e.coverPhoto);
+
+    if (e.additionalPhotos) {
+      const files = e.additionalPhotos;
+      for (let i = 0; i < files.length; i++) {
+        bodyData.append(`additionalPhotos`, files[i]);
+      }
+    }
+
+    const res = await axios
+      .post("/v1/organizer", bodyData, {
+        headers: { Authorization: `Bearer ${state.authToken}` },
+      })
+      .catch((error) => {
+        console.log(error.response.data.error);
+        setSuccessModalVisible(true);
+        setMessage(error.response.data.error);
+        setHeading("Error");
+      });
+    if (res) {
+      setSuccessModalVisible(true);
+      setMessage("Organizer Created Successfully");
+      setHeading("Success");
+      console.log(res.data);
+      // if (!isSuccessModalVisible)
+    }
+  };
 
   return (
     <OrganizationProfileFormStyle>
       <DashboardHeader
         handleBackClick={() => setCurrentPage("preview")}
-        handleSaveClick={() => {}}
+        handleSaveClick={() => {
+          submitRef.current.click();
+        }}
         backButtonText="Back To Basic Info"
         saveButtonText="Add"
         heading="Add Organizer Profile"
@@ -33,41 +242,77 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         <div className="child-Filewrapper">
           <div>
             <LabelWithTag label="Your logo" />
-            <UploadFile />
+            <UploadFile
+              previewProfileImage={previewLogoImage}
+              handleClick={handleClickLogo}
+            />
           </div>
           <div>
             <LabelWithTag label="Your Cover Photo" />
-            <UploadFile buttonType="large" />
+            <UploadFile
+              buttonType="large"
+              previewProfileImage={previewCoverImage}
+              handleClick={handleClickCover}
+            />
           </div>
         </div>
         <div>
           <LabelWithTag label="Your Additional Photos" tagType="Recomended" />
-          <Slider />
+          <Slider
+            handleAdditionalPhoto={handleAdditionalPhoto}
+            previewAdditionalImage={previewAdditionalImage}
+          />
         </div>
       </div>
 
       <Formik
         initialValues={{
           organizerBio: "",
-          facebookLink: "",
-          twitterLink: "",
-          instagramLink: "",
-          youtubeLink: "",
+          phoneNumber: "",
+          facebook: "",
+          twitter: "",
+          instagram: "",
+          youtube: "",
+          logo: null,
+          coverPhoto: null,
+          additionalPhotos: null,
         }}
         onSubmit={handleProfileForm}
+        validationSchema={OrganizerFormValidationSchema}
       >
-        {() => (
+        {(form) => (
           <Form className="form-wrapper">
             <div>
               <LabelWithTag
                 label="Organizer Bio"
                 description="Describe who you are, the types of events you host, or your mission. The bio is displayed on your organizer profile."
               />
+              <input
+                ref={logoUpload}
+                type={"file"}
+                style={{ display: "none" }}
+                onChange={(e) => handleLogoUpload(e, form)}
+              />
+              {console.log(form)}
+              <input
+                ref={coverPhotoUpload}
+                type={"file"}
+                style={{ display: "none" }}
+                onChange={(e) => handleCoverUpload(e, form)}
+              />
+              <input
+                ref={additionalPhotoUpload}
+                type={"file"}
+                style={{ display: "none" }}
+                onChange={(e) => handleAdditionalPhotoUpload(e, form)}
+                multiple
+              />
+
               <InputBox
                 radiusType="27px"
                 height="118px"
                 width="1380px"
-                name="name"
+                name="organizerBio"
                 placeholder="Enter Your name here"
               />
             </div>
@@ -78,14 +323,17 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                 tagType="none"
               />
               <div className="list-wrapper">
-                {attributesList.map((index) => {
+                {attributesListState.map((currentValue, index) => {
                   return (
                     <InputCheckbox
-                      name={index.name}
-                      onClick={() => {}}
+                      key={currentValue.id}
+                      name={currentValue.name}
+                      onClick={(e) => {
+                        handleattributesList(currentValue, index);
+                      }}
                       className=""
-                      label={index.name}
-                      isCorrectOption={true}
+                      label={currentValue.name}
+                      isCorrectOption={currentValue.value}
                     />
                   );
                 })}
@@ -97,15 +345,19 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                 description="Let members know what your Vaccination Policies are, if they need to bring proof, and how this impacts other measures (eg. if vaccinated members can attend without a mask)."
                 tagType="Recomended"
               />
+              handlePolicies
               <div className="policy-list">
-                {policies.map((index) => {
+                {policiesState.map((currentValue, index) => {
                   return (
                     <InputCheckbox
-                      name={index.name}
-                      onClick={() => {}}
+                      key={currentValue.id}
+                      name={currentValue.name}
+                      onClick={(e) => {
+                        handlePolicies(currentValue, index);
+                      }}
                       className=""
-                      label={index.name}
-                      isCorrectOption={true}
+                      label={currentValue.name}
+                      isCorrectOption={currentValue.value}
                     />
                   );
                 })}
@@ -126,36 +378,52 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                 />
                 <div className="socialLinks-wrapper">
                   <InputBox
-                    name="social.phoneNumber"
+                    name="phoneNumber"
                     placeholder="e.g. https://www.eventbritemusic.com/"
                     label="Phone Number"
                   />
                   <InputBox
-                    name="social.facebook"
+                    name="facebook"
                     placeholder="e.g. https://www.eventbritemusic.com/"
                     label="FaceBook"
                   />
                   <InputBox
-                    name="social.instagram"
+                    name="instagram"
                     placeholder="e.g. https://www.eventbritemusic.com/"
                     label="Instagram"
                   />
                   <InputBox
-                    name="social.twitter"
+                    name="twitter"
                     placeholder="e.g. https://www.eventbritemusic.com/"
                     label="Twitter"
                   />
                   <InputBox
-                    name="social.youtube"
+                    name="youtube"
                     label="Youtube"
                     placeholder="e.g. https://www.eventbritemusic.com/"
                   />
                 </div>
+                <input
+                  type="submit"
+                  value="Submit"
+                  ref={submitRef}
+                  style={{ display: "none" }}
+                  onClick={() => {}}
+                />
               </div>
             </div>
           </Form>
         )}
       </Formik>
+      <MessageModal
+        isModalVisible={isSuccessModalVisible}
+        setIsModalVisible={setSuccessModalVisible}
+        heading={heading}
+        message={message}
+        handleOkClick={() => {
+          heading === "Success" && setCurrentPage("preview");
+        }}
+      />
     </OrganizationProfileFormStyle>
   );
 };

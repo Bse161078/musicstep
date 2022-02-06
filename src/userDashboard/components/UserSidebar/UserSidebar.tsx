@@ -64,7 +64,7 @@ const UserSidebar = () => {
             <Link to="/dashboard/basic-info">
               <img alt="profile" src="/images/icons/edit-profile-icon.svg" />
             </Link>
-            <span onClick={() => setLogoutVisible(true)}>
+            <span onClick={() => setNotificationModalVisible(true)}>
               <img
                 alt="notification"
                 src="/images/icons/bell-icon.svg"
@@ -75,7 +75,7 @@ const UserSidebar = () => {
                 }}
               />
             </span>
-            <span onClick={() => setNotificationModalVisible(true)}>
+            <span onClick={() => setLogoutVisible(true)}>
               <img alt="logout" src="/images/icons/logout-icon.svg" />
             </span>
           </div>

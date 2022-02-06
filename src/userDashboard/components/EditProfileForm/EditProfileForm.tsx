@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Form, Formik } from "formik";
 import React, { useRef, useState } from "react";
-import { InputBox, InputCheckbox } from "../../../components";
+import { InputBox, InputCheckbox, MessageModal } from "../../../components";
 import { useLoginContext } from "../../../context/authenticationContext";
 import { OutlineButtonStyle } from "../../../styles/Common.style";
 import { Switch } from "antd";
@@ -12,28 +12,22 @@ import { BasicInfoFormValidationSchema } from "./validation";
 const EditProfileForm = React.forwardRef((props: any, ref: any) => {
   // const { textInput } = props;
   const { setSaveButtonRef } = props;
-  const { state } = useLoginContext();
+  const { state, dispatch } = useLoginContext();
+  const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
   const userData = state.data;
   const [isPublicProfileVisible, setPublicProfileVisible] = useState();
   const profileImageInput: any = useRef();
   const [profileImage, setProfileImage] = useState("");
-  console.log(process.env.REACT_APP_BASE_URL + userData.imageUrl);
-  console.log(process.env.REACT_APP_BASE_URL);
+
   const [previewProfileImage, setPreviewProfileImage] = useState<string>(
     process.env.REACT_APP_BASE_URL + "/" + userData.imageUrl
   );
 
-  const handleToggleChange = (checked: any) => {
-    console.log(checked);
-    setPublicProfileVisible(checked);
-  };
-
   const handleBackgroundImageUpload = (event: any, form: any) => {
-    console.log(form);
     form.setFieldValue("photo", event.target.files[0]);
     let reader = new FileReader();
     let file = event.target.files[0];
-    // setprofilePicture(event.target.files[0]);
+
     setProfileImage(event.target.files[0]);
 
     reader.onloadend = () => {
@@ -56,8 +50,6 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
         .catch((error) => {
           console.log(error);
         });
-      console.log(res);
-      alert("YOo");
     }
 
     const bodyData: any = {
@@ -72,7 +64,6 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
       instagram: e.instagram,
       facebook: e.facebook,
       twitter: e.twitter,
-
       publicNextReservation: e.publicNextReservation,
     };
 
@@ -83,7 +74,17 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
       .catch((error) => {
         console.log(error);
       });
-    console.log(res);
+
+    if (res) {
+      console.log(res.data);
+      setSuccessModalVisible(true);
+      dispatch({
+        type: "UPDATE_USER",
+        payload: {
+          data: res.data,
+        },
+      });
+    }
   };
 
   return (
@@ -93,17 +94,22 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
           initialValues={{
             firstName: userData.firstName,
             lastName: userData.lastName,
-            dateOfBirth: userData.dateOfBirth.slice(0, 10),
+            dateOfBirth:
+              userData.dateOfBirth && userData.dateOfBirth.slice(0, 10),
             email: userData.email,
             countryCode: "+92",
             phone: userData.phoneNumber,
             photo: "",
             isPhoneNumberPublic: userData.isPhoneNumberPublic,
-            isPublicInfo: userData.publicInfo.isPublicInfo,
-            bio: userData.publicInfo.bio,
-            instagram: userData.publicInfo.instagram,
-            facebook: userData.publicInfo.facebook,
-            twitter: userData.publicInfo.twitter,
+            isPublicInfo: (function () {
+              return userData.publicInfo
+                ? userData.publicInfo.isPublicInfo
+                : false;
+            })(),
+            bio: userData.publicInfo && userData.publicInfo.bio,
+            instagram: userData.publicInfo && userData.publicInfo.instagram,
+            facebook: userData.publicInfo && userData.publicInfo.facebook,
+            twitter: userData.publicInfo && userData.publicInfo.twitter,
             publicNextReservation: userData.publicNextReservation,
           }}
           onSubmit={handleEditProfile}
@@ -149,7 +155,7 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
                             !form.values.isPublicInfo
                           );
                         }}
-                        checked={form.values.isPublicInfo}
+                        checked={form.values.isPublicInfo || false}
                       />
                     </h1>
                     <p className="red-text">
@@ -217,7 +223,7 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
                     <img
                       // src={"/images/sample-image.webp"}
                       src={
-                        previewProfileImage
+                        !previewProfileImage.includes("null")
                           ? previewProfileImage
                           : "/images/sample-image.webp"
                       }
@@ -260,6 +266,13 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
             );
           }}
         </Formik>
+
+        <MessageModal
+          isModalVisible={isSuccessModalVisible}
+          setIsModalVisible={setSuccessModalVisible}
+          heading="Success"
+          message="Basic information updated"
+        />
       </EditProfileFormStyle>
       <PeopleWithMutualFreindsModal
         isPublicProfileVisible={isPublicProfileVisible}

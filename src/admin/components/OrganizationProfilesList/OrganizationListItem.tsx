@@ -1,20 +1,40 @@
+import { useEffect, useState } from "@storybook/addons";
 import React from "react";
 import { EditButtonIcon } from "../../../assets";
 import { OrganizationListItemStyle } from "./OrganizationProfilesList.style";
 
-export const OrganizationListItem = () => {
+type OrganizationListItemProps = {
+  organizer: any;
+};
+
+export const OrganizationListItem = (props: OrganizationListItemProps) => {
+  const { organizer } = props;
+  // const [imgUrl, setImgurl] = useState(
+  //   process.env.REACT_APP_BASE_URL + "/" + organizer.logoUrl
+  // );
+  // useEffect(() => {
+  //   // setImgurl();
+  // }, []);
+
   return (
     <OrganizationListItemStyle>
       <div className="thumb-with-content">
-        <img alt="profile thumbnail" className="profile-thumanail" src="/images/logo.png" />
+        <img
+          alt="profile thumbnail"
+          className="profile-thumanail"
+          src={
+            organizer.logoUrl
+              ? process.env.REACT_APP_BASE_URL + "/" + organizer.logoUrl
+              : "/images/logo.png"
+          }
+        />
 
         <div className="content-wrapper">
-          <h4 className="heading">Sed Ut Accusamus</h4>
+          <h4 className="heading">
+            {organizer && organizer.organizerBio.slice(0, 10)}
+          </h4>
           <p className="description">
-            Et minima est sunt blanditiis. Aperiam aliquam dolores quidem
-            incidunt. Consequatur quis ex. Odit deserunt ut. Impedit aliquid
-            dolore impedit numquam eius dolore illum qui. Magnam qui culpa
-            repellat est qui est fugit est.
+            {organizer && organizer.organizerBio.slice(10)}
           </p>
         </div>
       </div>

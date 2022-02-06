@@ -25,6 +25,15 @@ export default function Home() {
     state.data.isOrganizer === false
   ) {
     history.push("/dashboard/home");
+  } else if (
+    state.data &&
+    state.isLoggedIn &&
+    // state.authToken &&
+    state.data.isOrganizer === false &&
+    state.data.role === "admin" &&
+    state.data.isOrganizer === false
+  ) {
+    history.push("/admin/metrics");
   }
 
   return (
