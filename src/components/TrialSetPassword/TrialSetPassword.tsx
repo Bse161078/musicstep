@@ -4,6 +4,7 @@ import React, { useState } from "react";
 
 import { InputBox, Loading, TrialFormWrapper } from "..";
 import { useUserContext } from "../../context/userContext";
+import { useLoginContext } from "../../context/authenticationContext";
 import { FilledButtonStyle } from "../../styles/Common.style";
 import { TrialSetPasswordStyle } from "./TrialSetPassword.style";
 import { TrialInfoValidationSchema } from "./validation";
@@ -25,6 +26,7 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
     dispatch,
   } = useUserContext();
 
+  const loginContext = useLoginContext();
   const handleSetPasswordSubmit = (e: any) => {
     setLoading(true);
 
@@ -44,7 +46,17 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
           setLoading(false);
           if (partnerId) {
             resetPartnerForm();
-            history.replace("/partner-login");
+
+            loginContext.dispatch({
+              type: "LOGIN_USER",
+              payload: {
+                isLoggedIn: true,
+                token: response.data.tokens.access.token,
+                data: response.data.partner,
+              },
+            });
+
+            history.push("/admin/metrics");
           } else {
             dispatch({
               type: "SUBMIT_GENERAL_INFO",

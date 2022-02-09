@@ -1,6 +1,6 @@
 import { Form, Formik, useFormikContext } from "formik";
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ContentHeader, DashboardHeader } from "..";
 import {
   Slider,
@@ -22,12 +22,26 @@ import {
 } from "../../../context/authenticationContext";
 type OrganizationProfileFormProps = {
   setCurrentPage: (data: string) => void;
+  organizerProfile?: any;
 };
 const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
-  const { setCurrentPage } = props;
+  const { setCurrentPage, organizerProfile } = props;
+
   const history = useHistory();
   const [message, setMessage] = useState("");
   const [heading, setHeading] = useState("");
+  let initialValues = {
+    organizerBio: "",
+    phoneNumber: "",
+    facebook: "",
+    twitter: "",
+    instagram: "",
+    youtube: "",
+    logo: null,
+    coverPhoto: null,
+    additionalPhotos: null,
+  };
+
   //Ref
   let logoUpload: any = React.createRef();
   let coverPhotoUpload: any = React.createRef();
@@ -52,6 +66,32 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
   );
   const [previewAdditionalImage, setAdditionalImage] = useState<[]>([]);
   const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
+
+  //useEffect
+  useEffect(() => {
+    if (organizerProfile) {
+      setLogoImage(
+        process.env.REACT_APP_BASE_URL + "/" + organizerProfile.logoUrl
+      );
+      setCoverImage(
+        process.env.REACT_APP_BASE_URL + "/" + organizerProfile.coverPhotoUrl
+      );
+
+      //
+      initialValues = {
+        ...initialValues,
+        organizerBio: organizerProfile.organizerBio,
+        phoneNumber: organizerProfile.socialMediaAndMark?.phoneNumber,
+        facebook: organizerProfile.socialMediaAndMark?.facebook,
+        twitter: organizerProfile.socialMediaAndMark?.twitter,
+        instagram: organizerProfile.socialMediaAndMark?.intsagram,
+        youtube: organizerProfile.socialMediaAndMark?.youtube,
+        logo: null,
+        coverPhoto: null,
+        additionalPhotos: null,
+      };
+    }
+  }, []);
 
   //Handler
   const handleattributesList = (currentValue: any, index: any) => {
@@ -266,17 +306,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
       </div>
 
       <Formik
-        initialValues={{
-          organizerBio: "",
-          phoneNumber: "",
-          facebook: "",
-          twitter: "",
-          instagram: "",
-          youtube: "",
-          logo: null,
-          coverPhoto: null,
-          additionalPhotos: null,
-        }}
+        initialValues={initialValues}
         onSubmit={handleProfileForm}
         validationSchema={OrganizerFormValidationSchema}
       >

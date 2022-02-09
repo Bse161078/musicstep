@@ -55,6 +55,63 @@ const PartnerSignupFormStyle = styled.div`
       margin-top: 15px;
       margin-left: 25px;
     }
+
+    .input-wrapper {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      gap: 5px;
+      .input-wrapper-headings {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        span {
+          font-size: 14px;
+          color: #0c0c0c;
+          font-weight: 500;
+          margin-left: 15px;
+        }
+        .countryCode {
+          width: 30%;
+        }
+      }
+      @media (max-width: 767px) {
+        flex-direction: column;
+      }
+      .input-wrapper-phone {
+        width: 100%;
+        input {
+          margin-left: 41%;
+          height: 53px;
+          border-radius: 50px;
+          border: 1px solid #0c0c0c;
+          outline: 0;
+          padding: 15px 25px;
+          font-size: 18px;
+          width: 59%;
+          max-width: unset;
+        }
+        .flag-dropdown {
+          background-color: white;
+          height: 53px;
+          border-radius: 50px;
+          border: 1px solid #0c0c0c;
+          outline: 0;
+          padding: 15px 25px;
+          font-size: 18px;
+          width: 40%;
+          max-width: unset;
+        }
+      }
+      .input-wrapper-phone-error {
+        color: #dc3545;
+        line-height: 1.5;
+        padding-left: 30%;
+      }
+    }
   }
 `;
 

@@ -33,9 +33,9 @@ const LoginForm = (props: LoginFormProps) => {
     state.data.role === "user" &&
     state.data.isOrganizer === false
   ) {
-    history.push("/dashboard/basic-info");
+    history.push("/explore-venue");
   }
-  console.log(state);
+
   const handleLoginSubmit = (e: any) => {
     setLoading(true);
     axios

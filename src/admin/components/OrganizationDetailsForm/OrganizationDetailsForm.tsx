@@ -19,7 +19,6 @@ const OrganizationDetailsForm = React.forwardRef((props: any, ref: any) => {
   //Handle file upload
   let fileUpload: any = React.createRef();
   const handleClick = (e: any) => {
-    alert("Button click");
     fileUpload.current.click();
   };
 
