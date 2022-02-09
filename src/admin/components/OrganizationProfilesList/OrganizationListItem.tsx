@@ -5,10 +5,12 @@ import { OrganizationListItemStyle } from "./OrganizationProfilesList.style";
 
 type OrganizationListItemProps = {
   organizer: any;
+  setOrganizerProfile?: (data: any) => void;
+  setCurrentPage?: (data: any) => void;
 };
 
 export const OrganizationListItem = (props: OrganizationListItemProps) => {
-  const { organizer } = props;
+  const { organizer, setOrganizerProfile, setCurrentPage } = props;
   // const [imgUrl, setImgurl] = useState(
   //   process.env.REACT_APP_BASE_URL + "/" + organizer.logoUrl
   // );
@@ -41,7 +43,15 @@ export const OrganizationListItem = (props: OrganizationListItemProps) => {
 
       <div className="action-buttons-wrapper">
         <img src="/images/icons/preview-icon.svg" alt="preview" />
-        <EditButtonIcon />
+        <span
+          onClick={() => {
+            setOrganizerProfile && setOrganizerProfile(organizer);
+            setCurrentPage && setCurrentPage("add-organization");
+          }}
+        >
+          {" "}
+          <EditButtonIcon />
+        </span>
       </div>
     </OrganizationListItemStyle>
   );

@@ -4,10 +4,12 @@ import { OrganizationProfilesListStyle } from "./OrganizationProfilesList.style"
 
 type OrganizationProfilesListProps = {
   profilesList?: any;
+  setOrganizerProfile?: (data: any) => void;
+  setCurrentPage?: (data: any) => void;
 };
 
 const OrganizationProfilesList = (props: OrganizationProfilesListProps) => {
-  const { profilesList } = props;
+  const { profilesList, setOrganizerProfile, setCurrentPage } = props;
 
   return (
     <OrganizationProfilesListStyle>
@@ -16,7 +18,13 @@ const OrganizationProfilesList = (props: OrganizationProfilesListProps) => {
       ) : (
         profilesList &&
         profilesList.map((data: any, index: number) => {
-          return <OrganizationListItem organizer={data} />;
+          return (
+            <OrganizationListItem
+              setOrganizerProfile={setOrganizerProfile}
+              organizer={data}
+              setCurrentPage={setCurrentPage}
+            />
+          );
         })
       )}
     </OrganizationProfilesListStyle>

@@ -1,7 +1,8 @@
 import axios from "axios";
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
-
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import { InputBox, Loading, SelectBox, TrialFormWrapper } from "..";
 import { useUserContext } from "../../context/userContext";
 import { FilledButtonStyle } from "../../styles/Common.style";
@@ -30,7 +31,7 @@ const RedeemOfferForm = (props: TrailSetPasswordProps) => {
     //d
     axios
       .patch(`/v1/users/createPhonenumber/${id}`, {
-        phoneNumber: `${e.countryCode}${e.phoneNumber}`,
+        phoneNumber: `${e.phoneNumber}`,
       })
       .then((response) => {
         setLoading(false);
@@ -38,7 +39,7 @@ const RedeemOfferForm = (props: TrailSetPasswordProps) => {
         dispatch({
           type: "SUBMIT_PHONE_NUMBER",
           payload: {
-            phoneNumber: `${e.countryCode}${e.phoneNumber}`,
+            phoneNumber: `${e.phoneNumber}`,
           },
         });
         setCurrentForm("redeem-offer-verify");
@@ -68,19 +69,41 @@ const RedeemOfferForm = (props: TrailSetPasswordProps) => {
           }}
           onSubmit={handleSetPasswordSubmit}
         >
-          {({ values, setFieldValue }) => (
+          {(form) => (
             <Form className="set-password-wrapper">
-              <div className="input-wrapper">
+              {/* <div className="input-wrapper">
                 <SelectBox
                   label="Country Code"
                   name="countryCode"
                   options={[{ key: "+92", value: "+92" }]}
                   setFieldValue={setFieldValue}
                 />
+            
                 <InputBox label="Phone Number" name="phoneNumber" />
                 {errorMessage !== "" && (
                   <p className="error-message">{errorMessage}</p>
                 )}
+              </div> */}
+              <div className="input-wrapper">
+                <div className="input-wrapper-headings">
+                  <span className="countryCode">Country Code</span>{" "}
+                  <span>Phone Number</span>
+                </div>
+                <div className="input-wrapper-phone">
+                  <PhoneInput
+                    country={"pk"}
+                    value={form.values.phoneNumber}
+                    onChange={(phone) => {
+                      form.setFieldValue("phoneNumber", phone.toString());
+                    }}
+                  />
+                </div>
+                <div className="input-wrapper-phone-error">
+                  {form.errors.phoneNumber}
+                  {errorMessage !== "" && (
+                    <p className="error-message">{errorMessage}</p>
+                  )}
+                </div>
               </div>
 
               <p className="standard-message">

@@ -46,7 +46,7 @@ const PartnerOrganizationDetailForm = () => {
 
         // history.push("/free-trial");
 
-        localStorage.setItem("partnerId", params.id);
+        // localStorage.setItem("partnerId", params.id);
         history.push({
           pathname: "/free-trial",
           state: {

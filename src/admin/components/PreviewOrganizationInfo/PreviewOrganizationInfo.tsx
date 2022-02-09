@@ -11,10 +11,11 @@ import { useLoginContext } from "../../../context/authenticationContext";
 
 type PreviewOrganizationInfoProps = {
   setCurrentPage: (data: string) => void;
+  setOrganizerProfile?: (data: any) => void;
 };
 
 const PreviewOrganizationInfo = (props: PreviewOrganizationInfoProps) => {
-  const { setCurrentPage } = props;
+  const { setCurrentPage, setOrganizerProfile } = props;
   const { state } = useLoginContext();
   const [profilesList, setProfilesList] = useState(null);
 
@@ -56,7 +57,11 @@ const PreviewOrganizationInfo = (props: PreviewOrganizationInfoProps) => {
         handleButtonClick={() => setCurrentPage("add-organization")}
       />
 
-      <OrganizationProfilesList profilesList={profilesList} />
+      <OrganizationProfilesList
+        setOrganizerProfile={setOrganizerProfile}
+        profilesList={profilesList}
+        setCurrentPage={setCurrentPage}
+      />
     </PreviewOrganizationInfoStyle>
   );
 };

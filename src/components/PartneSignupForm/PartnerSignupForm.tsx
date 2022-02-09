@@ -9,7 +9,8 @@ import { Link, useHistory } from "react-router-dom";
 import { PartnerSignupFormValidationSchema } from "./validation";
 import axios from "axios";
 import { usePartnerContext } from "../../context/partnerContext ";
-
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 const PartnerSignupForm = () => {
   const { state, dispatch } = usePartnerContext();
   const [errorMessage, setErrorMessage] = useState("");
@@ -23,14 +24,12 @@ const PartnerSignupForm = () => {
   const history = useHistory();
 
   const handlePartnerSignup = (value: any) => {
-    console.log(value.countryCode + parseInt(value.phoneNumber));
-    console.log(value.countryCode);
     axios
       .post(`/v1/partners`, {
         email: value.emailAddress,
         firstName: value.firstName,
         lastName: value.lastName,
-        phoneNumber: value.countryCode + parseInt(value.phoneNumber),
+        phoneNumber: value.phoneNumber,
       })
       .then((res) => {
         // setContinueModal(true);
@@ -63,18 +62,18 @@ const PartnerSignupForm = () => {
           validationSchema={PartnerSignupFormValidationSchema}
           validateOnChange={true}
         >
-          {({ values, setFieldValue }) => (
+          {(form) => (
             <Form className="become-partner-login-form">
               <div className="inputbox-wrapper">
                 <InputBox
                   label="First Name"
                   name="firstName"
-                  value={values.firstName}
+                  value={form.values.firstName}
                 />
                 <InputBox
                   label="Last Name"
                   name="lastName"
-                  value={values.lastName}
+                  value={form.values.lastName}
                 />
               </div>
               <div>
@@ -82,19 +81,19 @@ const PartnerSignupForm = () => {
                   label="Email Address"
                   name="emailAddress"
                   placeholder="john.doe.34@gmail.com"
-                  value={values.emailAddress}
+                  value={form.values.emailAddress}
                 />
                 {errorMessage !== "" && (
                   <p className="error-message">{errorMessage}</p>
                 )}
               </div>
-              <div className="selectbox-wrapper">
+              {/* <div className="selectbox-wrapper">
                 <SelectBox
                   width="medium"
                   name="countryCode"
                   options={[{ key: "+92", value: "+92" }]}
                   label="Country Code"
-                  setFieldValue={setFieldValue}
+                  setFieldValue={form.setFieldValue}
                 />
                 <InputBox
                   label="Phone Number"
@@ -102,8 +101,27 @@ const PartnerSignupForm = () => {
                   placeholder="7700 779999"
                   name="phoneNumber"
                   width="330px"
-                  value={values.phoneNumber}
+                  value={form.values.phoneNumber}
                 />
+              </div> */}
+
+              <div className="input-wrapper">
+                <div className="input-wrapper-headings">
+                  <span className="countryCode">Country Code</span>{" "}
+                  <span>Phone Number</span>
+                </div>
+                <div className="input-wrapper-phone">
+                  <PhoneInput
+                    country={"pk"}
+                    value={form.values.phoneNumber}
+                    onChange={(phone) => {
+                      form.setFieldValue("phoneNumber", phone.toString());
+                    }}
+                  />
+                </div>
+                <div className="input-wrapper-phone-error">
+                  {form.errors.phoneNumber}
+                </div>
               </div>
               <FilledButtonStyle width="100%" height="60px">
                 SignUp For Free

@@ -12,16 +12,32 @@ import {
 import { useHistory } from "react-router-dom";
 import { FreeTrialStyle } from "./FreeTrial.style";
 import { usePartnerContext } from "../../context/partnerContext ";
+import { useLoginContext } from "../../context/authenticationContext";
 
 export default function FreeTrial() {
   const history = useHistory();
+  const loginContext = useLoginContext();
+
   let initialLoadFormName = "trial-info";
   let stateObj: any = history.location?.state;
+
   if (stateObj && stateObj.previousPath.includes("/partner-detail")) {
     console.log(stateObj);
     initialLoadFormName = "set-password";
   }
   const [currentForm, setCurrentForm] = useState(initialLoadFormName);
+
+  if (
+    loginContext.state.data &&
+    loginContext.state.isLoggedIn &&
+    // state.authToken &&
+    loginContext.state.data.role === "user" &&
+    loginContext.state.data.isOrganizer === false &&
+    currentForm === "trial-info"
+  ) {
+    history.push("/explore-venue");
+  }
+
   const { dispatch } = usePartnerContext();
   const resetPartnerForm = () => {
     dispatch({

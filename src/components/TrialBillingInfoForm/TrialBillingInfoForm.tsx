@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 
 import { CongratulationsModal, InputBox, Loading } from "..";
 import { useUserContext } from "../../context/userContext";
+import { useLoginContext } from "../../context/authenticationContext";
 import { FilledButtonStyle } from "../../styles/Common.style";
 
 import { TrialBillingInfoFormStyle } from "./TrialBillingInfoForm.style";
@@ -18,14 +19,16 @@ const TrialBillingInfoForm = () => {
   const history = useHistory();
 
   const handleCongratulationsButtonClick = () => {
-    history.push("/explore-venue");
     setIsModalVisible(false);
+    history.push("/explore-venue");
   };
 
   const {
     state: { id },
     dispatch,
   } = useUserContext();
+
+  const loginContext = useLoginContext();
 
   const handleFormSubmit = (e: any) => {
     setLoading(true);
@@ -39,6 +42,7 @@ const TrialBillingInfoForm = () => {
       })
       .then((response) => {
         setLoading(false);
+
         console.log(response);
         dispatch({
           type: "SUBMIT_TRIAL_BILLING",
@@ -47,11 +51,21 @@ const TrialBillingInfoForm = () => {
           },
         });
         setIsModalVisible(true);
+        loginContext.dispatch({
+          type: "LOGIN_USER",
+          payload: {
+            isLoggedIn: true,
+            token: response.data.tokens.access.token,
+            data: response.data.user,
+          },
+        });
+        alert("Then");
       })
       .catch((error) => {
         // setErrorMessage("Email already exist!");
         setLoading(false);
         console.log("error");
+        alert("catch");
       });
   };
 
