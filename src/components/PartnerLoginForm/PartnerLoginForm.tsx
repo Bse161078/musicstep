@@ -14,11 +14,26 @@ const PartnerLoginForm = () => {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  const {
-    state: { authToken },
-    dispatch,
-  } = useLoginContext();
-  if (authToken) {
+  const { state, dispatch } = useLoginContext();
+  // if (state.authToken) {
+  //   history.push("/admin/metrics");
+  // }
+
+  if (
+    state.data &&
+    state.isLoggedIn &&
+    // state.authToken &&
+    state.data.role === "user" &&
+    state.data.isOrganizer === false
+  ) {
+    history.push("/explore-venue");
+  } else if (
+    state.data &&
+    state.isLoggedIn &&
+    // state.authToken &&
+    state.data.role === "admin" &&
+    state.data.isOrganizer === false
+  ) {
     history.push("/admin/metrics");
   }
   const handlePartnerLoginSubmit = (value: any) => {
