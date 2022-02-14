@@ -19,28 +19,28 @@ export const DropdownsList = () => {
       >
         {(values: any, setFieldValue: any) => (
           <Form className="drodown-form-wrapper">
-            <span style={{ width: "15%" }}>
+            <span >
               <SelectBox
                 name="categoriesType"
                 setFieldValue={setFieldValue}
                 options={[{ key: "", value: "" }]}
               />
             </span>
-            <span style={{ width: "15%" }}>
+           <span>
               <SelectBox
                 name="genre"
                 setFieldValue={setFieldValue}
                 options={[{ key: "", value: "" }]}
               />
             </span>
-            <span style={{ width: "15%" }}>
+           <span>
               <SelectBox
                 name="distance"
                 setFieldValue={setFieldValue}
                 options={[{ key: "", value: "" }]}
               />
             </span>
-            <span style={{ width: "15%" }}>
+           <span>
               <SelectBox
                 name="time"
                 setFieldValue={setFieldValue}
@@ -48,7 +48,7 @@ export const DropdownsList = () => {
               />
             </span>
 
-            <span style={{ width: "20%" }}>
+            <span >
               <SelectBox
                 name="amenities"
                 setFieldValue={setFieldValue}
