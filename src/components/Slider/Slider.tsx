@@ -5,6 +5,7 @@ import { SliderStyle } from "./Slider.style";
 
 type SliderProps = {
   handleAdditionalPhoto?: () => void;
+  handleImageClick?: (e: any) => void;
   previewAdditionalImage?: any;
 };
 const Slider = (props: SliderProps) => {
@@ -26,6 +27,7 @@ const Slider = (props: SliderProps) => {
             className="carousel-image"
             alt="carousel tab"
             src={imageurl}
+            onClick={(e) => props.handleImageClick && props.handleImageClick(e)}
           />
         );
       })}
