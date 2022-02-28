@@ -37,5 +37,6 @@ export const DropdownsListStyle = styled.div`
     display: flex;
     grid-gap: 30px;
     flex-wrap: wrap;
+    flex-direction: row;
   }
-`
+`;

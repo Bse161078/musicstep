@@ -10,7 +10,7 @@ type DashboardProps = {
 
 const Dashboard = (props: DashboardProps) => {
   const { children } = props;
-
+  let submitRef: any = React.createRef();
   return (
     <DashboardStyle>
       <AdminNavBar />

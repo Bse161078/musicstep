@@ -72,5 +72,8 @@ const CreateTicketModalStyle = styled.div`
       padding: 10px 15px;
     }
   }
+  .error-message{
+    color: #dc3545;
+  }
 `;
 export default CreateTicketModalStyle;

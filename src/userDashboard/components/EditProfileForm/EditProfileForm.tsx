@@ -253,7 +253,6 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
                 {/* <input
                 type="submit"
                 ref={ref}
-                onClick={() => alert("yoo")}
                 style={{ display: "none" }}
               /> */}
                 <input

@@ -5,6 +5,7 @@ import { SliderStyle } from "./Slider.style";
 
 type SliderProps = {
   handleAdditionalPhoto?: () => void;
+  handleImageClick?: (e: any) => void;
   previewAdditionalImage?: any;
 };
 const Slider = (props: SliderProps) => {
@@ -19,16 +20,20 @@ const Slider = (props: SliderProps) => {
         alt="carousel tab"
         src="/images/partner-login-background.png"
       /> */}
-      {props.previewAdditionalImage.map((imageurl: any, index: any) => {
-        return (
-          <img
-            key={index}
-            className="carousel-image"
-            alt="carousel tab"
-            src={imageurl}
-          />
-        );
-      })}
+      {props.previewAdditionalImage &&
+        props.previewAdditionalImage.map((imageurl: any, index: any) => {
+          return (
+            <img
+              key={index}
+              className="carousel-image"
+              alt="carousel tab"
+              src={imageurl}
+              onClick={(e) =>
+                props.handleImageClick && props.handleImageClick(e)
+              }
+            />
+          );
+        })}
       {/* <img
         className="carousel-image"
         alt="carousel tab"

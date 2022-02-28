@@ -32,12 +32,8 @@ export const OrganizationListItem = (props: OrganizationListItemProps) => {
         />
 
         <div className="content-wrapper">
-          <h4 className="heading">
-            {organizer && organizer.organizerBio.slice(0, 10)}
-          </h4>
-          <p className="description">
-            {organizer && organizer.organizerBio.slice(10)}
-          </p>
+          <h4 className="heading">{organizer && organizer.organizerName}</h4>
+          <p className="description">{organizer && organizer.organizerBio}</p>
         </div>
       </div>
 

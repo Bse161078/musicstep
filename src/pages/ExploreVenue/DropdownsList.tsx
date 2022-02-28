@@ -19,31 +19,42 @@ export const DropdownsList = () => {
       >
         {(values: any, setFieldValue: any) => (
           <Form className="drodown-form-wrapper">
-            <SelectBox
-              name="categoriesType"
-              setFieldValue={setFieldValue}
-              options={[{ key: "", value: "" }]}
-            />
-            <SelectBox
-              name="genre"
-              setFieldValue={setFieldValue}
-              options={[{ key: "", value: "" }]}
-            />
-            <SelectBox
-              name="distance"
-              setFieldValue={setFieldValue}
-              options={[{ key: "", value: "" }]}
-            />
-            <SelectBox
-              name="time"
-              setFieldValue={setFieldValue}
-              options={[{ key: "", value: "" }]}
-            />
-            <SelectBox
-              name="amenities"
-              setFieldValue={setFieldValue}
-              options={[{ key: "", value: "" }]}
-            />
+            <span >
+              <SelectBox
+                name="categoriesType"
+                setFieldValue={setFieldValue}
+                options={[{ key: "", value: "" }]}
+              />
+            </span>
+           <span>
+              <SelectBox
+                name="genre"
+                setFieldValue={setFieldValue}
+                options={[{ key: "", value: "" }]}
+              />
+            </span>
+           <span>
+              <SelectBox
+                name="distance"
+                setFieldValue={setFieldValue}
+                options={[{ key: "", value: "" }]}
+              />
+            </span>
+           <span>
+              <SelectBox
+                name="time"
+                setFieldValue={setFieldValue}
+                options={[{ key: "", value: "" }]}
+              />
+            </span>
+
+            <span >
+              <SelectBox
+                name="amenities"
+                setFieldValue={setFieldValue}
+                options={[{ key: "", value: "" }]}
+              />
+            </span>
           </Form>
         )}
       </Formik>

@@ -1,19 +1,25 @@
 import React from "react";
 import { EventsManagmentListItemStyle } from "./EventsManagment.style";
-const EventsManagmentListItem = () => {
+
+type EventsManagmentListItemProps = {
+  event: any;
+};
+const EventsManagmentListItem = ({ event }: EventsManagmentListItemProps) => {
   return (
     <EventsManagmentListItemStyle>
       <div className="content-wrapper">
         <div className="event-details">
           <div>
-            <span className="event-date">Sat, 16 / </span>
-            <span className="event-name">Necessitatibus Dolore Concert</span>
+            <span className="event-date">
+              {event.date} / {event.time}{" "}
+            </span>
+            <span className="event-name">{event.title}</span>
           </div>
 
           <div>
             <span className="event-address">
               {" "}
-              at 39224 Mann Trafficway, North Carmella
+              {event.venue.location.address}
             </span>
           </div>
         </div>
@@ -22,9 +28,7 @@ const EventsManagmentListItem = () => {
           <span>360 Reservations Made</span>
         </div>
         <div className="Organizer">
-            <span className="org-name">
-                Acassmus Versatile
-            </span>
+          <span className="org-name">{event.organizer.organizerName}</span>
         </div>
       </div>
     </EventsManagmentListItemStyle>

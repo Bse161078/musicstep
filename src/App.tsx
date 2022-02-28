@@ -91,9 +91,9 @@ const RoutesList = (props: any) => {
         <Route
           path="/admin/basic-info"
           render={() => (
-            // <AuthenticatedRoute redirectTo="/partner-login">
-            <BasicInfo />
-            // </AuthenticatedRoute>
+            <AuthenticatedRoute redirectTo="/partner-login">
+              <BasicInfo />
+            </AuthenticatedRoute>
           )}
         />
 
@@ -159,17 +159,17 @@ const RoutesList = (props: any) => {
         <Route
           path="/admin/add-venueprofile"
           render={() => (
-            // <AuthenticatedRoute redirectTo="/partner-login">
-            <AddVenueProfileForm />
-            // </AuthenticatedRoute>
+            <AuthenticatedRoute redirectTo="/partner-login">
+              <AddVenueProfileForm />
+            </AuthenticatedRoute>
           )}
         />
         <Route
           path="/admin/events-managment-home"
           render={() => (
-            // <AuthenticatedRoute redirectTo="/partner-login">
-            <EventsManagementSteps />
-            // </AuthenticatedRoute>
+            <AuthenticatedRoute redirectTo="/partner-login">
+              <EventsManagementSteps />
+            </AuthenticatedRoute>
           )}
         />
         <Route

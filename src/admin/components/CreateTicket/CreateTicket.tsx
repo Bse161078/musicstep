@@ -1,18 +1,32 @@
 import React, { useState } from "react";
 import { CreateTicketStyle } from "./CreateTicket.style";
 import { CreateTicketModal } from "../../../components/CreateTicketModal";
-const CreateTicket = () => {
+
+type CreateTicketProps = {
+  setTickets?: any;
+  tickets?: any;
+};
+
+const CreateTicket = ({ setTickets, tickets }: CreateTicketProps) => {
   const [isModalVisible, setModalVisible] = useState(false);
   const handleModalVisiblity = () => {
-    setModalVisible(true)
-  }
+    setModalVisible(true);
+  };
   return (
     <>
-      <CreateTicketStyle onClick={handleModalVisiblity} className="create-ticket-wrapper">
+      <CreateTicketStyle
+        onClick={handleModalVisiblity}
+        className="create-ticket-wrapper"
+      >
         <p className="add-icon">+</p>
         <p className="create-ticket">Create a Ticket</p>
       </CreateTicketStyle>
-      <CreateTicketModal isModalVisible={isModalVisible} setIsModalVisible={setModalVisible} />
+      <CreateTicketModal
+        isModalVisible={isModalVisible}
+        setIsModalVisible={setModalVisible}
+        setTickets={setTickets}
+        tickets={tickets}
+      />
     </>
   );
 };

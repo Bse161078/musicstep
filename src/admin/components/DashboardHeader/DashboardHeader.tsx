@@ -19,6 +19,7 @@ type DashboardHeaderProps = {
   saveButtonWidth?: string;
   cancelButtonWidth?: string;
   submitButton?: any;
+  submitRef?: any;
 };
 
 const DashboardHeader = (props: DashboardHeaderProps) => {

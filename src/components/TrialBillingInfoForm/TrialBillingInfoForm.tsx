@@ -59,13 +59,11 @@ const TrialBillingInfoForm = () => {
             data: response.data.user,
           },
         });
-        alert("Then");
       })
       .catch((error) => {
         // setErrorMessage("Email already exist!");
         setLoading(false);
         console.log("error");
-        alert("catch");
       });
   };
 

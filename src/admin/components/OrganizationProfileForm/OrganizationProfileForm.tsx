@@ -30,9 +30,10 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
   const history = useHistory();
   const [message, setMessage] = useState("");
   const [heading, setHeading] = useState("");
-  let initialValues = {
+  const [initialValues, setInitialValues] = useState({
     organizerBio: "",
     phoneNumber: "",
+    organizerName: "",
     facebook: "",
     twitter: "",
     instagram: "",
@@ -40,7 +41,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
     logo: null,
     coverPhoto: null,
     additionalPhotos: null,
-  };
+  });
 
   //Ref
   let logoUpload: any = React.createRef();
@@ -50,10 +51,10 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
 
   //State
   const { state } = useLoginContext();
-  const [attributesListState, setAttributesListState] = useState(
-    attributesList
-  );
-  const [policiesState, setPoliciesState] = useState(policies);
+  const [attributesListState, setAttributesListState] = useState([
+    ...attributesList,
+  ]);
+  const [policiesState, setPoliciesState] = useState([...policies]);
 
   const [previewLogoImage, setLogoImage] = useState<string>(
     process.env.REACT_APP_BASE_URL + "/" + "null"
@@ -76,23 +77,43 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
       setCoverImage(
         process.env.REACT_APP_BASE_URL + "/" + organizerProfile.coverPhotoUrl
       );
+      const photos: [] = organizerProfile.additionalPhotosUrls.map(
+        (photo: any) => process.env.REACT_APP_BASE_URL + "/" + photo
+      );
 
-      //
-      initialValues = {
+      setAdditionalImage(photos);
+
+      const tempPoliciesState = policiesState.map((item) => {
+        item.value = organizerProfile.saftyAndCleaness[item.id];
+        return item;
+      });
+      // console.log(tempPoliciesState)
+      setPoliciesState(tempPoliciesState);
+      // console.log(attributesListState);
+
+      // console.log(organizerProfile.organizationAttributes)
+      const tempAttributesList = attributesList.map((item) => {
+        item.value = organizerProfile.organizationAttributes[item.id];
+        return item;
+      });
+      setAttributesListState(tempAttributesList);
+
+      setInitialValues({
         ...initialValues,
         organizerBio: organizerProfile.organizerBio,
-        phoneNumber: organizerProfile.socialMediaAndMark?.phoneNumber,
-        facebook: organizerProfile.socialMediaAndMark?.facebook,
-        twitter: organizerProfile.socialMediaAndMark?.twitter,
-        instagram: organizerProfile.socialMediaAndMark?.intsagram,
-        youtube: organizerProfile.socialMediaAndMark?.youtube,
-        logo: null,
-        coverPhoto: null,
+        organizerName: organizerProfile.organizerName,
+        phoneNumber: organizerProfile.socialMediaAndMarketingLinks?.phoneNumber,
+        facebook: organizerProfile.socialMediaAndMarketingLinks?.facebook,
+        twitter: organizerProfile.socialMediaAndMarketingLinks?.twitter,
+        instagram: organizerProfile.socialMediaAndMarketingLinks?.instagram,
+        youtube: organizerProfile.socialMediaAndMarketingLinks?.youtube,
+        logo: {} as any,
+        coverPhoto: {} as any,
         additionalPhotos: null,
-      };
+      });
     }
   }, []);
-
+  console.log(initialValues);
   //Handler
   const handleattributesList = (currentValue: any, index: any) => {
     const item = { ...currentValue };
@@ -123,7 +144,8 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
   };
 
   //Handle Upload logo
-  const handleLogoUpload = (event: any, form: any) => {
+  const handleLogoUpload = async (event: any, form: any) => {
+    // Sceniro 1:Add organizer
     form.setFieldValue("logo", event.target.files[0]);
     let reader = new FileReader();
     let file = event.target.files[0];
@@ -134,10 +156,36 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
       };
       reader.readAsDataURL(file);
     }
+    // Sceniro 2:Edit organizer
+    if (organizerProfile && file) {
+      const bodyData = new FormData();
+      bodyData.append("logo", file);
+      const res = await axios
+        .patch(
+          `/v1/organizer/editOrganizerProfileLogo/${organizerProfile.id}`,
+          bodyData,
+          {
+            headers: { Authorization: `Bearer ${state.authToken}` },
+          }
+        )
+        .catch((error) => {
+          console.log(error.response.data.error);
+          setSuccessModalVisible(true);
+          setMessage(error.response.data.error);
+          setHeading("Error");
+        });
+      if (res) {
+        setSuccessModalVisible(true);
+        setMessage("Organizer Logo Updated Successfully");
+        setHeading("Success");
+        console.log(res.data);
+        // if (!isSuccessModalVisible)
+      }
+    }
   };
 
   //Handle Upload Coever
-  const handleCoverUpload = (event: any, form: any) => {
+  const handleCoverUpload = async (event: any, form: any) => {
     form.setFieldValue("coverPhoto", event.target.files[0]);
     let reader = new FileReader();
     let file = event.target.files[0];
@@ -148,34 +196,38 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
       };
       reader.readAsDataURL(file);
     }
+    console.log("cover");
+    if (organizerProfile && file) {
+      const bodyData = new FormData();
+      bodyData.append("coverPhoto", file);
+      const res = await axios
+        .patch(
+          `/v1/organizer/editOrganizerProfileCoverPhoto/${organizerProfile.id}`,
+          bodyData,
+          {
+            headers: { Authorization: `Bearer ${state.authToken}` },
+          }
+        )
+        .catch((error) => {
+          console.log(error.response.data.error);
+          setSuccessModalVisible(true);
+          setMessage(error.response.data.error);
+          setHeading("Error");
+        });
+      if (res) {
+        setSuccessModalVisible(true);
+        setMessage("Organizer Cover Photo Updated Successfully");
+        setHeading("Success");
+        // if (!isSuccessModalVisible)
+      }
+    }
   };
 
   //Handle Additional photo
-  const handleAdditionalPhotoUpload = (event: any, form: any) => {
+  const handleAdditionalPhotoUpload = async (event: any, form: any) => {
     form.setFieldValue("additionalPhotos", event.target.files);
-
-    // const files = event.target.files;
-    // // previewAdditionalImage, setAdditionalImage
-    // for (let i = 0; i < files.length; i++) {
-    //   alert(i);
-
-    //   let reader = new FileReader();
-    //   let file = event.target.files[0];
-    //   if (file) {
-    //     reader.onloadend = () => {
-    //       const imagePreview: any = reader.result;
-    //       const images = { ...previewAdditionalImage, imagePreview };
-    //       setAdditionalImage(images);
-    //     };
-    //     reader.readAsDataURL(file);
-    //   }
-    // }
-
-    if (event.target.files) {
-      /* Get files in array form */
+    if (event.target.files && !organizerProfile) {
       const files = Array.from(event.target.files);
-
-      /* Map each file to a promise that resolves to an array of image URI's */
       Promise.all(
         files.map((file: any) => {
           return new Promise((resolve, reject) => {
@@ -190,7 +242,6 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
       ).then(
         (images: any) => {
           /* Once all promises are resolved, update state with image URI array */
-          // this.setState({ imageArray: images });
           setAdditionalImage(images);
         },
         (error) => {
@@ -198,10 +249,86 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         }
       );
     }
+
+    const files = event.target.files;
+    if (organizerProfile && files) {
+      const bodyData = new FormData();
+
+      for (let i = 0; i < files.length; i++) {
+        bodyData.append(`additionalPhotos`, files[i]);
+      }
+
+      const res = await axios
+        .patch(
+          `/v1/organizer/editOrganizerProfileAdditionalPhotos/${organizerProfile.id}`,
+          bodyData,
+          {
+            headers: { Authorization: `Bearer ${state.authToken}` },
+          }
+        )
+        .catch((error) => {
+          console.log(error.response.data.error);
+          setSuccessModalVisible(true);
+          setMessage(error.response.data.error);
+          setHeading("Error");
+        });
+      if (res) {
+        setSuccessModalVisible(true);
+        setMessage("Organizer Additional photos Updated Successfully");
+        setHeading("Success");
+        console.log(res.data);
+        // if (!isSuccessModalVisible)
+        const photos: [] = res.data.additionalPhotosUrls.map(
+          (photo: any) => process.env.REACT_APP_BASE_URL + "/" + photo
+        );
+        photos.reverse();
+        setAdditionalImage(photos);
+      }
+    }
+  };
+
+  //
+  const handleImageClick = async (e: any) => {
+    if (organizerProfile) {
+      const imgUrl = e.target.src.replace(
+        process.env.REACT_APP_BASE_URL + "/",
+        ""
+      );
+      const body = {
+        additionalPhoto: imgUrl,
+      };
+      const res = await axios
+        .patch(
+          `/v1/organizer/removeAdditionalPhotos/${organizerProfile.id}`,
+          body,
+          {
+            headers: { Authorization: `Bearer ${state.authToken}` },
+          }
+        )
+        .catch((error) => {
+          console.log(error.response.data.error);
+          setSuccessModalVisible(true);
+          setMessage(error.response.data.error);
+          setHeading("Error");
+        });
+      if (res) {
+        setSuccessModalVisible(true);
+        setMessage("Photo remove Successfully");
+        setHeading("Success");
+        console.log(res.data);
+        // if (!isSuccessModalVisible)
+        const photos: [] = res.data.additionalPhotosUrls.map(
+          (photo: any) => process.env.REACT_APP_BASE_URL + "/" + photo
+        );
+        photos.reverse();
+        setAdditionalImage(photos);
+      }
+    }
   };
   //
   const handleProfileForm = async (e: any) => {
     const organizationAttributes: any = {};
+
     attributesListState.forEach((currentValue: any) => {
       organizationAttributes[currentValue.id] = currentValue.value;
     });
@@ -223,6 +350,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
     const bodyData = new FormData();
 
     bodyData.append("organizerBio", e.organizerBio);
+    bodyData.append("organizerName", e.organizerName);
     bodyData.append(
       "organizationAttributes",
       JSON.stringify(organizationAttributes)
@@ -234,32 +362,66 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
     );
 
     //Photos
-    bodyData.append("logo", e.logo);
-    bodyData.append("coverPhoto", e.coverPhoto);
+    // Add organizer
+    if (!organizerProfile) {
+      bodyData.append("logo", e.logo);
+      bodyData.append("coverPhoto", e.coverPhoto);
 
-    if (e.additionalPhotos) {
-      const files = e.additionalPhotos;
-      for (let i = 0; i < files.length; i++) {
-        bodyData.append(`additionalPhotos`, files[i]);
+      if (e.additionalPhotos) {
+        const files = e.additionalPhotos;
+        for (let i = 0; i < files.length; i++) {
+          bodyData.append(`additionalPhotos`, files[i]);
+        }
       }
-    }
 
-    const res = await axios
-      .post("/v1/organizer", bodyData, {
-        headers: { Authorization: `Bearer ${state.authToken}` },
-      })
-      .catch((error) => {
-        console.log(error.response.data.error);
+      const res = await axios
+        .post("/v1/organizer", bodyData, {
+          headers: { Authorization: `Bearer ${state.authToken}` },
+        })
+        .catch((error) => {
+          console.log(error.response.data.error);
+          setSuccessModalVisible(true);
+          setMessage(error.response.data.error);
+          setHeading("Error");
+        });
+      if (res) {
         setSuccessModalVisible(true);
-        setMessage(error.response.data.error);
-        setHeading("Error");
-      });
-    if (res) {
-      setSuccessModalVisible(true);
-      setMessage("Organizer Created Successfully");
-      setHeading("Success");
-      console.log(res.data);
-      // if (!isSuccessModalVisible)
+        setMessage("Organizer created Successfully");
+        setHeading("Success");
+        console.log(res.data);
+      }
+    } else {
+      var body: any = {
+        organizerBio: e.organizerBio,
+
+        organizationAttributes: organizationAttributes,
+
+        saftyAndCleaness: saftyAndCleaness,
+
+        socialMediaAndMarketingLinks: socialMediaAndMarketingLinks,
+      };
+
+      const res = await axios
+        .patch(
+          `/v1/organizer/editOrganizerProfile/${organizerProfile.id}`,
+          body,
+          {
+            headers: { Authorization: `Bearer ${state.authToken}` },
+          }
+        )
+        .catch((error) => {
+          console.log(error.response.data.error);
+          setSuccessModalVisible(true);
+          setMessage(error.response.data.error);
+          setHeading("Error");
+        });
+      if (res) {
+        setSuccessModalVisible(true);
+        setMessage("Organizer Profile Updated Successfully");
+        setHeading("Success");
+        console.log(res.data);
+        // if (!isSuccessModalVisible)
+      }
     }
   };
 
@@ -277,7 +439,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
       />
 
       <ShowCaseYourEvents />
-
+      {/* 
       <div className="file-wrapper">
         <div className="child-Filewrapper">
           <div>
@@ -301,18 +463,68 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
           <Slider
             handleAdditionalPhoto={handleAdditionalPhoto}
             previewAdditionalImage={previewAdditionalImage}
+            handleImageClick={handleImageClick}
           />
         </div>
-      </div>
+      </div> */}
 
       <Formik
         initialValues={initialValues}
         onSubmit={handleProfileForm}
         validationSchema={OrganizerFormValidationSchema}
+        enableReinitialize={true}
       >
         {(form) => (
           <Form className="form-wrapper">
+            <div className="file-wrapper">
+              <div className="child-Filewrapper">
+                <div>
+                  <LabelWithTag label="Your logo" />
+                  <UploadFile
+                    previewProfileImage={previewLogoImage}
+                    handleClick={handleClickLogo}
+                  />
+                  {form.touched.logo && form.errors.logo && (
+                    <span className="error-message">{form.errors.logo}</span>
+                  )}
+                </div>
+
+                <div>
+                  <LabelWithTag label="Your Cover Photo" />
+                  <UploadFile
+                    buttonType="large"
+                    previewProfileImage={previewCoverImage}
+                    handleClick={handleClickCover}
+                  />
+                  {form.touched.coverPhoto && form.errors.coverPhoto && (
+                    <span className="error-message">
+                      {form.errors.coverPhoto}
+                    </span>
+                  )}
+                </div>
+              </div>
+              <div>
+                <LabelWithTag
+                  label="Your Additional Photos"
+                  tagType="Recomended"
+                />
+                <Slider
+                  handleAdditionalPhoto={handleAdditionalPhoto}
+                  previewAdditionalImage={previewAdditionalImage}
+                  handleImageClick={handleImageClick}
+                />
+              </div>
+            </div>
+
             <div>
+              <LabelWithTag label="Organizer Name" description="" />
+              <InputBox
+                radiusType="27px"
+                height="60px"
+                width="1380px"
+                name="organizerName"
+                placeholder="Enter Your name here"
+              />
               <LabelWithTag
                 label="Organizer Bio"
                 description="Describe who you are, the types of events you host, or your mission. The bio is displayed on your organizer profile."
@@ -323,7 +535,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                 style={{ display: "none" }}
                 onChange={(e) => handleLogoUpload(e, form)}
               />
-              {console.log(form)}
+              {/* {console.log(form)} */}
               <input
                 ref={coverPhotoUpload}
                 type={"file"}
@@ -451,7 +663,11 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         heading={heading}
         message={message}
         handleOkClick={() => {
-          heading === "Success" && setCurrentPage("preview");
+          heading === "Success" &&
+            !organizerProfile &&
+            setCurrentPage("preview");
+
+          setSuccessModalVisible(false);
         }}
       />
     </OrganizationProfileFormStyle>

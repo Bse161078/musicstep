@@ -12,7 +12,12 @@ export const AddVenueProfileFormStyle = styled.div`
     .child-Filewrapper {
       display: flex;
       gap: 30px;
+      .error-message{
+        color: #dc3545;
+        display: block;
+      }
     }
+  
   }
 
   .socialLinks-wrapper {
