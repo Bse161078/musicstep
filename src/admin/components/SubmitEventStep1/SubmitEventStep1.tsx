@@ -407,7 +407,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                       data: form.values,
                     },
                   });
-                  // history.push("/admin/add-venueprofile");
+                  history.push("/admin/add-venueprofile");
                 }}
               >
                 Add Venue
