@@ -16,7 +16,6 @@ app.listen(port, () => {
 // "start": "node server.js",
 
 
-//REACT_APP_BASE_URL=https://music-pass-nodejs.herokuapp.com/
 //http://localhost:3000 
 
 ///aqee:  https://music-pass-backend.herokuapp.com/
