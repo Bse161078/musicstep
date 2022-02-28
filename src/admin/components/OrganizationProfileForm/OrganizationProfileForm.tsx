@@ -33,6 +33,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
   const [initialValues, setInitialValues] = useState({
     organizerBio: "",
     phoneNumber: "",
+    organizerName: "",
     facebook: "",
     twitter: "",
     instagram: "",
@@ -100,6 +101,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
       setInitialValues({
         ...initialValues,
         organizerBio: organizerProfile.organizerBio,
+        organizerName: organizerProfile.organizerName,
         phoneNumber: organizerProfile.socialMediaAndMarketingLinks?.phoneNumber,
         facebook: organizerProfile.socialMediaAndMarketingLinks?.facebook,
         twitter: organizerProfile.socialMediaAndMarketingLinks?.twitter,
@@ -348,6 +350,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
     const bodyData = new FormData();
 
     bodyData.append("organizerBio", e.organizerBio);
+    bodyData.append("organizerName", e.organizerName);
     bodyData.append(
       "organizationAttributes",
       JSON.stringify(organizationAttributes)
@@ -436,7 +439,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
       />
 
       <ShowCaseYourEvents />
-
+      {/* 
       <div className="file-wrapper">
         <div className="child-Filewrapper">
           <div>
@@ -463,7 +466,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
             handleImageClick={handleImageClick}
           />
         </div>
-      </div>
+      </div> */}
 
       <Formik
         initialValues={initialValues}
@@ -473,7 +476,55 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
       >
         {(form) => (
           <Form className="form-wrapper">
+            <div className="file-wrapper">
+              <div className="child-Filewrapper">
+                <div>
+                  <LabelWithTag label="Your logo" />
+                  <UploadFile
+                    previewProfileImage={previewLogoImage}
+                    handleClick={handleClickLogo}
+                  />
+                  {form.touched.logo && form.errors.logo && (
+                    <span className="error-message">{form.errors.logo}</span>
+                  )}
+                </div>
+
+                <div>
+                  <LabelWithTag label="Your Cover Photo" />
+                  <UploadFile
+                    buttonType="large"
+                    previewProfileImage={previewCoverImage}
+                    handleClick={handleClickCover}
+                  />
+                  {form.touched.coverPhoto && form.errors.coverPhoto && (
+                    <span className="error-message">
+                      {form.errors.coverPhoto}
+                    </span>
+                  )}
+                </div>
+              </div>
+              <div>
+                <LabelWithTag
+                  label="Your Additional Photos"
+                  tagType="Recomended"
+                />
+                <Slider
+                  handleAdditionalPhoto={handleAdditionalPhoto}
+                  previewAdditionalImage={previewAdditionalImage}
+                  handleImageClick={handleImageClick}
+                />
+              </div>
+            </div>
+
             <div>
+              <LabelWithTag label="Organizer Name" description="" />
+              <InputBox
+                radiusType="27px"
+                height="60px"
+                width="1380px"
+                name="organizerName"
+                placeholder="Enter Your name here"
+              />
               <LabelWithTag
                 label="Organizer Bio"
                 description="Describe who you are, the types of events you host, or your mission. The bio is displayed on your organizer profile."

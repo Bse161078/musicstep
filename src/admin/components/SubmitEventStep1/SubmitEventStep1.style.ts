@@ -22,6 +22,10 @@ export const SubmitEventStep1Style = styled.div`
     width: 70%;
     grid-template-columns: 0.5fr 0.5fr 0.5fr;
     gap:30px;
+    
+    .error-message {
+      color: #dc3545;
+    }
   }
 
   .thirdrow-wrapper {
@@ -29,6 +33,11 @@ export const SubmitEventStep1Style = styled.div`
     grid-template-columns: 1.5fr 0.3fr 1.5fr;
     gap:30px;
     max-width:1330px;
+
+    .error-message {
+      color: #dc3545;
+    }
+
   }
 
    .fourth-row-wrapper {

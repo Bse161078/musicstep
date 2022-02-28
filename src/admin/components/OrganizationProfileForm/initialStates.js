@@ -3,6 +3,7 @@ export const initialStates = {
   coverPhoto: null,
   additionalPhotos: [],
   organizerBio: "",
+  organizerName: "",
   organizationAttributes: {
     asianOwned: false,
     veteranOwned: false,

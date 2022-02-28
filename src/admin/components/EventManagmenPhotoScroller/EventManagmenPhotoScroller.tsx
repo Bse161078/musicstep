@@ -4,11 +4,30 @@ import { EventManagmenPhotoScrollerStyle } from "./EventManagmenPhotoScroller.st
 import { RadioButtonStyle } from "../RadioButton/RadioButton.style";
 import { Slider } from "../../../components";
 
-const EventManagmenPhotoScroller = () => {
+type EventManagmenPhotoScrollerProps = {
+  setField?: any;
+  venuePhotoSameAsOrganizerPhoto?: Boolean;
+  previewVenuePhoto?: any;
+  handleAdditionalPhoto?: any;
+  handleImageClick?: any;
+  previewVenuePhotoOfOrganizer?: any;
+};
+const EventManagmenPhotoScroller = ({
+  setField,
+  venuePhotoSameAsOrganizerPhoto,
+  previewVenuePhoto,
+  handleAdditionalPhoto,
+  previewVenuePhotoOfOrganizer,
+}: EventManagmenPhotoScrollerProps) => {
   const onChange = (e: any) => {
     setValue(e.target.value);
+    setField(
+      "venuePhotoSameAsOrganizerPhoto",
+      e.target.value === 1 ? true : false
+    );
   };
   const [value, setValue] = useState(1);
+
   return (
     <EventManagmenPhotoScrollerStyle>
       <p className="venue-heading">Venue Photos</p>
@@ -24,7 +43,14 @@ const EventManagmenPhotoScroller = () => {
           </Radio>
         </Radio.Group>
         <div className="scroller-div">
-          <Slider />
+          {venuePhotoSameAsOrganizerPhoto ? (
+            <Slider previewAdditionalImage={previewVenuePhotoOfOrganizer} />
+          ) : (
+            <Slider
+              handleAdditionalPhoto={handleAdditionalPhoto}
+              previewAdditionalImage={previewVenuePhoto}
+            />
+          )}
         </div>
       </RadioButtonStyle>
     </EventManagmenPhotoScrollerStyle>

@@ -2,7 +2,10 @@ import React from "react";
 import { EventsManagmentListStyle } from "./EventsManagment.style";
 import EventsManagmentListItem from "./EventsManagmentListITems";
 
-const EventsManagmentList = () => {
+type EventsManagmentListProps = {
+  events: any;
+};
+const EventsManagmentList = ({ events }: EventsManagmentListProps) => {
   return (
     <EventsManagmentListStyle>
       <div className="table-header">
@@ -11,20 +14,23 @@ const EventsManagmentList = () => {
         <h3 className="header-title">Organizer</h3>
       </div>
 
-      <div className="event-date">
+      {events.map((event: any) => (
+        <EventsManagmentListItem event={event} />
+      ))}
+      {/* <div className="event-date">
         October 2021 <span className="date-border" />
-      </div>
+      </div> */}
+      {/* <EventsManagmentListItem />
       <EventsManagmentListItem />
       <EventsManagmentListItem />
-      <EventsManagmentListItem />
-      <EventsManagmentListItem />
+      <EventsManagmentListItem /> */}
 
-      <div className="event-date">
+      {/* <div className="event-date">
         November 2021 <span className="date-border" />
-      </div>
+      </div> */}
+      {/* <EventsManagmentListItem />
       <EventsManagmentListItem />
-      <EventsManagmentListItem />
-      <EventsManagmentListItem />
+      <EventsManagmentListItem /> */}
     </EventsManagmentListStyle>
   );
 };

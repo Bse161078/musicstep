@@ -1,12 +1,13 @@
-export const initialValues = {
-  social: {
-    facebook: "",
-    twitter: "",
-    instagram: "",
-    phoneNumber: "",
-    youtube: "",
-  },
-  venueBio: "",
-  categoryTags: "",
-  locations: "",
+export const initialValues = {  
+facebook: "",
+twitter: "",
+instagram: "",
+phoneNumber: "",
+youtube: "",
+venueBio: "",
+categoryTags: "",
+locations: "",
+logo:"",
+coverPhoto:"",
 };
+

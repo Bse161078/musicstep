@@ -20,17 +20,20 @@ const Slider = (props: SliderProps) => {
         alt="carousel tab"
         src="/images/partner-login-background.png"
       /> */}
-      {props.previewAdditionalImage.map((imageurl: any, index: any) => {
-        return (
-          <img
-            key={index}
-            className="carousel-image"
-            alt="carousel tab"
-            src={imageurl}
-            onClick={(e) => props.handleImageClick && props.handleImageClick(e)}
-          />
-        );
-      })}
+      {props.previewAdditionalImage &&
+        props.previewAdditionalImage.map((imageurl: any, index: any) => {
+          return (
+            <img
+              key={index}
+              className="carousel-image"
+              alt="carousel tab"
+              src={imageurl}
+              onClick={(e) =>
+                props.handleImageClick && props.handleImageClick(e)
+              }
+            />
+          );
+        })}
       {/* <img
         className="carousel-image"
         alt="carousel tab"

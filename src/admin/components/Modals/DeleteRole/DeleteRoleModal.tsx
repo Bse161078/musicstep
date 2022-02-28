@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ModalWrapper } from "../ModalWrapper";
 import { DeleteRoleModalStyle } from "./DeleteRole.style";
@@ -6,9 +5,10 @@ type DeleteRoleModalProps = {
   isModalVisible?: boolean;
   setIsModalVisible?: any;
   message?: any;
+  handleOkClick?: any;
 };
 const DeleteRoleModal = (props: DeleteRoleModalProps) => {
-  const { isModalVisible, setIsModalVisible, message } = props;
+  const { isModalVisible, setIsModalVisible, message, handleOkClick } = props;
   return (
     <ModalWrapper
       heading="Delete Role?"
@@ -16,6 +16,7 @@ const DeleteRoleModal = (props: DeleteRoleModalProps) => {
       rightButtonTitle="Delete Role"
       isModalVisible={isModalVisible}
       setIsModalVisible={setIsModalVisible}
+      handleOkClick={handleOkClick}
     >
       <DeleteRoleModalStyle>
         <img

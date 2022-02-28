@@ -1,27 +1,27 @@
-import React from 'react'
-import { ModalWrapperStyle } from './ModalWrapper.style'
+import React from "react";
+import { ModalWrapperStyle } from "./ModalWrapper.style";
 
 import {
   FilledButtonStyle,
   OutlineButtonStyle,
-} from '../../../../styles/Common.style'
+} from "../../../../styles/Common.style";
 
 type ModalWrapperProps = {
-  children: any
-  heading?: string
-  description?: string
-  leftButtonTitle?: string
-  rightButtonTitle?: string
-  button?: React.ReactNode
-  width?: string
-  isModalVisible?: boolean
-  setIsModalVisible?: any
-  height?: string
-  handleOkClick?: any
-  isFooter?: boolean
-  boldDescription?: string
-  handleDescriptionClick?: () => void
-}
+  children: any;
+  heading?: string;
+  description?: string;
+  leftButtonTitle?: string;
+  rightButtonTitle?: string;
+  button?: React.ReactNode;
+  width?: string;
+  isModalVisible?: boolean;
+  setIsModalVisible?: any;
+  height?: string;
+  handleOkClick?: any;
+  isFooter?: boolean;
+  boldDescription?: string;
+  handleDescriptionClick?: () => void;
+};
 const ModalWrapper = (props: ModalWrapperProps) => {
   const {
     children,
@@ -36,19 +36,19 @@ const ModalWrapper = (props: ModalWrapperProps) => {
     description,
     boldDescription,
     handleDescriptionClick,
-    isFooter = true
-  } = props
+    isFooter = true,
+  } = props;
 
   // const showModal = () => {
   //   setIsModalVisible(true);
   // };
 
   const handleOk = () => {
-    setIsModalVisible(false)
-  }
+    setIsModalVisible(false);
+  };
   const handleCancel = () => {
-    setIsModalVisible(false)
-  }
+    setIsModalVisible(false);
+  };
   return (
     <>
       <ModalWrapperStyle
@@ -58,7 +58,7 @@ const ModalWrapper = (props: ModalWrapperProps) => {
         onCancel={handleCancel}
         className="target"
         title={heading}
-        width={width ? width : '660px'}
+        width={width ? width : "660px"}
         footer={
           isFooter
             ? button
@@ -93,6 +93,6 @@ const ModalWrapper = (props: ModalWrapperProps) => {
         {children}
       </ModalWrapperStyle>
     </>
-  )
-}
-export default ModalWrapper
+  );
+};
+export default ModalWrapper;
