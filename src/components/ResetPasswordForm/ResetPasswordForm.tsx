@@ -1,51 +1,118 @@
 import { Form, Formik } from "formik";
-import React from "react";
-import { InputBox } from "..";
+import React, { useState } from "react";
+import axios from "axios";
+import { InputBox, MessageModal, Loading } from "..";
 import {
   FilledButtonStyle,
   OutlineButtonStyle,
 } from "../../styles/Common.style";
+import { FormWrapper } from "../../components";
 
 import { ResetPasswordFormStyle } from "./ResetPasswordForm.style";
+import { useHistory, useParams, useLocation } from "react-router-dom";
+import queryString from "query-string";
+import { ResetPasswordFormValidationSchema } from "./validation";
 
 type ResetPasswordFormProps = {
-  setCurrentSection: any;
+  // setCurrentSection: any;
 };
 
-const ResetPasswordForm = (props: ResetPasswordFormProps) => {
-  const { setCurrentSection } = props;
+const ResetPasswordForm = ({ match }: any) => {
+  const history = useHistory();
+  // const { setCurrentSection } = props;
+
+  const [messageHeading, setMessageHeading] = useState("");
+  const [message, setMessage] = useState("");
+  const loc = useLocation();
+  const value = queryString.parse(loc.search);
+  const [loading, setLoading] = useState(false);
+  console.log(value.token);
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const successModalClose = () => {
+    //   setCurrentSection("reset-password");
+    messageHeading === "Success" && history.push("/");
+
+    setIsModalVisible(false);
+  };
+
+  const handleResetSubmit = (e: any) => {
+    setLoading(true);
+    axios
+      .post(`/v1/auth/reset-password?token=${value.token}`, {
+        password: e.password,
+      })
+      .then((response) => {
+        setLoading(false);
+        setIsModalVisible(true);
+        setIsModalVisible(true);
+        setMessageHeading("Success");
+        setMessage(
+          "We have successfully  reset your password. Please loging with your new password."
+        );
+      })
+      .catch((error) => {
+        setMessage(error.response?.data.message);
+        setIsModalVisible(true);
+        setMessageHeading("Error");
+        setLoading(false);
+      });
+  };
+
   return (
-    <ResetPasswordFormStyle>
-      <p className="description">Please enter and confirm your new password.</p>
+    <FormWrapper
+      leftImage="/images/login/login-side.png"
+      topHeading="Reset Password"
+      formHeading="Hey John Doe!"
+    >
+      {loading && <Loading />}
+      <ResetPasswordFormStyle>
+        <p className="description">
+          Please enter and confirm your new password.
+        </p>
 
-      <Formik
-        initialValues={{ newPassword: "", confirmPassword: "" }}
-        onSubmit={() => {
-          setCurrentSection("login");
-        }}
-      >
-        {() => (
-          <Form className="form-wrapper">
-            <InputBox label="New Password" name="newPassword" />
-            <InputBox
-              label="Confirm New Password"
-              name="Confirm New Password"
-            />
+        <Formik
+          initialValues={{ password: "", confirmPassword: "" }}
+          onSubmit={handleResetSubmit}
+          validationSchema={ResetPasswordFormValidationSchema}
+        >
+          {() => (
+            <Form className="form-wrapper">
+              <InputBox type="password" label="New Password" name="password" />
+              <InputBox
+                type="password"
+                label="Confirm New Password"
+                name="confirmPassword"
+              />
 
-            <FilledButtonStyle buttonType="dark" width="100%" height="60px">
-              Reset Password
-            </FilledButtonStyle>
-          </Form>
-        )}
-      </Formik>
+              <FilledButtonStyle
+                type="submit"
+                buttonType="dark"
+                width="100%"
+                height="60px"
+              >
+                Reset Password
+              </FilledButtonStyle>
+            </Form>
+          )}
+        </Formik>
 
-      <div className="form-footer">
-        <p>Go back to</p>
-        <OutlineButtonStyle width="100%" height="60px">
-          Login Page
-        </OutlineButtonStyle>
-      </div>
-    </ResetPasswordFormStyle>
+        <div className="form-footer">
+          <p>Go back to</p>
+          <OutlineButtonStyle width="100%" height="60px">
+            Login Page
+          </OutlineButtonStyle>
+        </div>
+      </ResetPasswordFormStyle>
+      <MessageModal
+        handleOkClick={successModalClose}
+        isModalVisible={isModalVisible}
+        setIsModalVisible={setIsModalVisible}
+        message={message}
+        heading={messageHeading}
+      />
+    </FormWrapper>
   );
 };
 
