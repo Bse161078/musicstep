@@ -106,7 +106,6 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
 
   return (
     <>
-      <Loading />
       <DashboardHeader
         heading="Submit An Event"
         backButtonText="Back To Step 1"
