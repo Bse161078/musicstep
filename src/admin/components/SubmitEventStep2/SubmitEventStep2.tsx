@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import { SubmitEventStep2Style } from "./SubmitEventStep2.style";
 import { CreateTicket, TicketInfoCard, DashboardHeader } from "..";
-import { MessageModal } from "../../../components";
+import { MessageModal, Loading } from "../../../components";
 import { useLoginContext } from "../../../context/authenticationContext";
 import { useHistory } from "react-router-dom";
+import { useEventContext } from "../../../context/eventContext";
 
 type SubmitEventStep2Props = {
   setCurrentStep: any;
@@ -13,10 +14,12 @@ type SubmitEventStep2Props = {
 };
 
 const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
+  const EventStateContext = useEventContext();
+  console.log(EventStateContext.state);
   const history = useHistory();
   const { setCurrentStep, eventData } = props;
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [tickets, setTickets] = useState([]);
+  const [tickets, setTickets] = useState(EventStateContext.state.tickets);
   const { state } = useLoginContext();
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState("");
@@ -94,11 +97,16 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
       setMessageType("success");
       setIsModalVisible(true);
       //  console.log(res.data);
+      EventStateContext.dispatch({
+        type: "REMOVE_EVENT_INFO",
+        payload: {},
+      });
     }
   };
 
   return (
     <>
+      <Loading />
       <DashboardHeader
         heading="Submit An Event"
         backButtonText="Back To Step 1"
@@ -107,6 +115,12 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
           createEventHandlet();
         }}
         handleCancelClick={() => {
+          EventStateContext.dispatch({
+            type: "SAVE_TICKET",
+            payload: {
+              tickets: tickets,
+            },
+          });
           setCurrentStep(1);
         }}
         handleBackClick={() => {
@@ -128,7 +142,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
         <div className="tickets-wrapper">
           <CreateTicket setTickets={setTickets} tickets={tickets} />
 
-          {tickets.map((ticket: any, index) => (
+          {tickets.map((ticket: any, index: any) => (
             <TicketInfoCard
               heading={ticket.title}
               creditNo={"7"}

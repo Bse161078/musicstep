@@ -38,6 +38,7 @@ import {
 } from "./userDashboard/pages";
 import { UserContextProvider } from "./context/userContext";
 import { PartnerContextProvider } from "./context/partnerContext ";
+import { EventContextProvider } from "./context/eventContext";
 import { LoginContextProvider } from "./context/authenticationContext";
 import { EventsManagment } from "./admin/components";
 import { ForgotPasswordForm } from "./components/ForgotPasswordForm";
@@ -243,11 +244,13 @@ function App() {
       <LoginContextProvider>
         <UserContextProvider>
           <PartnerContextProvider>
-            <BaseStyle />
-            <BrowserRouter>
-              <RoutesList />
-              <Footer />
-            </BrowserRouter>
+            <EventContextProvider>
+              <BaseStyle />
+              <BrowserRouter>
+                <RoutesList />
+                <Footer />
+              </BrowserRouter>
+            </EventContextProvider>
           </PartnerContextProvider>
         </UserContextProvider>
       </LoginContextProvider>

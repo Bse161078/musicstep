@@ -1,6 +1,8 @@
 import React from "react";
 import { EventsManagmentListStyle } from "./EventsManagment.style";
 import EventsManagmentListItem from "./EventsManagmentListITems";
+import { Loading } from "../../../components/Loading";
+import moment from "moment";
 
 type EventsManagmentListProps = {
   events: any;
@@ -14,23 +16,26 @@ const EventsManagmentList = ({ events }: EventsManagmentListProps) => {
         <h3 className="header-title">Organizer</h3>
       </div>
 
-      {events.map((event: any) => (
-        <EventsManagmentListItem event={event} />
-      ))}
-      {/* <div className="event-date">
-        October 2021 <span className="date-border" />
-      </div> */}
-      {/* <EventsManagmentListItem />
-      <EventsManagmentListItem />
-      <EventsManagmentListItem />
-      <EventsManagmentListItem /> */}
-
-      {/* <div className="event-date">
-        November 2021 <span className="date-border" />
-      </div> */}
-      {/* <EventsManagmentListItem />
-      <EventsManagmentListItem />
-      <EventsManagmentListItem /> */}
+      {
+        // events.length > 0 && <span>{events[0]._id.month}</span>
+        events.length > 0 &&
+          events.map((element: any) => {
+            const eventData = element["eventsByDate"];
+            return (
+              <span>
+                <div className="event-date event-date-bold">
+                  {moment()
+                    .month(element["_id"].month - 1)
+                    .format("MMM")}{" "}
+                  {element["_id"].year} <span className="date-border" />
+                </div>
+                {eventData.map((event: any) => (
+                  <EventsManagmentListItem event={event} />
+                ))}
+              </span>
+            );
+          })
+      }
     </EventsManagmentListStyle>
   );
 };

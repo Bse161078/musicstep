@@ -46,6 +46,7 @@ const TrialForm = (props: TrialFormProps) => {
       .then((response) => {
         setLoading(false);
         console.log(response);
+
         dispatch({
           type: "SUBMIT_EMAIL",
           payload: {

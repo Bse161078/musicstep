@@ -2,7 +2,11 @@ import React, { createContext, Dispatch, useContext, useReducer } from "react";
 
 type EventAction =
   | {
-      type: "SAVE";
+      type: "SAVE_EVENT";
+      payload: any;
+    }
+  | {
+      type: "SAVE_TICKET";
       payload: any;
     }
   | {
@@ -17,17 +21,21 @@ export type EventContextType = {
 
 const initialContent: any = {
   title: "",
-  date: "",
-  startingTime: "",
-  endingTime: "",
-  country: "",
-  state: "",
-  city: "",
+  date: new Date(),
+  startingTime: new Date().toTimeString().substring(0, 5),
+  endingTime: new Date().toTimeString().substring(0, 5),
+  country: null,
+  state: null,
+  city: null,
   venue: "",
   organizer: "",
   eventDescription: "",
   venuePhotoSameAsOrganizerPhoto: true,
   additionalPhotos: null,
+  selectedOrganizerId: "",
+  organizersList: [],
+  previewVenuePhoto: [],
+  tickets: [],
 };
 
 export const EventContext = createContext<EventContextType>({
@@ -40,23 +48,52 @@ export const useEventContext = () => useContext(EventContext);
 
 const reducer = (state: any, action: any) => {
   switch (action.type) {
-    case "SAVE":
-      alert("Save Event Info");
+    case "SAVE_EVENT":
       console.log(action.payload);
       return {
         ...state,
-        title: action.payload.title,
-        date: action.payload.date,
-        startingTime: action.payload.startingTime,
-        endingTime: action.payload.endingTime,
-        country: action.payload.country,
-        state: action.payload.state,
-        city: action.payload.city,
-        venue: action.payload.venue,
-        organizer: action.payload.organizer,
-        eventDescription: action.payload.eventDescription,
+        title: action.payload.data.title,
+        date: action.payload.data.date,
+        startingTime: action.payload.data.startingTime,
+        endingTime: action.payload.data.endingTime,
+        country: action.payload.data.country,
+        state: action.payload.data.state,
+        city: action.payload.data.city,
+        venue: action.payload.data.venue,
+        organizer: action.payload.data.organizer,
+        eventDescription: action.payload.data.eventDescription,
+        additionalPhotos: action.payload.data.additionalPhotos,
         venuePhotoSameAsOrganizerPhoto:
-          action.payload.venuePhotoSameAsOrganizerPhoto,
+          action.payload.data.venuePhotoSameAsOrganizerPhoto,
+        selectedOrganizerId: action.payload.selectedOrganizerId,
+        organizersList: action.payload.organizersList,
+        previewVenuePhoto: action.payload.previewVenuePhoto,
+      };
+    case "SAVE_TICKET":
+      console.log(action.payload);
+      return {
+        ...state,
+        tickets: action.payload.tickets,
+      };
+    case "REMOVE_EVENT_INFO":
+      return {
+        ...state,
+        title: "",
+        date: new Date(),
+        startingTime: new Date().toTimeString().substring(0, 5),
+        endingTime: new Date().toTimeString().substring(0, 5),
+        country: null,
+        state: null,
+        city: null,
+        venue: "",
+        organizer: "",
+        eventDescription: "",
+        venuePhotoSameAsOrganizerPhoto: true,
+        additionalPhotos: null,
+        selectedOrganizerId: "",
+        organizersList: [],
+        previewVenuePhoto: [],
+        tickets: [],
       };
     default:
       return state;

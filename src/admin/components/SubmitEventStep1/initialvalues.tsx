@@ -1,8 +1,8 @@
 export const initialValues = {
   title: "",
   date: "",
-  startingTime: "",
-  endingTime: "",
+  startingTime: new Date(),
+  endingTime: new Date(),
   country: "",
   state: "",
   city: "",

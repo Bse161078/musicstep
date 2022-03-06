@@ -188,7 +188,7 @@ const AddVenueProfileForm = () => {
       });
     if (res) {
       setSuccessModalVisible(true);
-      setMessage("Organizer created Successfully");
+      setMessage("Venue created Successfully");
       setHeading("Success");
       console.log(res.data);
     }

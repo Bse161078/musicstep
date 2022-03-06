@@ -34,9 +34,6 @@ export const SubmitEventStep1Style = styled.div`
     gap:30px;
     max-width:1330px;
 
-    .error-message {
-      color: #dc3545;
-    }
 
   }
 
@@ -46,5 +43,8 @@ export const SubmitEventStep1Style = styled.div`
 
   .addvenue-btn {
     margin-top: 30px;
+  }
+  .error-message {
+    color: #dc3545;
   }
 `;
