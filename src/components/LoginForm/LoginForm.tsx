@@ -98,7 +98,9 @@ const LoginForm = (props: LoginFormProps) => {
 
               <span
                 className="forgot-password"
-                onClick={() => setCurrentSection("forgot-password")}
+                onClick={() => {
+                  history.push("/forgot-password");
+                }}
               >
                 Forgot Password?
               </span>

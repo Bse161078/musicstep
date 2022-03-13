@@ -38,8 +38,11 @@ import {
 } from "./userDashboard/pages";
 import { UserContextProvider } from "./context/userContext";
 import { PartnerContextProvider } from "./context/partnerContext ";
+import { EventContextProvider } from "./context/eventContext";
 import { LoginContextProvider } from "./context/authenticationContext";
 import { EventsManagment } from "./admin/components";
+import { ForgotPasswordForm } from "./components/ForgotPasswordForm";
+import { ResetPasswordForm } from "./components/ResetPasswordForm";
 
 const RoutesList = (props: any) => {
   const { pathname } = useLocation();
@@ -71,11 +74,17 @@ const RoutesList = (props: any) => {
         <Route
           path="/admin/events-management"
           exact
-          render={() => <EventsManagment />}
+          render={() => (
+            <AuthenticatedRoute redirectTo="/partner-login">
+              <EventsManagment />
+            </AuthenticatedRoute>
+          )}
         />
 
         <Route path="/" exact component={Home} />
         <Route path="/login" component={Login} />
+        <Route path="/forgot-password" component={ForgotPasswordForm} />
+        <Route path="/reset-password" component={ResetPasswordForm} />
         <Route path="/free-trial" component={FreeTrial} />
         <Route path="/partner-login" component={PartnerLogin} />
         <Route path="/partner-detail/:partnerId" component={PartnerSignup} />
@@ -235,11 +244,13 @@ function App() {
       <LoginContextProvider>
         <UserContextProvider>
           <PartnerContextProvider>
-            <BaseStyle />
-            <BrowserRouter>
-              <RoutesList />
-              <Footer />
-            </BrowserRouter>
+            <EventContextProvider>
+              <BaseStyle />
+              <BrowserRouter>
+                <RoutesList />
+                <Footer />
+              </BrowserRouter>
+            </EventContextProvider>
           </PartnerContextProvider>
         </UserContextProvider>
       </LoginContextProvider>

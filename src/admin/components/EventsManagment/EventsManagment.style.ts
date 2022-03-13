@@ -17,6 +17,10 @@ export const EventsManagmentListStyle = styled.div`
   flex-direction: column;
   gap: 10px;
 
+  .event-date-name{
+    display: flex;
+    align-items: baseline;
+  }
   .event-date {
     color: #0c0c0c;
     opacity: 0.7;
@@ -24,14 +28,16 @@ export const EventsManagmentListStyle = styled.div`
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
-    grid-gap: 30px;
+    grid-gap: 10px;
     margin: 20px 0 10px;
-    padding-left: 30px;
-    
-    .date-border {
-      border-bottom: 2px solid #0C0C0C;
-      opacity: 0.5;
-    }
+    padding-left: 20px;
+  
+  }
+  .event-date-bold {
+    font-weight: bold;
+  }
+  .event-address{
+    padding-left: 20px; 
   }
 
   .table-header {
@@ -46,9 +52,14 @@ export const EventsManagmentListStyle = styled.div`
       grid-template-columns: 50px 1fr 1fr 106px;
     }
   }
+  .date-border {
+    border-bottom: 2px solid #0C0C0C;
+    opacity: 0.5;
+  }
 `;
 
 export const EventsManagmentListItemStyle = styled.div`
+  margin-bottom:10px; 
   .content-wrapper {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;

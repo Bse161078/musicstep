@@ -1,3 +1,4 @@
+import moment from "moment";
 import React from "react";
 import { EventsManagmentListItemStyle } from "./EventsManagment.style";
 
@@ -5,13 +6,14 @@ type EventsManagmentListItemProps = {
   event: any;
 };
 const EventsManagmentListItem = ({ event }: EventsManagmentListItemProps) => {
+  const week = ["Sun", "Mon", "Thu", "Wed", "Thr", "Fri", "Sat"];
   return (
     <EventsManagmentListItemStyle>
       <div className="content-wrapper">
         <div className="event-details">
-          <div>
+          <div className="event-date-name">
             <span className="event-date">
-              {event.date} / {event.time}{" "}
+              {week[moment(event.date).day()]}, {moment(event.date).date()} /
             </span>
             <span className="event-name">{event.title}</span>
           </div>
@@ -19,7 +21,7 @@ const EventsManagmentListItem = ({ event }: EventsManagmentListItemProps) => {
           <div>
             <span className="event-address">
               {" "}
-              {event.venue.location.address}
+              {event.venueInfo[0].location.address}
             </span>
           </div>
         </div>
@@ -28,7 +30,9 @@ const EventsManagmentListItem = ({ event }: EventsManagmentListItemProps) => {
           <span>360 Reservations Made</span>
         </div>
         <div className="Organizer">
-          <span className="org-name">{event.organizer.organizerName}</span>
+          <span className="org-name">
+            {event.organizerInfo[0].organizerName}
+          </span>
         </div>
       </div>
     </EventsManagmentListItemStyle>

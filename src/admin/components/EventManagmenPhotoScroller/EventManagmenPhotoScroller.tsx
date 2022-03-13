@@ -23,7 +23,8 @@ const EventManagmenPhotoScroller = ({
     setValue(e.target.value);
     setField(
       "venuePhotoSameAsOrganizerPhoto",
-      e.target.value === 1 ? true : false
+      e.target.value
+      // === 1 ? true : false
     );
   };
   const [value, setValue] = useState(1);
@@ -32,13 +33,17 @@ const EventManagmenPhotoScroller = ({
     <EventManagmenPhotoScrollerStyle>
       <p className="venue-heading">Venue Photos</p>
       <RadioButtonStyle>
-        <Radio.Group onChange={onChange} value={value} className="radio-btns">
-          <Radio value={1}>
+        <Radio.Group
+          onChange={onChange}
+          value={venuePhotoSameAsOrganizerPhoto}
+          className="radio-btns"
+        >
+          <Radio value={true}>
             <span className="radio-description">
               Use same from Organizer Profile
             </span>
           </Radio>
-          <Radio value={2}>
+          <Radio value={false}>
             <span className="radio-description">Add Specific Photos</span>
           </Radio>
         </Radio.Group>

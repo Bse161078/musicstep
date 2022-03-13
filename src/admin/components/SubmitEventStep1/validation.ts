@@ -5,35 +5,17 @@ import { date } from "yup/lib/locale";
 export const EventFormValidationSchema = yup.object().shape({
 
   
-    title: yup.string().required("title is required"),
-    // date: yup.string().required("date is required"),
-    date: yup.date().min(new Date()).required("date is required"),
-    // startingTime: yup.string().required("Start time is required") 
-    // .matches(
-    //   /^((1[0-2]|0?[1-9]):([0-5][0-9]) ?([AaPp][Mm]))$/,
-    //   "Invalid format (HH:MM am/pm)"
-    // )
-    // ,
-    // endingTime:yup.string().required("End time is required") 
-    // .matches(
-    //   /^((1[0-2]|0?[1-9]):([0-5][0-9]) ?([AaPp][Mm]))$/,
-    //   "Invalid format (HH:MM am/pm)"
-    // ),
-    startingTime: yup.string().matches(
-      /^((1[0-2]|0?[1-9]):([0-5][0-9]) ?([AaPp][Mm]))$/,
-      "Invalid format (HH:MM am/pm)"
-    )
+    title: yup.string().required("Title is required"),
+    date: yup.date().min(new Date()).required("Event Date is required").nullable(), 
+    startingTime: yup.string()
     .test(
         'not empty',
         'Start time cant be empty',
         function(value) {
           return !!value;
         }
-      ),
-   endingTime: yup.string().matches(
-    /^((1[0-2]|0?[1-9]):([0-5][0-9]) ?([AaPp][Mm]))$/,
-    "Invalid format (HH:MM am/pm)"
-  )
+      ).nullable(),
+   endingTime: yup.string()
   .test(
     'not empty',
     'End time cant be empty',
@@ -41,6 +23,7 @@ export const EventFormValidationSchema = yup.object().shape({
       return !!value;
     }
   )
+  .nullable()
   .test(
     "start_time_test",
     "End time must be after start time",
@@ -51,11 +34,11 @@ export const EventFormValidationSchema = yup.object().shape({
     }
   ),
 //   endingTime: yup.string(),
-    country: yup.string().required("Country is required"),
-    state: yup.string().required("State is required"),
-    city: yup.string().required("City is required"),
-    venue: yup.string().required("Venue is required"),
-    organizer: yup.string().required("Organizer is required"),
+    country: yup.string().required("Country is required").nullable(),
+    state: yup.string().required("State is required").nullable(),
+    city: yup.string().required("City is required").nullable(),
+    venue: yup.string().required("Venue is required").nullable(),
+    organizer: yup.string().required("Organizer is required").nullable(),
     eventDescription: yup.string().required("Event Description is required"), 
 });
 
