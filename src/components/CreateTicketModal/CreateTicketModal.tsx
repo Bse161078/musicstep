@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CreateTicketModalStyle from "./CreateTicketModal.style";
 import { InputBox, MessageModal, SelectBox } from "..";
-import { Formik, Form } from "formik";
+import { useFormikContext, Formik, Form } from "formik";
 import { ModalWrapper } from "../../admin/components/Modals/ModalWrapper";
 import { TicketFormValidationSchema } from "./validation";
 
@@ -23,14 +23,21 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
     ticket,
   } = props;
   const [message, setmessage] = useState("");
+  const [selectedDiscount, setSelectedDiscount] = useState(0);
+  const [ticketForm, setTicketForm] = useState<any>(null);
   const submitRef: any = React.createRef();
+  const ticketFromRef: any = React.createRef();
+
   let initialValues: any = {
     title: ticket ? ticket.title : "",
     numberOfTickets: ticket ? ticket.numberOfTickets : "",
     description: ticket ? ticket.description : "",
     price: ticket ? ticket.price : 0,
     discount: ticket ? ticket.discount : 0,
+    credits: ticket ? ticket.credits : 0,
   };
+
+  console.log(ticketFromRef);
   const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
 
   const handleSubmit = (e: any, { resetForm }: any) => {
@@ -52,8 +59,23 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
         description: "",
         price: 0,
         discount: 0,
+        credits: 0,
       };
     }
+  };
+
+  const getCredits = (price: number, discount: number) => {
+    switch (discount) {
+      case 50:
+        return price / 3.75;
+      case 60:
+        return price / 4.5;
+      case 70:
+        return price / 5.25;
+      case 80:
+        return price / 6;
+    }
+    return 1;
   };
 
   const handleFormSubmit = () => {
@@ -76,6 +98,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
             onSubmit={handleSubmit}
             validationSchema={TicketFormValidationSchema}
             enableReinitialize={true}
+            ref={ticketFromRef}
           >
             {(form) => (
               <Form className="form-wrapper">
@@ -89,6 +112,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                     label="Ticekts Available"
                     placeholder="50"
                     name="numberOfTickets"
+                    type="number"
                   />
                 </div>
 
@@ -105,11 +129,13 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                         placeholder="$50"
                         name="price"
                         width="660px"
+                        type="number"
                       />
                       <span>
                         <SelectBox
                           label="Discount(%)"
                           name="discount"
+                          disabled={form.values.price === 0}
                           options={[
                             { key: "50", value: "50%" },
                             { key: "60", value: "60%" },
@@ -117,6 +143,16 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                             { key: "80", value: "80%" },
                           ]}
                           setFieldValue={form.setFieldValue}
+                          handleSelectBoxChange={(e: any) => {
+                            console.log(e);
+                            form.setFieldValue(
+                              "credits",
+
+                              Math.round(
+                                getCredits(form.values.price, parseInt(e))
+                              )
+                            );
+                          }}
                         />
                         {/* <InputBox
                         label="Discount(%)"
@@ -143,16 +179,24 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                     <div>
                       <div className="retail-price">
                         <p className="price-label">Retail Price</p>
-                        <h3 className="title">50$</h3>
+                        <h3 className="title">{form.values.price}$</h3>
                       </div>
                       <div className="payout-price">
                         <p className="price-label">Payout to brand</p>
-                        <h3 className="title">25$(50%)</h3>
+                        <h3 className="title">
+                          {form.values.price && form.values.discount
+                            ? Math.round(
+                                form.values.price *
+                                  (form.values.discount * 0.01)
+                              )
+                            : 0}
+                          $({form.values.discount}%)
+                        </h3>
                       </div>
                     </div>
                     <div className="right-section">
                       <p className="price-label">Value in Musicpass Credits</p>
-                      <h3 className="title">7 Credits</h3>
+                      <h3 className="title">{form.values.credits} Credits</h3>
                     </div>
                   </div>
                 </div>
@@ -163,6 +207,15 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                   style={{ display: "none" }}
                   onClick={() => {}}
                 />
+
+                {/* {parseInt(form.values.discount) !== selectedDiscount &&
+                  setSelectedDiscount(parseInt(form.values.discount))} */}
+                {/* 
+                {parseInt(form.values.discount) !== selectedDiscount &&
+                  form.setFieldValue("credits", 10)} */}
+
+                {/* {console.log(parseInt(form.values.discount), selectedDiscount)} */}
+                {/* {setTicketForm(form)} */}
                 {console.log(form)}
               </Form>
             )}

@@ -1,10 +1,30 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { NavbarWithSearch, VenueCard } from "../../components";
 import { DropdownsList } from "./DropdownsList";
 import { ExploreVenueStyle } from "./ExploreVenue.style";
+import { useLoginContext } from "../../context/authenticationContext";
 
 export default function ExploreVenue() {
+  const { state, dispatch } = useLoginContext();
+  const [venues, setVenues] = useState([]);
+  useEffect(() => {
+    axios
+      .get("/v1/users/allEventsByVenues", {
+        headers: { Authorization: `Bearer ${state.authToken}` },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setVenues(res.data);
+        // setEvents(res.data);
+        // setEvents(res.data);
+        // setProfilesList(res.data);
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+  }, []);
+
   return (
     <>
       <NavbarWithSearch />
@@ -13,7 +33,9 @@ export default function ExploreVenue() {
         <div />
 
         <section className="venues-list">
-          <VenueCard pageUrl="/explore-venue/organizer-profile" />
+          {venues.length > 0 &&
+            venues.map((venue: any) => <VenueCard venue={venue} />)}
+          {/* <VenueCard pageUrl="/explore-venue/organizer-profile" />
 
           <VenueCard pageUrl="/explore-venue/organizer-profile" />
 
@@ -21,7 +43,7 @@ export default function ExploreVenue() {
 
           <VenueCard pageUrl="/explore-venue/organizer-profile" />
 
-          <VenueCard pageUrl="/explore-venue/organizer-profile" />
+          <VenueCard pageUrl="/explore-venue/organizer-profile" /> */}
         </section>
 
         <section>

@@ -1,13 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
-import { SelectWithInput } from '..'
-import { NavbarWithSearchStyle } from './NavbarWithSearch.style'
+import { SelectWithInput } from "..";
+import { NavbarWithSearchStyle } from "./NavbarWithSearch.style";
 
 const NavbarWithSearch = () => {
   return (
     <NavbarWithSearchStyle>
-      <Link className="logo-wrapper" to="/">
+      <Link className="logo-wrapper" to="/explore-venue">
         <img src="/images/logo.png" alt="logo" />
       </Link>
 
@@ -27,7 +27,7 @@ const NavbarWithSearch = () => {
         </Link>
       </div>
     </NavbarWithSearchStyle>
-  )
-}
+  );
+};
 
-export default NavbarWithSearch
+export default NavbarWithSearch;

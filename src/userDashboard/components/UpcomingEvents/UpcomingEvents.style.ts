@@ -37,6 +37,7 @@ export const FormRowStyle = styled.div`
 
   .thumbnail {
     max-width: 56px;
+    border-radius: 10%;
   }
   .button-wrapper {
     display: flex;

@@ -17,6 +17,8 @@ type TicketInfoCardProps = {
   handleDeleteTicket?: any;
   ticket?: any;
   handleEditTicket?: any;
+  ticketIndex?: number;
+  event?: any;
 };
 
 const TicketInfoCard = (props: TicketInfoCardProps) => {
@@ -38,6 +40,8 @@ const TicketInfoCard = (props: TicketInfoCardProps) => {
       <TicketModal
         isModalVisible={isTicketModalVisible}
         setIsModalVisible={setTicketModalVisible}
+        ticketIndex={props.ticketIndex ? props.ticketIndex : 0}
+        event={props.event}
       />
       <TicketInfoCardStyle disableTicketsAvailbilty>
         <h2>{props.heading}</h2>

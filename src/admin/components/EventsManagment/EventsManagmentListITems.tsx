@@ -31,7 +31,7 @@ const EventsManagmentListItem = ({ event }: EventsManagmentListItemProps) => {
         </div>
         <div className="Organizer">
           <span className="org-name">
-            {event.organizerInfo[0].organizerName}
+            {event.organizerInfo[0] && event.organizerInfo[0].organizerName}
           </span>
         </div>
       </div>

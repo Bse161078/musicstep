@@ -75,7 +75,22 @@ export const CollapseStyle = styled(Collapse)`
   background: #F7F7F7;
   border: 0;
   border-radius: 24px;
-
+   height:auto;
+   .ant-collapse {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: 'tnum', "tnum";
+    background-color: #fafafa;
+    border: 1px solid #d9d9d9;
+    border-bottom: 0;
+    border-radius: 5px;
+}
   .ant-collapse-header {
     color: #100840;
     font-weight: bold;

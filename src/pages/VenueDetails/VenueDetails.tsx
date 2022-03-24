@@ -1,8 +1,9 @@
-import { Form, Formik } from 'formik'
-import React from 'react'
-import { LabelWithTag } from '../../admin/components'
-import { attributesList } from '../../admin/components/OrganizationProfileForm/OrganizationAttributesList'
-
+import { Form, Formik } from "formik";
+import React, { useEffect, useState } from "react";
+import { LabelWithTag } from "../../admin/components";
+import { attributesList } from "../../admin/components/OrganizationProfileForm/OrganizationAttributesList";
+import {} from "../../admin/components/";
+import axios from "axios";
 import {
   LogoWithHeading,
   NavbarWithSearch,
@@ -10,22 +11,27 @@ import {
   Reviews,
   InputCheckbox,
   CustomCarousel,
-} from '../../components'
-import { OutlineButtonStyle } from '../../styles/Common.style'
-import { TabPaneStyle, TabsStyle } from '../../styles/Fields.style'
+} from "../../components";
+import { OutlineButtonStyle } from "../../styles/Common.style";
+import { TabPaneStyle, TabsStyle } from "../../styles/Fields.style";
 
 import {
   HeadingWithContentStyle,
   VenueDetailsStyle,
-} from './VenueDetails.style'
+} from "./VenueDetails.style";
+import { useLocation } from "react-router-dom";
+
+import { useLoginContext } from "../../context/authenticationContext";
+import { Spinner } from "../../components/Spinner";
+import { amenties } from "../../mockData/amenties";
 
 type HeadingWithContentProps = {
-  heading?: string
-  description: string[]
-}
+  heading?: string;
+  description: string[];
+};
 
 const HeadingWithContent = (props: HeadingWithContentProps) => {
-  const { heading, description } = props
+  const { heading, description } = props;
 
   return (
     <HeadingWithContentStyle>
@@ -33,45 +39,90 @@ const HeadingWithContent = (props: HeadingWithContentProps) => {
 
       <p className="description">{description}</p>
     </HeadingWithContentStyle>
-  )
-}
+  );
+};
 
 export default function VenueDetails() {
+  const location: any = useLocation();
+  const { state, dispatch } = useLoginContext();
+  const [events, setEvents] = React.useState(null);
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [amentiesState, setamentiesState] = useState(amenties);
+  const venueDetail = location.state.venueDetail;
+  console.log(venueDetail);
+
+  function callback() {
+    setIsLoading(true);
+    axios
+      .get(`/v1/users/allEventsOfVenue?venueId=${venueDetail._id}`, {
+        headers: { Authorization: `Bearer ${state.authToken}` },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setEvents(res.data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+  }
+
+  useEffect(() => {
+    const tempAmenties = amentiesState.map((item) => {
+      item.value = venueDetail.amenities[item.id];
+      return item;
+    });
+    setamentiesState(tempAmenties);
+    // setAttributesListState(tempAttributesList);
+  }, []);
+
   return (
     <>
       <NavbarWithSearch />
       <VenueDetailsStyle>
         <div className="left-side">
-          <CustomCarousel />
-          <LogoWithHeading />
+          <CustomCarousel
+            images={[
+              venueDetail.coverPhotoUrl,
+              ...venueDetail.additionalPhotosUrls,
+            ]}
+          />
+          <LogoWithHeading
+            heading={venueDetail.name}
+            logo={venueDetail.logoUrl}
+          />
 
           <div className="buttons-wrapper">
-            <OutlineButtonStyle>Night Club</OutlineButtonStyle>
-            <OutlineButtonStyle>Special Permit</OutlineButtonStyle>
+            {venueDetail.categoryTags.map((categoryTag: any) => (
+              <OutlineButtonStyle>{categoryTag}</OutlineButtonStyle>
+            ))}
           </div>
 
-          <TabsStyle defaultActiveKey="1">
+          <TabsStyle
+            defaultActiveKey="1"
+            onChange={(key) => {
+              if (key === "2") {
+                callback();
+              }
+            }}
+          >
             <TabPaneStyle tab="Info" key="1">
-              <HeadingWithContent
-                description={[
-                  'Asperiores eveniet tempora possimus ut. Vel minus voluptas et quo. Minus molestias fugiat et. Ut deserunt provident ab id numquam quo laborum. Asperiores facilis voluptates voluptatibus magnam. Et est quo expedita molestiae vel porro. Dicta est earum ab dignissimos sit. Dolorem deserunt eius. Ut quia dolore alias. Ad possimus tenetur consequatur quae odit deleniti magnam qui quidem. Et distinctio et rerum illo dolor. Voluptatem impedit enim sint ducimus corrupti eaque suscipit fuga. Asperiores eveniet tempora possimus ut. Vel minus voluptas et quo. Minus molestias fugiat et. Ut deserunt provident ab id numquam quo laborum. Asperiores facilis voluptates voluptatibus magnam. Et est quo expedita molestiae vel porro. Dicta est earum ab dignissimos sit. Dolorem deserunt eius. Ut quia dolore alias. Ad possimus tenetur consequatur quae odit deleniti magnam qui quidem. Et distinctio et rerum illo dolor. Voluptatem impedit enim sint ducimus corrupti eaque suscipit fuga. Asperiores eveniet tempora possimus ut. Vel minus voluptas et quo. Minus molestias fugiat et. Ut deserunt provident ab id numquam quo laborum. Asperiores facilis voluptates voluptatibus magnam. Et est quo expedita molestiae vel porro. Dicta est earum ab dignissimos sit. Dolorem deserunt eius. Ut quia dolore alias. Ad possimus tenetur consequatur quae odit deleniti magnam qui quidem. Et distinctio et rerum illo dolor. Voluptatem impedit enim sint ducimus corrupti eaque suscipit fuga.',
-                ]}
-              />
-              <HeadingWithContent
+              <HeadingWithContent description={[venueDetail.venueBio]} />
+              {/* <HeadingWithContent
                 heading="This is heading for venue"
                 description={[
-                  'Asperiores eveniet tempora possimus ut. Vel minus voluptas et quo. Minus molestias fugiat et. Ut deserunt provident ab id numquam quo laborum. Asperiores facilis voluptates voluptatibus magnam. Et est quo expedita molestiae vel porro. Dicta est earum ab dignissimos sit. Dolorem deserunt eius. Ut quia dolore alias. Ad possimus tenetur consequatur quae odit deleniti magnam qui quidem. Et distinctio et rerum illo dolor. Voluptatem impedit enim sint ducimus corrupti eaque suscipit fuga. Asperiores eveniet tempora possimus ut. Vel minus voluptas et quo. Minus molestias fugiat et. Ut deserunt provident ab id numquam quo laborum. Asperiores facilis voluptates voluptatibus magnam. Et est quo expedita molestiae vel porro. Dicta est earum ab dignissimos sit. Dolorem deserunt eius. Ut quia dolore alias. Ad possimus tenetur consequatur quae odit deleniti magnam qui quidem. Et distinctio et rerum illo dolor. Voluptatem impedit enim sint ducimus corrupti eaque suscipit fuga. Asperiores eveniet tempora possimus ut. Vel minus voluptas et quo. Minus molestias fugiat et. Ut deserunt provident ab id numquam quo laborum. Asperiores facilis voluptates voluptatibus magnam. Et est quo expedita molestiae vel porro. Dicta est earum ab dignissimos sit. Dolorem deserunt eius. Ut quia dolore alias. Ad possimus tenetur consequatur quae odit deleniti magnam qui quidem. Et distinctio et rerum illo dolor. Voluptatem impedit enim sint ducimus corrupti eaque suscipit fuga.',
+                  "Asperiores eveniet tempora possimus ut. Vel minus voluptas et quo. Minus molestias fugiat et. Ut deserunt provident ab id numquam quo laborum. Asperiores facilis voluptates voluptatibus magnam. Et est quo expedita molestiae vel porro. Dicta est earum ab dignissimos sit. Dolorem deserunt eius. Ut quia dolore alias. Ad possimus tenetur consequatur quae odit deleniti magnam qui quidem. Et distinctio et rerum illo dolor. Voluptatem impedit enim sint ducimus corrupti eaque suscipit fuga. Asperiores eveniet tempora possimus ut. Vel minus voluptas et quo. Minus molestias fugiat et. Ut deserunt provident ab id numquam quo laborum. Asperiores facilis voluptates voluptatibus magnam. Et est quo expedita molestiae vel porro. Dicta est earum ab dignissimos sit. Dolorem deserunt eius. Ut quia dolore alias. Ad possimus tenetur consequatur quae odit deleniti magnam qui quidem. Et distinctio et rerum illo dolor. Voluptatem impedit enim sint ducimus corrupti eaque suscipit fuga. Asperiores eveniet tempora possimus ut. Vel minus voluptas et quo. Minus molestias fugiat et. Ut deserunt provident ab id numquam quo laborum. Asperiores facilis voluptates voluptatibus magnam. Et est quo expedita molestiae vel porro. Dicta est earum ab dignissimos sit. Dolorem deserunt eius. Ut quia dolore alias. Ad possimus tenetur consequatur quae odit deleniti magnam qui quidem. Et distinctio et rerum illo dolor. Voluptatem impedit enim sint ducimus corrupti eaque suscipit fuga.",
                 ]}
-              />
+              /> */}
             </TabPaneStyle>
             <TabPaneStyle tab="Upcoming Events" key="2">
-              <div className="table-wrapper">
-                <UpcomingEvents />
+              <div className="table-wrapper" onClick={() => {}}>
+                {isLoading ? <Spinner /> : <UpcomingEvents events={events} />}
               </div>
             </TabPaneStyle>
             <TabPaneStyle tab="Reviews" key="3">
               <div className="table-wrapper">
-                <Reviews /> 
+                <Reviews />
               </div>
             </TabPaneStyle>
           </TabsStyle>
@@ -88,49 +139,67 @@ export default function VenueDetails() {
 
           <div className="icon-with-content">
             <img alt="icon" src="/images/icons/address-icon.svg" />
-            <span>1020 NW 183rd St, Miami, Florida(FL), 33169</span>
+            <span>{venueDetail.location.address}</span>
           </div>
 
-          <div className="icon-with-content">
-            <img alt="icon" src="/images/icons/phone-icon.svg" />
-            <span>+1 305 705 2747</span>
-          </div>
+          {venueDetail["socialMediaAndMarketingLinks"].phoneNumber && (
+            <div className="icon-with-content">
+              <img alt="icon" src="/images/icons/phone-icon.svg" />
+              <span>
+                {venueDetail["socialMediaAndMarketingLinks"].phoneNumber}
+              </span>
+            </div>
+          )}
 
-          <div className="icon-with-content">
-            <img alt="icon" src="/images/icons/website-icon.svg" />
-            <span>www.website.com</span>
-          </div>
+          {venueDetail["socialMediaAndMarketingLinks"].youtube && (
+            <div className="icon-with-content">
+              <img alt="icon" src="/images/icons/website-icon.svg" />
+              <span>{venueDetail["socialMediaAndMarketingLinks"].youtube}</span>
+            </div>
+          )}
 
-          <div className="icon-with-content">
-            <img alt="icon" src="/images/icons/instagram-icon.svg" />
-            <span>@instagram</span>
-          </div>
+          {venueDetail["socialMediaAndMarketingLinks"].instagram && (
+            <div className="icon-with-content">
+              <img alt="icon" src="/images/icons/instagram-icon.svg" />
+              <span>
+                {venueDetail["socialMediaAndMarketingLinks"].instagram}
+              </span>
+            </div>
+          )}
 
-          <div className="icon-with-content">
-            <img alt="icon" src="/images/icons/facebook-icon.svg" />
-            <span>@facebook</span>
-          </div>
+          {venueDetail["socialMediaAndMarketingLinks"].facebook && (
+            <div className="icon-with-content">
+              <img alt="icon" src="/images/icons/facebook-icon.svg" />
+              <span>
+                {venueDetail["socialMediaAndMarketingLinks"].facebook}
+              </span>
+            </div>
+          )}
 
-          <div className="icon-with-content">
-            <img alt="icon" src="/images/icons/twitter-icon.svg" />
-            <span>@twitter</span>
-          </div>
+          {venueDetail["socialMediaAndMarketingLinks"].twitter && (
+            <div className="icon-with-content">
+              <img alt="icon" src="/images/icons/twitter-icon.svg" />
+              <span>{venueDetail["socialMediaAndMarketingLinks"].twitter}</span>
+            </div>
+          )}
 
           <Formik initialValues={{}} onSubmit={() => {}}>
             {() => (
               <Form className="attributes-wrapper">
                 <LabelWithTag label="Attributes" tagType="none" />
                 <div className="list-wrapper">
-                  {attributesList.map((index) => {
+                  {amentiesState.map((index) => {
                     return (
-                      <InputCheckbox
-                        name={index.name}
-                        onClick={() => {}}
-                        className=""
-                        label={index.name}
-                        isCorrectOption={true}
-                      />
-                    )
+                      index.value && (
+                        <InputCheckbox
+                          name={index.name}
+                          onClick={() => {}}
+                          className=""
+                          label={index.name}
+                          isCorrectOption={index.value}
+                        />
+                      )
+                    );
                   })}
                 </div>
               </Form>
@@ -139,5 +208,5 @@ export default function VenueDetails() {
         </div>
       </VenueDetailsStyle>
     </>
-  )
+  );
 }

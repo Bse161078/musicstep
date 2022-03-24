@@ -5,6 +5,11 @@ export const LogoWithHeadingStyle = styled.div`
   grid-template-columns: auto 1fr;
   grid-gap: 20px;
 
+  logo{
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 10% !important;
+  }
   @media (max-width: 767px) {
     grid-template-columns: 1fr;
   }
@@ -35,4 +40,6 @@ export const LogoWithHeadingStyle = styled.div`
       opacity: 0.5;
     }
   }
+
+ 
 `;

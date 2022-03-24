@@ -16,10 +16,12 @@ import { useHistory } from "react-router-dom";
 import { VenueFormValidationSchema } from "./validation";
 import { useLoginContext } from "../../../context/authenticationContext";
 import axios from "axios";
-
+import { MapModalWrapper } from "../../../admin/components/Modals/MapModalWrapper";
+import Map from "../../../components/Map";
 const AddVenueProfileForm = () => {
   const { state } = useLoginContext();
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isMapModalVisible, setIsMapModalVisible] = useState(false);
   const [message, setMessage] = useState("");
   const [heading, setHeading] = useState("");
 
@@ -155,7 +157,8 @@ const AddVenueProfileForm = () => {
     const bodyData = new FormData();
 
     bodyData.append("venueBio", e.venueBio);
-    bodyData.append("location", e.locations);
+    bodyData.append("name", e.name);
+    bodyData.append("location", JSON.stringify(e.location));
     bodyData.append("saftyAndCleaness", JSON.stringify(saftyAndCleaness));
     bodyData.append("amenities", JSON.stringify(amentiesBody));
     bodyData.append(
@@ -232,6 +235,33 @@ const AddVenueProfileForm = () => {
   };
 
   const history = useHistory();
+
+  const handleLocation = (
+    country: any,
+    state: any,
+    city: any,
+    address: any,
+    lat: any,
+    lng: any
+  ) => {
+    // props.setcity(city);
+    // props.setstate(state);
+    // props.setlng(lng);
+    // props.setlat(lat);
+    // props.setAddress(address);
+    // props.setCountry(country);
+    // setGig({ ...gig, address: address, lat: lat, lng: lng });
+    console.log(country, state, city, address, lat, lng);
+
+    // setLocation({
+    //     country: country,
+    //     state: state,
+    //     city: city,
+    //     address: address,
+    //     lat: lat,
+    //     lng: lng
+    // });
+  };
 
   return (
     <>
@@ -333,6 +363,16 @@ const AddVenueProfileForm = () => {
                   />
                 </div>
                 <div>
+                  <LabelWithTag label="Venue Name" />
+                  <InputBox
+                    radiusType="27px"
+                    height="63px"
+                    width="670px"
+                    name="name"
+                    placeholder="Enter Category Tags"
+                  />
+                </div>
+                <div>
                   <LabelWithTag
                     label="Venue Bio"
                     description="Describe who you are, the types of events you host, or your mission. The bio is displayed on your organizer profile."
@@ -346,14 +386,18 @@ const AddVenueProfileForm = () => {
                   />
                 </div>
                 <div className="location-and-amenstiesWrapper">
-                  <div className="location-wrapper">
+                  <div
+                    className="location-wrapper"
+                    onClick={() => setIsMapModalVisible(true)}
+                  >
                     <LabelWithTag
                       label="Location"
                       description="Guide attendees where the event is happening."
                     />
                     <InputBox
-                      name="locations"
+                      name="address"
                       placeholder="1020 NW 183rd St, Miami, Florida(FL), 33169"
+                      disabled={true}
                     />
                     <img
                       src="/images/explore-venue/map-2.png"
@@ -361,6 +405,38 @@ const AddVenueProfileForm = () => {
                       alt="map"
                     />
                   </div>
+                  <MapModalWrapper
+                    heading="Choose venue Location"
+                    rightButtonTitle="Create Tickets"
+                    leftButtonTitle="Cancel"
+                    isModalVisible={isMapModalVisible}
+                    setIsModalVisible={setIsMapModalVisible}
+                    width="1000px"
+                    handleOkClick={() => {
+                      // alert("Ok is clicked");
+                    }}
+                    description="yoop"
+                  >
+                    <Map
+                      //handleLocation= {handleLocation}
+                      handleLocation={(
+                        country: any,
+                        state: any,
+                        city: any,
+                        address: any,
+                        lat: any,
+                        lng: any
+                      ) => {
+                        form.setFieldValue("address", address);
+                        form.setFieldValue("location", {
+                          address: address,
+                          lat: lat,
+                          lng: lng,
+                        });
+                        console.log(country, state, city, address, lat, lng);
+                      }}
+                    />
+                  </MapModalWrapper>
                   <div className="amenties-wrapper">
                     <LabelWithTag
                       label="Amenities"
@@ -449,11 +525,13 @@ const AddVenueProfileForm = () => {
                   style={{ display: "none" }}
                   onClick={() => {}}
                 />
+                {console.log(form)}
               </Form>
             )}
           </Formik>
         </AddVenueProfileFormStyle>
       </Dashboard>
+
       <MessageModal
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}

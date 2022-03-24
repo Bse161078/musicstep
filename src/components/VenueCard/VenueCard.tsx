@@ -1,32 +1,66 @@
 import { Collapse } from "antd";
-import React from "react";
+import axios from "axios";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { UpcomingEvents } from "..";
 
 import { SafetySheildIcon, StarIcon } from "../../assets";
 import { CollapseStyle, VenueCardStyle } from "./VenueCard.style";
-
+import { useLoginContext } from "../../context/authenticationContext";
+import { Spinner } from "../../components/Spinner";
 const { Panel } = Collapse;
 
-const VenueCard = ({pageUrl}: any) => {
+const VenueCard = ({ venue }: any) => {
   const history = useHistory();
+  const { state, dispatch } = useLoginContext();
+  const [events, setEvents] = React.useState(null);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const handleClick = () => {
-    history.push(pageUrl)
+    history.push({
+      pathname: `/explore-venue/venue-details`,
+
+      state: { venueDetail: venue.venueInfo[0] },
+    });
+  };
+
+  function callback(key: any) {
+    if (events) {
+      setEvents(null);
+      return;
+    }
+    setIsLoading(true);
+    axios
+      .get(`/v1/users/allEventsOfVenue?venueId=${venue._id}`, {
+        headers: { Authorization: `Bearer ${state.authToken}` },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setEvents(res.data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
   }
+
   return (
     <>
       <VenueCardStyle onClick={handleClick}>
         <img
           className="venue-thumbnail"
-          src="/images/explore-venue/image1.png"
+          src={
+            process.env.REACT_APP_BASE_URL +
+            "/" +
+            venue.venueInfo[0].coverPhotoUrl
+          }
           alt="venue thumb"
         />
-
+        {/* "/images/explore-venue/image1.png" */}
         <div className="venue-details">
-          <h3 className="top-heading">DOLORES POUROS</h3>
-          <h4 className="heading">Franklin Kub's Concert</h4>
-          <p className="address">752 Crona Curve, Schowalterborough</p>
+          {/* <h3 className="top-heading">DOLORES POUROS</h3> */}
+          <h4 className="heading">{venue.venueInfo[0].name}</h4>
+          <p className="address">{venue.venueInfo[0]["location"].address}</p>
 
           <div className="star-wrapper">
             <StarIcon /> 4.7 <span>(2022 Reviews)</span>
@@ -37,26 +71,15 @@ const VenueCard = ({pageUrl}: any) => {
           </div>
         </div>
 
-        <p className="venue-description">
-          Asperiores eveniet tempora possimus ut. Vel minus voluptas et quo.
-          Minus molestias fugiat et. Ut deserunt provident ab id numquam quo
-          laborum. Asperiores facilis voluptates voluptatibus magnam. Et est quo
-          expedita molestiae vel porro. Dicta est earum ab dignissimos sit.
-          Dolorem deserunt eius. Ut quia dolore alias. Ad possimus tenetur
-          consequatur quae odit deleniti magnam qui quidem. Et distinctio et
-          rerum illo dolor. Voluptatem impedit enim sint ducimus corrupti eaque
-          suscipit fuga.
-        </p>
+        <p className="venue-description">{venue.venueInfo[0].venueBio}</p>
       </VenueCardStyle>
       <CollapseStyle>
-        <Panel header="9 upcoming events" key="1">
-          <UpcomingEvents />
-          <p>
-            A dog is a type of domesticated animal. Known for its loyalty and
-            faithfulness, it can be found as a welcome guest in many households
-            across the world.
-          </p>
-        </Panel>
+        <Collapse onChange={callback}>
+          <Panel header={`${venue.eventsCount} upcoming events`} key="1">
+            {isLoading && <Spinner />}
+            {events && <UpcomingEvents events={events} />}
+          </Panel>
+        </Collapse>
       </CollapseStyle>
     </>
   );
