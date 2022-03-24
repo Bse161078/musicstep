@@ -1,19 +1,31 @@
-import React, { useState } from 'react'
-import { CheckingAvailablityModal } from '../../admin/components'
-import { ModalWrapper } from '../../admin/components/Modals/ModalWrapper'
-import { FilledButtonStyle } from '../../styles/Common.style'
-import TicketModalStyle from './TicketModal.style'
+import React, { useState } from "react";
+import { CheckingAvailablityModal } from "../../admin/components";
+import { ModalWrapper } from "../../admin/components/Modals/ModalWrapper";
+import { FilledButtonStyle } from "../../styles/Common.style";
+import TicketModalStyle from "./TicketModal.style";
+import moment from "moment";
 
 type TicketModalProps = {
-  isModalVisible?: boolean
-  setIsModalVisible?: any
-}
+  isModalVisible?: boolean;
+  setIsModalVisible?: any;
+  ticketIndex: number;
+  event?: any;
+};
 const TicketModal = (props: TicketModalProps) => {
   const [
     isCheckingAvailablityModalVisible,
     setIsCheckingAvailablityModalVisible,
-  ] = useState(false)
-  const { isModalVisible, setIsModalVisible } = props
+  ] = useState(false);
+  const { isModalVisible, setIsModalVisible } = props;
+  const week = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
 
   return (
     <ModalWrapper
@@ -30,28 +42,37 @@ const TicketModal = (props: TicketModalProps) => {
 
           <div className="first-wrapper">
             <span>
-              <h1 id="event-name">Franklin Kub's Concert</h1>
+              <h1 id="event-name">{props.event.title}</h1>
               <p id="below-eventname">Alternative, Classical</p>
             </span>
             <span id="event-datetime">
-              <p>Friday, August 27</p> <p> 7:00 PM - 7:45 PM</p>{' '}
+              <p>
+                {" "}
+                {week[moment(props.event.date).day()]},{" "}
+                {moment(props.event.date).format("MMMM") +
+                  " " +
+                  moment(props.event.date).date()}
+              </p>
+              <p>
+                {moment(props.event.startingTime, ["hh:mm"]).format("hh:mm a")}{" "}
+                -{moment(props.event.endingTime, ["hh:mm"]).format("hh:mm a")}
+              </p>
             </span>
             <span className="location-text">
               <span>
-                <p>E11EVEN Miami Nightclub</p>
-                <p>1020 NW 183rd St, Miami, Florida(FL), 33169</p>
+                <p>{props.event.venueInfo[0].name}</p>
+                <p> {props.event.venueInfo[0].location.address}</p>
               </span>
             </span>
-            <p>Organized By: Sunrise Events</p>
+            <p>Organized By: {props.event.organizerInfo[0].organizerName}</p>
           </div>
 
           <div className="second-wrapper">
-            <h1>Golden Ticket</h1>
-            <p className="credit-text">Credits: 11</p>
-            <p>
-              Possimus Sunt Vitae Aut Ut Eaque Earum. Est At Cum. Qui Sit Quia
-              Omnis Enim Ex Quos.
+            <h1>{props.event.tickets[props.ticketIndex].title}</h1>
+            <p className="credit-text">
+              Credits:{props.event.tickets[props.ticketIndex].credits}
             </p>
+            <p>{props.event && props.event.eventDescription}</p>
           </div>
         </div>
 
@@ -59,7 +80,7 @@ const TicketModal = (props: TicketModalProps) => {
           width="480px"
           height="60px"
           onClick={() => {
-            setIsCheckingAvailablityModalVisible(true)
+            setIsCheckingAvailablityModalVisible(true);
           }}
         >
           Reserved
@@ -77,6 +98,6 @@ const TicketModal = (props: TicketModalProps) => {
         setIsModalVisible={setIsCheckingAvailablityModalVisible}
       />
     </ModalWrapper>
-  )
-}
-export default TicketModal
+  );
+};
+export default TicketModal;

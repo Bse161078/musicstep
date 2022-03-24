@@ -21,16 +21,35 @@ export const UpcomingEventsStyle = styled.div`
   }
 `;
 
+  // grid-template-columns: auto 1fr 0.3fr auto;
+  // grid-template-areas: 'myArea myArea . . .';
 export const TabRowStyle = styled.div`
   display: grid;
-  grid-template-columns: auto 1fr 0.3fr auto;
+
+  grid-template: auto / 13% 12% 40% 5% 20%;
   grid-gap: 30px;
   padding: 15px 0;
   margin: 0 30px;
   margin-right: 5px;
   border-bottom: solid 1px ${rgba("#0c0c0c", 0.3)};
+  &:last-child {
+    border-bottom: none;
+}
+  
   align-items: center;
 
+  @media (max-width: 1760px) {
+    display: grid;
+    grid-template: auto / 13% 12% 35% 5% 20%;
+  }
+  @media (max-width: 1350px) {
+    display: grid;
+    grid-template: auto / 13% 12% 25% 5% 20%;
+  }
+  @media (max-width: 1250px) {
+    display: grid;
+    grid-template: auto / 50% 50%;
+  }
   @media (max-width: 767px) {
     display: grid;
     grid-template-columns: 210px 1fr 1fr;
@@ -48,7 +67,27 @@ export const TabRowStyle = styled.div`
       opacity: 0.5;
     }
   }
+  .fillButton {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0c0c0c;
+    display: flex;
 
+ 
+  }
+  .name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0c0c0c;
+    display: grid;
+
+
+    .genre {
+      font-size: 16px;
+      color: #0c0c0c;
+      opacity: 0.5;
+    }
+  }
   .pricing {
     margin-left: auto;
 

@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Route, Switch, useLocation } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  Switch,
+  useLocation,
+  useHistory,
+} from "react-router-dom";
 
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 import {
@@ -43,10 +49,52 @@ import { LoginContextProvider } from "./context/authenticationContext";
 import { EventsManagment } from "./admin/components";
 import { ForgotPasswordForm } from "./components/ForgotPasswordForm";
 import { ResetPasswordForm } from "./components/ResetPasswordForm";
+import axios from "axios";
+import { useLoginContext } from "./context/authenticationContext";
+
+// axios.defaults.baseURL = "https://music-pass-backend.herokuapp.com/v1";
+axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
+// axios.defaults.headers.common["Authorization"] = "AUTH TOKEN";
+axios.defaults.headers.post["Content-Type"] = "application/json";
 
 const RoutesList = (props: any) => {
   const { pathname } = useLocation();
   const [showNavbar, setShowNavbar] = useState(true);
+  const history = useHistory();
+
+  //Axios Inteceptors
+
+  const { dispatch, state } = useLoginContext();
+
+  axios.interceptors.request.use(
+    (request) => {
+      return request;
+    },
+    (error) => {
+      return Promise.reject(error);
+    }
+  );
+
+  axios.interceptors.response.use(
+    (response) => {
+      // Edit response config
+      return response;
+    },
+    (error) => {
+      if (error.response.status === 401) {
+        console.log("401");
+        dispatch({
+          type: "LOGOUT",
+          payload: {},
+        });
+        history.push("/login");
+      }
+
+      return Promise.reject(error);
+    }
+  );
+  //
+
   //use
   useEffect(() => {
     switch (pathname) {

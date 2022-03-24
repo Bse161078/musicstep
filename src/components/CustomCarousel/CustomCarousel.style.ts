@@ -17,6 +17,7 @@ export const CustomCarouselStyle = styled(Flickity)`
 
   img {
     width: 100%;
+
     border-radius: 16px;
     margin-right: 20px;
   }

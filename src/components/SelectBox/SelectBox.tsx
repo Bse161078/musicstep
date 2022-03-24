@@ -25,6 +25,7 @@ type SelectBoxProps = {
   label?: any;
   type?: "horizontal" | "vertical";
   placeholder?: string;
+  handleSelectBoxChange?: (e: any) => void;
 };
 
 const SelectBox = (props: SelectBoxProps) => {
@@ -41,11 +42,13 @@ const SelectBox = (props: SelectBoxProps) => {
     label,
     type = "vertical",
     placeholder,
+    handleSelectBoxChange,
   } = props;
 
   const handleChange = (value: any) => {
     setFieldValue && setFieldValue(field.name, value);
     initializeSettingsData && initializeSettingsData(value, undefined, values);
+    handleSelectBoxChange && handleSelectBoxChange(value);
   };
   return (
     <SelectInputStyle type={type}>

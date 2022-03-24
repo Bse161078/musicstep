@@ -19,6 +19,7 @@ import { useLoginContext } from "../../../context/authenticationContext";
 import moment from "moment";
 // import { initialValues } from "./initialvalues";
 import { useEventContext } from "../../../context/eventContext";
+
 type SubmitEventStep1Props = {
   setCurrentStep: any;
   setEventData: any;
@@ -72,8 +73,8 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
     venue: EventStateContext.state.venue,
     organizer: EventStateContext.state.organizer,
     eventDescription: EventStateContext.state.eventDescription,
-    venuePhotoSameAsOrganizerPhoto:
-      EventStateContext.state.venuePhotoSameAsOrganizerPhoto,
+    eventPhotoSameAsOrganizerPhoto:
+      EventStateContext.state.eventPhotoSameAsOrganizerPhoto,
     additionalPhotos: EventStateContext.state.additionalPhotos,
   });
 
@@ -133,8 +134,6 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
       .catch((error) => {
         console.log(error.response);
       });
-
-    // alert("Everytime ");
   }, []);
 
   useEffect(() => {
@@ -192,7 +191,6 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
   useEffect(() => {
     if (isVenuePhotoSameAsOrganizer && selectedOrganizerId) {
       console.log(organizers);
-      // alert(selectedOrganizerId);
       const singleorganizer: any = organizers.find(
         (item: any) => item.id === selectedOrganizerId
       );
@@ -272,7 +270,6 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
   //         "End time should be greater than start time"
   //       );
 
-  //       alert("Start");
   //     }
   //   }
   // };
@@ -293,7 +290,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
   //         "End time should be greater than start time"
   //       );
   //     }
-  //     alert("End");
+
   //   }
   // };
   // const isStartEndTimeValid = (
@@ -466,7 +463,6 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                 type="button"
                 onClick={() => {
                   console.log(form.values);
-                  // alert("add venue");
                   EventStateContext.dispatch({
                     type: "SAVE_EVENT",
                     payload: {
@@ -509,10 +505,10 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
               setSelectedCountry(form.values.country)}
             {form.values.state !== selectedState &&
               setSelectedState(form.values.state)}
-            {form.values.venuePhotoSameAsOrganizerPhoto !==
+            {form.values.eventPhotoSameAsOrganizerPhoto !==
               isVenuePhotoSameAsOrganizer &&
               setIsVenuePhotoSameAsOrganizer(
-                form.values.venuePhotoSameAsOrganizerPhoto
+                form.values.eventPhotoSameAsOrganizerPhoto
               )}
             {form.values.organizer !== selectedOrganizerId &&
               setSelectedOrganizerId(form.values.organizer)}
@@ -520,8 +516,8 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
 
             <EventManagmenPhotoScroller
               setField={form.setFieldValue}
-              venuePhotoSameAsOrganizerPhoto={
-                form.values.venuePhotoSameAsOrganizerPhoto
+              eventPhotoSameAsOrganizerPhoto={
+                form.values.eventPhotoSameAsOrganizerPhoto
               }
               previewVenuePhoto={previewVenuePhoto}
               handleAdditionalPhoto={handleAdditionalPhoto}

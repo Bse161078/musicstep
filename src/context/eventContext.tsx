@@ -30,7 +30,7 @@ const initialContent: any = {
   venue: "",
   organizer: "",
   eventDescription: "",
-  venuePhotoSameAsOrganizerPhoto: true,
+  eventPhotoSameAsOrganizerPhoto: true,
   additionalPhotos: null,
   selectedOrganizerId: "",
   organizersList: [],
@@ -63,8 +63,8 @@ const reducer = (state: any, action: any) => {
         organizer: action.payload.data.organizer,
         eventDescription: action.payload.data.eventDescription,
         additionalPhotos: action.payload.data.additionalPhotos,
-        venuePhotoSameAsOrganizerPhoto:
-          action.payload.data.venuePhotoSameAsOrganizerPhoto,
+        eventPhotoSameAsOrganizerPhoto:
+          action.payload.data.eventPhotoSameAsOrganizerPhoto,
         selectedOrganizerId: action.payload.selectedOrganizerId,
         organizersList: action.payload.organizersList,
         previewVenuePhoto: action.payload.previewVenuePhoto,
@@ -88,7 +88,7 @@ const reducer = (state: any, action: any) => {
         venue: "",
         organizer: "",
         eventDescription: "",
-        venuePhotoSameAsOrganizerPhoto: true,
+        eventPhotoSameAsOrganizerPhoto: true,
         additionalPhotos: null,
         selectedOrganizerId: "",
         organizersList: [],

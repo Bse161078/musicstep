@@ -9,6 +9,6 @@ export const initialValues = {
   venue: "",
   organizer: "",
   eventDescription: "",
-  venuePhotoSameAsOrganizerPhoto: true,
+  eventPhotoSameAsOrganizerPhoto: true,
   additionalPhotos: null,
 };

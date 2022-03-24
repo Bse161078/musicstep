@@ -46,14 +46,15 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
     // state: "Sindh"
     // title: "ahksa"
     // venue: "62180c415527e821cc11f36f"
-    // venuePhotoSameAsOrganizerPhoto: false
+    // eventPhotoSameAsOrganizerPhoto: false
     /////form Data
-    console.log("eventData", eventData);
+    console.log("eventData", eventData.date.toLocaleDateString());
     console.log("tickets", tickets);
-
+    // debugger;
     const bodyData = new FormData();
 
     bodyData.append("title", eventData.title);
+
     bodyData.append("date", eventData.date);
     bodyData.append("startingTime", eventData.startingTime);
     bodyData.append("endingTime", eventData.endingTime);
@@ -62,8 +63,8 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
     bodyData.append("country", eventData.country);
     bodyData.append("venue", eventData.venue);
     bodyData.append(
-      "venuePhotoSameAsOrganizerPhoto",
-      eventData.venuePhotoSameAsOrganizerPhoto
+      "eventPhotoSameAsOrganizerPhoto",
+      eventData.eventPhotoSameAsOrganizerPhoto
     );
     bodyData.append("organizer", eventData.organizer);
     bodyData.append("tickets", JSON.stringify(tickets));
@@ -110,7 +111,6 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
         heading="Submit An Event"
         backButtonText="Back To Step 1"
         handleSaveClick={() => {
-          // alert("Yoo");
           createEventHandlet();
         }}
         handleCancelClick={() => {
@@ -144,7 +144,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
           {tickets.map((ticket: any, index: any) => (
             <TicketInfoCard
               heading={ticket.title}
-              creditNo={"7"}
+              creditNo={ticket.credits}
               availableTickets={ticket.numberOfTickets}
               description={ticket.description}
               index={index}

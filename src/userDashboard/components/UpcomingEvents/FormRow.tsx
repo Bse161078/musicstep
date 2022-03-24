@@ -1,34 +1,65 @@
-import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
-import { EventDetailsModal } from '../../../components'
-import { OutlineButtonStyle } from '../../../styles/Common.style'
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { EventDetailsModal } from "../../../components";
+import { OutlineButtonStyle } from "../../../styles/Common.style";
 
-import { FormRowStyle } from './UpcomingEvents.style'
-
-const FormRow = () => {
+import { FormRowStyle } from "./UpcomingEvents.style";
+import moment from "moment";
+type FormRowProps = {
+  event?: any;
+};
+const FormRow = ({ event }: FormRowProps) => {
   const [isEventDetailsModalVisibel, setIsEventDetailsModalVisibel] = useState(
-    false,
-  )
-  const history = useHistory()
+    false
+  );
+  const history = useHistory();
   const handleViewVenue = () => {
-    history.push('/explore-venue/venue-details')
-  }
+    history.push({
+      pathname: `/explore-venue/venue-details`,
+
+      state: { venueDetail: event.venueInfo[0] },
+    });
+  };
+  let startTime = moment(event.startingTime, "hh:mm");
+  let endTime = moment(event.endingTime, "hh:mm");
+
+  let hours = endTime.diff(startTime, "hours")
+    ? endTime.diff(startTime, "hours") + "hr"
+    : null;
+  let minutes =
+    endTime.diff(startTime, "minutes") % 60
+      ? (endTime.diff(startTime, "minutes") % 60) + "mint"
+      : null;
   return (
     <>
       <FormRowStyle>
-        <img src="/images/sample.png" className="thumbnail" alt="thumbnail" />
+        <img
+          //  src="/images/sample.png"
+          src={
+            process.env.REACT_APP_BASE_URL +
+            "/" +
+            event.organizerInfo[0].logoUrl
+          }
+          className="thumbnail"
+          alt="thumbnail"
+        />
 
         <div className="table-cell">
-          <h2 className="heading">10:51 AM</h2>
-          <span className="description">1 Hour</span>
+          <h2 className="heading">
+            {moment(event.startingTime, ["hh:mm"]).format("hh:mm a")}
+          </h2>
+          <span className="description">
+            {" "}
+            {hours} {minutes}
+          </span>
         </div>
 
         <div className="table-cell">
-          <h2 className="heading">Franklin Kub's Concert</h2>
+          <h2 className="heading">{event.title}</h2>
           <span className="description">Alternative, Classical</span>
         </div>
         <div className="table-cell">
-          <p className='event-name'>Kreiger - Herman Club</p>
+          <p className="event-name">{event.venueInfo[0].name}</p>
         </div>
         <div className="tabel-cell">
           <div className="button-wrapper">
@@ -43,10 +74,10 @@ const FormRow = () => {
               width="150px"
               height="44px"
               onClick={() => {
-                setIsEventDetailsModalVisibel(true)
+                setIsEventDetailsModalVisibel(true);
               }}
             >
-              10 Credits
+              {event.tickets.length > 0 && event.tickets[0].credits} Credits
             </OutlineButtonStyle>
           </div>
         </div>
@@ -57,7 +88,7 @@ const FormRow = () => {
         isTicketsAvailable={true}
       />
     </>
-  )
-}
+  );
+};
 
-export default FormRow
+export default FormRow;
