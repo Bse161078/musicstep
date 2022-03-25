@@ -37,12 +37,15 @@ const TicketInfoCard = (props: TicketInfoCardProps) => {
   };
   return (
     <>
-      <TicketModal
-        isModalVisible={isTicketModalVisible}
-        setIsModalVisible={setTicketModalVisible}
-        ticketIndex={props.ticketIndex ? props.ticketIndex : 0}
-        event={props.event}
-      />
+      {props.event && (
+        <TicketModal
+          isModalVisible={isTicketModalVisible}
+          setIsModalVisible={setTicketModalVisible}
+          ticketIndex={props.ticketIndex ? props.ticketIndex : 0}
+          event={props.event}
+        />
+      )}
+
       <TicketInfoCardStyle disableTicketsAvailbilty>
         <h2>{props.heading}</h2>
         <p className="credits">Credits: {props.creditNo}</p>

@@ -42,35 +42,49 @@ const TicketModal = (props: TicketModalProps) => {
 
           <div className="first-wrapper">
             <span>
-              <h1 id="event-name">{props.event.title}</h1>
+              <h1 id="event-name">{props.event && props.event.title}</h1>
               <p id="below-eventname">Alternative, Classical</p>
             </span>
             <span id="event-datetime">
               <p>
                 {" "}
-                {week[moment(props.event.date).day()]},{" "}
-                {moment(props.event.date).format("MMMM") +
+                {week[moment(props.event && props.event.date).day()]},{" "}
+                {moment(props.event && props.event.date).format("MMMM") +
                   " " +
-                  moment(props.event.date).date()}
+                  moment(props.event && props.event.date).date()}
               </p>
               <p>
-                {moment(props.event.startingTime, ["hh:mm"]).format("hh:mm a")}{" "}
-                -{moment(props.event.endingTime, ["hh:mm"]).format("hh:mm a")}
+                {moment(props.event && props.event.startingTime, [
+                  "hh:mm",
+                ]).format("hh:mm a")}{" "}
+                -
+                {moment(props.event && props.event.endingTime, [
+                  "hh:mm",
+                ]).format("hh:mm a")}
               </p>
             </span>
             <span className="location-text">
               <span>
-                <p>{props.event.venueInfo[0].name}</p>
-                <p> {props.event.venueInfo[0].location.address}</p>
+                <p>{props.event && props.event.venueInfo[0].name}</p>
+                <p>
+                  {" "}
+                  {props.event && props.event.venueInfo[0].location.address}
+                </p>
               </span>
             </span>
-            <p>Organized By: {props.event.organizerInfo[0].organizerName}</p>
+            <p>
+              Organized By:{" "}
+              {props.event && props.event.organizerInfo[0].organizerName}
+            </p>
           </div>
 
           <div className="second-wrapper">
-            <h1>{props.event.tickets[props.ticketIndex].title}</h1>
+            <h1>
+              {props.event && props.event.tickets[props.ticketIndex].title}
+            </h1>
             <p className="credit-text">
-              Credits:{props.event.tickets[props.ticketIndex].credits}
+              Credits:
+              {props.event && props.event.tickets[props.ticketIndex].credits}
             </p>
             <p>{props.event && props.event.eventDescription}</p>
           </div>
