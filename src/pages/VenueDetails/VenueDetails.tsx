@@ -129,7 +129,15 @@ export default function VenueDetails() {
         </div>
 
         <div className="venue-info-wrapper">
-          <div className="map-wrapper">
+          <div
+            className="map-wrapper"
+            onClick={() =>
+              window.open(
+                `http://maps.google.com?q=${venueDetail.location.lat},${venueDetail.location.lng}`,
+                "_blank"
+              )
+            }
+          >
             <img
               src="/images/explore-venue/map-2.png"
               className="map"
@@ -137,7 +145,16 @@ export default function VenueDetails() {
             />
           </div>
 
-          <div className="icon-with-content">
+          <div
+            style={{ cursor: "pointer" }}
+            className="icon-with-content"
+            onClick={() =>
+              window.open(
+                `http://maps.google.com?q=${venueDetail.location.lat},${venueDetail.location.lng}`,
+                "_blank"
+              )
+            }
+          >
             <img alt="icon" src="/images/icons/address-icon.svg" />
             <span>{venueDetail.location.address}</span>
           </div>

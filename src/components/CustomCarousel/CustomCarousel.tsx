@@ -23,9 +23,9 @@ const CustomCarousel = ({ options = {}, images }: CustomCarouselProps) => {
           src={`${process.env.REACT_APP_BASE_URL}/${image}`}
         />
       ))}
+      {/* <img alt="carousel tab" src="/images/partner-login-background.png" />
       <img alt="carousel tab" src="/images/partner-login-background.png" />
-      <img alt="carousel tab" src="/images/partner-login-background.png" />
-      <img alt="carousel tab" src="/images/partner-login-background.png" />
+      <img alt="carousel tab" src="/images/partner-login-background.png" /> */}
     </CustomCarouselStyle>
   );
 };

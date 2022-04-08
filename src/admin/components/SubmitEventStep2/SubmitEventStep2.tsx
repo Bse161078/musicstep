@@ -50,6 +50,14 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
     /////form Data
     console.log("eventData", eventData.date.toLocaleDateString());
     console.log("tickets", tickets);
+    const formatedTickets = tickets.map((ticket: any) => {
+      return {
+        ...ticket,
+        availableTickets: ticket.numberOfTickets,
+        bookedTickets: 0,
+      };
+    });
+    // setTickets(tempTickets);
     // debugger;
     const bodyData = new FormData();
 
@@ -67,7 +75,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
       eventData.eventPhotoSameAsOrganizerPhoto
     );
     bodyData.append("organizer", eventData.organizer);
-    bodyData.append("tickets", JSON.stringify(tickets));
+    bodyData.append("tickets", JSON.stringify(formatedTickets));
     bodyData.append("eventDescription", eventData.eventDescription);
 
     if (eventData.additionalPhotos) {

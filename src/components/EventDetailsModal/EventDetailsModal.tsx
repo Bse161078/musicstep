@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { TicketInfoCard } from "../../admin/components";
 import { ModalWrapper } from "../../admin/components/Modals/ModalWrapper";
 import { OutlineButtonStyle } from "../../styles/Common.style";
@@ -19,6 +20,7 @@ const EventDetailsModal = (props: EventDetailsModalProps) => {
     event,
   } = props;
   console.log("Events", event);
+  const history = useHistory();
   return (
     <>
       {isTicketsAvailable ? (
@@ -65,14 +67,20 @@ const EventDetailsModal = (props: EventDetailsModalProps) => {
             <OutlineButtonStyle
               width="100%"
               height="60px"
-              onClick={() => setIsModalVisible(false)}
+              onClick={() => {
+                setIsModalVisible(false);
+                history.push("/dashboard/home");
+              }}
             >
               Explore Events
             </OutlineButtonStyle>,
             <OutlineButtonStyle
               width="100%"
               height="60px"
-              onClick={() => setIsModalVisible(false)}
+              onClick={() => {
+                setIsModalVisible(false);
+                history.push("/dashboard/home");
+              }}
             >
               Explore Venue
             </OutlineButtonStyle>,

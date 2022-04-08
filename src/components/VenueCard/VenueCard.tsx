@@ -62,16 +62,16 @@ const VenueCard = ({ venue }: any) => {
           <h4 className="heading">{venue.venueInfo[0].name}</h4>
           <p className="address">{venue.venueInfo[0]["location"].address}</p>
 
-          <div className="star-wrapper">
-            <StarIcon /> 4.7 <span>(2022 Reviews)</span>
-          </div>
+          <div className="row">
+            <div className="star-wrapper">
+              <StarIcon /> 4.7 <span>(2022 Reviews)</span>
+            </div>
 
-          <div className="guidelines-wrapper">
-            <SafetySheildIcon /> Safety Guidelines
+            <div className="guidelines-wrapper">
+              <SafetySheildIcon /> Safety Guidelines
+            </div>
           </div>
         </div>
-
-        <p className="venue-description">{venue.venueInfo[0].venueBio}</p>
       </VenueCardStyle>
       <CollapseStyle>
         <Collapse onChange={callback}>

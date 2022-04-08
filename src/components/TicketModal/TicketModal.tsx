@@ -4,6 +4,8 @@ import { ModalWrapper } from "../../admin/components/Modals/ModalWrapper";
 import { FilledButtonStyle } from "../../styles/Common.style";
 import TicketModalStyle from "./TicketModal.style";
 import moment from "moment";
+import axios from "axios";
+import { useLoginContext } from "../../context/authenticationContext";
 
 type TicketModalProps = {
   isModalVisible?: boolean;
@@ -16,6 +18,7 @@ const TicketModal = (props: TicketModalProps) => {
     isCheckingAvailablityModalVisible,
     setIsCheckingAvailablityModalVisible,
   ] = useState(false);
+  const { state } = useLoginContext();
   const { isModalVisible, setIsModalVisible } = props;
   const week = [
     "Sunday",
@@ -26,6 +29,31 @@ const TicketModal = (props: TicketModalProps) => {
     "Friday",
     "Saturday",
   ];
+  const handlereservation = async () => {
+    console.log(props);
+    const bodyData = {
+      event: props.event._id,
+      venue: props.event.venueInfo[0]._id,
+      ticketId: props.event.tickets[props.ticketIndex]._id,
+      credits: props.event.tickets[props.ticketIndex].credits,
+    };
+    const res = await axios
+      .post("/v1/reservation", bodyData, {
+        headers: { Authorization: `Bearer ${state.authToken}` },
+      })
+      .catch((error) => {
+        // console.log(error.response.data.error);
+        // setSuccessModalVisible(true);
+        // setMessage(error.response.data.error);
+        // setHeading("Error");
+      });
+    if (res) {
+      // setSuccessModalVisible(true);
+      // setMessage("Organizer created Successfully");
+      // setHeading("Success");
+      console.log(res.data);
+    }
+  };
 
   return (
     <ModalWrapper
@@ -94,10 +122,11 @@ const TicketModal = (props: TicketModalProps) => {
           width="480px"
           height="60px"
           onClick={() => {
+            handlereservation();
             setIsCheckingAvailablityModalVisible(true);
           }}
         >
-          Reserved
+          Reserve Ticket
         </FilledButtonStyle>
         <div>
           <p id="cancel-text">

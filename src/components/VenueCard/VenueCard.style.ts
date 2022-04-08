@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export const VenueCardStyle = styled.div`
   display: grid;
-  grid-template-columns: auto 1fr 460px;
+  grid-template-columns: auto 1fr;
   grid-gap: 30px;
   cursor: pointer;
 
@@ -34,6 +34,12 @@ export const VenueCardStyle = styled.div`
     color: #0c0c0c;
     font-size: 20px;
     margin-bottom: 15px;
+  }
+
+  .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
   }
 
   .star-wrapper {
@@ -69,6 +75,8 @@ export const VenueCardStyle = styled.div`
     padding-left: 20px;
     border-left: solid 1px ${rgba("#0c0c0c", 0.3)};
   }
+
+
 `;
 
 export const CollapseStyle = styled(Collapse)`

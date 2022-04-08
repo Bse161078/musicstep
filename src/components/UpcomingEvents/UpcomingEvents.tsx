@@ -15,7 +15,7 @@ const UpcomingEvents = ({ events }: any) => {
       </div> */}
       {events &&
         events.map((event: any, index: number) =>
-          index === 1 ? (
+          index === 2 ? (
             <TabRow
               event={event}
               buttonType="filled"

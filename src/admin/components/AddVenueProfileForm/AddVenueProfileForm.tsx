@@ -369,7 +369,7 @@ const AddVenueProfileForm = () => {
                     height="63px"
                     width="670px"
                     name="name"
-                    placeholder="Enter Category Tags"
+                    placeholder="Enter venue name"
                   />
                 </div>
                 <div>

@@ -106,10 +106,12 @@ export const VenueDetailsStyle = styled.div`
 
   .map-wrapper {
     margin-bottom: 30px;
+    
 
     .map {
       max-width: 645px;
       width: 100%;
+      cursor: pointer;
     }
   }
 `;
