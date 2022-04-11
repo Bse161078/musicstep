@@ -87,6 +87,7 @@ const RoutesList = (props: any) => {
           type: "LOGOUT",
           payload: {},
         });
+        alert("Session expire");
         history.push("/login");
       }
 

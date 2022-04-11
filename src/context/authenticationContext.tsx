@@ -75,7 +75,6 @@ const reducer = (state: any, action: any) => {
         data: {},
       };
     case "UPDATE_USER_CREDITS":
-      alert("update");
       const updateData = { ...state.data, credits: action.payload.data };
       localStorage.setItem("data", JSON.stringify(updateData));
       return {
