@@ -43,8 +43,20 @@ export default function ExploreVenue() {
         <div />
 
         <section className="venues-list">
-          {venues.length > 0 &&
-            venues.map((venue: any) => <VenueCard venue={venue} />)}
+          {venues.length > 0 ? (
+            venues.map((venue: any) => <VenueCard venue={venue} />)
+          ) : (
+            <h1
+              style={{
+                width: "100%",
+                margin: "0px auto",
+                fontSize: "0px",
+                textAlign: "center",
+              }}
+            >
+              No Event or Venue to explore
+            </h1>
+          )}
           {/* <VenueCard pageUrl="/explore-venue/organizer-profile" />
 
           <VenueCard pageUrl="/explore-venue/organizer-profile" />
