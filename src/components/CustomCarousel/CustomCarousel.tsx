@@ -6,26 +6,28 @@ import { CustomCarouselStyle } from "./CustomCarousel.style";
 type CustomCarouselProps = {
   options?: any;
   images?: string[];
+  children: any;
 };
 
-const CustomCarousel = ({ options = {}, images }: CustomCarouselProps) => {
+const CustomCarousel = (props: CustomCarouselProps) => {
   const flickityOptions = {
     initialIndex: 2,
     pageDots: false,
-    ...options,
+    ...props.options,
   };
-  console.log(images);
+
   return (
     <CustomCarouselStyle options={flickityOptions}>
-      {images?.map((image: any) => (
+      {/* {images?.map((image: any) => (
         <img
           alt="carousel tab"
           src={`${process.env.REACT_APP_BASE_URL}/${image}`}
         />
-      ))}
+      ))} */}
       {/* <img alt="carousel tab" src="/images/partner-login-background.png" />
       <img alt="carousel tab" src="/images/partner-login-background.png" />
       <img alt="carousel tab" src="/images/partner-login-background.png" /> */}
+      {props.children}
     </CustomCarouselStyle>
   );
 };

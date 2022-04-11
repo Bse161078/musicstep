@@ -6,7 +6,8 @@ export const CardWithContentStyle = styled.div`
   background: #f7f7f7;
   grid-gap: 20px;
   border-radius: 32px;
-  padding: 20px;
+  padding: 10px;
+
 
   @media (max-width: 767px) {
     grid-template-columns: 1fr;

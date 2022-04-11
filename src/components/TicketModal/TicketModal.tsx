@@ -18,7 +18,14 @@ const TicketModal = (props: TicketModalProps) => {
     isCheckingAvailablityModalVisible,
     setIsCheckingAvailablityModalVisible,
   ] = useState(false);
-  const { state } = useLoginContext();
+  const [
+    isReservationConfirmedModalVisible,
+    setIsReservationConfirmedModalVisible,
+  ] = useState(false);
+  const [message, setMessage] = useState(
+    "Checking Availability, Please Wait..."
+  );
+  const { state, dispatch } = useLoginContext();
   const { isModalVisible, setIsModalVisible } = props;
   const week = [
     "Sunday",
@@ -30,28 +37,44 @@ const TicketModal = (props: TicketModalProps) => {
     "Saturday",
   ];
   const handlereservation = async () => {
-    console.log(props);
     const bodyData = {
       event: props.event._id,
       venue: props.event.venueInfo[0]._id,
       ticketId: props.event.tickets[props.ticketIndex]._id,
       credits: props.event.tickets[props.ticketIndex].credits,
     };
+
     const res = await axios
       .post("/v1/reservation", bodyData, {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .catch((error) => {
-        // console.log(error.response.data.error);
-        // setSuccessModalVisible(true);
-        // setMessage(error.response.data.error);
-        // setHeading("Error");
+        console.log(error.response);
+        setMessage(error.response.data.message);
       });
+
     if (res) {
-      // setSuccessModalVisible(true);
-      // setMessage("Organizer created Successfully");
-      // setHeading("Success");
-      console.log(res.data);
+      setIsCheckingAvailablityModalVisible(false);
+      setIsReservationConfirmedModalVisible(true);
+
+      const response = await axios
+        .get(`/v1/users/${state.data.id}`, {
+          headers: { Authorization: `Bearer ${state.authToken}` },
+        })
+        .catch((error) => {
+          console.log(error.response);
+          alert(error.response.data.message);
+        });
+      if (response) {
+        console.log(response);
+
+        dispatch({
+          type: "UPDATE_USER_CREDITS",
+          payload: {
+            data: response.data.credits,
+          },
+        });
+      }
     }
   };
 
@@ -138,8 +161,26 @@ const TicketModal = (props: TicketModalProps) => {
       </TicketModalStyle>
       <CheckingAvailablityModal
         isModalVisible={isCheckingAvailablityModalVisible}
+        message={message}
         setIsModalVisible={setIsCheckingAvailablityModalVisible}
+        isReservationConfirmedModalVisible={isReservationConfirmedModalVisible}
+        setIsReservationConfirmedModalVisible={
+          setIsReservationConfirmedModalVisible
+        }
+        event={props.event}
+        ticketIndex={props.ticketIndex}
       />
+      {/* <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      /> */}
     </ModalWrapper>
   );
 };

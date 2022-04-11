@@ -18,6 +18,10 @@ type UserAction =
   | {
       type: "LOGOUT";
       payload: any;
+    }
+  | {
+      type: "UPDATE_USER_CREDITS";
+      payload: any;
     };
 
 export type LoginContextType = {
@@ -69,6 +73,14 @@ const reducer = (state: any, action: any) => {
         isLoggedIn: false,
         authToken: "",
         data: {},
+      };
+    case "UPDATE_USER_CREDITS":
+      alert("update");
+      const updateData = { ...state.data, credits: action.payload.data };
+      localStorage.setItem("data", JSON.stringify(updateData));
+      return {
+        ...state,
+        data: updateData,
       };
     default:
       return state;

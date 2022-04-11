@@ -26,7 +26,7 @@ export const UpcomingEventsStyle = styled.div`
 export const TabRowStyle = styled.div`
   display: grid;
 
-  grid-template: auto / 13% 12% 40% 5% 20%;
+  grid-template: auto / 13% 12% 36% 9% 20%;
   grid-gap: 30px;
   padding: 15px 0;
   margin: 0 30px;
@@ -40,11 +40,11 @@ export const TabRowStyle = styled.div`
 
   @media (max-width: 1760px) {
     display: grid;
-    grid-template: auto / 13% 12% 35% 5% 20%;
+    grid-template: auto / 13% 12% 30% 10% 20%;
   }
   @media (max-width: 1350px) {
     display: grid;
-    grid-template: auto / 13% 12% 25% 5% 20%;
+    grid-template: auto / 13% 12% 19% 11% 20%;
   }
   @media (max-width: 1250px) {
     display: grid;
@@ -99,5 +99,8 @@ export const TabRowStyle = styled.div`
     font-size: 16px;
     font-weight: 700;
     padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;

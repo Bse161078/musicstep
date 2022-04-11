@@ -7,10 +7,11 @@ import { CreditHistoryModalStyle } from "./CreditHistoryModal.style";
 type CreditHistoryModalProps = {
   isModalVisible?: boolean;
   setIsModalVisible?: any;
+  reservations?: any;
 };
 
 const CreditHistoryModal = (props: CreditHistoryModalProps) => {
-  const { isModalVisible, setIsModalVisible } = props;
+  const { isModalVisible, setIsModalVisible, reservations } = props;
 
   const TableHeader = () => {
     return (
@@ -35,15 +36,16 @@ const CreditHistoryModal = (props: CreditHistoryModalProps) => {
       <CreditHistoryModalStyle>
         <div className="table-wrapper">
           <TableHeader />
-          <TableRow rowLabel3="9 Credits" />
-          <TableRow rowLabel3="9 Credits" />
-          <TableRow rowLabel3="9 Credits" />
-          <TableRow rowLabel3="9 Credits" />
-          <TableRow rowLabel3="9 Credits" />
-          <TableRow rowLabel3="9 Credits" />
-          <TableRow rowLabel3="9 Credits" />
-          <TableRow rowLabel3="9 Credits" />
-          <TableRow rowLabel3="9 Credits" />
+          {reservations.map((reservation: any) => {
+            if (reservation.eventReservation === "reserved")
+              return (
+                <TableRow
+                  rowLabel3={`${reservation.credits} Credits`}
+                  reservation={reservation}
+                />
+              );
+            return null;
+          })}
         </div>
       </CreditHistoryModalStyle>
     </ModalWrapper>

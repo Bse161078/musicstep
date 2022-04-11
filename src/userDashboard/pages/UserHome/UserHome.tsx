@@ -19,6 +19,7 @@ import { useHistory } from "react-router-dom";
 
 import { useLoginContext } from "../../../context/authenticationContext";
 import { Spinner } from "../../../components/Spinner";
+import { CustomCarousel } from "../../../components";
 
 const EventReservation = () => {
   const [isCancelModalVisible, setCancelModalVisible] = useState(false);
@@ -29,6 +30,12 @@ const EventReservation = () => {
     <>
       <SectionHeading heading="Events In Reservation">
         <EventReservationStyle>
+          {/* <CustomCarousel
+          // images={[
+          //   venueDetail.coverPhotoUrl,
+          //   ...venueDetail.additionalPhotosUrls,
+          // ]}
+          > */}
           <CardWithContent
             heading="Franklin Kub's concert"
             time="10:51 AM"
@@ -37,6 +44,13 @@ const EventReservation = () => {
             handleButtonClick={() => setCancelModalVisible(true)}
           />
           <CardWithContent
+            heading="Franklin Kub's concert"
+            time="10:51 AM"
+            footerText="Cancelation Time Left: 22:32:09"
+            buttonType="filled"
+            handleButtonClick={() => setCancelModalVisible(true)}
+          />
+          {/* <CardWithContent
             buttonText="Reserved"
             heading="Franklin Kub's Concert"
             time="10:51 AM"
@@ -45,6 +59,8 @@ const EventReservation = () => {
               setIsModalVisible(true);
             }}
           />
+        */}
+          {/* </CustomCarousel> */}
         </EventReservationStyle>
 
         <MessageModal
@@ -94,6 +110,7 @@ export default function UserHome() {
   const { state, dispatch } = useLoginContext();
   const [events, setEvents] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
+  const [reservations, setReservations] = useState([]);
 
   const handleClick = () => {
     history.push({
@@ -117,13 +134,27 @@ export default function UserHome() {
       .catch((error) => {
         console.log(error.response);
       });
+
+    axios
+      .get(`/v1/reservation`, {
+        headers: { Authorization: `Bearer ${state.authToken}` },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setReservations(res.data);
+        // setEvents(res.data);
+        // setIsLoading(false);
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
   }, []);
 
   return (
     <>
       <NavbarWithSearch />
       <UserHomeStyle>
-        <UserSidebar />
+        <UserSidebar reservations={reservations} />
         <div>
           <EventReservation />
           <div className="divider" />

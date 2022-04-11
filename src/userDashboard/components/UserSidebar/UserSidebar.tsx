@@ -16,7 +16,7 @@ import {
 
 import { UserSidebarStyle } from "./UserSidebar.style";
 import { useLoginContext } from "../../../context/authenticationContext";
-const UserSidebar = () => {
+const UserSidebar = ({ reservations }: any) => {
   const { dispatch, state } = useLoginContext();
   const [isLogoutVisible, setLogoutVisible] = useState(false);
   const [isSubscriptionVisible, setSubscriptionVisible] = useState(false);
@@ -49,13 +49,13 @@ const UserSidebar = () => {
     setSubscriptionVisible(false);
     setCancelSubscriptionVisible(true);
   };
-
+  console.log(reservations);
   return (
     <UserSidebarStyle>
       <figure className="person-info-wrapper">
         <div className="avatar-wrapper">
           <img
-            src="/images/sample-image.webp"
+            src={process.env.REACT_APP_BASE_URL + "/" + state.data.imageUrl}
             className="avatar"
             alt="avatar"
           />
@@ -80,7 +80,9 @@ const UserSidebar = () => {
             </span>
           </div>
         </div>
-        <figcaption className="person-name">John Doe</figcaption>
+        <figcaption className="person-name">
+          {state.data.firstName + " " + state.data.lastName}
+        </figcaption>
       </figure>
 
       <h4 className="heading">Subscription Details</h4>
@@ -93,7 +95,7 @@ const UserSidebar = () => {
           />
         </span>
 
-        <div className="divider" />
+        {/* <div className="divider" />
         <span onClick={() => setPeopelWithMutualFreindsModalVisible(true)}>
           <HeadingTab
             heading="People With Mutual Friends"
@@ -101,7 +103,7 @@ const UserSidebar = () => {
               <img src="/images/icons/mutual-friends-icon.svg" alt="icon" />
             }
           />
-        </span>
+        </span> */}
         <div className="divider" />
         <span onClick={() => setCreditModalVisible(true)}>
           <HeadingTab
@@ -120,10 +122,38 @@ const UserSidebar = () => {
         </span>
 
         <div className="divider" />
-        <HeadingTab heading="Events in Reservation" count={14} />
-        <HeadingTab heading="Total Events Attended" count={14} />
+        <HeadingTab
+          heading="Events in Reservation"
+          count={
+            reservations &&
+            reservations.filter(
+              (reservation: any) =>
+                reservation.eventReservation === "reserved" &&
+                reservation.isTicketUsed === false
+            ).length
+          }
+        />
+        <HeadingTab
+          heading="Total Events Attended"
+          count={
+            reservations &&
+            reservations.filter(
+              (reservation: any) =>
+                reservation.eventReservation === "reserved" &&
+                reservation.isTicketUsed === true
+            ).length
+          }
+        />
 
-        <HeadingTab heading="Total Canceled Events" count={1} />
+        <HeadingTab
+          heading="Total Canceled Events"
+          count={
+            reservations &&
+            reservations.filter(
+              (reservation: any) => reservation.eventReservation === "cancelled"
+            ).length
+          }
+        />
       </div>
 
       <LogoutModal
@@ -149,11 +179,13 @@ const UserSidebar = () => {
       <CreditHistoryModal
         isModalVisible={isCreditModalVisible}
         setIsModalVisible={setCreditModalVisible}
+        reservations={reservations}
       />
 
       <EventHistoryModal
         isModalVisible={isEventsModalVisible}
         setIsModalVisible={setEventsModalVisible}
+        reservations={reservations}
       />
 
       <MessageModal

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Formik, Form } from "formik";
 
 import { InputBox } from "../../../../components/InputBox";
@@ -8,16 +8,28 @@ import {
 } from "../../../../styles/Common.style";
 import { ModalWrapper } from "../ModalWrapper";
 import { ReservationConfirmedModalStyle } from "./ReservationConfirmedModal.style";
+import moment from "moment";
+import { PDFExport } from "@progress/kendo-react-pdf";
+import QRCode from "qrcode.react";
 
 type ReservationConfirmedModalProps = {
   isModalVisible?: boolean;
   setIsModalVisible?: any;
+  event?: any;
+  ticketIndex?: number;
 };
 
 const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
-  const { isModalVisible, setIsModalVisible } = props;
-  const handleSubmit = () => {
+  const { isModalVisible, setIsModalVisible, event, ticketIndex } = props;
+
+  const index = ticketIndex === undefined ? -1 : ticketIndex;
+  const pdfExportComponent: any = React.createRef();
+  const printComponent = useRef(null);
+
+  const handleExportWithComponent = (event: any) => {
+    const file = pdfExportComponent.current.save();
   };
+  const handleSubmit = () => {};
   return (
     <ModalWrapper
       heading="Reservation Confirmed"
@@ -27,13 +39,46 @@ const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
       button={[]}
     >
       <ReservationConfirmedModalStyle>
-        <img alt="code" className="qrcode-img" src="/images/qrcodee.png" />
+        <PDFExport
+          fileName="Ticket"
+          author={"Music pass"}
+          ref={pdfExportComponent}
+          paperSize="A6"
+        >
+          {/* <img
+            alt="code"
+            style={{ width: "208px", height: "208px", margin: "auto" }}
+            className="qrcode-img"
+            src="/images/qrcodee.png"
+          /> */}
+          <QRCode
+            // id={"qr-gen"}
+            value={event.tickets[index]._id}
+            size={290}
+            level={"H"}
+            includeMargin={true}
+          />
 
-        <div className="time-wrapper">
-          <h1>You're booked for 8-March-2021 at 7:00 PM</h1>
-          <img alt="ad" src="/images/ad.svg" />
-        </div>
-        <FilledButtonStyle width="100%" height="54px" >
+          <div className="time-wrapper">
+            <h1 style={{ display: "flex", flexDirection: "row", gap: "30px" }}>
+              You're booked for
+              {" " +
+                moment(event && event.date).date() +
+                "-" +
+                moment(event && event.date).format("MMMM") +
+                "-" +
+                new Date(event && event.date).getFullYear() +
+                " at " +
+                moment(event && event.startingTime, ["h:mm"]).format("h:mm a")}
+            </h1>
+            {/* <img alt="ad" src="/images/ad.svg" /> */}
+          </div>
+        </PDFExport>
+        <FilledButtonStyle
+          width="100%"
+          height="54px"
+          onClick={handleExportWithComponent}
+        >
           Download & Save QR Code
         </FilledButtonStyle>
         <div className="border-div">
@@ -67,9 +112,15 @@ const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
           </div>
           <div className="or">
             <p>---------------- or ----------------</p>
-            </div>
+          </div>
           <div>
-            <OutlineButtonStyle onClick={handleSubmit} height="54px" width="100%">Email Invite</OutlineButtonStyle>
+            <OutlineButtonStyle
+              onClick={handleSubmit}
+              height="54px"
+              width="100%"
+            >
+              Email Invite
+            </OutlineButtonStyle>
           </div>
         </div>
       </ReservationConfirmedModalStyle>

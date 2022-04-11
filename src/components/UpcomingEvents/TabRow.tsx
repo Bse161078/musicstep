@@ -13,10 +13,11 @@ type TabRowProps = {
   buttonText?: string;
   buttonClick?: any;
   event?: any;
+  reservation?: number;
 };
 
 export const TabRow = (props: TabRowProps) => {
-  const { buttonType, buttonText, event } = props;
+  const { buttonType, buttonText, event, reservation } = props;
   const [isEventDetailsModalVisibel, setIsEventDetailsModalVisibel] = useState(
     false
   );
@@ -59,7 +60,10 @@ export const TabRow = (props: TabRowProps) => {
           <p className="genre">Alternative, Classical</p>
         </div>
         <div className="time">
-          <p className="person-number">338</p>
+          <p className="person-number">
+            <img alt="logout" src="/images/icons/profile.svg" />
+            <span>{reservation}</span>
+          </p>
         </div>
         {buttonType === "filled" ? (
           <div>

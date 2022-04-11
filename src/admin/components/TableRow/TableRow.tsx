@@ -1,24 +1,44 @@
 import React from "react";
+import moment from "moment";
 
 import { TableRowStyle } from "./TableRow.style";
+import { useState } from "@storybook/addons";
 
 type TableRowProps = {
   rowLabel3?: string;
+  reservation?: any;
 };
 
 const TableRow = (props: TableRowProps) => {
-  const { rowLabel3 } = props;
+  const { rowLabel3, reservation } = props;
 
   return (
     <TableRowStyle>
       <span>
-        <h1 className="heading">10:51 AM</h1>
-        <p className="subheading">July 24, 2021</p>
+        <h1 className="heading">
+          {/* 10:51 AM */}
+          {moment(reservation && reservation.eventInfo[0].startingTime, [
+            "hh:mm",
+          ]).format("hh:mm a")}
+        </h1>
+        <p className="subheading">
+          {moment(reservation && reservation.eventInfo[0].date).format("MMMM") +
+            " " +
+            moment(reservation && reservation.eventInfo[0].date).date() +
+            ", " +
+            new Date(
+              reservation && reservation.eventInfo[0].date
+            ).getFullYear()}
+        </p>
       </span>
 
       <span>
-        <h1 className="heading">Franklin Kub's Concert</h1>
-        <p className="subheading">Venue Name Here</p>
+        <h1 className="heading">
+          {reservation && reservation.eventInfo[0].title}
+        </h1>
+        <p className="subheading">
+          {reservation && reservation.venueInfo[0].name}
+        </p>
       </span>
 
       <span>

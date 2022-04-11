@@ -86,6 +86,7 @@ const FormRow = ({ event }: FormRowProps) => {
         isModalVisible={isEventDetailsModalVisibel}
         setIsModalVisible={setIsEventDetailsModalVisibel}
         isTicketsAvailable={true}
+        event={event}
       />
     </>
   );

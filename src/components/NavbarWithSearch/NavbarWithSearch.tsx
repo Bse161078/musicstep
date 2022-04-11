@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 
 import { SelectWithInput } from "..";
 import { NavbarWithSearchStyle } from "./NavbarWithSearch.style";
-
+import { useLoginContext } from "../../context/authenticationContext";
 const NavbarWithSearch = () => {
+  const { dispatch, state } = useLoginContext();
   return (
     <NavbarWithSearchStyle>
       <Link className="logo-wrapper" to="/explore-venue">
@@ -15,13 +16,13 @@ const NavbarWithSearch = () => {
 
       <div className="links-wrapper">
         <span>Upcoming Itinerary</span>
-        <span>15 Credits</span>
+        <span>{state.data.credits} Credits</span>
         <Link to="/dashboard/home">
           <span>
             <img
               className="image"
               alt="profile"
-              src="/images/profile-image.png"
+              src={process.env.REACT_APP_BASE_URL + "/" + state.data.imageUrl}
             />
           </span>
         </Link>

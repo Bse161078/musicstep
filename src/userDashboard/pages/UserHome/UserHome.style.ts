@@ -30,6 +30,8 @@ export const UserHomeStyle = styled.main`
 
 export const EventReservationStyle = styled.div`
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   grid-gap: 20px;
 
   @media (max-width: 1440px) {

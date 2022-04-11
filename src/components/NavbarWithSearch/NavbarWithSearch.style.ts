@@ -13,6 +13,7 @@ export const NavbarWithSearchStyle = styled.nav`
   .image {
     width: 48px;
     height:48px;
+    border-radius: 50%;
   }
   @media (max-width: 1024px) {
     flex-direction: column;

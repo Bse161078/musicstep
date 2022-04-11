@@ -82,11 +82,21 @@ export default function VenueDetails() {
       <VenueDetailsStyle>
         <div className="left-side">
           <CustomCarousel
-            images={[
+          // images={[
+          //   venueDetail.coverPhotoUrl,
+          //   ...venueDetail.additionalPhotosUrls,
+          // ]}
+          >
+            {[
               venueDetail.coverPhotoUrl,
               ...venueDetail.additionalPhotosUrls,
-            ]}
-          />
+            ]?.map((image: any) => (
+              <img
+                alt="carousel tab"
+                src={`${process.env.REACT_APP_BASE_URL}/${image}`}
+              />
+            ))}
+          </CustomCarousel>
           <LogoWithHeading
             heading={venueDetail.name}
             logo={venueDetail.logoUrl}
