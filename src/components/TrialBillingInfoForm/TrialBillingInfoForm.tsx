@@ -85,7 +85,7 @@ const TrialBillingInfoForm = () => {
             <InputBox label="Card Number" name="cardNumber" />
 
             <div className="multi-column">
-              <InputBox label="Date" name="date" />
+              <InputBox label="Expiry Date" name="date" />
               <InputBox label="CVC" name="cvc" />
             </div>
 

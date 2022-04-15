@@ -11,8 +11,8 @@ export const BasicInfoFormValidationSchema = yup.object().shape({
     .required("Email is required"),
   phone: yup.string().required("Phone number is required"),
   // photo: yup.mixed().required("Photo is required"),
-  bio: yup.string().required("Bio is required").nullable(),
-  instagram: yup.string().required("Instagram is required").nullable(),
-  facebook: yup.string().required("Facebook is required").nullable(),
-  twitter: yup.string().required("Twitter is required").nullable(),
+  // bio: yup.string().required("Bio is required").nullable(),
+  // instagram: yup.string().required("Instagram is required").nullable(),
+  // facebook: yup.string().required("Facebook is required").nullable(),
+  // twitter: yup.string().required("Twitter is required").nullable(),
 });

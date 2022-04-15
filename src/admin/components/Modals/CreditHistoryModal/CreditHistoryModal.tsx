@@ -36,16 +36,17 @@ const CreditHistoryModal = (props: CreditHistoryModalProps) => {
       <CreditHistoryModalStyle>
         <div className="table-wrapper">
           <TableHeader />
-          {reservations.map((reservation: any) => {
-            if (reservation.eventReservation === "reserved")
-              return (
-                <TableRow
-                  rowLabel3={`${reservation.credits} Credits`}
-                  reservation={reservation}
-                />
-              );
-            return null;
-          })}
+          {reservations &&
+            reservations.map((reservation: any) => {
+              if (reservation.eventReservation === "reserved")
+                return (
+                  <TableRow
+                    rowLabel3={`${reservation.credits} Credits`}
+                    reservation={reservation}
+                  />
+                );
+              return null;
+            })}
         </div>
       </CreditHistoryModalStyle>
     </ModalWrapper>

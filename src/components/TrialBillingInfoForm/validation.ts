@@ -5,7 +5,7 @@ export const TrialBillingInfoValidationSchema = yup.object().shape({
   cardNumber: yup.string().required("Card number is required").min(15).max(16),
   date: yup
     .string()
-    .required("Date is required")
+    .required("Expiry Date is required")
     .matches(
       /^(0[1-9]|1[0-2]|[1-9])\/(2[2-9]|3[0-9]|20[2-9][2-9]|20[3-9][0-9])$/,
       "Please enter a valid expiry date"

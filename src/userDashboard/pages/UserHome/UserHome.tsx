@@ -20,11 +20,13 @@ import { useHistory } from "react-router-dom";
 import { useLoginContext } from "../../../context/authenticationContext";
 import { Spinner } from "../../../components/Spinner";
 import { CustomCarousel } from "../../../components";
+import moment from "moment";
 
-const EventReservation = () => {
+const EventReservation = ({ reservations, cancelreservation }: any) => {
   const [isCancelModalVisible, setCancelModalVisible] = useState(false);
   const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [selectedReservation, setSelectedReservation] = useState(false);
 
   return (
     <>
@@ -36,20 +38,30 @@ const EventReservation = () => {
           //   ...venueDetail.additionalPhotosUrls,
           // ]}
           > */}
-          <CardWithContent
+          {reservations &&
+            reservations.map((reservation: any) => (
+              <CardWithContent
+                heading={reservation.eventInfo[0].title}
+                time={moment(reservation.eventInfo[0].startingTime, [
+                  "hh:mm",
+                ]).format("hh:mm a")}
+                footerText="Cancelation Time Left: 22:32:09"
+                buttonType="filled"
+                handleButtonClick={() => {
+                  // alert(reservation._id);
+                  setSelectedReservation(reservation._id);
+                  setCancelModalVisible(true);
+                }}
+              />
+            ))}
+
+          {/* <CardWithContent
             heading="Franklin Kub's concert"
             time="10:51 AM"
             footerText="Cancelation Time Left: 22:32:09"
             buttonType="filled"
             handleButtonClick={() => setCancelModalVisible(true)}
-          />
-          <CardWithContent
-            heading="Franklin Kub's concert"
-            time="10:51 AM"
-            footerText="Cancelation Time Left: 22:32:09"
-            buttonType="filled"
-            handleButtonClick={() => setCancelModalVisible(true)}
-          />
+          /> */}
           {/* <CardWithContent
             buttonText="Reserved"
             heading="Franklin Kub's Concert"
@@ -83,6 +95,7 @@ const EventReservation = () => {
               onClick={() => {
                 setCancelModalVisible(false);
                 setSuccessModalVisible(true);
+                cancelreservation(selectedReservation);
               }}
             >
               Cancel
@@ -135,6 +148,43 @@ export default function UserHome() {
         console.log(error.response);
       });
 
+    getReservation();
+  }, []);
+
+  const cancelreservation = (reservationId: any) => {
+    axios
+      .put(
+        `/v1/reservation/cancel?reservationId=${reservationId}`,
+        {},
+        {
+          headers: { Authorization: `Bearer ${state.authToken}` },
+        }
+      )
+      .then(async (responses) => {
+        getReservation();
+
+        const response = await axios
+          .get(`/v1/users/${state.data.id}`, {
+            headers: { Authorization: `Bearer ${state.authToken}` },
+          })
+          .catch((error) => {
+            console.log(error.response);
+            alert(error.response.data.message);
+          });
+        if (response) {
+          console.log(response);
+
+          dispatch({
+            type: "UPDATE_USER_CREDITS",
+            payload: {
+              data: response.data.credits,
+            },
+          });
+        }
+      })
+      .catch((error) => {});
+  };
+  const getReservation = () => {
     axios
       .get(`/v1/reservation`, {
         headers: { Authorization: `Bearer ${state.authToken}` },
@@ -148,7 +198,7 @@ export default function UserHome() {
       .catch((error) => {
         console.log(error.response);
       });
-  }, []);
+  };
 
   return (
     <>
@@ -156,7 +206,17 @@ export default function UserHome() {
       <UserHomeStyle>
         <UserSidebar reservations={reservations} />
         <div>
-          <EventReservation />
+          <EventReservation
+            reservations={
+              reservations &&
+              reservations.filter(
+                (reservation: any) =>
+                  reservation.eventReservation === "reserved" &&
+                  reservation.isTicketUsed === false
+              )
+            }
+            cancelreservation={cancelreservation}
+          />
           <div className="divider" />
           {!isLoading ? (
             events.length > 0 ? (

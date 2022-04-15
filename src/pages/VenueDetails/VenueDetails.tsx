@@ -48,6 +48,7 @@ export default function VenueDetails() {
   const [events, setEvents] = React.useState(null);
   const [isLoading, setIsLoading] = React.useState(false);
   const [amentiesState, setamentiesState] = useState(amenties);
+  const [reviews, setreviews] = useState(null);
   const venueDetail = location.state.venueDetail;
   console.log(venueDetail);
 
@@ -75,6 +76,23 @@ export default function VenueDetails() {
     setamentiesState(tempAmenties);
     // setAttributesListState(tempAttributesList);
   }, []);
+
+  const getReviews = () => {
+    axios
+      .get(`/v1/review?venueId=${venueDetail._id}`, {
+        headers: { Authorization: `Bearer ${state.authToken}` },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setreviews(res.data);
+        // setEvents(res.data);
+        // setEvents(res.data);
+        // setProfilesList(res.data);
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+  };
 
   return (
     <>
@@ -113,6 +131,8 @@ export default function VenueDetails() {
             onChange={(key) => {
               if (key === "2") {
                 callback();
+              } else if (key === "3") {
+                getReviews();
               }
             }}
           >
@@ -132,7 +152,11 @@ export default function VenueDetails() {
             </TabPaneStyle>
             <TabPaneStyle tab="Reviews" key="3">
               <div className="table-wrapper">
-                <Reviews />
+                <Reviews
+                  reviews={reviews}
+                  venueId={venueDetail._id}
+                  getReviews={getReviews}
+                />
               </div>
             </TabPaneStyle>
           </TabsStyle>

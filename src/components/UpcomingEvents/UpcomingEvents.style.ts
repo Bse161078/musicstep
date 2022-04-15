@@ -40,11 +40,11 @@ export const TabRowStyle = styled.div`
 
   @media (max-width: 1760px) {
     display: grid;
-    grid-template: auto / 13% 12% 30% 10% 20%;
+    grid-template: auto / 13% 12% 25% 10% 25%;
   }
-  @media (max-width: 1350px) {
+  @media (max-width: 1500px) {
     display: grid;
-    grid-template: auto / 13% 12% 19% 11% 20%;
+    grid-template: auto / 12% 11% 20% 10% 21%;
   }
   @media (max-width: 1250px) {
     display: grid;

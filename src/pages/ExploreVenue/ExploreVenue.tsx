@@ -191,7 +191,7 @@ export default function ExploreVenue() {
                 // request={event}
               />
               ))} */}
-                <Marker
+                {/* <Marker
                   // lat={31.582045}
                   // lng={74.329376}
                   lat={31.582045}
@@ -199,7 +199,7 @@ export default function ExploreVenue() {
                   name="Your location"
                   color={"blue"}
                   id="1"
-                />
+                /> */}
                 {venues.length > 0 &&
                   venues.map(
                     (venue: any) => (
