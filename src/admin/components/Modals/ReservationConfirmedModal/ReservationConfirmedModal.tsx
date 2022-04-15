@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Formik, Form } from "formik";
-
+import { CopyToClipboard } from "react-copy-to-clipboard";
 import { InputBox } from "../../../../components/InputBox";
 import {
   FilledButtonStyle,
@@ -11,6 +11,10 @@ import { ReservationConfirmedModalStyle } from "./ReservationConfirmedModal.styl
 import moment from "moment";
 import { PDFExport } from "@progress/kendo-react-pdf";
 import QRCode from "qrcode.react";
+import axios from "axios";
+import { useLoginContext } from "../../../../context/authenticationContext";
+import { MessageModal } from "../../../../components";
+import * as yup from "yup";
 
 type ReservationConfirmedModalProps = {
   isModalVisible?: boolean;
@@ -21,7 +25,13 @@ type ReservationConfirmedModalProps = {
 
 const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
   const { isModalVisible, setIsModalVisible, event, ticketIndex } = props;
+  const [baseUrl, setBaseUrl] = useState("");
+  const { state } = useLoginContext();
+  const [messageHeading, setMessageHeading] = useState("");
+  const [message, setMessage] = useState("");
 
+  const [sendEmailModel, setSendEmailModel] = useState(false);
+  const [successModel, setsuccessModel] = useState(false);
   const index = ticketIndex === undefined ? -1 : ticketIndex;
   const pdfExportComponent: any = React.createRef();
   const printComponent = useRef(null);
@@ -30,6 +40,36 @@ const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
     const file = pdfExportComponent.current.save();
   };
   const handleSubmit = () => {};
+
+  const emailHandleSubmit = (values: any, { resetForm }: any) => {
+    const res = axios
+      .post(
+        "/v1/users/sendInvitationEmail",
+        {
+          to: values.email,
+          musicPasslink: baseUrl,
+        },
+        {
+          headers: { Authorization: `Bearer ${state.authToken}` },
+        }
+      )
+      .then((response) => {
+        console.log(response);
+        setsuccessModel(true);
+        setMessageHeading("Success");
+        setMessage("Invitation Email send Successfully");
+        resetForm();
+      })
+      .catch((error) => {
+        setMessageHeading("Error");
+        setMessage("Email send failed");
+        resetForm();
+      });
+  };
+  useEffect(() => {
+    console.log(window.location.pathname); //yields: "/js" (where snippets run)
+    setBaseUrl(window.location.href.replace(window.location.pathname, ""));
+  }, []);
   return (
     <ModalWrapper
       heading="Reservation Confirmed"
@@ -90,7 +130,7 @@ const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
           <div className="form-wrapper">
             <Formik
               initialValues={{
-                inviteLink: "https://www.musicpass.com/invite/234ewrf",
+                inviteLink: baseUrl,
               }}
               onSubmit={handleSubmit}
             >
@@ -100,14 +140,17 @@ const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
                     label="Invite Link"
                     width="100%"
                     name="inviteLink"
+                    value={baseUrl}
                   />
                 </Form>
               )}
             </Formik>
             <div>
-              <OutlineButtonStyle width="97px" height="54px">
-                Copy
-              </OutlineButtonStyle>
+              <CopyToClipboard text={baseUrl}>
+                <OutlineButtonStyle width="97px" height="54px">
+                  Copy
+                </OutlineButtonStyle>
+              </CopyToClipboard>
             </div>
           </div>
           <div className="or">
@@ -115,7 +158,7 @@ const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
           </div>
           <div>
             <OutlineButtonStyle
-              onClick={handleSubmit}
+              onClick={() => setSendEmailModel(true)}
               height="54px"
               width="100%"
             >
@@ -124,6 +167,50 @@ const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
           </div>
         </div>
       </ReservationConfirmedModalStyle>
+      <ModalWrapper
+        heading="MusicPass Invitation"
+        width="617px"
+        isModalVisible={sendEmailModel}
+        setIsModalVisible={setSendEmailModel}
+        button={[]}
+      >
+        <Formik
+          initialValues={{
+            email: "",
+          }}
+          validationSchema={yup.object().shape({
+            email: yup
+              .string()
+              .email("Invalid email address")
+              .required("Email is required"),
+          })}
+          onSubmit={emailHandleSubmit}
+        >
+          {() => (
+            <Form>
+              <InputBox label="Email" width="100%" name="email" />
+              <div>
+                <FilledButtonStyle
+                  // onClick={handleSubmit}
+                  height="54px"
+                  width="50%"
+                  style={{ margin: "20px auto" }}
+                  type="submit"
+                >
+                  Send Invitation
+                </FilledButtonStyle>
+              </div>
+            </Form>
+          )}
+        </Formik>
+      </ModalWrapper>
+      <MessageModal
+        handleOkClick={() => setsuccessModel(false)}
+        isModalVisible={successModel}
+        setIsModalVisible={setsuccessModel}
+        message={message}
+        heading={messageHeading}
+      />
     </ModalWrapper>
   );
 };

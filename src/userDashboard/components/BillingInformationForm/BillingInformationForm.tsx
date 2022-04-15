@@ -52,7 +52,7 @@ const BillingInformationForm = () => {
             <InputBox label="Card Number" name="cardNumber" />
 
             <div className="multi-column">
-              <InputBox label="Month" name="cardMonth" />
+              <InputBox label="Expiery Date" name="cardMonth" />
               <InputBox label="CVC" name="cvc" />
             </div>
 
