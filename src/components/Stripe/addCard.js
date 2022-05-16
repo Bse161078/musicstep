@@ -4,12 +4,14 @@ import {
     useStripe,
     useElements
 } from "@stripe/react-stripe-js";
+import {FilledButtonStyle} from "../../styles/Common.style";
+import {Form} from "formik";
 
 export default function AddCard(props) {
     const stripe = useStripe();
     const elements = useElements();
 
-    const [message,setMessage]=useState("");
+    const [message, setMessage] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isCardAdded, setIsCardAdded] = useState({msg: "", status: false});
 
@@ -28,7 +30,7 @@ export default function AddCard(props) {
         }
 
         stripe.retrieveSetupIntent(clientSecret).then(({setupIntent}) => {
-            console.log("setupIntent111 = ",setupIntent)
+            console.log("setupIntent111 = ", setupIntent)
             switch (setupIntent.status) {
                 case "succeeded":
                     setIsCardAdded({status: true, msg: "Success! Your payment method has been saved!"});
@@ -53,11 +55,11 @@ export default function AddCard(props) {
     }, [stripe]);
 
 
-    useEffect(()=>{
-        if(isCardAdded.status){
+    useEffect(() => {
+        if (isCardAdded.status) {
 
         }
-    },[isCardAdded])
+    }, [isCardAdded])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -104,16 +106,16 @@ export default function AddCard(props) {
             {!isCardAdded.status ?
                 <div id="payment-form" onClick={handleSubmit}>
                     <PaymentElement id="payment-element"/>
-                    <button disabled={isLoading || !stripe || !elements} id="submit">
-        <span id="button-text">
-          {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
-        </span>
-                    </button>
+                    <FilledButtonStyle width="100%" height="60px" id="submit">
+                        Redeem Now
+                    </FilledButtonStyle>
+
+
                     {/* Show any error or success messages */}
                     {message && <div id="payment-message">{message}</div>}
                 </div>
                 :
-           <p>{isCardAdded.msg}</p> }
+                <p>{isCardAdded.msg}</p>}
         </Fragment>
     );
 }
