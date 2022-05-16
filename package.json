@@ -3,9 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.7.0",
     "@progress/kendo-drawing": "^1.16.3",
     "@progress/kendo-licensing": "^1.2.2",
     "@progress/kendo-react-pdf": "^5.2.0",
+    "@stripe/react-stripe-js": "^1.8.0-0",
+    "@stripe/stripe-js": "^1.29.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -52,7 +57,7 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

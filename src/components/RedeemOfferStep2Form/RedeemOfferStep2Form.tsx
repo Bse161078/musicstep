@@ -49,6 +49,19 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
       })
       .catch((error) => {
         setErrorMessage(error.response?.data.message);
+
+          setContinueModal(true);
+          dispatch({
+              type: "SUBMIT_GENERAL_INFO",
+              payload: {
+                  firstName: e.firstName,
+                  lastName: e.lastName,
+                  dob: e.dob,
+                  phoneNumber: e.phoneNumber,
+                  email: e.email,
+              },
+          });
+
       });
   };
 
