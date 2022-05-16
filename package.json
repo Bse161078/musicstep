@@ -6,6 +6,8 @@
     "@progress/kendo-drawing": "^1.16.3",
     "@progress/kendo-licensing": "^1.2.2",
     "@progress/kendo-react-pdf": "^5.2.0",
+    "@stripe/react-stripe-js": "^1.7.2",
+    "@stripe/stripe-js": "^1.29.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -30,6 +32,7 @@
     "qrcode.react": "^3.0.1",
     "query-string": "^7.1.1",
     "react": "^17.0.2",
+    "react-add-to-calendar": "^0.1.5",
     "react-copy-to-clipboard": "^5.1.0",
     "react-date-picker": "^8.4.0",
     "react-dom": "^17.0.2",
@@ -95,6 +98,7 @@
     "@storybook/preset-create-react-app": "^3.2.0",
     "@storybook/react": "^6.3.8",
     "@types/json-form-data": "^1.7.2",
+    "@types/react-add-to-calendar": "^0.1.1",
     "@types/react-copy-to-clipboard": "^5.0.2",
     "@types/react-star-ratings": "^2.3.0"
   }

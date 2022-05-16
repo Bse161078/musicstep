@@ -15,37 +15,51 @@ export default function ExploreVenue() {
     },
     zoom: 11,
   };
-
+  const [search,setSearch] = useState('')
   const { state, dispatch } = useLoginContext();
   const [venues, setVenues] = useState([]);
+  const venueFilter =  venues .filter((venue:any)=>(venue.venueInfo[0].name).toLowerCase().includes((search).toLowerCase()))
   useEffect(() => {
     axios
       .get("/v1/users/allEventsByVenues", {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .then((res) => {
-        console.log(res.data);
         setVenues(res.data);
+        console.log('venues',venues)
         // setEvents(res.data);
         // setEvents(res.data);
         // setProfilesList(res.data);
       })
       .catch((error) => {
-        console.log(error.response);
       });
   }, []);
-
+  console.log('venues',venues,search)
   return (
     <>
-      <NavbarWithSearch />
+      <NavbarWithSearch setSearch={setSearch}
+      search={search}
+      />
       <ExploreVenueStyle>
         <DropdownsList />
         <div />
 
         <section className="venues-list">
           {venues.length > 0 ? (
-            venues.map((venue: any) => <VenueCard venue={venue} />)
-          ) : (
+            venueFilter.length>0?(
+          venueFilter.map((venue: any) => <VenueCard venue={venue} />)):
+          <h1
+          style={{
+            width: "100%",
+            margin: "0px auto",
+            fontSize: "40px",
+            textAlign: "center",
+          }}
+        >
+          No Event or Venue to explore
+        </h1>
+          ) :
+           (
             <h1
               style={{
                 width: "100%",

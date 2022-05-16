@@ -8,7 +8,7 @@ export default function Pricing() {
     <PricingStyle>
       <h1 className="pricing-heading">MusicPass Pricing</h1>
 
-      <div className="prices-wrapper">
+      <div className="prices-wrapper" style={{background:'yellow'}}>
         <PriceCard price="$15" musicType="Dip" credits="6" eventsCount="1" />
         <PriceCard
           price="$49"
@@ -28,6 +28,7 @@ export default function Pricing() {
           credits="68"
           eventsCount="5-6"
         />
+        <p>Hamzasss</p>
         <PriceCard
           price="$199"
           musicType="Pro"

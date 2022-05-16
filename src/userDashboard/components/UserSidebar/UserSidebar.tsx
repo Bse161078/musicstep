@@ -139,8 +139,8 @@ const UserSidebar = ({ reservations }: any) => {
             reservations &&
             reservations.filter(
               (reservation: any) =>
-                reservation.eventReservation === "reserved" &&
-                reservation.isTicketUsed === true
+                reservation.eventReservation === "attended" &&
+                reservation.isTicketUsed === false
             ).length
           }
         />

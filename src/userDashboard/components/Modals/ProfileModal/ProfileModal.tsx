@@ -19,10 +19,16 @@ const ProfileModal = (props: ProfileModalProps) => {
       height="648px"
       button={
         <>
-          <OutlineButtonStyle buttonType="light" width="270px" height="60px">
+          <OutlineButtonStyle buttonType="light" width="270px" height="60px"
+          onClick={()=>{
+            props.setIsModalVisible(false)
+          }}
+          >
             Dont Show This Person Again
           </OutlineButtonStyle>
-          <OutlineButtonStyle buttonType="light" width="110px" height="60px">
+          <OutlineButtonStyle buttonType="light" width="110px" height="60px"
+          
+          >
             Close
           </OutlineButtonStyle>
         </>

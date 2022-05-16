@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+    <defs>
+        <clipPath id="clip-path">
+            <path id="Rectangle_613" data-name="Rectangle 613" transform="translate(1116 4648)" style="opacity:.5;fill:#fff" d="M0 0h24v24H0z"/>
+        </clipPath>
+        <style>
+            .cls-3{fill:#fff}
+        </style>
+    </defs>
+    <g id="LinkedIn" transform="translate(-1116 -4648)" style="clip-path:url(#clip-path)">
+        <g id="linkedin-2" data-name="linkedin" transform="translate(1116 4648)">
+            <path id="Path_2030" data-name="Path 2030" class="cls-3" d="M23.994 24H24v-8.8c0-4.306-.927-7.623-5.961-7.623a5.226 5.226 0 0 0-4.707 2.587h-.07V7.976H8.489V24h4.97v-7.935c0-2.089.4-4.109 2.983-4.109 2.549 0 2.587 2.384 2.587 4.243V24z"/>
+            <path id="Path_2031" data-name="Path 2031" class="cls-3" d="M.4 7.977h4.972V24H.4z"/>
+            <path id="Path_2032" data-name="Path 2032" class="cls-3" d="M2.882 0a2.9 2.9 0 1 0 2.882 2.882A2.883 2.883 0 0 0 2.882 0z"/>
+        </g>
+    </g>
+</svg>
