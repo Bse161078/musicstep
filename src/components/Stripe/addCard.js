@@ -105,11 +105,11 @@ export default function AddCard(props) {
             {!isCardAdded.status ?
                 <div id="payment-form" onClick={handleSubmit}>
                     <PaymentElement id="payment-element"/>
-                    <button disabled={isLoading || !stripe || !elements} id="submit">
+                    <FilledButtonStyle disabled={isLoading || !stripe || !elements} id="submit">
         <span id="button-text">
-          {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
+         Add Card
         </span>
-                    </button>
+                    </FilledButtonStyle>
                     {/* Show any error or success messages */}
                     {message && <div id="payment-message">{message}</div>}
                 </div>
