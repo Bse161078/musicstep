@@ -6,6 +6,7 @@ import { DropdownsList } from "./DropdownsList";
 import { ExploreVenueStyle } from "./ExploreVenue.style";
 import { useLoginContext } from "../../context/authenticationContext";
 import Marker from "../../components/Marker";
+import {Button} from "@mui/material";
 
 export default function ExploreVenue() {
   const defaultProps = {
@@ -34,7 +35,20 @@ export default function ExploreVenue() {
       .catch((error) => {
       });
   }, []);
-  console.log('venues',venues,search)
+
+  const onSubscribePackage=(e:any)=>{
+    console.log("onSubscribePackage")
+      const user:any=JSON.parse(localStorage.getItem("data")||"{}");
+      axios.post('/v1/stripe/pay-subscription',{id:user.id}).then((response)=>{
+          //console.log("data = ",response.data.clientSecret);
+          window.open(response.data.url,'_blank');
+
+          console.log("subsribe package",response.data.url);
+      }).catch((err)=>{
+          console.log("err = ",err.response)
+      })
+  }
+
   return (
     <>
       <NavbarWithSearch setSearch={setSearch}
@@ -45,6 +59,8 @@ export default function ExploreVenue() {
         <div />
 
         <section className="venues-list">
+            <Button  style={{background:"Red",zIndex:11111}} onClick={(e)=>onSubscribePackage(e)}>Checkout</Button>
+
           {venues.length > 0 ? (
             venueFilter.length>0?(
           venueFilter.map((venue: any) => <VenueCard venue={venue} />)):

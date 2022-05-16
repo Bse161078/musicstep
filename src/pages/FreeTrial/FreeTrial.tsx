@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, {useEffect, useMemo, useState} from "react";
 import {
   BillingInformation,
   RedeemOfferForm,
@@ -27,6 +27,16 @@ export default function FreeTrial() {
   }
   const [currentForm, setCurrentForm] = useState(initialLoadFormName);
 
+
+  useEffect(()=>{
+      const clientSecret = new URLSearchParams(window.location.search).get(
+          "setup_intent_client_secret"
+      );
+      console.log("clientSecret = ",clientSecret);
+      if(clientSecret && clientSecret.length>0)
+      setCurrentForm("trial-billing-information")
+  },[])
+
   if (
     loginContext.state.data &&
     loginContext.state.isLoggedIn &&
@@ -45,7 +55,10 @@ export default function FreeTrial() {
       payload: {},
     });
   };
+
+
   const CurrentTrialStep = useMemo(() => {
+      console.log(currentForm)
     switch (currentForm) {
       case "trial-info":
         return <TrialForm setCurrentForm={setCurrentForm} />;
@@ -74,6 +87,8 @@ export default function FreeTrial() {
         return <TrialForm setCurrentForm={setCurrentForm} />;
     }
   }, [currentForm]);
+
+  console.log("current form = ",currentForm)
   return (
     <FreeTrialStyle>
       <StartTrialWrapper
