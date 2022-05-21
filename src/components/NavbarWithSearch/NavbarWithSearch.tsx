@@ -8,6 +8,7 @@ import { useLoginContext } from "../../context/authenticationContext";
 const NavbarWithSearch = (props:any) => {
   const { dispatch, state } = useLoginContext();
   const [venues, setVenues] = useState([]);
+  const status = localStorage.getItem("status")
   useEffect(() => {
     axios
       .get("/v1/users/allEventsByVenues", {
@@ -19,6 +20,7 @@ const NavbarWithSearch = (props:any) => {
       .catch((error) => {
       });
   }, []);
+  const {active} = props
   return (
     <NavbarWithSearchStyle  >
       <Link className="logo-wrapper" to="/explore-venue">
@@ -31,7 +33,9 @@ const NavbarWithSearch = (props:any) => {
 
       <div className="links-wrapper">
         <span>Upcoming Itinerary</span>
-        <span>{state.data.credits} Credits</span>
+        {active===true?<span>{state.data.credits} Credits</span>:
+        <span> Expired </span>
+        }
         <Link to="/dashboard/home">
           <span>
             <img

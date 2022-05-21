@@ -6,6 +6,7 @@ import {
 } from "../../../styles/Common.style";
 
 import { DashboardHeaderStyle } from "./DashboardHeader.style";
+import Loading from "../../../components/Loading/Loading"
 
 type DashboardHeaderProps = {
   handleCancelClick?: () => void;
@@ -20,9 +21,12 @@ type DashboardHeaderProps = {
   cancelButtonWidth?: string;
   submitButton?: any;
   submitRef?: any;
+  isLoading?:any;
+  setLoading?:any;
 };
 
 const DashboardHeader = (props: DashboardHeaderProps) => {
+
   const {
     handleCancelClick,
     handleSaveClick,
@@ -34,10 +38,13 @@ const DashboardHeader = (props: DashboardHeaderProps) => {
     cancelButtonText,
     saveButtonWidth,
     cancelButtonWidth,
+    isLoading,
+    setLoading
   } = props;
-
+console.log("props",props)
   return (
     <DashboardHeaderStyle>
+      {isLoading &&<Loading/>}
       {handleBackClick && (
         <div>
           <h3 className="back-button" onClick={handleBackClick}>

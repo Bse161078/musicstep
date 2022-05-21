@@ -17,7 +17,7 @@ const TimePickerModal = (props: TimePickerModalProps) => {
         onChange={(e: any) => onChange(e)}
         value={value}
         // isOpen={false}
-        // disableClock={true}
+        disableClock={true}
       />
     </TimePickerModalStyle>
   );

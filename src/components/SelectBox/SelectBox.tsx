@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Select } from "antd";
 import { useField } from "formik";
 
@@ -30,7 +30,7 @@ type SelectBoxProps = {
 
 const SelectBox = (props: SelectBoxProps) => {
   const [field] = useField(props);
-
+  const [val,setVal] = useState()
   const {
     options,
     width,
@@ -44,34 +44,37 @@ const SelectBox = (props: SelectBoxProps) => {
     placeholder,
     handleSelectBoxChange,
   } = props;
-
+console.log("values",values)
   const handleChange = (value: any) => {
     setFieldValue && setFieldValue(field.name, value);
+    console.log("val",value)
+    setVal(value)
     initializeSettingsData && initializeSettingsData(value, undefined, values);
     handleSelectBoxChange && handleSelectBoxChange(value);
   };
+  let count = 0
+  console.log("filters",field.name)
   return (
     <SelectInputStyle type={type}>
       {label && <label className="select-label">{label}</label>}
 
       <SelectBoxStyle
         suffixIcon={<ArrowDownIcon />}
-        name={field.name}
+        name={"hamza"}
         width={width}
-        defaultValue={field.value || defaultValue}
-        value={field.value || defaultValue}
+        defaultValue={field.name}
+        value={val}
         onChange={handleChange}
         disabled={disabled}
         placeholder={placeholder}
       >
-        {options.map(
-          (option: { key: string; value: string; disabled?: boolean }) => (
+        {values&&values.map(
+          (option: any) => (
             <Option
-              key={option.key}
-              value={option.key}
-              disabled={option.disabled}
+              key={option}
+              value={option}
             >
-              {option.value}
+              {option}
             </Option>
           )
         )}

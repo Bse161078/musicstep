@@ -18,11 +18,13 @@ import { useLoginContext } from "../../../context/authenticationContext";
 import axios from "axios";
 import { MapModalWrapper } from "../../../admin/components/Modals/MapModalWrapper";
 import Map from "../../../components/Map";
+import { Loading } from "../../../components";
 const AddVenueProfileForm = () => {
   const { state } = useLoginContext();
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isMapModalVisible, setIsMapModalVisible] = useState(false);
   const [message, setMessage] = useState("");
+  const [isLoading, setLoading] = useState(false);
   const [heading, setHeading] = useState("");
 
   //Ref
@@ -135,6 +137,7 @@ const AddVenueProfileForm = () => {
   };
 
   const onSubmit = async (e: any) => {
+    setLoading(true)
     const saftyAndCleaness: any = {};
     policiesState.forEach((currentValue: any) => {
       saftyAndCleaness[currentValue.id] = currentValue.value;
@@ -187,9 +190,11 @@ const AddVenueProfileForm = () => {
         console.log(error.response.data.error);
         setSuccessModalVisible(true);
         setMessage(error.response.data.error);
+        setLoading(false)
         setHeading("Error");
       });
     if (res) {
+      setLoading(false)
       setSuccessModalVisible(true);
       setMessage("Venue created Successfully");
       setHeading("Success");
@@ -266,6 +271,7 @@ const AddVenueProfileForm = () => {
   return (
     <>
       <Dashboard>
+       
         <AddVenueProfileFormStyle>
           <DashboardHeader
             heading="Add Venue Profile"
@@ -277,6 +283,7 @@ const AddVenueProfileForm = () => {
             handleBackClick={() => {
               history.push("/admin/events-managment-home");
             }}
+            isLoading={isLoading}
             handleCancelClick={() => {
               history.push("/admin/events-managment-home");
             }}

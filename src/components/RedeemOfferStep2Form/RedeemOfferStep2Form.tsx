@@ -8,7 +8,7 @@ import {
 } from "../../styles/Common.style";
 import { RedeemOfferStep2FormStyle } from "./RedeemOfferStep2Form.style";
 import OtpInput from "react-otp-input";
-
+import Loading from "../../components/Loading/Loading"
 type TrailSetPasswordProps = {
   setCurrentForm: (data: string) => void;
 };
@@ -24,9 +24,9 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
   const [isContinueModal, setContinueModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [otp, setOtp] = useState();
-
+  const [isLoading, setLoading] = useState(false);
   const handleButtonSubmit = (e: any) => {
-    //d
+    setLoading(true)
     axios
       .patch(`/v1/users/createCode/${id}`, {
         code: otp,
@@ -45,12 +45,12 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
         });
         if (res.data.isVerified === true) {
           setContinueModal(true);
+          setLoading(false)
         }
       })
       .catch((error) => {
         setErrorMessage(error.response?.data.message);
-
-          setContinueModal(true);
+          setLoading(false)
           dispatch({
               type: "SUBMIT_GENERAL_INFO",
               payload: {
@@ -75,6 +75,7 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
 
   return (
     <TrialFormWrapper heading="Redeem Your Offer">
+      {isLoading&&<Loading/>}
       <RedeemOfferStep2FormStyle>
         <h3 className="steps-count">Step 1 of 2</h3>
 

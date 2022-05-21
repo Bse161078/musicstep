@@ -116,4 +116,6 @@ export const TableRowStyle = css`
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 10px;
   }
+
+
 `;

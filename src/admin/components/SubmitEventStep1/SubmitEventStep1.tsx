@@ -98,9 +98,10 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
       .then((response) => response.json())
       .then((result) => {
         const tempcountry = result.map((country: any) => {
-          return { key: country.name, value: country.name };
+          return country.name;
         });
         setCountries(tempcountry);
+        console.log("country",countries)
       })
       .catch((error) => console.log("error", error));
 
@@ -112,9 +113,10 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
         // setProfilesList(res.data);
         setOrganizers(res.data);
         const tempOrganizer = res.data.map((organizer: any) => {
-          return { key: organizer.id, value: organizer.organizerName };
+          return  organizer.organizerName 
         });
         setOrganizersForDropDown(tempOrganizer);
+        console.log("res.data",res.data,organizersForDropDown,tempOrganizer)
       })
       .catch((error) => {
         console.log(error.response);
@@ -127,9 +129,10 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
       .then((res) => {
         // setProfilesList(res.data);
         const tempVenues = res.data.map((venue: any) => {
-          return { key: venue.id, value: venue.location.address };
+          return venue.location.address;
         });
         setVenues(tempVenues);
+        console.log("venues",tempVenues)
       })
       .catch((error) => {
         console.log(error.response);
@@ -139,10 +142,12 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
   useEffect(() => {
     if (selectedCountry) {
       const countryId = countries.findIndex(
-        (item: any) => item.value === selectedCountry
+        (item: any) => item === selectedCountry
       );
+      console.log("coutry",countryId)
       if (countryId) {
         setSelectedCountryIndex(countryId + 1);
+
         fetch(
           `https://api.countrystatecity.in/v1/countries/${
             countryId + 1
@@ -151,11 +156,13 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
         )
           .then((response) => response.json())
           .then((result) => {
+            console.log("result",result)
             setStatesObj(result);
             const tempState = result.map((country: any) => {
-              return { key: country.name, value: country.name };
+              return country.name;
             });
             setStates(tempState);
+            console.log("states",states)
           })
           .catch((error) => console.log("error", error));
       }
@@ -179,9 +186,10 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
           .then((response) => response.json())
           .then((result) => {
             const tempCities = result.map((city: any) => {
-              return { key: city.name, value: city.name };
+              return city.name;
             });
             setcities(tempCities);
+
           })
           .catch((error) => console.log("error", error));
       }
@@ -396,6 +404,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                   label="Country"
                   placeholder="Select Country"
                   options={countries}
+                  values={countries}
                   defaultValue={form.values.country}
                   setFieldValue={form.setFieldValue}
                   // values={[{ key: "", value: "United States of America" }]}
@@ -412,6 +421,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                   placeholder="Select State"
                   defaultValue={form.values.state}
                   options={states}
+                  values={states}
                   setFieldValue={form.setFieldValue}
                 />
                 {form.touched.state && form.errors.state && (
@@ -427,6 +437,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                   defaultValue={form.values.city}
                   options={cities}
                   setFieldValue={form.setFieldValue}
+                  values={cities}
                 />
                 {form.touched.city && form.errors.city && (
                   <span className="error-message">{form.errors.city}</span>
@@ -447,6 +458,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                   options={venues}
                   setFieldValue={form.setFieldValue}
                   // options={countries}
+                  values={venues}
                 />
                 {form.touched.venue && form.errors.venue && (
                   <span className="error-message">{form.errors.venue}</span>
@@ -486,6 +498,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                   placeholder="Select an organizer"
                   options={organizersForDropDown}
                   setFieldValue={form.setFieldValue}
+                  values={organizersForDropDown}
                 />
                 {form.touched.organizer && form.errors.organizer && (
                   <span className="error-message">{form.errors.organizer}</span>
