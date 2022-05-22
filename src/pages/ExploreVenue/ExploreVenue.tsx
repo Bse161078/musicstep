@@ -25,7 +25,6 @@ export default function ExploreVenue() {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .then((res) => {
-        console.log(res.data);
         setVenues(res.data);
         // setEvents(res.data);
         // setEvents(res.data);
@@ -73,15 +72,11 @@ export default function ExploreVenue() {
               No Event or Venue to explore
             </h1>
           )}
-          {/* <VenueCard pageUrl="/explore-venue/organizer-profile" />
-
+          {/*<VenueCard pageUrl="/explore-venue/organizer-profile" />
           <VenueCard pageUrl="/explore-venue/organizer-profile" />
-
           <VenueCard pageUrl="/explore-venue/organizer-profile" />
-
           <VenueCard pageUrl="/explore-venue/organizer-profile" />
-
-          <VenueCard pageUrl="/explore-venue/organizer-profile" /> */}
+          <VenueCard pageUrl="/explore-venue/organizer-profile" />*/}
         </section>
 
         <section>
