@@ -8,7 +8,7 @@ import { Switch } from "antd";
 import { EditProfileFormStyle } from "./EditProfileForm.style";
 import { PeopleWithMutualFreindsModal } from "../Modals";
 import { BasicInfoFormValidationSchema } from "./validation";
-
+import Loading from '../../../components/Loading/Loading'
 const EditProfileForm = React.forwardRef((props: any, ref: any) => {
   // const { textInput } = props;
   const { setSaveButtonRef } = props;
@@ -18,7 +18,7 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
   const [isPublicProfileVisible, setPublicProfileVisible] = useState();
   const profileImageInput: any = useRef();
   const [profileImage, setProfileImage] = useState("");
-
+  const [isLoading,setLoading] = useState(false)
   const [previewProfileImage, setPreviewProfileImage] = useState<string>(
     process.env.REACT_APP_BASE_URL + "/" + userData.imageUrl
   );
@@ -39,17 +39,20 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
   };
 
   const handleEditProfile = async (e: any) => {
+    setLoading(true)
     if (e.photo) {
       const bodyData = new FormData();
       bodyData.append("profileImage", e.photo);
-
+      try{
       const res = await axios
         .put("/v1/users/updateProfileImage", bodyData, {
           headers: { Authorization: `Bearer ${state.authToken}` },
         })
-        .catch((error) => {
+        setLoading(false)
+      }catch(error) {
           console.log(error);
-        });
+          setLoading(false)
+        };
     }
 
     const bodyData: any = {
@@ -73,11 +76,13 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
       })
       .catch((error) => {
         console.log(error);
+        setLoading(false)
       });
 
     if (res) {
       console.log(res.data);
       setSuccessModalVisible(true);
+      setLoading(false)
       dispatch({
         type: "UPDATE_USER",
         payload: {
@@ -90,6 +95,7 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
   return (
     <>
       <EditProfileFormStyle>
+        {isLoading&&<Loading/>}
         <Formik
           initialValues={{
             firstName: userData.firstName,
@@ -118,17 +124,19 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
           validateOnBlur={false}
         >
           {(form) => {
-            console.log(form);
             return (
               <Form className="form-wrapper">
                 <div className="form-left">
                   <div className="multi-column">
-                    <InputBox label="First Name" name="firstName" />
-                    <InputBox label="Last Name" name="lastName" />
+                    <InputBox label="First Name" name="firstName" 
+                    />
+                    <InputBox label="Last Name" name="lastName" 
+                       />
                   </div>
 
                   <InputBox label="Date Of Birth" name="dateOfBirth" />
-                  <InputBox label="Email Address" name="email" />
+                  <InputBox label="Email Address" name="email"
+                      />
                   <div className="custom-columns">
                     <InputBox label="Country Code" name="countryCode" />
                     <InputBox label="Phone Number" name="phone" />

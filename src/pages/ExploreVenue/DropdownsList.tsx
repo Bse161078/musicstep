@@ -4,7 +4,9 @@ import { SelectBox } from "../../components";
 
 import { DropdownsListStyle } from "./ExploreVenue.style";
 
-export const DropdownsList = () => {
+export const DropdownsList = (props:any) => {
+  const {filter} = props
+  console.log("filtr",filter)
   return (
     <DropdownsListStyle>
       <Formik
@@ -23,28 +25,33 @@ export const DropdownsList = () => {
               <SelectBox
                 name="categoriesType"
                 setFieldValue={setFieldValue}
-                options={[{ key: "", value: "" }]}
+                options={[{ key: "", value: filter?.categories }]}
+                values={filter?.categories}
+
               />
             </span>
            <span>
               <SelectBox
                 name="genre"
                 setFieldValue={setFieldValue}
-                options={[{ key: "", value: "" }]}
+                options={[{ key: "", value: filter?.liveStream }]}
+                values={filter?.liveStream}
               />
             </span>
            <span>
               <SelectBox
                 name="distance"
                 setFieldValue={setFieldValue}
-                options={[{ key: "", value: "" }]}
+                options={[{ key: "", value: filter?.distance }]}
+                values={filter?.distance}
               />
             </span>
            <span>
               <SelectBox
                 name="time"
                 setFieldValue={setFieldValue}
-                options={[{ key: "", value: "" }]}
+                options={[{ key: "", value: filter?.timeFrame }]}
+                values={filter?.timeFrame}
               />
             </span>
 
@@ -52,7 +59,8 @@ export const DropdownsList = () => {
               <SelectBox
                 name="amenities"
                 setFieldValue={setFieldValue}
-                options={[{ key: "", value: "" }]}
+                options={[{ key: "", value: filter?.amenities }]}
+                values={filter?.amenities}
               />
             </span>
           </Form>

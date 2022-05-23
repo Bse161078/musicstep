@@ -13,15 +13,14 @@ import {TrialBillingInfoValidationSchema} from "./validation";
 import { loadStripe } from "@stripe/stripe-js";
 import {Elements} from "@stripe/react-stripe-js";
 import AddCard from "../Stripe/addCard";
-
-const TrialBillingInfoForm = () => {
+const TrialBillingInfoForm = (props:any) => {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [loading, setLoading] = useState(false);
     // const [errorMessage, setErrorMessage] = useState("");
     const stripePromise = loadStripe("pk_test_51KtcQTFJ50BG2GSltkm4lfPaxH6c8raqCKt9hoBFpgAnJ9loSE8eWTU0PsTRV5wlAcgCY5n7ZMwMXfWg8FPwDPGC009SYAHTEk");
     const [clientSecret, setClientSecret] = useState("");
 
-
+  
 
     const history = useHistory();
 
@@ -32,7 +31,7 @@ const TrialBillingInfoForm = () => {
         if(id && id.length>0){
             sessionStorage.setItem("id",id);
         }
-        console.log("")
+        console.log("id",id)
         axios.post('/v1/stripe/add-card-intent',{id:sessionStorage.getItem("id")}).then((response)=>{
             //console.log("data = ",response.data.clientSecret);
             setClientSecret(response.data.clientSecret);
@@ -137,6 +136,7 @@ const TrialBillingInfoForm = () => {
     return (
         <TrialBillingInfoFormStyle>
             {loading && <Loading/>}
+            
 
             <h3 className="form-heading">Save Your Billing Information</h3>
             <p className="form-info">Why do you need my billing info?</p>
@@ -150,7 +150,8 @@ const TrialBillingInfoForm = () => {
                     <Form className="form-wrapper">
                         {clientSecret && (
                             <Elements options={options} stripe={stripePromise}>
-                                <AddCard createSubscription={createSubscription}/>
+                                <AddCard createSubscription={createSubscription}
+                                setIsPricing={props.setIsPricing} setSetupIntent={props.setSetupIntent} />
                             </Elements>
                         )}
 
@@ -177,8 +178,7 @@ const TrialBillingInfoForm = () => {
                     </Form>
                 )}
             </Formik>
-
-            <CongratulationsModal
+             <CongratulationsModal
                 isModalVisible={isModalVisible}
                 setIsModalVisible={setIsModalVisible}
                 message="You have redeemed your trial successfully."

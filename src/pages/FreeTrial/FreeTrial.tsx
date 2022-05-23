@@ -9,10 +9,14 @@ import {
   TrialGeneralInfo,
   TrialSetPassword,
 } from "../../components";
+import axios from "axios";
+
+import {Loading} from "../../components/Loading";
 import { useHistory } from "react-router-dom";
 import { FreeTrialStyle } from "./FreeTrial.style";
 import { usePartnerContext } from "../../context/partnerContext ";
 import { useLoginContext } from "../../context/authenticationContext";
+import Pricing from "../../pages/Pricing/Pricing"
 
 export default function FreeTrial() {
   const history = useHistory();
@@ -26,7 +30,10 @@ export default function FreeTrial() {
     initialLoadFormName = "set-password";
   }
   const [currentForm, setCurrentForm] = useState(initialLoadFormName);
-
+  const [isPricing, setIsPricing] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [paymentMethod,setPaymentMethod] = useState()
+  const [loading, setLoading] = useState(false);
 
   useEffect(()=>{
       const clientSecret = new URLSearchParams(window.location.search).get(
@@ -43,12 +50,13 @@ export default function FreeTrial() {
     // state.authToken &&
     loginContext.state.data.role === "user" &&
     loginContext.state.data.isOrganizer === false &&
-    currentForm === "trial-info"
+    currentForm === "trial-billing-information"
   ) {
     history.push("/explore-venue");
   }
+    console.log("Explore venue",loginContext.state)
 
-  const { dispatch } = usePartnerContext();
+    const { dispatch } = usePartnerContext();
   const resetPartnerForm = () => {
     dispatch({
       type: "RESETFROM",
@@ -56,6 +64,34 @@ export default function FreeTrial() {
     });
   };
 
+  const createSubscription=(paymentMethod:string,subscriptionName:string)=>{
+      console.log("asadas")
+    setLoading(true)
+    axios.post('/v1/stripe/create-subscription',{id:sessionStorage.getItem("id"),paymentMethod,subscriptionName}).then((response)=>{
+        console.log("subscription = ",response);
+        setLoading(false);
+        setIsModalVisible(true);
+
+        const user=response.data.user;
+        const token=response.data.tokens;
+        dispatch({
+            type: "SUBMIT_TRIAL_BILLING",
+            payload: {
+                email: user.email,
+            },
+        });
+        loginContext.dispatch({
+            type: "LOGIN_USER",
+            payload: {
+                isLoggedIn: true,
+                token: token.access.token,
+                data: user,
+            },
+        });
+    }).catch((err:any)=>{
+        console.log("err = ",err.response)
+    })
+}
 
   const CurrentTrialStep = useMemo(() => {
       console.log(currentForm)
@@ -82,15 +118,19 @@ export default function FreeTrial() {
         return <RedeemOfferStep2Form setCurrentForm={setCurrentForm} />;
 
       case "trial-billing-information":
-        return <TrialBillingInfoForm />;
+        return <TrialBillingInfoForm setIsPricing={setIsPricing} setSetupIntent={setPaymentMethod}/>;
       default:
         return <TrialForm setCurrentForm={setCurrentForm} />;
     }
   }, [currentForm]);
-
-  console.log("current form = ",currentForm)
+  const handleCongratulationsButtonClick = () => {
+    setIsModalVisible(false);
+    history.push("/explore-venue");
+};
   return (
     <FreeTrialStyle>
+       {loading && <Loading/>}
+      {isPricing&&<Pricing createSubscription={createSubscription} payment_method={paymentMethod}/>}
       <StartTrialWrapper
         leftContent={
           currentForm === "trial-billing-information" ? (

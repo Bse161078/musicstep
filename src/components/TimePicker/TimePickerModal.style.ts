@@ -106,24 +106,7 @@ font-size: 18px important;
  .react-time-picker__button svg {
    display: inherit;
  }
- .react-time-picker__clock {
-
-   width: 200px;
-   height: 200px;
-   max-width: 100vw;
-   padding: 25px;
-   background-color: white;
-   border: thin solid #a0a096;
-   position: absolute;
-   top: 100%;
-   left: 0;
-   z-index: 1;
-   margin-top: 1%;
-   display: none;
- }
- .react-time-picker__clock--closed {
-   display: none;
- }
+ 
 `
 
 export default TimePickerModalStyle

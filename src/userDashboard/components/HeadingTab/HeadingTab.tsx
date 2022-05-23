@@ -23,7 +23,7 @@ const HeadingTab = (props: HeadingTabProps) => {
         </div>
       </div>
 
-      {count ? <span className="count">{count}</span> : <ChevronFilledIcon />}
+      {count ? <span className="count">{count}</span> :count===0?0: <ChevronFilledIcon />}
     </HeadingTabStyle>
   );
 };

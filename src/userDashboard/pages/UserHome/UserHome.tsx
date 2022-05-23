@@ -22,7 +22,7 @@ import { Spinner } from "../../../components/Spinner";
 import { CustomCarousel } from "../../../components";
 import moment from "moment";
 
-const EventReservation = ({ reservations, cancelreservation }: any) => {
+const EventReservation = ({ reservations, cancelreservation,subscription }: any) => {
   const [isCancelModalVisible, setCancelModalVisible] = useState(false);
   const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -30,6 +30,7 @@ const EventReservation = ({ reservations, cancelreservation }: any) => {
 
   return (
     <>
+      {subscription.active===true?
       <SectionHeading heading="Events In Reservation">
         <EventReservationStyle>
           {/* <CustomCarousel
@@ -53,7 +54,9 @@ const EventReservation = ({ reservations, cancelreservation }: any) => {
                   setCancelModalVisible(true);
                 }}
               />
-            ))}
+            ))
+             
+              }
 
           {/* <CardWithContent
             heading="Franklin Kub's concert"
@@ -110,10 +113,22 @@ const EventReservation = ({ reservations, cancelreservation }: any) => {
           message="Reservation canceled successfully."
         />
       </SectionHeading>
-      <GuestListModal
+    :
+    <h1
+          style={{
+            width: "100%",
+            margin: "0px auto",
+            fontSize: "40px",
+            textAlign: "center",
+          }}
+        >
+                Your Subscription has been Expired! Please renew your Subscription package
+          </h1>  
+    }
+      {subscription.active===true&&<GuestListModal
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}
-      />
+      />}
     </>
   );
 };
@@ -124,7 +139,7 @@ export default function UserHome() {
   const [events, setEvents] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
   const [reservations, setReservations] = useState([]);
-
+  const [subscription,setSubscription] = useState([])
   const handleClick = () => {
     history.push({
       pathname: `/explore-venue/venue-details`,
@@ -190,8 +205,8 @@ export default function UserHome() {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .then((res) => {
-        console.log(res.data);
-        setReservations(res.data);
+        setReservations(res.data.reservation);
+        setSubscription(res.data.subscription)
         // setEvents(res.data);
         // setIsLoading(false);
       })
@@ -199,12 +214,11 @@ export default function UserHome() {
         console.log(error.response);
       });
   };
-
   return (
     <>
       <NavbarWithSearch />
       <UserHomeStyle>
-        <UserSidebar reservations={reservations} />
+        <UserSidebar reservations={reservations} subscription={subscription} />
         <div>
           <EventReservation
             reservations={
@@ -216,6 +230,7 @@ export default function UserHome() {
               )
             }
             cancelreservation={cancelreservation}
+            subscription={subscription}
           />
           <div className="divider" />
           {!isLoading ? (

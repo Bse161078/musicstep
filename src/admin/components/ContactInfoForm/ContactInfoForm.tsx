@@ -32,6 +32,7 @@ const ContactInfoForm = () => {
         }}
         onSubmit={() => {}}
       >
+        
         {() => (
           <Form>
             <div className="headings-with-inputs">

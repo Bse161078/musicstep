@@ -29,7 +29,7 @@ const ProcessPaymentForm = () => {
           <Form className="form-wrapper">
             <InputBox label="Name On Card" name="nameOnCard" />
             <InputBox label="Card Number" name="cardNumber" />
-            <InputBox label="Date" name="date" />
+            <InputBox label="Expiry Date" name="date" />
             <InputBox label="CVC" name="cvc" />
 
             <p className="gift-code">I have a gift code</p>

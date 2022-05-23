@@ -23,6 +23,7 @@ const PartnerOrganizationDetailForm = () => {
     capacity: state.capacity,
   };
   const handleDetailsSubmit = (value: any) => {
+    console.log("details",value,params.partnerId)
     axios
       .patch(`/v1/partners/createOrganizationInformation/${params.partnerId}`, {
         organizationName: value.organizationName,
@@ -86,6 +87,7 @@ const PartnerOrganizationDetailForm = () => {
                   { key: "New Organization", value: "New Organization" },
                   { key: "Old Organization", value: "Old Organization" },
                 ]}
+                values={['New Organization','Old Organization']}
                 label="Organization Type"
                 setFieldValue={setFieldValue}
               />
@@ -112,7 +114,8 @@ const PartnerOrganizationDetailForm = () => {
                   value={values.capacity}
                 />
               </div>
-              <FilledButtonStyle width="100%" height="60px">
+              <FilledButtonStyle width="100%" height="60px" 
+               onClick={(value) => handleDetailsSubmit(values)} >
                 Continue
               </FilledButtonStyle>
               <div className="footer-wrapper">

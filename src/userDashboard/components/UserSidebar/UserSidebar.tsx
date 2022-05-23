@@ -16,7 +16,7 @@ import {
 
 import { UserSidebarStyle } from "./UserSidebar.style";
 import { useLoginContext } from "../../../context/authenticationContext";
-const UserSidebar = ({ reservations }: any) => {
+const UserSidebar = ({ reservations,subscription }: any) => {
   const { dispatch, state } = useLoginContext();
   const [isLogoutVisible, setLogoutVisible] = useState(false);
   const [isSubscriptionVisible, setSubscriptionVisible] = useState(false);
@@ -49,7 +49,7 @@ const UserSidebar = ({ reservations }: any) => {
     setSubscriptionVisible(false);
     setCancelSubscriptionVisible(true);
   };
-  console.log(reservations);
+  console.log(reservations,subscription,"ahan!");
   return (
     <UserSidebarStyle>
       <figure className="person-info-wrapper">
@@ -87,10 +87,14 @@ const UserSidebar = ({ reservations }: any) => {
 
       <h4 className="heading">Subscription Details</h4>
 
-      <div className="cards-wrapper">
+      {subscription.status==='canceled'?
+      <h3>
+      </h3>
+      :
+        <div className="cards-wrapper">
         <span onClick={() => setSubscriptionVisible(true)}>
           <HeadingTab
-            heading="Music Enthusiast"
+            heading={"Music Enthusiast"}
             description="Expires in 21 days."
           />
         </span>
@@ -139,8 +143,8 @@ const UserSidebar = ({ reservations }: any) => {
             reservations &&
             reservations.filter(
               (reservation: any) =>
-                reservation.eventReservation === "reserved" &&
-                reservation.isTicketUsed === true
+                reservation.eventReservation === "attended" &&
+                reservation.isTicketUsed === false
             ).length
           }
         />
@@ -154,7 +158,7 @@ const UserSidebar = ({ reservations }: any) => {
             ).length
           }
         />
-      </div>
+      </div>}
 
       <LogoutModal
         isModalVisible={isLogoutVisible}

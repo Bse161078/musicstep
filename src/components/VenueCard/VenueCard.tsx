@@ -43,9 +43,9 @@ const VenueCard = ({ venue }: any) => {
         console.log(error.response);
       });
   }
-
+  console.log('venue',venue)
   return (
-    <>
+    venue?<>
       <VenueCardStyle onClick={handleClick}>
         <img
           className="venue-thumbnail"
@@ -81,7 +81,19 @@ const VenueCard = ({ venue }: any) => {
           </Panel>
         </Collapse>
       </CollapseStyle>
-    </>
+    </>:
+    <div>
+        <h1
+         style={{
+           width: "100%",
+           margin: "0px auto",
+           fontSize: "40px",
+           textAlign: "center",
+         }}
+       >
+         No Event or Venue to explore
+       </h1>
+    </div>
   );
 };
 

@@ -11,6 +11,7 @@ const EventsManagementSteps = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [eventData, setEventData] = useState({});
 
+
   return (
     <Dashboard>
       <EventsManagementStepsStyle>

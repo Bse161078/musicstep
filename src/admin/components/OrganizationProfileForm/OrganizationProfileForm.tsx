@@ -20,13 +20,14 @@ import {
   LoginContext,
   useLoginContext,
 } from "../../../context/authenticationContext";
+import Loading from "../../../components/Loading/Loading"
 type OrganizationProfileFormProps = {
   setCurrentPage: (data: string) => void;
   organizerProfile?: any;
 };
 const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
   const { setCurrentPage, organizerProfile } = props;
-
+  const [isLoading,setIsLoading] = useState(false)
   const history = useHistory();
   const [message, setMessage] = useState("");
   const [heading, setHeading] = useState("");
@@ -373,7 +374,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
           bodyData.append(`additionalPhotos`, files[i]);
         }
       }
-
+      setIsLoading(true)
       const res = await axios
         .post("/v1/organizer", bodyData, {
           headers: { Authorization: `Bearer ${state.authToken}` },
@@ -383,12 +384,14 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
           setSuccessModalVisible(true);
           setMessage(error.response.data.error);
           setHeading("Error");
+          setIsLoading(false)
         });
       if (res) {
         setSuccessModalVisible(true);
         setMessage("Organizer created Successfully");
         setHeading("Success");
         console.log(res.data);
+        setIsLoading(false)
       }
     } else {
       var body: any = {
@@ -400,6 +403,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
 
         socialMediaAndMarketingLinks: socialMediaAndMarketingLinks,
       };
+      setIsLoading(true)
 
       const res = await axios
         .patch(
@@ -410,23 +414,28 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
           }
         )
         .catch((error) => {
-          console.log(error.response.data.error);
+
           setSuccessModalVisible(true);
           setMessage(error.response.data.error);
           setHeading("Error");
+          setIsLoading(false)
         });
       if (res) {
         setSuccessModalVisible(true);
         setMessage("Organizer Profile Updated Successfully");
         setHeading("Success");
-        console.log(res.data);
+        setIsLoading(true)
+
         // if (!isSuccessModalVisible)
       }
     }
   };
 
   return (
+    <div>
+      {isLoading&&<Loading/>}
     <OrganizationProfileFormStyle>
+      
       <DashboardHeader
         handleBackClick={() => setCurrentPage("preview")}
         handleSaveClick={() => {
@@ -435,6 +444,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         backButtonText="Back To Basic Info"
         saveButtonText="Add"
         heading="Add Organizer Profile"
+        isLoading={isLoading}
         handleCancelClick={() => setCurrentPage("preview")}
       />
 
@@ -671,6 +681,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         }}
       />
     </OrganizationProfileFormStyle>
+    </div>
   );
 };
 

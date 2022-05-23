@@ -3,10 +3,12 @@ import axios from "axios";
 import GoogleMapReact from "google-map-react";
 import { NavbarWithSearch, VenueCard } from "../../components";
 import { DropdownsList } from "./DropdownsList";
-import { ExploreVenueStyle } from "./ExploreVenue.style";
+import {ExploreVenueStyle, TrialButton} from "./ExploreVenue.style";
 import { useLoginContext } from "../../context/authenticationContext";
 import Marker from "../../components/Marker";
 import {Button} from "@mui/material";
+import {Pricing} from "../Pricing";
+import Loading from "../../components/Spinner/Spinner";
 
 export default function ExploreVenue() {
   const defaultProps = {
@@ -17,50 +19,99 @@ export default function ExploreVenue() {
     zoom: 11,
   };
 
+  const style = {
+    position: 'absolute' as 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  };
+  const [search,setSearch] = useState('')
   const { state, dispatch } = useLoginContext();
   const [venues, setVenues] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [showPricing,setShowPricing] = useState(false)
+  const [subscribtion,setSubscribtion] = useState({
+    active:false,
+    status:''
+
+  })
+  const [filter,setFilter] = useState()
+  const venueFilter =  venues&&venues.filter((venue:any)=>(venue.venueInfo[0]?.name).toLowerCase().includes((search).toLowerCase()))
   useEffect(() => {
+    setLoading(true)
     axios
+      .get("/v1/filter", {
+        headers: { Authorization: `Bearer ${state.authToken}` },
+      })
+      .then((res) => {
+        setLoading(false)
+        setFilter(res.data)
+      })
+      .catch((error) => {
+        setLoading(false)
+        console.log("filtererror",error)
+      });
+      axios
       .get("/v1/users/allEventsByVenues", {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .then((res) => {
-        setVenues(res.data);
-        // setEvents(res.data);
-        // setEvents(res.data);
-        // setProfilesList(res.data);
+        setLoading(false)
+        setVenues(res.data.event);
+        setSubscribtion(res.data.subscription)
       })
       .catch((error) => {
-        console.log(error.response);
+        setLoading(false)
       });
   }, []);
-
+console.log("filter",filter)
   const onSubscribePackage=(e:any)=>{
-    console.log("onSubscribePackage")
       const user:any=JSON.parse(localStorage.getItem("data")||"{}");
       axios.post('/v1/stripe/pay-subscription',{id:user.id}).then((response)=>{
           //console.log("data = ",response.data.clientSecret);
           window.open(response.data.url,'_blank');
-
+          setLoading(false)
           console.log("subsribe package",response.data.url);
       }).catch((err)=>{
-          console.log("err = ",err.response)
+        setLoading(false)
       })
   }
-
   return (
     <>
-      <NavbarWithSearch />
+      <NavbarWithSearch setSearch={setSearch}
+      search={search}
+      active={subscribtion.active}
+      />
+      {showPricing&&<Pricing showPricing={showPricing} setShowPricing={setShowPricing} />}
+      {loading && <Loading/>}
+      {subscribtion.active==true?
       <ExploreVenueStyle>
-        <DropdownsList />
+        <DropdownsList filter={filter} />
         <div />
 
         <section className="venues-list">
-            <Button  style={{background:"Red",zIndex:11111}} onClick={(e)=>onSubscribePackage(e)}>Checkout</Button>
 
-          {venues.length > 0 ? (
-            venues.map((venue: any) => <VenueCard venue={venue} />)
-          ) : (
+          {
+         venues.length > 0 ? (
+            venueFilter.length>0?(
+          venueFilter.map((venue: any) => <VenueCard venue={venue} />)):
+          <h1
+          style={{
+            width: "100%",
+            margin: "0px auto",
+            fontSize: "40px",
+            textAlign: "center",
+          }}
+        >
+          No Event or Venue to explore
+          </h1>
+          ) :
+           (
             <h1
               style={{
                 width: "100%",
@@ -71,12 +122,19 @@ export default function ExploreVenue() {
             >
               No Event or Venue to explore
             </h1>
-          )}
-          {/*<VenueCard pageUrl="/explore-venue/organizer-profile" />
+          )
+
+
+         }
+          {/* <VenueCard pageUrl="/explore-venue/organizer-profile" />
+
           <VenueCard pageUrl="/explore-venue/organizer-profile" />
+
           <VenueCard pageUrl="/explore-venue/organizer-profile" />
+
           <VenueCard pageUrl="/explore-venue/organizer-profile" />
-          <VenueCard pageUrl="/explore-venue/organizer-profile" />*/}
+
+          <VenueCard pageUrl="/explore-venue/organizer-profile" /> */}
         </section>
 
         <section>
@@ -230,7 +288,40 @@ export default function ExploreVenue() {
             )}
           </div>
         </section>
-      </ExploreVenueStyle>
+      </ExploreVenueStyle>:
+      (<div><ExploreVenueStyle>
+              <h1
+          style={{
+            width: "100%",
+            margin: "0px auto",
+            fontSize: "40px",
+            textAlign: "center",
+          }}
+        >
+                Your Subscription has been Expired! Please renew your Subscription package
+              </h1>
+                {/* <FilledButtonStyle  class="" onClick={(e)=>onSubscribePackage(e)}>Checkout</FilledButtonStyle> */}
+                <div></div>
+                  <TrialButton style={{marginLeft:10,marginTop:10}}
+                  onClick={(e)=>{
+                    if(subscribtion.status==='canceled')
+                   {
+                     setShowPricing(true)
+                   }
+                    else
+                    {
+                      onSubscribePackage(e)
+                      setLoading(true)
+                    }
+                  }}
+                className="text-center"><a  className="free-trial-btn free-trial-secondary btn">
+                  »&nbsp;Subscribe&nbsp;Now!</a>
+                  </TrialButton>
+                  </ExploreVenueStyle>
+       </div>
+
+      )
+      }
     </>
   );
 }

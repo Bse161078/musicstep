@@ -70,7 +70,7 @@ export const footerItems = [
 
 export const socialLinks = [
   {
-    icon: "/images/social-links/facebook.svg",
+    icon: "/images/social-links/output-onlinepngtools.png",
     url: "https://www.facebook.com/musicpassonline",
   },
   {

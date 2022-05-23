@@ -48,7 +48,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
     // venue: "62180c415527e821cc11f36f"
     // eventPhotoSameAsOrganizerPhoto: false
     /////form Data
-    console.log("eventData", eventData.date.toLocaleDateString());
+    console.log("eventData", eventData);
     console.log("tickets", tickets);
     const formatedTickets = tickets.map((ticket: any) => {
       return {
@@ -69,12 +69,12 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
     bodyData.append("state", eventData.state);
     bodyData.append("city", eventData.city);
     bodyData.append("country", eventData.country);
-    bodyData.append("venue", eventData.venue);
+    bodyData.append("venue", eventData.venue_id);
     bodyData.append(
       "eventPhotoSameAsOrganizerPhoto",
       eventData.eventPhotoSameAsOrganizerPhoto
     );
-    bodyData.append("organizer", eventData.organizer);
+    bodyData.append("organizer", eventData.organizer_id);
     bodyData.append("tickets", JSON.stringify(formatedTickets));
     bodyData.append("eventDescription", eventData.eventDescription);
 
@@ -84,13 +84,12 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
         bodyData.append("additionalPhotos", files[i]);
       }
     }
-
     const res = await axios
       .post("/v1/event", bodyData, {
-        headers: { Authorization: `Bearer ${state.authToken}` },
+        headers: { Authorization: `Bearer ${state.authToken}`,"Content-Type": "multipart/form-data"  },
       })
       .catch((error) => {
-        console.log(error.response.data.error);
+        console.log(error.response,'error1111');
         //  setSuccessModalVisible(true);
         setIsModalVisible(true);
         setMessage(error.response.data.error);
@@ -170,7 +169,8 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}
         handleOkClick={() => {
-          if (messageType === "success") {
+          if (messageType === "Success") {
+            console.log('done')
             history.push("/admin/events-management");
           }
         }}

@@ -84,7 +84,7 @@ const Footer = () => {
                     key={`social-icon-${index}`}
                     href={url}
                   >
-                    <img src={icon} className="social-icon" alt="social icon" />
+                    <img src={icon}  alt="social icon" />
                   </a>
                 );
               })}
