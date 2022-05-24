@@ -15,13 +15,13 @@ const EventsManagmentListItem = ({ event }: EventsManagmentListItemProps) => {
             <span className="event-date">
               {week[moment(event.date).day()]}, {moment(event.date).date()} /
             </span>
-            <span className="event-name">{event.title}</span>
+            <span className="event-name">{event?.title}</span>
           </div>
 
           <div>
             <span className="event-address">
               {" "}
-              {event.venueInfo[0].location.address}
+              {event?.venueInfo[0]?.location.address}
             </span>
           </div>
         </div>

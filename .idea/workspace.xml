@@ -2,198 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f900495-2d01-4c96-a493-d43d1865075e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.firebaserc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/firebase.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/social-links/FB.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/social-links/fbicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/social-links/icons8-facebook-24 (3).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/social-links/icons8-facebook-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/social-links/icons8-facebook-80.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/social-links/icons8-facebook-circled-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/social-links/output-onlinepngtools.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/0.64eca6da.iframe.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/0.b73eaee9a88f178d62ed.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/1.f296d183a17268696d73.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/10.9998ba67d65d81d20896.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/11.49c687eaa6261f8b7be2.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/11.49c687eaa6261f8b7be2.manager.bundle.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/12.c9538ed3766c96f289e7.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/4.271d86f0.iframe.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/4.271d86f0.iframe.bundle.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/4.271d86f0.iframe.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/5.787c2dea.iframe.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/5.fa71488e730c5c7f885f.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/5.fa71488e730c5c7f885f.manager.bundle.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/6.2113b14a.iframe.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/6.2113b14a.iframe.bundle.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/6.2113b14a.iframe.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/6.8096ae4aadde0743697b.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/7.7310e3e2.iframe.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/7.b34baecbd082bc7b188d.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/8.15577edffecf900a8de2.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/9.d7d85aa0a49a98f17218.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/asset-manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/faviconMP.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/iframe.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/AdminNavBar/Group 506.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/AdminNavBar/Group 506@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/DeleteRole.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/Group 492.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/Group 492@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/NoPath - Copy (5).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/Profile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/Recomended.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/Required.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/Small Icon Button.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/ad.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/arrow-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/changepasswordpromt.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/crystal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/crystal2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/explore-venue/image1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/explore-venue/image2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/explore-venue/image3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/explore-venue/image4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/explore-venue/map-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/explore-venue/map.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/explore-venue/venue-detail.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/free-trial/free-trial-illustration.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/group69.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/add-credit.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/blured-background.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/cancel-reservation.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/events.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/header-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/hero-background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/location-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/membership-visual.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/membership.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/share-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/share-image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/unenroll.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/Password-hide-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/address-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/arrow-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/bell-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/cancel-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/cancel-lock-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/credit-history-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/drag-drop-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/edit-profile-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/event-history-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/facebook-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/gallery.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/instagram-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/location-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/lock-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/logout-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/mutual-friends-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/password-show-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/phone-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/preview-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/profile-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/profile.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/reminder-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/twitter-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/website-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/ionic-ios-checkmark-circle.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/loading.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/login/login-side.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/logout.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/metrics/event-chart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/metrics/payouts-chart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/metrics/reservation-chart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/partner-login-background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/party.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/person.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/person.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/profile-image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/qrcodee.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/sample-image.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/sample.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/sampleevent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/showcaseevents.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/social-links/app-store.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/social-links/facebook.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/social-links/google-play.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/social-links/instagram.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/social-links/linkedin.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/social-links/twitter.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/logo192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/logo512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/main.185c4154c38d7ff89704.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/main.51e09a8c.iframe.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/runtime~main.2ca23f06.iframe.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/runtime~main.909d038f912f063e8837.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/css/main.0ee7f581.chunk.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/css/main.0ee7f581.chunk.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/css/vendors~main.81751f3b.chunk.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/css/vendors~main.81751f3b.chunk.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/media/code-brackets.2e1112d7.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/media/colors.a4bd0486.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/media/comments.a3859089.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/media/direction.b770f9af.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/media/flow.edad2ac1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/media/plugin.d494b228.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/media/repo.6d496322.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/media/stackalt.dba9fbb3.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/vendors~main.d3455eed64b243c89325.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/vendors~main.d3455eed64b243c89325.manager.bundle.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/vendors~main.dfe32a0f.iframe.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/vendors~main.dfe32a0f.iframe.bundle.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/vendors~main.dfe32a0f.iframe.bundle.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/social-links/facebook.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/social-links/facebook.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/admin/components/AddVenueProfileForm/AddVenueProfileForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/AddVenueProfileForm/AddVenueProfileForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/ContactInfoForm/ContactInfoForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/ContactInfoForm/ContactInfoForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/DashboardHeader/DashboardHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/DashboardHeader/DashboardHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/Modals/EventHistoryModal/EventHistoryModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/Modals/EventHistoryModal/EventHistoryModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/Modals/ReservationConfirmedModal/ReservationConfirmedModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/Modals/ReservationConfirmedModal/ReservationConfirmedModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/OrganizationProfileForm/OrganizationProfileForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/OrganizationProfileForm/OrganizationProfileForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/PreviewOrganizationInfo/PreviewOrganizationInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/PreviewOrganizationInfo/PreviewOrganizationInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/SubmitEventStep1/SubmitEventStep1.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/SubmitEventStep1/SubmitEventStep1.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/SubmitEventStep2/SubmitEventStep2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/SubmitEventStep2/SubmitEventStep2.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/pages/EventsManagmentSteps/EventsManagementSteps.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/pages/EventsManagmentSteps/EventsManagementSteps.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CreateTicketModal/CreateTicketModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateTicketModal/CreateTicketModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InputBox/InputBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InputBox/InputBox.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MessageModal/MessageModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MessageModal/MessageModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PartnerOrganizationDetailForm/PartnerOrganizationDetailForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PartnerOrganizationDetailForm/PartnerOrganizationDetailForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PriceCard/PriceCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PriceCard/PriceCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProcessPaymentForm/ProcessPaymentForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProcessPaymentForm/ProcessPaymentForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RedeemOfferForm/RedeemOfferForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RedeemOfferForm/RedeemOfferForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RedeemOfferStep2Form/RedeemOfferStep2Form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RedeemOfferStep2Form/RedeemOfferStep2Form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SelectBox/SelectBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SelectBox/SelectBox.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SelectWithInput/SelectWithInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SelectWithInput/SelectWithInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagmentListITems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagmentListITems.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Stripe/addCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Stripe/addCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TimePicker/TimePickerModal.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TimePicker/TimePickerModal.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TimePicker/TimePickerModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TimePicker/TimePickerModal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TrialBillingInfoForm/TrialBillingInfoForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TrialBillingInfoForm/TrialBillingInfoForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VenueCard/VenueCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VenueCard/VenueCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mockData/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/mockData/footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ExploreVenue/DropdownsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ExploreVenue/DropdownsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/FreeTrial/FreeTrial.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/FreeTrial/FreeTrial.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Pricing/Pricing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Pricing/Pricing.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Common.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Common.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/HeadingTab/HeadingTab.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/HeadingTab/HeadingTab.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/Modals/ProfileModal/ProfileModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/Modals/ProfileModal/ProfileModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/Modals/ShareYourExperinceModal/ShareYourExperinceModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/Modals/ShareYourExperinceModal/ShareYourExperinceModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/UserSidebar/UserSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/UserSidebar/UserSidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mockData/amenties.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/mockData/amenties.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -205,55 +19,55 @@
     <session id="-6026431">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
-          <entry key="project.open.time.0" value="4" />
-          <entry key="project.open.time.1" value="6" />
+          <entry key="project.closed" value="15" />
+          <entry key="project.open.time.0" value="5" />
+          <entry key="project.open.time.1" value="8" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.16" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="env" value="4" />
+          <entry key="env" value="5" />
           <entry key="gitignore" value="1" />
-          <entry key="js" value="5" />
+          <entry key="js" value="7" />
           <entry key="json" value="4" />
-          <entry key="ts" value="14" />
-          <entry key="tsx" value="43" />
+          <entry key="ts" value="16" />
+          <entry key="tsx" value="47" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Env File" value="4" />
+          <entry key="Env File" value="5" />
           <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="5" />
+          <entry key="JavaScript" value="7" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="TypeScript" value="14" />
-          <entry key="TypeScript JSX" value="43" />
+          <entry key="TypeScript" value="16" />
+          <entry key="TypeScript JSX" value="47" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="TypeScriptServerServiceImpl" value="10" />
+          <entry key="TypeScriptServerServiceImpl" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="env" value="54" />
-          <entry key="js" value="1101" />
+          <entry key="js" value="1202" />
           <entry key="json" value="6" />
-          <entry key="ts" value="3" />
-          <entry key="tsx" value="2066" />
+          <entry key="ts" value="5" />
+          <entry key="tsx" value="2237" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Env File" value="54" />
           <entry key="JSON" value="6" />
-          <entry key="JavaScript" value="1101" />
-          <entry key="TypeScript" value="3" />
-          <entry key="TypeScript JSX" value="2066" />
+          <entry key="JavaScript" value="1202" />
+          <entry key="TypeScript" value="5" />
+          <entry key="TypeScript JSX" value="2237" />
         </counts>
       </usages-collector>
     </session>
@@ -261,18 +75,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/FreeTrial/FreeTrial.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="119" column="25" selection-start-line="119" selection-start-column="18" selection-end-line="119" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagment.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="427">
               <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
@@ -281,50 +86,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagmentList.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="22" column="37" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/admin/pages/EventsManagmentSteps/EventsManagementSteps.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="19" column="24" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/admin/components/SubmitEventStep1/SubmitEventStep1.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="260" column="40" selection-start-line="260" selection-start-column="40" selection-end-line="260" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/admin/components/SubmitEventStep2/SubmitEventStep2.tsx">
+        <entry file="file://$PROJECT_DIR$/src/components/Stripe/addCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="76" column="55" selection-start-line="76" selection-start-column="55" selection-end-line="76" selection-end-column="55" />
+            <state relative-caret-position="165">
+              <caret line="88" column="31" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/admin/components/DashboardHeader/DashboardHeader.tsx">
+        <entry file="file://$PROJECT_DIR$/src/components/TrialBillingInfoForm/TrialBillingInfoForm.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="64" column="21" lean-forward="true" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="68" />
+            <state relative-caret-position="206">
+              <caret line="150" column="13" lean-forward="true" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -363,8 +138,13 @@
       <find>props.setEventData</find>
       <find>EventsManagementSteps</find>
       <find>SubmitEventStep2Props</find>
-      <find>partner</find>
       <find>setEventData</find>
+      <find>partner</find>
+      <find>Add Venue Profile</find>
+      <find>AddVenueProfileForm</find>
+      <find>EventsManagmentListItem</find>
+      <find>amentiesState</find>
+      <find>addCard</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -388,12 +168,14 @@
         <option value="$PROJECT_DIR$/src/components/RedeemOfferStep2Form/RedeemOfferStep2Form.tsx" />
         <option value="$PROJECT_DIR$/src/components/PriceCard/PriceCard.tsx" />
         <option value="$PROJECT_DIR$/src/pages/FreeTrial/FreeTrial.tsx" />
-        <option value="$PROJECT_DIR$/src/components/Stripe/addCard.js" />
-        <option value="$PROJECT_DIR$/src/components/TrialBillingInfoForm/TrialBillingInfoForm.tsx" />
-        <option value="$PROJECT_DIR$/src/admin/components/AddVenueProfileForm/AddVenueProfileForm.tsx" />
         <option value="$PROJECT_DIR$/src/admin/pages/EventsManagmentSteps/EventsManagementSteps.tsx" />
         <option value="$PROJECT_DIR$/src/admin/components/SubmitEventStep1/SubmitEventStep1.tsx" />
         <option value="$PROJECT_DIR$/src/admin/components/SubmitEventStep2/SubmitEventStep2.tsx" />
+        <option value="$PROJECT_DIR$/src/mockData/amenties.ts" />
+        <option value="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagmentListITems.tsx" />
+        <option value="$PROJECT_DIR$/src/admin/components/AddVenueProfileForm/AddVenueProfileForm.tsx" />
+        <option value="$PROJECT_DIR$/src/components/TrialBillingInfoForm/TrialBillingInfoForm.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Stripe/addCard.js" />
       </list>
     </option>
   </component>
@@ -438,35 +220,27 @@
               <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
               <item name="musicstep" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="musicstep" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
               <item name="musicstep" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="AddVenueProfileForm" type="462c0819:PsiDirectoryNode" />
+              <item name="Stripe" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1653336924754" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1653422352944" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="ts.external.directory.path" value="D:\practice\musicstep\node_modules\typescript\lib" />
@@ -509,17 +283,21 @@
       <workItem from="1653223510985" duration="594000" />
       <workItem from="1653228376311" duration="5950000" />
       <workItem from="1653316326593" duration="8629000" />
-      <workItem from="1653327158983" duration="6772000" />
+      <workItem from="1653327158983" duration="7118000" />
+      <workItem from="1653337224867" duration="8000" />
+      <workItem from="1653384085421" duration="4397000" />
+      <workItem from="1653421015322" duration="1390000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60345000" />
+    <option name="totallyTimeSpent" value="66486000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26174498" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2738255" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -537,7 +315,7 @@
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.27077365" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3739255" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -662,13 +440,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Stripe/addCardSuccess.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Stripe/subscriptionCancel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -694,13 +465,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="40" column="23" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="251" column="30" selection-start-line="251" selection-start-column="30" selection-end-line="251" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -734,13 +498,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Stripe/addCard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Pricing/Pricing.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -752,13 +509,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
           <caret line="55" column="87" selection-start-line="55" selection-start-column="69" selection-end-line="55" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -786,40 +536,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TrialBillingInfoForm/TrialBillingInfoForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="152" column="79" selection-start-line="152" selection-start-column="79" selection-end-line="152" selection-end-column="79" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/admin/components/AddVenueProfileForm/AddVenueProfileForm.style.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-425">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin/components/AddVenueProfileForm/AddVenueProfileForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-769">
-          <caret line="422" column="27" selection-start-line="422" selection-start-column="27" selection-end-line="422" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagment.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -828,16 +548,70 @@
         <state relative-caret-position="-1158" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mockData/policies.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-695" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/FreeTrial/FreeTrial.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
+        <state>
           <caret line="119" column="25" selection-start-line="119" selection-start-column="18" selection-end-line="119" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mockData/amenties.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/SubmitEventStep2/SubmitEventStep2.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="76" column="55" selection-start-line="76" selection-start-column="55" selection-end-line="76" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/DashboardHeader/DashboardHeader.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/AddVenueProfileForm/AddVenueProfileForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-595">
+          <caret line="146" column="30" selection-start-line="146" selection-start-column="17" selection-end-line="146" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/SubmitEventStep1/SubmitEventStep1.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="257" column="60" selection-start-line="257" selection-start-column="43" selection-end-line="257" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/pages/EventsManagmentSteps/EventsManagementSteps.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagmentListITems.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-376">
+        <state relative-caret-position="323">
+          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -846,39 +620,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagmentList.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" column="37" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="37" />
+        <state relative-caret-position="34">
+          <caret line="2" column="46" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagment.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin/components/DashboardHeader/DashboardHeader.tsx">
+    <entry file="file://$PROJECT_DIR$/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="64" column="21" lean-forward="true" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="68" />
+        <state relative-caret-position="119">
+          <caret line="53" column="7" selection-start-line="53" selection-start-column="7" selection-end-line="53" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin/pages/EventsManagmentSteps/EventsManagementSteps.tsx">
+    <entry file="file://$PROJECT_DIR$/src/components/Stripe/addCardSuccess.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="19" column="24" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="24" />
+        <state relative-caret-position="34">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin/components/SubmitEventStep1/SubmitEventStep1.tsx">
+    <entry file="file://$PROJECT_DIR$/src/components/TrialBillingInfoForm/TrialBillingInfoForm.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="260" column="40" selection-start-line="260" selection-start-column="40" selection-end-line="260" selection-end-column="40" />
+        <state relative-caret-position="206">
+          <caret line="150" column="13" lean-forward="true" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin/components/SubmitEventStep2/SubmitEventStep2.tsx">
+    <entry file="file://$PROJECT_DIR$/src/components/Stripe/addCard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="76" column="55" selection-start-line="76" selection-start-column="55" selection-end-line="76" selection-end-column="55" />
+        <state relative-caret-position="165">
+          <caret line="88" column="31" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="31" />
         </state>
       </provider>
     </entry>

@@ -143,10 +143,8 @@ const AddVenueProfileForm = () => {
       saftyAndCleaness[currentValue.id] = currentValue.value;
     });
 
-    const amentiesBody: any = {};
-    amentiesState.forEach((currentValue: any) => {
-      amentiesBody[currentValue.id] = currentValue.value;
-    });
+    let amentiesBody: any = {};
+    amentiesBody=amentiesState.filter((amenity)=>amenity.value).map((amenity)=>amenity.name);
 
     const socialMediaAndMarketingLinks: any = {
       phoneNumber: e.phoneNumber,
@@ -158,7 +156,6 @@ const AddVenueProfileForm = () => {
 
     /////form Data
     const bodyData = new FormData();
-
     bodyData.append("venueBio", e.venueBio);
     bodyData.append("name", e.name);
     bodyData.append("location", JSON.stringify(e.location));
@@ -182,12 +179,12 @@ const AddVenueProfileForm = () => {
       }
     }
 
-    const res = await axios
+   const res = await axios
       .post("/v1/venue", bodyData, {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .catch((error) => {
-        console.log(error.response.data.error);
+        console.log(error.response);
         setSuccessModalVisible(true);
         setMessage(error.response.data.error);
         setLoading(false)
@@ -267,6 +264,9 @@ const AddVenueProfileForm = () => {
     //     lng: lng
     // });
   };
+
+
+  console.log("amentiesState = ",amentiesState)
 
   return (
     <>
