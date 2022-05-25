@@ -169,7 +169,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}
         handleOkClick={() => {
-          if (messageType === "Success") {
+          if (messageType === "success") {
             console.log('done')
             history.push("/admin/events-management");
           }

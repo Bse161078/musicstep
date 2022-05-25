@@ -4,11 +4,11 @@ import { TabRow } from "./TabRow";
 
 import { UpcomingEventsStyle } from "./UpcomingEvents.style";
 
-const UpcomingEvents = ({ events }: any) => {
+const UpcomingEvents = ({ events,venue }: any) => {
   const [reservation, setReservation] = useState(0);
   let tempresrvatoin = 0;
-
-  console.log(events);
+  
+  console.log(events,"eventstoexplore",venue);
   return (
     <UpcomingEventsStyle>
       {/* <div className="list-header">

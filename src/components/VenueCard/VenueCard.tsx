@@ -15,15 +15,18 @@ const VenueCard = ({ venue }: any) => {
   const { state, dispatch } = useLoginContext();
   const [events, setEvents] = React.useState(null);
   const [isLoading, setIsLoading] = React.useState(false);
-
+  
+  useEffect(() => {
+   setEvents(null)
+  }, []);
   const handleClick = () => {
     history.push({
       pathname: `/explore-venue/venue-details`,
 
-      state: { venueDetail: venue.venueInfo[0] },
+      state: { venueDetail: venue },
     });
   };
-
+  
   function callback(key: any) {
     if (events) {
       setEvents(null);
@@ -43,7 +46,6 @@ const VenueCard = ({ venue }: any) => {
         console.log(error.response);
       });
   }
-  console.log('venue',venue)
   return (
     venue?<>
       <VenueCardStyle onClick={handleClick}>
@@ -52,15 +54,15 @@ const VenueCard = ({ venue }: any) => {
           src={
             process.env.REACT_APP_BASE_URL +
             "/" +
-            venue.venueInfo[0].coverPhotoUrl
+            venue.coverPhotoUrl
           }
           alt="venue thumb"
         />
         {/* "/images/explore-venue/image1.png" */}
         <div className="venue-details">
           {/* <h3 className="top-heading">DOLORES POUROS</h3> */}
-          <h4 className="heading">{venue.venueInfo[0].name}</h4>
-          <p className="address">{venue.venueInfo[0]["location"].address}</p>
+          <h4 className="heading">{venue.name}</h4>
+          <p className="address">{venue["location"].address}</p>
 
           <div className="row">
             <div className="star-wrapper">
@@ -74,10 +76,12 @@ const VenueCard = ({ venue }: any) => {
         </div>
       </VenueCardStyle>
       <CollapseStyle>
-        <Collapse onChange={callback}>
-          <Panel header={`${venue.eventsCount} upcoming events`} key="1">
+        <Collapse onChange={()=>{
+          setEvents(venue.events)
+        }}>
+          <Panel header={`${venue.events.length} upcoming events`} key="1">
             {isLoading && <Spinner />}
-            {events && <UpcomingEvents events={events} />}
+            {events && <UpcomingEvents events={events} venue={venue} />}
           </Panel>
         </Collapse>
       </CollapseStyle>
@@ -91,7 +95,7 @@ const VenueCard = ({ venue }: any) => {
            textAlign: "center",
          }}
        >
-         No Event or Venue to explore
+         No Event  to explore
        </h1>
     </div>
   );

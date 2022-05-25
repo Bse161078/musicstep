@@ -19,7 +19,7 @@ const HeadingTab = (props: HeadingTabProps) => {
         {icon && <span>{icon}</span>}
         <div>
           {heading && <h4 className="title">{heading}</h4>}
-          {description && <p className="description">Expires in 21 days.</p>}
+          {description && <p className="description">{description}</p>}
         </div>
       </div>
 

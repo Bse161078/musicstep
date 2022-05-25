@@ -39,7 +39,7 @@ const TicketModal = (props: TicketModalProps) => {
   const handlereservation = async () => {
     const bodyData = {
       event: props.event._id,
-      venue: props.event.venueInfo[0]._id,
+      venue: props.event._id,
       ticketId: props.event.tickets[props.ticketIndex]._id,
       credits: props.event.tickets[props.ticketIndex].credits,
     };
@@ -116,16 +116,16 @@ const TicketModal = (props: TicketModalProps) => {
             </span>
             <span className="location-text">
               <span>
-                <p>{props.event && props.event.venueInfo[0].name}</p>
+                <p>{props.event && props.event?.name}</p>
                 <p>
                   {" "}
-                  {props.event && props.event.venueInfo[0].location.address}
+                  {props.event && props.event?.location?.address}
                 </p>
               </span>
             </span>
             <p>
               Organized By:{" "}
-              {props.event && props.event.organizerInfo[0].organizerName}
+              {props.event && props.event?.organizerInfo?.organizerName}
             </p>
           </div>
 

@@ -87,7 +87,7 @@ const EventDetailsModal = (props: EventDetailsModalProps) => {
           ]}
         >
           <EventDetailsModalStyle>
-            <EventDetailWrapper event={event} />
+            {/* <EventDetailWrapper event={event} /> */}
           </EventDetailsModalStyle>
         </ModalWrapper>
       )}

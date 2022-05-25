@@ -8,8 +8,8 @@ import { useLoginContext } from "../../context/authenticationContext";
 import Marker from "../../components/Marker";
 import {Button} from "@mui/material";
 import {Pricing} from "../Pricing";
-import Loading from "../../components/Spinner/Spinner";
-
+import { Loading } from "../../components/Loading";
+import { Typography } from "@mui/material";
 export default function ExploreVenue() {
   const defaultProps = {
     center: {
@@ -36,12 +36,10 @@ export default function ExploreVenue() {
   const [loading, setLoading] = useState(false);
   const [showPricing,setShowPricing] = useState(false)
   const [subscribtion,setSubscribtion] = useState({
-    active:false,
-    status:''
-
+    active:true,
   })
   const [filter,setFilter] = useState()
-  const venueFilter =  venues&&venues.filter((venue:any)=>(venue.venueInfo[0]?.name).toLowerCase().includes((search).toLowerCase()))
+  const venueFilter =  venues&&venues.filter((venue:any)=>(venue?.name||venue?.events.map((event:any)=>event.title)).toLowerCase().includes((search).toLowerCase()))
   useEffect(() => {
     setLoading(true)
     axios
@@ -56,31 +54,42 @@ export default function ExploreVenue() {
         setLoading(false)
         console.log("filtererror",error)
       });
+      console.log('subs',subscribtion)
       axios
       .get("/v1/users/allEventsByVenues", {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .then((res) => {
         setLoading(false)
-        setVenues(res.data.event);
+        console.log("subscribtion",res.data.subscription,res.data.event)
         setSubscribtion(res.data.subscription)
       })
       .catch((error) => {
         setLoading(false)
       });
+      axios
+      .get("/v1/venue", {
+        headers: { Authorization: `Bearer ${state.authToken}` },
+      })
+      .then((res) => {
+        setVenues(res.data);
+        console.log("venues",res.data,res.data)
+      })
+      .catch((error) => {
+      });
   }, []);
-console.log("filter",filter)
   const onSubscribePackage=(e:any)=>{
       const user:any=JSON.parse(localStorage.getItem("data")||"{}");
       axios.post('/v1/stripe/pay-subscription',{id:user.id}).then((response)=>{
-          //console.log("data = ",response.data.clientSecret);
-          window.open(response.data.url,'_blank');
-          setLoading(false)
-          console.log("subsribe package",response.data.url);
+      window.open(response.data.url,'_blank');
+      setLoading(false)
+      console.log("subsribe package",response.data.url);
       }).catch((err)=>{
+        console.log("subsribe package error", err);
         setLoading(false)
       })
   }
+  console.log("venueFilter",venueFilter)
   return (
     <>
       <NavbarWithSearch setSearch={setSearch}
@@ -91,7 +100,7 @@ console.log("filter",filter)
       {loading && <Loading/>}
       {subscribtion.active==true?
       <ExploreVenueStyle>
-        <DropdownsList filter={filter} />
+        <DropdownsList filter={filter} setVenues={setVenues} setLoading={setLoading} />
         <div />
 
         <section className="venues-list">
@@ -247,36 +256,14 @@ console.log("filter",filter)
                   ],
                 }}
               >
-                {/* {browseEvents &&
-                                    browseEvents.map((event) => ( */}
-                {/* <Marker
-                lat={31.582045}
-                lng={74.329376}
-                // lat={event.lat}
-                // lng={event.lng}
-                name={"Request Titile:" + " " + "adeel"}
-                color={event.markerColor}
-                // handlePinClcik={handlePinClcik}
-                // request={event}
-              />
-              ))} */}
-                {/* <Marker
-                  // lat={31.582045}
-                  // lng={74.329376}
-                  lat={31.582045}
-                  lng={75.329376}
-                  name="Your location"
-                  color={"blue"}
-                  id="1"
-                /> */}
                 {venues.length > 0 &&
                   venues.map(
                     (venue: any) => (
                       <Marker
                         // lat={31.582045}
                         // lng={74.329376}
-                        lat={venue.venueInfo[0].location.lat}
-                        lng={venue.venueInfo[0].location.lng}
+                        lat={venue.location.lat}
+                        lng={venue.location.lng}
                         name="Your location"
                         color={"blue"}
                         id="1"
@@ -289,22 +276,16 @@ console.log("filter",filter)
           </div>
         </section>
       </ExploreVenueStyle>:
-      (<div><ExploreVenueStyle>
-              <h1
-          style={{
-            width: "100%",
-            margin: "0px auto",
-            fontSize: "40px",
-            textAlign: "center",
-          }}
-        >
-                Your Subscription has been Expired! Please renew your Subscription package
-              </h1>
+      (<div><div>
+              <Typography variant='h3'align="center"sx={{padding:10,fontWeight:'bold'}}>
+        Your Subscribtion has been Expired. Please Subscribe Again!
+      </Typography>
                 {/* <FilledButtonStyle  class="" onClick={(e)=>onSubscribePackage(e)}>Checkout</FilledButtonStyle> */}
                 <div></div>
-                  <TrialButton style={{marginLeft:10,marginTop:10}}
+                <Typography variant='h3'align="center"sx={{padding:3,fontWeight:'bold'}}>
+                  <TrialButton 
                   onClick={(e)=>{
-                    if(subscribtion.status==='canceled')
+                    if(!subscribtion)
                    {
                      setShowPricing(true)
                    }
@@ -315,9 +296,10 @@ console.log("filter",filter)
                     }
                   }}
                 className="text-center"><a  className="free-trial-btn free-trial-secondary btn">
-                  »&nbsp;Subscribe&nbsp;Now!</a>
+                  »&nbsp;{ subscribtion? "Subscribe Now!":"Create Subscribtion!"}</a>
                   </TrialButton>
-                  </ExploreVenueStyle>
+                  </Typography>
+                  </div>
        </div>
 
       )

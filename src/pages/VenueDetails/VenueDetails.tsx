@@ -50,7 +50,7 @@ export default function VenueDetails() {
   const [amentiesState, setamentiesState] = useState(amenties);
   const [reviews, setreviews] = useState(null);
   const venueDetail = location.state.venueDetail;
-  console.log(venueDetail);
+  console.log(venueDetail,'state',location.state);
 
   function callback() {
     setIsLoading(true);
@@ -130,14 +130,14 @@ export default function VenueDetails() {
             defaultActiveKey="1"
             onChange={(key) => {
               if (key === "2") {
-                callback();
+                  setEvents(venueDetail.events)
               } else if (key === "3") {
                 getReviews();
               }
             }}
           >
             <TabPaneStyle tab="Info" key="1">
-              <HeadingWithContent description={[venueDetail.venueBio]} />
+              <HeadingWithContent description={[venueDetail.venueBio]} heading={venueDetail.name} />
               {/* <HeadingWithContent
                 heading="This is heading for venue"
                 description={[
@@ -146,7 +146,9 @@ export default function VenueDetails() {
               /> */}
             </TabPaneStyle>
             <TabPaneStyle tab="Upcoming Events" key="2">
-              <div className="table-wrapper" onClick={() => {}}>
+              <div className="table-wrapper" onClick={() => {
+
+              }}>
                 {isLoading ? <Spinner /> : <UpcomingEvents events={events} />}
               </div>
             </TabPaneStyle>

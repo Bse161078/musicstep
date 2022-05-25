@@ -116,7 +116,6 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                     return organizer.organizerName
                 });
                 setOrganizersForDropDown(tempOrganizer);
-                console.log("res.data", res.data, organizersForDropDown, tempOrganizer)
             })
             .catch((error) => {
                 console.log(error.response);
@@ -127,8 +126,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                 headers: {Authorization: `Bearer ${state.authToken}`},
             })
             .then((res) => {
-                // setProfilesList(res.data);
-
+                console.log("venues",res.data)
                 setVenues(res.data);
             })
             .catch((error) => {

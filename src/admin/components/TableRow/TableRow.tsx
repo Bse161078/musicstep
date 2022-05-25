@@ -11,7 +11,7 @@ type TableRowProps = {
 
 const TableRow = (props: TableRowProps) => {
   const { rowLabel3, reservation } = props;
-
+  console.log("reservationahan!",reservation)
   return (
     <TableRowStyle>
       <span>
@@ -37,7 +37,7 @@ const TableRow = (props: TableRowProps) => {
           {reservation && reservation.eventInfo[0].title}
         </h1>
         <p className="subheading">
-          {reservation && reservation.venueInfo[0].name}
+          {reservation && ''}
         </p>
       </span>
 

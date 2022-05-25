@@ -9,8 +9,8 @@ export const EventDetailWrapper = ({ event }: EventDetailWrapperProps) => {
   const history = useHistory();
   const eventImage =
     event.eventPhotoSameAsOrganizerPhoto || event.additionalPhotos.length === 0
-      ? event.organizerInfo[0].coverPhotoUrl
-      : event.additionalPhotos[0];
+      ? event.organizerInfo[0]?.coverPhotoUrl
+      : event.additionalPhotos[0]?event.additionalPhotos[0]:'';
 
   const week = [
     "Sunday",
@@ -26,10 +26,10 @@ export const EventDetailWrapper = ({ event }: EventDetailWrapperProps) => {
     history.push({
       pathname: `/explore-venue/organizer-profile`,
 
-      state: { organizerDetail: event.organizerInfo[0] },
+      state: { organizerDetail: event },
     });
   };
-
+console.log("eventby",event)
   return (
     <div className="first-row-wrapper">
       <img
@@ -66,18 +66,22 @@ export const EventDetailWrapper = ({ event }: EventDetailWrapperProps) => {
         </div>
 
         <div>
-          <p>Venue : {event.venueInfo[0].name}</p>
+          <p>Venue : {event?.name}</p>
           <p>
             {" "}
             <img src="/images/icons/location-icon.svg" alt="location" />
-            {event.venueInfo[0].location.address}
+            {event.location?.address}
           </p>
         </div>
 
         <div className="organizedBy-text">
           <p>
             Organized by:{" "}
-            <span className="link">{event.organizerInfo[0].organizerName}</span>
+            <span className="link">{event.organizerInfo?.organizerName}</span>
+          </p>
+          <p>
+            Available Tickets :{" "}
+            <span className="link">{event.availableTickets+"asd"}</span>
           </p>
         </div>
       </div>

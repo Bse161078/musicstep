@@ -27,16 +27,20 @@ const TrialBillingInfoForm = (props:any) => {
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-
+        setLoading(true)
         if(id && id.length>0){
             sessionStorage.setItem("id",id);
         }
-        console.log("id",id)
+        console.log("id = ",id)
+
         axios.post('/v1/stripe/add-card-intent',{id:sessionStorage.getItem("id")}).then((response)=>{
             //console.log("data = ",response.data.clientSecret);
             setClientSecret(response.data.clientSecret);
+            setLoading(false)
         }).catch((err)=>{
             console.log("err = ",err.response)
+            setLoading(false)
+
         })
         // fetch("http://localhost:3001/stripe/create-payment-intent", {
         //     method: "POST",
@@ -135,7 +139,7 @@ const TrialBillingInfoForm = (props:any) => {
     console.log("client secre1t = ",clientSecret);
     return (
         <TrialBillingInfoFormStyle>
-            {loading && <Loading/>}
+            {loading===true && <Loading/>}
             
 
             <h3 className="form-heading">Save Your Billing Information</h3>

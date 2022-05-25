@@ -36,12 +36,19 @@ export default function FreeTrial() {
   const [loading, setLoading] = useState(false);
 
   useEffect(()=>{
+    setLoading(true)
       const clientSecret = new URLSearchParams(window.location.search).get(
           "setup_intent_client_secret"
       );
       console.log("clientSecret = ",clientSecret);
       if(clientSecret && clientSecret.length>0)
-      setCurrentForm("trial-billing-information")
+      {
+        setCurrentForm("trial-billing-information")
+        setLoading(false)
+      }
+      else
+      setLoading(false)
+
   },[])
 
   if (
@@ -130,7 +137,7 @@ export default function FreeTrial() {
   return (
     <FreeTrialStyle>
        {loading && <Loading/>}
-      {isPricing&&<Pricing createSubscription={createSubscription} payment_method={paymentMethod}/>}
+      {isPricing?<Pricing createSubscription={createSubscription} payment_method={paymentMethod}/>:
       <StartTrialWrapper
         leftContent={
           currentForm === "trial-billing-information" ? (
@@ -146,6 +153,7 @@ export default function FreeTrial() {
       >
         {CurrentTrialStep}
       </StartTrialWrapper>
+}
     </FreeTrialStyle>
   );
 }

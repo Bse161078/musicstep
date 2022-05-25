@@ -16,7 +16,8 @@ import {
 
 import { UserSidebarStyle } from "./UserSidebar.style";
 import { useLoginContext } from "../../../context/authenticationContext";
-const UserSidebar = ({ reservations,subscription }: any) => {
+import axios from "axios";
+const UserSidebar = ({ reservations,subscription,timeDifference }: any) => {
   const { dispatch, state } = useLoginContext();
   const [isLogoutVisible, setLogoutVisible] = useState(false);
   const [isSubscriptionVisible, setSubscriptionVisible] = useState(false);
@@ -43,11 +44,23 @@ const UserSidebar = ({ reservations,subscription }: any) => {
   const handleModalOkClick = () => {
     setSuccessModalVisible(true);
     setCancelSubscriptionVisible(false);
+
   };
 
   const subscriptionCancelClick = () => {
     setSubscriptionVisible(false);
     setCancelSubscriptionVisible(true);
+    console.log("axios",axios)
+    axios
+    .get(`/v1/stripe/cancel-subscription`, {
+      headers: { Authorization: `Bearer ${state.authToken}` },
+    })
+    .then((res) => {
+      console.log(res.data,'subscriptioncancel');
+    })
+    .catch((error) => {
+      console.log(error.response,"subscriptioncancelerror");
+    });
   };
   console.log(reservations,subscription,"ahan!");
   return (
@@ -87,15 +100,11 @@ const UserSidebar = ({ reservations,subscription }: any) => {
 
       <h4 className="heading">Subscription Details</h4>
 
-      {subscription.status==='canceled'?
-      <h3>
-      </h3>
-      :
         <div className="cards-wrapper">
         <span onClick={() => setSubscriptionVisible(true)}>
           <HeadingTab
-            heading={"Music Enthusiast"}
-            description="Expires in 21 days."
+            heading={"Music "+(subscription?.name?subscription.name:"")}
+            description={timeDifference>0?"Expires in "+timeDifference+" days.":"Your Subscription has Expired!"}
           />
         </span>
 
@@ -108,6 +117,8 @@ const UserSidebar = ({ reservations,subscription }: any) => {
             }
           />
         </span> */}
+        {subscription.active===true &&
+        <div>
         <div className="divider" />
         <span onClick={() => setCreditModalVisible(true)}>
           <HeadingTab
@@ -158,7 +169,9 @@ const UserSidebar = ({ reservations,subscription }: any) => {
             ).length
           }
         />
-      </div>}
+        </div>
+        }
+      </div>
 
       <LogoutModal
         isModalVisible={isLogoutVisible}
@@ -177,6 +190,8 @@ const UserSidebar = ({ reservations,subscription }: any) => {
         isModalVisible={isSubscriptionVisible}
         setIsModalVisible={setSubscriptionVisible}
         handleCancelClick={subscriptionCancelClick}
+        subscribtion={subscription}
+        
         handleChangeClick={() => history.push("/pricing")}
       />
 
