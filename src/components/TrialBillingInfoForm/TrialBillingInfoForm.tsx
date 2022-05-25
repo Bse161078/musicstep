@@ -64,7 +64,6 @@ const TrialBillingInfoForm = (props: any) => {
     const loginContext = useLoginContext();
 
     const handleFormSubmit = (e: any) => {
-        setLoading(true);
         //d
         axios
             .patch(`/v1/users/createBillingInformation/${id}`, {
@@ -74,7 +73,6 @@ const TrialBillingInfoForm = (props: any) => {
                 cvc: e.cvc,
             })
             .then((response) => {
-                setLoading(false);
 
                 console.log(response);
                 dispatch({
@@ -95,7 +93,6 @@ const TrialBillingInfoForm = (props: any) => {
             })
             .catch((error) => {
                 // setErrorMessage("Email already exist!");
-                setLoading(false);
                 console.log("error");
             });
     };

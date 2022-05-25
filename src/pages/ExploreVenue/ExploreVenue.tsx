@@ -47,11 +47,9 @@ export default function ExploreVenue() {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .then((res) => {
-        setLoading(false)
         setFilter(res.data)
       })
       .catch((error) => {
-        setLoading(false)
         console.log("filtererror",error)
       });
       console.log('subs',subscribtion)
@@ -85,7 +83,7 @@ export default function ExploreVenue() {
       setLoading(false)
       console.log("subsribe package",response.data.url);
       }).catch((err)=>{
-        console.log("subsribe package error", err);
+        console.log("subsribe package error", err.response);
         setLoading(false)
       })
   }
@@ -98,7 +96,7 @@ export default function ExploreVenue() {
       />
       {showPricing&&<Pricing showPricing={showPricing} setShowPricing={setShowPricing} />}
       {loading && <Loading/>}
-      {subscribtion.active==true?
+      {!loading&&subscribtion.active==true?
       <ExploreVenueStyle>
         <DropdownsList filter={filter} setVenues={setVenues} setLoading={setLoading} />
         <div />
