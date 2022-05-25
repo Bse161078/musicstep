@@ -68,12 +68,13 @@ export default function AddCard(props) {
     const handleSubmit = async (e) => {
 
         setIsLoading(true);
-        
+        props.setLoading(true)
         e.preventDefault();
 
         if (!stripe || !elements) {
             // Stripe.js has not yet loaded.
             // Make sure to disable form submission until Stripe.js has loaded.
+            props.setLoading(false)
             return;
         }
 
@@ -82,9 +83,10 @@ export default function AddCard(props) {
             elements,
             confirmParams: {
                 // Make sure to change this to your payment completion page
-                return_url: "http://localhost:3002/free-trial",
+                return_url: "https://music-pass-frontend.web.app/free-trial",
             },
         });
+        props.setLoading(false)
 
         // This point will only be reached if there is an immediate error when
         // confirming the payment. Otherwise, your customer will be redirected to

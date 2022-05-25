@@ -10,17 +10,17 @@ import {FilledButtonStyle} from "../../styles/Common.style";
 
 import {TrialBillingInfoFormStyle} from "./TrialBillingInfoForm.style";
 import {TrialBillingInfoValidationSchema} from "./validation";
-import { loadStripe } from "@stripe/stripe-js";
+import {loadStripe} from "@stripe/stripe-js";
 import {Elements} from "@stripe/react-stripe-js";
 import AddCard from "../Stripe/addCard";
-const TrialBillingInfoForm = (props:any) => {
+
+const TrialBillingInfoForm = (props: any) => {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [loading, setLoading] = useState(false);
     // const [errorMessage, setErrorMessage] = useState("");
     const stripePromise = loadStripe("pk_test_51KtcQTFJ50BG2GSltkm4lfPaxH6c8raqCKt9hoBFpgAnJ9loSE8eWTU0PsTRV5wlAcgCY5n7ZMwMXfWg8FPwDPGC009SYAHTEk");
     const [clientSecret, setClientSecret] = useState("");
 
-  
 
     const history = useHistory();
 
@@ -57,7 +57,7 @@ const TrialBillingInfoForm = (props:any) => {
     };
 
     const {
-        state: {id,firstName,lastName,dob,email,phoneNumber},
+        state: {id, firstName, lastName, dob, email, phoneNumber},
         dispatch,
     } = useUserContext();
 
@@ -100,14 +100,17 @@ const TrialBillingInfoForm = (props:any) => {
             });
     };
 
-    const createSubscription=(paymentMethod:string)=>{
+    const createSubscription = (paymentMethod: string) => {
         setLoading(true)
-        axios.post('/v1/stripe/create-subscription',{id:sessionStorage.getItem("id"),paymentMethod}).then((response)=>{
-            console.log("subscription = ",response);
+        axios.post('/v1/stripe/create-subscription', {
+            id: sessionStorage.getItem("id"),
+            paymentMethod
+        }).then((response) => {
+            console.log("subscription = ", response);
             setLoading(false);
 
-            const user=response.data.user;
-            const token=response.data.tokens;
+            const user = response.data.user;
+            const token = response.data.tokens;
             dispatch({
                 type: "SUBMIT_TRIAL_BILLING",
                 payload: {
@@ -123,20 +126,20 @@ const TrialBillingInfoForm = (props:any) => {
                     data: user,
                 },
             });
-        }).catch((err)=>{
-            console.log("err = ",err.response)
+        }).catch((err) => {
+            console.log("err = ", err.response)
         })
     }
 
     const appearance = {
         theme: 'stripe',
     };
-    const options:any = {
+    const options: any = {
         clientSecret,
         appearance,
     };
 
-    console.log("client secre1t = ",clientSecret);
+    console.log("client secre1t = ", clientSecret);
     return (
         <TrialBillingInfoFormStyle>
             {loading===true && <Loading/>}
@@ -155,7 +158,8 @@ const TrialBillingInfoForm = (props:any) => {
                         {clientSecret && (
                             <Elements options={options} stripe={stripePromise}>
                                 <AddCard createSubscription={createSubscription}
-                                setIsPricing={props.setIsPricing} setSetupIntent={props.setSetupIntent} />
+                                         setIsPricing={props.setIsPricing} setSetupIntent={props.setSetupIntent}
+                                         setLoading={setLoading}/>
                             </Elements>
                         )}
 
@@ -182,7 +186,7 @@ const TrialBillingInfoForm = (props:any) => {
                     </Form>
                 )}
             </Formik>
-             <CongratulationsModal
+            <CongratulationsModal
                 isModalVisible={isModalVisible}
                 setIsModalVisible={setIsModalVisible}
                 message="You have redeemed your trial successfully."
