@@ -7,10 +7,11 @@ type EventDetailWrapperProps = {
 };
 export const EventDetailWrapper = ({ event }: EventDetailWrapperProps) => {
   const history = useHistory();
-  const eventImage =
-    event.eventPhotoSameAsOrganizerPhoto || event.additionalPhotos.length === 0
+  console.log("eventsby",event.additionalPhotos.length)
+  const eventImage =event.additionalPhotos.length>0 &&
+    (event.eventPhotoSameAsOrganizerPhoto || event.additionalPhotos.length === 0
       ? event.organizerInfo[0]?.coverPhotoUrl
-      : event.additionalPhotos[0]?event.additionalPhotos[0]:'';
+      : event.additionalPhotos[0]?event.additionalPhotos[0]:'')
 
   const week = [
     "Sunday",
@@ -81,7 +82,7 @@ console.log("eventby",event)
           </p>
           <p>
             Available Tickets :{" "}
-            <span className="link">{event.availableTickets+"asd"}</span>
+            <span className="link">{event.tickets[0]?.availableTickets}</span>
           </p>
         </div>
       </div>

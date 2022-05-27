@@ -1,10 +1,11 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { ModalWrapperStyle } from "./ModalWrapper.style";
 
 import {
   FilledButtonStyle,
   OutlineButtonStyle,
 } from "../../../../styles/Common.style";
+import { preProcessFile } from "typescript";
 
 type ModalWrapperProps = {
   children: any;
@@ -20,6 +21,7 @@ type ModalWrapperProps = {
   handleOkClick?: any;
   isFooter?: boolean;
   boldDescription?: string;
+  handleSubmit?:any;
   handleDescriptionClick?: () => void;
 };
 const ModalWrapper = (props: ModalWrapperProps) => {
@@ -35,19 +37,26 @@ const ModalWrapper = (props: ModalWrapperProps) => {
     handleOkClick,
     description,
     boldDescription,
+    handleSubmit,
     handleDescriptionClick,
     isFooter = true,
   } = props;
 
+  // useEffect(()=>{
+  //   setIsModalVisible(false)
+  // })
   // const showModal = () => {
   //   setIsModalVisible(true);
   // };
 
   const handleOk = () => {
     setIsModalVisible(false);
+    console.log("ismodalvisible",isModalVisible)
   };
   const handleCancel = () => {
     setIsModalVisible(false);
+    console.log("isModalvisible",isModalVisible)
+
   };
   return (
     <>
@@ -67,14 +76,14 @@ const ModalWrapper = (props: ModalWrapperProps) => {
                   <OutlineButtonStyle
                     width="290px"
                     height="60px"
-                    onClick={handleOk}
+                    onClick={handleSubmit? handleSubmit : handleCancel}
                   >
                     {leftButtonTitle}
                   </OutlineButtonStyle>,
                   <FilledButtonStyle
                     width="290px"
                     height="60px"
-                    onClick={handleOkClick ? handleOkClick : handleOk}
+                    onClick={handleOkClick ? handleOkClick :handleSubmit? handleSubmit : handleOk}
                   >
                     {rightButtonTitle}
                   </FilledButtonStyle>,

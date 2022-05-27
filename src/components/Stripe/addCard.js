@@ -4,7 +4,7 @@ import {
     useStripe,
     useElements
 } from "@stripe/react-stripe-js";
-
+import {FilledButtonStyle} from "../../styles/Common.style";
 export default function AddCard(props) {
     const stripe = useStripe();
     const elements = useElements();
@@ -13,8 +13,9 @@ export default function AddCard(props) {
     const [isLoading, setIsLoading] = useState(false);
     const [isCardAdded, setIsCardAdded] = useState({msg: "", status: false});
 
-
     useEffect(() => {
+        setIsLoading(true)
+        props.setLoading(false)
         if (!stripe) {
             return;
         }
@@ -22,31 +23,38 @@ export default function AddCard(props) {
         const clientSecret = new URLSearchParams(window.location.search).get(
             "setup_intent_client_secret"
         );
-
         if (!clientSecret) {
             return;
         }
 
         stripe.retrieveSetupIntent(clientSecret).then(({setupIntent}) => {
             console.log("setupIntent111 = ",setupIntent)
+            props.setSetupIntent(setupIntent.payment_method)
             switch (setupIntent.status) {
                 case "succeeded":
                     setIsCardAdded({status: true, msg: "Success! Your payment method has been saved!"});
-                    props.createSubscription(setupIntent.payment_method);
+                    props.setIsPricing(true)
+                    //props.createSubscription(setupIntent.payment_method);
+                    setIsLoading(false)
+                    localStorage.setItem("status",setupIntent.status)
                     break;
                 case "processing":
                     setIsCardAdded({
                         status: false,
-                        msg: "Processing payment details. We'll update you when processing is complete!"
+                        msg: "Processing payment details. We'll update you when processing is complete!",
                     });
+                    setIsLoading(false)
+                    break;
                 case 'requires_payment_method':
                     setIsCardAdded({
                         status: false,
                         msg: "Failed to process payment details. Please try another payment method!"
                     })
+                    setIsLoading(false)
                     break;
                 default:
                     setIsCardAdded({status: false, msg: "Something went wrong!"})
+                    setIsLoading(false)
                     break;
             }
         });
@@ -55,16 +63,19 @@ export default function AddCard(props) {
 
     useEffect(()=>{
         if(isCardAdded.status){
-
         }
     },[isCardAdded])
 
     const handleSubmit = async (e) => {
+
+        setIsLoading(true);
+        props.setLoading(false)
         e.preventDefault();
 
         if (!stripe || !elements) {
             // Stripe.js has not yet loaded.
             // Make sure to disable form submission until Stripe.js has loaded.
+            props.setLoading(false)
             return;
         }
 
@@ -73,9 +84,10 @@ export default function AddCard(props) {
             elements,
             confirmParams: {
                 // Make sure to change this to your payment completion page
-                return_url: "http://localhost:3002/free-trial",
+                return_url: "https://music-pass-frontend.web.app/free-trial",
             },
         });
+        props.setLoading(false)
 
         // This point will only be reached if there is an immediate error when
         // confirming the payment. Otherwise, your customer will be redirected to
@@ -96,22 +108,23 @@ export default function AddCard(props) {
 
     };
 
-    console.log("message = ", message)
+    console.log("message = ", !stripe,"   elements = ",!elements,isLoading)
     return (
         <Fragment>
-            {!isCardAdded.status ?
+           
+            {!isCardAdded.status && isLoading ?
                 <div id="payment-form" onClick={handleSubmit}>
                     <PaymentElement id="payment-element"/>
-                    <button disabled={isLoading || !stripe || !elements} id="submit">
-        <span id="button-text">
-          { "Pay now"}
-        </span>
-                    </button>
+                    <FilledButtonStyle disabled={ !stripe || !elements} id="submit">
+                            <span id="button-text">
+                            Add Card
+                            </span>
+                    </FilledButtonStyle>
                     {/* Show any error or success messages */}
                     {message && <div id="payment-message">{message}</div>}
                 </div>
                 :
-           <p>{isCardAdded.msg}</p> }
+           <p style={{color:isCardAdded.status?"#20c997":'red'}} >{isCardAdded.msg}</p> }
         </Fragment>
     );
 }

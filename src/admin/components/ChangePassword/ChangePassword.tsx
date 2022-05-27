@@ -2,18 +2,22 @@ import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import { DashboardHeader } from "..";
 import { InputBox } from "../../../components";
-import { FilledButtonStyle } from "../../../styles/Common.style";
+import { FilledButtonStyle,OutlineButtonStyle } from "../../../styles/Common.style";
 import { ChangePasswordPrompt } from "..";
 import { ChangePasswordStyle } from "./ChangePassword.style";
 
-const ChangePassword = () => {
+const ChangePassword = (props:any) => {
   const handleSubmit = () => {};
   const [isModalVisible, setIsModalVisible] = useState(false);
-
+  const handleBackClick =()=>{
+    props.setCurrentPage("account-settings")
+  }
   return (
     <ChangePasswordStyle>
-      <DashboardHeader heading="Change Password" />
-
+      <DashboardHeader heading="Change Password" handleBackClick={handleBackClick} />
+      <div style={{padding:5}}>
+     
+         </div>
       <Formik
         initialValues={{
           currentPassword: "",

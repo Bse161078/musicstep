@@ -118,6 +118,7 @@ export const DragDropIcon = () => (
           fontFamily: "Montserrat-Bold, Montserrat",
           fontWeight: 700,
           opacity: "0.7",
+          marginLeft:20
         }}
         transform="translate(495 444)"
       >

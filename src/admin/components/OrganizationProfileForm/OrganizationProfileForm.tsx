@@ -631,28 +631,28 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                 <div className="socialLinks-wrapper">
                   <InputBox
                     name="phoneNumber"
-                    placeholder="e.g. https://www.eventbritemusic.com/"
+                    placeholder="+14166966270"
                     label="Phone Number"
                   />
                   <InputBox
                     name="facebook"
-                    placeholder="e.g. https://www.eventbritemusic.com/"
+                    placeholder="https://www.facebook.com/organizer"
                     label="FaceBook"
                   />
                   <InputBox
                     name="instagram"
-                    placeholder="e.g. https://www.eventbritemusic.com/"
+                    placeholder="e.g. https://www.Instagram.com/organizer"
                     label="Instagram"
                   />
                   <InputBox
                     name="twitter"
-                    placeholder="e.g. https://www.eventbritemusic.com/"
+                    placeholder="e.g. https://www.twitter.com/"
                     label="Twitter"
                   />
                   <InputBox
                     name="youtube"
                     label="Youtube"
-                    placeholder="e.g. https://www.eventbritemusic.com/"
+                    placeholder="e.g. https://www.youtube.com/organizer"
                   />
                 </div>
                 <input

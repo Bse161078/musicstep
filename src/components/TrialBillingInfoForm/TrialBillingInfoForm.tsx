@@ -27,20 +27,16 @@ const TrialBillingInfoForm = (props: any) => {
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        setLoading(true)
-        if(id && id.length>0){
-            sessionStorage.setItem("id",id);
-        }
-        console.log("id = ",id)
 
-        axios.post('/v1/stripe/add-card-intent',{id:sessionStorage.getItem("id")}).then((response)=>{
+        if (id && id.length > 0) {
+            sessionStorage.setItem("id", id);
+        }
+        console.log("id", id)
+        axios.post('/v1/stripe/add-card-intent', {id: sessionStorage.getItem("id")}).then((response) => {
             //console.log("data = ",response.data.clientSecret);
             setClientSecret(response.data.clientSecret);
-            setLoading(false)
-        }).catch((err)=>{
-            console.log("err = ",err.response)
-            setLoading(false)
-
+        }).catch((err) => {
+            console.log("err = ", err.response)
         })
         // fetch("http://localhost:3001/stripe/create-payment-intent", {
         //     method: "POST",
@@ -64,6 +60,7 @@ const TrialBillingInfoForm = (props: any) => {
     const loginContext = useLoginContext();
 
     const handleFormSubmit = (e: any) => {
+        setLoading(true);
         //d
         axios
             .patch(`/v1/users/createBillingInformation/${id}`, {
@@ -73,6 +70,7 @@ const TrialBillingInfoForm = (props: any) => {
                 cvc: e.cvc,
             })
             .then((response) => {
+                setLoading(false);
 
                 console.log(response);
                 dispatch({
@@ -93,6 +91,7 @@ const TrialBillingInfoForm = (props: any) => {
             })
             .catch((error) => {
                 // setErrorMessage("Email already exist!");
+                setLoading(false);
                 console.log("error");
             });
     };
@@ -139,8 +138,8 @@ const TrialBillingInfoForm = (props: any) => {
     console.log("client secre1t = ", clientSecret);
     return (
         <TrialBillingInfoFormStyle>
-            {loading===true && <Loading/>}
-            
+            {loading && <Loading/>}
+
 
             <h3 className="form-heading">Save Your Billing Information</h3>
             <p className="form-info">Why do you need my billing info?</p>

@@ -15,7 +15,7 @@ const HeadingTab = (props: HeadingTabProps) => {
 
   return (
     <HeadingTabStyle>
-      <div className="heading-wrapper">
+      <div className="heading-wrapper" style={{marginTop:15}}>
         {icon && <span>{icon}</span>}
         <div>
           {heading && <h4 className="title">{heading}</h4>}

@@ -76,6 +76,9 @@ export default function ExploreVenue() {
       .catch((error) => {
       });
   }, []);
+  const handleShowPricing=()=>{
+    setShowPricing(false)
+  }
   const onSubscribePackage=(e:any)=>{
       const user:any=JSON.parse(localStorage.getItem("data")||"{}");
       axios.post('/v1/stripe/pay-subscription',{id:user.id}).then((response)=>{
@@ -87,26 +90,43 @@ export default function ExploreVenue() {
         setLoading(false)
       })
   }
-  console.log("venueFilter",venueFilter)
+  console.log("showPricing",showPricing)
   return (
     <>
-      <NavbarWithSearch setSearch={setSearch}
+    {showPricing===true&&<Pricing showPricing={showPricing} setShowPricing={handleShowPricing} />}
+      {!showPricing&&<NavbarWithSearch setSearch={setSearch}
       search={search}
-      active={subscribtion.active}
-      />
-      {showPricing&&<Pricing showPricing={showPricing} setShowPricing={setShowPricing} />}
+      active={subscribtion?.active}
+      />}
+      
       {loading && <Loading/>}
-      {!loading&&subscribtion.active==true?
+      {!subscribtion && !showPricing?
+      <div>
+        <Typography variant='h3'align="center"sx={{padding:10,fontWeight:'bold'}}>
+        Your Subscribtion has been Cancelled. Please Create Subscribtion Again!
+      </Typography>
+      <Typography variant='h3'align="center"sx={{padding:3,fontWeight:'bold'}}>
+                  <TrialButton 
+                  onClick={(e)=>{
+                     setShowPricing(true)
+                  }}
+                className="text-center"><a  className="free-trial-btn free-trial-secondary btn">
+                  »&nbsp;{ "Create Subscribtion!"}</a>
+                  </TrialButton>
+                  </Typography>
+      </div> 
+      :
+      (!loading&&subscribtion?.active)&&!showPricing?
       <ExploreVenueStyle>
-        <DropdownsList filter={filter} setVenues={setVenues} setLoading={setLoading} />
+       {!showPricing&& <DropdownsList filter={filter} setVenues={setVenues} setLoading={setLoading} />}
         <div />
 
         <section className="venues-list">
 
           {
-         venues.length > 0 ? (
+         venues.length > 0&&!showPricing ? (
             venueFilter.length>0?(
-          venueFilter.map((venue: any) => <VenueCard venue={venue} />)):
+          venueFilter.map((venue: any) => <VenueCard venue={venue} />)):!showPricing&&
           <h1
           style={{
             width: "100%",
@@ -117,7 +137,7 @@ export default function ExploreVenue() {
         >
           No Event or Venue to explore
           </h1>
-          ) :
+          ) :!showPricing&&
            (
             <h1
               style={{
@@ -155,7 +175,7 @@ export default function ExploreVenue() {
             //  className={styles.mapConatiner}
             style={{ width: "100%", height: "100%" }}
           >
-            {venues.length > 0 && (
+            {venues.length > 0 && !showPricing&& (
               <GoogleMapReact
                 bootstrapURLKeys={{
                   key: "AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew",
@@ -274,7 +294,8 @@ export default function ExploreVenue() {
           </div>
         </section>
       </ExploreVenueStyle>:
-      (<div><div>
+      !showPricing&&
+      <div>
               <Typography variant='h3'align="center"sx={{padding:10,fontWeight:'bold'}}>
         Your Subscribtion has been Expired. Please Subscribe Again!
       </Typography>
@@ -297,10 +318,10 @@ export default function ExploreVenue() {
                   »&nbsp;{ subscribtion? "Subscribe Now!":"Create Subscribtion!"}</a>
                   </TrialButton>
                   </Typography>
-                  </div>
+                  
        </div>
 
-      )
+                
       }
     </>
   );

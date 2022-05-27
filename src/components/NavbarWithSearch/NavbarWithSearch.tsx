@@ -8,6 +8,11 @@ import { useLoginContext } from "../../context/authenticationContext";
 const NavbarWithSearch = (props:any) => {
   const { dispatch, state } = useLoginContext();
   const [venues, setVenues] = useState([]);
+  const [subscribtion, setSubscribtion] = useState({
+    active:true
+  });
+
+  console.log("status",props)
   const status = localStorage.getItem("status")
   useEffect(() => {
     axios
@@ -15,7 +20,9 @@ const NavbarWithSearch = (props:any) => {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .then((res) => {
-        setVenues(res.data);
+        setVenues(res.data.event);
+        setSubscribtion(res.data.subscription)
+        console.log("eventsdata",res.data)
       })
       .catch((error) => {
       });
@@ -33,8 +40,9 @@ const NavbarWithSearch = (props:any) => {
 
       <div className="links-wrapper">
         <span>Upcoming Itinerary</span>
-        {active===true?<span>{state.data.credits} Credits</span>:
-        <span> Expired </span>
+        {subscribtion?subscribtion.active===true?<span>{state.data.credits} Credits</span>:
+        <span> Expired </span>:
+        <span> Cancelled </span>
         }
         <Link to="/dashboard/home">
           <span>

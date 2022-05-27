@@ -5,6 +5,7 @@ export const HeadingTabStyle = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 20px;
+  margin-top:10px;
   border-radius: 16px;
   background-color: ${rgba("#100840", 0.1)};
   align-items: center;

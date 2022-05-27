@@ -13,20 +13,22 @@ import {
   FilledButtonStyle,
   OutlineButtonStyle,
 } from "../../../styles/Common.style";
-
+import { Loading } from "../../../components/Loading";
 import { UserSidebarStyle } from "./UserSidebar.style";
 import { useLoginContext } from "../../../context/authenticationContext";
 import axios from "axios";
 const UserSidebar = ({ reservations,subscription,timeDifference }: any) => {
+  console.log("time",timeDifference)
   const { dispatch, state } = useLoginContext();
   const [isLogoutVisible, setLogoutVisible] = useState(false);
   const [isSubscriptionVisible, setSubscriptionVisible] = useState(false);
   const [isCreditModalVisible, setCreditModalVisible] = useState(false);
   const [isEventsModalVisible, setEventsModalVisible] = useState(false);
-  const [isCancelSubscriptionVisible, setCancelSubscriptionVisible] = useState(
-    false
-  );
+  const [isCancelSubscriptionVisible, setCancelSubscriptionVisible] = useState(false);
+  const [isLoading,setLoading] = useState(false)
   const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
+  const [isNotSuccessModalVisible, setNotSuccessModalVisible] = useState(false);
+
   const [isNotificationModalVisible, setNotificationModalVisible] = useState(
     false
   );
@@ -48,23 +50,28 @@ const UserSidebar = ({ reservations,subscription,timeDifference }: any) => {
   };
 
   const subscriptionCancelClick = () => {
+    setLoading(true)
     setSubscriptionVisible(false);
     setCancelSubscriptionVisible(true);
     console.log("axios",axios)
+    const user:any=JSON.parse(localStorage.getItem("data")||"{}");
     axios
-    .get(`/v1/stripe/cancel-subscription`, {
-      headers: { Authorization: `Bearer ${state.authToken}` },
-    })
+    .post('/v1/stripe/cancel-subscription',{id:user.id})
     .then((res) => {
-      console.log(res.data,'subscriptioncancel');
+      setLoading(false)
+      console.log(res,'subscriptioncancel');
+      handleModalOkClick()
     })
     .catch((error) => {
+      setLoading(false)
       console.log(error.response,"subscriptioncancelerror");
-    });
+      setNotSuccessModalVisible(true)
+    })
   };
   console.log(reservations,subscription,"ahan!");
   return (
     <UserSidebarStyle>
+      {isLoading===true&&<Loading/>}
       <figure className="person-info-wrapper">
         <div className="avatar-wrapper">
           <img
@@ -104,7 +111,7 @@ const UserSidebar = ({ reservations,subscription,timeDifference }: any) => {
         <span onClick={() => setSubscriptionVisible(true)}>
           <HeadingTab
             heading={"Music "+(subscription?.name?subscription.name:"")}
-            description={timeDifference>0?"Expires in "+timeDifference+" days.":"Your Subscription has Expired!"}
+            description={subscription.active===true?timeDifference===0?"Expires Today":"Expires in "+timeDifference+" days.":"Your Subscription has Expired!"}
           />
         </span>
 
@@ -120,7 +127,7 @@ const UserSidebar = ({ reservations,subscription,timeDifference }: any) => {
         {subscription.active===true &&
         <div>
         <div className="divider" />
-        <span onClick={() => setCreditModalVisible(true)}>
+        <span style={{padding:4}} onClick={() => setCreditModalVisible(true)}>
           <HeadingTab
             icon={
               <img src="/images/icons/credit-history-icon.svg" alt="icon" />
@@ -189,9 +196,8 @@ const UserSidebar = ({ reservations,subscription,timeDifference }: any) => {
       <SubscriptionDetailsModal
         isModalVisible={isSubscriptionVisible}
         setIsModalVisible={setSubscriptionVisible}
-        handleCancelClick={subscriptionCancelClick}
         subscribtion={subscription}
-        
+        handleCancelClick={()=>setCancelSubscriptionVisible(true)}
         handleChangeClick={() => history.push("/pricing")}
       />
 
@@ -223,7 +229,9 @@ const UserSidebar = ({ reservations,subscription,timeDifference }: any) => {
           <FilledButtonStyle
             width="100%"
             height="60px"
-            onClick={handleModalOkClick}
+            onClick={()=>{
+              subscriptionCancelClick()
+            }}
           >
             Cancel Subscription
           </FilledButtonStyle>,
@@ -235,6 +243,15 @@ const UserSidebar = ({ reservations,subscription,timeDifference }: any) => {
         setIsModalVisible={setSuccessModalVisible}
         heading="Success"
         message="Subscription canceled successfully."
+        handleOkClick={() => {
+          history.push("/");
+        }}
+      />
+      <MessageModal
+        isModalVisible={isNotSuccessModalVisible}
+        setIsModalVisible={setNotSuccessModalVisible}
+        heading="Error"
+        message="Subscription Error."
         handleOkClick={() => {
           history.push("/");
         }}

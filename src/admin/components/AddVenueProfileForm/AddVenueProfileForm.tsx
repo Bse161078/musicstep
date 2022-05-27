@@ -500,28 +500,28 @@ const AddVenueProfileForm = () => {
                   <div className="socialLinks-wrapper">
                     <InputBox
                       name="phoneNumber"
-                      placeholder="e.g. https://www.eventbritemusic.com/"
+                      placeholder="+14166966270"
                       label="Phone Number"
                     />
                     <InputBox
                       name="facebook"
-                      placeholder="e.g. https://www.eventbritemusic.com/"
+                      placeholder="https://www.facebook.com/Organizer"
                       label="FaceBook"
                     />
                     <InputBox
                       name="instagram"
-                      placeholder="e.g. https://www.eventbritemusic.com/"
+                      placeholder=" https://www.instagram.com/Organizer"
                       label="Instagram"
                     />
                     <InputBox
                       name="twitter"
-                      placeholder="e.g. https://www.eventbritemusic.com/"
+                      placeholder=" https://www.eventbritemusic.com/"
                       label="Twitter"
                     />
                     <InputBox
                       name="youtube"
                       label="Youtube"
-                      placeholder="e.g. https://www.eventbritemusic.com/"
+                      placeholder=" https://www.youtube.com/organizer"
                     />
                   </div>
                 </div>

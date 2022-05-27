@@ -4,6 +4,7 @@ import { PriceCard } from "../../components";
 import { PricingStyle } from "./Pricing.style";
 
 export default function Pricing(props:any) {
+  console.log("pricing",props)
   return (
     <PricingStyle>
       <h1 className="pricing-heading">MusicPass Pricing</h1>
@@ -20,6 +21,7 @@ export default function Pricing(props:any) {
           eventsCount="2-3"
           createSubscription={props.createSubscription} payment_method={props.payment_method}
           showPricing={props.showPricing}
+          setShowPricing={props.setShowPricing}
         />
         <PriceCard
           price="$99"
@@ -28,6 +30,7 @@ export default function Pricing(props:any) {
           eventsCount="3-4"
           createSubscription={props.createSubscription} payment_method={props.payment_method}
           showPricing={props.showPricing}
+          setShowPricing={props.setShowPricing}
         />
         <PriceCard
           price="$139"
@@ -36,6 +39,7 @@ export default function Pricing(props:any) {
           eventsCount="5-6"
           createSubscription={props.createSubscription} payment_method={props.payment_method}
           showPricing={props.showPricing}
+          setShowPricing={props.setShowPricing}
         />
         <PriceCard
           price="$199"
@@ -44,6 +48,7 @@ export default function Pricing(props:any) {
           eventsCount="8-10"
           createSubscription={props.createSubscription} payment_method={props.payment_method}
           showPricing={props.showPricing}
+          setShowPricing={props.setShowPricing}
         />
       </div>
 

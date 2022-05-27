@@ -3,22 +3,29 @@ import { Field, Form, Formik } from "formik";
 import { ModalWrapper } from "../ModalWrapper";
 import { InviteModalStyle } from "../InviteModal/InviteModal.style";
 import { roleItems } from "../../../../mockData/roleItems";
-
+import React,{useEffect} from 'react'
 type EditUserModalProps = {
-  isModalVisible?: boolean;
-  setIsModalVisible?: any;
+  showEditUserModal?: boolean;
+  handleSubmit?: any;
+
 };
 const EditUserModal = (props: EditUserModalProps) => {
-  const { isModalVisible, setIsModalVisible } = props;
-  const handleSubmit = () => {};
+  const { showEditUserModal, handleSubmit } = props;
+  const handleSubmitModal = () => {
+    handleSubmit()
+    };
+  // useEffect(()=>{
+  //   setShowEditUserModal(false)
+  // })
+  console.log("naeemsahab",props)
   return (
     <>
       <ModalWrapper
         heading="Edit Users"
         rightButtonTitle="Update"
         leftButtonTitle="Cancel"
-        isModalVisible={isModalVisible}
-        setIsModalVisible={setIsModalVisible}
+        isModalVisible={showEditUserModal}
+        setIsModalVisible={handleSubmitModal}
       >
         <Formik
           initialValues={{

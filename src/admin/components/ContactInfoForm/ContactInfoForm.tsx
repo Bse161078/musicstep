@@ -6,17 +6,31 @@ import { InputBox } from "../../../components";
 import { ContactInfoFormStyle } from "./ContactInfoForm.style";
 import { useLoginContext } from "../../../context/authenticationContext";
 import { stat } from "fs";
-
-const ContactInfoForm = () => {
+import {
+  FilledButtonStyle,
+  OutlineButtonStyle,
+} from "../../../styles/Common.style";
+const ContactInfoForm = (props:any) => {
   const {
     dispatch,
     state: { data },
   } = useLoginContext();
+  const handleBackClick =()=>{
+    props.setCurrentPage("account-settings")
+  }
   console.log(data);
   return (
     <ContactInfoFormStyle>
-      <DashboardHeader heading="Contact Info" />
-
+      <DashboardHeader heading="Contact Info" handleBackClick={handleBackClick} />
+      <div style={{display:'flex',justifyContent:'right'}}>
+        <OutlineButtonStyle
+                    width="200px"
+                    height="60px"
+                    onClick={()=>{}}
+                  >
+                    Save
+         </OutlineButtonStyle>
+                  </div>
       <Formik
         initialValues={{
           prefix: "",
@@ -32,6 +46,7 @@ const ContactInfoForm = () => {
         }}
         onSubmit={() => {}}
       >
+
         
         {() => (
           <Form>

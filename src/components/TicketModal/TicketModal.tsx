@@ -39,8 +39,8 @@ const TicketModal = (props: TicketModalProps) => {
   const handlereservation = async () => {
     const bodyData = {
       event: props.event._id,
-      venue: props.event._id,
-      ticketId: props.event.tickets[props.ticketIndex]._id,
+      venue: props.event.venue,
+     ticketId: props.event._id,
       credits: props.event.tickets[props.ticketIndex].credits,
     };
 
@@ -49,7 +49,7 @@ const TicketModal = (props: TicketModalProps) => {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .catch((error) => {
-        console.log(error.response);
+        console.log(error.response,'errormessage');
         setMessage(error.response.data.message);
       });
 

@@ -11,10 +11,12 @@ type EmailPreferenceProps = {
 
 const EmailPreference = (props: EmailPreferenceProps) => {
   const { setCurrentPage } = props;
-
+  const handleBackClick =()=>{
+    props.setCurrentPage("account-settings")
+  }
   return (
     <EmailPreferenceStyle>
-      <DashboardHeader heading="Email Preference" />
+      <DashboardHeader heading="Email Preference" handleBackClick={handleBackClick} />
 
       <ContentHeader
         heading="Organizing Events"
