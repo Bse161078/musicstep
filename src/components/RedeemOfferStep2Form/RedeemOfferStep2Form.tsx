@@ -50,7 +50,7 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
                 }
             })
             .catch((error) => {
-                /*setErrorMessage(error.response?.data.message);
+                setErrorMessage(error.response?.data.message);
                   setLoading(false)
                   dispatch({
                       type: "SUBMIT_GENERAL_INFO",
@@ -61,20 +61,8 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
                           phoneNumber: e.phoneNumber,
                           email: e.email,
                       },
-                  });*/
+                  });
 
-                setLoading(false);
-                setContinueModal(true);
-                dispatch({
-                    type: "SUBMIT_GENERAL_INFO",
-                    payload: {
-                        firstName: e.firstName,
-                        lastName: e.lastName,
-                        dob: e.dob,
-                        phoneNumber: e.phoneNumber,
-                        email: e.email,
-                    },
-                });
 
 
             });

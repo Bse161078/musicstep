@@ -54,6 +54,7 @@ import {useLoginContext} from "./context/authenticationContext";
 import AddCardSuccess from "./components/Stripe/addCardSuccess";
 import SubscriptionSuccess from "./components/Stripe/subscriptionSuccess";
 import SubscriptionCancel from "./components/Stripe/subscriptionCancel";
+import UpdateSubscription from "./pages/ExploreVenue/UpdateSubscription";
 
 // axios.defaults.baseURL = "https://music-pass-backend.herokuapp.com/v1";
 axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
@@ -175,6 +176,14 @@ const RoutesList = (props: any) => {
                         <AuthenticatedRoute redirectTo="/login">
                             <ExploreVenue/>
                         </AuthenticatedRoute>
+                    )}
+                />
+
+                <Route
+                    exact
+                    path="/update-subscription"
+                    render={() => (
+                            <UpdateSubscription/>
                     )}
                 />
 
