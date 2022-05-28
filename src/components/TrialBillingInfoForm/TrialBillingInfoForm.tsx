@@ -27,12 +27,12 @@ const TrialBillingInfoForm = (props: any) => {
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-
+        
         if (id && id.length > 0) {
-            sessionStorage.setItem("id", id);
+            localStorage.setItem("id", id);
         }
         console.log("id", id)
-        axios.post('/v1/stripe/add-card-intent', {id: sessionStorage.getItem("id")}).then((response) => {
+        axios.post('/v1/stripe/add-card-intent', {id: localStorage.getItem("id")}).then((response) => {
             //console.log("data = ",response.data.clientSecret);
             setClientSecret(response.data.clientSecret);
         }).catch((err) => {

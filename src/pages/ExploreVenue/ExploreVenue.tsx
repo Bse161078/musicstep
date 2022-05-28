@@ -10,6 +10,7 @@ import {Button} from "@mui/material";
 import {Pricing} from "../Pricing";
 import { Loading } from "../../components/Loading";
 import { Typography } from "@mui/material";
+import {useHistory} from "react-router-dom";
 export default function ExploreVenue() {
   const defaultProps = {
     center: {
@@ -18,7 +19,7 @@ export default function ExploreVenue() {
     },
     zoom: 11,
   };
-
+  const history = useHistory()
   const style = {
     position: 'absolute' as 'absolute',
     top: '50%',
@@ -116,7 +117,7 @@ export default function ExploreVenue() {
                   </Typography>
       </div> 
       :
-      (!loading&&subscribtion?.active)&&!showPricing?
+      (subscribtion?.active)&&!showPricing?
       <ExploreVenueStyle>
        {!showPricing&& <DropdownsList filter={filter} setVenues={setVenues} setLoading={setLoading} />}
         <div />
@@ -294,7 +295,7 @@ export default function ExploreVenue() {
           </div>
         </section>
       </ExploreVenueStyle>:
-      !showPricing&&
+      !showPricing&&subscribtion.active&&
       <div>
               <Typography variant='h3'align="center"sx={{padding:10,fontWeight:'bold'}}>
         Your Subscribtion has been Expired. Please Subscribe Again!
@@ -308,11 +309,9 @@ export default function ExploreVenue() {
                    {
                      setShowPricing(true)
                    }
-                    else
-                    {
-                      onSubscribePackage(e)
-                      setLoading(true)
-                    }
+                   else {
+                    history.push("/update-subscription");
+                }
                   }}
                 className="text-center"><a  className="free-trial-btn free-trial-secondary btn">
                   »&nbsp;{ subscribtion? "Subscribe Now!":"Create Subscribtion!"}</a>

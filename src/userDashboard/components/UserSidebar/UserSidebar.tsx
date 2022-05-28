@@ -111,7 +111,7 @@ const UserSidebar = ({ reservations,subscription,timeDifference }: any) => {
         <span onClick={() => setSubscriptionVisible(true)}>
           <HeadingTab
             heading={"Music "+(subscription?.name?subscription.name:"")}
-            description={subscription.active===true?timeDifference===0?"Expires Today":"Expires in "+timeDifference+" days.":"Your Subscription has Expired!"}
+            description={!subscription?"Your Subscription has Expired!":subscription?.active===true?timeDifference===0?"Expires Today":"Expires in "+timeDifference+" days.":''}
           />
         </span>
 
@@ -124,7 +124,7 @@ const UserSidebar = ({ reservations,subscription,timeDifference }: any) => {
             }
           />
         </span> */}
-        {subscription.active===true &&
+        {subscription?.active===true &&
         <div>
         <div className="divider" />
         <span style={{padding:4}} onClick={() => setCreditModalVisible(true)}>

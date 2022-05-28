@@ -14,6 +14,7 @@ type TicketModalProps = {
   event?: any;
 };
 const TicketModal = (props: TicketModalProps) => {
+  console.log("propsticketmodal",props)
   const [
     isCheckingAvailablityModalVisible,
     setIsCheckingAvailablityModalVisible,
@@ -40,7 +41,7 @@ const TicketModal = (props: TicketModalProps) => {
     const bodyData = {
       event: props.event._id,
       venue: props.event.venue,
-     ticketId: props.event._id,
+     ticketId: props.event.tickets[props.ticketIndex]._id,
       credits: props.event.tickets[props.ticketIndex].credits,
     };
 

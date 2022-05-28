@@ -16,7 +16,6 @@ type TrailSetPasswordProps = {
 
 const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
     const {setCurrentForm} = props;
-
     const {
         state: {id},
         dispatch,
@@ -28,6 +27,8 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
     const [isLoading, setLoading] = useState(false);
     const handleButtonSubmit = (e: any) => {
         setLoading(true)
+        if(otp)
+        {
         axios
             .patch(`/v1/users/createCode/${id}`, {
                 code: otp,
@@ -45,12 +46,13 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
                     },
                 });
                 if (res.data.isVerified === true) {
+
                     setContinueModal(true);
                     setLoading(false)
                 }
             })
             .catch((error) => {
-                /*setErrorMessage(error.response?.data.message);
+                setErrorMessage(error.response?.data.message);
                   setLoading(false)
                   dispatch({
                       type: "SUBMIT_GENERAL_INFO",
@@ -61,10 +63,9 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
                           phoneNumber: e.phoneNumber,
                           email: e.email,
                       },
-                  });*/
+                  });
 
                 setLoading(false);
-                setContinueModal(true);
                 dispatch({
                     type: "SUBMIT_GENERAL_INFO",
                     payload: {
@@ -78,6 +79,10 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
 
 
             });
+          }else{
+            setLoading(false)
+            setErrorMessage("Please enter the code")
+          }
     };
 
     const handleChangeButtonClick = () => {
@@ -127,6 +132,7 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
                     width="100%"
                     height="60px"
                     onClick={handleButtonSubmit}
+
                 >
                     Continue
                 </FilledButtonStyle>

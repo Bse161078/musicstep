@@ -89,10 +89,10 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
         headers: { Authorization: `Bearer ${state.authToken}`,"Content-Type": "multipart/form-data"  },
       })
       .catch((error) => {
-        console.log(error.response,'error1111');
+        console.log(error,'error1111');
         //  setSuccessModalVisible(true);
         setIsModalVisible(true);
-        setMessage(error.response.data.error);
+        //setMessage(error);
         setMessageType("error");
         //  setMessage(error.response.data.error);
         //  setHeading("Error");

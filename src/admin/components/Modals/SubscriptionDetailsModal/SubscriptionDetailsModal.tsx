@@ -41,15 +41,15 @@ const SubscriptionDetailsModal = (props: SubscriptionDetailsModalProps) => {
         <div className="detail-wrapper">
           <span className="title-wrapper">
             <h1 className="heading">
-              MUSIC <span>{subscribtion.name}</span>
+              MUSIC <span>{subscribtion?.name}</span>
             </h1>
           </span>
-          <p className="credits">Credits: {subscribtion.credit}</p>
+          <p className="credits">Credits: {subscribtion?.credit}</p>
           <div className="event-per-months-wraper">
-            <p>Events Per Month: {subscribtion.eventsPerMonth}</p>
+            <p>Events Per Month: {subscribtion?.eventsPerMonth}</p>
             <p>(Approximately)</p>
           </div>
-          <h1>Price: {subscribtion.price}</h1>
+          <h1>Price: {subscribtion?.price}</h1>
         </div>
         <div className="button-wrapper">
           <OutlineButtonStyle

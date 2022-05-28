@@ -30,6 +30,7 @@ const CloseAccount = (props:any) => {
             <FilledButtonStyle
                     width="290px"
                     height="60px"
+                    buttonType="dark"
                     onClick={()=>{}}
                   >
                     Okay
