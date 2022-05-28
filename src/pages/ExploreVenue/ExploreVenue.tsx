@@ -6,7 +6,7 @@ import {DropdownsList} from "./DropdownsList";
 import {ExploreVenueStyle, TrialButton} from "./ExploreVenue.style";
 import {useLoginContext} from "../../context/authenticationContext";
 import Marker from "../../components/Marker";
-import {Button} from "@mui/material";
+import {Button, Grid} from "@mui/material";
 import {Pricing} from "../Pricing";
 import Loading from "../../components/Spinner/Spinner";
 import {Elements} from "@stripe/react-stripe-js";
@@ -76,10 +76,11 @@ export default function ExploreVenue() {
             .catch((error) => {
                 setLoading(false)
             });
-
-
     }, []);
-    console.log("filter", filter)
+
+
+
+
     const onSubscribePackage = (e: any) => {
         const user: any = JSON.parse(localStorage.getItem("data") || "{}");
         axios.post('/v1/stripe/pay-subscription', {id: user.id}).then((response) => {
@@ -92,6 +93,10 @@ export default function ExploreVenue() {
         })
     }
 
+    const buyCredit=(e:any)=>{
+        history.push("/create-credit-payment");
+    }
+
 
 
     return (
@@ -100,6 +105,9 @@ export default function ExploreVenue() {
                               search={search}
                               active={subscribtion.active}
             />
+            <Grid container xs={12} justifyContent="center">
+                <Button onClick={buyCredit}>Buy 4 credits</Button>
+            </Grid>
             {showPricing && <Pricing showPricing={showPricing} setShowPricing={setShowPricing}/>}
             {loading && <Loading/>}
             {subscribtion.active == true ?
