@@ -13,7 +13,7 @@ const InputBox = (props: any) => {
   const [showPassword, setShowPassword] = useState(false)
   useEffect(()=>{
    props.setSearch && props.setSearch(field.value)
-  },[field.value])
+  },[field])
   const handlePasswordIconClick = () => {
     if (inputRef.current && props.type === "password") {
       //@ts-ignore
@@ -37,7 +37,7 @@ const InputBox = (props: any) => {
 
   return (
     <InputBoxStyle>
-      <label className="input-label">{props.label}</label>
+      <label className="input-label">{props.name==="explaination"?"":props.label}</label>
 
       <TextFieldStyle
         ref={inputRef}

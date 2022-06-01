@@ -14,10 +14,11 @@ type TabRowProps = {
   buttonClick?: any;
   event?: any;
   reservation?: number;
+  subscribtionCredit?: any;
 };
 
 export const TabRow = (props: TabRowProps) => {
-  const { buttonType, buttonText, event, reservation } = props;
+  const { buttonType, buttonText, event, reservation,subscribtionCredit } = props;
   const [isEventDetailsModalVisibel, setIsEventDetailsModalVisibel] = useState(
     false
   );
@@ -101,6 +102,7 @@ export const TabRow = (props: TabRowProps) => {
         setIsModalVisible={setIsEventDetailsModalVisibel}
         isTicketsAvailable={isTicketsAvailabe}
         event={event}
+        subscribtionCredit={subscribtionCredit}
       />
     </>
   );

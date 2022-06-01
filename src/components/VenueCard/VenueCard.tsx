@@ -10,24 +10,27 @@ import { useLoginContext } from "../../context/authenticationContext";
 import { Spinner } from "../../components/Spinner";
 const { Panel } = Collapse;
 
-const VenueCard = ({ venue }: any) => {
+const VenueCard = ({ venue,subscribtionCredit }: any) => {
   const history = useHistory();
   const { state, dispatch } = useLoginContext();
   const [events, setEvents] = React.useState(null);
   const [isLoading, setIsLoading] = React.useState(false);
   
   useEffect(() => {
+    console.log("venueInfo",venue)
    setEvents(null)
   }, []);
+  console.log("venueInfo",venue)
+
   const handleClick = () => {
     history.push({
       pathname: `/explore-venue/venue-details`,
 
-      state: { venueDetail: venue },
+      state: { venueDetail: venue,subscribtionCredit },
     });
   };
   
-  function callback(key: any) {
+  function callback() {
     if (events) {
       setEvents(null);
       return;
@@ -39,7 +42,7 @@ const VenueCard = ({ venue }: any) => {
       })
       .then((res) => {
         console.log(res.data);
-        setEvents(res.data);
+        setEvents(res.data.event);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -76,12 +79,10 @@ const VenueCard = ({ venue }: any) => {
         </div>
       </VenueCardStyle>
       <CollapseStyle>
-        <Collapse onChange={()=>{
-          setEvents(venue.events)
-        }}>
+        <Collapse onChange={()=>setEvents(venue.events)}>
           <Panel header={`${venue.events.length} upcoming events`} key="1">
             {isLoading && <Spinner />}
-            {events && <UpcomingEvents events={events} venue={venue} />}
+            {events && <UpcomingEvents subscribtionCredit={subscribtionCredit} events={events} venue={venue} />}
           </Panel>
         </Collapse>
       </CollapseStyle>

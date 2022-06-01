@@ -51,17 +51,17 @@ const SelectBox = (props: SelectBoxProps) => {
     handleSelectBoxChange,
   } = props;
   useEffect(() => {
-    const data = [
-      {type: "tags", search: ["pop", "test"]},
-      {type: "distance", search: [{location: {latitude: 33.640599, longitude: 73.061110}, value: 5}]},
-      {type: "time", search: [{unit: "hours", value: 5}]},
-      {type: "amenities", search: ["Lockerss", "Valet"]}
-    ]
-    axios.post('/v1/filter/event',{filters:data}).then((response)=>{
-        console.log("response",response);
-    }).catch((err)=>{
-      console.log("responseerror",err)
-    })
+    // const data = [
+    //   {type: "tags", search: ["pop", "test"]},
+    //   {type: "distance", search: [{location: {latitude: 33.640599, longitude: 73.061110}, value: 5}]},
+    //   {type: "time", search: [{unit: "hours", value: 5}]},
+    //   {type: "amenities", search: ["Lockerss", "Valet"]}
+    // ]
+    // axios.post('/v1/filter/event',{filters:data}).then((response)=>{
+    //     console.log("response",response);
+    // }).catch((err)=>{
+    //   console.log("responseerror",err)
+    // })
     handleLocation()
   }, []);
   
@@ -118,11 +118,12 @@ const SelectBox = (props: SelectBoxProps) => {
   }
   
     axios.post('/v1/filter/event',{filters:data}).then((response)=>{
-        console.log("response",response);
+        console.log("response : ",response);
         setLoading(false)
         setVenues(response.data)
+        console.log("response : ",response)
     }).catch((err)=>{
-      console.log("responseerror",err)
+      console.log("responseerror : ",err)
       setLoading(false)
     })
 }

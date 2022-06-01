@@ -46,6 +46,9 @@ export default function VenueDetails() {
   const location: any = useLocation();
   const { state, dispatch } = useLoginContext();
   const [events, setEvents] = React.useState(null);
+  const [user,setUser] = useState({
+    credits:0
+  })
   const [isLoading, setIsLoading] = React.useState(false);
   const [amentiesState, setamentiesState] = useState(amenties);
   const [reviews, setreviews] = useState(null);
@@ -69,6 +72,14 @@ export default function VenueDetails() {
   }
 
   useEffect(() => {
+    const user: any = JSON.parse(localStorage.getItem("data") || "{}");
+    axios.get(`v1/users/${user.id}`,{
+      headers: {Authorization: `Bearer ${state.authToken}`},
+    })
+    .then((res:any)=>{
+      setUser(res.data)
+    }).catch((e)=>{
+    })
     const tempAmenties = amentiesState.map((item) => {
       item.value = venueDetail.amenities[item.id];
       return item;
@@ -93,10 +104,10 @@ export default function VenueDetails() {
         console.log(error.response);
       });
   };
-
+console.log('venuedetails',venueDetail)
   return (
     <>
-      <NavbarWithSearch />
+      <NavbarWithSearch userCredit={user.credits} />
       <VenueDetailsStyle>
         <div className="left-side">
           <CustomCarousel
@@ -107,7 +118,7 @@ export default function VenueDetails() {
           >
             {[
               venueDetail.coverPhotoUrl,
-              ...venueDetail.additionalPhotosUrls,
+              venueDetail.additionalPhotosUrls[0],
             ]?.map((image: any) => (
               <img
                 alt="carousel tab"
@@ -130,14 +141,14 @@ export default function VenueDetails() {
             defaultActiveKey="1"
             onChange={(key) => {
               if (key === "2") {
-                  setEvents(venueDetail.events)
+                  setEvents(venueDetail?.events&&venueDetail?.events)
               } else if (key === "3") {
                 getReviews();
               }
             }}
           >
             <TabPaneStyle tab="Info" key="1">
-              <HeadingWithContent description={[venueDetail.venueBio]} heading={venueDetail.name} />
+              <HeadingWithContent description={[venueDetail?.venueBio]} heading={venueDetail.name} />
               {/* <HeadingWithContent
                 heading="This is heading for venue"
                 description={[

@@ -8,7 +8,7 @@ export const MetricsStyle = styled.main`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
-    padding: 30px 0;
+    padding: 0px 0;
     border-bottom: 1px solid ${rgba("#0c0c0c", 0.5)};
     margin-bottom: 40px;
 
@@ -31,7 +31,7 @@ export const MetricsStyle = styled.main`
     }
 
     .chart {
-      max-width: 440px;
+      max-width: 470px;
       width: 100%;
     }
   }

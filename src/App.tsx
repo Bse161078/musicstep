@@ -55,6 +55,8 @@ import AddCardSuccess from "./components/Stripe/addCardSuccess";
 import SubscriptionSuccess from "./components/Stripe/subscriptionSuccess";
 import SubscriptionCancel from "./components/Stripe/subscriptionCancel";
 import UpdateSubscription from "./pages/ExploreVenue/UpdateSubscription";
+import CreateCreditPayment from "./pages/ExploreVenue/CreateCreditPayment";
+import CreditPaymentSuccess from "./components/Stripe/createCreditPaymentSuccess";
 
 // axios.defaults.baseURL = "https://music-pass-backend.herokuapp.com/v1";
 axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
@@ -143,6 +145,7 @@ const RoutesList = (props: any) => {
                 <Route exact path="/pricing" component={Pricing}/>
                 <Route exact path="/subscription-success" component={SubscriptionSuccess}/>
                 <Route exact path="/subscription-cancel" component={SubscriptionCancel}/>
+                <Route exact path="/credit-payment-success" component={CreditPaymentSuccess}/>
 
                 <Route path="/explore-venue/venue-details" component={VenueDetails}/>
                 <Route
@@ -176,6 +179,21 @@ const RoutesList = (props: any) => {
                         <AuthenticatedRoute redirectTo="/login">
                             <ExploreVenue/>
                         </AuthenticatedRoute>
+                    )}
+                />
+
+                <Route
+                    exact
+                    path="/update-subscription"
+                    render={() => (
+                            <UpdateSubscription/>
+                    )}
+                />
+                <Route
+                    exact
+                    path="/create-credit-payment"
+                    render={() => (
+                        <CreateCreditPayment/>
                     )}
                 />
 

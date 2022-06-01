@@ -21,7 +21,6 @@ const PriceCard = (props: any) => {
   const history = useHistory()
 
     const {price, musicType, credits, eventsCount, showPricing, setShowPricing} = props;
-    console.log("price",props.setShowPricing)
     const [isLoading, setLoading] = useState(false)
     const createSubs = (subsname:any) => {
       const user: any = JSON.parse(localStorage.getItem("data") || "{}");
@@ -37,7 +36,6 @@ const PriceCard = (props: any) => {
     })
     .catch((err) => {
         setLoading(false)
-        console.log("createsubscribtionerror",err)
     })
     }
     const onSubscribePackage = (e: any) => {
@@ -46,21 +44,18 @@ const PriceCard = (props: any) => {
         const user: any = JSON.parse(localStorage.getItem("data") || "{}");
         axios.post('/v1/stripe/pay-subscription', {id: user.id}).then((response) => {
             setLoading(false)
-
-            //console.log("data = ",response.data.clientSecret);
             window.open(response.data.url, '_blank');
         }).catch((err) => {
             setLoading(false)
-            console.log("paysubserror",err)
         })
     }
     return (
-        <PriceCardStyle>
+        <PriceCardStyle  >
             {isLoading && <Loading/>}
             <h1 className="price">{price}</h1>
 
-            <h3 className="music-type">
-                Music <span>{musicType}</span>
+            <h3 className="music-type" >
+                Music <span style={{color:musicType==="Credits"?"black":''}}>{musicType}</span>
             </h3>
 
             <p className="credits">Credits: {credits}</p>

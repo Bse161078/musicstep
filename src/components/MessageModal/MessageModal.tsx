@@ -50,14 +50,15 @@ const MessageModal = (props: MessageModalProps) => {
                 width="100%"
                 height="60px"
                 onClick={handleOkClick || handleOk}
+                style={{background:message?.includes("4-digit code has been successfully")||message?.includes("You have been verified")?'#1981FC':''}}
               >
                 {buttonText}
               </FilledButtonStyle>,
             ]
       }
     >
-      <MessageModalStyle type={type}>
-        {icon ? icon : <SuccessIcon />}
+      <MessageModalStyle type={type} message={message}>
+        {icon ? icon : <SuccessIcon  message={message}/>}
         <p className="modal-message">{message}</p>
       </MessageModalStyle>
     </ModalWrapper>

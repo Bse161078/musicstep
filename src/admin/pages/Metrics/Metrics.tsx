@@ -4,7 +4,8 @@ import { MetricsStyle } from "./Metrics.style";
 
 const Metrics = () => {
   return (
-    <Dashboard>
+    <div style={{width:'100vw',overflow:'hidden'}}>
+    <Dashboard >
       <MetricsStyle>
         <DashboardHeader heading="Metrics" />
 
@@ -25,6 +26,7 @@ const Metrics = () => {
         </div>
       </MetricsStyle>
     </Dashboard>
+    </div>
   );
 };
 

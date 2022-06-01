@@ -362,7 +362,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                 <DatePickerModal
                     value={form.values.date}
                     onChange={(e: any) => {
-                        console.log(typeof e);
+                        console.log(typeof e,"date",new Date(e),new Date());
                         form.setFieldValue("date", e);
                     }}
                     lable="Date"

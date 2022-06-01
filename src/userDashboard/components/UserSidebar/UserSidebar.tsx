@@ -53,22 +53,18 @@ const UserSidebar = ({ reservations,subscription,timeDifference }: any) => {
     setLoading(true)
     setSubscriptionVisible(false);
     setCancelSubscriptionVisible(true);
-    console.log("axios",axios)
     const user:any=JSON.parse(localStorage.getItem("data")||"{}");
     axios
     .post('/v1/stripe/cancel-subscription',{id:user.id})
     .then((res) => {
       setLoading(false)
-      console.log(res,'subscriptioncancel');
       handleModalOkClick()
     })
     .catch((error) => {
       setLoading(false)
-      console.log(error.response,"subscriptioncancelerror");
       setNotSuccessModalVisible(true)
     })
   };
-  console.log(reservations,subscription,"ahan!");
   return (
     <UserSidebarStyle>
       {isLoading===true&&<Loading/>}
@@ -115,7 +111,7 @@ const UserSidebar = ({ reservations,subscription,timeDifference }: any) => {
           />
         </span>
 
-        {/* <div className="divider" />
+       <div className="divider" />
         <span onClick={() => setPeopelWithMutualFreindsModalVisible(true)}>
           <HeadingTab
             heading="People With Mutual Friends"
@@ -123,7 +119,7 @@ const UserSidebar = ({ reservations,subscription,timeDifference }: any) => {
               <img src="/images/icons/mutual-friends-icon.svg" alt="icon" />
             }
           />
-        </span> */}
+        </span> 
         {subscription?.active===true &&
         <div>
         <div className="divider" />

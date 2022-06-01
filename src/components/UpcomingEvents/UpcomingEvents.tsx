@@ -4,7 +4,7 @@ import { TabRow } from "./TabRow";
 
 import { UpcomingEventsStyle } from "./UpcomingEvents.style";
 
-const UpcomingEvents = ({ events,venue }: any) => {
+const UpcomingEvents = ({ events,venue,subscribtionCredit }: any) => {
   const [reservation, setReservation] = useState(0);
   let tempresrvatoin = 0;
   
@@ -33,6 +33,7 @@ const UpcomingEvents = ({ events,venue }: any) => {
           ) : (
             <TabRow
               event={event}
+              subscribtionCredit={subscribtionCredit}
               buttonText={`${
                 event.tickets && event.tickets[0].credits
               } Credits`}

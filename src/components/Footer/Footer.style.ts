@@ -30,11 +30,11 @@ export const FooterStyle = styled.footer`
 
   .footer-bottom {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr;
     grid-gap: 20px;
     grid-row-gap: 40px;
     max-width: 1366px;
-    width: 100%;
+    width:100%;
     margin: auto;
 
     @media (max-width: 767px) {
@@ -42,6 +42,16 @@ export const FooterStyle = styled.footer`
     }
   }
 
+  .mobile-social-link{
+    @media (max-width: 600px) {
+      padding: 10px;
+    }
+  }
+  .store-logo{
+    @media (max-width: 600px) {
+      padding: 5px;
+    }
+  }
   .store-items {
     display: flex;
     grid-gap: 10px;

@@ -2,34 +2,41 @@ import React from "react";
 import { PayoutDetailsStyle } from "./PayoutDetails.style";
 import { ModalWrapper } from "../ModalWrapper";
 import { FilledButtonStyle } from "../../../../styles/Common.style";
+import moment from "moment";
 
 type PayoutDetailsProps = {
   isModalVisible?: boolean;
   setIsModalVisible?: any;
+  reserveEvent?:any;
 };
 const PayoutDetails = (props: PayoutDetailsProps) => {
-  const { isModalVisible, setIsModalVisible } = props;
+  const { isModalVisible, setIsModalVisible,reserveEvent } = props;
   return (
     <ModalWrapper
       heading="Payout Details"
       width="920px"
       button={
-        <FilledButtonStyle width="500px" height="60px">
+        <FilledButtonStyle width="500px" height="60px"
+        onClick={()=>{
+          setIsModalVisible(false)
+        }}
+        >
           Okay
         </FilledButtonStyle>
       }
       isModalVisible={isModalVisible}
       setIsModalVisible={setIsModalVisible}
     >
+      {reserveEvent?.reservations?.map((event:any)=>
       <PayoutDetailsStyle>
         <div className="left-section">
           <div>
             <h3>Event Name</h3>
-            <p>Sun Goddess Pool Party</p>
+            <p>{event.title}</p>
           </div>
           <div>
             <h3>Event Date</h3>
-            <p>Sun Goddess Pool Party</p>
+            <p>{moment(event.date).format("MMM Do YYYY")}</p>
           </div>
           <div>
             <h3>Payment Method</h3>
@@ -101,6 +108,7 @@ const PayoutDetails = (props: PayoutDetailsProps) => {
           </div>
         </div>
       </PayoutDetailsStyle>
+      )}
     </ModalWrapper>
   );
 };

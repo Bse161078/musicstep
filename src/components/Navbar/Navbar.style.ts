@@ -20,8 +20,12 @@ export const NavbarStyle = styled.nav<NavbarStyleProps>`
     background: rgba(255, 255, 255, 1);
 
     .navbar-wrapper {
+      overflow:hidden;
       .nav-items {
-        height: 100vh;
+        height: 110vh;
+        top:15px;
+        overflow-x:hidden;
+        overflow-y:hidden;
         visibility: visible;
         opacity: 1;
       }

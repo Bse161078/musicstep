@@ -11,6 +11,7 @@ type EventDetailsModalProps = {
   setIsModalVisible?: any;
   isTicketsAvailable?: boolean;
   event?: any;
+  subscribtionCredit?:any;
 };
 const EventDetailsModal = (props: EventDetailsModalProps) => {
   const {
@@ -18,6 +19,7 @@ const EventDetailsModal = (props: EventDetailsModalProps) => {
     setIsModalVisible,
     isTicketsAvailable,
     event,
+    subscribtionCredit
   } = props;
   console.log("Events", event);
   const history = useHistory();
@@ -40,10 +42,11 @@ const EventDetailsModal = (props: EventDetailsModalProps) => {
                     disableTicketsAvailbilty={true}
                     outlineButton={true}
                     heading={ticket.title}
-                    creditNo={ticket.credits}
+                    eventCredit={ticket.credits}
                     description={ticket.description}
                     ticketIndex={index}
                     event={event}
+                    subscribtionCredit={subscribtionCredit}
                   />
                 ))}
               {/* <TicketInfoCard
@@ -87,7 +90,7 @@ const EventDetailsModal = (props: EventDetailsModalProps) => {
           ]}
         >
           <EventDetailsModalStyle>
-            {/* <EventDetailWrapper event={event} /> */}
+            <EventDetailWrapper event={event} />
           </EventDetailsModalStyle>
         </ModalWrapper>
       )}

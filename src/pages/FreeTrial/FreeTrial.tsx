@@ -74,7 +74,7 @@ export default function FreeTrial() {
   const createSubscription=(paymentMethod:string,subscriptionName:string)=>{
       console.log("asadas")
     setLoading(true)
-    axios.post('/v1/stripe/create-subscription',{id:sessionStorage.getItem("id"),paymentMethod,subscriptionName}).then((response)=>{
+    axios.post('/v1/stripe/create-subscription',{id:localStorage.getItem("id"),paymentMethod,subscriptionName}).then((response)=>{
         console.log("subscription = ",response);
         setLoading(false);
         setIsModalVisible(true);
@@ -97,6 +97,7 @@ export default function FreeTrial() {
         });
     }).catch((err:any)=>{
         console.log("err = ",err.response)
+        setLoading(false)
     })
 }
 

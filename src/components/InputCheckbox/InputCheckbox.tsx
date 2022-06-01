@@ -6,7 +6,7 @@ type CheckboxProps = {
   name: string;
   onClick: (e: any) => void;
   className: string;
-  isCorrectOption: boolean;
+  isCorrectOption?: boolean;
   label?: string;
 };
 
@@ -17,16 +17,17 @@ const InputCheckbox = (props: CheckboxProps) => {
     field["value"] &&
     !field["value"].length &&
     Boolean(meta.error && meta.touched)
-      ? "#ff3d3d"
-      : "#dcdcdc";
+      ? "#100840"
+      : "#100840";
   const check = isCorrectOption ? undefined : invalid;
   return (
     <CheckboxWrapperStyle
       checked={isCorrectOption}
       className={className}
+      
       onClick={onClick}
     >
-      <span>{label}</span>
+      <p style={{fontSize:name?.includes("Delete")?'20px':'',paddingTop:name?.includes("Delete")?'10px':''}} >{label}</p>
     </CheckboxWrapperStyle>
   );
 };

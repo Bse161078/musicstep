@@ -3,6 +3,7 @@ import { FilledButtonStyle } from "../../styles/Common.style";
 
 type MessageModalStyleProps = {
   type?: "light" | "dark";
+  message?:any;
 };
 
 export const MessageModalStyle = styled.div<MessageModalStyleProps>`
@@ -12,7 +13,7 @@ export const MessageModalStyle = styled.div<MessageModalStyleProps>`
 
     svg {
         path {
-            fill: ${props => props.type === "dark" ? "#100840" : "#1981FC"};
+            fill: ${props => props.type === "dark" ? "#100840" :props.message?.includes("4-digit code has been successfully")?'#1981FC': "#1981FC"};
         }
     }
 
@@ -48,6 +49,6 @@ export const MessageModalStyle = styled.div<MessageModalStyleProps>`
 
   ${FilledButtonStyle} {
     background-color: ${(props) =>
-      props.type === "dark" ? "#100840" : "#1981FC"};
+      props.type === "dark" ? "#100840"  :"#1981FC"};
   }
 `;

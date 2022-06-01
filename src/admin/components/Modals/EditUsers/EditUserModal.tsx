@@ -17,7 +17,6 @@ const EditUserModal = (props: EditUserModalProps) => {
   // useEffect(()=>{
   //   setShowEditUserModal(false)
   // })
-  console.log("naeemsahab",props)
   return (
     <>
       <ModalWrapper

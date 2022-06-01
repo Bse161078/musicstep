@@ -33,10 +33,10 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll, false);
     };
   }, []);
-
+console.log("navItem",navItems)
   return (
     <NavbarStyle
-      isNavSticky={isNavSticky}
+      style={{zIndex:1000}}
       className={showDropdown ? "show-dropdown" : ""}
     >
       <section className="navbar-wrapper ">
@@ -84,7 +84,9 @@ const Navbar = () => {
                   : "/free-trial"
               }
             >
-              <FilledButtonStyle as="span">
+              <FilledButtonStyle as="span"
+              onClick={toggle}
+              >
                 {pathname === "/partner-login"
                   ? "Sign Up For Free"
                   : "Get Musicpass"}

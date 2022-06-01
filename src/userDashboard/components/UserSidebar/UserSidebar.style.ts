@@ -33,7 +33,7 @@ export const UserSidebarStyle = styled.div`
     margin-bottom: 30px;
     border-bottom: solid 1px ${rgba("#0c0c0c", 0.5)};
     display: grid;
-    grid-row-gap: 30px;
+    grid-row-gap: 100px;
     justify-content: center;
 
     .avatar-wrapper {
@@ -60,6 +60,7 @@ export const UserSidebarStyle = styled.div`
     .person-name {
       font-size: 24px;
       font-weight: bold;
+      margin-right:10px;
       text-align: center;
       color: #0c0c0c;
     }

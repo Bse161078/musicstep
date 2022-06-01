@@ -5,12 +5,14 @@ import axios from "axios";
 import { SelectWithInput } from "..";
 import { NavbarWithSearchStyle } from "./NavbarWithSearch.style";
 import { useLoginContext } from "../../context/authenticationContext";
+import { userInfo } from "os";
 const NavbarWithSearch = (props:any) => {
   const { dispatch, state } = useLoginContext();
   const [venues, setVenues] = useState([]);
   const [subscribtion, setSubscribtion] = useState({
     active:true
   });
+  console.log("propsnavbar",props)
 
   console.log("status",props)
   const status = localStorage.getItem("status")
@@ -40,7 +42,7 @@ const NavbarWithSearch = (props:any) => {
 
       <div className="links-wrapper">
         <span>Upcoming Itinerary</span>
-        {subscribtion?subscribtion.active===true?<span>{state.data.credits} Credits</span>:
+        {subscribtion?subscribtion.active===true?<span>{props.userCredit} Credits</span>:
         <span> Expired </span>:
         <span> Cancelled </span>
         }

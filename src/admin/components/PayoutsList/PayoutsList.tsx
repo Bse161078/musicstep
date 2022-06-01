@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { PayoutsListStyle } from "./PayoutsList.style";
 import { PayoutsListItem } from "./PayoutsListItem";
 import { PayoutDetails } from "..";
-const PayoutsList = () => {
+const PayoutsList = (props:any) => {
   const [showPayoutDetailModal, setShowPayoutDetailModal ]  = useState(false)
+  
   return (
     <PayoutsListStyle>
       <div className="table-header">
@@ -12,9 +13,9 @@ const PayoutsList = () => {
         <h3 className="header-title">Payout</h3>
        </div>
       <span onClick={() => setShowPayoutDetailModal(true)}>
-        <PayoutsListItem />
+        <PayoutsListItem  reserveEvent={props.reserveEvent} />
       </span>
-      <PayoutDetails isModalVisible={showPayoutDetailModal} setIsModalVisible={setShowPayoutDetailModal} />
+      <PayoutDetails reserveEvent={props.reserveEvent} isModalVisible={showPayoutDetailModal} setIsModalVisible={setShowPayoutDetailModal} />
     </PayoutsListStyle>
   );
 };

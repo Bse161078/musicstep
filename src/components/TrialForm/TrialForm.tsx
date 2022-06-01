@@ -57,9 +57,9 @@ const TrialForm = (props: TrialFormProps) => {
         setCurrentForm("general-info");
       })
       .catch((error) => {
+        console.log("errormessage",error);
         setErrorMessage(error.response.data.message);
         setLoading(false);
-        console.log(error.response.data.message);
       });
 
     console.log(res);

@@ -23,6 +23,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
   const { state } = useLoginContext();
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState("");
+  const [isLoading, setLoading] = useState(false);
 
   const handleDeleteTicket = (index: number) => {
     const newTickets = [...tickets];
@@ -35,21 +36,6 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
     setTickets(newTickets);
   };
   const createEventHandlet = async () => {
-    //     additionalPhotos: FileList {0: File, 1: File, 2: File, 3: File, length: 4}
-    // city: "Sīta Road"
-    // country: "Pakistan"
-    // date: "12/12/2020"
-    // endingTime: "12:50pm"
-    // eventDescription: "bmbmxbmzx"
-    // organizer: "6217e4d65527e821cc11f2de"
-    // startingTime: "12:30pm"
-    // state: "Sindh"
-    // title: "ahksa"
-    // venue: "62180c415527e821cc11f36f"
-    // eventPhotoSameAsOrganizerPhoto: false
-    /////form Data
-    console.log("eventData", eventData);
-    console.log("tickets", tickets);
     const formatedTickets = tickets.map((ticket: any) => {
       return {
         ...ticket,
@@ -62,7 +48,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
     const bodyData = new FormData();
 
     bodyData.append("title", eventData.title);
-
+    setLoading(true)
     bodyData.append("date", eventData.date);
     bodyData.append("startingTime", eventData.startingTime);
     bodyData.append("endingTime", eventData.endingTime);
@@ -92,6 +78,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
         console.log(error,'error1111');
         //  setSuccessModalVisible(true);
         setIsModalVisible(true);
+        setLoading(false)
         //setMessage(error);
         setMessageType("error");
         //  setMessage(error.response.data.error);
@@ -101,6 +88,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
       //  setSuccessModalVisible(true);
       //  setMessage("Organizer created Successfully");
       //  setHeading("Success");
+      setLoading(false)
       setMessage("Event created Successfully");
       setMessageType("success");
       setIsModalVisible(true);
@@ -136,7 +124,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
         cancelButtonText="Back"
         saveButtonWidth="190px"
       />
-
+      {isLoading&&<Loading/>}
       <SubmitEventStep2Style>
         <div className="text-wrapper">
           <h3>Events Tickets</h3>
@@ -151,7 +139,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
           {tickets.map((ticket: any, index: any) => (
             <TicketInfoCard
               heading={ticket.title}
-              creditNo={ticket.credits}
+              eventCredit={ticket.credits}
               availableTickets={ticket.numberOfTickets}
               description={ticket.description}
               index={index}

@@ -65,17 +65,6 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
                       },
                   });
 
-                setLoading(false);
-                dispatch({
-                    type: "SUBMIT_GENERAL_INFO",
-                    payload: {
-                        firstName: e.firstName,
-                        lastName: e.lastName,
-                        dob: e.dob,
-                        phoneNumber: e.phoneNumber,
-                        email: e.email,
-                    },
-                });
 
 
             });
@@ -117,11 +106,11 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
                         inputStyle={{
                             height: "53px",
                             width: "100%",
-                            border: "1px solid #0c0c0c",
-                            padding: "15px 25px",
-                            "border-radius": "50px",
-                            "font-size": "18px",
+                            border: "1px solid #0c0c0c",                         
+                            borderRadius: "50px",
+                            fontSize: "18px",
                         }}
+                        
                         isInputNum={true}
                     />
                 </div>
@@ -132,7 +121,7 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
                     width="100%"
                     height="60px"
                     onClick={handleButtonSubmit}
-
+                    buttonType='light'
                 >
                     Continue
                 </FilledButtonStyle>
@@ -144,12 +133,15 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
                         width="250px"
                         height="60px"
                         onClick={handleChangeButtonClick}
+                        className="button-mobile"
                     >
                         Change Number
                     </OutlineButtonStyle>
                     <OutlineButtonStyle
                         width="250px"
                         height="60px"
+                        className="button-mobile"
+
                         onClick={() => {
                             setCodeSend(true);
                         }}

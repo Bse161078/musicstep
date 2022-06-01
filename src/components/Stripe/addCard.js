@@ -29,11 +29,11 @@ export default function AddCard(props) {
 
         stripe.retrieveSetupIntent(clientSecret).then(({setupIntent}) => {
             console.log("setupIntent111 = ",setupIntent)
-            props.setSetupIntent(setupIntent.payment_method)
+            if(props.setSetupIntent) props.setSetupIntent(setupIntent.payment_method)
             switch (setupIntent.status) {
                 case "succeeded":
                     setIsCardAdded({status: true, msg: "Success! Your payment method has been saved!"});
-                    props.setIsPricing(true)
+                    if(props.setIsPricing) props.setIsPricing(true)
                     //props.createSubscription(setupIntent.payment_method);
                     setIsLoading(false)
                     localStorage.setItem("status",setupIntent.status)
@@ -84,7 +84,7 @@ export default function AddCard(props) {
             elements,
             confirmParams: {
                 // Make sure to change this to your payment completion page
-                return_url: "https://music-pass-frontend.web.app/free-trial",
+                return_url: props.isUpdateSubscription?"https://music-pass-frontend.web.app/update-subscription":"https://music-pass-frontend.web.app/free-trial",
             },
         });
         props.setLoading(false)

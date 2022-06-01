@@ -98,6 +98,7 @@ const LoginForm = (props: LoginFormProps) => {
 
               <span
                 className="forgot-password"
+                style={{color:'#100840'}}
                 onClick={() => {
                   history.push("/forgot-password");
                 }}

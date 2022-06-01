@@ -135,6 +135,9 @@ export default function UserHome() {
   const [subscription,setSubscription] = useState({
     active:true
   })
+  const [user,setUser] =useState({
+    credits:0
+  })
   const [timeDifference,setTimeDifference] =useState(0)
 
   const handleClick = () => {
@@ -147,6 +150,14 @@ export default function UserHome() {
 
   useEffect(() => {
     setIsLoading(true);
+    const user: any = JSON.parse(localStorage.getItem("data") || "{}");
+    axios.get(`v1/users/${user.id}`,{
+      headers: {Authorization: `Bearer ${state.authToken}`},
+    })
+    .then((res:any)=>{
+      setUser(res.data)
+    }).catch((e)=>{
+    })
     axios
       .get(`/v1/users/allEventsOfVenue`, {
         headers: { Authorization: `Bearer ${state.authToken}` },
@@ -180,11 +191,9 @@ export default function UserHome() {
             headers: { Authorization: `Bearer ${state.authToken}` },
           })
           .catch((error) => {
-            console.log(error.response);
             alert(error.response.data.message);
           });
         if (response) {
-          console.log(response);
 
           dispatch({
             type: "UPDATE_USER_CREDITS",
@@ -210,7 +219,6 @@ export default function UserHome() {
         const timeEnd = moment(res.data.subscription.expires_at);
         const diff = timeEnd.diff(startDate);
         const diffDuration = moment.duration(diff);
-        console.log("Days:", diffDuration.days());
         setTimeDifference(diffDuration.days())
         // setEvents(res.data);
         // setIsLoading(false);
@@ -222,7 +230,7 @@ export default function UserHome() {
   };
   return (
     <>
-      <NavbarWithSearch />
+      <NavbarWithSearch  userCredit={user.credits} />
       {isLoading&&<Loading/>}
       {!subscription? 
       <Typography variant='h3'align="center"sx={{padding:10,fontWeight:'bold'}}>
