@@ -84,7 +84,7 @@ export default function AddCard(props) {
             elements,
             confirmParams: {
                 // Make sure to change this to your payment completion page
-                return_url: props.isUpdateSubscription?"http://localhost:3004/update-subscription":"http://localhost:3004/free-trial",
+                return_url: props.isUpdateSubscription?"http://50.16.77.114:8080/update-subscription":"http://50.16.77.114:8080/free-trial",
             },
         });
         props.setLoading(false)
