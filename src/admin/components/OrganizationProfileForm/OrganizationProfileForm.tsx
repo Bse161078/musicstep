@@ -400,11 +400,13 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         organizerBio: e.organizerBio,
 
         organizationAttributes: organizationAttributes,
+        organizerName:e.organizerName,
 
         saftyAndCleaness: saftyAndCleaness,
 
         socialMediaAndMarketingLinks: socialMediaAndMarketingLinks,
       };
+      console.log("body organizer",body)
       setIsLoading(true)
 
       const res = await axios
