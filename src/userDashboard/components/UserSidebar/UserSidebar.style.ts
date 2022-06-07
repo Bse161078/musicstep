@@ -42,9 +42,11 @@ export const UserSidebarStyle = styled.div`
       .action-buttons-wrapper {
         position: absolute;
         top: 0;
-        right: -70px;
+        right: -100px;
         display: flex;
         flex-direction: column;
+        justify-content:right;
+        align-item:right;
         grid-gap: 10px;
 
         @media ( max-width: 1024px ) {

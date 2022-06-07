@@ -35,6 +35,7 @@ const SelectWithInput = ({placeholder,setSearch,search}: any) => {
         var data = JSON.parse(request.responseText);
         //var address = data.results[0];
         setAddress(data)
+        console.log('address',data)
         dataa = data.locality+" , "+data.countryCode+" , "+data.countryName
       }
       
@@ -67,7 +68,9 @@ const SelectWithInput = ({placeholder,setSearch,search}: any) => {
         {() => (
           <Form className="search-form-wrapper">
             <span className="select-wrapper">
-              {address.countryCode&&<SelectBox name={address.countryCode?address.locality+" , "+address.countryCode+" , "+address.countryName:'location'} options={[{ key: "", value: "" }]} /> }
+              {address.countryCode?<SelectBox name={address.countryCode?address.locality+" , "+address.countryCode+" , "+address.countryName:'location'} options={[{ key: "", value: "" }]} />:
+              <SelectBox name='location' options={[{ key: "", value: "" }]} />
+              }
               {/* {/* <p>{address.locality+ address.countryCode+ address.countryName}</p> */}
             </span>
 

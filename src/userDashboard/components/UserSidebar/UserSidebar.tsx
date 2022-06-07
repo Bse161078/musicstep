@@ -111,7 +111,7 @@ const UserSidebar = ({ reservations,subscription,timeDifference }: any) => {
           />
         </span>
 
-       <div className="divider" />
+       {/* <div className="divider" />
         <span onClick={() => setPeopelWithMutualFreindsModalVisible(true)}>
           <HeadingTab
             heading="People With Mutual Friends"
@@ -119,7 +119,7 @@ const UserSidebar = ({ reservations,subscription,timeDifference }: any) => {
               <img src="/images/icons/mutual-friends-icon.svg" alt="icon" />
             }
           />
-        </span> 
+        </span>  */}
         {subscription?.active===true &&
         <div>
         <div className="divider" />

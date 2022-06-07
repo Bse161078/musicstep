@@ -80,7 +80,7 @@ const Footer = () => {
             </div>
           </HeadingWithList>
         </div>
-           <div>
+           {/* <div>
            <HeadingWithList heading="Explore events on the go">
           <div className="store-items">
             <a href="/">
@@ -99,7 +99,7 @@ const Footer = () => {
             </a>
           </div>
         </HeadingWithList>
-           </div>
+           </div> */}
 
         
       </div>
