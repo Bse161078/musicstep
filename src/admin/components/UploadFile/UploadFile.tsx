@@ -9,6 +9,7 @@ type UploadFileProps = {
 };
 
 const UploadFile = (props: UploadFileProps) => {
+  console.log('edit organizer image',props)
   return (
     <UploadFileStyle
       src={

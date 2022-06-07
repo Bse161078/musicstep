@@ -20,7 +20,7 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
   const [profileImage, setProfileImage] = useState("");
   const [isLoading,setLoading] = useState(false)
   const [previewProfileImage, setPreviewProfileImage] = useState<string>(
-    process.env.REACT_APP_BASE_URL + "/" + userData.imageUrl
+    process.env.REACT_APP_BASE_URL + "/images/" + userData.imageUrl
   );
 
   const handleBackgroundImageUpload = (event: any, form: any) => {

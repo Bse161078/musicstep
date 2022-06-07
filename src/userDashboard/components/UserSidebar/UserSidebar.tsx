@@ -36,7 +36,7 @@ const UserSidebar = ({ reservations,subscription,timeDifference }: any) => {
     isPeopelWithMutualFreindsModalVisible,
     setPeopelWithMutualFreindsModalVisible,
   ] = useState(false);
-
+  console.log("state.data.imageUrl",state.data.imageUrl)
   const history = useHistory();
 
   const handleModalCancelClick = () => {
@@ -71,7 +71,7 @@ const UserSidebar = ({ reservations,subscription,timeDifference }: any) => {
       <figure className="person-info-wrapper">
         <div className="avatar-wrapper">
           <img
-            src={process.env.REACT_APP_BASE_URL + "/" + state.data.imageUrl}
+            src={process.env.REACT_APP_BASE_URL + "/images/" + state.data.imageUrl}
             className="avatar"
             alt="avatar"
           />

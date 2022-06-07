@@ -26,8 +26,8 @@ const EventsManagmentListItem = ({ event }: EventsManagmentListItemProps) => {
           </div>
         </div>
         <div className="engagments">
-          <span>560 Views</span>
-          <span>360 Reservations Made</span>
+          {/* <span>560 Views</span>
+          <span>360 Reservations Made</span> */}
         </div>
         <div className="Organizer">
           <span className="org-name">

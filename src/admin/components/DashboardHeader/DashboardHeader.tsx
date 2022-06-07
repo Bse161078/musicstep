@@ -44,7 +44,7 @@ const DashboardHeader = (props: DashboardHeaderProps) => {
 console.log("props",props)
   return (
     <DashboardHeaderStyle>
-      {isLoading &&<Loading/>}
+      {isLoading&&<Loading/>}
       {handleBackClick && (
         <div>
           <h3 className="back-button" onClick={handleBackClick}>

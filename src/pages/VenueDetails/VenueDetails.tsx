@@ -122,7 +122,7 @@ console.log('venuedetails',venueDetail)
             ]?.map((image: any) => (
               <img
                 alt="carousel tab"
-                src={`${process.env.REACT_APP_BASE_URL}/${image}`}
+                src={`${process.env.REACT_APP_BASE_URL}/images/${image}`}
               />
             ))}
           </CustomCarousel>

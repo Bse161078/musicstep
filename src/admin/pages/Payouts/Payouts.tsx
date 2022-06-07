@@ -33,9 +33,8 @@ export default function Payouts() {
   },[])
   return (
     <Dashboard>
-      {isLoading&&<Loading/>}
       <PayoutsStyle>
-        <DashboardHeader heading="Payouts" />
+        <DashboardHeader heading="Payouts" isLoading={isLoading} />
 
         <TabsStyle defaultActiveKey="1">
           <TabPaneStyle tab="Payouts" key="1">

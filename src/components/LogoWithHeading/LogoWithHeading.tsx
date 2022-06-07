@@ -18,7 +18,7 @@ const LogoWithHeading = ({
           height: "150px",
           borderRadius: "10px",
         }}
-        src={`${process.env.REACT_APP_BASE_URL}/${logo}`}
+        src={process.env.REACT_APP_BASE_URL+"/images/"+logo}
         className="logo"
         alt="logo"
       />

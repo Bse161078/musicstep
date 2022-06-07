@@ -35,6 +35,13 @@ const SelectBox = (props: SelectBoxProps) => {
   const [val,setVal] = useState()
   const [latitude,setLatitude] = useState(0.0)
   const [longtitude,setLongtitude] = useState(0.0)
+  const [address,setAddress] = useState(
+    {
+      countryName:'',
+      countryCode:'',
+      locality:''
+    }
+  )
   const {
     options,
     width,
@@ -63,14 +70,37 @@ const SelectBox = (props: SelectBoxProps) => {
     //   console.log("responseerror",err)
     // })
     handleLocation()
+    displayLocation(latitude,longtitude)
   }, []);
-  
+  const [addressData,setAddressData] = useState('')
+  useEffect(()=>{
+    setAddressData(address.locality+" , "+ address.countryCode+" , "+ address.countryName)
+  },[address])
+
+  const displayLocation=async(latitude:any,longitude:any)=>{
+    var request = new XMLHttpRequest();
+    var method = 'GET';
+    var url = 'https://api.bigdatacloud.net/data/reverse-geocode-client?latitude='+latitude+'&longitude='+longitude+'&localityLanguage=en';
+    var async = true;
+
+    request.open(method, url, async);
+    request.onreadystatechange = function(){
+      if(request.readyState == 4 && request.status == 200){
+        var data = JSON.parse(request.responseText);
+        //var address = data.results[0];
+        setAddress(data)
+        setAddressData(data.locality+" , "+ data.countryCode+" , "+ data.countryName)
+      }
+
+    };
+    request.send();
+  }
+
   const handleLocation = async()=>{
     const res = await  navigator.geolocation.getCurrentPosition(function(position) {
       setLatitude(position.coords.latitude)
       setLongtitude(position.coords.longitude)
-      console.log("Latitude is :", position.coords.latitude);
-      console.log("Longitude is :", position.coords.longitude);
+      displayLocation(position.coords.latitude,position.coords.longitude)
     });
   }
   const handleFilter=(value:any)=>{
@@ -128,16 +158,15 @@ const SelectBox = (props: SelectBoxProps) => {
     })
 }
 
-console.log("values",values)
   const handleChange = (value: any) => {
     setFieldValue && setFieldValue(field.name, value);
-    console.log("val",value,field.name)
     {setLoading&&handleFilter(value)}
     setVal(value)
     initializeSettingsData && initializeSettingsData(value, undefined, values);
     handleSelectBoxChange && handleSelectBoxChange(value);
   };
   let count = 0
+  
   console.log("filters",field.name)
   return (
     <SelectInputStyle type={type}>
@@ -145,7 +174,7 @@ console.log("values",values)
 
       <SelectBoxStyle
         suffixIcon={<ArrowDownIcon />}
-        name={"hamza"}
+        name="hamza"
         width={width}
         defaultValue={field.name}
         value={val}

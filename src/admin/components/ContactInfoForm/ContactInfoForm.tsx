@@ -70,8 +70,7 @@ const ContactInfoForm = (props:any) => {
         message={"Your Profile is Updated"}
         
       />
-      {isLoading&&<Loading/>}
-      <DashboardHeader heading="Contact Info" handleBackClick={handleBackClick} />
+      <DashboardHeader heading="Contact Info" isLoading={isLoading} handleBackClick={handleBackClick} />
       <div style={{display:'flex',justifyContent:'right'}}>
         {JSON.stringify(data) != JSON.stringify(contactInfo)&&
 <OutlineButtonStyle
@@ -143,7 +142,7 @@ const ContactInfoForm = (props:any) => {
                 />
                 <InputBox
                   label="Cell Phone Number"
-                  value={contactInfo.phoneNumber}
+                  value={"+"+contactInfo.phoneNumber}
                   name="phone"
                   width="450px"
                   onChange={(e:any)=>{

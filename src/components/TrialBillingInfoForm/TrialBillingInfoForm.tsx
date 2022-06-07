@@ -20,8 +20,6 @@ const TrialBillingInfoForm = (props: any) => {
     // const [errorMessage, setErrorMessage] = useState("");
     const stripePromise = loadStripe("pk_test_51KtcQTFJ50BG2GSltkm4lfPaxH6c8raqCKt9hoBFpgAnJ9loSE8eWTU0PsTRV5wlAcgCY5n7ZMwMXfWg8FPwDPGC009SYAHTEk");
     const [clientSecret, setClientSecret] = useState("");
-
-
     const history = useHistory();
 
 
@@ -31,9 +29,9 @@ const TrialBillingInfoForm = (props: any) => {
         if (id && id.length > 0) {
             localStorage.setItem("id", id);
         }
-        console.log("id", id)
+                const user: any = JSON.parse(localStorage.getItem("data") || "{}");
         axios.post('/v1/stripe/add-card-intent', {id: localStorage.getItem("id")}).then((response) => {
-            //console.log("data = ",response.data.clientSecret);
+            console.log("clientSecret",response.data)
             setClientSecret(response.data.clientSecret);
         }).catch((err) => {
             console.log("err = ", err.response)
@@ -124,6 +122,7 @@ const TrialBillingInfoForm = (props: any) => {
             });
         }).catch((err) => {
             console.log("err = ", err.response)
+            setLoading(false)
         })
     }
 

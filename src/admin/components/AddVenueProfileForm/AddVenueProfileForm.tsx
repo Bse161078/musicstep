@@ -137,6 +137,7 @@ const AddVenueProfileForm = () => {
   };
 
   const onSubmit = async (e: any) => {
+    console.log("venuedata",e)
     setLoading(true)
     const saftyAndCleaness: any = {};
     policiesState.forEach((currentValue: any) => {
@@ -184,7 +185,7 @@ const AddVenueProfileForm = () => {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .catch((error) => {
-        console.log(error.response);
+        console.log(error.respons,'sad');
         setSuccessModalVisible(true);
         setMessage(error.response.data.error);
         setLoading(false)

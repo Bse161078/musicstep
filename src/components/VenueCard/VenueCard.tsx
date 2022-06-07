@@ -56,12 +56,11 @@ const VenueCard = ({ venue,subscribtionCredit }: any) => {
           className="venue-thumbnail"
           src={
             process.env.REACT_APP_BASE_URL +
-            "/" +
+            "/images/" +
             venue.coverPhotoUrl
           }
           alt="venue thumb"
         />
-        {/* "/images/explore-venue/image1.png" */}
         <div className="venue-details">
           {/* <h3 className="top-heading">DOLORES POUROS</h3> */}
           <h4 className="heading">{venue.name}</h4>

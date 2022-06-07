@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import { Loading } from "../../../components";
 
 import {
   Dashboard,
@@ -14,22 +15,24 @@ const BasicInfo = () => {
     switch (currentPage) {
       case "preview":
         return (
+          <div>
+        
           <PreviewOrganizationInfo
             setOrganizerProfile={setOrganizerProfile}
             setCurrentPage={setCurrentPage}
           />
+          </div>
         );
 
       case "add-organization":
         return (
           <OrganizationProfileForm
-            organizerProfile={organizerProfile}
             setCurrentPage={setCurrentPage}
           />
         );
 
       case "edit-organization":
-        return <PreviewOrganizationInfo setCurrentPage={setCurrentPage} />;
+        return <OrganizationProfileForm   organizerProfile={organizerProfile} setCurrentPage={setCurrentPage} />;
 
       default:
         return <PreviewOrganizationInfo setCurrentPage={setCurrentPage} />;

@@ -200,7 +200,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
 
             // const additionalPhoto = singleorganizer?.additionalPhotosUrls;
             const additionalPhoto: [] = singleorganizer?.additionalPhotosUrls.map(
-                (photo: any) => process.env.REACT_APP_BASE_URL + "/" + photo
+                (photo: any) => process.env.REACT_APP_BASE_URL + "/images/" + photo
             );
 
             setPreviewVenuePhotosOfOrganizer(additionalPhoto);

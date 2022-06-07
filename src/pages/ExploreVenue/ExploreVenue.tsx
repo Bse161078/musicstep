@@ -55,41 +55,55 @@ export default function ExploreVenue() {
     const venueFilter = venues && venues.filter((venue: any) => (venue?.name).toLowerCase().includes((search).toLowerCase()))
     useEffect(() => {
         setLoading(true)
-        axios
-            .get("/v1/filter", {
-                headers: {Authorization: `Bearer ${state.authToken}`},
-            })
-            .then((res) => {
-                setFilter(res.data)
-            })
-            .catch((error) => {
-            });
-            const user: any = JSON.parse(localStorage.getItem("data") || "{}");
-            console.log('userid ',user.id)
-            axios.get(`v1/users/${user.id}`,{
-              headers: {Authorization: `Bearer ${state.authToken}`},
-            })
-            .then((res:any)=>{
-              setUser(res.data)
-            }).catch((e)=>{
-            })
+        navigator.geolocation.getCurrentPosition(function(position) {
+            console.log("Latitude is :", position.coords.latitude);
+            console.log("Longitude is :", position.coords.longitude);
+        })
 
         axios
-            .get("/v1/users/allEventsByVenues", {
-                headers: {Authorization: `Bearer ${state.authToken}`},
-            })
-            .then((res) => {
-                setLoading(false)
-                setVenues(res.data.event);
-                console.log('venue : ',res.data)
-                setSubscribtion(res.data.subscription)
-            })
-            .catch((error) => {
-                setLoading(false)
-                console.log('venueerror : ',error)
-            });
+        .get("/v1/filter", {
+            headers: {Authorization: `Bearer ${state.authToken}`},
+        })
+        .then((res) => {
+            setFilter(res.data)
+        })
+        .catch((error) => {
+        });
+
+        axios
+        .get("/v1/users/allEventsByVenues", {
+            headers: {Authorization: `Bearer ${state.authToken}`},
+        })
+        .then((res) => {
+            setLoading(false)
+            setVenues(res.data.event);
+            console.log('venue : ',res.data)
+            setSubscribtion(res.data.subscription)
+        })
+        .catch((error) => {
+            setLoading(false)
+            console.log('venueerror : ',error)
+        });
+        getUser()
+    
     }, []);
-
+    useEffect(()=>{
+        getUser()
+    },[user.credits])
+    const getUser=()=>{
+       
+        
+        const user: any = JSON.parse(localStorage.getItem("data") || "{}");
+        console.log('userid ',user.id)
+        axios.get(`v1/users/${user.id}`,{
+          headers: {Authorization: `Bearer ${state.authToken}`},
+        })
+        .then((res:any)=>{
+            console.log('user',res.data)
+          setUser(res.data)
+        }).catch((e)=>{
+        })
+    }
     console.log('user : ',user)
 
 
@@ -122,7 +136,7 @@ export default function ExploreVenue() {
             {loading && <Loading/>}
             {}
             {
-            subscribtion?.active == true ?
+            subscribtion?.active ?
                 <ExploreVenueStyle>
                     <DropdownsList filter={filter} setLoading={setLoading} setVenues={setVenues} />
                     <div/>
@@ -349,7 +363,7 @@ export default function ExploreVenue() {
                                      className="text-center"><a className="free-trial-btn free-trial-secondary btn">
                             »&nbsp;Subscribe&nbsp;Now!</a>
                         </TrialButton>
-                    </ExploreVenueStyle> :!loading&&!subscribtion&&
+                    </ExploreVenueStyle> :!loading&&!subscribtion&&!showPricing&&
                     <ExploreVenueStyle> 
                     <h1
                         style={{

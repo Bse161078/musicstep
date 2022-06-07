@@ -12,9 +12,6 @@ const NavbarWithSearch = (props:any) => {
   const [subscribtion, setSubscribtion] = useState({
     active:true
   });
-  console.log("propsnavbar",props)
-
-  console.log("status",props)
   const status = localStorage.getItem("status")
   useEffect(() => {
     axios
@@ -24,11 +21,16 @@ const NavbarWithSearch = (props:any) => {
       .then((res) => {
         setVenues(res.data.event);
         setSubscribtion(res.data.subscription)
-        console.log("eventsdata",res.data)
       })
       .catch((error) => {
       });
+ 
   }, []);
+
+
+
+ 
+
   const {active} = props
   return (
     <NavbarWithSearchStyle  >
@@ -51,7 +53,7 @@ const NavbarWithSearch = (props:any) => {
             <img
               className="image"
               alt="profile"
-              src={process.env.REACT_APP_BASE_URL + "/" + state.data.imageUrl}
+              src={process.env.REACT_APP_BASE_URL + "/images/" + state.data.imageUrl}
             />
           </span>
         </Link>

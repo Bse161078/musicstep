@@ -12,10 +12,11 @@ import Loading from "../../../components/Loading/Loading"
 type PreviewOrganizationInfoProps = {
   setCurrentPage: (data: string) => void;
   setOrganizerProfile?: (data: any) => void;
+  organizerProfile?:any;
 };
 
 const PreviewOrganizationInfo = (props: PreviewOrganizationInfoProps) => {
-  const { setCurrentPage, setOrganizerProfile } = props;
+  const { setCurrentPage, setOrganizerProfile,organizerProfile } = props;
   const { state } = useLoginContext();
   const [profilesList, setProfilesList] = useState(null);
   const [isLoading,setLoading] = useState(false)
@@ -26,7 +27,7 @@ const PreviewOrganizationInfo = (props: PreviewOrganizationInfoProps) => {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .then((res) => {
-        console.log(res.data);
+        console.log(res.data,'organizerinfo');
         setProfilesList(res.data);
         setLoading(false)
       })
@@ -39,14 +40,15 @@ const PreviewOrganizationInfo = (props: PreviewOrganizationInfoProps) => {
   const submitBasicInfoRef: any = createRef();
   return (
     <PreviewOrganizationInfoStyle>
-      {isLoading&&<Loading/>}
       <DashboardHeader
+        //class="dashboardHeader"
         heading="Basic Info"
         handleCancelClick={() => {}}
         handleSaveClick={() => {
           submitBasicInfoRef.current.click();
-          setLoading(false)
+          //setLoading(false)
         }}
+        isLoading={isLoading}
         setLoading={setLoading}
       />
 

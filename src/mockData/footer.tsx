@@ -21,51 +21,51 @@ export const footerItems = [
     ],
   },
 
-  {
-    heading: "Support",
-    list: [
-      {
-        name: "Contact Us",
-        url: "#",
-      },
-      {
-        name: "Help Center",
-        url: "#",
-      },
-      {
-        name: "Language",
-        url: "#",
-      },
-    ],
-  },
+  // {
+  //   heading: "Support",
+  //   list: [
+  //     {
+  //       name: "Contact Us",
+  //       url: "#",
+  //     },
+  //     {
+  //       name: "Help Center",
+  //       url: "#",
+  //     },
+  //     {
+  //       name: "Language",
+  //       url: "#",
+  //     },
+  //   ],
+  // },
 
-  {
-    heading: "Partners",
-    list: [
-      {
-        name: "Become A Partner",
-        url: "#",
-      },
-      {
-        name: "MusicPass Blog",
-        url: "#",
-      },
-    ],
-  },
+  // {
+  //   heading: "Partners",
+  //   list: [
+  //     {
+  //       name: "Become A Partner",
+  //       url: "#",
+  //     },
+  //     {
+  //       name: "MusicPass Blog",
+  //       url: "#",
+  //     },
+  //   ],
+  // },
 
-  {
-    heading: "Community",
-    list: [
-      {
-        name: "Blog",
-        url: "#",
-      },
-      {
-        name: "Top 10 Lists",
-        url: "#",
-      },
-    ],
-  },
+  // {
+  //   heading: "Community",
+  //   list: [
+  //     {
+  //       name: "Blog",
+  //       url: "#",
+  //     },
+  //     {
+  //       name: "Top 10 Lists",
+  //       url: "#",
+  //     },
+  //   ],
+  // },
 ];
 
 export const socialLinks = [

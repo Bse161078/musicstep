@@ -17,7 +17,7 @@ export const OrganizationListItem = (props: OrganizationListItemProps) => {
   // useEffect(() => {
   //   // setImgurl();
   // }, []);
-
+console.log('organizer',props)
   return (
     <OrganizationListItemStyle>
       <div className="thumb-with-content">
@@ -26,7 +26,7 @@ export const OrganizationListItem = (props: OrganizationListItemProps) => {
           className="profile-thumanail"
           src={
             organizer.logoUrl
-              ? process.env.REACT_APP_BASE_URL + "/" + organizer.logoUrl
+              ? process.env.REACT_APP_BASE_URL + "/images/" + organizer.logoUrl
               : "/images/logo.png"
           }
         />
@@ -42,7 +42,7 @@ export const OrganizationListItem = (props: OrganizationListItemProps) => {
         <span
           onClick={() => {
             setOrganizerProfile && setOrganizerProfile(organizer);
-            setCurrentPage && setCurrentPage("add-organization");
+            setCurrentPage && setCurrentPage("edit-organization");
           }}
         >
           {" "}

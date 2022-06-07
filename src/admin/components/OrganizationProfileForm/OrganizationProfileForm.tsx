@@ -24,6 +24,7 @@ import Loading from "../../../components/Loading/Loading"
 type OrganizationProfileFormProps = {
   setCurrentPage: (data: string) => void;
   organizerProfile?: any;
+  currentPage?:any;
 };
 const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
   const { setCurrentPage, organizerProfile } = props;
@@ -58,12 +59,12 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
   const [policiesState, setPoliciesState] = useState([...policies]);
 
   const [previewLogoImage, setLogoImage] = useState<string>(
-    process.env.REACT_APP_BASE_URL + "/" + "null"
+    process.env.REACT_APP_BASE_URL + "/images/" + "null"
     // state.data.imageUrl
   );
 
   const [previewCoverImage, setCoverImage] = useState<string>(
-    process.env.REACT_APP_BASE_URL + "/" + "null"
+    process.env.REACT_APP_BASE_URL + "/images/" + "null"
     // state.data.imageUrl
   );
   const [previewAdditionalImage, setAdditionalImage] = useState<[]>([]);
@@ -71,15 +72,16 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
 
   //useEffect
   useEffect(() => {
+    console.log("organizer profile",organizerProfile)
     if (organizerProfile) {
       setLogoImage(
-        process.env.REACT_APP_BASE_URL + "/" + organizerProfile.logoUrl
+        process.env.REACT_APP_BASE_URL + "/images/" + organizerProfile.logoUrl
       );
       setCoverImage(
-        process.env.REACT_APP_BASE_URL + "/" + organizerProfile.coverPhotoUrl
+        process.env.REACT_APP_BASE_URL + "/images/" + organizerProfile.coverPhotoUrl
       );
       const photos: [] = organizerProfile.additionalPhotosUrls.map(
-        (photo: any) => process.env.REACT_APP_BASE_URL + "/" + photo
+        (photo: any) => process.env.REACT_APP_BASE_URL + "/images/" + photo
       );
 
       setAdditionalImage(photos);
@@ -280,7 +282,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         console.log(res.data);
         // if (!isSuccessModalVisible)
         const photos: [] = res.data.additionalPhotosUrls.map(
-          (photo: any) => process.env.REACT_APP_BASE_URL + "/" + photo
+          (photo: any) => process.env.REACT_APP_BASE_URL + "/images/" + photo
         );
         photos.reverse();
         setAdditionalImage(photos);
@@ -319,7 +321,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         console.log(res.data);
         // if (!isSuccessModalVisible)
         const photos: [] = res.data.additionalPhotosUrls.map(
-          (photo: any) => process.env.REACT_APP_BASE_URL + "/" + photo
+          (photo: any) => process.env.REACT_APP_BASE_URL + "/images/" + photo
         );
         photos.reverse();
         setAdditionalImage(photos);
@@ -422,9 +424,10 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         });
       if (res) {
         setSuccessModalVisible(true);
-        setMessage("Organizer Profile Updated Successfully");
+        setMessage("Organizer updated Successfully");
         setHeading("Success");
-        setIsLoading(true)
+        console.log(res.data,'updated');
+        setIsLoading(false)
 
         // if (!isSuccessModalVisible)
       }
@@ -443,7 +446,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         }}
         backButtonText="Back To Basic Info"
         saveButtonText="Add"
-        heading="Add Organizer Profile"
+        heading={props.currentPage==='add-organization'?"Add Organizer Profile":"Edit Organizer Profile"}
         isLoading={isLoading}
         handleCancelClick={() => setCurrentPage("preview")}
       />
@@ -532,6 +535,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                 radiusType="27px"
                 height="60px"
                 width="1380px"
+               // value={}
                 name="organizerName"
                 placeholder="Enter Your name here"
               />

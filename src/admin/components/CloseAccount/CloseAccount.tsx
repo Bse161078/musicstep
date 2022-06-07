@@ -31,6 +31,7 @@ const CloseAccount = (props:any) => {
         })
       .then((response) => {
         setLoading(false);
+        window.history.replaceState(null, "", "/");
        console.log('response',response)
         
         }).catch((error) => {
@@ -41,11 +42,11 @@ const CloseAccount = (props:any) => {
   console.log('password',password)
   return (
     <CloseAccountStyle>
-      {isLoading&&<Loading/>}
       <DashboardHeader
         heading="Close Account"
         description="Thank you for using MusicPass Events. If there is anything we can do to keep you with us, please Let Us Know."
         handleBackClick={handleBackClick}
+        isLoading={isLoading}
       />
 
       <Formik initialValues={{ explaination: "" }} onSubmit={() => {}}>
