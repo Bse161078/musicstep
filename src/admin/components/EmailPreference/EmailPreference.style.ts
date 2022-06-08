@@ -10,6 +10,7 @@ export const EmailPreferenceStyle = styled.div`
 
     .preference {
       margin-left: 10px;
+      margin-top:10px;
     }
   }
 `;

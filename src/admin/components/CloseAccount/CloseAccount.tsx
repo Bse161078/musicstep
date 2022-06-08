@@ -11,12 +11,17 @@ import { InputCheckbox } from "../../../components";
 import { CloseAccountStyle } from "./CloseAccount.style";
 import { Loading } from "../../../components";
 import axios from "axios";
+import {useLoginContext} from "../../../context/authenticationContext";
+import { useHistory } from "react-router-dom";
 
 const CloseAccount = (props:any) => {
+  const {dispatch, state} = useLoginContext();
+  const history = useHistory()
   const [deleteAccount,setDeleteAccount] = useState(false)
   const [sendData,setSendData] = useState(false) 
   const [isLoading,setLoading] = useState(false)
   const [password,setPassword] = useState('')
+  const [errorMessage,setErrorMessage] = useState("")
   const handleBackClick =()=>{
     props.setCurrentPage("account-settings")
   }
@@ -32,14 +37,17 @@ const CloseAccount = (props:any) => {
       .then((response) => {
         setLoading(false);
         window.history.replaceState(null, "", "/");
-       console.log('response',response)
-        
+        dispatch({
+          type: "LOGOUT",
+          payload: {},
+      });
+      history.push("/");        
         }).catch((error) => {
           console.log('responseerror',error)
+          setErrorMessage("Your Password is Incorrect")
         setLoading(false);
       });
   }
-  console.log('password',password)
   return (
     <CloseAccountStyle>
       <DashboardHeader

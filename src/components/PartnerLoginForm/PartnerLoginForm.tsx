@@ -48,7 +48,7 @@ const PartnerLoginForm = () => {
         password: value.password,
       })
       .then((response) => {
-        console.log(response);
+        console.log(response,'partnerlogin');
         setLoading(false);
         if (value.rememberPassword) {
           addLoginInfoToStorage(
@@ -66,12 +66,11 @@ const PartnerLoginForm = () => {
             data: response.data.partner,
           },
         });
-
-        // history.push("/explore-venue")
         history.push("/admin/metrics");
       })
       .catch((error) => {
-        setErrorMessage(error.response?.data.message);
+        console.log('errormessage',error.response.data.message)
+        setErrorMessage(error.response.data.message);
         setLoading(false);
       });
   };

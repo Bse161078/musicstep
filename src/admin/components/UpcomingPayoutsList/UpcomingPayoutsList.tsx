@@ -14,7 +14,7 @@ const PayoutsList = (props:any) => {
         <h3 className="header-title">Payout</h3>
       </div>
 
-      <UpcomingPayoutsListItem reserveEvent={reserveEvent} />
+      <UpcomingPayoutsListItem reserveEvent={props.reserveEvent} search={props.search} from={props.from} to={props.to} />
     </UpcomingPayoutsListStyle>
   );
 };

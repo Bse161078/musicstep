@@ -13,7 +13,7 @@ const PayoutsList = (props:any) => {
         <h3 className="header-title">Payout</h3>
        </div>
       <span onClick={() => setShowPayoutDetailModal(true)}>
-        <PayoutsListItem  reserveEvent={props.reserveEvent} />
+        <PayoutsListItem  reserveEvent={props.reserveEvent} search={props.search} from={props.from} to={props.to} />
       </span>
       <PayoutDetails reserveEvent={props.reserveEvent} isModalVisible={showPayoutDetailModal} setIsModalVisible={setShowPayoutDetailModal} />
     </PayoutsListStyle>

@@ -14,7 +14,7 @@ const ContentHeader = (props: ContentHeaderProps) => {
   const { heading, description, handleButtonClick, actionButtons } = props;
 
   return (
-    <ContentHeaderStyle>
+    <ContentHeaderStyle style={{paddingRight:10}}>
       <div className="content-heading-wrapper">
         <h2 className="content-heading">{heading}</h2>
         <p className="content-description">{description}</p>

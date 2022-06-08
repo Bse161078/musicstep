@@ -30,13 +30,13 @@ export const EventDetailWrapper = ({ event }: EventDetailWrapperProps) => {
       state: { organizerDetail: event },
     });
   };
-console.log("eventby",event)
+console.log("eventby",event,eventImage)
   return (
     <div className="first-row-wrapper">
       <img
         // src="/images/crystal2.png"
         // src={process.env.REACT_APP_BASE_URL}
-        src={process.env.REACT_APP_BASE_URL + "/" + eventImage}
+        src={process.env.REACT_APP_BASE_URL + "/images/" + eventImage}
         alt="crystal"
         width="480px"
         height="270px"
