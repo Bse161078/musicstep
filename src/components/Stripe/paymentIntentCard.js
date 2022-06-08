@@ -61,7 +61,7 @@ export default function PaymentIntentCard() {
             elements,
             confirmParams: {
                 // Make sure to change this to your payment completion page
-                return_url: "http://50.16.77.114/credit-payment-success",
+                return_url: "https://musicpassonline.com/credit-payment-success",
             },
         });
 
