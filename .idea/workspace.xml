@@ -1,392 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f900495-2d01-4c96-a493-d43d1865075e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.firebaserc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/faviconMP.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/AdminNavBar/Group 506.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/AdminNavBar/Group 506@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/DeleteRole.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/Group 492.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/Group 492@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/NoPath - Copy (5).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/Profile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/Recomended.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/Required.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/Small Icon Button.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/ad.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/arrow-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/changepasswordpromt.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/crystal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/crystal2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/explore-venue/image1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/explore-venue/image2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/explore-venue/image3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/explore-venue/image4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/explore-venue/map-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/explore-venue/map.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/explore-venue/venue-detail.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/free-trial/free-trial-illustration.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/group69.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/hero/add-credit.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/hero/blured-background.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/hero/cancel-reservation.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/hero/events.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/hero/header-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/hero/hero-background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/hero/location-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/hero/membership-visual.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/hero/membership.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/hero/share-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/hero/share-image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/hero/unenroll.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/Password-hide-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/address-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/arrow-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/bell-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/cancel-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/cancel-lock-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/credit-history-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/drag-drop-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/edit-profile-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/event-history-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/facebook-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/gallery.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/instagram-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/location-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/lock-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/logout-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/mutual-friends-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/password-show-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/phone-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/preview-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/profile-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/profile.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/reminder-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/twitter-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/icons/website-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/ionic-ios-checkmark-circle.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/loading.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/login/login-side.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/logout.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/metrics/event-chart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/metrics/payouts-chart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/metrics/reservation-chart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/partner-login-background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/party.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/person.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/person.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/profile-image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/qrcodee.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/sample-image.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/sample.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/sampleevent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/showcaseevents.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/social-links/FB.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/social-links/LogowithTrademark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/social-links/app-store.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/social-links/facebook.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/social-links/fbicon (2).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/social-links/google-play.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/social-links/icons8-facebook-80.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/social-links/icons8-facebook-circled-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/social-links/instagram.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/social-links/linkedin.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/social-links/output-onlinepngtools.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/images/social-links/twitter.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/logo192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/logo512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/static/css/2.fd837279.chunk.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/static/css/2.fd837279.chunk.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/static/css/main.2bd2bed6.chunk.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/static/css/main.2bd2bed6.chunk.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/static/js/2.06f91269.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/static/js/2.06f91269.chunk.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/static/js/2.06f91269.chunk.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/static/js/3.3e641b18.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/static/js/3.3e641b18.chunk.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/static/js/main.f005c2db.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/static/js/main.f005c2db.chunk.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/static/js/runtime-main.20106d01.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/static/js/runtime-main.20106d01.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/firebase.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/social-links/FB.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/social-links/LogowithTrademark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/social-links/fbicon (2).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/social-links/icons8-facebook-80.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/social-links/icons8-facebook-circled-24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/social-links/output-onlinepngtools.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Stripe/createCreditPaymentSuccess.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Stripe/paymentIntentCard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ExploreVenue/CreateCreditPayment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/ExploreVenue/UpdateSubscription.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/0.64eca6da.iframe.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/0.b73eaee9a88f178d62ed.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/1.f296d183a17268696d73.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/10.9998ba67d65d81d20896.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/11.49c687eaa6261f8b7be2.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/11.49c687eaa6261f8b7be2.manager.bundle.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/12.c9538ed3766c96f289e7.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/4.271d86f0.iframe.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/4.271d86f0.iframe.bundle.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/4.271d86f0.iframe.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/5.787c2dea.iframe.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/5.fa71488e730c5c7f885f.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/5.fa71488e730c5c7f885f.manager.bundle.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/6.2113b14a.iframe.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/6.2113b14a.iframe.bundle.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/6.2113b14a.iframe.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/6.8096ae4aadde0743697b.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/7.7310e3e2.iframe.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/7.b34baecbd082bc7b188d.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/8.15577edffecf900a8de2.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/9.d7d85aa0a49a98f17218.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/asset-manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/faviconMP.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/iframe.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/AdminNavBar/Group 506.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/AdminNavBar/Group 506@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/DeleteRole.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/Group 492.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/Group 492@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/NoPath - Copy (5).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/Profile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/Recomended.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/Required.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/Small Icon Button.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/ad.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/arrow-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/changepasswordpromt.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/crystal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/crystal2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/explore-venue/image1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/explore-venue/image2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/explore-venue/image3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/explore-venue/image4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/explore-venue/map-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/explore-venue/map.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/explore-venue/venue-detail.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/free-trial/free-trial-illustration.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/group69.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/add-credit.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/blured-background.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/cancel-reservation.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/events.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/header-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/hero-background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/location-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/membership-visual.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/membership.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/share-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/share-image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/hero/unenroll.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/Password-hide-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/address-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/arrow-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/bell-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/cancel-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/cancel-lock-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/credit-history-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/drag-drop-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/edit-profile-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/event-history-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/facebook-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/gallery.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/instagram-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/location-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/lock-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/logout-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/mutual-friends-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/password-show-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/phone-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/preview-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/profile-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/profile.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/reminder-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/twitter-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/icons/website-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/ionic-ios-checkmark-circle.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/loading.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/login/login-side.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/logout.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/metrics/event-chart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/metrics/payouts-chart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/metrics/reservation-chart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/partner-login-background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/party.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/person.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/person.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/profile-image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/qrcodee.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/sample-image.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/sample.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/sampleevent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/showcaseevents.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/social-links/app-store.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/social-links/facebook.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/social-links/google-play.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/social-links/instagram.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/social-links/linkedin.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/images/social-links/twitter.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/logo192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/logo512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/main.185c4154c38d7ff89704.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/main.51e09a8c.iframe.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/runtime~main.2ca23f06.iframe.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/runtime~main.909d038f912f063e8837.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/css/main.0ee7f581.chunk.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/css/main.0ee7f581.chunk.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/css/vendors~main.81751f3b.chunk.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/css/vendors~main.81751f3b.chunk.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/media/code-brackets.2e1112d7.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/media/colors.a4bd0486.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/media/comments.a3859089.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/media/direction.b770f9af.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/media/flow.edad2ac1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/media/plugin.d494b228.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/media/repo.6d496322.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/static/media/stackalt.dba9fbb3.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/vendors~main.d3455eed64b243c89325.manager.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/vendors~main.d3455eed64b243c89325.manager.bundle.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/vendors~main.dfe32a0f.iframe.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/vendors~main.dfe32a0f.iframe.bundle.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-static/vendors~main.dfe32a0f.iframe.bundle.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/group69.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/group69.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/icons/drag-drop-icon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/icons/drag-drop-icon.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/social-links/facebook.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/social-links/facebook.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/social-links/google-play.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/social-links/google-play.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/AddVenueProfileForm/AddVenueProfileForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/AddVenueProfileForm/AddVenueProfileForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/ChangePassword/ChangePassword.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/ChangePassword/ChangePassword.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/CloseAccount/CloseAccount.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/CloseAccount/CloseAccount.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/CloseAccount/CloseAccount.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/CloseAccount/CloseAccount.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/ContactInfoForm/ContactInfoForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/ContactInfoForm/ContactInfoForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/ContentHeader/ContentHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/ContentHeader/ContentHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/Dashboard/Dashboard.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/Dashboard/Dashboard.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/DashboardHeader/DashboardHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/DashboardHeader/DashboardHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/EmailPreference/EmailPreference.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/EmailPreference/EmailPreference.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/EmailPreference/EmailPreference.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/EmailPreference/EmailPreference.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagment.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagment.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagmentList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagmentList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagmentListITems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagmentListITems.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/Modals/CheckingAvailablityModal/CheckingAvailablityModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/Modals/CheckingAvailablityModal/CheckingAvailablityModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/Modals/EditUsers/EditUserModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/Modals/EditUsers/EditUserModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/Modals/EventHistoryModal/EventHistoryModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/Modals/EventHistoryModal/EventHistoryModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/Modals/MapModalWrapper/MapModalWrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/Modals/MapModalWrapper/MapModalWrapper.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/Modals/ModalWrapper/ModalWrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/Modals/ModalWrapper/ModalWrapper.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/Modals/PayoutDetails/PayoutDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/Modals/PayoutDetails/PayoutDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/Modals/ReservationConfirmedModal/ReservationConfirmedModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/Modals/ReservationConfirmedModal/ReservationConfirmedModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/Modals/SubscriptionDetailsModal/SubscriptionDetailsModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/Modals/SubscriptionDetailsModal/SubscriptionDetailsModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/NewPaymentMethod/NewPaymentMethod.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/NewPaymentMethod/NewPaymentMethod.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/OrganizationDetailsForm/OrganizationDetailsForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/OrganizationDetailsForm/OrganizationDetailsForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/OrganizationProfileForm/OrganizationProfileForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/OrganizationProfileForm/OrganizationProfileForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/OrganizationProfilesList/OrganizationListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/OrganizationProfilesList/OrganizationListItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoContent.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoContent.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/PayoutsList/PayoutsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/PayoutsList/PayoutsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/PayoutsList/PayoutsListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/PayoutsList/PayoutsListItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/PreviewOrganizationInfo/PreviewOrganizationInfo.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/PreviewOrganizationInfo/PreviewOrganizationInfo.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/PreviewOrganizationInfo/PreviewOrganizationInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/PreviewOrganizationInfo/PreviewOrganizationInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/SearchInputWithButton/SearchInputWithButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/SearchInputWithButton/SearchInputWithButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/SubmitEventStep1/SubmitEventStep1.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/SubmitEventStep1/SubmitEventStep1.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/SubmitEventStep2/SubmitEventStep2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/SubmitEventStep2/SubmitEventStep2.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/TableRow/TableRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/TableRow/TableRow.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/TeamUsersList/TeamUsersListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/TeamUsersList/TeamUsersListItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/TicketInfoCard/TicketInfoCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/TicketInfoCard/TicketInfoCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/UpcomingPayoutsList/UpcomingPayoutsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/UpcomingPayoutsList/UpcomingPayoutsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/UpcomingPayoutsList/UpcomingPayoutsListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/UpcomingPayoutsList/UpcomingPayoutsListItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/UploadFile/UploadFile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/UploadFile/UploadFile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/pages/AccountSettings/AccountSettings.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/pages/AccountSettings/AccountSettings.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/pages/BasicInfo/BasicInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/pages/BasicInfo/BasicInfo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/pages/EventsManagmentSteps/EventsManagementSteps.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/pages/EventsManagmentSteps/EventsManagementSteps.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/pages/Metrics/Metrics.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/pages/Metrics/Metrics.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/pages/Metrics/Metrics.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/pages/Metrics/Metrics.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/pages/Payouts/Payouts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/pages/Payouts/Payouts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AuthenticatedRoute/AuthenticatedRoute.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthenticatedRoute/AuthenticatedRoute.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CreateTicketModal/CreateTicketModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateTicketModal/CreateTicketModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EventDetailsModal/EventDetailWrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EventDetailsModal/EventDetailWrapper.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EventDetailsModal/EventDetailsModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EventDetailsModal/EventDetailsModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ForgotPasswordForm/ForgotPasswordForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ForgotPasswordForm/ForgotPasswordForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InputBox/InputBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InputBox/InputBox.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InputCheckbox/InputCheckbox.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InputCheckbox/InputCheckbox.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InputCheckbox/InputCheckbox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InputCheckbox/InputCheckbox.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoginForm/LoginForm.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginForm/LoginForm.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LoginForm/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginForm/LoginForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LogoWithHeading/LogoWithHeading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LogoWithHeading/LogoWithHeading.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Map/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Map/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MessageModal/MessageModal.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MessageModal/MessageModal.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MessageModal/MessageModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MessageModal/MessageModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PartneSignupForm/PartnerSignupForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PartneSignupForm/PartnerSignupForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PartneSignupForm/validation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PartneSignupForm/validation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PartnerLoginForm/PartnerLoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PartnerLoginForm/PartnerLoginForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PartnerOrganizationDetailForm/PartnerOrganizationDetailForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PartnerOrganizationDetailForm/PartnerOrganizationDetailForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PriceCard/PriceCard.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PriceCard/PriceCard.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PriceCard/PriceCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PriceCard/PriceCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ProcessPaymentForm/ProcessPaymentForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProcessPaymentForm/ProcessPaymentForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RedeemOfferForm/RedeemOfferForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RedeemOfferForm/RedeemOfferForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RedeemOfferStep2Form/RedeemOfferStep2Form.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RedeemOfferStep2Form/RedeemOfferStep2Form.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RedeemOfferStep2Form/RedeemOfferStep2Form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RedeemOfferStep2Form/RedeemOfferStep2Form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Reviews/ReviewsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Reviews/ReviewsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SelectBox/SelectBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SelectBox/SelectBox.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SelectWithInput/SelectWithInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SelectWithInput/SelectWithInput.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Stripe/addCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Stripe/addCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TicketModal/TicketModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TicketModal/TicketModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TimePicker/TimePickerModal.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TimePicker/TimePickerModal.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TimePicker/TimePickerModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TimePicker/TimePickerModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TrialBillingInfoForm/TrialBillingInfoForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TrialBillingInfoForm/TrialBillingInfoForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TrialForm/TrialForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TrialForm/TrialForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TrialGeneralInfo/validation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TrialGeneralInfo/validation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UpcomingEvents/TabRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UpcomingEvents/TabRow.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VenueCard/VenueCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VenueCard/VenueCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/authenticationContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/authenticationContext.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mockData/amenties.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/mockData/amenties.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mockData/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/mockData/footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mockData/navItems.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/mockData/navItems.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ExploreVenue/DropdownsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ExploreVenue/DropdownsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/FreeTrial/FreeTrial.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/FreeTrial/FreeTrial.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Pricing/Pricing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Pricing/Pricing.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/VenueDetails/VenueDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/VenueDetails/VenueDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Common.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Common.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/ChangePasswordForm/ChangePasswordForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/ChangePasswordForm/ChangePasswordForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/Dashboard/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/Dashboard/Dashboard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/HeadingTab/HeadingTab.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/HeadingTab/HeadingTab.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/HeadingTab/HeadingTab.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/HeadingTab/HeadingTab.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/Modals/ProfileModal/ProfileModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/Modals/ProfileModal/ProfileModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/Modals/ShareYourExperinceModal/ShareYourExperinceModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/Modals/ShareYourExperinceModal/ShareYourExperinceModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/UpcomingEvents/FormRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/UpcomingEvents/FormRow.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/UserSidebar/UserSidebar.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/UserSidebar/UserSidebar.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/UserSidebar/UserSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/UserSidebar/UserSidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="4f900495-2d01-4c96-a493-d43d1865075e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -410,7 +25,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="env" value="9" />
-          <entry key="gitignore" value="1" />
+          <entry key="gitignore" value="2" />
           <entry key="js" value="14" />
           <entry key="json" value="4" />
           <entry key="png" value="1" />
@@ -425,7 +40,7 @@
           <entry key="Image" value="1" />
           <entry key="JSON" value="4" />
           <entry key="JavaScript" value="14" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="PLAIN_TEXT" value="2" />
           <entry key="SVG" value="2" />
           <entry key="TypeScript" value="28" />
           <entry key="TypeScript JSX" value="76" />
@@ -461,10 +76,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="1" selection-start-column="1" selection-end-column="1" />
+            <state relative-caret-position="17">
+              <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -476,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/admin/components/AddVenueProfileForm/AddVenueProfileForm.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="72" column="78" selection-start-line="72" selection-start-column="78" selection-end-line="72" selection-end-column="78" />
+            <state relative-caret-position="221">
+              <caret line="73" column="15" lean-forward="true" selection-start-line="73" selection-start-column="15" selection-end-line="73" selection-end-column="15" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -658,73 +278,6 @@
               <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
               <item name="musicstep" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="musicstep" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="musicstep" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="musicstep" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Map" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="musicstep" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Map" type="462c0819:PsiDirectoryNode" />
-              <item name="AutoComplete" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="musicstep" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="TrialBillingInfoForm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="musicstep" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="TrialForm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="musicstep" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="TrialInfoForm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="musicstep" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="musicstep" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="ExploreVenue" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="musicstep" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="Home" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -736,7 +289,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1654789338552" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1654789555071" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="ts.external.directory.path" value="D:\practice\musicstep\node_modules\typescript\lib" />
@@ -795,13 +348,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99969000" />
+    <option name="totallyTimeSpent" value="100214000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34362417" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34362417" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -819,7 +372,7 @@
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.29369628" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.29369628" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -849,11 +402,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/mockData/policies.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-695" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mockData/amenties.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1071,13 +619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/admin/components/SubmitEventStep1/SubmitEventStep1.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1192,13 +733,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/admin/components/AddVenueProfileForm/AddVenueProfileForm.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="72" column="78" selection-start-line="72" selection-start-column="78" selection-end-line="72" selection-end-column="78" />
+        <state relative-caret-position="221">
+          <caret line="73" column="15" lean-forward="true" selection-start-line="73" selection-start-column="15" selection-end-line="73" selection-end-column="15" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
