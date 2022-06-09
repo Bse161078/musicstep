@@ -49,7 +49,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
 
     bodyData.append("title", eventData.title);
     setLoading(true)
-    bodyData.append("date", eventData.date);
+    bodyData.append("date", new Date(eventData.date).toISOString());
     bodyData.append("startingTime", eventData.startingTime);
     bodyData.append("endingTime", eventData.endingTime);
     bodyData.append("state", eventData.state);
@@ -75,7 +75,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
         headers: { Authorization: `Bearer ${state.authToken}`,"Content-Type": "multipart/form-data"  },
       })
       .catch((error) => {
-        console.log(error,'error1111');
+        console.log(error.response,'error1111');
         //  setSuccessModalVisible(true);
         setIsModalVisible(true);
         setLoading(false)
