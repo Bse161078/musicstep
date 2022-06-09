@@ -58,11 +58,7 @@ export const OutlineButtonStyle = styled.button<FilledButtonStyleProps>`
     padding: 0 20px;
   }
 
-  &:hover {
-    background: ${(props) =>
-      props.buttonType === "dark" ? "#f3c" : "#100840"};
-    color: #fff;
-  }
+
 `;
 
 export const TableHeaderStyle = css`
@@ -116,4 +112,11 @@ export const TableRowStyle = css`
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 10px;
   }
+
+
 `;
+// &:hover {
+//   background: ${(props) =>
+//     props.buttonType === "dark" ? "#f3c" : "#100840"};
+//   color: #fff;
+// }

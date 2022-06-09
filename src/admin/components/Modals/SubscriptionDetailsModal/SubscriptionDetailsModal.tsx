@@ -12,6 +12,7 @@ type SubscriptionDetailsModalProps = {
   setIsModalVisible?: any;
   handleCancelClick?: any;
   handleChangeClick?: any;
+  subscribtion?:any;
 };
 
 const SubscriptionDetailsModal = (props: SubscriptionDetailsModalProps) => {
@@ -20,11 +21,11 @@ const SubscriptionDetailsModal = (props: SubscriptionDetailsModalProps) => {
     setIsModalVisible,
     handleCancelClick,
     handleChangeClick,
+    subscribtion
   } = props;
-
   return (
     <ModalWrapper
-      heading="Subscription Details"
+      heading="Subscribtion Details"
       width="617px"
       isModalVisible={isModalVisible}
       setIsModalVisible={setIsModalVisible}
@@ -40,15 +41,15 @@ const SubscriptionDetailsModal = (props: SubscriptionDetailsModalProps) => {
         <div className="detail-wrapper">
           <span className="title-wrapper">
             <h1 className="heading">
-              MUSIC <span>ENTHUSIAST</span>
+              MUSIC <span>{subscribtion?.name}</span>
             </h1>
           </span>
-          <p className="credits">Credits: 48</p>
+          <p className="credits">Credits: {subscribtion?.credit}</p>
           <div className="event-per-months-wraper">
-            <p>Events Per Month: 3-4</p>
+            <p>Events Per Month: {subscribtion?.eventsPerMonth}</p>
             <p>(Approximately)</p>
           </div>
-          <h1>Price: $99</h1>
+          <h1>Price: {subscribtion?.price}</h1>
         </div>
         <div className="button-wrapper">
           <OutlineButtonStyle

@@ -18,7 +18,9 @@ export const PaymentInfoContentStyle = styled.div`
     align-items: center;
     grid-column-gap: 15px;
   }
-
+.button{
+  margin-left:30vw;
+}
   .table-header {
     ${TableHeaderStyle};
 

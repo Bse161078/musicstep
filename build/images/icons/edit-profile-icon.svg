@@ -1,0 +1,19 @@
+<svg id="Small_Icon_Button" data-name="Small Icon Button" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_474" data-name="Rectangle 474" width="24" height="24" transform="translate(0 0)" fill="#100840" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Edit_Profile" data-name="Edit Profile">
+    <rect id="Rectangle_473" data-name="Rectangle 473" width="48" height="48" rx="24" fill="#fff"/>
+    <g id="Mask_Group_14" data-name="Mask Group 14" transform="translate(12 12)" clip-path="url(#clip-path)">
+      <g id="edit_1_" data-name="edit (1)" transform="translate(-0.075 -0.074)">
+        <path id="Path_1909" data-name="Path 1909" d="M10.493,24.148a1.134,1.134,0,0,1-1.111-1.356l1.069-5.345a1.13,1.13,0,0,1,.31-.579L26.415,1.215a4.156,4.156,0,1,1,5.877,5.877L16.638,22.747a1.126,1.126,0,0,1-.579.31l-5.343,1.069a1.117,1.117,0,0,1-.224.023Zm5.345-2.2h0Zm-3.232-3.717-.667,3.34,3.339-.668L30.69,5.49a1.89,1.89,0,0,0-2.672-2.672Zm0,0" transform="translate(-9.36 0)" fill="#100840" stroke="#fff" stroke-width="1.2"/>
+      </g>
+      <g id="Group_499" data-name="Group 499" transform="translate(2 2)">
+        <path id="Path_1912" data-name="Path 1912" d="M23.5,7a.5.5,0,0,1-.5-.5A7.2,7.2,0,0,0,19.5,3a.5.5,0,0,1,0-1A7.29,7.29,0,0,1,24,6.5.5.5,0,0,1,23.5,7Z" transform="translate(-19 13)" fill="#100840"/>
+        <path id="Path_1917" data-name="Path 1917" d="M23.5,7a.5.5,0,0,1-.5-.5A7.2,7.2,0,0,0,19.5,3a.5.5,0,0,1,0-1A7.29,7.29,0,0,1,24,6.5.5.5,0,0,1,23.5,7Z" transform="translate(-4 -2)" fill="#100840"/>
+      </g>
+    </g>
+  </g>
+</svg>

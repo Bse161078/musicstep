@@ -14,6 +14,7 @@ import QRCode from "qrcode.react";
 import axios from "axios";
 import { useLoginContext } from "../../../../context/authenticationContext";
 import { MessageModal } from "../../../../components";
+import AddToCalendar from "react-add-to-calendar";
 import * as yup from "yup";
 
 type ReservationConfirmedModalProps = {
@@ -24,7 +25,7 @@ type ReservationConfirmedModalProps = {
 };
 
 const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
-  const { isModalVisible, setIsModalVisible, event, ticketIndex } = props;
+  const { isModalVisible, setIsModalVisible, ticketIndex } = props;
   const [baseUrl, setBaseUrl] = useState("");
   const { state } = useLoginContext();
   const [messageHeading, setMessageHeading] = useState("");
@@ -35,7 +36,21 @@ const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
   const index = ticketIndex === undefined ? -1 : ticketIndex;
   const pdfExportComponent: any = React.createRef();
   const printComponent = useRef(null);
-
+//   let event = {
+//     title: props.event.title,
+//     description: props.event.eventDescription,
+//     location: props.event.venueInfo[0].location.address,
+//     startTime: new Date(),
+//     endTime: new Date()
+// }
+let event = {
+  title: 'Sample Event',
+  description: 'This is the sample event provided as an example only',
+  location: 'Portland, OR',
+  startTime: '2016-09-16T20:15:00-04:00',
+  endTime: '2016-09-16T21:45:00-04:00'
+};
+console.log("event",event)
   const handleExportWithComponent = (event: any) => {
     const file = pdfExportComponent.current.save();
   };
@@ -70,6 +85,7 @@ const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
     console.log(window.location.pathname); //yields: "/js" (where snippets run)
     setBaseUrl(window.location.href.replace(window.location.pathname, ""));
   }, []);
+  let icon = { 'calendar-plus-o': 'left' };
   return (
     <ModalWrapper
       heading="Reservation Confirmed"
@@ -93,7 +109,7 @@ const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
           /> */}
           <QRCode
             // id={"qr-gen"}
-            value={event.tickets[index]._id}
+            value={props.event.tickets[index]._id}
             size={290}
             level={"H"}
             includeMargin={true}
@@ -103,13 +119,13 @@ const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
             <h1 style={{ display: "flex", flexDirection: "row", gap: "30px" }}>
               You're booked for
               {" " +
-                moment(event && event.date).date() +
+                moment(props.event && props.event.date).date() +
                 "-" +
-                moment(event && event.date).format("MMMM") +
+                moment(props.event && props.event.date).format("MMMM") +
                 "-" +
-                new Date(event && event.date).getFullYear() +
+                new Date(props.event && props.event.date).getFullYear() +
                 " at " +
-                moment(event && event.startingTime, ["h:mm"]).format("h:mm a")}
+                moment(props.event && props.event.startingTime, ["h:mm"]).format("h:mm a")}
             </h1>
             {/* <img alt="ad" src="/images/ad.svg" /> */}
           </div>
@@ -121,6 +137,8 @@ const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
         >
           Download & Save QR Code
         </FilledButtonStyle>
+        <AddToCalendar event={event}   buttonTemplate={icon}
+        />
         <div className="border-div">
           <p className="description">
             Want free events? Refer a friend and get $30 worth credits when your

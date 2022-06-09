@@ -46,7 +46,7 @@ export const LoginFormStyle = styled.article`
   .forgot-password {
     font-size: 16px;
     cursor: pointer;
-    color: #0c0c0c;
+    color: #100840;
     transition: all 200ms linear;
 
     &:hover {

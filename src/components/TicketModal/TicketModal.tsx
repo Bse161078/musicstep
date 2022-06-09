@@ -12,6 +12,8 @@ type TicketModalProps = {
   setIsModalVisible?: any;
   ticketIndex: number;
   event?: any;
+  subscribtionCredit?:number;
+  eventCredit?:number;
 };
 const TicketModal = (props: TicketModalProps) => {
   const [
@@ -27,6 +29,7 @@ const TicketModal = (props: TicketModalProps) => {
   );
   const { state, dispatch } = useLoginContext();
   const { isModalVisible, setIsModalVisible } = props;
+  const [buyCredit,setBuyCredit] = useState(0)
   const week = [
     "Sunday",
     "Monday",
@@ -36,20 +39,21 @@ const TicketModal = (props: TicketModalProps) => {
     "Friday",
     "Saturday",
   ];
+  const credit=(props.eventCredit||0)-(props.subscribtionCredit||0)
+  console.log("eventCredit-subcredit",props.eventCredit,props.subscribtionCredit,credit)
   const handlereservation = async () => {
     const bodyData = {
       event: props.event._id,
-      venue: props.event.venueInfo[0]._id,
-      ticketId: props.event.tickets[props.ticketIndex]._id,
+      venue: props.event.venue,
+     ticketId: props.event.tickets[props.ticketIndex]._id,
       credits: props.event.tickets[props.ticketIndex].credits,
     };
-
     const res = await axios
       .post("/v1/reservation", bodyData, {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .catch((error) => {
-        console.log(error.response);
+        console.log(error.response,'errormessage');
         setMessage(error.response.data.message);
       });
 
@@ -62,11 +66,12 @@ const TicketModal = (props: TicketModalProps) => {
           headers: { Authorization: `Bearer ${state.authToken}` },
         })
         .catch((error) => {
-          console.log(error.response);
+          setBuyCredit(props.eventCredit&&props.subscribtionCredit?props.eventCredit-props.subscribtionCredit:0)
+          console.log(error,'responseerror');
           alert(error.response.data.message);
         });
       if (response) {
-        console.log(response);
+        console.log(response,"response");
 
         dispatch({
           type: "UPDATE_USER_CREDITS",
@@ -116,16 +121,16 @@ const TicketModal = (props: TicketModalProps) => {
             </span>
             <span className="location-text">
               <span>
-                <p>{props.event && props.event.venueInfo[0].name}</p>
+                <p>{props.event && props.event?.name}</p>
                 <p>
                   {" "}
-                  {props.event && props.event.venueInfo[0].location.address}
+                  {props.event && props.event?.location?.address}
                 </p>
               </span>
             </span>
             <p>
               Organized By:{" "}
-              {props.event && props.event.organizerInfo[0].organizerName}
+              {props.event && props.event?.organizerInfo?.organizerName}
             </p>
           </div>
 
@@ -164,23 +169,14 @@ const TicketModal = (props: TicketModalProps) => {
         message={message}
         setIsModalVisible={setIsCheckingAvailablityModalVisible}
         isReservationConfirmedModalVisible={isReservationConfirmedModalVisible}
+        buyCredit={credit}
         setIsReservationConfirmedModalVisible={
           setIsReservationConfirmedModalVisible
         }
+        
         event={props.event}
         ticketIndex={props.ticketIndex}
       />
-      {/* <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      /> */}
     </ModalWrapper>
   );
 };

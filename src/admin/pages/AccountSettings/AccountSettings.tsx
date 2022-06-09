@@ -25,9 +25,10 @@ type AccountSettingInitialProps = {
 
 const AccountSettingInitial = (props: AccountSettingInitialProps) => {
   const { setCurrentPage } = props;
+ 
   return (
     <div>
-      <DashboardHeader heading="Account Settings" />
+      <DashboardHeader heading="Account Settings"  />
       <AccountSettingsStyle>
         <IconWithHeading
           onClick={() => setCurrentPage("contact-info")}
@@ -69,18 +70,18 @@ export default function AccountSettings() {
   const CurrentPage = useMemo(() => {
     switch (currentPage) {
       case "contact-info":
-        return <ContactInfoForm />;
+        return <ContactInfoForm setCurrentPage={setCurrentPage} />;
       case "account-settings":
         return <AccountSettingInitial setCurrentPage={setCurrentPage} />;
 
       case "change-password":
-        return <ChangePassword />;
+        return <ChangePassword setCurrentPage={setCurrentPage} />;
 
       case "email-preferences":
         return <EmailPreference setCurrentPage={setCurrentPage} />;
 
       case "close-account":
-        return <CloseAccount />;
+        return <CloseAccount  setCurrentPage={setCurrentPage}/>;
       default:
         return <AccountSettingInitial setCurrentPage={setCurrentPage} />;
     }

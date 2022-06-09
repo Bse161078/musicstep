@@ -9,11 +9,15 @@ import { SearchInputWithButtonStyle } from "./SearchInputWithButton.style";
 type SearchInputWithButtonProps = {
   handleButtonClick?: any;
   buttonTitle?: string;
+  setSearch?:any;
+  search?:string;
 };
 const SearchInputWithButton = (props: SearchInputWithButtonProps) => {
-  const { handleButtonClick, buttonTitle } = props;
+  const { handleButtonClick, buttonTitle,setSearch,search } = props;
 
-  const handleSearchSubmit = () => {};
+  const handleSearchSubmit = (e:any) => {
+   
+  };
 
   return (
     <SearchInputWithButtonStyle>
@@ -25,7 +29,12 @@ const SearchInputWithButton = (props: SearchInputWithButtonProps) => {
       >
         {() => (
           <Form className="search-wrapper">
-            <InputBox name="search" placeholder='Search' width="427px"/>
+            <InputBox name="search" placeholder='Search' width="427px"
+            value={search}
+            onChange={(e:any)=>{
+              setSearch(e.target.value)
+            }}
+            />
 
             <SearchIcon />
           </Form>

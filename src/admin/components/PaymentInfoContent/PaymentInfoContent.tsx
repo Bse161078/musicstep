@@ -1,7 +1,8 @@
 import { Form, Formik } from "formik";
-import React from "react";
+import React, { useState } from "react";
 import { DashboardHeader } from "..";
-import { SelectBox } from "../../../components";
+import { Loading, SelectBox } from "../../../components";
+import { FilledButtonStyle } from "../../../styles/Common.style";
 
 import { PaymentInfoContentStyle } from "./PaymentInfoContent.style";
 import { PaymentInfoListItem } from "./PaymentInfoListItem";
@@ -12,25 +13,36 @@ type PaymentInfoContentProps = {
 
 const PaymentInfoContent = (props: PaymentInfoContentProps) => {
   const { setCurrentPage } = props;
-
   const handleFilterSubmit = () => {};
 
   return (
+    
     <PaymentInfoContentStyle>
       <DashboardHeader
         heading="Payment Information"
         description="The money you make from your events will issued to you as a payout."
       />
-
       <div className="filter">
         Filter By Type
         <Formik initialValues={{ type: "" }} onSubmit={handleFilterSubmit}>
           {() => (
             <Form>
               <SelectBox options={[{key: "", value: "All"}]} name="type" />
+             
             </Form>
+            
           )}
+           
         </Formik>
+        <FilledButtonStyle
+              onClick={() => setCurrentPage("payment-method")}
+              buttonType="dark"
+              width="250px"
+              height="60px"
+              className="button"
+            >
+              Add New Payment Method
+            </FilledButtonStyle>
       </div>
 
       <div className="table-wrapper">
@@ -40,8 +52,6 @@ const PaymentInfoContent = (props: PaymentInfoContentProps) => {
           <h3 className="header-title">Events</h3>
         </div>
 
-        <PaymentInfoListItem setCurrentPage={setCurrentPage} />
-        <PaymentInfoListItem setCurrentPage={setCurrentPage} />
         <PaymentInfoListItem setCurrentPage={setCurrentPage} />
       </div>
     </PaymentInfoContentStyle>

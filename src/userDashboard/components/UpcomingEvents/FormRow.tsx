@@ -37,7 +37,7 @@ const FormRow = ({ event }: FormRowProps) => {
           //  src="/images/sample.png"
           src={
             process.env.REACT_APP_BASE_URL +
-            "/" +
+            "/images/" +
             event.organizerInfo[0].logoUrl
           }
           className="thumbnail"

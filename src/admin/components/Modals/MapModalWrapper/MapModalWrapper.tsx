@@ -58,7 +58,7 @@ const MapModalWrapper = (props: MapModalWrapperProps) => {
         onCancel={handleCancel}
         className="target"
         title={heading}
-        width={width ? width : "660px"}
+        width={width ? width : "460px"}
         footer={null}
       >
         {/* {description ? (

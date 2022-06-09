@@ -129,8 +129,10 @@ const PartnerSignupForm = () => {
               <div className="footer-wrapper">
                 <h3 className="already-text">
                   Already have an account?{" "}
-                  <span className="login-link-text">
-                    <Link to="/partner-login  ">Login</Link>
+                  <span className="login-link-text" style={{cursor:'pointer'}} onClick={()=>{
+                    history.push('/partner-login')
+                  }}>
+                      Login
                   </span>
                 </h3>
                 <p className="foooter-text">

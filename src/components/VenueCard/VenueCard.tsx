@@ -10,21 +10,27 @@ import { useLoginContext } from "../../context/authenticationContext";
 import { Spinner } from "../../components/Spinner";
 const { Panel } = Collapse;
 
-const VenueCard = ({ venue }: any) => {
+const VenueCard = ({ venue,subscribtionCredit }: any) => {
   const history = useHistory();
   const { state, dispatch } = useLoginContext();
   const [events, setEvents] = React.useState(null);
   const [isLoading, setIsLoading] = React.useState(false);
+  
+  useEffect(() => {
+    console.log("venueInfo",venue)
+   setEvents(null)
+  }, []);
+  console.log("venueInfo",venue)
 
   const handleClick = () => {
     history.push({
       pathname: `/explore-venue/venue-details`,
 
-      state: { venueDetail: venue.venueInfo[0] },
+      state: { venueDetail: venue,subscribtionCredit },
     });
   };
-
-  function callback(key: any) {
+  
+  function callback() {
     if (events) {
       setEvents(null);
       return;
@@ -36,31 +42,29 @@ const VenueCard = ({ venue }: any) => {
       })
       .then((res) => {
         console.log(res.data);
-        setEvents(res.data);
+        setEvents(res.data.event);
         setIsLoading(false);
       })
       .catch((error) => {
         console.log(error.response);
       });
   }
-
   return (
-    <>
+    venue?<>
       <VenueCardStyle onClick={handleClick}>
         <img
           className="venue-thumbnail"
           src={
             process.env.REACT_APP_BASE_URL +
-            "/" +
-            venue.venueInfo[0].coverPhotoUrl
+            "/images/" +
+            venue.coverPhotoUrl
           }
           alt="venue thumb"
         />
-        {/* "/images/explore-venue/image1.png" */}
         <div className="venue-details">
           {/* <h3 className="top-heading">DOLORES POUROS</h3> */}
-          <h4 className="heading">{venue.venueInfo[0].name}</h4>
-          <p className="address">{venue.venueInfo[0]["location"].address}</p>
+          <h4 className="heading">{venue.name}</h4>
+          <p className="address">{venue["location"].address}</p>
 
           <div className="row">
             <div className="star-wrapper">
@@ -74,14 +78,26 @@ const VenueCard = ({ venue }: any) => {
         </div>
       </VenueCardStyle>
       <CollapseStyle>
-        <Collapse onChange={callback}>
-          <Panel header={`${venue.eventsCount} upcoming events`} key="1">
+        <Collapse onChange={()=>setEvents(venue.events)}>
+          <Panel header={`${venue.events.length} upcoming events`} key="1">
             {isLoading && <Spinner />}
-            {events && <UpcomingEvents events={events} />}
+            {events && <UpcomingEvents subscribtionCredit={subscribtionCredit} events={events} venue={venue} />}
           </Panel>
         </Collapse>
       </CollapseStyle>
-    </>
+    </>:
+    <div>
+        <h1
+         style={{
+           width: "100%",
+           margin: "0px auto",
+           fontSize: "40px",
+           textAlign: "center",
+         }}
+       >
+         No Event  to explore
+       </h1>
+    </div>
   );
 };
 

@@ -20,13 +20,15 @@ import {
   LoginContext,
   useLoginContext,
 } from "../../../context/authenticationContext";
+import Loading from "../../../components/Loading/Loading"
 type OrganizationProfileFormProps = {
   setCurrentPage: (data: string) => void;
   organizerProfile?: any;
+  currentPage?:any;
 };
 const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
   const { setCurrentPage, organizerProfile } = props;
-
+  const [isLoading,setIsLoading] = useState(false)
   const history = useHistory();
   const [message, setMessage] = useState("");
   const [heading, setHeading] = useState("");
@@ -57,12 +59,12 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
   const [policiesState, setPoliciesState] = useState([...policies]);
 
   const [previewLogoImage, setLogoImage] = useState<string>(
-    process.env.REACT_APP_BASE_URL + "/" + "null"
+    process.env.REACT_APP_BASE_URL + "/images/" + "null"
     // state.data.imageUrl
   );
 
   const [previewCoverImage, setCoverImage] = useState<string>(
-    process.env.REACT_APP_BASE_URL + "/" + "null"
+    process.env.REACT_APP_BASE_URL + "/images/" + "null"
     // state.data.imageUrl
   );
   const [previewAdditionalImage, setAdditionalImage] = useState<[]>([]);
@@ -70,15 +72,16 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
 
   //useEffect
   useEffect(() => {
+    console.log("organizer profile",organizerProfile)
     if (organizerProfile) {
       setLogoImage(
-        process.env.REACT_APP_BASE_URL + "/" + organizerProfile.logoUrl
+        process.env.REACT_APP_BASE_URL + "/images/" + organizerProfile.logoUrl
       );
       setCoverImage(
-        process.env.REACT_APP_BASE_URL + "/" + organizerProfile.coverPhotoUrl
+        process.env.REACT_APP_BASE_URL + "/images/" + organizerProfile.coverPhotoUrl
       );
       const photos: [] = organizerProfile.additionalPhotosUrls.map(
-        (photo: any) => process.env.REACT_APP_BASE_URL + "/" + photo
+        (photo: any) => process.env.REACT_APP_BASE_URL + "/images/" + photo
       );
 
       setAdditionalImage(photos);
@@ -279,7 +282,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         console.log(res.data);
         // if (!isSuccessModalVisible)
         const photos: [] = res.data.additionalPhotosUrls.map(
-          (photo: any) => process.env.REACT_APP_BASE_URL + "/" + photo
+          (photo: any) => process.env.REACT_APP_BASE_URL + "/images/" + photo
         );
         photos.reverse();
         setAdditionalImage(photos);
@@ -318,7 +321,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         console.log(res.data);
         // if (!isSuccessModalVisible)
         const photos: [] = res.data.additionalPhotosUrls.map(
-          (photo: any) => process.env.REACT_APP_BASE_URL + "/" + photo
+          (photo: any) => process.env.REACT_APP_BASE_URL + "/images/" + photo
         );
         photos.reverse();
         setAdditionalImage(photos);
@@ -373,7 +376,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
           bodyData.append(`additionalPhotos`, files[i]);
         }
       }
-
+      setIsLoading(true)
       const res = await axios
         .post("/v1/organizer", bodyData, {
           headers: { Authorization: `Bearer ${state.authToken}` },
@@ -383,23 +386,28 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
           setSuccessModalVisible(true);
           setMessage(error.response.data.error);
           setHeading("Error");
+          setIsLoading(false)
         });
       if (res) {
         setSuccessModalVisible(true);
         setMessage("Organizer created Successfully");
         setHeading("Success");
         console.log(res.data);
+        setIsLoading(false)
       }
     } else {
       var body: any = {
         organizerBio: e.organizerBio,
 
         organizationAttributes: organizationAttributes,
+        organizerName:e.organizerName,
 
         saftyAndCleaness: saftyAndCleaness,
 
         socialMediaAndMarketingLinks: socialMediaAndMarketingLinks,
       };
+      console.log("body organizer",body)
+      setIsLoading(true)
 
       const res = await axios
         .patch(
@@ -410,23 +418,29 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
           }
         )
         .catch((error) => {
-          console.log(error.response.data.error);
+
           setSuccessModalVisible(true);
           setMessage(error.response.data.error);
           setHeading("Error");
+          setIsLoading(false)
         });
       if (res) {
         setSuccessModalVisible(true);
-        setMessage("Organizer Profile Updated Successfully");
+        setMessage("Organizer updated Successfully");
         setHeading("Success");
-        console.log(res.data);
+        console.log(res.data,'updated');
+        setIsLoading(false)
+
         // if (!isSuccessModalVisible)
       }
     }
   };
 
   return (
+    <div>
+      {isLoading&&<Loading/>}
     <OrganizationProfileFormStyle>
+      
       <DashboardHeader
         handleBackClick={() => setCurrentPage("preview")}
         handleSaveClick={() => {
@@ -434,7 +448,8 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         }}
         backButtonText="Back To Basic Info"
         saveButtonText="Add"
-        heading="Add Organizer Profile"
+        heading={props.currentPage==='add-organization'?"Add Organizer Profile":"Edit Organizer Profile"}
+        isLoading={isLoading}
         handleCancelClick={() => setCurrentPage("preview")}
       />
 
@@ -522,6 +537,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                 radiusType="27px"
                 height="60px"
                 width="1380px"
+               // value={}
                 name="organizerName"
                 placeholder="Enter Your name here"
               />
@@ -621,28 +637,28 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                 <div className="socialLinks-wrapper">
                   <InputBox
                     name="phoneNumber"
-                    placeholder="e.g. https://www.eventbritemusic.com/"
+                    placeholder="+14166966270"
                     label="Phone Number"
                   />
                   <InputBox
                     name="facebook"
-                    placeholder="e.g. https://www.eventbritemusic.com/"
+                    placeholder="https://www.facebook.com/organizer"
                     label="FaceBook"
                   />
                   <InputBox
                     name="instagram"
-                    placeholder="e.g. https://www.eventbritemusic.com/"
+                    placeholder="e.g. https://www.Instagram.com/organizer"
                     label="Instagram"
                   />
                   <InputBox
                     name="twitter"
-                    placeholder="e.g. https://www.eventbritemusic.com/"
+                    placeholder="e.g. https://www.twitter.com/"
                     label="Twitter"
                   />
                   <InputBox
                     name="youtube"
                     label="Youtube"
-                    placeholder="e.g. https://www.eventbritemusic.com/"
+                    placeholder="e.g. https://www.youtube.com/organizer"
                   />
                 </div>
                 <input
@@ -671,6 +687,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         }}
       />
     </OrganizationProfileFormStyle>
+    </div>
   );
 };
 

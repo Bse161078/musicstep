@@ -9,7 +9,6 @@ const AuthenticatedRoute = ({ children, redirectTo }: any) => {
   } = useLoginContext();
 
   useEffect(() => {}, []);
-  console.log({ isLoggedIn, redirectTo });
 
   return !isLoggedIn ? <Redirect exact to={redirectTo} /> : children;
 };

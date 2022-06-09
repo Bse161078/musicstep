@@ -6,7 +6,6 @@ export const CheckboxWrapperStyle = styled(Checkbox)`
   grid-template-columns: auto 1fr;
   grid-column-gap: 10px;
   align-items: center;
-
   .checkbox-label {
     font-size: 14px;
     color: red;
@@ -15,7 +14,7 @@ export const CheckboxWrapperStyle = styled(Checkbox)`
   .ant-checkbox {
     &:hover {
       .ant-checkbox-inner {
-        border-color: transparent;
+        border-color: black;
       }
     }
   }
@@ -29,7 +28,7 @@ export const CheckboxWrapperStyle = styled(Checkbox)`
   .ant-checkbox-input {
     &:focus {
       + .ant-checkbox-inner {
-        border-color: transparent;
+        border-color: black;
       }
     }
   }
@@ -40,12 +39,12 @@ export const CheckboxWrapperStyle = styled(Checkbox)`
     }
     .ant-checkbox-input {
       &:focus {
-        border-color: transparent;
+        border-color: black;
       }
     }
     
     .ant-checkbox-inner {
-      background: lightgray;
+      background: #100840;
       border-color: lightgray;
 
       &:after {

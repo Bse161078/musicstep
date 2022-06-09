@@ -7,6 +7,13 @@ import { TeamUsersListItemStyle } from "./TeamUsersList.style";
 
 export const TeamUsersListItem = () => {
   const [showEditUserModal, setShowEditUserModal] = useState(false);
+  const [show,setShow]=useState(true);
+  const handleSubmit = ()=>{
+    //setShow(false)
+    setShowEditUserModal(false);
+  }
+  console.log("ssa = ",showEditUserModal)
+
   return (
     <TeamUsersListItemStyle>
       <div className="thumb-with-content">
@@ -22,12 +29,14 @@ export const TeamUsersListItem = () => {
       </div>
       <div className="team-role">Regional Directives Analyst</div>
 
-      <div className="action-buttons-wrapper" onClick={()=>{setShowEditUserModal(true)}}>
-        <img src="/images/icons/edit-profile-icon.svg" alt="edit" />
-        <EditUserModal
-          isModalVisible={showEditUserModal}
-          setIsModalVisible={setShowEditUserModal}
-        />
+     <div className="action-buttons-wrapper">
+        <img src="/images/icons/edit-profile-icon.svg" alt="edit" onClick={(e)=>{
+       setShowEditUserModal(true)
+       }}/>
+        {showEditUserModal===true&&<EditUserModal
+          showEditUserModal={showEditUserModal}
+          handleSubmit={handleSubmit}
+          />}
       </div>
       
     </TeamUsersListItemStyle>

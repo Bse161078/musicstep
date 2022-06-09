@@ -53,10 +53,10 @@ const ForgotPasswordForm = (props: ForgotPasswordFormProps) => {
         );
       })
       .catch((error) => {
-        setMessage(error.response?.data.message);
+        setMessage("Server Error. Please Try Again Later");
         setIsModalVisible(true);
         setMessageHeading("Error");
-
+        console.log("errormessage",error)
         setLoading(false);
       });
   };
@@ -111,6 +111,7 @@ const ForgotPasswordForm = (props: ForgotPasswordFormProps) => {
           onClick={() => {
             history.push("/partner-login");
           }}
+          style={{cursor:'pointer'}}
         >
           Partner Dashboard Login
         </p>

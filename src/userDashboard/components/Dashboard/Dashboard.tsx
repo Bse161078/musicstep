@@ -1,10 +1,11 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import { DashboardHeader, SideBar } from "../../../admin/components";
 import { LeftChevronIcon } from "../../../assets";
 import { NavbarWithSearch } from "../../../components";
 import { userSidebarItems } from "../../../mockData/userSidebarItems";
-
+import { useLoginContext } from "../../../context/authenticationContext";
 import { DashboardStyle } from "./Dashboard.style";
 
 type DashboardProps = {
@@ -14,10 +15,23 @@ type DashboardProps = {
 
 const Dashboard = (props: DashboardProps) => {
   const { children, handleSubmit } = props;
-
+  const { state, dispatch } = useLoginContext();
+  const [user,setUser] = useState({
+    credits:0
+  })
+  useEffect(()=>{
+    const user: any = JSON.parse(localStorage.getItem("data") || "{}");
+    axios.get(`v1/users/${user.id}`,{
+      headers: {Authorization: `Bearer ${state.authToken}`},
+    })
+    .then((res:any)=>{
+      setUser(res.data)
+    }).catch((e)=>{
+    })
+  },[])
   return (
     <>
-      <NavbarWithSearch />
+      <NavbarWithSearch userCredit={user.credits} />
       <DashboardStyle>
         <div className="left-side">
           <Link to="/dashboard/home" className="back-button">

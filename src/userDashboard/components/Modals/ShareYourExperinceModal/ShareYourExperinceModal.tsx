@@ -99,7 +99,7 @@ const ShareYourExperinceModal = (props: ShareYourExperinceModalProps) => {
                 />
                 <Stars />
                 <InputBox
-                  name="organizerRreview"
+                  name="venueReview"
                   label="Venue Review"
                   placeholder="Type here..."
                   radiusType="27px"
@@ -107,7 +107,7 @@ const ShareYourExperinceModal = (props: ShareYourExperinceModalProps) => {
                 />
                 <Stars />
                 <InputBox
-                  name="eventReview"
+                  name="orgnizerReview"
                   label="Organizer Review"
                   placeholder="Type here..."
                   radiusType="27px"

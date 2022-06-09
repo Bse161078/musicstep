@@ -7,6 +7,7 @@ export const DashboardStyle = styled.div`
     gap: 60px;
     max-width: 1920px;
     margin: auto;
+    width:102vw;
     padding: 0 60px;
 
     @media (max-width: 1024px) {

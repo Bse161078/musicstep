@@ -3,8 +3,10 @@ import React from "react";
 import { UpcomingPayoutsListItem } from "./UpcomingPayoutsListItem";
 import { UpcomingPayoutsListStyle } from "./UpcomingPayoutsList.style";
 
-const PayoutsList = () => {
+const PayoutsList = (props:any) => {
+  const {reserveEvent} = props
   return (
+    
     <UpcomingPayoutsListStyle>
       <div className="table-header">
         <h3 className="header-title">Scheduled</h3>
@@ -12,9 +14,7 @@ const PayoutsList = () => {
         <h3 className="header-title">Payout</h3>
       </div>
 
-      <UpcomingPayoutsListItem />
-      <UpcomingPayoutsListItem />
-      <UpcomingPayoutsListItem />
+      <UpcomingPayoutsListItem reserveEvent={props.reserveEvent} search={props.search} from={props.from} to={props.to} />
     </UpcomingPayoutsListStyle>
   );
 };

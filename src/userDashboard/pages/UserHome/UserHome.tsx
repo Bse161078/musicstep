@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { MessageModal, NavbarWithSearch } from "../../../components";
+import { Loading, MessageModal, NavbarWithSearch } from "../../../components";
 import {
   FilledButtonStyle,
   OutlineButtonStyle,
@@ -16,13 +16,13 @@ import { EventReservationStyle, UserHomeStyle } from "./UserHome.style";
 import axios from "axios";
 
 import { useHistory } from "react-router-dom";
-
+import { Typography } from "@mui/material";
 import { useLoginContext } from "../../../context/authenticationContext";
 import { Spinner } from "../../../components/Spinner";
 import { CustomCarousel } from "../../../components";
 import moment from "moment";
 
-const EventReservation = ({ reservations, cancelreservation }: any) => {
+const EventReservation = ({ reservations, cancelreservation,subscription }: any) => {
   const [isCancelModalVisible, setCancelModalVisible] = useState(false);
   const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -30,6 +30,7 @@ const EventReservation = ({ reservations, cancelreservation }: any) => {
 
   return (
     <>
+      {subscription.active===true?
       <SectionHeading heading="Events In Reservation">
         <EventReservationStyle>
           {/* <CustomCarousel
@@ -53,7 +54,9 @@ const EventReservation = ({ reservations, cancelreservation }: any) => {
                   setCancelModalVisible(true);
                 }}
               />
-            ))}
+            ))
+             
+              }
 
           {/* <CardWithContent
             heading="Franklin Kub's concert"
@@ -110,10 +113,15 @@ const EventReservation = ({ reservations, cancelreservation }: any) => {
           message="Reservation canceled successfully."
         />
       </SectionHeading>
-      <GuestListModal
+    :
+    <Typography variant='h3'align="center"sx={{padding:10,fontWeight:'bold'}}>
+    Your Subscribtion has been Expired!.Please renew your Subscribtion
+  </Typography> 
+    }
+      {subscription.active===true&&<GuestListModal
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}
-      />
+      />}
     </>
   );
 };
@@ -121,9 +129,16 @@ const EventReservation = ({ reservations, cancelreservation }: any) => {
 export default function UserHome() {
   const history = useHistory();
   const { state, dispatch } = useLoginContext();
-  const [events, setEvents] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [events, setEvents] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [reservations, setReservations] = useState([]);
+  const [subscription,setSubscription] = useState({
+    active:true
+  })
+  const [user,setUser] =useState({
+    credits:0
+  })
+  const [timeDifference,setTimeDifference] =useState(0)
 
   const handleClick = () => {
     history.push({
@@ -135,6 +150,14 @@ export default function UserHome() {
 
   useEffect(() => {
     setIsLoading(true);
+    const user: any = JSON.parse(localStorage.getItem("data") || "{}");
+    axios.get(`v1/users/${user.id}`,{
+      headers: {Authorization: `Bearer ${state.authToken}`},
+    })
+    .then((res:any)=>{
+      setUser(res.data)
+    }).catch((e)=>{
+    })
     axios
       .get(`/v1/users/allEventsOfVenue`, {
         headers: { Authorization: `Bearer ${state.authToken}` },
@@ -168,11 +191,9 @@ export default function UserHome() {
             headers: { Authorization: `Bearer ${state.authToken}` },
           })
           .catch((error) => {
-            console.log(error.response);
             alert(error.response.data.message);
           });
         if (response) {
-          console.log(response);
 
           dispatch({
             type: "UPDATE_USER_CREDITS",
@@ -185,26 +206,41 @@ export default function UserHome() {
       .catch((error) => {});
   };
   const getReservation = () => {
+    setIsLoading(true)
     axios
       .get(`/v1/reservation`, {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .then((res) => {
-        console.log(res.data);
-        setReservations(res.data);
+        setIsLoading(false)
+        setReservations(res.data.reservation);
+        setSubscription(res.data.subscription)
+        const startDate = moment(res.data.subscription.created_at);
+        const timeEnd = moment(res.data.subscription.expires_at);
+        const diff = timeEnd.diff(startDate);
+        const diffDuration = moment.duration(diff);
+        setTimeDifference(diffDuration.days())
         // setEvents(res.data);
         // setIsLoading(false);
       })
       .catch((error) => {
         console.log(error.response);
+        setIsLoading(false)
       });
   };
-
   return (
     <>
-      <NavbarWithSearch />
-      <UserHomeStyle>
-        <UserSidebar reservations={reservations} />
+      <NavbarWithSearch  userCredit={user.credits} />
+      {isLoading&&<Loading/>}
+      {!subscription? 
+      <Typography variant='h3'align="center"sx={{padding:10,fontWeight:'bold'}}>
+        Your Subscribtion has been cancelled. Create your Subscribtion again!
+      </Typography>
+       : 
+       <UserHomeStyle>
+        
+        <UserSidebar reservations={reservations} subscription={subscription} timeDifference={timeDifference} />
+        
         <div>
           <EventReservation
             reservations={
@@ -216,6 +252,7 @@ export default function UserHome() {
               )
             }
             cancelreservation={cancelreservation}
+            subscription={subscription}
           />
           <div className="divider" />
           {!isLoading ? (
@@ -223,10 +260,13 @@ export default function UserHome() {
               <UpcomingEvents events={events} />
             ) : null
           ) : (
-            <Spinner />
+                ""
           )}
         </div>
       </UserHomeStyle>
+     
+
+}
     </>
   );
 }

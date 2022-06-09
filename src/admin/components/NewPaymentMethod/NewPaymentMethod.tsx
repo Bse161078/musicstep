@@ -1,9 +1,9 @@
 import { Form, Formik } from "formik";
-import React from "react";
+import React,{useState} from "react";
 import { ContentHeader, DashboardHeader } from "..";
-import { InputBox } from "../../../components";
+import { InputBox, Loading } from "../../../components";
 import { FilledButtonStyle } from "../../../styles/Common.style";
-
+import axios from "axios";
 import { NewPaymentMethodStyle } from "./NewPaymentMethod.style";
 
 type NewPaymentMethodProps = {
@@ -12,8 +12,36 @@ type NewPaymentMethodProps = {
 
 const NewPaymentMethod = (props: NewPaymentMethodProps) => {
   const { setCurrentPage } = props;
-
-  const handlePaymentMethodSubmit = () => {};
+  const [loading,setLoading] = useState(false)
+  const [errorMessage,setErrorMessage] = useState('')
+  const handlePaymentMethodSubmit = (e:any) => {
+    setLoading(true)
+    const user: any = JSON.parse(localStorage.getItem("data") || "{}");
+    const body = {
+      beneficiary_name:e.benifieciaryName,
+      routing_number:e.routingNumber,
+      account_number:e.accountNumber,
+      currency:e.currency,
+      tax_number:e.taxId
+    }
+    console.log("body",body)
+    
+    axios
+    .post("/v1/partners/createPartnerPayment/"+user.id,
+    body,
+    {
+      headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` },
+    })
+    .then((res) => {
+      console.log(res.data,'organizerinfo');
+      setLoading(false)
+      setCurrentPage("payment-method")
+    })
+    .catch((error) => {
+      console.log(error.response,'ORGANIZER');
+      setLoading(false)
+      setErrorMessage("Please fill all the fields")
+    });  };
   return (
     <NewPaymentMethodStyle>
       <DashboardHeader
@@ -21,6 +49,7 @@ const NewPaymentMethod = (props: NewPaymentMethodProps) => {
         backButtonText="Back to Payout Method"
         handleBackClick={() => setCurrentPage("payment-method")}
       />
+      {loading&&<Loading/>}
 
       <ContentHeader heading="Account Information For ABC Organization" />
 
@@ -52,13 +81,14 @@ const NewPaymentMethod = (props: NewPaymentMethodProps) => {
             </div>
 
             <FilledButtonStyle
-              onClick={() => setCurrentPage("payment-method")}
+              //onClick={() =>{}}
               buttonType="dark"
               width="250px"
               height="60px"
             >
               Add New Payment Method
             </FilledButtonStyle>
+            {errorMessage&&<p style={{color:'red'}}>{errorMessage}</p>}
           </Form>
         )}
       </Formik>

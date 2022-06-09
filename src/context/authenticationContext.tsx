@@ -57,6 +57,7 @@ const reducer = (state: any, action: any) => {
         data: action.payload.data,
       };
     case "UPDATE_USER":
+      console.log('data',state)
       localStorage.setItem(
         "data",
         JSON.stringify({ ...state.data, ...action.payload.data })

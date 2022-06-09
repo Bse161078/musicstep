@@ -15,15 +15,15 @@ const HeadingTab = (props: HeadingTabProps) => {
 
   return (
     <HeadingTabStyle>
-      <div className="heading-wrapper">
+      <div className="heading-wrapper" style={{marginTop:15}}>
         {icon && <span>{icon}</span>}
         <div>
           {heading && <h4 className="title">{heading}</h4>}
-          {description && <p className="description">Expires in 21 days.</p>}
+          {description && <p className="description">{description}</p>}
         </div>
       </div>
 
-      {count ? <span className="count">{count}</span> : <ChevronFilledIcon />}
+      {count ? <span className="count">{count}</span> :count===0?0: <ChevronFilledIcon />}
     </HeadingTabStyle>
   );
 };

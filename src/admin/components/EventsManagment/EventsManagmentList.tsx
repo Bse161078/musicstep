@@ -20,18 +20,15 @@ const EventsManagmentList = ({ events }: EventsManagmentListProps) => {
         // events.length > 0 && <span>{events[0]._id.month}</span>
         events.length > 0 &&
           events.map((element: any) => {
-            const eventData = element["eventsByDate"];
+            const eventData = element;
             return (
               <span>
                 <div className="event-date event-date-bold">
-                  {moment()
-                    .month(element["_id"].month - 1)
-                    .format("MMM")}{" "}
-                  {element["_id"].year} <span className="date-border" />
+                {" "}
+                  {element["date"]} <span className="date-border" />
                 </div>
-                {eventData.map((event: any) => (
-                  <EventsManagmentListItem event={event} />
-                ))}
+                
+                  <EventsManagmentListItem event={element} />
               </span>
             );
           })

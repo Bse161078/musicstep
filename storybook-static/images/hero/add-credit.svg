@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="207" height="207">
+    <defs>
+        <clipPath id="clip-path">
+            <rect id="Rectangle_449" data-name="Rectangle 449" width="207" height="207" rx="24" transform="translate(1005 1345)" style="fill:#1981fc"/>
+        </clipPath>
+        <style>
+            .cls-3{fill:#1981fc;fill-rule:evenodd}
+        </style>
+    </defs>
+    <g id="Mask_Group_7" data-name="Mask Group 7" transform="translate(-1005 -1345)" style="clip-path:url(#clip-path)">
+        <g id="valid" transform="translate(1005 1358.5)">
+            <path id="Path_1864" data-name="Path 1864" class="cls-3" d="M7.978 77.062a21.041 21.041 0 0 1 20.864-21.214h147.272a21.041 21.041 0 0 1 20.864 21.214v74.487c0 2.485-9 2.485-9 0V77.062a12.043 12.043 0 0 0-11.864-12.214H28.842a12.043 12.043 0 0 0-11.864 12.214v83.572a12.043 12.043 0 0 0 11.864 12.214h92.838c2.485 0 2.485 9 0 9H28.842a21.041 21.041 0 0 1-20.864-21.214z" transform="translate(-7.978 -55.848)"/>
+            <path id="Path_1865" data-name="Path 1865" class="cls-3" d="M7.978 108.217a4.5 4.5 0 0 1 4.5-4.5h180a4.5 4.5 0 0 1 0 9h-180a4.5 4.5 0 0 1-4.5-4.5z" transform="translate(-7.978 -76.717)"/>
+            <path id="Path_1866" data-name="Path 1866" class="cls-3" d="M39.891 188a4.5 4.5 0 0 1 4.5-4.5h18a4.5 4.5 0 1 1 0 9h-18a4.5 4.5 0 0 1-4.5-4.5z" transform="translate(-21.891 -111.5)"/>
+            <path id="Path_1867" data-name="Path 1867" class="cls-3" d="M39.891 227.891a4.5 4.5 0 0 1 4.5-4.5h36a4.5 4.5 0 0 1 0 9h-36a4.5 4.5 0 0 1-4.5-4.5z" transform="translate(-21.891 -128.891)"/>
+            <path id="Path_1868" data-name="Path 1868" class="cls-3" d="M248.957 208.457a40.5 40.5 0 1 0 40.5 40.5 40.5 40.5 0 0 0-40.5-40.5zm-49.5 40.5a49.5 49.5 0 1 1 49.5 49.5 49.5 49.5 0 0 1-49.5-49.5z" transform="translate(-91.457 -118.457)"/>
+            <path id="Path_1881" data-name="Path 1881" class="cls-3" d="M39.891 227.891a4.5 4.5 0 0 1 4.5-4.5h36a4.5 4.5 0 0 1 0 9h-36a4.5 4.5 0 0 1-4.5-4.5z" transform="translate(95.109 -97.391)"/>
+            <path id="Path_1882" data-name="Path 1882" class="cls-3" d="M0 4.5A4.5 4.5 0 0 1 4.5 0h36a4.5 4.5 0 0 1 0 9h-36A4.5 4.5 0 0 1 0 4.5z" transform="rotate(90 27 135)"/>
+        </g>
+    </g>
+</svg>

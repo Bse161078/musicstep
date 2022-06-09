@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useField } from "formik";
 import {
   TextFieldStyle,
@@ -8,10 +8,12 @@ import {
 
 const InputBox = (props: any) => {
   const [field, meta] = useField(props);
-
+  console.log("props",props)
   const inputRef = useRef();
   const [showPassword, setShowPassword] = useState(false)
-
+  useEffect(()=>{
+   props.setSearch && props.setSearch(field.value)
+  },[field])
   const handlePasswordIconClick = () => {
     if (inputRef.current && props.type === "password") {
       //@ts-ignore
@@ -27,9 +29,15 @@ const InputBox = (props: any) => {
     }
   };
 
+  // const handleInputChange=(e:any)=>{
+  //   const value = e.target.value
+  //   props.setSearch(value)
+  //   field.value=value
+  // }
+
   return (
     <InputBoxStyle>
-      <label className="input-label">{props.label}</label>
+      <label className="input-label">{props.name==="explaination"?"":props.label}</label>
 
       <TextFieldStyle
         ref={inputRef}

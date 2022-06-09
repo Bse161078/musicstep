@@ -7,12 +7,13 @@ import moment from "moment";
 const ReviewsList = ({ review }: any) => {
   // let rating=  ;
   // rating=parseInt( rating);
+  console.log("reviewuser",review)
   return (
     <ReviewsListStyle>
       <div className="head-wrapper">
         <span className="heading-date-wrapper">
           <h3>
-            {review.userInfo[0].firstName + " " + review.userInfo[0].lastName}
+            {review?.userInfo[0]?.firstName + " " + review?.userInfo[0]?.lastName}
           </h3>
           <p>
             {moment(new Date()).diff(moment(review.createdAt), "days")

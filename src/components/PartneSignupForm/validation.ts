@@ -2,8 +2,8 @@ import moment from "moment";
 import * as yup from "yup";
 
 export const PartnerSignupFormValidationSchema = yup.object().shape({
-  firstName: yup.string().required("Name is required"),
-  lastName: yup.string().required("Name is required"),
+  firstName: yup.string().required("First Name is required"),
+  lastName: yup.string().required("Last Name is required"),
   emailAddress: yup
     .string()
     .email("Invalid email address")

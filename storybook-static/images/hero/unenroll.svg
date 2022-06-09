@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="207" height="207">
+    <defs>
+        <clipPath id="clip-path">
+            <rect id="Rectangle_450" data-name="Rectangle 450" class="cls-1" width="207" height="207" rx="24" transform="translate(1462 1345)"/>
+        </clipPath>
+        <style>
+            .cls-1{fill:#1981fc}
+        </style>
+    </defs>
+    <g id="Mask_Group_8" data-name="Mask Group 8" transform="translate(-1462 -1345)" style="clip-path:url(#clip-path)">
+        <g id="document" transform="translate(1469.741 1350.367)">
+            <path id="Path_1880" data-name="Path 1880" class="cls-1" d="M129.257 215.976a4.005 4.005 0 1 0 0-8.011H65.172a4.005 4.005 0 1 0 0 8.011zm0 0" transform="translate(-21.112 -71.781)"/>
+            <path id="Path_1870" data-name="Path 1870" class="cls-1" d="M172.234 48.064a4 4 0 0 0 4-4V20.027A20.05 20.05 0 0 0 156.212 0H20.028A20.05 20.05 0 0 0 0 20.027v156.21a20.05 20.05 0 0 0 20.028 20.028h136.184a20.05 20.05 0 0 0 20.026-20.028v-24.032a4 4 0 0 0-4-4h-20.032V48.064zM152.206 8.01h4.006a12.016 12.016 0 0 1 12.015 12.017v20.026h-16.021zM144.2 188.255H20.028a12.016 12.016 0 0 1-12.017-12.017V20.027A12.016 12.016 0 0 1 20.028 8.01H144.2zm24.032-32.043v20.026a12.016 12.016 0 0 1-12.015 12.017h-4.006v-32.043zm0 0"/>
+            <path id="Path_1872" data-name="Path 1872" class="cls-1" d="M85.415 75.46v25.09a4.006 4.006 0 0 0 6.229 3.333l9.793-6.537 9.793 6.527a4 4 0 0 0 6.229-3.324V75.46a28.038 28.038 0 1 0-32.043 0zm24.032 17.624-5.788-3.861a4.008 4.008 0 0 0-4.445 0l-5.788 3.847V79.321a27.753 27.753 0 0 0 16.021 0zm-8.011-60.626a20.027 20.027 0 1 1-20.028 20.028 20.028 20.028 0 0 1 20.028-20.028zm0 0" transform="translate(-25.333 -8.425)"/>
+            <path id="Path_1873" data-name="Path 1873" class="cls-1" d="M109.882 72.965A12.016 12.016 0 1 0 97.865 60.95a12.017 12.017 0 0 0 12.017 12.015zm0-16.021a4.005 4.005 0 1 1-4.006 4.006 4.006 4.006 0 0 1 4.006-4.007zm0 0" transform="translate(-33.779 -16.889)"/>
+            <path id="Path_1874" data-name="Path 1874" class="cls-1" d="M101.871 159.033a4.005 4.005 0 1 0 0 8.011h16.021a4.005 4.005 0 1 0 0-8.011zm0 0" transform="translate(-33.779 -54.892)"/>
+            <path id="Path_1875" data-name="Path 1875" class="cls-1" d="M56.509 238.55H28.472a4.005 4.005 0 1 0 0 8.011h28.037a4.005 4.005 0 1 0 0-8.011zm0 0" transform="translate(-8.445 -82.338)"/>
+            <path id="Path_1876" data-name="Path 1876" class="cls-1" d="M44.494 263.016H28.473a4.005 4.005 0 1 0 0 8.011h16.021a4.005 4.005 0 0 0 0-8.011zm0 0" transform="translate(-8.445 -90.783)"/>
+            <path id="Path_1877" data-name="Path 1877" class="cls-1" d="M152.915 242.554a4.006 4.006 0 0 0 4.006 4.006h28.037a4.005 4.005 0 1 0 0-8.011h-28.036a4.005 4.005 0 0 0-4.007 4.005zm0 0" transform="translate(-52.78 -82.338)"/>
+            <path id="Path_1878" data-name="Path 1878" class="cls-1" d="M191.293 263.016h-16.022a4.005 4.005 0 0 0 0 8.011h16.021a4.005 4.005 0 1 0 0-8.011zm0 0" transform="translate(-59.115 -90.783)"/>
+            <path id="Path_1879" data-name="Path 1879" class="cls-1" d="M52.939 191.51h80.107a4.005 4.005 0 1 0 0-8.011H52.939a4.005 4.005 0 1 0 0 8.011zm0 0" transform="translate(-16.89 -63.336)"/>
+            <g id="Group_468" data-name="Group 468" transform="translate(104.143 50.752)">
+                <g id="Rectangle_451" data-name="Rectangle 451" transform="translate(2.806 2.65)" style="fill:#fff;stroke:#707070">
+                    <rect width="85.784" height="85.784" rx="42.892" style="stroke:none"/>
+                    <rect x=".5" y=".5" width="84.784" height="84.784" rx="42.392" style="fill:none"/>
+                </g>
+                <path id="Path_1884" data-name="Path 1884" class="cls-1" d="M3.771 7.54h75.4a3.77 3.77 0 1 0 0-7.54h-75.4a3.77 3.77 0 1 0 0 7.54zm0 0" transform="rotate(45 -6.803 29.293)"/>
+                <path id="Path_1883" data-name="Path 1883" d="M244.836 207.707a37.129 37.129 0 1 0 37.129 37.129 37.128 37.128 0 0 0-37.129-37.129zm-45.379 37.129a45.379 45.379 0 1 1 45.379 45.379 45.379 45.379 0 0 1-45.379-45.379z" transform="translate(-199.457 -199.457)" style="fill-rule:evenodd;fill:#1981fc"/>
+            </g>
+        </g>
+    </g>
+</svg>

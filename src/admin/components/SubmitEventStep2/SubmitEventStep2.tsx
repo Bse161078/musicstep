@@ -23,6 +23,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
   const { state } = useLoginContext();
   const [message, setMessage] = useState("");
   const [messageType, setMessageType] = useState("");
+  const [isLoading, setLoading] = useState(false);
 
   const handleDeleteTicket = (index: number) => {
     const newTickets = [...tickets];
@@ -35,21 +36,6 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
     setTickets(newTickets);
   };
   const createEventHandlet = async () => {
-    //     additionalPhotos: FileList {0: File, 1: File, 2: File, 3: File, length: 4}
-    // city: "Sīta Road"
-    // country: "Pakistan"
-    // date: "12/12/2020"
-    // endingTime: "12:50pm"
-    // eventDescription: "bmbmxbmzx"
-    // organizer: "6217e4d65527e821cc11f2de"
-    // startingTime: "12:30pm"
-    // state: "Sindh"
-    // title: "ahksa"
-    // venue: "62180c415527e821cc11f36f"
-    // eventPhotoSameAsOrganizerPhoto: false
-    /////form Data
-    console.log("eventData", eventData.date.toLocaleDateString());
-    console.log("tickets", tickets);
     const formatedTickets = tickets.map((ticket: any) => {
       return {
         ...ticket,
@@ -62,19 +48,19 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
     const bodyData = new FormData();
 
     bodyData.append("title", eventData.title);
-
+    setLoading(true)
     bodyData.append("date", eventData.date);
     bodyData.append("startingTime", eventData.startingTime);
     bodyData.append("endingTime", eventData.endingTime);
     bodyData.append("state", eventData.state);
     bodyData.append("city", eventData.city);
     bodyData.append("country", eventData.country);
-    bodyData.append("venue", eventData.venue);
+    bodyData.append("venue", eventData.venue_id);
     bodyData.append(
       "eventPhotoSameAsOrganizerPhoto",
       eventData.eventPhotoSameAsOrganizerPhoto
     );
-    bodyData.append("organizer", eventData.organizer);
+    bodyData.append("organizer", eventData.organizer_id);
     bodyData.append("tickets", JSON.stringify(formatedTickets));
     bodyData.append("eventDescription", eventData.eventDescription);
 
@@ -84,16 +70,16 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
         bodyData.append("additionalPhotos", files[i]);
       }
     }
-
     const res = await axios
       .post("/v1/event", bodyData, {
-        headers: { Authorization: `Bearer ${state.authToken}` },
+        headers: { Authorization: `Bearer ${state.authToken}`,"Content-Type": "multipart/form-data"  },
       })
       .catch((error) => {
-        console.log(error.response.data.error);
+        console.log(error,'error1111');
         //  setSuccessModalVisible(true);
         setIsModalVisible(true);
-        setMessage(error.response.data.error);
+        setLoading(false)
+        //setMessage(error);
         setMessageType("error");
         //  setMessage(error.response.data.error);
         //  setHeading("Error");
@@ -102,6 +88,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
       //  setSuccessModalVisible(true);
       //  setMessage("Organizer created Successfully");
       //  setHeading("Success");
+      setLoading(false)
       setMessage("Event created Successfully");
       setMessageType("success");
       setIsModalVisible(true);
@@ -137,7 +124,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
         cancelButtonText="Back"
         saveButtonWidth="190px"
       />
-
+      {isLoading&&<Loading/>}
       <SubmitEventStep2Style>
         <div className="text-wrapper">
           <h3>Events Tickets</h3>
@@ -152,7 +139,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
           {tickets.map((ticket: any, index: any) => (
             <TicketInfoCard
               heading={ticket.title}
-              creditNo={ticket.credits}
+              eventCredit={ticket.credits}
               availableTickets={ticket.numberOfTickets}
               description={ticket.description}
               index={index}
@@ -171,6 +158,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
         setIsModalVisible={setIsModalVisible}
         handleOkClick={() => {
           if (messageType === "success") {
+            console.log('done')
             history.push("/admin/events-management");
           }
         }}

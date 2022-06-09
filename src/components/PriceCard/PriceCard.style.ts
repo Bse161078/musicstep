@@ -11,6 +11,9 @@ export const PriceCardStyle = styled.div`
   margin: auto;
   transition: all 200ms linear;
 
+  @media (max-width: 600px) {
+    margin:5px;
+  }
   &:hover {
     background-color: ${rgba("#1981FC", 0.2)};
   }

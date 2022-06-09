@@ -64,12 +64,12 @@ export const RedeemOfferStep2FormStyle = styled.article`
     display: flex;
     margin-bottom: 30px;
     grid-gap: 20px;
-
+   
     input {
       text-align: center;
 
-      @media ( max-width: 767px ) {
-        padding: 5px;
+      @media ( max-width: 600px ) {
+        padding: 0px;
       }
     }
   }
@@ -99,6 +99,12 @@ export const RedeemOfferStep2FormStyle = styled.article`
 
     @media ( max-width: 767px ) {
       flex-direction: column;
+    }
+   
+  }
+  .button-mobile{
+    @media ( max-width: 600px ) {
+      margin: 5px;
     }
   }
 `;

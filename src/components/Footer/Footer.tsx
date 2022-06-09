@@ -50,9 +50,38 @@ const Footer = () => {
           );
         })}
       </div>
-
-      <div className="footer-bottom">
-        <HeadingWithList heading="Explore events on the go">
+      
+      <div className="footer-bottom" >
+              <div>
+             <img
+                src="/images/social-links/LogowithTrademark.png"
+                className="store-logo"
+                alt="store"
+                style={{width:'20vw'}}
+              />  
+              </div>
+              <div className="social-links" style={{width:"fit-content"}} >
+          <HeadingWithList heading="Social Accounts">
+            <div className="social-links-wrapper" >
+              {socialLinks.map((data, index) => {
+                const { icon, url } = data;
+                console.log('icons',icon)
+                return (
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    key={`social-icon-${index}`}
+                    href={url}
+                  >
+                    <img src={icon} className="mobile-social-link"alt="social icon" />
+                  </a>
+                );
+              })}
+            </div>
+          </HeadingWithList>
+        </div>
+           {/* <div>
+           <HeadingWithList heading="Explore events on the go">
           <div className="store-items">
             <a href="/">
               <img
@@ -70,27 +99,9 @@ const Footer = () => {
             </a>
           </div>
         </HeadingWithList>
+           </div> */}
 
-        <div className="social-links">
-          <HeadingWithList heading="Social Accounts">
-            <div className="social-links-wrapper">
-              {socialLinks.map((data, index) => {
-                const { icon, url } = data;
-
-                return (
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    key={`social-icon-${index}`}
-                    href={url}
-                  >
-                    <img src={icon} className="social-icon" alt="social icon" />
-                  </a>
-                );
-              })}
-            </div>
-          </HeadingWithList>
-        </div>
+        
       </div>
     </FooterStyle>
   );

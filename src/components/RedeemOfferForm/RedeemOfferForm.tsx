@@ -27,15 +27,13 @@ const RedeemOfferForm = (props: TrailSetPasswordProps) => {
     console.log("EVENTS: ", e);
     setLoading(true);
 
-    console.log("id: ", id, `${e.countryCode}${e.phoneNumber}`);
     //d
     axios
-      .patch(`/v1/users/createPhonenumber/${id}`, {
+      .patch(`/v1/users/createPhoneNumber/${id}`, {
         phoneNumber: `${e.phoneNumber}`,
       })
       .then((response) => {
         setLoading(false);
-        console.log(response);
         dispatch({
           type: "SUBMIT_PHONE_NUMBER",
           payload: {

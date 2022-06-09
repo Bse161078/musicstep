@@ -54,6 +54,9 @@ import {useLoginContext} from "./context/authenticationContext";
 import AddCardSuccess from "./components/Stripe/addCardSuccess";
 import SubscriptionSuccess from "./components/Stripe/subscriptionSuccess";
 import SubscriptionCancel from "./components/Stripe/subscriptionCancel";
+import UpdateSubscription from "./pages/ExploreVenue/UpdateSubscription";
+import CreateCreditPayment from "./pages/ExploreVenue/CreateCreditPayment";
+import CreditPaymentSuccess from "./components/Stripe/createCreditPaymentSuccess";
 
 // axios.defaults.baseURL = "https://music-pass-backend.herokuapp.com/v1";
 axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
@@ -85,12 +88,15 @@ const RoutesList = (props: any) => {
         },
         (error) => {
             if (error.response.status === 401) {
-                console.log("401");
+                console.log("currentLocation", window.location.href)
+                if(!window.location.href.includes("partner-login"))
+                {
                 dispatch({
                     type: "LOGOUT",
                     payload: {},
                 });
-                history.push("/login");
+               history.push("/login");
+                }
             }
 
             return Promise.reject(error);
@@ -142,6 +148,7 @@ const RoutesList = (props: any) => {
                 <Route exact path="/pricing" component={Pricing}/>
                 <Route exact path="/subscription-success" component={SubscriptionSuccess}/>
                 <Route exact path="/subscription-cancel" component={SubscriptionCancel}/>
+                <Route exact path="/credit-payment-success" component={CreditPaymentSuccess}/>
 
                 <Route path="/explore-venue/venue-details" component={VenueDetails}/>
                 <Route
@@ -178,6 +185,21 @@ const RoutesList = (props: any) => {
                     )}
                 />
 
+                <Route
+                    exact
+                    path="/update-subscription"
+                    render={() => (
+                            <UpdateSubscription/>
+                    )}
+                />
+                <Route
+                    exact
+                    path="/create-credit-payment"
+                    render={() => (
+                        <CreateCreditPayment/>
+                    )}
+                />
+
                 {/* Admin routes */}
                 <Route
                     path="/admin/team-management"
@@ -185,6 +207,13 @@ const RoutesList = (props: any) => {
                         <AuthenticatedRoute redirectTo="/partner-login">
                             <TeamManagement/>
                         </AuthenticatedRoute>
+                    )}
+                />
+                 <Route
+                    exact
+                    path="/update-subscription"
+                    render={() => (
+                            <UpdateSubscription/>
                     )}
                 />
                 <Route

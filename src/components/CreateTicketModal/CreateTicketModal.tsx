@@ -4,6 +4,7 @@ import { InputBox, MessageModal, SelectBox } from "..";
 import { useFormikContext, Formik, Form } from "formik";
 import { ModalWrapper } from "../../admin/components/Modals/ModalWrapper";
 import { TicketFormValidationSchema } from "./validation";
+import { useHistory } from "react-router-dom";
 
 type CreateTicketModalProps = {
   isModalVisible?: boolean;
@@ -14,7 +15,10 @@ type CreateTicketModalProps = {
   handleEditTicket?: any;
   index?: number;
 };
+
+
 const CreateTicketModal = (props: CreateTicketModalProps) => {
+  const history = useHistory()
   const {
     isModalVisible,
     setIsModalVisible,
@@ -37,7 +41,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
     credits: ticket ? ticket.credits : 0,
   };
 
-  console.log(ticketFromRef);
+  console.log(ticketFromRef,'ticketform');
   const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
 
   const handleSubmit = (e: any, { resetForm }: any) => {
@@ -142,6 +146,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                             { key: "70", value: "70%" },
                             { key: "80", value: "80%" },
                           ]}
+                          values={["50","60","70","80"]}
                           setFieldValue={form.setFieldValue}
                           handleSelectBoxChange={(e: any) => {
                             console.log(e);
@@ -227,6 +232,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
         setIsModalVisible={setSuccessModalVisible}
         heading="Success"
         message={message}
+        
       />
     </>
   );

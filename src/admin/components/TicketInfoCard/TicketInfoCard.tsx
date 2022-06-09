@@ -8,7 +8,7 @@ import { TicketModal } from "../../../components/TicketModal";
 
 type TicketInfoCardProps = {
   heading?: string;
-  creditNo?: string;
+  eventCredit?: number;
   availableTickets?: number;
   description?: string;
   outlineButton?: boolean;
@@ -19,6 +19,7 @@ type TicketInfoCardProps = {
   handleEditTicket?: any;
   ticketIndex?: number;
   event?: any;
+  subscribtionCredit?:number;
 };
 
 const TicketInfoCard = (props: TicketInfoCardProps) => {
@@ -41,6 +42,8 @@ const TicketInfoCard = (props: TicketInfoCardProps) => {
         <TicketModal
           isModalVisible={isTicketModalVisible}
           setIsModalVisible={setTicketModalVisible}
+          eventCredit={props.eventCredit}
+          subscribtionCredit={props.subscribtionCredit}
           ticketIndex={props.ticketIndex ? props.ticketIndex : 0}
           event={props.event}
         />
@@ -48,7 +51,7 @@ const TicketInfoCard = (props: TicketInfoCardProps) => {
 
       <TicketInfoCardStyle disableTicketsAvailbilty>
         <h2>{props.heading}</h2>
-        <p className="credits">Credits: {props.creditNo}</p>
+        <p className="credits">Credits: {props.eventCredit}</p>
         {props.disableTicketsAvailbilty ? null : (
           <p className="tickets">Tickets Available: {props.availableTickets}</p>
         )}
