@@ -3,7 +3,7 @@ import React, {Fragment, useState} from "react";
 import Grid from "@mui/material/Grid/Grid";
 import {FilledButtonStyle} from "../../../styles/Common.style";
 
-const AutoComplete=(props)=>{
+const AutoCompletePlaces=(props)=>{
     const [location,setLocation]=useState({
         address: "",
         city: "",
@@ -122,6 +122,7 @@ const AutoComplete=(props)=>{
     return(
         <Fragment>
             <Autocomplete
+                apiKey={"AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew"}
                 style={{
                     width: "100%",
                     maxWidth: "880px",
@@ -130,8 +131,8 @@ const AutoComplete=(props)=>{
                     margin: "0px auto",
                     marginTop: "2px",
                 }}
+                onFail={error => console.error(error)}
                 onPlaceSelected={onPlaceSelected}
-                types={["(regions)"]}
             />
             <Grid container style={{marginTop:20}} justifyContent="center">
                 <FilledButtonStyle
@@ -148,4 +149,4 @@ const AutoComplete=(props)=>{
     )
 }
 
-export default AutoComplete;
+export default AutoCompletePlaces;

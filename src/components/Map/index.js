@@ -14,7 +14,7 @@ import "./style.css";
 import Grid from "@mui/material/Grid/Grid";
 import {Button} from "@mui/material";
 import {FilledButtonStyle, OutlineButtonStyle} from "../../styles/Common.style";
-import AutoComplete from "./AutoComplete";
+import AutoCompletePlaces from "./AutoComplete";
 // import {
 //   Card,
 //   CardContent,
@@ -66,40 +66,6 @@ class Index extends React.Component {
                             lat: position.coords.latitude,
                             lng: position.coords.longitude,
                         },
-                    },
-                    () => {
-                        Geocode.fromLatLng(
-                            position.coords.latitude,
-                            position.coords.longitude
-                        ).then(
-                            (response) => {
-                                console.log(response);
-                                const address = response.results[0].formatted_address,
-                                    addressArray = response.results[0].address_components,
-                                    city = this.getCity(addressArray),
-                                    area = this.getArea(addressArray),
-                                    state = this.getState(addressArray),
-                                    country = this.getCountry(addressArray);
-                                // this.props.handleLocation(
-                                //     country,
-                                //     state,
-                                //     city,
-                                //     address,
-                                //     position.coords.latitude,
-                                //     position.coords.longitude
-                                // );
-                                console.log("city", city, area, state);
-                                this.setState({
-                                    address: address ? address : "",
-                                    area: area ? area : "",
-                                    city: city ? city : "",
-                                    state: state ? state : "",
-                                });
-                            },
-                            (error) => {
-                                console.error(error);
-                            }
-                        );
                     }
                 );
             });
@@ -188,38 +154,6 @@ class Index extends React.Component {
     onInfoWindowClose = (event) => {
     };
 
-    onMarkerDragEnd = (event) => {
-        let newLat = event.latLng.lat(),
-            newLng = event.latLng.lng();
-
-        Geocode.fromLatLng(newLat, newLng).then(
-            (response) => {
-                const address = response.results[0].formatted_address,
-                    addressArray = response.results[0].address_components,
-                    city = this.getCity(addressArray),
-                    area = this.getArea(addressArray),
-                    state = this.getState(addressArray),
-                    country = this.getCountry(addressArray);
-                this.setState({
-                    address: address ? address : "",
-                    area: area ? area : "",
-                    city: city ? city : "",
-                    state: state ? state : "",
-                    markerPosition: {
-                        lat: newLat,
-                        lng: newLng,
-                    },
-                    mapPosition: {
-                        lat: newLat,
-                        lng: newLng,
-                    },
-                });
-            },
-            (error) => {
-                console.error(error);
-            }
-        );
-    };
 
     onPlaceSelected = (place) => {
         console.log("plc", place);
@@ -436,12 +370,12 @@ class Index extends React.Component {
             >
 
                 <AsyncMap
-                    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew&libraries=places"
+                    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew"
                     loadingElement={<div style={{height: `100%`}}/>}
                     containerElement={<div style={{height: 300}}/>}
                     mapElement={<div style={{height: `100%`}}/>}
                 />
-                <AutoComplete onChangeLocation={this.onChangeLocation} onSelectLocation={this.onSelectLocation}/>
+                <AutoCompletePlaces onChangeLocation={this.onChangeLocation} onSelectLocation={this.onSelectLocation}/>
             </div>
         );
     }
