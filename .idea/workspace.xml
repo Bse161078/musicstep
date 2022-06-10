@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f900495-2d01-4c96-a493-d43d1865075e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,7 +31,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="env" value="9" />
-          <entry key="gitignore" value="2" />
+          <entry key="gitignore" value="3" />
           <entry key="html" value="1" />
           <entry key="js" value="18" />
           <entry key="json" value="7" />
@@ -49,7 +48,7 @@
           <entry key="Image" value="1" />
           <entry key="JSON" value="7" />
           <entry key="JavaScript" value="18" />
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="PLAIN_TEXT" value="3" />
           <entry key="SVG" value="2" />
           <entry key="TypeScript" value="31" />
           <entry key="TypeScript JSX" value="94" />
@@ -63,6 +62,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="env" value="94" />
+          <entry key="gitignore" value="25" />
           <entry key="html" value="3" />
           <entry key="js" value="2553" />
           <entry key="json" value="8" />
@@ -76,6 +76,7 @@
           <entry key="HTML" value="3" />
           <entry key="JSON" value="8" />
           <entry key="JavaScript" value="2553" />
+          <entry key="PLAIN_TEXT" value="25" />
           <entry key="TypeScript" value="5" />
           <entry key="TypeScript JSX" value="4902" />
         </counts>
@@ -84,15 +85,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1462">
-              <caret line="143" column="59" selection-start-line="143" selection-start-column="59" selection-end-line="143" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/Pricing/Pricing.tsx">
           <provider selected="true" editor-type-id="text-editor">
@@ -165,11 +157,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="67" column="60" selection-start-line="67" selection-start-column="60" selection-end-line="67" selection-end-column="60" />
+            <state relative-caret-position="34">
+              <caret line="59" column="6" selection-start-line="59" selection-start-column="6" selection-end-line="59" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -264,6 +265,7 @@
         <option value="$PROJECT_DIR$/src/components/TrialBillingInfoForm/TrialBillingInfoForm.tsx" />
         <option value="$PROJECT_DIR$/src/components/Stripe/addCard.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -306,11 +308,6 @@
               <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
               <item name="musicstep" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="musicstep" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -321,7 +318,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1654875725694" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1654875932108" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="ts.external.directory.path" value="D:\practice\musicstep\node_modules\typescript\lib" />
@@ -381,12 +378,12 @@
       <workItem from="1654838607136" duration="14917000" />
       <workItem from="1654861259208" duration="307000" />
       <workItem from="1654868966811" duration="827000" />
-      <workItem from="1654875488555" duration="241000" />
+      <workItem from="1654875488555" duration="689000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126420000" />
+    <option name="totallyTimeSpent" value="126868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
@@ -594,9 +591,6 @@
     <entry file="file://$PROJECT_DIR$/node_modules/react-geocode/lib/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/react-google-autocomplete/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
@@ -770,8 +764,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="67" column="60" selection-start-line="67" selection-start-column="60" selection-end-line="67" selection-end-column="60" />
+        <state relative-caret-position="34">
+          <caret line="59" column="6" selection-start-line="59" selection-start-column="6" selection-end-line="59" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
         </state>
       </provider>
     </entry>
