@@ -50,7 +50,6 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
         })
         setLoading(false)
       }catch(error) {
-          console.log(error);
           setLoading(false)
         };
     }
@@ -75,12 +74,10 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .catch((error) => {
-        console.log(error);
         setLoading(false)
       });
 
     if (res) {
-      console.log(res.data);
       setSuccessModalVisible(true);
       setLoading(false)
       dispatch({

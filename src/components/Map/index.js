@@ -156,7 +156,6 @@ class Index extends React.Component {
 
 
     onPlaceSelected = (place) => {
-        console.log("plc", place);
         const address = place.formatted_address,
             addressArray = place.address_components,
             city = this.getCity(addressArray),
@@ -167,8 +166,6 @@ class Index extends React.Component {
             country = this.getCountry(addressArray);
 
 
-        console.log("latvalue", latValue);
-        console.log("lngValue", lngValue);
 
         // Set these values in the state.
         this.setState({
@@ -189,13 +186,11 @@ class Index extends React.Component {
 
 
     onChangeLocation=(location)=>{
-        console.log("location = ",location)
         this.setState(location);
     }
 
 
     onSelectLocation=(location)=>{
-        console.log("location = ",location)
         if(location.markerPosition.lat!==0)
         this.props.handleLocation(
             location.country,
@@ -358,7 +353,6 @@ class Index extends React.Component {
             ))
         );
 
-        console.log("height 111= ", this.state.height)
 
         return (
             <div

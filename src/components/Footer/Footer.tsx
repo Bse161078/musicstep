@@ -65,7 +65,6 @@ const Footer = () => {
             <div className="social-links-wrapper" >
               {socialLinks.map((data, index) => {
                 const { icon, url } = data;
-                console.log('icons',icon)
                 return (
                   <a
                     target="_blank"

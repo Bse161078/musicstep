@@ -114,9 +114,7 @@ const SelectBox = (props: SelectBoxProps) => {
     }
     else if(field.name==='distance')
     {
-     
-      console.log('lat',latitude,longtitude)
-     data = [
+      data = [
       {type: "distance", search: [{location: {latitude: latitude, longitude: longtitude}, value: value}]},
       
     ]
@@ -148,13 +146,9 @@ const SelectBox = (props: SelectBoxProps) => {
   }
   
     axios.post('/v1/filter/event',{filters:data}).then((response)=>{
-        console.log("response : ",response);
         setLoading(false)
         setVenues(response.data)
-        console.log("response : ",response)
-    }).catch((err)=>{
-      console.log("responseerror : ",err)
-      setLoading(false)
+    }).catch((err)=>{setLoading(false)
     })
 }
 
@@ -167,7 +161,6 @@ const SelectBox = (props: SelectBoxProps) => {
   };
   let count = 0
   
-  console.log("filters",field.name)
   return (
     <SelectInputStyle type={type}>
       {label && <label className="select-label">{label}</label>}

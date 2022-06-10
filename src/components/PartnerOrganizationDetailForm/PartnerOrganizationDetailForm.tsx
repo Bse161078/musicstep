@@ -14,8 +14,7 @@ const PartnerOrganizationDetailForm = () => {
 
   const history = useHistory();
   const params: any = useParams();
-  console.log(params);
-  const initialValues = {
+   const initialValues = {
     organizationName: state.organizationName,
     organizationType: state.organizationType,
     organizationURL: state.organizationURL,
@@ -23,8 +22,7 @@ const PartnerOrganizationDetailForm = () => {
     capacity: state.capacity,
   };
   const handleDetailsSubmit = (value: any) => {
-    console.log("details",value,params.partnerId)
-    axios
+      axios
       .patch(`/v1/partners/createOrganizationInformation/${params.partnerId}`, {
         organizationName: value.organizationName,
         organizationType: value.organizationType,
@@ -59,7 +57,6 @@ const PartnerOrganizationDetailForm = () => {
       .catch((error) => {
         // setErrorMessage(error.response?.data.message);
       });
-    console.log(value);
   };
 
   return (

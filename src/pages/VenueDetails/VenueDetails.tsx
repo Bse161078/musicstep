@@ -53,7 +53,6 @@ export default function VenueDetails() {
   const [amentiesState, setamentiesState] = useState(amenties);
   const [reviews, setreviews] = useState(null);
   const venueDetail = location.state.venueDetail;
-  console.log(venueDetail,'state',location.state);
 
   function callback() {
     setIsLoading(true);
@@ -62,12 +61,10 @@ export default function VenueDetails() {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .then((res) => {
-        console.log(res.data);
         setEvents(res.data);
         setIsLoading(false);
       })
       .catch((error) => {
-        console.log(error.response);
       });
   }
 
@@ -94,17 +91,14 @@ export default function VenueDetails() {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .then((res) => {
-        console.log(res.data);
         setreviews(res.data);
         // setEvents(res.data);
         // setEvents(res.data);
         // setProfilesList(res.data);
       })
       .catch((error) => {
-        console.log(error.response);
       });
   };
-console.log('venuedetails',venueDetail)
   return (
     <>
       <NavbarWithSearch userCredit={user.credits} />

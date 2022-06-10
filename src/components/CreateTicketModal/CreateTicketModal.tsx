@@ -41,7 +41,6 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
     credits: ticket ? ticket.credits : 0,
   };
 
-  console.log(ticketFromRef,'ticketform');
   const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
 
   const handleSubmit = (e: any, { resetForm }: any) => {
@@ -149,7 +148,6 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                           values={["50","60","70","80"]}
                           setFieldValue={form.setFieldValue}
                           handleSelectBoxChange={(e: any) => {
-                            console.log(e);
                             form.setFieldValue(
                               "credits",
 
@@ -221,7 +219,6 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
 
                 {/* {console.log(parseInt(form.values.discount), selectedDiscount)} */}
                 {/* {setTicketForm(form)} */}
-                {console.log(form)}
               </Form>
             )}
           </Formik>

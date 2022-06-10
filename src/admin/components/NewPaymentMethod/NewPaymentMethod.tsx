@@ -24,8 +24,7 @@ const NewPaymentMethod = (props: NewPaymentMethodProps) => {
       currency:e.currency,
       tax_number:e.taxId
     }
-    console.log("body",body)
-    
+
     axios
     .post("/v1/partners/createPartnerPayment/"+user.id,
     body,
@@ -33,12 +32,10 @@ const NewPaymentMethod = (props: NewPaymentMethodProps) => {
       headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` },
     })
     .then((res) => {
-      console.log(res.data,'organizerinfo');
       setLoading(false)
       setCurrentPage("payment-method")
     })
     .catch((error) => {
-      console.log(error.response,'ORGANIZER');
       setLoading(false)
       setErrorMessage("Please fill all the fields")
     });  };

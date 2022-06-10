@@ -45,7 +45,6 @@ const TrialForm = (props: TrialFormProps) => {
       })
       .then((response) => {
         setLoading(false);
-        console.log(response);
 
         dispatch({
           type: "SUBMIT_EMAIL",
@@ -57,12 +56,10 @@ const TrialForm = (props: TrialFormProps) => {
         setCurrentForm("general-info");
       })
       .catch((error) => {
-        console.log("errormessage",error);
         setErrorMessage(error.response.data.message);
         setLoading(false);
       });
 
-    console.log(res);
   };
 
   return (

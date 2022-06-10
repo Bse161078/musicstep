@@ -66,8 +66,6 @@ const PriceCard = (props: any) => {
 
             <OutlineButtonStyle buttonType="dark"
                                 onClick={(e) => {
-                                    console.log("go back")
-
                                     if(localStorage.getItem("status")){
                                         if (showPricing === true )
                                             createSubs(musicType)

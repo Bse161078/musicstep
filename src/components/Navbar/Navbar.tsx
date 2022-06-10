@@ -10,7 +10,6 @@ const Navbar = () => {
 
   const { pathname } = useLocation();
 
-  console.log({ pathname });
 
   const toggle = () => {
     if (window.innerWidth < 768) {
@@ -33,7 +32,6 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll, false);
     };
   }, []);
-console.log("navItem",navItems)
   return (
     <NavbarStyle
       style={{zIndex:1000}}

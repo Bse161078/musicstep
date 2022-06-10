@@ -72,7 +72,6 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
 
   //useEffect
   useEffect(() => {
-    console.log("organizer profile",organizerProfile)
     if (organizerProfile) {
       setLogoImage(
         process.env.REACT_APP_BASE_URL + "/images/" + organizerProfile.logoUrl
@@ -90,11 +89,8 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         item.value = organizerProfile.saftyAndCleaness[item.id];
         return item;
       });
-      // console.log(tempPoliciesState)
       setPoliciesState(tempPoliciesState);
-      // console.log(attributesListState);
 
-      // console.log(organizerProfile.organizationAttributes)
       const tempAttributesList = attributesList.map((item) => {
         item.value = organizerProfile.organizationAttributes[item.id];
         return item;
@@ -116,7 +112,6 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
       });
     }
   }, []);
-  console.log(initialValues);
   //Handler
   const handleattributesList = (currentValue: any, index: any) => {
     const item = { ...currentValue };
@@ -172,7 +167,6 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
           }
         )
         .catch((error) => {
-          console.log(error.response.data.error);
           setSuccessModalVisible(true);
           setMessage(error.response.data.error);
           setHeading("Error");
@@ -181,7 +175,6 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         setSuccessModalVisible(true);
         setMessage("Organizer Logo Updated Successfully");
         setHeading("Success");
-        console.log(res.data);
         // if (!isSuccessModalVisible)
       }
     }
@@ -199,7 +192,6 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
       };
       reader.readAsDataURL(file);
     }
-    console.log("cover");
     if (organizerProfile && file) {
       const bodyData = new FormData();
       bodyData.append("coverPhoto", file);
@@ -212,7 +204,6 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
           }
         )
         .catch((error) => {
-          console.log(error.response.data.error);
           setSuccessModalVisible(true);
           setMessage(error.response.data.error);
           setHeading("Error");
@@ -270,7 +261,6 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
           }
         )
         .catch((error) => {
-          console.log(error.response.data.error);
           setSuccessModalVisible(true);
           setMessage(error.response.data.error);
           setHeading("Error");
@@ -279,7 +269,6 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         setSuccessModalVisible(true);
         setMessage("Organizer Additional photos Updated Successfully");
         setHeading("Success");
-        console.log(res.data);
         // if (!isSuccessModalVisible)
         const photos: [] = res.data.additionalPhotosUrls.map(
           (photo: any) => process.env.REACT_APP_BASE_URL + "/images/" + photo
@@ -309,7 +298,6 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
           }
         )
         .catch((error) => {
-          console.log(error.response.data.error);
           setSuccessModalVisible(true);
           setMessage(error.response.data.error);
           setHeading("Error");
@@ -318,7 +306,6 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         setSuccessModalVisible(true);
         setMessage("Photo remove Successfully");
         setHeading("Success");
-        console.log(res.data);
         // if (!isSuccessModalVisible)
         const photos: [] = res.data.additionalPhotosUrls.map(
           (photo: any) => process.env.REACT_APP_BASE_URL + "/images/" + photo
@@ -382,7 +369,6 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
           headers: { Authorization: `Bearer ${state.authToken}` },
         })
         .catch((error) => {
-          console.log(error.response.data.error);
           setSuccessModalVisible(true);
           setMessage(error.response.data.error);
           setHeading("Error");
@@ -392,7 +378,6 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         setSuccessModalVisible(true);
         setMessage("Organizer created Successfully");
         setHeading("Success");
-        console.log(res.data);
         setIsLoading(false)
       }
     } else {
@@ -406,7 +391,6 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
 
         socialMediaAndMarketingLinks: socialMediaAndMarketingLinks,
       };
-      console.log("body organizer",body)
       setIsLoading(true)
 
       const res = await axios
@@ -428,7 +412,6 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         setSuccessModalVisible(true);
         setMessage("Organizer updated Successfully");
         setHeading("Success");
-        console.log(res.data,'updated');
         setIsLoading(false)
 
         // if (!isSuccessModalVisible)
@@ -551,7 +534,6 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                 style={{ display: "none" }}
                 onChange={(e) => handleLogoUpload(e, form)}
               />
-              {/* {console.log(form)} */}
               <input
                 ref={coverPhotoUpload}
                 type={"file"}

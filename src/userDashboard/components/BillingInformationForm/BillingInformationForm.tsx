@@ -11,9 +11,7 @@ const BillingInformationForm = () => {
   const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
   const { state, dispatch } = useLoginContext();
 
-  console.log(state);
   const { billingInformation } = state.data;
-  console.log(billingInformation);
   const handleBillingFormSubmit = (e: any) => {
     //na
     axios
@@ -29,7 +27,6 @@ const BillingInformationForm = () => {
       )
       .then((res) => {
         setSuccessModalVisible(true);
-        console.log(res.data);
         dispatch({ type: "UPDATE_USER", payload: { data: res.data } });
       })
       .catch(() => alert("Error while submitting data"));

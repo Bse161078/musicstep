@@ -47,9 +47,7 @@ const PartnerLoginForm = () => {
         email: value.userName,
         password: value.password,
       })
-      .then((response) => {
-        console.log(response,'partnerlogin');
-        setLoading(false);
+      .then((response) => {setLoading(false);
         if (value.rememberPassword) {
           addLoginInfoToStorage(
             value.userName,
@@ -69,7 +67,6 @@ const PartnerLoginForm = () => {
         history.push("/admin/metrics");
       })
       .catch((error) => {
-        console.log('errormessage',error.response.data.message)
         setErrorMessage(error.response.data.message);
         setLoading(false);
       });

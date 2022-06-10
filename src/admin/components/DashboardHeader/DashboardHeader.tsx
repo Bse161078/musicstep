@@ -41,7 +41,6 @@ const DashboardHeader = (props: DashboardHeaderProps) => {
     isLoading,
     setLoading
   } = props;
-console.log("props",props)
   return (
     <DashboardHeaderStyle>
       {isLoading&&<Loading/>}

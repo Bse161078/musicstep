@@ -4,7 +4,6 @@ import { UpcomingPayoutsListItemStyle } from "./UpcomingPayoutsList.style";
 import moment from "moment";
 export const UpcomingPayoutsListItem = (props:any) => {
   const {reserveEvent,from,to,search} = props
-  console.log('events :',reserveEvent?.reservations)
   return (
     reserveEvent?.reservations? reserveEvent.reservations.filter((reservation: any) => (new Date(reservation.date)>=from&&new Date(reservation.date)<=to)&&reservation.title.toLowerCase().includes(search)).map((event:any)=>
     <UpcomingPayoutsListItemStyle>

@@ -11,7 +11,6 @@ type PayoutListItemProps = {
 export const PayoutsListItem = (props:PayoutListItemProps) => {
   const {reserveEvent,from,to,search} = props
   const venueFilter = reserveEvent?.reservations && reserveEvent.reservations.filter((reservation: any) => reservation.title.toLowerCase().includes(search))
-console.log("from and to",venueFilter,search,reserveEvent.reservations)
   // console.log('event : ',props,moment(reserveEvent.date).format("MMM Do YYYY"))
   return (
     reserveEvent?.reservations? reserveEvent.reservations.filter((reservation: any) => (new Date(reservation.date)>=from&&new Date(reservation.date)<=to)&&reservation.title.toLowerCase().includes(search)).map((event:any)=>

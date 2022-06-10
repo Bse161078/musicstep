@@ -21,7 +21,6 @@ const EventDetailsModal = (props: EventDetailsModalProps) => {
     event,
     subscribtionCredit
   } = props;
-  console.log("Events", event);
   const history = useHistory();
   return (
     <>

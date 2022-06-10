@@ -32,7 +32,6 @@ const TrialGeneralInfo = (props: TrailGeneralInfoProps) => {
       })
       .then((response) => {
         setLoading(false);
-        console.log(response);
         dispatch({
           type: "SUBMIT_GENERAL_INFO",
           payload: {
@@ -46,7 +45,6 @@ const TrialGeneralInfo = (props: TrailGeneralInfoProps) => {
       .catch((error) => {
         setErrorMessage("Error while submitting data!");
         setLoading(false);
-        console.log("error");
       });
   };
   return (

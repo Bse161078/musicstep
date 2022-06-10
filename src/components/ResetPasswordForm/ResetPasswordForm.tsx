@@ -26,7 +26,6 @@ const ResetPasswordForm = ({ match }: any) => {
   const loc = useLocation();
   const value = queryString.parse(loc.search);
   const [loading, setLoading] = useState(false);
-  console.log(value.token);
 
   const [isModalVisible, setIsModalVisible] = useState(false);
 

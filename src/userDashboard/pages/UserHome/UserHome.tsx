@@ -163,12 +163,10 @@ export default function UserHome() {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .then((res) => {
-        console.log(res.data);
         setEvents(res.data);
         setIsLoading(false);
       })
       .catch((error) => {
-        console.log(error.response);
       });
 
     getReservation();
@@ -224,7 +222,6 @@ export default function UserHome() {
         // setIsLoading(false);
       })
       .catch((error) => {
-        console.log(error.response);
         setIsLoading(false)
       });
   };

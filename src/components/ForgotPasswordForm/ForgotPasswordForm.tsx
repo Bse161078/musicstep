@@ -56,7 +56,6 @@ const ForgotPasswordForm = (props: ForgotPasswordFormProps) => {
         setMessage("Server Error. Please Try Again Later");
         setIsModalVisible(true);
         setMessageHeading("Error");
-        console.log("errormessage",error)
         setLoading(false);
       });
   };

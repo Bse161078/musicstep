@@ -88,7 +88,6 @@ const RoutesList = (props: any) => {
         },
         (error) => {
             if (error.response.status === 401) {
-                console.log("currentLocation", window.location.href)
                 if(!window.location.href.includes("partner-login"))
                 {
                 dispatch({

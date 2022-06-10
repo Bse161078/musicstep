@@ -7,7 +7,6 @@ type EventDetailWrapperProps = {
 };
 export const EventDetailWrapper = ({ event }: EventDetailWrapperProps) => {
   const history = useHistory();
-  console.log("eventsby",event.additionalPhotos.length)
   const eventImage =event.additionalPhotos.length>0 &&
     (event.eventPhotoSameAsOrganizerPhoto || event.additionalPhotos.length === 0
       ? event.organizerInfo[0]?.coverPhotoUrl
@@ -30,7 +29,6 @@ export const EventDetailWrapper = ({ event }: EventDetailWrapperProps) => {
       state: { organizerDetail: event },
     });
   };
-console.log("eventby",event,eventImage)
   return (
     <div className="first-row-wrapper">
       <img

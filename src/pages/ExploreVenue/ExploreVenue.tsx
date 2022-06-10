@@ -56,8 +56,6 @@ export default function ExploreVenue() {
     useEffect(() => {
         setLoading(true)
         navigator.geolocation.getCurrentPosition(function(position) {
-            console.log("Latitude is :", position.coords.latitude);
-            console.log("Longitude is :", position.coords.longitude);
         })
 
         axios
@@ -77,12 +75,10 @@ export default function ExploreVenue() {
         .then((res) => {
             setLoading(false)
             setVenues(res.data.event);
-            console.log('venue : ',res.data)
             setSubscribtion(res.data.subscription)
         })
         .catch((error) => {
             setLoading(false)
-            console.log('venueerror : ',error)
         });
         getUser()
     
@@ -94,23 +90,19 @@ export default function ExploreVenue() {
        
         
         const user: any = JSON.parse(localStorage.getItem("data") || "{}");
-        console.log('userid ',user.id)
         axios.get(`v1/users/${user.id}`,{
           headers: {Authorization: `Bearer ${state.authToken}`},
         })
         .then((res:any)=>{
-            console.log('user',res.data)
           setUser(res.data)
         }).catch((e)=>{
         })
     }
-    console.log('user : ',user)
 
 
     const onSubscribePackage = (e: any) => {
         const user: any = JSON.parse(localStorage.getItem("data") || "{}");
         axios.post('/v1/stripe/pay-subscription', {id: user.id}).then((response) => {
-            //console.log("data = ",response.data.clientSecret);
             window.open(response.data.url, '_blank');
             setLoading(false)
         }).catch((err) => {
@@ -123,7 +115,6 @@ export default function ExploreVenue() {
     }
 
 
-    console.log("venues = ",venues)
 
     return (
         <>
@@ -330,7 +321,6 @@ export default function ExploreVenue() {
                                                 id="1"
                                             />
                                         )
-                                        // console.log(venue)
                                     )}
                                 </GoogleMapReact>
                             )}

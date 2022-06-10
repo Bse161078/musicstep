@@ -8,7 +8,6 @@ const UpcomingEvents = ({ events,venue,subscribtionCredit }: any) => {
   const [reservation, setReservation] = useState(0);
   let tempresrvatoin = 0;
   
-  console.log(events,"eventstoexplore",venue);
   return (
     <UpcomingEventsStyle>
       {/* <div className="list-header">

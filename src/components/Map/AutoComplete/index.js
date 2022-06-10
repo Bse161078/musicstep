@@ -84,7 +84,6 @@ const AutoCompletePlaces=(props)=>{
     };
 
     const onPlaceSelected = (place) => {
-        console.log("plc", place);
         const address = place.formatted_address,
             addressArray = place.address_components,
             city = getCity(addressArray),
@@ -95,8 +94,6 @@ const AutoCompletePlaces=(props)=>{
             country = getCountry(addressArray);
 
 
-        console.log("latvalue", latValue);
-        console.log("lngValue", lngValue);
 
         const location={
             address: address ? address : "",
@@ -117,7 +114,6 @@ const AutoCompletePlaces=(props)=>{
         props.onChangeLocation(location);
     };
 
-    console.log("location  = ",location)
 
     return(
         <Fragment>

@@ -85,7 +85,6 @@ const ShareYourExperinceModal = (props: ShareYourExperinceModalProps) => {
             }}
             validationSchema=""
             onSubmit={(values) => {
-              console.log(values)
             }}
           >
             {() => (

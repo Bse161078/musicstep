@@ -27,12 +27,10 @@ const PreviewOrganizationInfo = (props: PreviewOrganizationInfoProps) => {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .then((res) => {
-        console.log(res.data,'organizerinfo');
         setProfilesList(res.data);
         setLoading(false)
       })
       .catch((error) => {
-        console.log(error.response);
         setLoading(false)
       });
   }, []);

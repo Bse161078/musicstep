@@ -17,7 +17,6 @@ type MessageModalProps = {
 };
 
 const MessageModal = (props: MessageModalProps) => {
-  console.log("propsmodal",props)
   const {
     isModalVisible,
     handleOkClick,

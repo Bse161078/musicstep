@@ -26,7 +26,6 @@ export default function FreeTrial() {
     let stateObj: any = history.location?.state;
 
     if (stateObj && stateObj.previousPath.includes("/partner-detail")) {
-        console.log(stateObj);
         initialLoadFormName = "set-password";
     }
     const [currentForm, setCurrentForm] = useState(initialLoadFormName);
@@ -40,7 +39,6 @@ export default function FreeTrial() {
         const clientSecret = new URLSearchParams(window.location.search).get(
             "setup_intent_client_secret"
         );
-        console.log("clientSecret = ", clientSecret);
         if (clientSecret && clientSecret.length > 0) {
             setCurrentForm("trial-billing-information")
             setLoading(false)
@@ -68,7 +66,6 @@ export default function FreeTrial() {
     ) {
         history.push("/explore-venue");
     }
-    console.log("Explore venue", loginContext.state)
 
     const {dispatch} = usePartnerContext();
     const resetPartnerForm = () => {
@@ -79,14 +76,12 @@ export default function FreeTrial() {
     };
 
     const createSubscription = (paymentMethod: string, subscriptionName: string) => {
-        console.log("asadas")
         setLoading(true)
         axios.post('/v1/stripe/create-subscription', {
             id: localStorage.getItem("id"),
             paymentMethod,
             subscriptionName
         }).then((response) => {
-            console.log("subscription = ", response);
             setLoading(false);
             setIsModalVisible(true);
 
@@ -107,7 +102,6 @@ export default function FreeTrial() {
                 },
             });
         }).catch((err: any) => {
-            console.log("err = ", err.response)
             setLoading(false)
         })
     }
@@ -115,7 +109,6 @@ export default function FreeTrial() {
 
     const createSubs = (subscriptionName:any) => {
 
-        console.log(paymentMethod)
 
         setLoading(true)
         axios.post('/v1/stripe/create-subscription', {
@@ -123,7 +116,6 @@ export default function FreeTrial() {
             paymentMethod: paymentMethod,
             subscriptionName: subscriptionName
         }).then((response) => {
-            console.log("subscription = ", response);
             setLoading(false);
             setIsModalVisible(true);
 
@@ -155,7 +147,6 @@ export default function FreeTrial() {
 
 
     const CurrentTrialStep = useMemo(() => {
-        console.log(currentForm)
         switch (currentForm) {
             case "trial-info":
                 return <TrialForm setCurrentForm={setCurrentForm}/>;
@@ -189,7 +180,6 @@ export default function FreeTrial() {
         setIsModalVisible(false);
         history.push("/explore-venue");
     };
-    console.log("setIsPricing = ", isPricing)
     return (
         <FreeTrialStyle>
             {loading && <Loading/>}

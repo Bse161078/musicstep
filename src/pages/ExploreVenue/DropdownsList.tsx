@@ -6,7 +6,6 @@ import { DropdownsListStyle } from "./ExploreVenue.style";
 
 export const DropdownsList = (props:any) => {
   const {filter,setVenues,setLoading} = props
-  console.log("filtr",filter)
   return (
     <DropdownsListStyle>
       <Formik

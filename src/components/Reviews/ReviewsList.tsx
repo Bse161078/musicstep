@@ -7,7 +7,6 @@ import moment from "moment";
 const ReviewsList = ({ review }: any) => {
   // let rating=  ;
   // rating=parseInt( rating);
-  console.log("reviewuser",review)
   return (
     <ReviewsListStyle>
       <div className="head-wrapper">

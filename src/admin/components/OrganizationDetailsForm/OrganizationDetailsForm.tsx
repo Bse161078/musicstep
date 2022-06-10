@@ -14,7 +14,6 @@ const OrganizationDetailsForm = React.forwardRef((props: any, ref: any) => {
   const [previewProfileImage, setPreviewProfileImage] = useState<string>(
     process.env.REACT_APP_BASE_URL + "/images/" + state.data.imageUrl
   );
-  console.log(state.data);
 
   //Handle file upload
   let fileUpload: any = React.createRef();
@@ -46,11 +45,9 @@ const OrganizationDetailsForm = React.forwardRef((props: any, ref: any) => {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .catch((error) => {
-        console.log(error);
       });
     if (res) {
       setSuccessModalVisible(true);
-      console.log(res.data);
       dispatch({
         type: "UPDATE_USER",
         payload: {

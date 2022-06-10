@@ -36,7 +36,6 @@ const CheckingAvailablityModal = (props: CheckingAvailablityModalProps) => {
     event,
     ticketIndex,
   } = props;
-  console.log("message,",props)
 
   return (
     <>

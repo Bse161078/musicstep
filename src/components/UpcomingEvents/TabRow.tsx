@@ -36,7 +36,6 @@ export const TabRow = (props: TabRowProps) => {
       ? (endTime.diff(startTime, "minutes") % 60) + "mint"
       : null;
 
-  console.log("Events TabRow", event);
 
   return (
     <>

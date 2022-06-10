@@ -32,23 +32,18 @@ const UpdateSubscription = () => {
     useEffect(()=>{
         const user=JSON.parse(localStorage.getItem("data")||"");
         axios.post('/v1/stripe/add-card-intent', {id: user.id}).then((response) => {
-            //console.log("data = ",response.data.clientSecret);
             setClientSecret(response.data.clientSecret);
         }).catch((err) => {
-            console.log("err = ", err.response)
         })
     },[])
 
 
     const updateSubscriptionPaymentMethod=(paymentMethod)=>{
-        console.log("updateSubscriptionPaymentMethod = ",paymentMethod);
         const user=JSON.parse(localStorage.getItem("data"));
         axios.post('/v1/stripe/update-subscription-method', {id: user.id,paymentMethod}).then((response) => {
-            //console.log("data = ",response.data.clientSecret);
             setClientSecret(response.data.clientSecret);
             history.push("/explore-venue");
         }).catch((err) => {
-            console.log("err = ", err.response);
             history.push("/explore-venue");
         })
 

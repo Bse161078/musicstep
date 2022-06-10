@@ -28,7 +28,6 @@ export default function AddCard(props) {
         }
 
         stripe.retrieveSetupIntent(clientSecret).then(({setupIntent}) => {
-            console.log("setupIntent111 = ",setupIntent)
             if(props.setSetupIntent) {
                 props.setSetupIntent(setupIntent.payment_method);
             }
@@ -109,7 +108,6 @@ export default function AddCard(props) {
 
     };
 
-    console.log("message = ", !stripe,"   elements = ",!elements,isLoading)
     return (
         <Fragment>
            

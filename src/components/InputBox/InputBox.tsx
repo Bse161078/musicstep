@@ -8,7 +8,6 @@ import {
 
 const InputBox = (props: any) => {
   const [field, meta] = useField(props);
-  console.log("props",props)
   const inputRef = useRef();
   const [showPassword, setShowPassword] = useState(false)
   useEffect(()=>{

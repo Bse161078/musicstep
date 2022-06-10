@@ -17,7 +17,6 @@ export const OrganizationListItem = (props: OrganizationListItemProps) => {
   // useEffect(() => {
   //   // setImgurl();
   // }, []);
-console.log('organizer',props)
   return (
     <OrganizationListItemStyle>
       <div className="thumb-with-content">

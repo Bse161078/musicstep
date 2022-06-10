@@ -24,7 +24,6 @@ const RedeemOfferForm = (props: TrailSetPasswordProps) => {
   } = useUserContext();
 
   const handleSetPasswordSubmit = (e: any) => {
-    console.log("EVENTS: ", e);
     setLoading(true);
 
     //d
@@ -45,7 +44,6 @@ const RedeemOfferForm = (props: TrailSetPasswordProps) => {
       .catch((error) => {
         setErrorMessage(error.message);
         setLoading(false);
-        console.log("error", error);
       });
   };
   return (

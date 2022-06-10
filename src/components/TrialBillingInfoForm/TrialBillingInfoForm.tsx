@@ -31,10 +31,8 @@ const TrialBillingInfoForm = (props: any) => {
         }
         const user: any = JSON.parse(localStorage.getItem("data") || "{}");
         axios.post('/v1/stripe/add-card-intent', {id: localStorage.getItem("id")}).then((response) => {
-            console.log("clientSecret", response.data);
             setClientSecret(response.data.clientSecret);
         }).catch((err) => {
-            console.log("err = ", err.response)
         })
         // fetch("http://localhost:3001/stripe/create-payment-intent", {
         //     method: "POST",
@@ -69,8 +67,6 @@ const TrialBillingInfoForm = (props: any) => {
             })
             .then((response) => {
                 setLoading(false);
-
-                console.log(response);
                 dispatch({
                     type: "SUBMIT_TRIAL_BILLING",
                     payload: {
@@ -90,7 +86,6 @@ const TrialBillingInfoForm = (props: any) => {
             .catch((error) => {
                 // setErrorMessage("Email already exist!");
                 setLoading(false);
-                console.log("error");
             });
     };
 
@@ -100,7 +95,6 @@ const TrialBillingInfoForm = (props: any) => {
             id: sessionStorage.getItem("id"),
             paymentMethod
         }).then((response) => {
-            console.log("subscription = ", response);
             setLoading(false);
 
             const user = response.data.user;
@@ -121,7 +115,6 @@ const TrialBillingInfoForm = (props: any) => {
                 },
             });
         }).catch((err) => {
-            console.log("err = ", err.response)
             setLoading(false)
         })
     }
@@ -133,8 +126,6 @@ const TrialBillingInfoForm = (props: any) => {
         clientSecret,
         appearance,
     };
-
-    console.log("props  = ", props);
     return (
         <TrialBillingInfoFormStyle>
             {loading && <Loading/>}

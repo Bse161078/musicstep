@@ -97,14 +97,12 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
         fetch("https://api.countrystatecity.in/v1/countries", requestOptions)
             .then((response) => response.json())
             .then((result) => {
-                console.log("countries = ",result)
                 const tempcountry = result.map((country: any) => {
                     return country.name;
                 });
                 setCountries(tempcountry);
-                console.log("country", countries)
             })
-            .catch((error) => console.log("error", error));
+            .catch((error) =>{});
 
         axios
             .get("/v1/organizer/All", {
@@ -119,7 +117,6 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                 setOrganizersForDropDown(tempOrganizer);
             })
             .catch((error) => {
-                console.log(error.response);
             });
 
         axios
@@ -127,12 +124,9 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                 headers: {Authorization: `Bearer ${state.authToken}`},
             })
             .then((res) => {
-                console.log("venues",res.data)
                 setVenues(res.data);
             })
-            .catch((error) => {
-                console.log(error.response);
-            });
+            .catch((error) => {});
     }, []);
 
     useEffect(() => {
@@ -140,7 +134,6 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
             const countryId = countries.findIndex(
                 (item: any) => item === selectedCountry
             );
-            console.log("coutry", countryId)
             if (countryId) {
                 setSelectedCountryIndex(countryId + 1);
 
@@ -152,15 +145,15 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                 )
                     .then((response) => response.json())
                     .then((result) => {
-                        console.log("result", result)
                         setStatesObj(result);
                         const tempState = result.map((country: any) => {
                             return country.name;
                         });
                         setStates(tempState);
-                        console.log("states", states)
                     })
-                    .catch((error) => console.log("error", error));
+                    .catch((error) => {
+
+                    });
             }
         }
     }, [selectedCountry]);
@@ -171,7 +164,6 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                 (item: any) => item.name === selectedState
             );
 
-            console.log(stateObj);
             if (stateObj) {
                 const stateId = stateObj.iso2;
 
@@ -187,14 +179,13 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                         setcities(tempCities);
 
                     })
-                    .catch((error) => console.log("error", error));
+                    .catch((error) => {});
             }
         }
     }, [selectedState]);
 
     useEffect(() => {
         if (isVenuePhotoSameAsOrganizer && selectedOrganizerId) {
-            console.log(organizers);
             const singleorganizer: any = organizers.find(
                 (item: any) => item.id === selectedOrganizerId
             );
@@ -254,7 +245,6 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
         const filteredEvent:any=venues.find((v:any)=>e.venue===v.location.address);
         const filteredOrganizer:any=organizers.find((org:any)=>e.organizer===org.organizerName);
 
-        console.log("eventData = ",e,"   ",filteredOrganizer);
 
         e.venue_id=filteredEvent.id;
         e.organizer_id=filteredOrganizer.id;
@@ -262,7 +252,6 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
         setEventData({...eventData, ...e});
         setCurrentStep(2);
     };
-    console.log(EventStateContext.state);
 
     // const handleStartTime = (e: any, form: any) => {
     //   const timeForm = /^((1[0-2]|0?[1-9]):([0-5][0-9]) ?([AaPp][Mm]))$/;
@@ -273,7 +262,6 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
     //     let beginningTime = moment(e.target.value, "h:mma");
     //     let endTime = moment(form.values.endingTime, "h:mma");
 
-    //     console.log(beginningTime.isBefore(endTime));
 
     //     if (!beginningTime.isBefore(endTime)) {
     //       form.setFieldError(
@@ -293,7 +281,6 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
     //     let beginningTime = moment(form.values.startingTime, "h:mma");
     //     let endTime = moment(e.target.value, "h:mma");
 
-    //     console.log(beginningTime.isBefore(endTime));
 
     //     if (!beginningTime.isBefore(endTime)) {
     //       form.setFieldError(
@@ -309,10 +296,8 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
     //   endingTime: string,
     //   form: any
     // ) => {
-    //   console.log(startingTime, endingTime);
     //   var beginningTime = moment(startingTime, "h:mma");
     //   var endTime = moment(endingTime, "h:mma");
-    //   console.log(beginningTime.isBefore(endTime));
     //   if (!beginningTime.isBefore(endTime)) {
     //     form.setErrors(
     //       "endingTime",
@@ -324,7 +309,6 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
     const filteredVenues = venues.map((venue: any) => {
         return venue.location.address;
     });
-    console.log("venues", filteredVenues)
 
     return (
         <SubmitEventStep1Style>
@@ -363,7 +347,6 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                 <DatePickerModal
                     value={form.values.date}
                     onChange={(e: any) => {
-                        console.log(typeof e,"date",new Date(e),new Date());
                         form.setFieldValue("date", e);
                     }}
                     lable="Date"
@@ -376,7 +359,6 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                 <TimePickerModal
                     value={form.values.startingTime}
                     onChange={(e: any) => {
-                        console.log(typeof e);
                         form.setFieldValue("startingTime", e);
                     }}
                     lable="Start Time"
@@ -392,7 +374,6 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                 <TimePickerModal
                     value={form.values.endingTime}
                     onChange={(e: any) => {
-                        console.log(typeof e);
                         form.setFieldValue("endingTime", e);
                     }}
                     lable="End Time"
@@ -483,7 +464,6 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                                 className="addvenue-btn"
                                 type="button"
                                 onClick={() => {
-                                    console.log(form.values);
                                     EventStateContext.dispatch({
                                         type: "SAVE_EVENT",
                                         payload: {
@@ -534,7 +514,6 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                         )}
                         {form.values.organizer !== selectedOrganizerId &&
                         setSelectedOrganizerId(form.values.organizer)}
-                        {console.log(form)}
 
                         <EventManagmenPhotoScroller
                             setField={form.setFieldValue}

@@ -35,7 +35,6 @@ const SelectWithInput = ({placeholder,setSearch,search}: any) => {
         var data = JSON.parse(request.responseText);
         //var address = data.results[0];
         setAddress(data)
-        console.log('address',data)
         dataa = data.locality+" , "+data.countryCode+" , "+data.countryName
       }
       
@@ -51,7 +50,6 @@ const SelectWithInput = ({placeholder,setSearch,search}: any) => {
       displayLocation(position.coords.latitude,position.coords.longitude)
     })
   }
-  console.log('addressdata',address)
   return (
     <SelectWithInputStyle>
       <Formik

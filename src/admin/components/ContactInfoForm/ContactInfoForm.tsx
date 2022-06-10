@@ -32,7 +32,6 @@ const ContactInfoForm = (props:any) => {
   }    
   useEffect(()=>{
     setContactInfo(JSON.parse(JSON.stringify(data)))
-    console.log("contactinfo",contactInfo)
   },[])
   const editProfile=()=>{
     setLoading(true)
@@ -55,12 +54,9 @@ const ContactInfoForm = (props:any) => {
     })
     .catch((error) => {
       setLoading(false)
-      console.log(error.response,'editprofileerror');
     });
   }
 
-  
-  console.log(data,'contactInfo');
   return (
     <ContactInfoFormStyle>
        <MessageModal

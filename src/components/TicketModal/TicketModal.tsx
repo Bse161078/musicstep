@@ -40,7 +40,6 @@ const TicketModal = (props: TicketModalProps) => {
     "Saturday",
   ];
   const credit=(props.eventCredit||0)-(props.subscribtionCredit||0)
-  console.log("eventCredit-subcredit",props.eventCredit,props.subscribtionCredit,credit)
   const handlereservation = async () => {
     const bodyData = {
       event: props.event._id,
@@ -53,7 +52,6 @@ const TicketModal = (props: TicketModalProps) => {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .catch((error) => {
-        console.log(error.response,'errormessage');
         setMessage(error.response.data.message);
       });
 
@@ -67,12 +65,9 @@ const TicketModal = (props: TicketModalProps) => {
         })
         .catch((error) => {
           setBuyCredit(props.eventCredit&&props.subscribtionCredit?props.eventCredit-props.subscribtionCredit:0)
-          console.log(error,'responseerror');
           alert(error.response.data.message);
         });
       if (response) {
-        console.log(response,"response");
-
         dispatch({
           type: "UPDATE_USER_CREDITS",
           payload: {

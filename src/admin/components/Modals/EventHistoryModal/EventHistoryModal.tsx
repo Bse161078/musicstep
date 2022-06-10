@@ -12,7 +12,6 @@ type EventHistoryModalProps = {
 
 const EventHistoryModal = (props: EventHistoryModalProps) => {
   const { isModalVisible, setIsModalVisible, reservations } = props;
-console.log("reservations",reservations)
   return (
     <ModalWrapper
       isModalVisible={isModalVisible}

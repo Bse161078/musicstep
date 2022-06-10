@@ -80,8 +80,6 @@ const AddVenueProfileForm = () => {
     const getLocation = (lat: any, lng: any) => {
         Geocode.fromLatLng(lat, lng).then(
             (response) => {
-                console.log(response);
-                console.log("location = ",formikForm)
 
                 if(formikForm){
                     formikForm.setFieldValue("address", response.results[0].formatted_address);
@@ -94,7 +92,6 @@ const AddVenueProfileForm = () => {
 
             },
             (error) => {
-                console.error(error);
             });
     }
 
@@ -182,7 +179,6 @@ const AddVenueProfileForm = () => {
     };
 
     const onSubmit = async (e: any) => {
-        console.log("venuedata", e)
         setLoading(true)
         const saftyAndCleaness: any = {};
         policiesState.forEach((currentValue: any) => {
@@ -230,7 +226,6 @@ const AddVenueProfileForm = () => {
                 headers: {Authorization: `Bearer ${state.authToken}`},
             })
             .catch((error) => {
-                console.log(error.respons, 'sad');
                 setSuccessModalVisible(true);
                 setMessage(error.response.data.error);
                 setLoading(false)
@@ -241,7 +236,6 @@ const AddVenueProfileForm = () => {
             setSuccessModalVisible(true);
             setMessage("Venue created Successfully");
             setHeading("Success");
-            console.log(res.data);
         }
         // }
         // else
@@ -265,7 +259,6 @@ const AddVenueProfileForm = () => {
         //       }
         //     )
         //     .catch((error) => {
-        //       console.log(error.response.data.error);
         //       setSuccessModalVisible(true);
         //       setMessage(error.response.data.error);
         //       setHeading("Error");
@@ -274,7 +267,6 @@ const AddVenueProfileForm = () => {
         //     setSuccessModalVisible(true);
         //     setMessage("Organizer Profile Updated Successfully");
         //     setHeading("Success");
-        //     console.log(res.data);
         //     // if (!isSuccessModalVisible)
         //   }
         // }
@@ -299,7 +291,6 @@ const AddVenueProfileForm = () => {
         // props.setAddress(address);
         // props.setCountry(country);
         // setGig({ ...gig, address: address, lat: lat, lng: lng });
-        console.log(country, state, city, address, lat, lng);
 
         // setLocation({
         //     country: country,
@@ -312,7 +303,6 @@ const AddVenueProfileForm = () => {
     };
 
 
-    console.log("amentiesState = ", amentiesState)
 
     return (
         <>
@@ -358,7 +348,6 @@ const AddVenueProfileForm = () => {
                           {form.errors.logo}
                         </span>
                                                 )}
-                                                {console.log(form)}
                                             </div>
                                             <div>
                                                 <LabelWithTag label="Your Cover Photo"/>
@@ -393,7 +382,6 @@ const AddVenueProfileForm = () => {
                                         style={{display: "none"}}
                                         onChange={(e) => handleLogoUpload(e, form)}
                                     />
-                                    {console.log(form)}
                                     <input
                                         ref={coverPhotoUpload}
                                         type={"file"}
@@ -495,7 +483,6 @@ const AddVenueProfileForm = () => {
                                                         setLocation({lat, lng})
 
                                                     }
-                                                    console.log(country, state, city, address, lat, lng);
                                                 }}
                                             />
                                         </MapModalWrapper>
@@ -588,7 +575,6 @@ const AddVenueProfileForm = () => {
                                         onClick={() => {
                                         }}
                                     />
-                                    {console.log(form)}
                                 </Form>
                             )
                         }}

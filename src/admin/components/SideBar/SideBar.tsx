@@ -11,7 +11,6 @@ const SideBar = (props: SideBarProps) => {
   const { sidebarItems } = props;
 
   const location = useLocation();
-  console.log(location.pathname);
   return (
     <SideBarStyle>
       <div className="sidebar-container">

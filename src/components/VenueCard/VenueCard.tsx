@@ -17,10 +17,8 @@ const VenueCard = ({ venue,subscribtionCredit }: any) => {
   const [isLoading, setIsLoading] = React.useState(false);
   
   useEffect(() => {
-    console.log("venueInfo",venue)
    setEvents(null)
   }, []);
-  console.log("venueInfo",venue)
 
   const handleClick = () => {
     history.push({
@@ -41,12 +39,10 @@ const VenueCard = ({ venue,subscribtionCredit }: any) => {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .then((res) => {
-        console.log(res.data);
         setEvents(res.data.event);
         setIsLoading(false);
       })
       .catch((error) => {
-        console.log(error.response);
       });
   }
   return (

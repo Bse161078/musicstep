@@ -18,7 +18,6 @@ const EmailPreference = (props: EmailPreferenceProps) => {
   const [emailPrefereence2,setEmailPreference2] = useState(user.preferences && user.preferences.unsubscribe?user.preferences.unsubscribe:false)
   const [loading,setLoading] = useState(false)
   const [errorMessage,setErrorMessage] = useState('')
-  console.log("email preference",emailPrefereence1,emailPrefereence2)
   const handleEmailPreffrence = () => {
     setLoading(true)
     
@@ -26,8 +25,7 @@ const EmailPreference = (props: EmailPreferenceProps) => {
       events_sales:emailPrefereence1,
       unsubscribe:emailPrefereence2,
     }
-    console.log("body",body)
-    
+
     axios
     .put("/v1/partners/preferences/"+user.id,
     body,
@@ -35,13 +33,11 @@ const EmailPreference = (props: EmailPreferenceProps) => {
       headers: { Authorization: `Bearer ${localStorage.getItem("authToken")}` },
     })
     .then((res) => {
-      console.log(res.data,'organizerinfo');
       setLoading(false)
       localStorage.setItem("data", JSON.stringify(res.data));
       setCurrentPage("payment-method")
     })
     .catch((error) => {
-      console.log(error.response,'ORGANIZER');
       setLoading(false)
       setErrorMessage("Please fill all the fields")
     });  };

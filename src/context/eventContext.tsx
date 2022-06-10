@@ -49,7 +49,6 @@ export const useEventContext = () => useContext(EventContext);
 const reducer = (state: any, action: any) => {
   switch (action.type) {
     case "SAVE_EVENT":
-      console.log(action.payload);
       return {
         ...state,
         title: action.payload.data.title,
@@ -70,7 +69,6 @@ const reducer = (state: any, action: any) => {
         previewVenuePhoto: action.payload.previewVenuePhoto,
       };
     case "SAVE_TICKET":
-      console.log(action.payload);
       return {
         ...state,
         tickets: action.payload.tickets,

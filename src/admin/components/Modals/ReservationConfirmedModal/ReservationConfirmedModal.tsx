@@ -50,7 +50,6 @@ let event = {
   startTime: '2016-09-16T20:15:00-04:00',
   endTime: '2016-09-16T21:45:00-04:00'
 };
-console.log("event",event)
   const handleExportWithComponent = (event: any) => {
     const file = pdfExportComponent.current.save();
   };
@@ -69,7 +68,6 @@ console.log("event",event)
         }
       )
       .then((response) => {
-        console.log(response);
         setsuccessModel(true);
         setMessageHeading("Success");
         setMessage("Invitation Email send Successfully");
@@ -82,7 +80,6 @@ console.log("event",event)
       });
   };
   useEffect(() => {
-    console.log(window.location.pathname); //yields: "/js" (where snippets run)
     setBaseUrl(window.location.href.replace(window.location.pathname, ""));
   }, []);
   let icon = { 'calendar-plus-o': 'left' };

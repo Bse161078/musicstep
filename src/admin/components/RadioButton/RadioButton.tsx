@@ -6,7 +6,6 @@ const RadioButton = () => {
   const [value, setValue] = useState(1);
 
   const onChange = (e: any) => {
-    console.log("radio checked", e.target.value);
     setValue(e.target.value);
   };
   return (

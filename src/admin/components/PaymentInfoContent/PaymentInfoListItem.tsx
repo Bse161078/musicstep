@@ -13,7 +13,6 @@ export const PaymentInfoListItem = (props: PaymentInfoListItemProps) => {
   const { setCurrentPage } = props;
   const [isModalVisible, setIsModalVisible] = useState(false)
 
-  console.log(setCurrentPage)
   return (
     <PaymentInfoListItemStyle>
       <div className="content-wrapper">

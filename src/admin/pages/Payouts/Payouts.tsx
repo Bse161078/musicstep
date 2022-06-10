@@ -47,7 +47,6 @@ export default function Payouts() {
     }).then((response) => {
       setLoading(false)
       setReserveEvent(response.data)
-      console.log("subsribe package", response.data);
     }).catch((err) => {
       setLoading(false)
   })

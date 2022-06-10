@@ -17,13 +17,11 @@ const EventsManagment = () => {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .then((res) => {
-        console.log(res.data,"events");
         // setEvents(res.data);
         setEvents(res.data);
         // setProfilesList(res.data);
       })
       .catch((error) => {
-        console.log(error.response,'eventsderror');
       });
   }, []);
 

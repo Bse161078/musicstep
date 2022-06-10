@@ -18,7 +18,6 @@ import { UserSidebarStyle } from "./UserSidebar.style";
 import { useLoginContext } from "../../../context/authenticationContext";
 import axios from "axios";
 const UserSidebar = ({ reservations,subscription,timeDifference }: any) => {
-  console.log("time",timeDifference)
   const { dispatch, state } = useLoginContext();
   const [isLogoutVisible, setLogoutVisible] = useState(false);
   const [isSubscriptionVisible, setSubscriptionVisible] = useState(false);
@@ -36,7 +35,6 @@ const UserSidebar = ({ reservations,subscription,timeDifference }: any) => {
     isPeopelWithMutualFreindsModalVisible,
     setPeopelWithMutualFreindsModalVisible,
   ] = useState(false);
-  console.log("state.data.imageUrl",state.data.imageUrl)
   const history = useHistory();
 
   const handleModalCancelClick = () => {

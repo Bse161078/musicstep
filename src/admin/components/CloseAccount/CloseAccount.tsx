@@ -35,7 +35,6 @@ const CloseAccount = (props: any) => {
                     headers: {Authorization: `Bearer ${localStorage.getItem('authToken')}`},
                 })
             .then((response) => {
-                console.log("response = ",response);
                 setLoading(false);
                 window.history.replaceState(null, "", "/");
                 dispatch({
@@ -44,7 +43,6 @@ const CloseAccount = (props: any) => {
                 });
                 history.push("/");
             }).catch((error) => {
-            console.log('responseerror', error.response.data.message)
             setErrorMessage(error.response.data.message)
             setLoading(false);
         });

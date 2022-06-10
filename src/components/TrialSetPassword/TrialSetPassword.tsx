@@ -70,10 +70,8 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
           }
         })
         .catch((error) => {
-          console.log({ error });
           setErrorMessage(error.message);
           setLoading(false);
-          console.log("error");
         });
     } else {
       setLoading(false);

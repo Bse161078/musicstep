@@ -15,7 +15,6 @@ type SubmitEventStep2Props = {
 
 const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
   const EventStateContext = useEventContext();
-  console.log(EventStateContext.state);
   const history = useHistory();
   const { setCurrentStep, eventData } = props;
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -75,7 +74,6 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
         headers: { Authorization: `Bearer ${state.authToken}`,"Content-Type": "multipart/form-data"  },
       })
       .catch((error) => {
-        console.log(error.response,'error1111');
         //  setSuccessModalVisible(true);
         setIsModalVisible(true);
         setLoading(false)
@@ -92,7 +90,6 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
       setMessage("Event created Successfully");
       setMessageType("success");
       setIsModalVisible(true);
-      //  console.log(res.data);
       EventStateContext.dispatch({
         type: "REMOVE_EVENT_INFO",
         payload: {},
@@ -158,7 +155,6 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
         setIsModalVisible={setIsModalVisible}
         handleOkClick={() => {
           if (messageType === "success") {
-            console.log('done')
             history.push("/admin/events-management");
           }
         }}

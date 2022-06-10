@@ -27,7 +27,6 @@ const ChangePasswordForm = () => {
         .then(() => setSuccessModalVisible(true))
         .catch((error) => 
         {
-        console.log("error: ", error)
         setError("Your Current Password is not right")
         }
         );

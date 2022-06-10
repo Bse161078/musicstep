@@ -19,7 +19,6 @@ const CreateCreditPayment = () => {
     const location = useLocation();
     const history = useHistory();
     const buyCredit = location.state.buyCredit;
-    console.log("buy credit", buyCredit)
     const stripePromise = loadStripe("pk_test_51KtcQTFJ50BG2GSltkm4lfPaxH6c8raqCKt9hoBFpgAnJ9loSE8eWTU0PsTRV5wlAcgCY5n7ZMwMXfWg8FPwDPGC009SYAHTEk");
     const [clientSecret, setClientSecret] = useState("");
     const [loading, setLoading] = useState(false);
@@ -38,27 +37,21 @@ const CreateCreditPayment = () => {
         const user = JSON.parse(localStorage.getItem("data") || "{}");
         setLoading(true)
         axios.post('/v1/stripe/create-credit-payment', {id: user.id,credit:buyCredit}).then((response) => {
-            console.log("v1/stripe/pay-subscription = ",response.data);
             //window.open(response.data.url, '_blank');
             setLoading(false);
             setClientSecret(response.data.clientSecret);
-            //console.log("subsribe package", response.data.url);
         }).catch((err) => {
-            console.log(err.response);
             setLoading(false)
         })
     },[])
 
 
     const updateSubscriptionPaymentMethod=(paymentMethod)=>{
-        console.log("updateSubscriptionPaymentMethod = ",paymentMethod);
         const user=JSON.parse(localStorage.getItem("data"));
         axios.post('/v1/stripe/update-subscription-method', {id: user.id,paymentMethod}).then((response) => {
-            //console.log("data = ",response.data.clientSecret);
             setClientSecret(response.data.clientSecret);
             history.push("/explore-venue");
         }).catch((err) => {
-            console.log("err = ", err.response);
             history.push("/explore-venue");
         })
 

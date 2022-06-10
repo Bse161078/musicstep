@@ -12,7 +12,6 @@ export const TeamUsersListItem = () => {
     //setShow(false)
     setShowEditUserModal(false);
   }
-  console.log("ssa = ",showEditUserModal)
 
   return (
     <TeamUsersListItemStyle>
