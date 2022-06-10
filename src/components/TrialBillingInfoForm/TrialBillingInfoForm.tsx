@@ -25,13 +25,13 @@ const TrialBillingInfoForm = (props: any) => {
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        
+
         if (id && id.length > 0) {
             localStorage.setItem("id", id);
         }
-                const user: any = JSON.parse(localStorage.getItem("data") || "{}");
+        const user: any = JSON.parse(localStorage.getItem("data") || "{}");
         axios.post('/v1/stripe/add-card-intent', {id: localStorage.getItem("id")}).then((response) => {
-            console.log("clientSecret",response.data)
+            console.log("clientSecret", response.data);
             setClientSecret(response.data.clientSecret);
         }).catch((err) => {
             console.log("err = ", err.response)
@@ -134,7 +134,7 @@ const TrialBillingInfoForm = (props: any) => {
         appearance,
     };
 
-    console.log("client secre1t = ", clientSecret);
+    console.log("props  = ", props);
     return (
         <TrialBillingInfoFormStyle>
             {loading && <Loading/>}
@@ -175,9 +175,16 @@ const TrialBillingInfoForm = (props: any) => {
                         {/* {errorMessage !== "" && (
               <p className="error-message">{errorMessage}</p>
             )} */}
-                        <FilledButtonStyle width="100%" height="60px">
-                            Redeem Now
-                        </FilledButtonStyle>
+                        {props.isPricing &&
+                            <FilledButtonStyle width="100%" height="60px" onClick={()=>{
+                                const selectedSubscription = localStorage.getItem("subscription") ?
+                                    JSON.parse(localStorage.getItem("subscription") || "{}"):
+                                    {credits: "48",eventsCount: "3-4",musicType: "Enthusiast",price: "$99"};
+                                props.createSubs(selectedSubscription.musicType);
+                            }}>
+                                Confirm
+                            </FilledButtonStyle>
+                        }
                     </Form>
                 )}
             </Formik>

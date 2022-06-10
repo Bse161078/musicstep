@@ -8,6 +8,9 @@ type BillingInformationProps = {
 
 const BillingInformation = (props: BillingInformationProps) => {
   const { leftHeading } = props;
+    const selectedSubscription = localStorage.getItem("subscription") ?
+        JSON.parse(localStorage.getItem("subscription") || "{}"):
+        {credits: "48",eventsCount: "3-4",musicType: "Enthusiast",price: "$99"};
 
   return (
     <BillingInformationStyle>
@@ -16,7 +19,7 @@ const BillingInformation = (props: BillingInformationProps) => {
       <div className="icon-with-description">
         <MusicIcon />
         <p className="description">
-          68 Credits To Book As Many As 5-6 Reservations.
+            {`${selectedSubscription.credits} Credits To Book As Many As ${selectedSubscription.eventsCount} Reservations.`}
         </p>
       </div>
 
@@ -35,11 +38,11 @@ const BillingInformation = (props: BillingInformationProps) => {
       <div className="billing-footer">
         <div className="billing-footer-wrapper">
           <p className="footer-info">30 Days Package</p>
-          <p className="footer-title">Due Today</p>
+          <p className="footer-title">Due After 7 days</p>
         </div>
         <div className="billing-footer-wrapper">
-          <p className="footer-info">$139.00</p>
-          <p className="footer-title">$139.00</p>
+          <p className="footer-info">{selectedSubscription.price}</p>
+          <p className="footer-title">{selectedSubscription.price}</p>
         </div>
       </div>
     </BillingInformationStyle>

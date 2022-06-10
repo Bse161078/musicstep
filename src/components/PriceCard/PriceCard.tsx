@@ -66,10 +66,18 @@ const PriceCard = (props: any) => {
 
             <OutlineButtonStyle buttonType="dark"
                                 onClick={(e) => {
-                                    if (showPricing === true)
-                                    createSubs(musicType)
-                                    else {
-                                        props.payment_method ? props.createSubscription(props.payment_method, props.musicType) : onSubscribePackage(e)
+                                    console.log("go back")
+
+                                    if(localStorage.getItem("status")){
+                                        if (showPricing === true )
+                                            createSubs(musicType)
+                                        else {
+                                            props.payment_method ? props.createSubscription(props.payment_method, props.musicType) : onSubscribePackage(e)
+                                        }
+                                    }else{
+                                        const subscription={price, musicType, credits, eventsCount}
+                                        localStorage.setItem("subscription",JSON.stringify(subscription));
+                                        history.push("/free-trial");
                                     }
                                 }}
             >That's Me</OutlineButtonStyle>
