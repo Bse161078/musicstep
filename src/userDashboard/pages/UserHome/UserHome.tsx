@@ -28,6 +28,9 @@ const EventReservation = ({ reservations, cancelreservation,subscription }: any)
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedReservation, setSelectedReservation] = useState(false);
 
+
+  reservations=reservations.filter((reserve:any)=>(reserve.eventInfo).length>0);
+
   return (
     <>
       {subscription.active===true?
@@ -225,6 +228,8 @@ export default function UserHome() {
         setIsLoading(false)
       });
   };
+
+  console.log("reservations = ",reservations)
   return (
     <>
       <NavbarWithSearch  userCredit={user.credits} />
