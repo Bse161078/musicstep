@@ -13,7 +13,7 @@ export const PayoutsListItem = (props:PayoutListItemProps) => {
   const venueFilter = reserveEvent?.reservations && reserveEvent.reservations.filter((reservation: any) => reservation.title.toLowerCase().includes(search))
   // console.log('event : ',props,moment(reserveEvent.date).format("MMM Do YYYY"))
   return (
-    reserveEvent?.reservations? reserveEvent.reservations.filter((reservation: any) => (new Date(reservation.date)>=from&&new Date(reservation.date)<=to)&&reservation.title.toLowerCase().includes(search)).map((event:any)=>
+    reserveEvent?.reservations? reserveEvent.reservations.filter((reservation: any) => (new Date(reservation.createdAt)>=from&&new Date(reservation.createdAt)<=to)&&reservation.title.toLowerCase().includes(search)).map((event:any)=>
     <PayoutsListItemStyle>
       <h3 className="description">{moment(event.date).format("MMM Do YYYY")}</h3>
       <div className="content-wrapper">

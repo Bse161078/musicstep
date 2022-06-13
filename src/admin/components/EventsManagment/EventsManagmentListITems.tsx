@@ -7,6 +7,7 @@ type EventsManagmentListItemProps = {
 };
 const EventsManagmentListItem = ({ event }: EventsManagmentListItemProps) => {
   const week = ["Sun", "Mon", "Thu", "Wed", "Thr", "Fri", "Sat"];
+  console.log("event = ",event)
   return (
     <EventsManagmentListItemStyle>
       <div className="content-wrapper">
@@ -26,8 +27,8 @@ const EventsManagmentListItem = ({ event }: EventsManagmentListItemProps) => {
           </div>
         </div>
         <div className="engagments">
-          {/* <span>560 Views</span>
-          <span>360 Reservations Made</span> */}
+           <span style={{fontSize:17,fontWeight:"bold"}}>{`${event.reviewCount} Views`}</span>
+          <span style={{fontSize:17,fontWeight:"bold"}}>{`${event.reservationCount} Reservations Made`}</span>
         </div>
         <div className="Organizer">
           <span className="org-name">

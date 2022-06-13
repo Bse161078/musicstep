@@ -53,7 +53,7 @@ const NavbarWithSearch = (props:any) => {
             <img
               className="image"
               alt="profile"
-              src={process.env.REACT_APP_BASE_URL + "/images/" + state.data.imageUrl}
+              src={state.data.imageUrl?process.env.REACT_APP_BASE_URL + "/images/" + state.data.imageUrl:"/images/person.svg"}
             />
           </span>
         </Link>

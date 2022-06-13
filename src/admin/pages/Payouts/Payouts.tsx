@@ -46,11 +46,12 @@ export default function Payouts() {
       headers: {Authorization: `Bearer ${state.authToken}`},
     }).then((response) => {
       setLoading(false)
-      setReserveEvent(response.data)
+      setReserveEvent(response.data);
     }).catch((err) => {
       setLoading(false)
   })
   },[])
+    console.log(reserveEvent);
   return (
     <Dashboard>
       <PayoutsStyle>

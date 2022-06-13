@@ -114,6 +114,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
   }, []);
   //Handler
   const handleattributesList = (currentValue: any, index: any) => {
+    console.log("currentValue = ",currentValue)
     const item = { ...currentValue };
     const tempAttributesListState = [...attributesListState];
     item.value = !item.value;
