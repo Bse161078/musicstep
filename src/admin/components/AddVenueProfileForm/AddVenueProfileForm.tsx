@@ -20,6 +20,7 @@ import axios from "axios";
 import {MapModalWrapper} from "../../../admin/components/Modals/MapModalWrapper";
 import Map from "../../../components/Map";
 import {Loading} from "../../../components";
+import {FormControl, InputLabel, MenuItem, Select} from "@mui/material";
 
 
 const {
@@ -29,7 +30,7 @@ const {
 Geocode.setApiKey("AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew");
 Geocode.enableDebug();
 
-let formikForm:any = null;
+let formikForm: any = null;
 
 const AddVenueProfileForm = () => {
     const {state} = useLoginContext();
@@ -64,24 +65,37 @@ const AddVenueProfileForm = () => {
     );
     const [previewAdditionalImage, setAdditionalImage] = useState<[]>([]);
     const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
+    const [defaultCategories, setDefaultCategories] = useState([]);
+    const [selectedCategory, setSelectedCategory] = useState("Dayclub");
+
+    const getTags = async () => {
+        try {
+            const response = await axios.get("/v1/filter", {headers: {Authorization: `Bearer ${state.authToken}`}});
+            setDefaultCategories(response.data.categories);
+        } catch (e) {
+
+        }
+    }
 
 
     useEffect(() => {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((position: any) => {
                 setLocation({lat: position.coords.latitude, lng: position.coords.longitude})
-                getLocation(position.coords.latitude,position.coords.longitude)
+                getLocation(position.coords.latitude, position.coords.longitude)
             });
+
         } else {
             console.error("Geolocation is not supported by this browser!");
         }
+        getTags();
     }, [])
 
     const getLocation = (lat: any, lng: any) => {
         Geocode.fromLatLng(lat, lng).then(
             (response) => {
 
-                if(formikForm){
+                if (formikForm) {
                     formikForm.setFieldValue("address", response.results[0].formatted_address);
                     formikForm.setFieldValue("location", {
                         address: response.results[0].formatted_address,
@@ -207,7 +221,7 @@ const AddVenueProfileForm = () => {
             "socialMediaAndMarketingLinks",
             JSON.stringify(socialMediaAndMarketingLinks)
         );
-        bodyData.append("categoryTags", e.categoryTags);
+        bodyData.append("categoryTags", selectedCategory);
         //Photos
         // Add organizer
         // if (!organizerProfile) {
@@ -303,6 +317,10 @@ const AddVenueProfileForm = () => {
     };
 
 
+    const defaultCategoriesContainer = defaultCategories.map((category) =>
+        <MenuItem value={category}>{category}</MenuItem>
+    )
+
 
     return (
         <>
@@ -396,14 +414,19 @@ const AddVenueProfileForm = () => {
                                         multiple
                                     />
                                     <div>
-                                        <LabelWithTag label="Category Tages" tagType="Recomended"/>
-                                        <InputBox
-                                            radiusType="27px"
-                                            height="93px"
-                                            width="670px"
-                                            name="categoryTags"
-                                            placeholder="Enter Category Tags"
-                                        />
+                                        <LabelWithTag  label="Category Tags" tagType="Recomended"/>
+                                        <FormControl variant="standard" sx={{width:"65%",marginTop:"10px"}}>
+                                            <Select
+                                                value={selectedCategory}
+                                                onChange={(e) => {
+                                                    setSelectedCategory(e.target.value)
+                                                }}
+                                                displayEmpty
+                                                inputProps={{'aria-label': 'Without label'}}
+                                            >
+                                                {defaultCategoriesContainer}
+                                            </Select>
+                                        </FormControl>
                                     </div>
                                     <div>
                                         <LabelWithTag label="Venue Name"/>
