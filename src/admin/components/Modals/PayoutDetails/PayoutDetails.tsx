@@ -32,11 +32,11 @@ const PayoutDetails = (props: PayoutDetailsProps) => {
                     <div className="left-section">
                         <div>
                             <h3>Event Name</h3>
-                            <p>{reserveEvent.title}</p>
+                            <p>{reserveEvent && reserveEvent.title}</p>
                         </div>
                         <div>
                             <h3>Event Date</h3>
-                            <p>{moment(reserveEvent.date).format("MMM Do YYYY")}</p>
+                            <p>{moment(reserveEvent && reserveEvent.date).format("MMM Do YYYY")}</p>
                         </div>
                         <div>
                             <h3>Payment Method</h3>
