@@ -37,7 +37,7 @@ export const EventsManagmentListStyle = styled.div`
     font-weight: bold;
   }
   .event-address{
-    padding-left: 20px; 
+    padding-left:0px; 
   }
 
   .table-header {

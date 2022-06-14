@@ -229,7 +229,6 @@ export default function UserHome() {
       });
   };
 
-  console.log("reservations = ",reservations)
   return (
     <>
       <NavbarWithSearch  userCredit={user.credits} />

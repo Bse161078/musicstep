@@ -32,7 +32,7 @@ const SearchInputWithButton = (props: SearchInputWithButtonProps) => {
             <InputBox name="search" placeholder='Search' width="427px"
             value={search}
             onChange={(e:any)=>{
-              setSearch(e.target.value)
+             if(setSearch) setSearch(e.target.value)
             }}
             />
 

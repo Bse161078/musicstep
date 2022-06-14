@@ -122,29 +122,36 @@ const AddVenueProfileForm = () => {
     //Handle Upload logo
     const handleLogoUpload = async (event: any, form: any) => {
         // Sceniro 1:Add organizer
-        form.setFieldValue("logo", event.target.files[0]);
-        let reader = new FileReader();
-        let file = event.target.files[0];
-        if (file) {
-            reader.onloadend = () => {
-                const imagePreview: any = reader.result;
-                setLogoImage(imagePreview);
-            };
-            reader.readAsDataURL(file);
+        const imageType = event.target.files[0].type;
+        if (imageType === "image/jpeg" || imageType === "image/png" || imageType === "image/jpg" || imageType === "image/svg") {
+            form.setFieldValue("logo", event.target.files[0]);
+            let reader = new FileReader();
+            let file = event.target.files[0];
+            if (file) {
+                reader.onloadend = () => {
+                    const imagePreview: any = reader.result;
+                    setLogoImage(imagePreview);
+                };
+                reader.readAsDataURL(file);
+            }
         }
     };
 
     //Handle Upload Coever
     const handleCoverUpload = async (event: any, form: any) => {
-        form.setFieldValue("coverPhoto", event.target.files[0]);
-        let reader = new FileReader();
-        let file = event.target.files[0];
-        if (file) {
-            reader.onloadend = () => {
-                const imagePreview: any = reader.result;
-                setCoverImage(imagePreview);
-            };
-            reader.readAsDataURL(file);
+
+        const imageType = event.target.files[0].type;
+        if (imageType === "image/jpeg" || imageType === "image/png" || imageType === "image/jpg" || imageType === "image/svg") {
+            form.setFieldValue("coverPhoto", event.target.files[0]);
+            let reader = new FileReader();
+            let file = event.target.files[0];
+            if (file) {
+                reader.onloadend = () => {
+                    const imagePreview: any = reader.result;
+                    setCoverImage(imagePreview);
+                };
+                reader.readAsDataURL(file);
+            }
         }
     };
 
@@ -166,8 +173,9 @@ const AddVenueProfileForm = () => {
 
     //Handle Additional photo
     const handleAdditionalPhotoUpload = async (event: any, form: any) => {
-        form.setFieldValue("additionalPhotos", event.target.files);
-        if (event.target.files) {
+        const imageType = event.target.files[0].type;
+        if (imageType === "image/jpeg" || imageType === "image/png" || imageType === "image/jpg" || imageType === "image/svg") {
+            form.setFieldValue("additionalPhotos", event.target.files);
             const files = Array.from(event.target.files);
             Promise.all(
                 files.map((file: any) => {
@@ -397,25 +405,28 @@ const AddVenueProfileForm = () => {
                                     <input
                                         ref={logoUpload}
                                         type={"file"}
+                                        accept=".png, .jpg, .jpeg"
                                         style={{display: "none"}}
                                         onChange={(e) => handleLogoUpload(e, form)}
                                     />
                                     <input
                                         ref={coverPhotoUpload}
                                         type={"file"}
+                                        accept=".png, .jpg, .jpeg"
                                         style={{display: "none"}}
                                         onChange={(e) => handleCoverUpload(e, form)}
                                     />
                                     <input
                                         ref={additionalPhotoUpload}
                                         type={"file"}
+                                        accept=".png, .jpg, .jpeg"
                                         style={{display: "none"}}
                                         onChange={(e) => handleAdditionalPhotoUpload(e, form)}
                                         multiple
                                     />
                                     <div>
-                                        <LabelWithTag  label="Category Tags" tagType="Recomended"/>
-                                        <FormControl variant="standard" sx={{width:"65%",marginTop:"10px"}}>
+                                        <LabelWithTag label="Category Tags" tagType="Recomended"/>
+                                        <FormControl variant="standard" sx={{width: "65%", marginTop: "10px"}}>
                                             <Select
                                                 value={selectedCategory}
                                                 onChange={(e) => {
@@ -506,6 +517,11 @@ const AddVenueProfileForm = () => {
                                                         setLocation({lat, lng})
 
                                                     }
+                                                }}
+                                                getLocation={(lat:any, lng:any) => {
+                                                    setIsMapModalVisible(false);
+                                                    setLocation({lat,lng});
+                                                    getLocation(lat, lng);
                                                 }}
                                             />
                                         </MapModalWrapper>

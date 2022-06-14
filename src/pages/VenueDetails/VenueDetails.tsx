@@ -62,7 +62,6 @@ export default function VenueDetails() {
             })
             .then((res) => {
                 setEvents(res.data);
-                console.log("allEventsOfVenue = ", res.data)
                 setIsLoading(false);
             })
             .catch((error) => {
@@ -103,7 +102,6 @@ export default function VenueDetails() {
     };
 
     const attributes = events && events.event && events.event.length > 0 && events.event[0] && events.event[0].organizerInfo[0].organizationAttributes;
-    console.log("attributes = ", attributes);
 
     let attributeValues:any = [];
     if (attributes) {
@@ -137,6 +135,8 @@ export default function VenueDetails() {
                     <LogoWithHeading
                         heading={venueDetail.name}
                         logo={venueDetail.logoUrl}
+                        averageRating={venueDetail.averageRating}
+                        reviewCount={venueDetail.reviewCount}
                     />
 
                     <div className="buttons-wrapper">

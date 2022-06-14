@@ -27,7 +27,11 @@ const VenueCard = ({ venue,subscribtionCredit }: any) => {
       state: { venueDetail: venue,subscribtionCredit },
     });
   };
-  
+
+  const getRating=(rating:any)=>{
+      return rating>0?((rating/100)*5).toFixed(1):0
+  }
+
   function callback() {
     if (events) {
       setEvents(null);
@@ -45,6 +49,8 @@ const VenueCard = ({ venue,subscribtionCredit }: any) => {
       .catch((error) => {
       });
   }
+
+
   return (
     venue?<>
       <VenueCardStyle onClick={handleClick}>
@@ -64,7 +70,7 @@ const VenueCard = ({ venue,subscribtionCredit }: any) => {
 
           <div className="row">
             <div className="star-wrapper">
-              <StarIcon /> 4.7 <span>(2022 Reviews)</span>
+              <StarIcon /> {getRating(venue.averageRating)} <span>({`${venue.reviewCount} Reviews`})</span>
             </div>
 
             <div className="guidelines-wrapper">

@@ -7,7 +7,9 @@ import { UpcomingEventsStyle } from "./UpcomingEvents.style";
 const UpcomingEvents = ({ events,venue,subscribtionCredit }: any) => {
   const [reservation, setReservation] = useState(0);
   let tempresrvatoin = 0;
-  
+
+
+
   return (
     <UpcomingEventsStyle>
       {/* <div className="list-header">
@@ -17,17 +19,13 @@ const UpcomingEvents = ({ events,venue,subscribtionCredit }: any) => {
       </div> */}
       {events &&
         events.map((event: any, index: number) => {
-          const ticketNotAvailable = event.tickets.every((ticket: any) => {
-            tempresrvatoin += ticket.bookedTickets;
-            return ticket.availableTickets === 0;
-          });
-          // setReservation(tempresrvatoin);
-          return ticketNotAvailable === true ? (
+
+          return event.tickets[0].availableTickets === 0 ? (
             <TabRow
               event={event}
               buttonType="filled"
               buttonText={"Reservation Full"}
-              reservation={tempresrvatoin}
+              reservation={event.tickets[0].bookedTickets}
             />
           ) : (
             <TabRow
@@ -36,7 +34,7 @@ const UpcomingEvents = ({ events,venue,subscribtionCredit }: any) => {
               buttonText={`${
                 event.tickets && event.tickets[0].credits
               } Credits`}
-              reservation={tempresrvatoin}
+              reservation={event.tickets[0].bookedTickets}
             />
           );
 

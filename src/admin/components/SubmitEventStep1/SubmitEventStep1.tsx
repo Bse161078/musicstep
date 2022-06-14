@@ -102,7 +102,8 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                 });
                 setCountries(tempcountry);
             })
-            .catch((error) =>{});
+            .catch((error) => {
+            });
 
         axios
             .get("/v1/organizer/All", {
@@ -126,7 +127,8 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
             .then((res) => {
                 setVenues(res.data);
             })
-            .catch((error) => {});
+            .catch((error) => {
+            });
     }, []);
 
     useEffect(() => {
@@ -179,7 +181,8 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                         setcities(tempCities);
 
                     })
-                    .catch((error) => {});
+                    .catch((error) => {
+                    });
             }
         }
     }, [selectedState]);
@@ -205,29 +208,32 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
     //
 
     const handleAdditionalPhotoUpload = async (event: any, form: any) => {
-        form.setFieldValue("additionalPhotos", event.target.files);
-        if (event.target.files) {
-            const files = Array.from(event.target.files);
-            Promise.all(
-                files.map((file: any) => {
-                    return new Promise((resolve, reject) => {
-                        const reader = new FileReader();
-                        reader.addEventListener("load", (ev) => {
-                            resolve(ev.target?.result);
+        const imageType = event.target.files[0].type;
+        if (imageType === "image/jpeg" || imageType === "image/png" || imageType === "image/jpg" || imageType === "image/svg") {
+            form.setFieldValue("additionalPhotos", event.target.files);
+            if (event.target.files) {
+                const files = Array.from(event.target.files);
+                Promise.all(
+                    files.map((file: any) => {
+                        return new Promise((resolve, reject) => {
+                            const reader = new FileReader();
+                            reader.addEventListener("load", (ev) => {
+                                resolve(ev.target?.result);
+                            });
+                            reader.addEventListener("error", reject);
+                            reader.readAsDataURL(file);
                         });
-                        reader.addEventListener("error", reject);
-                        reader.readAsDataURL(file);
-                    });
-                })
-            ).then(
-                (images: any) => {
-                    /* Once all promises are resolved, update state with image URI array */
-                    setPreviewVenuePhotoss(images);
-                },
-                (error) => {
-                    console.error(error);
-                }
-            );
+                    })
+                ).then(
+                    (images: any) => {
+                        /* Once all promises are resolved, update state with image URI array */
+                        setPreviewVenuePhotoss(images);
+                    },
+                    (error) => {
+                        console.error(error);
+                    }
+                );
+            }
         }
     };
 
@@ -242,12 +248,12 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
             },
         });
 
-        const filteredEvent:any=venues.find((v:any)=>e.venue===v.location.address);
-        const filteredOrganizer:any=organizers.find((org:any)=>e.organizer===org.organizerName);
+        const filteredEvent: any = venues.find((v: any) => e.venue === v.location.address);
+        const filteredOrganizer: any = organizers.find((org: any) => e.organizer === org.organizerName);
 
 
-        e.venue_id=filteredEvent.id;
-        e.organizer_id=filteredOrganizer.id;
+        e.venue_id = filteredEvent.id;
+        e.organizer_id = filteredOrganizer.id;
 
         setEventData({...eventData, ...e});
         setCurrentStep(2);
@@ -535,6 +541,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                         <input
                             ref={additionalPhotoUpload}
                             type={"file"}
+                            accept=".png, .jpg, .jpeg"
                             style={{display: "none"}}
                             onChange={(e) => handleAdditionalPhotoUpload(e, form)}
                             multiple

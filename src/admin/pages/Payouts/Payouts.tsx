@@ -4,11 +4,11 @@ import { SelectBox } from "../../../components";
 import axios from "axios";
 import { TabPaneStyle, TabsStyle } from "../../../styles/Fields.style";
 import {
-  Dashboard,
-  DashboardHeader,
-  PayoutsList,
-  SearchInputWithButton,
-  UpcomingPayoutsList,
+    Dashboard,
+    DashboardHeader, PayoutDetails,
+    PayoutsList,
+    SearchInputWithButton,
+    UpcomingPayoutsList,
 } from "../../components";
 import TextField from '@mui/material/TextField';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
@@ -17,6 +17,7 @@ import { PayoutsStyle } from "./Payouts.style";
 import { Loading } from "../../../components";
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import {PayoutsListStyle} from "../../components/PayoutsList/PayoutsList.style";
 export default function Payouts() {
   const {state, dispatch} = useLoginContext();
   const [reserveEvent,setReserveEvent] = useState({
@@ -50,10 +51,12 @@ export default function Payouts() {
     }).catch((err) => {
       setLoading(false)
   })
-  },[])
-    console.log(reserveEvent);
+  },[]);
+
+
   return (
     <Dashboard>
+
       <PayoutsStyle>
         <DashboardHeader heading="Payouts" isLoading={isLoading} />
         <TabsStyle defaultActiveKey="1">

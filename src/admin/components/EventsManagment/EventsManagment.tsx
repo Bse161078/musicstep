@@ -11,6 +11,8 @@ const EventsManagment = () => {
   const history = useHistory();
   const { state } = useLoginContext();
   const [events, setEvents] = useState([]);
+  const [search,setSearch]=useState("");
+
   useEffect(() => {
     axios
       .get("/v1/event/All", {
@@ -25,6 +27,12 @@ const EventsManagment = () => {
       });
   }, []);
 
+
+  console.log("search = ",search,"   ",events);
+
+  const filteredEvents=events.filter((event:any)=>(event.title).includes(search) || (event.organizerInfo[0].organizerName).includes(search));
+
+
   return (
     <Dashboard>
       <EventsManagmentStyle>
@@ -33,7 +41,7 @@ const EventsManagment = () => {
           description="Easily manage your events and promoters."
         />
         <div className="searchbar-wrapper">
-          <SearchInputWithButton />
+          <SearchInputWithButton setSearch={setSearch}/>
           <OutlineButtonStyle
             name="submitEvent"
             height="54px"
@@ -42,7 +50,7 @@ const EventsManagment = () => {
             Submit An Event
           </OutlineButtonStyle>
         </div>
-        <EventsManagmentList events={events} />
+        <EventsManagmentList events={filteredEvents} />
       </EventsManagmentStyle>
     </Dashboard>
   );

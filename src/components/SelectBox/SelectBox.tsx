@@ -115,7 +115,7 @@ const SelectBox = (props: SelectBoxProps) => {
     else if(field.name==='distance')
     {
       data = [
-      {type: "distance", search: [{location: {latitude: latitude, longitude: longtitude}, value: value}]},
+      {type: "distance", search: [{location: {latitude: latitude, longitude: longtitude}, value: parseInt(value.split(" "))}]},
       
     ]
   }

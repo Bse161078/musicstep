@@ -215,13 +215,15 @@ class Index extends React.Component {
     //     <GoogleMap
 
     render() {
+        console.log("marker = ",this.state.markerPosition)
+
         const AsyncMap = withScriptjs(
             withGoogleMap((props) => (
                 <GoogleMap
                     defaultZoom={this.state.zoom}
                     defaultCenter={{
-                        lat: this.state.mapPosition.lat,
-                        lng: this.state.mapPosition.lng,
+                        lat: this.state.markerPosition.lat,
+                        lng: this.state.markerPosition.lng,
                     }}
                     options={{
                         styles: [
@@ -311,13 +313,18 @@ class Index extends React.Component {
                             },
                         ],
                     }}
+                    onClick={(e)=>{
+                        let latitude = e.latLng.lat()
+                        let longitude  = e.latLng.lng()
+                        this.props.getLocation(latitude,longitude)
+                        console.log(latitude, longitude)
+                    }}
                 >
                     {/* InfoWindow on top of marker */}
 
                     {/*Marker*/}
                     <Marker
                         google={this.props.google}
-                        name={"Dolores park"}
                         draggable={true}
                         onDragEnd={this.onMarkerDragEnd}
                         position={{
@@ -338,7 +345,6 @@ class Index extends React.Component {
               </span>
             </div>
           </InfoWindow> */}
-                    <Marker/>
 
                     {/* <MarkerWithLabel
                             position={{ lat: -34.397, lng: 150.644 }}
