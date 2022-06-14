@@ -2,37 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f900495-2d01-4c96-a493-d43d1865075e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/2.81f7ab30.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/2.81f7ab30.chunk.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/2.81f7ab30.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.6256c606.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.6256c606.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/AddVenueProfileForm/AddVenueProfileForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/AddVenueProfileForm/AddVenueProfileForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagment.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagment.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagment.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagment.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagmentList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagmentList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagmentListITems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagmentListITems.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/Modals/PayoutDetails/PayoutDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/Modals/PayoutDetails/PayoutDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/OrganizationDetailsForm/OrganizationDetailsForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/OrganizationDetailsForm/OrganizationDetailsForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/OrganizationProfileForm/OrganizationProfileForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/OrganizationProfileForm/OrganizationProfileForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/PayoutsList/PayoutsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/PayoutsList/PayoutsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/PayoutsList/PayoutsListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/PayoutsList/PayoutsListItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/SearchInputWithButton/SearchInputWithButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/SearchInputWithButton/SearchInputWithButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/SubmitEventStep1/SubmitEventStep1.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/SubmitEventStep1/SubmitEventStep1.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/pages/Payouts/Payouts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/pages/Payouts/Payouts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/LogoWithHeading/LogoWithHeading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LogoWithHeading/LogoWithHeading.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Map/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Map/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SelectBox/SelectBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SelectBox/SelectBox.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VenueCard/VenueCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VenueCard/VenueCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/VenueDetails/VenueDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/VenueDetails/VenueDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -295,7 +265,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="85" />
     <option name="y" value="25" />
     <option name="width" value="1750" />
@@ -418,15 +388,15 @@
       <workItem from="1655133451648" duration="15036000" />
       <workItem from="1655184667083" duration="3139000" />
       <workItem from="1655195279681" duration="12802000" />
-      <workItem from="1655215494744" duration="622000" />
+      <workItem from="1655215494744" duration="816000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174845000" />
+    <option name="totallyTimeSpent" value="175039000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="830" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23154363" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
