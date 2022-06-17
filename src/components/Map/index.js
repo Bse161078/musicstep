@@ -215,7 +215,6 @@ class Index extends React.Component {
     //     <GoogleMap
 
     render() {
-        console.log("marker = ",this.state.markerPosition)
 
         const AsyncMap = withScriptjs(
             withGoogleMap((props) => (

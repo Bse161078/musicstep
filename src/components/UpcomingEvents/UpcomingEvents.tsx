@@ -26,6 +26,7 @@ const UpcomingEvents = ({ events,venue,subscribtionCredit }: any) => {
               buttonType="filled"
               buttonText={"Reservation Full"}
               reservation={event.tickets[0].bookedTickets}
+              venue={venue}
             />
           ) : (
             <TabRow
@@ -35,6 +36,7 @@ const UpcomingEvents = ({ events,venue,subscribtionCredit }: any) => {
                 event.tickets && event.tickets[0].credits
               } Credits`}
               reservation={event.tickets[0].bookedTickets}
+              venue={venue}
             />
           );
 

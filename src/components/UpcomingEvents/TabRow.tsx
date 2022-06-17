@@ -15,10 +15,11 @@ type TabRowProps = {
   event?: any;
   reservation?: number;
   subscribtionCredit?: any;
+  venue?:any
 };
 
 export const TabRow = (props: TabRowProps) => {
-  const { buttonType, buttonText, event, reservation,subscribtionCredit } = props;
+  const { buttonType, buttonText, event, reservation,subscribtionCredit,venue } = props;
   const [isEventDetailsModalVisibel, setIsEventDetailsModalVisibel] = useState(
     false
   );
@@ -35,6 +36,7 @@ export const TabRow = (props: TabRowProps) => {
     endTime.diff(startTime, "minutes") % 60
       ? (endTime.diff(startTime, "minutes") % 60) + "mint"
       : null;
+
 
 
   return (
@@ -57,7 +59,7 @@ export const TabRow = (props: TabRowProps) => {
         </div>
         <div className="name">
           <p>{event.title}</p>
-          <p className="genre">Alternative, Classical</p>
+          <p className="genre">{venue.categoryTags.join(",")}</p>
         </div>
         <div className="time">
           <p className="person-number">
@@ -102,6 +104,7 @@ export const TabRow = (props: TabRowProps) => {
         isTicketsAvailable={isTicketsAvailabe}
         event={event}
         subscribtionCredit={subscribtionCredit}
+        venue={venue}
       />
     </>
   );

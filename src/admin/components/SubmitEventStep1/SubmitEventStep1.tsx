@@ -26,6 +26,9 @@ type SubmitEventStep1Props = {
     eventData: any;
 };
 
+
+let formikForm:any;
+
 const SubmitEvent = (props: SubmitEventStep1Props) => {
     const {setCurrentStep, setEventData, eventData} = props;
     const [value, onChange] = useState("10:00");
@@ -210,9 +213,15 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
     const handleAdditionalPhotoUpload = async (event: any, form: any) => {
         const imageType = event.target.files[0].type;
         if (imageType === "image/jpeg" || imageType === "image/png" || imageType === "image/jpg" || imageType === "image/svg") {
-            form.setFieldValue("additionalPhotos", event.target.files);
+            let prevFiles=form.values.additionalPhotos;
+            if(prevFiles) prevFiles.push(event.target.files[0]);
+            else prevFiles=[event.target.files[0]];
+
+
+            form.setFieldValue("additionalPhotos", prevFiles);
+            formikForm=form;
             if (event.target.files) {
-                const files = Array.from(event.target.files);
+                const files = Array.from(prevFiles);
                 Promise.all(
                     files.map((file: any) => {
                         return new Promise((resolve, reject) => {
@@ -259,58 +268,18 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
         setCurrentStep(2);
     };
 
-    // const handleStartTime = (e: any, form: any) => {
-    //   const timeForm = /^((1[0-2]|0?[1-9]):([0-5][0-9]) ?([AaPp][Mm]))$/;
-    //   if (
-    //     timeForm.test(form.values.endingTime) &&
-    //     timeForm.test(e.target.value)
-    //   ) {
-    //     let beginningTime = moment(e.target.value, "h:mma");
-    //     let endTime = moment(form.values.endingTime, "h:mma");
 
+    const onDeleteFile=(form:any,index:any)=>{
+        const tempPhotos=previewVenuePhoto;
+        const tempFormPhotos=form.values.additionalPhotos
+        if(tempPhotos && tempPhotos.length>index){
+            tempPhotos.splice(index, 1);
+            tempFormPhotos.splice(index, 1);
+            setPreviewVenuePhotoss(tempPhotos)
+            form.setFieldValue("additionalPhotos", tempFormPhotos);
+        }
+    }
 
-    //     if (!beginningTime.isBefore(endTime)) {
-    //       form.setFieldError(
-    //         "endingTime",
-    //         "End time should be greater than start time"
-    //       );
-
-    //     }
-    //   }
-    // };
-    // const handleEndTime = (e: any, form: any) => {
-    //   const timeForm = /^((1[0-2]|0?[1-9]):([0-5][0-9]) ?([AaPp][Mm]))$/;
-    //   if (
-    //     timeForm.test(form.values.startingTime) &&
-    //     timeForm.test(e.target.value)
-    //   ) {
-    //     let beginningTime = moment(form.values.startingTime, "h:mma");
-    //     let endTime = moment(e.target.value, "h:mma");
-
-
-    //     if (!beginningTime.isBefore(endTime)) {
-    //       form.setFieldError(
-    //         "endingTime",
-    //         "End time should be greater than start time"
-    //       );
-    //     }
-
-    //   }
-    // };
-    // const isStartEndTimeValid = (
-    //   startingTime: string,
-    //   endingTime: string,
-    //   form: any
-    // ) => {
-    //   var beginningTime = moment(startingTime, "h:mma");
-    //   var endTime = moment(endingTime, "h:mma");
-    //   if (!beginningTime.isBefore(endTime)) {
-    //     form.setErrors(
-    //       "endingTime",
-    //       "End time should be greater than start time"
-    //     );
-    //   }
-    // };
 
     const filteredVenues = venues.map((venue: any) => {
         return venue.location.address;
@@ -529,6 +498,8 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                             previewVenuePhoto={previewVenuePhoto}
                             handleAdditionalPhoto={handleAdditionalPhoto}
                             previewVenuePhotoOfOrganizer={previewVenuePhotoOfOrganizer}
+                            form={form}
+                            onDeleteFile={onDeleteFile}
                         />
                         <input
                             type="submit"

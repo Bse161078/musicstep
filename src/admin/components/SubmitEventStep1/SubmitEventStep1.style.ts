@@ -4,7 +4,6 @@ export const SubmitEventStep1Style = styled.div`
    display: flex;
    flex-direction: column;
    gap: 30px;
-
   .form-wrapper {
     display: flex;
     flex-direction: column;

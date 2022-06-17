@@ -84,6 +84,7 @@ export default function FreeTrial() {
         }).then((response) => {
             setLoading(false);
             setIsModalVisible(true);
+            localStorage.removeItem("currentForm")
 
             const user = response.data.user;
             const token = response.data.tokens;

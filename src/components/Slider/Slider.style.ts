@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const SliderStyle = styled.div`
   display: flex;
-  width: 100%;
+  width: 60vw;
   overflow: auto;
   gap: 20px;
   margin-top: 30px;

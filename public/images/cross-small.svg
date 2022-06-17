@@ -1,0 +1,11 @@
+<svg id="Small_Icon_Button" data-name="Small Icon Button" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_474" data-name="Rectangle 474" width="20" height="20" transform="translate(11.851 11.851)" fill="#0c0c0c"/>
+    </clipPath>
+  </defs>
+  <rect id="Rectangle_473" data-name="Rectangle 473" width="48" height="48" rx="24" fill="#f7f7f7"/>
+  <g id="Mask_Group_22" data-name="Mask Group 22" transform="translate(2.149 2.149)" clip-path="url(#clip-path)">
+    <path id="close" d="M11.656,9.86l7.671-7.671a1.276,1.276,0,0,0-1.8-1.8L9.85,8.056,2.179.384a1.276,1.276,0,0,0-1.8,1.8L8.046,9.86.374,17.532a1.276,1.276,0,1,0,1.8,1.8L9.85,11.665l7.671,7.671a1.276,1.276,0,0,0,1.8-1.8Zm0,0" transform="translate(12 11.99)" fill="#0c0c0c"/>
+  </g>
+</svg>

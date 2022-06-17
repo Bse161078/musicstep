@@ -20,6 +20,7 @@ type TicketInfoCardProps = {
   ticketIndex?: number;
   event?: any;
   subscribtionCredit?:number;
+  venue?:any
 };
 
 const TicketInfoCard = (props: TicketInfoCardProps) => {
@@ -46,6 +47,7 @@ const TicketInfoCard = (props: TicketInfoCardProps) => {
           subscribtionCredit={props.subscribtionCredit}
           ticketIndex={props.ticketIndex ? props.ticketIndex : 0}
           event={props.event}
+          venue={props.venue}
         />
       )}
 

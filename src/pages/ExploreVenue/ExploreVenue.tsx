@@ -132,7 +132,7 @@ export default function ExploreVenue() {
                               userCredit={user.credits}
             />
 
-            {showPricing && <Pricing showPricing={showPricing} setShowPricing={setShowPricing}/>}
+            {showPricing && <Pricing showPricing={showPricing} setShowPricing={setShowPricing} isCreateSubscription={true}/>}
             {loading && <Loading/>}
             {}
             {

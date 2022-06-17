@@ -28,7 +28,6 @@ const EventsManagment = () => {
   }, []);
 
 
-  console.log("search = ",search,"   ",events);
 
   const filteredEvents=events.filter((event:any)=>(event.title).includes(search) || (event.organizerInfo[0].organizerName).includes(search));
 

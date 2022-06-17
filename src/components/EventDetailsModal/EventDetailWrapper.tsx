@@ -4,8 +4,9 @@ import { useHistory } from "react-router-dom";
 
 type EventDetailWrapperProps = {
   event?: any;
+  venue?:any
 };
-export const EventDetailWrapper = ({ event }: EventDetailWrapperProps) => {
+export const EventDetailWrapper = ({ event,venue }: EventDetailWrapperProps) => {
   const history = useHistory();
   const eventImage =event.additionalPhotos.length>0 &&
     (event.eventPhotoSameAsOrganizerPhoto || event.additionalPhotos.length === 0
@@ -29,6 +30,8 @@ export const EventDetailWrapper = ({ event }: EventDetailWrapperProps) => {
       state: { organizerDetail: event },
     });
   };
+
+
   return (
     <div className="first-row-wrapper">
       <img
@@ -44,7 +47,7 @@ export const EventDetailWrapper = ({ event }: EventDetailWrapperProps) => {
       <div className="description-wrapper">
         <div className="concert-name">
           <h3>{event && event.title}</h3>
-          <p>Alternative, Classical</p>
+          <p>{venue.categoryTags.join(",")}</p>
         </div>
 
         <div className="description">
@@ -65,18 +68,18 @@ export const EventDetailWrapper = ({ event }: EventDetailWrapperProps) => {
         </div>
 
         <div>
-          <p>Venue : {event?.name}</p>
+          <p>Venue : {venue?.name}</p>
           <p>
             {" "}
             <img src="/images/icons/location-icon.svg" alt="location" />
-            {event.location?.address}
+            {venue.location?.address}
           </p>
         </div>
 
         <div className="organizedBy-text">
           <p>
             Organized by:{" "}
-            <span className="link">{event.organizerInfo?.organizerName}</span>
+            <span className="link">{venue.organizerInfo[0]?.organizerName}</span>
           </p>
           <p>
             Available Tickets :{" "}

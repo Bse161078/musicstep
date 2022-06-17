@@ -12,6 +12,8 @@ const PayoutsList = (props: any) => {
         setShowPayoutDetailModal(true);
     }
 
+    const filteredReservations=(props.reserveEvent).reservations.filter((event: any) => new Date(event.date)<(new Date()))
+
     return (
         <PayoutsListStyle>
             <div className="table-header">
@@ -19,7 +21,7 @@ const PayoutsList = (props: any) => {
                 <h3 className="header-title">Event</h3>
                 <h3 className="header-title">Payout</h3>
             </div>
-            <PayoutsListItem reserveEvent={props.reserveEvent} search={props.search} from={props.from} to={props.to}
+            <PayoutsListItem reserveEvent={{reservations:filteredReservations}} search={props.search} from={props.from} to={props.to}
                              handleShowDetails={handleShowDetails}/>
             <PayoutDetails reserveEvent={selectedPayout} isModalVisible={showPayoutDetailModal}
                            setIsModalVisible={setShowPayoutDetailModal}/>

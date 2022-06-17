@@ -14,6 +14,7 @@ type TicketModalProps = {
   event?: any;
   subscribtionCredit?:number;
   eventCredit?:number;
+  venue?:any
 };
 const TicketModal = (props: TicketModalProps) => {
   const [
@@ -78,6 +79,7 @@ const TicketModal = (props: TicketModalProps) => {
     }
   };
 
+  const venue=props.venue;
   return (
     <ModalWrapper
       heading="Ticket"
@@ -94,7 +96,7 @@ const TicketModal = (props: TicketModalProps) => {
           <div className="first-wrapper">
             <span>
               <h1 id="event-name">{props.event && props.event.title}</h1>
-              <p id="below-eventname">Alternative, Classical</p>
+              <p id="below-eventname">{venue.categoryTags.join(",")}</p>
             </span>
             <span id="event-datetime">
               <p>
@@ -125,7 +127,7 @@ const TicketModal = (props: TicketModalProps) => {
             </span>
             <p>
               Organized By:{" "}
-              {props.event && props.event?.organizerInfo?.organizerName}
+              {props.venue && props.venue?.organizerInfo[0]?.organizerName}
             </p>
           </div>
 
