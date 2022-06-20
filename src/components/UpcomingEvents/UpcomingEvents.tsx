@@ -9,7 +9,6 @@ const UpcomingEvents = ({ events,venue,subscribtionCredit }: any) => {
   let tempresrvatoin = 0;
 
 
-
   return (
     <UpcomingEventsStyle>
       {/* <div className="list-header">

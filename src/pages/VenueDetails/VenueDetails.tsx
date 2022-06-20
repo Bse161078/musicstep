@@ -168,7 +168,7 @@ export default function VenueDetails() {
                             <div className="table-wrapper" onClick={() => {
 
                             }}>
-                                {isLoading ? <Spinner/> : <UpcomingEvents events={events}/>}
+                                {isLoading ? <Spinner/> : <UpcomingEvents events={events} venue={venueDetail}/>}
                             </div>
                         </TabPaneStyle>
                         <TabPaneStyle tab="Reviews" key="3">
