@@ -8,7 +8,7 @@ const UpcomingEvents = ({ events,venue,subscribtionCredit }: any) => {
   const [reservation, setReservation] = useState(0);
   let tempresrvatoin = 0;
 
-
+  console.log("events = ",events);
   return (
     <UpcomingEventsStyle>
       {/* <div className="list-header">
@@ -19,12 +19,12 @@ const UpcomingEvents = ({ events,venue,subscribtionCredit }: any) => {
       {events &&
         events.map((event: any, index: number) => {
 
-          return event.tickets[0].availableTickets === 0 ? (
+          return event && (event.tickets).length===0 || event.tickets[0].availableTickets === 0 ? (
             <TabRow
               event={event}
               buttonType="filled"
               buttonText={"Reservation Full"}
-              reservation={event.tickets[0].bookedTickets}
+              reservation={((event.tickets).length>0) && event.tickets[0].bookedTickets}
               venue={venue}
             />
           ) : (

@@ -30,7 +30,6 @@ const FutureEvents = () => {
     const getAllFutureEvents = async () => {
         const response = await axios.get("/v1/event/future", {headers: {Authorization: `Bearer ${state.authToken}`}})
         setFutureEvents(response.data)
-        console.log("response = ", response.data);
     }
 
     useEffect(() => {
@@ -38,7 +37,10 @@ const FutureEvents = () => {
     }, [])
 
 
-    const ContainerData = futureEvents.map((event: any, index: any) =>
+
+
+
+    const ContainerData = futureEvents.filter((event:any)=>(event.tickets).length>0).map((event: any, index: any) =>
         <TableRow hover tabIndex={-1} key={event._id + index}>
             <TableCell key={event._id + index} align="left" style={{wordBreak: "break-word"}}>
                 <img

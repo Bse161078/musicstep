@@ -53,7 +53,6 @@ export default function ExploreVenue() {
     const history = useHistory();
 
     const [filter, setFilter] = useState()
-    const venueFilter = venues && venues.filter((venue: any) => (venue?.name).toLowerCase().includes((search).toLowerCase()))
     useEffect(() => {
         setLoading(true)
         navigator.geolocation.getCurrentPosition(function (position) {
@@ -123,6 +122,8 @@ export default function ExploreVenue() {
             });
     }
 
+    const venueFilter = venues && venues.filter((venue: any) => (venue?.name).toLowerCase().includes((search).toLowerCase()))
+
 
     return (
         <>
@@ -132,7 +133,8 @@ export default function ExploreVenue() {
                               userCredit={user.credits}
             />
 
-            {showPricing && <Pricing showPricing={showPricing} setShowPricing={setShowPricing} isCreateSubscription={true}/>}
+            {showPricing &&
+            <Pricing showPricing={showPricing} setShowPricing={setShowPricing} isCreateSubscription={true}/>}
             {loading && <Loading/>}
             {}
             {
