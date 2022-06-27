@@ -1,12 +1,12 @@
 import { Form, Formik } from "formik";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DashboardHeader } from "..";
 import { Loading, SelectBox } from "../../../components";
 import { FilledButtonStyle } from "../../../styles/Common.style";
 
 import { PaymentInfoContentStyle } from "./PaymentInfoContent.style";
 import { PaymentInfoListItem } from "./PaymentInfoListItem";
-
+import axios from 'axios';
 type PaymentInfoContentProps = {
   setCurrentPage: (data: string) => void;
 };
@@ -14,6 +14,21 @@ type PaymentInfoContentProps = {
 const PaymentInfoContent = (props: PaymentInfoContentProps) => {
   const { setCurrentPage } = props;
   const handleFilterSubmit = () => {};
+  const [isLoading,setLoading] = useState<any>();
+  const [payments,setPayments] = useState<any>();
+  useEffect(()=>{
+    getPaymentMethod()
+  },[])
+  const getPaymentMethod =()=>{
+    const user :any = JSON.parse(localStorage.getItem("data")||"{}")
+    axios.get(`/v1/partners/createPartnerPayment/${user.id}`).then((res)=>{
+      console.log("response",res.data)
+      setPayments(res.data)
+    }).catch((error)=>{
+      console.log("response",error)
+
+    })
+  }
 
   return (
     
@@ -48,11 +63,11 @@ const PaymentInfoContent = (props: PaymentInfoContentProps) => {
       <div className="table-wrapper">
         <div className="table-header">
           <h3 className="header-title">Payment Methods</h3>
-          <h3 className="header-title">Type</h3>
-          <h3 className="header-title">Events</h3>
+          <h3 className="header-title">Routing Number</h3>
+          <h3 className="header-title">Tax Number</h3>
         </div>
 
-        <PaymentInfoListItem setCurrentPage={setCurrentPage} />
+        <PaymentInfoListItem setCurrentPage={setCurrentPage} payments = {payments} />
       </div>
     </PaymentInfoContentStyle>
   );

@@ -11,6 +11,7 @@ import {
     Reviews,
     InputCheckbox,
     CustomCarousel,
+    Loading,
 } from "../../components";
 import {OutlineButtonStyle} from "../../styles/Common.style";
 import {TabPaneStyle, TabsStyle} from "../../styles/Fields.style";
@@ -53,7 +54,6 @@ export default function VenueDetails() {
     const [amentiesState, setamentiesState] = useState(amenties);
     const [reviews, setreviews] = useState(null);
     const venueDetail = location.state.venueDetail;
-
     function getVenue() {
         setIsLoading(true);
         axios
@@ -61,7 +61,8 @@ export default function VenueDetails() {
                 headers: {Authorization: `Bearer ${state.authToken}`},
             })
             .then((res) => {
-                setEvents(res.data);
+                console.log("eventsofvenue",res.data.event[0])
+                setEvents(res.data.event[0]);
                 setIsLoading(false);
             })
             .catch((error) => {
@@ -102,19 +103,26 @@ export default function VenueDetails() {
     };
 
     const attributes = events && events.event && events.event.length > 0 && events.event[0] && events.event[0].organizerInfo[0].organizationAttributes;
-
+    const amenities = venueDetail  && JSON.parse(venueDetail?.amenities)
     let attributeValues:any = [];
-    if (attributes) {
-        for (const property in attributes) {
-            attributeValues.push({name:property,value:attributes[property]});
+    if(amenities)
+    {
+        for (const property in amenities) {
+            attributeValues.push({name:amenities[property],value:amenties});
         }
     }
-
+    // // else{
+    // //     for (const property in window.location.href.includes("dashboard")?amenities:attributes) {
+    // //         console.log("property",property,attributes)
+    // //         attributeValues.push({name:property,value:attributes[property]});
+    // //     }
+    // }
 
     return (
         <>
             <NavbarWithSearch userCredit={user.credits}/>
-            <VenueDetailsStyle>
+            {isLoading&&<Loading/>}
+            {events&&<VenueDetailsStyle>
                 <div className="left-side">
                     <CustomCarousel
                         // images={[
@@ -135,8 +143,8 @@ export default function VenueDetails() {
                     <LogoWithHeading
                         heading={venueDetail.name}
                         logo={venueDetail.logoUrl}
-                        averageRating={venueDetail.averageRating}
-                        reviewCount={venueDetail.reviewCount}
+                        averageRating={events.averageRating}
+                        reviewCount={events.reviewCount}
                     />
 
                     <div className="buttons-wrapper">
@@ -149,7 +157,7 @@ export default function VenueDetails() {
                         defaultActiveKey="1"
                         onChange={(key) => {
                             if (key === "2") {
-                                setEvents(venueDetail?.events && venueDetail?.events)
+                                setEvents(events)
                             } else if (key === "3") {
                                 getReviews();
                             }
@@ -168,7 +176,7 @@ export default function VenueDetails() {
                             <div className="table-wrapper" onClick={() => {
 
                             }}>
-                                {isLoading ? <Spinner/> : <UpcomingEvents events={events} venue={venueDetail}/>}
+                                {isLoading ? <Spinner/> : <UpcomingEvents events={events.events} venue={venueDetail}/>}
                             </div>
                         </TabPaneStyle>
                         <TabPaneStyle tab="Reviews" key="3">
@@ -259,7 +267,7 @@ export default function VenueDetails() {
                     }}>
                         {() => (
                             <Form className="attributes-wrapper">
-                                <LabelWithTag label="Attributes" tagType="none"/>
+                                <LabelWithTag label={"Amenities"} tagType="none"/>
                                 <div className="list-wrapper">
                                     {attributeValues.map((attribute:any) => {
                                         return (
@@ -278,7 +286,7 @@ export default function VenueDetails() {
                         )}
                     </Formik>
                 </div>
-            </VenueDetailsStyle>
+            </VenueDetailsStyle>}
         </>
     );
 }

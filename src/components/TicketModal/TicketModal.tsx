@@ -96,7 +96,7 @@ const TicketModal = (props: TicketModalProps) => {
           <div className="first-wrapper">
             <span>
               <h1 id="event-name">{props.event && props.event.title}</h1>
-              <p id="below-eventname">{venue.categoryTags.join(",")}</p>
+              <p id="below-eventname">{venue?.categoryTags?.join(",")}</p>
             </span>
             <span id="event-datetime">
               <p>
@@ -107,7 +107,7 @@ const TicketModal = (props: TicketModalProps) => {
                   moment(props.event && props.event.date).date()}
               </p>
               <p>
-                {moment(props.event && props.event.startingTime, [
+                {moment(props.event && props.event?.startingTime, [
                   "hh:mm",
                 ]).format("hh:mm a")}{" "}
                 -
@@ -127,7 +127,7 @@ const TicketModal = (props: TicketModalProps) => {
             </span>
             <p>
               Organized By:{" "}
-              {props.venue && props.venue?.organizerInfo[0]?.organizerName}
+              {props.venue && props.venue?.organizerInfo&&props.venue.organizerInfo[0].organizerName}
             </p>
           </div>
 

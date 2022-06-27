@@ -7,6 +7,7 @@ type EventDetailWrapperProps = {
   venue?:any
 };
 export const EventDetailWrapper = ({ event,venue }: EventDetailWrapperProps) => {
+  console.log("eventvenue",event,venue)
   const history = useHistory();
   const eventImage =event.additionalPhotos.length>0 &&
     (event.eventPhotoSameAsOrganizerPhoto || event.additionalPhotos.length === 0
@@ -27,11 +28,18 @@ export const EventDetailWrapper = ({ event,venue }: EventDetailWrapperProps) => 
     history.push({
       pathname: `/explore-venue/organizer-profile`,
 
-      state: { organizerDetail: event },
+      state: { organizerDetail: venue },
     });
   };
+  
+  const handleViewVenue = () => {
+    history.push({
+      pathname: `/dashboard/home/venue-details`,
 
-
+      state: { venueDetail: venue },
+    });
+  };
+console.log('eventvenue',event,venue)
   return (
     <div className="first-row-wrapper">
       <img
@@ -79,7 +87,13 @@ export const EventDetailWrapper = ({ event,venue }: EventDetailWrapperProps) => 
         <div className="organizedBy-text">
           <p>
             Organized by:{" "}
-            <span className="link">{venue.organizerInfo[0]?.organizerName}</span>
+            <span className="link"
+            onClick={()=>
+              {
+                handleViewOrganizer()
+              }
+            }
+            >{venue.organizerInfo[0]?.organizerName}</span>
           </p>
           <p>
             Available Tickets :{" "}

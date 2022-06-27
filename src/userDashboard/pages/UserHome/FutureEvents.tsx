@@ -19,29 +19,46 @@ import {
 } from "@mui/material";
 import moment from "moment";
 import {OutlineButtonStyle} from "../../../styles/Common.style";
-
+import VenueDetailsModal from "../../../components/EventDetailsModal/VenueDetailsModal";
+import { EventDetailsModal } from "../../../components";
+import { useHistory } from "react-router-dom";
 
 const FutureEvents = () => {
 
     const {state, dispatch} = useLoginContext();
-
+    const [isModalVisible,setIsModalVisible] = useState(false)
     const [futureEvents, setFutureEvents] = useState([])
 
     const getAllFutureEvents = async () => {
         const response = await axios.get("/v1/event/future", {headers: {Authorization: `Bearer ${state.authToken}`}})
         setFutureEvents(response.data)
+        console.log('futureevents',response.data)
     }
-
+    const history =  useHistory()
+    const handleViewVenue = (event:any) => {
+        history.push({
+          pathname: `/dashboard/home/venue-details`,
+    
+          state: { venueDetail: event.venuesInfo[0] },
+        });
+      };
     useEffect(() => {
         getAllFutureEvents();
     }, [])
 
 
-
+console.log("isModalVisible",isModalVisible)
 
 
     const ContainerData = futureEvents.filter((event:any)=>(event.tickets).length>0).map((event: any, index: any) =>
         <TableRow hover tabIndex={-1} key={event._id + index}>
+             <VenueDetailsModal
+                isModalVisible={isModalVisible}
+                setIsModalVisible={setIsModalVisible}
+                event={event}
+                venue={event.venuesInfo[0]}
+                
+            />
             <TableCell key={event._id + index} align="left" style={{wordBreak: "break-word"}}>
                 <img
                     src="/images/sample.png"
@@ -80,10 +97,10 @@ const FutureEvents = () => {
                         <OutlineButtonStyle
                             width="150px"
                             height="43px"
+                            style={{marginRight:20}}
                             className="pricing"
                             onClick={() => {
-                                //setIsEventDetailsModalVisibel(true);
-                                //setIsTicketsAvailabe(true);
+                                handleViewVenue(event)
                             }}
                         >
                             View Venue
@@ -96,6 +113,7 @@ const FutureEvents = () => {
                             height="43px"
                             className="pricing"
                             onClick={() => {
+                                setIsModalVisible(true)
                             }}
                         >
                             {`${event.tickets[0].price} Credits`}

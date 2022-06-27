@@ -14,7 +14,8 @@ export const VenueCardStyle = styled.div`
 
   .venue-thumbnail {
     max-width: 320px;
-    width: 100%;
+    width:240px;
+    height:135px;
     border-radius: 16px;
   }
   .top-heading {

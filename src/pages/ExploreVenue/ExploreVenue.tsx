@@ -95,14 +95,17 @@ export default function ExploreVenue() {
 
 
     const getFilters = () => {
+        setLoading(true)
         axios
             .get("/v1/filter", {
                 headers: {Authorization: `Bearer ${state.authToken}`},
             })
             .then((res) => {
                 setFilter(res.data)
+                setLoading(false)
             })
             .catch((error) => {
+                setLoading(false)
             });
     }
 
@@ -115,6 +118,7 @@ export default function ExploreVenue() {
             .then((res) => {
                 setLoading(false)
                 setVenues(res.data.event);
+                console.log("getvenues", res.data.event)
                 setSubscribtion(res.data.subscription)
             })
             .catch((error) => {
@@ -140,7 +144,7 @@ export default function ExploreVenue() {
             {
                 subscribtion?.active ?
                     <ExploreVenueStyle>
-                        <DropdownsList filter={filter} setLoading={setLoading} setVenues={setVenues}/>
+                        <DropdownsList filter={filter} setLoading={setLoading} setVenues={setVenues} getEvents={getEvents} getFilters={getFilters}/>
                         <div/>
 
                         <section className="venues-list">

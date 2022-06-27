@@ -195,10 +195,11 @@ export default function UserHome() {
             }).catch((e) => {
         })
         axios
-            .get(`/v1/users/allEventsOfVenue`, {
+            .get(`/v1/users/allEventsByVenue/${user.id}`, {
                 headers: {Authorization: `Bearer ${state.authToken}`},
             })
             .then((res) => {
+                console.log("eventsbyvenue",res.data)
                 setEvents(res.data);
                 setIsLoading(false);
             })
