@@ -69,10 +69,11 @@ const UserSidebar = ({ reservations,subscription,timeDifference }: any) => {
       <figure className="person-info-wrapper">
         <div className="avatar-wrapper">
           <img
-            src={process.env.REACT_APP_BASE_URL + "/images/" + state.data.imageUrl}
-            className="avatar"
+              src={state.data.imageUrl?process.env.REACT_APP_BASE_URL + "/images/" + state.data.imageUrl:"/images/person.svg"}
+              className="avatar"
             alt="avatar"
           />
+          
 
           <div className="action-buttons-wrapper">
             <Link to="/dashboard/basic-info">

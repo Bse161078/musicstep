@@ -150,8 +150,13 @@ const RoutesList = (props: any) => {
                 <Route exact path="/credit-payment-success" component={CreditPaymentSuccess}/>
 
                 <Route path="/explore-venue/venue-details" component={VenueDetails}/>
+                <Route path="/dashboard/home/venue-details" component={VenueDetails}/>
                 <Route
                     path="/explore-venue/organizer-profile"
+                    component={OrganizerProfile}
+                />
+                <Route
+                    path="/dashboard/home/organizer-profile"
                     component={OrganizerProfile}
                 />
                 <Route path="/how-it-works" component={HowItWorks}/>

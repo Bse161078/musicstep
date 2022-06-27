@@ -68,10 +68,11 @@ export const UserSidebarStyle = styled.div`
     }
 
     .avatar {
-      width: 150px;
-      height: 150px;
+      width: 70px;
+      height: 70px;
       object-fit: cover;
       border-radius: 50%;
+      border: 1px solid black;
     }
   }
 `;

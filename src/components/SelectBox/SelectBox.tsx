@@ -14,9 +14,9 @@ type options = {
 };
 
 type SelectBoxProps = {
-  name: string;
+  name: any;
   defaultValue?: string;
-  options: options[];
+  options: any;
   width?: string;
   setFieldValue?: (field: string, value: any) => void;
   initializeSettingsData?: any;
@@ -27,6 +27,7 @@ type SelectBoxProps = {
   setLoading?:any;
   type?: "horizontal" | "vertical";
   placeholder?: string;
+  clear?:any;
   handleSelectBoxChange?: (e: any) => void;
 };
 
@@ -55,9 +56,13 @@ const SelectBox = (props: SelectBoxProps) => {
     placeholder,
     setVenues,
     setLoading,
+    clear,
     handleSelectBoxChange,
   } = props;
   useEffect(() => {
+    const value=field.name
+    //clear&&setVal
+   // clear&&setVal(value)
     // const data = [
     //   {type: "tags", search: ["pop", "test"]},
     //   {type: "distance", search: [{location: {latitude: 33.640599, longitude: 73.061110}, value: 5}]},
@@ -76,7 +81,6 @@ const SelectBox = (props: SelectBoxProps) => {
   useEffect(()=>{
     setAddressData(address.locality+" , "+ address.countryCode+" , "+ address.countryName)
   },[address])
-
   const displayLocation=async(latitude:any,longitude:any)=>{
     var request = new XMLHttpRequest();
     var method = 'GET';
@@ -160,7 +164,10 @@ const SelectBox = (props: SelectBoxProps) => {
     handleSelectBoxChange && handleSelectBoxChange(value);
   };
   let count = 0
-  
+  useEffect(()=>{
+    console.log("addressloco",values,field.name)
+
+  },[values])
   return (
     <SelectInputStyle type={type}>
       {label && <label className="select-label">{label}</label>}
