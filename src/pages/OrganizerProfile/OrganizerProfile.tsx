@@ -58,6 +58,7 @@ export default function VenueDetails() {
                 headers: {Authorization: `Bearer ${state.authToken}`},
             })
             .then((res) => {
+                console.log("response = ",res.data);
                 setEvents(res.data.event[0]);
                 setIsLoading(false);
             })
@@ -133,8 +134,8 @@ export default function VenueDetails() {
                     <LogoWithHeading
                         heading={organizerDetail.organizerName}
                         logo={organizerDetail.logoUrl}
-                        averageRating={venueDetail.averageRating}
-                        reviewCount={venueDetail.reviewCount}
+                        averageRating={events.averageRating}
+                        reviewCount={events.reviewCount}
                     />
 
                     <div className="buttons-wrapper">

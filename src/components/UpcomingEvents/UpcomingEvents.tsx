@@ -7,6 +7,8 @@ import { UpcomingEventsStyle } from "./UpcomingEvents.style";
 const UpcomingEvents = ({ events,venue,subscribtionCredit }: any) => {
   const [reservation, setReservation] = useState(0);
   let tempresrvatoin = 0;
+
+
   return (
     <UpcomingEventsStyle>
       {/* <div className="list-header">

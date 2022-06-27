@@ -117,6 +117,8 @@ export default function VenueDetails() {
     // //     }
     // }
 
+    console.log("events = ",events);
+
     return (
         <>
             <NavbarWithSearch userCredit={user.credits}/>

@@ -8,10 +8,7 @@ type EventDetailWrapperProps = {
 };
 export const EventDetailWrapper = ({ event,venue }: EventDetailWrapperProps) => {
   const history = useHistory();
-  const eventImage =event.additionalPhotos.length>0 &&
-    (event.eventPhotoSameAsOrganizerPhoto || event.additionalPhotos.length === 0
-      ? event.organizerInfo[0]?.coverPhotoUrl
-      : event.additionalPhotos[0]?event.additionalPhotos[0]:'')
+    const eventImage =venue.coverPhotoUrl || venue.logoUrl;
 
   const week = [
     "Sunday",
@@ -22,6 +19,9 @@ export const EventDetailWrapper = ({ event,venue }: EventDetailWrapperProps) => 
     "Friday",
     "Saturday",
   ];
+
+
+  console.log("events = ",event,"   ",venue);
 
   const handleViewOrganizer = () => {
     history.push({
@@ -38,6 +38,17 @@ export const EventDetailWrapper = ({ event,venue }: EventDetailWrapperProps) => 
       state: { venueDetail: venue },
     });
   };
+
+
+  let organizerInfo=null;
+  if(event.organizerInfo && (event.organizerInfo).length>0){
+    organizerInfo=event.organizerInfo[0];
+  }else if(venue.organizerInfo && (venue.organizerInfo).length>0){
+      organizerInfo=venue.organizerInfo[0];
+
+  }
+
+
   return (
     <div className="first-row-wrapper">
       <img
@@ -91,7 +102,7 @@ export const EventDetailWrapper = ({ event,venue }: EventDetailWrapperProps) => 
                 handleViewOrganizer()
               }
             }
-            >{venue.organizerInfo[0]?.organizerName}</span>
+            >{organizerInfo && organizerInfo.organizerName}</span>
           </p>
           <p>
             Available Tickets :{" "}
