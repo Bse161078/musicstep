@@ -16,7 +16,6 @@ export const PaymentInfoListItem = (props: PaymentInfoListItemProps) => {
   const { setCurrentPage,payments } = props;
   const [isModalVisible, setIsModalVisible] = useState(false)
   const handleShowPayment = ()=>{
-    console.log("payements",payments)
     payments.length>0&&payments.map((payment:any)=>{
       return(
       <PaymentInfoListItemStyle>

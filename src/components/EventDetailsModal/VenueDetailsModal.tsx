@@ -24,7 +24,6 @@ const VenueDetailsModal = (props: VenueDetailsModalProps) => {
         subscribtionCredit,
         venue
     } = props;
-    console.log('events,',event,venue)
     const history = useHistory();
     return (
         <>

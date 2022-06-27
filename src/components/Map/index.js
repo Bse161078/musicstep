@@ -316,7 +316,6 @@ class Index extends React.Component {
                         let latitude = e.latLng.lat()
                         let longitude  = e.latLng.lng()
                         this.props.getLocation(latitude,longitude)
-                        console.log(latitude, longitude)
                     }}
                 >
                     {/* InfoWindow on top of marker */}

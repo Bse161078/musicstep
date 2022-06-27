@@ -20,45 +20,37 @@ import {
 import moment from "moment";
 import {OutlineButtonStyle} from "../../../styles/Common.style";
 import VenueDetailsModal from "../../../components/EventDetailsModal/VenueDetailsModal";
-import { EventDetailsModal } from "../../../components";
-import { useHistory } from "react-router-dom";
+import {EventDetailsModal} from "../../../components";
+import {useHistory} from "react-router-dom";
 
 const FutureEvents = () => {
 
     const {state, dispatch} = useLoginContext();
-    const [isModalVisible,setIsModalVisible] = useState(false)
-    const [futureEvents, setFutureEvents] = useState([])
+    const [isModalVisible, setIsModalVisible] = useState(false)
+    const [futureEvents, setFutureEvents] = useState([]);
+    const [selectedEvent, setSelectedEvent] = useState<any>(null);
+
 
     const getAllFutureEvents = async () => {
         const response = await axios.get("/v1/event/future", {headers: {Authorization: `Bearer ${state.authToken}`}})
         setFutureEvents(response.data)
-        console.log('futureevents',response.data)
     }
-    const history =  useHistory()
-    const handleViewVenue = (event:any) => {
+    const history = useHistory()
+    const handleViewVenue = (event: any) => {
         history.push({
-          pathname: `/dashboard/home/venue-details`,
-    
-          state: { venueDetail: event.venuesInfo[0] },
+            pathname: `/dashboard/home/venue-details`,
+
+            state: {venueDetail: event.venuesInfo[0]},
         });
-      };
+    };
     useEffect(() => {
         getAllFutureEvents();
     }, [])
 
 
-console.log("isModalVisible",isModalVisible)
-
-
-    const ContainerData = futureEvents.filter((event:any)=>(event.tickets).length>0).map((event: any, index: any) =>
+    const ContainerData = futureEvents.filter((event: any) => (event.tickets).length > 0).map((event: any, index: any) =>
         <TableRow hover tabIndex={-1} key={event._id + index}>
-             <VenueDetailsModal
-                isModalVisible={isModalVisible}
-                setIsModalVisible={setIsModalVisible}
-                event={event}
-                venue={event.venuesInfo[0]}
-                
-            />
+
             <TableCell key={event._id + index} align="left" style={{wordBreak: "break-word"}}>
                 <img
                     src="/images/sample.png"
@@ -73,7 +65,7 @@ console.log("isModalVisible",isModalVisible)
 
                     </Grid>
                     <Grid item xs={12}>
-                        <p className="description">{moment(moment(event.date).format("YYYY-MM-DD")+' '+event.startingTime).diff(new Date(),"hours")+"  "+" Hours"}</p>
+                        <p className="description">{moment(moment(event.date).format("YYYY-MM-DD") + ' ' + event.startingTime).diff(new Date(), "hours") + "  " + " Hours"}</p>
                     </Grid>
                 </Grid>
             </TableCell>
@@ -97,7 +89,7 @@ console.log("isModalVisible",isModalVisible)
                         <OutlineButtonStyle
                             width="150px"
                             height="43px"
-                            style={{marginRight:20}}
+                            style={{marginRight: 20}}
                             className="pricing"
                             onClick={() => {
                                 handleViewVenue(event)
@@ -113,6 +105,8 @@ console.log("isModalVisible",isModalVisible)
                             height="43px"
                             className="pricing"
                             onClick={() => {
+                                console.log("event = ", event);
+                                setSelectedEvent(event)
                                 setIsModalVisible(true)
                             }}
                         >
@@ -125,6 +119,15 @@ console.log("isModalVisible",isModalVisible)
 
     return (
         <SectionHeading heading="Suggested Upcoming Events">
+            {isModalVisible && selectedEvent &&
+            <VenueDetailsModal
+                isModalVisible={isModalVisible}
+                setIsModalVisible={setIsModalVisible}
+                event={selectedEvent}
+                venue={selectedEvent.venuesInfo[0]}
+
+            />
+            }
             <TableContainer style={{height: "91%", overflowY: "scroll"}}>
                 <Table stickyHeader aria-label="sticky table">
                     <TableHead>

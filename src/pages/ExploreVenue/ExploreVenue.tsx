@@ -118,7 +118,6 @@ export default function ExploreVenue() {
             .then((res) => {
                 setLoading(false)
                 setVenues(res.data.event);
-                console.log("getvenues", res.data.event)
                 setSubscribtion(res.data.subscription)
             })
             .catch((error) => {

@@ -18,6 +18,7 @@ import {Loading} from "../../../components";
 import {LocalizationProvider} from '@mui/x-date-pickers/LocalizationProvider';
 import {AdapterDateFns} from '@mui/x-date-pickers/AdapterDateFns';
 import {PayoutsListStyle} from "../../components/PayoutsList/PayoutsList.style";
+import moment from "moment";
 
 export default function Payouts() {
     const {state, dispatch} = useLoginContext();
@@ -31,7 +32,7 @@ export default function Payouts() {
 
 
     const [from, setFrom] = React.useState<Date>(
-        new Date(0),
+        new Date(moment().subtract('days', 30).toDate()),
     );
     const [to, setTo] = React.useState<Date>(
         new Date(),

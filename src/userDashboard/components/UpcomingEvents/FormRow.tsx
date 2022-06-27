@@ -30,6 +30,10 @@ const FormRow = ({ event }: FormRowProps) => {
     endTime.diff(startTime, "minutes") % 60
       ? (endTime.diff(startTime, "minutes") % 60) + "mint"
       : null;
+
+
+  console.log("event rows111")
+
   return (
     <>
       <FormRowStyle>

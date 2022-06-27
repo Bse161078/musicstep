@@ -8,11 +8,7 @@ type VenueDetailWrapperProps = {
 };
 export const VenueDetailWrapper = ({ event,venue }: VenueDetailWrapperProps) => {
   const history = useHistory();
-  console.log("availabletickets",event)
-  const eventImage =event.additionalPhotos.length>0 &&
-    (event.eventPhotoSameAsOrganizerPhoto || event.additionalPhotos.length === 0
-      ? event.organizerInfo[0]?.coverPhotoUrl
-      : event.additionalPhotos[0]?event.additionalPhotos[0]:'')
+  const eventImage =event.venuesInfo[0].coverPhotoUrl || event.venuesInfo[0].logoUrl;
 
   const week = [
     "Sunday",
@@ -31,6 +27,9 @@ export const VenueDetailWrapper = ({ event,venue }: VenueDetailWrapperProps) => 
       state: { organizerDetail: event },
     });
   };
+
+  console.log("events = ",event);
+
   return (
     <div className="first-row-wrapper">
       <img

@@ -51,7 +51,6 @@ export default function VenueDetails() {
     const [amentiesState, setamentiesState] = useState(amenties);
     const [reviews, setreviews] = useState(null);
     const venueDetail = window.location.href.includes("dashboard")?location.state.organizerDetail.venuesInfo[0]: location.state.organizerDetail;
-    console.log("veueDetails",venueDetail,location.state.organizerDetail)
     function getVenue() {
         setIsLoading(true);
         axios
@@ -59,7 +58,6 @@ export default function VenueDetails() {
                 headers: {Authorization: `Bearer ${state.authToken}`},
             })
             .then((res) => {
-                console.log("organizerDetail = ",res.data)
                 setEvents(res.data.event[0]);
                 setIsLoading(false);
             })
@@ -110,7 +108,6 @@ export default function VenueDetails() {
         }
     }
 
-console.log("organizerDetail",organizerDetail)
     return (
         <>
             <NavbarWithSearch userCredit={user.credits}/>

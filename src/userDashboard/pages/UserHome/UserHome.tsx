@@ -36,7 +36,7 @@ const EventReservation = ({reservations, cancelreservation, subscription}: any) 
     const [selectedReservation, setSelectedReservation] = useState(false);
 
 
-    reservations = reservations.filter((reserve: any) => (reserve.eventInfo).length > 0 && (new Date(reserve.eventInfo[0].date)>=new Date()));
+    reservations = reservations.filter((reserve: any) => (reserve.eventInfo).length > 0 && (new Date(reserve.eventInfo[0].date) >= new Date()));
 
 
     return (
@@ -52,13 +52,13 @@ const EventReservation = ({reservations, cancelreservation, subscription}: any) 
                                 gridTemplateColumns: "repeat(auto-fill,minmax(450px,1fr)) !important",
                                 gridAutoColumns: "minmax(450px, 1fr)",
                                 textAlign: "left",
-                                marginRight:10,
-                                paddingBottom:4
+                                marginRight: 10,
+                                paddingBottom: 4
                             }}
                         >
                             {reservations &&
                             reservations.map((reservation: any) => (
-                                <ImageListItem sx={{marginLeft:5}}>
+                                <ImageListItem sx={{marginLeft: 5}}>
                                     <CardWithContent
                                         heading={reservation.eventInfo[0].title}
                                         time={moment(reservation.eventInfo[0].startingTime, [
@@ -158,7 +158,7 @@ const EventReservation = ({reservations, cancelreservation, subscription}: any) 
                 isModalVisible={isModalVisible}
                 setIsModalVisible={setIsModalVisible}
             />}
-            </>
+        </>
     );
 };
 
@@ -199,7 +199,6 @@ export default function UserHome() {
                 headers: {Authorization: `Bearer ${state.authToken}`},
             })
             .then((res) => {
-                console.log("eventsbyvenue",res.data)
                 setEvents(res.data);
                 setIsLoading(false);
             })

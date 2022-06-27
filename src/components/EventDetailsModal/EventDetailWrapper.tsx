@@ -7,7 +7,6 @@ type EventDetailWrapperProps = {
   venue?:any
 };
 export const EventDetailWrapper = ({ event,venue }: EventDetailWrapperProps) => {
-  console.log("eventvenue",event,venue)
   const history = useHistory();
   const eventImage =event.additionalPhotos.length>0 &&
     (event.eventPhotoSameAsOrganizerPhoto || event.additionalPhotos.length === 0
@@ -39,7 +38,6 @@ export const EventDetailWrapper = ({ event,venue }: EventDetailWrapperProps) => 
       state: { venueDetail: venue },
     });
   };
-console.log('eventvenue',event,venue)
   return (
     <div className="first-row-wrapper">
       <img

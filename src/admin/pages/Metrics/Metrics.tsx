@@ -15,21 +15,18 @@ const Metrics = () => {
   const handlePartnerStats = () =>{
     setLoading(true)
     const user :any = JSON.parse(localStorage.getItem("data") || "{}");
-    console.log("userId",user,localStorage.getItem("authToken"))
     axios.get(`/v1/partners/stats/${user.id}`, {
       headers: {Authorization: `Bearer ${localStorage.getItem("authToken")}`},
   }).then((response) => {
       //window.open(response.data.url, '_blank');
-    console.log("responsemetrics",response)
     setStats(response.data)
     setLoading(false);
   }).catch((err) => {
-    console.log("responsemetrics",err)
       setLoading(false)
   })
   }
   return (
-    <div style={{width:'105vw',overflow:'hidden'}}>
+    <div style={{width:'100vw',overflow:'hidden'}}>
     <Dashboard >
     {isLocading&&<Loading/>}
       {stats&&<MetricsStyle>
@@ -37,8 +34,8 @@ const Metrics = () => {
       
         <ContentHeader heading="Summary" actionButtons={<>Events Filter</>} />
         <div className="tiles-wrapper"  >
-            <Tile heading="Total Reservations" value={stats.totalReservations} />
-            <Tile heading="Sold Reservations" value={stats.soldReservations} />
+            <Tile heading="Total Reservations" value={`$${stats.totalReservations}`} />
+            <Tile heading="Sold Reservations" value={`$${stats.soldReservations}`} />
             <Tile heading="Sold Tickets" value={stats.soldTickets} />
             <Tile heading="Total Tickets" value={stats.totalTickets}/>
             {/* <Tile heading="Total Reservations" value="$2880" /> */}

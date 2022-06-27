@@ -165,7 +165,6 @@ const SelectBox = (props: SelectBoxProps) => {
   };
   let count = 0
   useEffect(()=>{
-    console.log("addressloco",values,field.name)
 
   },[values])
   return (

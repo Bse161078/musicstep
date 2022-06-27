@@ -20,7 +20,6 @@ export const DropdownsList = (props:any) => {
         }}
         
         onSubmit={(values:any, { resetForm }) => {
-          console.log(values,'formikvalues')
           resetForm({values: ""})
       }}
       >

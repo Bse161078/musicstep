@@ -61,7 +61,6 @@ export default function VenueDetails() {
                 headers: {Authorization: `Bearer ${state.authToken}`},
             })
             .then((res) => {
-                console.log("eventsofvenue",res.data.event[0])
                 setEvents(res.data.event[0]);
                 setIsLoading(false);
             })

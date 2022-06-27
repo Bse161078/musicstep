@@ -38,7 +38,6 @@ export const TabRow = (props: TabRowProps) => {
       : null;
 
 
-console.log("venue = ",event);
   return (
     <>
       <TabRowStyle>

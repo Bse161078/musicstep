@@ -22,13 +22,14 @@ const PaymentInfoContent = (props: PaymentInfoContentProps) => {
   const getPaymentMethod =()=>{
     const user :any = JSON.parse(localStorage.getItem("data")||"{}")
     axios.get(`/v1/partners/createPartnerPayment/${user.id}`).then((res)=>{
-      console.log("response",res.data)
       setPayments(res.data)
     }).catch((error)=>{
-      console.log("response",error)
 
     })
   }
+
+
+  console.log(payments)
 
   return (
     
@@ -66,8 +67,9 @@ const PaymentInfoContent = (props: PaymentInfoContentProps) => {
           <h3 className="header-title">Routing Number</h3>
           <h3 className="header-title">Tax Number</h3>
         </div>
-
-        <PaymentInfoListItem setCurrentPage={setCurrentPage} payments = {payments} />
+          {payments &&
+              <PaymentInfoListItem setCurrentPage={setCurrentPage} payments={payments}/>
+          }
       </div>
     </PaymentInfoContentStyle>
   );

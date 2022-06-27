@@ -4,7 +4,6 @@ import {PriceCard} from "../../components";
 import {PricingStyle} from "./Pricing.style";
 
 export default function Pricing(props: any) {
-console.log("props",props)
 
     const buyMoreCredit=props.location && props.location.state && props.location.state.buyMoreCredit;
     const updateSubscription=props.location && props.location.state && props.location.state.updateSubscription;
