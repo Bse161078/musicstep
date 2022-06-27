@@ -83,7 +83,7 @@ export const DropdownsList = (props:any) => {
               />
             </span>
             <span>
-              <OutlineButtonStyle style={{width:"120%", marginTop:10,border:'white',background:'#F7F7F7'}}
+              <OutlineButtonStyle style={{width:"120%", marginTop:10,border:'white',background:'#F7F7F7',padding:"5px"}}
               type="submit"
               onClick={()=>{
                 setClear(true)
