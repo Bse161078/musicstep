@@ -45,9 +45,31 @@ export const PaymentInfoListItem = (props: PaymentInfoListItemProps) => {
     })
   }
   return (
-    <>
-      
-      {payments&&handleShowPayment()}
-    </>
+    payments.length>0&&payments.map((payment:any)=>{
+      return(
+      <PaymentInfoListItemStyle>
+        <div className="content-wrapper">
+        <p className="description">{payment.beneficiary_name}</p>
+        <h4 className="heading">
+         {payment.account_number}
+        </h4>
+        <p className="description">{payment.currency}</p>
+      </div>
+
+      <div className="team-role">{payment.routing_number}</div>
+
+      <div className="team-role">{payment.tax_number}</div>
+
+      <div className="action-buttons-wrapper">
+        <DeleteIcon />
+        <span onClick={() => setIsModalVisible(true)}>
+          {/* <CalenderIcon  /> */}
+        </span>
+      </div>
+      <PaymentMethodDetails setCurrentPage={setCurrentPage} isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}  />
+
+      </PaymentInfoListItemStyle>
+      )
+    })
   );
 };
