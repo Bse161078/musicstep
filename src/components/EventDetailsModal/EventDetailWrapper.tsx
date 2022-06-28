@@ -21,7 +21,6 @@ export const EventDetailWrapper = ({ event,venue }: EventDetailWrapperProps) => 
   ];
 
 
-  console.log("events = ",event,"   ",venue);
 
   const handleViewOrganizer = () => {
     history.push({

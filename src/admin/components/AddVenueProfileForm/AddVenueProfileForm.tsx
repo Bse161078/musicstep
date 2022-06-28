@@ -191,7 +191,9 @@ const AddVenueProfileForm = () => {
             ).then(
                 (images: any) => {
                     /* Once all promises are resolved, update state with image URI array */
-                    setAdditionalImage(images);
+                    let tempImages=JSON.parse(JSON.stringify(previewAdditionalImage));
+                    tempImages=tempImages.concat(images);
+                    setAdditionalImage(tempImages);
                 },
                 (error) => {
                     console.error(error);
@@ -330,6 +332,12 @@ const AddVenueProfileForm = () => {
     )
 
 
+    const onDeleteFile=(form:any,index:any)=>{
+        let tempFiles=JSON.parse(JSON.stringify(previewAdditionalImage));
+        tempFiles.splice(index,1);
+        setAdditionalImage(tempFiles);
+    }
+
     return (
         <>
             <Dashboard>
@@ -397,6 +405,7 @@ const AddVenueProfileForm = () => {
                                             <Slider
                                                 handleAdditionalPhoto={handleAdditionalPhoto}
                                                 previewAdditionalImage={previewAdditionalImage}
+                                                onDeleteFile={onDeleteFile}
                                                 // handleImageClick={handleImageClick}
                                             />
                                         </div>

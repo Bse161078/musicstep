@@ -48,6 +48,9 @@ const FutureEvents = () => {
     }, [])
 
 
+
+    console.log("events = ",futureEvents);
+
     const ContainerData = futureEvents.filter((event: any) => (event.tickets).length > 0).map((event: any, index: any) =>
         <TableRow hover tabIndex={-1} key={event._id + index}>
 
@@ -110,7 +113,7 @@ const FutureEvents = () => {
                                 setIsModalVisible(true)
                             }}
                         >
-                            {`${event.tickets[0].price} Credits`}
+                            {`${event.tickets[0].credits} Credits`}
                         </OutlineButtonStyle>
                     </Grid>
                 </Grid>

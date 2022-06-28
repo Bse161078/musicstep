@@ -58,7 +58,7 @@ const DashboardHeader = (props: DashboardHeaderProps) => {
           <p className="description">{description}</p>
         </div>
         <div className="button-wrapper">
-          {handleCancelClick && (
+          {handleCancelClick && heading!=="Preview Organization"  && (
             <OutlineButtonStyle
               onClick={handleCancelClick}
               width={cancelButtonWidth ? cancelButtonWidth : "150px"}
@@ -68,7 +68,7 @@ const DashboardHeader = (props: DashboardHeaderProps) => {
             </OutlineButtonStyle>
           )}
 
-          {handleSaveClick && (
+          {handleSaveClick && heading!=="Preview Organization"  && (
             <FilledButtonStyle
               onClick={handleSaveClick}
               buttonType="dark"

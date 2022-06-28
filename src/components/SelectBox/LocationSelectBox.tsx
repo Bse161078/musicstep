@@ -171,7 +171,6 @@ const LocationSelectBox = (props: SelectBoxProps) => {
     }, [values])
 
     const filteredValues=values && values.filter((v:string)=>v!=="Current Location")
-    console.log("value = ",filteredValues);
     return (
         <SelectInputStyle type={type}>
             {label && <label className="select-label">{label}</label>}

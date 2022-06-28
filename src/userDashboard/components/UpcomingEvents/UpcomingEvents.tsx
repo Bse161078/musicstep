@@ -14,7 +14,7 @@ const UpcomingEvents = ({ events }: UpcomingEventsProps) => {
         <FormHeaderStyle>
           <span>Time & Duration</span>
           <span>Event Name & Genre</span>
-          <span>Event Venue</span>
+          <span>Event Venue1111</span>
         </FormHeaderStyle>
 
         {events && events.map((event: any) => <FormRow event={event} />)}

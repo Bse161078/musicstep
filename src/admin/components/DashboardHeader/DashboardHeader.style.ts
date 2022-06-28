@@ -8,7 +8,7 @@ export const DashboardHeaderStyle = styled.header`
   position: sticky;
   top: 80px;
   background: #fff;
-  z-index: 100;
+  z-index: 1;
   
   @media (max-width: 1024px) {
     flex-direction: column;

@@ -29,7 +29,6 @@ const PaymentInfoContent = (props: PaymentInfoContentProps) => {
   }
 
 
-  console.log(payments)
 
   return (
     

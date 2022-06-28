@@ -21,6 +21,7 @@ import {
     useLoginContext,
 } from "../../../context/authenticationContext";
 import Loading from "../../../components/Loading/Loading"
+import set = Reflect.set;
 
 type OrganizationProfileFormProps = {
     setCurrentPage: (data: string) => void;
@@ -112,6 +113,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                 additionalPhotos: null,
             });
         }
+
     }, []);
     //Handler
     const handleattributesList = (currentValue: any, index: any) => {
@@ -160,6 +162,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
             }
             // Sceniro 2:Edit organizer
             if (organizerProfile && file) {
+                setIsLoading(true);
                 const bodyData = new FormData();
                 bodyData.append("logo", file);
                 const res = await axios
@@ -181,6 +184,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                     setHeading("Success");
                     // if (!isSuccessModalVisible)
                 }
+                setIsLoading(false);
             }
         }
     };
@@ -201,6 +205,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                 reader.readAsDataURL(file);
             }
             if (organizerProfile && file) {
+                setIsLoading(true);
                 const bodyData = new FormData();
                 bodyData.append("coverPhoto", file);
                 const res = await axios
@@ -222,85 +227,97 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                     setHeading("Success");
                     // if (!isSuccessModalVisible)
                 }
+                setIsLoading(false);
             }
         }
     };
 
     //Handle Additional photo
     const handleAdditionalPhotoUpload = async (event: any, form: any) => {
-            const imageType = event.target.files[0].type;
+        let images = [];
+        for (let file of event.target.files) {
+            let imageType = file.type;
             if (imageType === "image/jpeg" || imageType === "image/png" || imageType === "image/jpg" || imageType === "image/svg") {
-                form.setFieldValue("additionalPhotos", event.target.files);
-                if (event.target.files && !organizerProfile) {
-                    const files = Array.from(event.target.files);
-                    Promise.all(
-                        files.map((file: any) => {
-                            return new Promise((resolve, reject) => {
-                                const reader = new FileReader();
-                                reader.addEventListener("load", (ev) => {
-                                    resolve(ev.target?.result);
-                                });
-                                reader.addEventListener("error", reject);
-                                reader.readAsDataURL(file);
-                            });
-                        })
-                    ).then(
-                        (images: any) => {
-                            /* Once all promises are resolved, update state with image URI array */
-                            setAdditionalImage(images);
-                        },
-                        (error) => {
-                            console.error(error);
-                        }
-                    );
-                }
-
-                const files = event.target.files;
-                if (organizerProfile && files) {
-                    const bodyData = new FormData();
-
-                    for (let i = 0; i < files.length; i++) {
-                        bodyData.append(`additionalPhotos`, files[i]);
-                    }
-
-                    const res = await axios
-                        .patch(
-                            `/v1/organizer/editOrganizerProfileAdditionalPhotos/${organizerProfile.id}`,
-                            bodyData,
-                            {
-                                headers: {Authorization: `Bearer ${state.authToken}`},
-                            }
-                        )
-                        .catch((error) => {
-                            setSuccessModalVisible(true);
-                            setMessage(error.response.data.error);
-                            setHeading("Error");
-                        });
-                    if (res) {
-                        setSuccessModalVisible(true);
-                        setMessage("Organizer Additional photos Updated Successfully");
-                        setHeading("Success");
-                        // if (!isSuccessModalVisible)
-                        const photos: [] = res.data.additionalPhotosUrls.map(
-                            (photo: any) => process.env.REACT_APP_BASE_URL + "/images/" + photo
-                        );
-                        photos.reverse();
-                        setAdditionalImage(photos);
-                    }
-                }
+             images.push(file);
             }
-        };
+        }
+        const imageType = event.target.files[0].type;
+        if (images.length > 0) {
+            form.setFieldValue("additionalPhotos", images);
+            if (event.target.files && !organizerProfile) {
+                const files = Array.from(images);
+                Promise.all(
+                    files.map((file: any) => {
+                        return new Promise((resolve, reject) => {
+                            const reader = new FileReader();
+                            reader.addEventListener("load", (ev) => {
+                                resolve(ev.target?.result);
+                            });
+                            reader.addEventListener("error", reject);
+                            reader.readAsDataURL(file);
+                        });
+                    })
+                ).then(
+                    (images: any) => {
+                        /* Once all promises are resolved, update state with image URI array */
+                        const tempImages: any = previewAdditionalImage.concat(images)
+                        setAdditionalImage(tempImages);
+                    },
+                    (error) => {
+                    }
+                );
+            }
+
+            const files = event.target.files;
+            if (organizerProfile && files) {
+                const bodyData = new FormData();
+                setIsLoading(true);
+
+                for (let i = 0; i < files.length; i++) {
+                    bodyData.append(`additionalPhotos`, files[i]);
+                }
+
+                const res = await axios
+                    .patch(
+                        `/v1/organizer/editOrganizerProfileAdditionalPhotos/${organizerProfile.id}`,
+                        bodyData,
+                        {
+                            headers: {Authorization: `Bearer ${state.authToken}`},
+                        }
+                    )
+                    .catch((error) => {
+                        setSuccessModalVisible(true);
+                        setMessage(error.response.data.error);
+                        setHeading("Error");
+                    });
+                if (res) {
+                    setSuccessModalVisible(true);
+                    setMessage("Organizer Additional photos Updated Successfully");
+                    setHeading("Success");
+                    // if (!isSuccessModalVisible)
+                    const photos: [] = res.data.additionalPhotosUrls.map(
+                        (photo: any) => process.env.REACT_APP_BASE_URL + "/images/" + photo
+                    );
+                    photos.reverse();
+                    setAdditionalImage(photos);
+                }
+                setIsLoading(false);
+
+            }
+        }
+    };
 
     //
-    const handleImageClick = async (e: any) => {
+    const removePhoto = async (image:any,index:any) => {
+
+        image=image.split("images/").length>1?image.split("images/")[1]:image;
+
         if (organizerProfile) {
-            const imgUrl = e.target.src.replace(
-                process.env.REACT_APP_BASE_URL + "/",
-                ""
-            );
+
             const body = {
-                additionalPhoto: imgUrl,
+                additionalPhoto: image,
             };
+            setIsLoading(true);
             const res = await axios
                 .patch(
                     `/v1/organizer/removeAdditionalPhotos/${organizerProfile.id}`,
@@ -310,6 +327,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                     }
                 )
                 .catch((error) => {
+                    setIsLoading(false)
                     setSuccessModalVisible(true);
                     setMessage(error.response.data.error);
                     setHeading("Error");
@@ -318,13 +336,12 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                 setSuccessModalVisible(true);
                 setMessage("Photo remove Successfully");
                 setHeading("Success");
-                // if (!isSuccessModalVisible)
-                const photos: [] = res.data.additionalPhotosUrls.map(
-                    (photo: any) => process.env.REACT_APP_BASE_URL + "/images/" + photo
-                );
-                photos.reverse();
-                setAdditionalImage(photos);
+                let tempFiles=JSON.parse(JSON.stringify(previewAdditionalImage));
+                tempFiles.splice(index,1);
+                setAdditionalImage(tempFiles);
+
             }
+            setIsLoading(false);
         }
     };
     //
@@ -395,13 +412,11 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         } else {
             var body: any = {
                 organizerBio: e.organizerBio,
-
                 organizationAttributes: organizationAttributes,
                 organizerName: e.organizerName,
-
                 saftyAndCleaness: saftyAndCleaness,
-
                 socialMediaAndMarketingLinks: socialMediaAndMarketingLinks,
+                additionalPhotos:previewAdditionalImage
             };
             setIsLoading(true)
 
@@ -416,7 +431,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                 .catch((error) => {
 
                     setSuccessModalVisible(true);
-                    setMessage(error.response.data.error);
+                    setMessage("something went wrong");
                     setHeading("Error");
                     setIsLoading(false)
                 });
@@ -431,6 +446,12 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         }
     };
 
+    const onDeleteFile=(form:any,index:any)=>{
+        removePhoto((previewAdditionalImage[index]),index);
+    }
+
+    console.log("additional images =  ",previewAdditionalImage)
+
     return (
         <div>
             {isLoading && <Loading/>}
@@ -443,7 +464,8 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                     }}
                     backButtonText="Back To Basic Info"
                     saveButtonText="Add"
-                    heading={props.currentPage === 'add-organization' ? "Add Organizer Profile" : "Edit Organizer Profile"}
+                    heading={props.currentPage === 'add-organization' ? "Add Organizer Profile" :
+                        (props.currentPage === 'preview-organization'?"Preview Organization":"Edit Organizer Profile")}
                     isLoading={isLoading}
                     handleCancelClick={() => setCurrentPage("preview")}
                 />
@@ -521,7 +543,8 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                                     <Slider
                                         handleAdditionalPhoto={handleAdditionalPhoto}
                                         previewAdditionalImage={previewAdditionalImage}
-                                        handleImageClick={handleImageClick}
+                                        handleImageClick={()=>{}}
+                                        onDeleteFile={onDeleteFile}
                                     />
                                 </div>
                             </div>
