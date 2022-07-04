@@ -13,9 +13,11 @@ import Loading from "../../../../components/Loading/Loading";
 type InviteModalProps = {
     isModalVisible?: boolean;
     setIsModalVisible?: any;
+    roles?:any;
+    addNewTeam?:any
 };
 const InviteModal = (props: InviteModalProps) => {
-    const {isModalVisible, setIsModalVisible} = props;
+    const {isModalVisible, setIsModalVisible,roles,addNewTeam} = props;
     const {state} = useLoginContext();
     const [successModel, setsuccessModel] = useState(false);
     const [message, setMessage] = useState("");
@@ -23,6 +25,8 @@ const InviteModal = (props: InviteModalProps) => {
     const [email,setEmail]=useState("");
     const [error,setError]=useState("");
     const [isLoading,setLoading] = useState(false)
+    const [role,setRole]=useState("");
+
 
     const sendInviteMail = () => {
         setLoading(true);
@@ -61,6 +65,10 @@ const InviteModal = (props: InviteModalProps) => {
 
         }
     };
+
+    console.log("roles = ",roles)
+
+    const filteredRoles=roles?roles:[]
     return (
         <>
             {isLoading&&<Loading/>}
@@ -105,10 +113,16 @@ const InviteModal = (props: InviteModalProps) => {
                                     label="User Role"
                                     name="userRole"
                                     options={[
-                                        ...roleItems.map((item) => {
+                                        ...filteredRoles.map((item:any) => {
                                             return {key: item.name, value: item.name};
                                         }),
                                     ]}
+                                    values={[
+                                        ...filteredRoles.map((item:any) => {
+                                            return item.name;
+                                        }),
+                                    ]}
+                                    handleSelectBoxChange={(value)=>setRole(value)}
                                 />
                             </div>
                             <div style={{display: "flex"}}>
@@ -120,7 +134,10 @@ const InviteModal = (props: InviteModalProps) => {
                 </Formik>
             </ModalWrapper>
             <MessageModal
-                handleOkClick={() => setsuccessModel(false)}
+                handleOkClick={() => {
+                    setsuccessModel(false);
+                    addNewTeam(role,email)
+                }}
                 isModalVisible={successModel}
                 setIsModalVisible={setsuccessModel}
                 message={message}

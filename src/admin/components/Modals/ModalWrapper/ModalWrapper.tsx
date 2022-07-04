@@ -53,6 +53,7 @@ const ModalWrapper = (props: ModalWrapperProps) => {
 
     const handleOk = () => {
         setIsModalVisible(false);
+        if(handleOkClick) handleOkClick();
     };
     const handleCancel = () => {
         setIsModalVisible(false);

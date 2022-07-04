@@ -120,7 +120,7 @@ const SelectBox = (props: SelectBoxProps) => {
     {
       data = [
       {type: "distance", search: [{location: {latitude: latitude, longitude: longtitude}, value: parseInt(value.split(" "))}]},
-      
+
     ]
   }
   else if(field.name==='time'){
@@ -148,7 +148,7 @@ const SelectBox = (props: SelectBoxProps) => {
       {type: "amenities", search: [value]}
     ]
   }
-  
+
     axios.post('/v1/filter/event',{filters:data}).then((response)=>{
         setLoading(false)
         setVenues(response.data)
@@ -167,6 +167,9 @@ const SelectBox = (props: SelectBoxProps) => {
   useEffect(()=>{
 
   },[values])
+
+    console.log("values = ",values)
+
   return (
     <SelectInputStyle type={type}>
       {label && <label className="select-label">{label}</label>}
@@ -181,7 +184,7 @@ const SelectBox = (props: SelectBoxProps) => {
         disabled={disabled}
         placeholder={placeholder}
       >
-        {values&&values.map(
+        {values && values.map(
           (option: any) => (
             <Option
               key={option}
