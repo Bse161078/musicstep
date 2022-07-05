@@ -1,5 +1,8 @@
 import styled from "styled-components";
 export const EventsManagmentStyle = styled.div`
+  z-index:1;
+  background:white;
+
   .searchbar-wrapper {
     display: flex;
     justify-content: space-between;

@@ -4,6 +4,8 @@ import styled from "styled-components";
 export const MetricsStyle = styled.main`
   padding-bottom: 80px;
   z-index:100%;
+  z-index:1;
+  background:white;
 
   .tiles-wrapper {
     display: grid;

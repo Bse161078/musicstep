@@ -16,7 +16,7 @@ const Dashboard = (props: DashboardProps) => {
       <AdminNavBar />
       <div className="dashboard-section-wrapper">
         <SideBar sidebarItems={sidebarItems} />
-        <>{children}</>
+        <div style={{background:"white",zIndex:2}}>{children}</div>
       </div>
     </DashboardStyle>
   );

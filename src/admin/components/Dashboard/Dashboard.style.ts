@@ -9,7 +9,8 @@ export const DashboardStyle = styled.div`
     margin: auto;
     width:102vw;
     padding: 0 60px;
-
+    background:white;
+    z-index:1;
     @media (max-width: 1024px) {
       grid-template-columns: 250px 1fr;
       padding: 20px;
