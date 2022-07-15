@@ -72,7 +72,6 @@ export default function TeamManagement() {
             }
             updateRoles(tempPartner.roles);
         } catch (e) {
-            console.log("e = ", e);
         }
     }
 
@@ -95,7 +94,6 @@ export default function TeamManagement() {
             (tempPartner.roles).splice(index, 1)
             updateRoles(tempPartner.roles);
         } catch (e) {
-            console.log("e = ", e);
         }
     }
 
@@ -111,7 +109,6 @@ export default function TeamManagement() {
             }
             updateTeamMember(tempPartner.team);
         } catch (e) {
-            console.log("e = ", e);
         }
     }
 
@@ -123,7 +120,6 @@ export default function TeamManagement() {
             tempPartner.team[index] = team;
             updateTeamMember(tempPartner.team);
         } catch (e) {
-            console.log("e = ", e);
         }
     }
 

@@ -49,7 +49,6 @@ const FutureEvents = () => {
 
 
 
-    console.log("events = ",futureEvents);
 
     const ContainerData = futureEvents.filter((event: any) => (event.tickets).length > 0).map((event: any, index: any) =>
         <TableRow hover tabIndex={-1} key={event._id + index}>

@@ -77,7 +77,6 @@ const IRSSubstituteForm = (props: any) => {
             setEin({...ein,textmask:taxInfo.number})
 
         }
-        console.log(taxInfo.number)
     }, [props.count])
 
 

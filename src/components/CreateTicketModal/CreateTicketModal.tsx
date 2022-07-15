@@ -82,7 +82,6 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
     };
 
   const getCredits = (price: number, discount: string) => {
-    console.log(price,"  ",discount)
     switch (discount) {
       case "Level 1":
         return price / 3.75;

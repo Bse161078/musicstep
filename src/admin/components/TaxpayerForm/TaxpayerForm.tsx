@@ -27,7 +27,6 @@ const TaxpayerForm = (props: any) => {
 
     },[props.count])
 
-    console.log("taxInfo = ",props.taxInfo);
     const taxInfo=props.taxInfo;
 
 

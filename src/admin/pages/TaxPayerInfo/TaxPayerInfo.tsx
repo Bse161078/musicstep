@@ -33,7 +33,6 @@ export default function TaxPayerInfo() {
         try {
             setLoading(true);
             const response = await axios.get("/v1/partners", {headers: {Authorization: `Bearer ${state.authToken}`}});
-            console.log("response = ",response)
             if ((response.data).taxInfo) {
                 setCount(count + 1);
                 setTaxInfo(response.data.taxInfo);
@@ -62,7 +61,6 @@ export default function TaxPayerInfo() {
     }, [])
 
     const onChangeForm = (form: any) => {
-        console.log(form)
         setTaxInfo({...taxInfo,...form.values});
     }
 

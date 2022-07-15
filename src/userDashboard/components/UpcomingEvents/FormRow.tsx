@@ -32,7 +32,6 @@ const FormRow = ({ event }: FormRowProps) => {
       : null;
 
 
-  console.log("events = ",event);
 
   return (
     <>
