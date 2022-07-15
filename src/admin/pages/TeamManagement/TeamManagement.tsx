@@ -31,7 +31,6 @@ export default function TeamManagement() {
             setLoading(false);
         } catch (e) {
             setLoading(false);
-            console.log("e = ", e);
         }
     }
 
@@ -44,7 +43,6 @@ export default function TeamManagement() {
             setLoading(false);
         } catch (e) {
             setLoading(false);
-            console.log("e = ", e);
         }
     }
 
@@ -58,7 +56,6 @@ export default function TeamManagement() {
             setLoading(false);
         } catch (e) {
             setLoading(false);
-            console.log("e = ", e);
         }
     }
 
@@ -87,7 +84,6 @@ export default function TeamManagement() {
             tempPartner.roles[index] = roleObj;
             updateRoles(tempPartner.roles);
         } catch (e) {
-            console.log("e = ", e);
         }
     }
 
@@ -105,7 +101,6 @@ export default function TeamManagement() {
 
 
     const addNewTeam = (role: any, email: any) => {
-        console.log(role, "    ", email);
         try {
             const tempPartner = JSON.parse(JSON.stringify(partner));
             const team = {name: "", role, email, date: new Date().toISOString()}
@@ -138,7 +133,6 @@ export default function TeamManagement() {
     }, [])
 
 
-    console.log("partner = ", partner)
 
     return (
         <Dashboard>

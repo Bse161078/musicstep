@@ -37,7 +37,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
     numberOfTickets: ticket ? ticket.numberOfTickets : "",
     description: ticket ? ticket.description : "",
     price: ticket ? ticket.price : 0,
-    discount: ticket ? ticket.discount : 0,
+    discount: ticket ? ticket.discount : "Level 1",
     credits: ticket ? ticket.credits : 0,
   };
 
@@ -61,21 +61,36 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
         numberOfTickets: "",
         description: "",
         price: 0,
-        discount: 0,
-        credits: 0,
+        discount: "Level 1",
+        credits: 0
       };
     }
   };
 
-  const getCredits = (price: number, discount: number) => {
+    const getValueFromDiscount = (discount: string) => {
+        switch (discount) {
+            case "Level 1":
+                return  3.75;
+            case "Level 2":
+                return  4.5;
+            case "Level 3":
+                return  5.25;
+            case "Level 4":
+                return  6;
+        }
+        return 1;
+    };
+
+  const getCredits = (price: number, discount: string) => {
+    console.log(price,"  ",discount)
     switch (discount) {
-      case 50:
+      case "Level 1":
         return price / 3.75;
-      case 60:
+      case "Level 2":
         return price / 4.5;
-      case 70:
+      case "Level 3":
         return price / 5.25;
-      case 80:
+      case "Level 4":
         return price / 6;
     }
     return 1;
@@ -87,7 +102,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
   return (
     <>
       <ModalWrapper
-        heading="Cricket Tickets"
+        heading="Create a Ticket"
         rightButtonTitle="Create Tickets"
         leftButtonTitle="Cancel"
         isModalVisible={isModalVisible}
@@ -137,22 +152,23 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                       <span>
                         <SelectBox
                           label="Discount(%)"
-                          name="discount"
+                          name="Level 1"
                           disabled={form.values.price === 0}
                           options={[
-                            { key: "50", value: "50%" },
-                            { key: "60", value: "60%" },
-                            { key: "70", value: "70%" },
-                            { key: "80", value: "80%" },
+                            { key: 1, value: "Level 1" },
+                            { key: 2, value: "Level 2" },
+                            { key: 3, value: "Level 3" },
+                            { key: 4, value: "Level 4" },
                           ]}
-                          values={["50","60","70","80"]}
+                          defaultValue={"Level1"}
+                          values={["Level 1","Level 2","Level 3","Level 4"]}
                           setFieldValue={form.setFieldValue}
                           handleSelectBoxChange={(e: any) => {
                             form.setFieldValue(
                               "credits",
 
                               Math.round(
-                                getCredits(form.values.price, parseInt(e))
+                                getCredits(form.values.price, e)
                               )
                             );
                           }}
@@ -187,13 +203,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                       <div className="payout-price">
                         <p className="price-label">Payout to brand</p>
                         <h3 className="title">
-                          {form.values.price && form.values.discount
-                            ? Math.round(
-                                form.values.price *
-                                  (form.values.discount * 0.01)
-                              )
-                            : 0}
-                          $({form.values.discount}%)
+                            {`${form.values.price}/${getValueFromDiscount(form.values.discount)}`}
                         </h3>
                       </div>
                     </div>

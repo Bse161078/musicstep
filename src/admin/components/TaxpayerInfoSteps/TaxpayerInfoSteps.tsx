@@ -1,99 +1,113 @@
-import React, { useMemo, useState } from "react";
-import { IRSForm2, IRSSubstituteForm, TaxpayerForm, TaxPayerStep1 } from "..";
-import { MessageModal } from "../../../components";
+import React, {useEffect, useMemo, useState} from "react";
+import {IRSForm2, IRSSubstituteForm, TaxpayerForm, TaxPayerStep1} from "..";
+import {Loading, MessageModal} from "../../../components";
 import {
-  FilledButtonStyle,
-  OutlineButtonStyle,
+    FilledButtonStyle,
+    OutlineButtonStyle,
 } from "../../../styles/Common.style";
-import { StepsStyle, StepStyle } from "../../../styles/Fields.style";
+import {StepsStyle, StepStyle} from "../../../styles/Fields.style";
 
-import { TaxpayerInfoStepsStyle } from "./TaxpayerInfoSteps.style";
+import {TaxpayerInfoStepsStyle} from "./TaxpayerInfoSteps.style";
+import axios from "axios";
+import {useLoginContext} from "../../../context/authenticationContext";
 
-const TaxpayerInfoSteps = ({ setCurrentPage }: any) => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [currentStep, setCurrentStep] = useState(1);
+const TaxpayerInfoSteps = ({
+                               setCurrentPage, onChangeForm, taxInfo, count,hideModal
+                               , onChangeInput, onChangeSignature, isLoading, updatePartnerTaxInfo, isModalVisible, setIsModalVisible
+                           }: any) => {
+    const [currentStep, setCurrentStep] = useState(1);
+    const customDot = (dot: any) => <div>{dot}</div>;
 
-  const customDot = (dot: any) => <div>{dot}</div>;
 
-  const handleNextStep = () => {
-    setCurrentStep(currentStep + 1);
-  };
-  const handlePreviousStep = () => {
-    setCurrentStep(currentStep - 1);
-  };
-  const CurrentTab = useMemo(() => {
-    switch (currentStep) {
-      case 1:
-        return <TaxPayerStep1 />;
+    useEffect(()=>{
+        return function cleanup() {
+            hideModal();
+        };
+    },[])
 
-      case 2:
-        return <TaxpayerForm />;
+    const handleNextStep = () => {
+        setCurrentStep(currentStep + 1);
+    };
+    const handlePreviousStep = () => {
+        setCurrentStep(currentStep - 1);
+    };
 
-      case 3:
-        return <IRSSubstituteForm />;
 
-      case 4:
-        return <IRSForm2 />;
-      default:
-        return <TaxPayerStep1 />;
-    }
-  }, [currentStep]);
+    const CurrentTab = useMemo(() => {
+        switch (currentStep) {
+            case 1:
+                return <TaxpayerForm onChangeInput={onChangeForm} taxInfo={taxInfo} count={count}/>;
 
-  return (
-    <TaxpayerInfoStepsStyle>
-      <div className="steps-wrapper">
-        <StepsStyle current={currentStep} progressDot={customDot}>
-          <StepStyle title={`Step ${currentStep} of 4`} />
-          <StepStyle />
-          <StepStyle />
-          <StepStyle />
-          <StepStyle />
-        </StepsStyle>
+            case 2:
+                return <IRSSubstituteForm federalTaxClassification={taxInfo.federalTaxClassification}
+                                          taxInfo={taxInfo} count={count}
+                                          onChangeInput={onChangeInput}/>;
 
-        <div className="buttons-wrapper">
-          {currentStep > 1 && (
-            <OutlineButtonStyle
-              onClick={handlePreviousStep}
-              width="150px"
-              height="53px"
-            >
-              Back
-            </OutlineButtonStyle>
-          )}
+            case 3:
+                return <IRSForm2 onChangeSignature={onChangeSignature}
+                                 taxInfo={taxInfo} count={count}/>;
 
-          {currentStep < 4 && (
-            <FilledButtonStyle
-              onClick={handleNextStep}
-              buttonType="dark"
-              width="150px"
-              height="53px"
-            >
-              Next
-            </FilledButtonStyle>
-          )}
+            default:
+                return <TaxPayerStep1/>;
+        }
+    }, [currentStep]);
 
-          {currentStep === 4 && (
-            <FilledButtonStyle
-              onClick={() => setIsModalVisible(true)}
-              buttonType="dark"
-              width="150px"
-              height="53px"
-            >
-              Submit
-            </FilledButtonStyle>
-          )}
-          <MessageModal
-            isModalVisible={isModalVisible}
-            setIsModalVisible={setIsModalVisible}
-            handleOkClick={() => setCurrentPage("taxpayer-home")}
-            message="Thank you. Your Taxpayer Information has been saved and submitted."
-          />
-        </div>
-      </div>
 
-      {CurrentTab}
-    </TaxpayerInfoStepsStyle>
-  );
+    return (
+        <TaxpayerInfoStepsStyle>
+            {isLoading && <Loading/>}
+            <div className="steps-wrapper">
+                <StepsStyle current={currentStep} progressDot={customDot}>
+                    <StepStyle title={`Step ${currentStep} of 3`}/>
+                    <StepStyle/>
+                    <StepStyle/>
+                    <StepStyle/>
+                </StepsStyle>
+
+                <div className="buttons-wrapper">
+                    {currentStep > 1 && (
+                        <OutlineButtonStyle
+                            onClick={handlePreviousStep}
+                            width="150px"
+                            height="53px"
+                        >
+                            Back
+                        </OutlineButtonStyle>
+                    )}
+
+                    {currentStep < 3 && (
+                        <FilledButtonStyle
+                            onClick={handleNextStep}
+                            buttonType="dark"
+                            width="150px"
+                            height="53px"
+                        >
+                            Next
+                        </FilledButtonStyle>
+                    )}
+
+                    {currentStep === 3 && (
+                        <FilledButtonStyle
+                            onClick={() => updatePartnerTaxInfo()}
+                            buttonType="dark"
+                            width="150px"
+                            height="53px"
+                        >
+                            Submit
+                        </FilledButtonStyle>
+                    )}
+                    <MessageModal
+                        isModalVisible={isModalVisible}
+                        setIsModalVisible={setIsModalVisible}
+                        handleOkClick={() => setCurrentPage("taxpayer-home")}
+                        message="Thank you. Your Taxpayer Information has been saved and submitted."
+                    />
+                </div>
+            </div>
+
+            {CurrentTab}
+        </TaxpayerInfoStepsStyle>
+    );
 };
 
 export default TaxpayerInfoSteps;

@@ -28,7 +28,6 @@ export const VenueDetailWrapper = ({ event,venue }: VenueDetailWrapperProps) => 
     });
   };
 
-  console.log("events = ",event);
 
   return (
     <div className="first-row-wrapper">

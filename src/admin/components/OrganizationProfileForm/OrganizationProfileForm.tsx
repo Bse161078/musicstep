@@ -450,7 +450,6 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         removePhoto((previewAdditionalImage[index]),index);
     }
 
-    console.log("additional images =  ",previewAdditionalImage)
 
     return (
         <div>

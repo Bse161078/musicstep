@@ -11,7 +11,7 @@ export const TicketFormValidationSchema = yup.object().shape({
     .typeError("Price  must be number")
     .min(1, "Price is required"),
     // .required("Price is required"),
-    discount: yup.number()
+    discount: yup.string()
     .min(1,"Discounts is required")
     .required("Discounts is required"),
 });

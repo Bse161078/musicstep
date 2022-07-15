@@ -62,7 +62,6 @@ const ContactInfoForm = (props: any) => {
             });
     }
 
-    console.log("contact info = ",contactInfo)
 
 
     return (

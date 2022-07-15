@@ -47,7 +47,6 @@ const BasicInfo = () => {
         }
     }, [currentPage]);
 
-    console.log(currentPage);
 
     return (
         <Dashboard>

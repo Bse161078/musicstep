@@ -1,34 +1,157 @@
-import { Form, Formik } from "formik";
-import React from "react";
-import { ContentHeader } from "..";
-import { InputBox } from "../../../components";
-import { IRSSubstituteFormStyle } from "./IRSSubstituteForm.style";
+import {Form, Formik} from "formik";
+import React, {useEffect} from "react";
+import {ContentHeader} from "..";
+import {InputBox} from "../../../components";
+import {IRSSubstituteFormStyle} from "./IRSSubstituteForm.style";
+import {Radio} from "antd";
+import {RadioButtonStyle} from "../RadioButton/RadioButton.style";
+import {FormControl, Grid, Input, InputLabel} from "@mui/material";
+import {IMaskInput} from "react-imask";
 
-const IRSSubstituteForm = () => {
-  const handleFormSubmit = () => {};
-  return (
-    <IRSSubstituteFormStyle>
-      <ContentHeader
-        heading="IRS Substitute Form W-9"
-        description="The following form is required by the U.S. Interval Revenue Service and is only available in U.S. English. Please complete in U.S. English. If you need help, see FAQs and IRS Form W-9 Instructions."
-      />
+let formikForm: any = null;
 
-      <h4 className="content-desc-heading">
-        Taxpayer Identification Number (TIN)
-      </h4>
-      <Formik initialValues={{ id: "" }} onSubmit={handleFormSubmit}>
-        {() => (
-          <Form>
-            Radio buttons here
-            <InputBox
-              name="id"
-              info="Note: Please enter your valid 9-digit EIN Number without dash (-)."
+interface State {
+    textmask: string;
+    numberformat: string;
+}
+
+interface CustomProps {
+    onChange: (event: { target: { name: string; value: string } }) => void;
+    name: string;
+}
+
+const MaskEIN = React.forwardRef<HTMLElement, CustomProps>(
+    function TextMaskCustom(props, ref) {
+        const {onChange, ...other} = props;
+        return (
+            <IMaskInput
+                {...other}
+                mask="#0-0000000"
+                definitions={{
+                    '#': /[1-9]/,
+                }}
+                onAccept={(value: any) => onChange({target: {name: props.name, value}})}
+                overwrite
             />
-          </Form>
-        )}
-      </Formik>
-    </IRSSubstituteFormStyle>
-  );
+        );
+    },
+);
+
+const MaskSSN = React.forwardRef<HTMLElement, CustomProps>(
+    function TextMaskCustom(props, ref) {
+        const {onChange, ...other} = props;
+        return (
+            <IMaskInput
+                {...other}
+                mask="#00-00-0000"
+                definitions={{
+                    '#': /[1-9]/,
+                }}
+                onAccept={(value: any) => onChange({target: {name: props.name, value}})}
+                overwrite
+            />
+        );
+    },
+);
+
+
+const IRSSubstituteForm = (props: any) => {
+
+    const [ein, setEin] = React.useState<State>({
+        textmask: '00-000000',
+        numberformat: '1320',
+    });
+
+    const [ssn, setSSN] = React.useState<State>({
+        textmask: '000-00-0000',
+        numberformat: '1320',
+    });
+
+
+    useEffect(() => {
+        const taxInfo = props.taxInfo;
+        if (taxInfo && taxInfo.number) formikForm.setFieldValue("textmask", taxInfo.number);
+        if(props.federalTaxClassification === "Individual/sole proprietor or LLC(Single member)"){
+            setSSN({...ssn,textmask:taxInfo.number})
+        }else{
+            setEin({...ein,textmask:taxInfo.number})
+
+        }
+        console.log(taxInfo.number)
+    }, [props.count])
+
+
+    const handleChangeEIN = (event: React.ChangeEvent<HTMLInputElement>) => {
+        props.onChangeInput(event.target.value)
+        setEin({
+            ...ein,
+            [event.target.name]: event.target.value,
+        });
+    };
+
+    const handleChangeSSN = (event: React.ChangeEvent<HTMLInputElement>) => {
+        props.onChangeInput(event.target.value)
+        setSSN({
+            ...ssn,
+            [event.target.name]: event.target.value,
+        });
+    };
+
+    const handleFormSubmit = () => {
+    };
+    return (
+        <IRSSubstituteFormStyle>
+            <ContentHeader
+                heading="IRS Substitute Form W-9"
+                description="The following form is required by the U.S. Interval Revenue Service and is only available in U.S. English. Please complete in U.S. English. If you need help, see FAQs and IRS Form W-9 Instructions."
+            />
+
+            <h4 className="content-desc-heading">
+                Taxpayer Identification Number (TIN)
+            </h4>
+            <Formik initialValues={{id: ""}} onSubmit={handleFormSubmit}>
+                {(form) => {
+                    formikForm = form;
+                    return (
+                        <Form>
+                            <Grid container>
+                                <Grid item xs={12}>
+                                    <Radio.Group defaultValue={0} value={
+                                        props.federalTaxClassification === "Individual/sole proprietor or LLC(Single member)" ? 0 : 1}>
+                                        <Radio value={0}>
+                                            <span className="radio-description">SSN</span>
+                                        </Radio>
+                                        <Radio value={1}>
+                                            <span className="radio-description">EIN</span>
+                                        </Radio>
+                                    </Radio.Group>
+                                </Grid>
+                                <Grid item xs={12} style={{marginTop: 10}}>
+                                    <FormControl variant="standard" style={{width: "40%"}}>
+                                        <Input
+                                            value={
+                                                props.federalTaxClassification === "Individual/sole proprietor or LLC(Single member)" ?
+                                                    ssn.textmask : ein.textmask}
+                                            onChange={props.federalTaxClassification === "Individual/sole proprietor or LLC(Single member)" ?
+                                                handleChangeSSN : handleChangeEIN}
+                                            name="textmask"
+                                            id="formatted-text-mask-input"
+                                            inputComponent={props.federalTaxClassification === "Individual/sole proprietor or LLC(Single member)" ?
+                                                MaskSSN : MaskEIN as any}
+                                            style={{width: "100%"}}
+
+                                            fullWidth
+                                        />
+                                    </FormControl>
+                                </Grid>
+                            </Grid>
+                        </Form>
+                    )
+                }
+                }
+            </Formik>
+        </IRSSubstituteFormStyle>
+    );
 };
 
 export default IRSSubstituteForm;

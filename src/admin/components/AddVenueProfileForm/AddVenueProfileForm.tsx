@@ -96,7 +96,6 @@ const AddVenueProfileForm = () => {
             (response) => {
 
                 if (formikForm) {
-                    formikForm.setFieldValue("address", response.results[0].formatted_address);
                     formikForm.setFieldValue("location", {
                         address: response.results[0].formatted_address,
                         lat: lat,

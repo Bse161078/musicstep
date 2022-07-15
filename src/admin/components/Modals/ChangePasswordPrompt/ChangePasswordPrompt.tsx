@@ -25,14 +25,12 @@ const ChangePasswordPrompt = (props: ChangePasswordPromptProps) => {
                 headers: {Authorization: `Bearer ${localStorage.getItem("authToken")}`},
             });
 
-            console.log("response = ",response)
             setMessageModalVisible({
                 heading:"Success",
                 message: "Your password has been reset successfully. You can now login with your new password.",
                 show: true
             })
         } catch (e: any) {
-            console.log("eee = ",e.response)
             setMessageModalVisible({
                 heading:"Error",
                 message: e.response.data.message,

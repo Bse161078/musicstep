@@ -4,7 +4,6 @@ import {TeamRolesListStyle} from "./TeamRolesList.style";
 import {AddRole} from "../Modals/AddRole";
 
 const TeamRolesList = (props: any) => {
-    console.log(props.roles);
     const rolesContainer = (props.roles).map((role: any,index:number) =>
         <TeamRoleListItem role={role} index={index}
                           updateRole={props.updateRole}

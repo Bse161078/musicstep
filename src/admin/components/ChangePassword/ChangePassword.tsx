@@ -12,7 +12,6 @@ const ChangePassword = (props: any) => {
     const [data,setData]=useState<any>(null);
 
     const handleSubmit = (e: any) => {
-        console.log("change password", e)
         setData({password:e.currentPassword,newPassword:e.newPassword});
         setIsModalVisible(true)
     };
