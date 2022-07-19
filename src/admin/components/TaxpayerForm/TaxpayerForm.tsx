@@ -7,13 +7,21 @@ import {ValidationStep1} from "../TaxpayerInfoSteps/validation";
 let formikForm: any = null;
 
 const TaxpayerForm = (props: any) => {
-    const handleTaxpayerSubmit = () => {
+    let ref: any = React.createRef();
+
+    const handleTaxpayerSubmit = (event: any, form: any) => {
+        props.handleNextStep()
     };
 
     const taxCollectionList = ["Federal Tax Classification", "C Corporation", "S Corporation", "Partnership", "Trust/estate",
         "LLC (C Corporation)", "LLC (Partnership)", "LLC (S Corporation)", "Individual/sole proprietor or LLC(Single member)"
         , "Other", "Exempt payee"];
     const payeeCodeList = ["Exempt payee codee (if any)", "N/A", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"]
+
+
+    useEffect(()=>{
+        if(props.buttonClicked!==0) ref.current.click();
+    },[props.buttonClicked])
 
     useEffect(()=>{
         const taxInfo=props.taxInfo;
@@ -25,10 +33,12 @@ const TaxpayerForm = (props: any) => {
         if(taxInfo && taxInfo.state) formikForm.setFieldValue("state", taxInfo.state);
         if(taxInfo && taxInfo.zipCode) formikForm.setFieldValue("zipCode", taxInfo.zipCode);
 
-    },[props.count])
+    },[props.count]);
+
+
+
 
     const taxInfo=props.taxInfo;
-
 
 
     return (
@@ -92,6 +102,12 @@ const TaxpayerForm = (props: any) => {
                             <InputBox label="Zip Code" name="zipCode"
                                       setSearch={(value:any)=>props.onChangeInput(form)}/>
                         </div>
+                        <input
+                            type="submit"
+                            ref={ref}
+                            value="Submit"
+                            style={{display: "none"}}
+                        ></input>
                     </Form>
                 )}}
             </Formik>

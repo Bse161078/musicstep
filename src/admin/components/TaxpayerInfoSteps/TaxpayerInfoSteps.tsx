@@ -16,6 +16,7 @@ const TaxpayerInfoSteps = ({
                                , onChangeInput, onChangeSignature, isLoading, updatePartnerTaxInfo, isModalVisible, setIsModalVisible
                            }: any) => {
     const [currentStep, setCurrentStep] = useState(1);
+    const [buttonClicked,setButtonClicked]=useState(0);
     const customDot = (dot: any) => <div>{dot}</div>;
 
 
@@ -25,32 +26,47 @@ const TaxpayerInfoSteps = ({
         };
     },[])
 
+    const validateInfo=()=>{
+        setButtonClicked(buttonClicked+1);
+    }
+
     const handleNextStep = () => {
+        setButtonClicked(0)
         setCurrentStep(currentStep + 1);
     };
     const handlePreviousStep = () => {
+        setButtonClicked(0)
         setCurrentStep(currentStep - 1);
     };
+
+    const handleSubmit=()=>{
+        updatePartnerTaxInfo();
+    }
 
 
     const CurrentTab = useMemo(() => {
         switch (currentStep) {
             case 1:
-                return <TaxpayerForm onChangeInput={onChangeForm} taxInfo={taxInfo} count={count}/>;
+                return <TaxpayerForm onChangeInput={onChangeForm}  taxInfo={taxInfo} count={count}
+                                     buttonClicked={buttonClicked} handleNextStep={handleNextStep}/>;
 
             case 2:
                 return <IRSSubstituteForm federalTaxClassification={taxInfo.federalTaxClassification}
                                           taxInfo={taxInfo} count={count}
-                                          onChangeInput={onChangeInput}/>;
+                                          onChangeInput={onChangeInput}
+                                          buttonClicked={buttonClicked}
+                                          handleNextStep={handleNextStep}/>;
 
             case 3:
                 return <IRSForm2 onChangeSignature={onChangeSignature}
-                                 taxInfo={taxInfo} count={count}/>;
+                                 taxInfo={taxInfo} count={count}
+                                 buttonClicked={buttonClicked}
+                                 handleNextStep={handleSubmit}/>;
 
             default:
                 return <TaxPayerStep1/>;
         }
-    }, [currentStep]);
+    }, [currentStep,buttonClicked]);
 
 
     return (
@@ -77,7 +93,7 @@ const TaxpayerInfoSteps = ({
 
                     {currentStep < 3 && (
                         <FilledButtonStyle
-                            onClick={handleNextStep}
+                            onClick={validateInfo}
                             buttonType="dark"
                             width="150px"
                             height="53px"
@@ -88,7 +104,7 @@ const TaxpayerInfoSteps = ({
 
                     {currentStep === 3 && (
                         <FilledButtonStyle
-                            onClick={() => updatePartnerTaxInfo()}
+                            onClick={() => validateInfo()}
                             buttonType="dark"
                             width="150px"
                             height="53px"

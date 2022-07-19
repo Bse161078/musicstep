@@ -202,7 +202,9 @@ export default function VenueDetails() {
                         }
                     >
                         <img
-                            src="/images/explore-venue/map-2.png"
+                            src={!venueDetail.location ? "/images/explore-venue/map-2.png"
+                                :
+                                `https://maps.googleapis.com/maps/api/staticmap?size=600x400&markers=icon%3Ahttp%3A%2F%2Fwww.google.com%2Fmapfiles%2Farrow.png%7C${venueDetail.location.lat}%2C${venueDetail.location.lng}&visible=${venueDetail.location.lat}%2C${venueDetail.location.lng}%7C${venueDetail.location.lat}%2C${venueDetail.location.lng}&key=AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew`}
                             className="map"
                             alt="map"
                         />

@@ -1,48 +1,52 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
-import { TabRow } from "./TabRow";
+import {TabRow} from "./TabRow";
 
-import { UpcomingEventsStyle } from "./UpcomingEvents.style";
+import {UpcomingEventsStyle} from "./UpcomingEvents.style";
 
-const UpcomingEvents = ({ events,venue,subscribtionCredit }: any) => {
-  const [reservation, setReservation] = useState(0);
-  let tempresrvatoin = 0;
+const UpcomingEvents = ({events, venue, subscribtionCredit}: any) => {
+    const [reservation, setReservation] = useState(0);
+    let tempresrvatoin = 0;
 
 
-  return (
-    <UpcomingEventsStyle>
-      {/* <div className="list-header">
+    console.log("events = ", events)
+
+    const filteredEvents=events.filter((event:any)=>new Date(event.date)>=new Date())
+
+    return (
+        <UpcomingEventsStyle>
+            {/* <div className="list-header">
         <span>Today, 1 September</span>
 
         <span>Availability</span>
       </div> */}
-      {events &&
-        events.map((event: any, index: number) => {
+            {filteredEvents &&
+            filteredEvents.map((event: any, index: number) => {
 
-          return event && (event.tickets).length===0 || event.tickets[0].availableTickets === 0 ? (
-            <TabRow
-              event={event}
-              buttonType="filled"
-              buttonText={"Reservation Full"}
-              reservation={((event.tickets).length>0) && event.tickets[0].bookedTickets}
-              venue={venue}
-            />
-          ) : (
-            <TabRow
-              event={event}
-              subscribtionCredit={subscribtionCredit}
-              buttonText={`${
-                event.tickets && event.tickets[0].credits
-              } Credits`}
-              reservation={event.tickets[0].bookedTickets}
-              venue={venue}
-            />
-          );
+                return event && (event.tickets).length === 0 || event.tickets[0].availableTickets === 0 ? (
+                    <TabRow
+                        event={event}
+                        buttonType="filled"
+                        buttonText={"Reservation Full"}
+                        reservation={((event.tickets).length > 0) && event.tickets[0].bookedTickets}
+                        venue={venue}
+                    />
+                ) : (
+                    <TabRow
+                        event={event}
+                        subscribtionCredit={subscribtionCredit}
+                        buttonText={`${
+                        event.tickets && event.tickets[0].credits
+                            } Credits`}
+                        reservation={event.tickets[0].bookedTickets}
+                        venue={venue}
+                    />
+                );
 
-          // return <h1>yoo</h1>;
-        })}
+                // return <h1>yoo</h1>;
+            })}
 
-      {/* <TabRow buttonText="11 Credits" />
+            {/* <TabRow buttonText="11 Credits" />
       <TabRow buttonType="filled" buttonText="Reservation Full" />
       <TabRow buttonText="11 Credits" />
       <TabRow buttonType="filled" buttonText="Reservation Full" />
@@ -50,8 +54,8 @@ const UpcomingEvents = ({ events,venue,subscribtionCredit }: any) => {
       <TabRow buttonText="13 Credits" />
       <TabRow buttonText="11 Credits" />
       <TabRow buttonText="11 Credits" /> */}
-    </UpcomingEventsStyle>
-  );
+        </UpcomingEventsStyle>
+    );
 };
 
 export default UpcomingEvents;

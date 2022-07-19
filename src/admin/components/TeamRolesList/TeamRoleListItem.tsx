@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { DeleteIcon, EditButtonIcon } from "../../../assets";
 import { EditRole, DeleteRoleModal } from "..";
 import { TeamRoleListItemStyle } from "./TeamRolesList.style";
+import moment from "moment";
 
 export const TeamRoleListItem = (props:any) => {
   const [showEditModal, setShowEditModal] = useState(false);
@@ -12,7 +13,7 @@ export const TeamRoleListItem = (props:any) => {
 
       <div className="team-role">{props.role.name}</div>
 
-      <div className="team-role">{props.role.date}</div>
+      <div className="team-role">{moment(props.role.date).format("YYYY-MM-DD")}</div>
 
       <div className="action-buttons-wrapper">
         <div onClick={() => setShowDeleteModal(true)}>

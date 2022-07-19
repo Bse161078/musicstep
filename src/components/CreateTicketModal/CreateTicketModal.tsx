@@ -31,6 +31,8 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
   const [ticketForm, setTicketForm] = useState<any>(null);
   const submitRef: any = React.createRef();
   const ticketFromRef: any = React.createRef();
+  const [discount,setDiscount]=useState("Level 1");
+
 
   let initialValues: any = {
     title: ticket ? ticket.title : "",
@@ -68,6 +70,8 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
   };
 
     const getValueFromDiscount = (discount: string) => {
+
+      console.log(discount);
         switch (discount) {
             case "Level 1":
                 return  3.75;
@@ -163,6 +167,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                           values={["Level 1","Level 2","Level 3","Level 4"]}
                           setFieldValue={form.setFieldValue}
                           handleSelectBoxChange={(e: any) => {
+                            setDiscount(e);
                             form.setFieldValue(
                               "credits",
 
@@ -202,13 +207,13 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                       <div className="payout-price">
                         <p className="price-label">Payout to brand</p>
                         <h3 className="title">
-                            {`${form.values.price}/${getValueFromDiscount(form.values.discount)}`}
+                            {`${form.values.price}/${getValueFromDiscount(discount)}`}
                         </h3>
                       </div>
                     </div>
                     <div className="right-section">
                       <p className="price-label">Value in Musicpass Credits</p>
-                      <h3 className="title">{form.values.credits} Credits</h3>
+                      <h3 className="title">{Math.floor(getCredits(form.values.price, discount))} Credits</h3>
                     </div>
                   </div>
                 </div>

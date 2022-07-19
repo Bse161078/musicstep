@@ -1,5 +1,5 @@
 import {Form, Formik} from "formik";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {ContentHeader} from "..";
 import {InputBox} from "../../../components";
 import {IRSSubstituteFormStyle} from "./IRSSubstituteForm.style";
@@ -21,7 +21,9 @@ interface CustomProps {
 }
 
 const MaskEIN = React.forwardRef<HTMLElement, CustomProps>(
-    function TextMaskCustom(props, ref) {
+    function TextMaskCustom(props) {
+
+
         const {onChange, ...other} = props;
         return (
             <IMaskInput
@@ -56,6 +58,10 @@ const MaskSSN = React.forwardRef<HTMLElement, CustomProps>(
 
 
 const IRSSubstituteForm = (props: any) => {
+    let ref: any = React.createRef();
+
+    const [error, setError] = useState(false);
+
 
     const [ein, setEin] = React.useState<State>({
         textmask: '00-000000',
@@ -68,13 +74,31 @@ const IRSSubstituteForm = (props: any) => {
     });
 
 
+    const handleFormSubmit = (event: any, form: any) => {
+        props.handleNextStep()
+    };
+
+
+    useEffect(() => {
+        if (props.buttonClicked !== 0) {
+            console.log(ssn.textmask.length,"   ",ein.textmask.length)
+            if (ssn.textmask.length !== 10 && ein.textmask.length !== 10) {
+                setError(true)
+            } else {
+                props.handleNextStep();
+                setError(false);
+            }
+        }
+    }, [props.buttonClicked])
+
     useEffect(() => {
         const taxInfo = props.taxInfo;
+        console.log(taxInfo.number);
         if (taxInfo && taxInfo.number) formikForm.setFieldValue("textmask", taxInfo.number);
-        if(props.federalTaxClassification === "Individual/sole proprietor or LLC(Single member)"){
-            setSSN({...ssn,textmask:taxInfo.number})
-        }else{
-            setEin({...ein,textmask:taxInfo.number})
+        if (props.federalTaxClassification === "Individual/sole proprietor or LLC(Single member)") {
+            setSSN({...ssn, textmask: taxInfo.number})
+        } else {
+            setEin({...ein, textmask: taxInfo.number})
 
         }
     }, [props.count])
@@ -96,8 +120,6 @@ const IRSSubstituteForm = (props: any) => {
         });
     };
 
-    const handleFormSubmit = () => {
-    };
     return (
         <IRSSubstituteFormStyle>
             <ContentHeader
@@ -108,7 +130,8 @@ const IRSSubstituteForm = (props: any) => {
             <h4 className="content-desc-heading">
                 Taxpayer Identification Number (TIN)
             </h4>
-            <Formik initialValues={{id: ""}} onSubmit={handleFormSubmit}>
+            <Formik initialValues={{id: ""}}
+                    onSubmit={handleFormSubmit}>
                 {(form) => {
                     formikForm = form;
                     return (
@@ -127,21 +150,28 @@ const IRSSubstituteForm = (props: any) => {
                                 </Grid>
                                 <Grid item xs={12} style={{marginTop: 10}}>
                                     <FormControl variant="standard" style={{width: "40%"}}>
-                                        <Input
-                                            value={
-                                                props.federalTaxClassification === "Individual/sole proprietor or LLC(Single member)" ?
-                                                    ssn.textmask : ein.textmask}
-                                            onChange={props.federalTaxClassification === "Individual/sole proprietor or LLC(Single member)" ?
-                                                handleChangeSSN : handleChangeEIN}
-                                            name="textmask"
-                                            id="formatted-text-mask-input"
-                                            inputComponent={props.federalTaxClassification === "Individual/sole proprietor or LLC(Single member)" ?
-                                                MaskSSN : MaskEIN as any}
-                                            style={{width: "100%"}}
-
-                                            fullWidth
-                                        />
+                                        <>
+                                            <Input
+                                                value={
+                                                    props.federalTaxClassification === "Individual/sole proprietor or LLC(Single member)" ?
+                                                        ssn.textmask : ein.textmask}
+                                                onChange={props.federalTaxClassification === "Individual/sole proprietor or LLC(Single member)" ?
+                                                    handleChangeSSN : handleChangeEIN}
+                                                name="textmask"
+                                                id="formatted-text-mask-input"
+                                                inputComponent={props.federalTaxClassification === "Individual/sole proprietor or LLC(Single member)" ?
+                                                    MaskSSN : MaskEIN as any}
+                                                style={{width: "100%"}}
+                                                error={error}
+                                                fullWidth
+                                            />
+                                            <p style={{
+                                                color: "red",
+                                                marginTop: 10
+                                            }}>{error && "Tax number is not correct"}</p>
+                                        </>
                                     </FormControl>
+
                                 </Grid>
                             </Grid>
                         </Form>

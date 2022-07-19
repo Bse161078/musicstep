@@ -6,10 +6,18 @@ import {IRSForm2Style} from "./IRSForm2.style";
 import TextField from "@mui/material/TextField/TextField";
 import {DesktopDatePicker, LocalizationProvider} from "@mui/lab";
 import {AdapterDateFns} from '@mui/x-date-pickers/AdapterDateFns';
+import moment from "moment";
+import { ValidationStep3} from "../TaxpayerInfoSteps/validation";
+
 let formikForm: any = null;
 
-const IRSForm2 = (props:any) => {
+const IRSForm2 = (props: any) => {
+
+    let ref: any = React.createRef();
+
+
     const handleSubmit = () => {
+        props.handleNextStep()
     };
 
     const handleChangeFrom = (newValue: Date | any) => {
@@ -19,11 +27,16 @@ const IRSForm2 = (props:any) => {
         new Date(),
     );
 
-    useEffect(()=>{
-        const taxInfo=props.taxInfo;
-        if(taxInfo && taxInfo.signature) formikForm.setFieldValue("signature", taxInfo.signature);
+    useEffect(() => {
+        const taxInfo = props.taxInfo;
+        if (taxInfo && taxInfo.signature) formikForm.setFieldValue("signature", taxInfo.signature);
 
-    },[props.count])
+    }, [props.count])
+
+
+    useEffect(()=>{
+        if(props.buttonClicked!==0) ref.current.click();
+    },[props.buttonClicked])
 
 
     return (
@@ -38,16 +51,25 @@ const IRSForm2 = (props:any) => {
             <Formik
                 initialValues={{signature: "", date: ""}}
                 onSubmit={handleSubmit}
+                validationSchema={ValidationStep3}
             >
                 {(form) => {
-                    formikForm=form;
-                    return(
-                    <Form className="form-wrapper">
-                        <InputBox width="600px" name="signature" label="Your Signature"
-                                  setSearch={(value:any)=>props.onChangeSignature(value)}/>
-                        <InputBox disabled width="600px" name="signDate" label="Sign Date" value={new Date().toISOString()}/>
-                    </Form>
-                )}}
+                    formikForm = form;
+                    return (
+                        <Form className="form-wrapper">
+                            <InputBox width="600px" name="signature" label="Your Signature"
+                                      setSearch={(value: any) => props.onChangeSignature(value)}/>
+                            <InputBox disabled width="600px" name="signDate" label="Sign Date"
+                                      value={moment(new Date()).format("YYYY-MM-DD")}/>
+                            <input
+                                type="submit"
+                                ref={ref}
+                                value="Submit"
+                                style={{display: "none"}}
+                            ></input>
+                        </Form>
+                    )
+                }}
             </Formik>
 
             <p className="form-details">Typing your name acts as your signature.</p>
