@@ -31,7 +31,6 @@ import FutureEvents from "./FutureEvents";
 
 const EventReservation = ({reservations, cancelreservation, subscription}: any) => {
     const [isCancelModalVisible, setCancelModalVisible] = useState(false);
-    const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [selectedReservation, setSelectedReservation] = useState(false);
 
@@ -68,8 +67,8 @@ const EventReservation = ({reservations, cancelreservation, subscription}: any) 
                                         buttonType="filled"
                                         handleButtonClick={() => {
                                             // alert(reservation._id);
-                                            //setSelectedReservation(reservation._id);
-                                            //setCancelModalVisible(true);
+                                            setSelectedReservation(reservation._id);
+                                            setCancelModalVisible(true);
                                         }}
                                         date={new Date(reservation.eventInfo[0].date)}
                                         originalTime={moment(reservation.eventInfo[0].startingTime)}
@@ -133,7 +132,6 @@ const EventReservation = ({reservations, cancelreservation, subscription}: any) 
                                 height="60px"
                                 onClick={() => {
                                     setCancelModalVisible(false);
-                                    setSuccessModalVisible(true);
                                     cancelreservation(selectedReservation);
                                 }}
                             >
@@ -142,12 +140,7 @@ const EventReservation = ({reservations, cancelreservation, subscription}: any) 
                         ]}
                     />
 
-                    <MessageModal
-                        isModalVisible={isSuccessModalVisible}
-                        setIsModalVisible={setSuccessModalVisible}
-                        heading="Success"
-                        message="Reservation canceled successfully."
-                    />
+
                 </SectionHeading>
                 :
                 <Typography variant='h3' align="center" sx={{padding: 10, fontWeight: 'bold'}}>
@@ -168,6 +161,8 @@ export default function UserHome() {
     const [events, setEvents] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [reservations, setReservations] = useState([]);
+    const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
+
     const [subscription, setSubscription] = useState({
         active: true
     })
@@ -209,6 +204,7 @@ export default function UserHome() {
     }, []);
 
     const cancelreservation = (reservationId: any) => {
+        setIsLoading(true);
         axios
             .put(
                 `/v1/reservation/cancel?reservationId=${reservationId}`,
@@ -218,7 +214,9 @@ export default function UserHome() {
                 }
             )
             .then(async (responses) => {
+                setIsLoading(false);
                 getReservation();
+                setSuccessModalVisible(true);
 
                 const response = await axios
                     .get(`/v1/users/${state.data.id}`, {
@@ -238,6 +236,7 @@ export default function UserHome() {
                 }
             })
             .catch((error) => {
+                setIsLoading(true);
             });
     };
     const getReservation = () => {
@@ -299,6 +298,12 @@ export default function UserHome() {
                             ""
                         )}
                     </div>
+                    <MessageModal
+                        isModalVisible={isSuccessModalVisible}
+                        setIsModalVisible={setSuccessModalVisible}
+                        heading="Success"
+                        message="Reservation canceled successfully."
+                    />
                 </UserHomeStyle>
 
 

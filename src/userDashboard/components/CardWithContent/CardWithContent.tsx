@@ -59,7 +59,7 @@ const CardWithContent = (props: CardWithContentProps) => {
                                 width="100px"
                                 height="54px"
                             >
-                                {buttonText ? buttonText : "Reserved"}
+                                {buttonText ? buttonText : "Cancel"}
                             </FilledButtonStyle>
                         ) : (
                             <OutlineButtonStyle
@@ -67,7 +67,7 @@ const CardWithContent = (props: CardWithContentProps) => {
                                 width="100px"
                                 height="54px"
                             >
-                                {buttonText ? buttonText : "Reserved"}
+                                {buttonText ? buttonText : "Cancel"}
                             </OutlineButtonStyle>
                         )}
                     </div>
