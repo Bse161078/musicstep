@@ -29,8 +29,7 @@ const NavbarWithSearch = (props:any) => {
 
 
 
-  console.log("state = ",state)
- 
+
 
   const {active} = props
   return (
@@ -45,7 +44,7 @@ const NavbarWithSearch = (props:any) => {
 
       <div className="links-wrapper">
         <span>Upcoming Itinerary</span>
-        {subscribtion?subscribtion.active===true?<span>{state.data.credits} Credits</span>:
+        {subscribtion?subscribtion.active===true?<span>{props.userCredit} Credits</span>:
         <span> Expired </span>:
         <span> Cancelled </span>
         }

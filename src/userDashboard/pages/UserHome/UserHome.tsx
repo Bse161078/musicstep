@@ -179,7 +179,8 @@ export default function UserHome() {
         });
     };
 
-    useEffect(() => {
+
+    const getUser=()=>{
         setIsLoading(true);
         const user: any = JSON.parse(localStorage.getItem("data") || "{}");
         axios.get(`v1/users/${user.id}`, {
@@ -199,7 +200,10 @@ export default function UserHome() {
             })
             .catch((error) => {
             });
+    }
 
+    useEffect(() => {
+        getUser();
         getReservation();
     }, []);
 
@@ -216,27 +220,11 @@ export default function UserHome() {
             .then(async (responses) => {
                 setIsLoading(false);
                 getReservation();
+                getUser()
                 setSuccessModalVisible(true);
-
-                const response = await axios
-                    .get(`/v1/users/${state.data.id}`, {
-                        headers: {Authorization: `Bearer ${state.authToken}`},
-                    })
-                    .catch((error) => {
-                        alert(error.response.data.message);
-                    });
-                if (response) {
-
-                    dispatch({
-                        type: "UPDATE_USER_CREDITS",
-                        payload: {
-                            data: response.data.credits,
-                        },
-                    });
-                }
             })
             .catch((error) => {
-                setIsLoading(true);
+                setIsLoading(false);
             });
     };
     const getReservation = () => {
