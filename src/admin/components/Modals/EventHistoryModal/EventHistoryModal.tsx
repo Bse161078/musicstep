@@ -27,7 +27,7 @@ const EventHistoryModal = (props: EventHistoryModalProps) => {
                 return reservation.eventReservation === "reserved" ? (
                   <TableRow reservation={reservation} rowLabel3="Reserved" />
                 ) : (
-                  <TableRow reservation={reservation} rowLabel3="Canceled" />
+                  <TableRow reservation={reservation} rowLabel3="Cancelled" />
                 );
               })}
             </div>
@@ -43,11 +43,11 @@ const EventHistoryModal = (props: EventHistoryModalProps) => {
             </div>
           </TabPaneStyle>
 
-          <TabPaneStyle tab="Canceled" key="3">
+          <TabPaneStyle tab="Cancelled" key="3">
             <div className="table-wrapper">
               {reservations.map((reservation: any) => {
                 return reservation.eventReservation === "cancelled" ? (
-                  <TableRow reservation={reservation} rowLabel3="Canceled" />
+                  <TableRow reservation={reservation} rowLabel3="Cancelled" />
                 ) : null;
               })}
             </div>

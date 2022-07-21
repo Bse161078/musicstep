@@ -302,7 +302,7 @@ export default function UserHome() {
                         isModalVisible={isSuccessModalVisible}
                         setIsModalVisible={setSuccessModalVisible}
                         heading="Success"
-                        message="Reservation canceled successfully."
+                        message="Reservation cancelled successfully."
                     />
                 </UserHomeStyle>
 

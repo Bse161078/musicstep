@@ -158,7 +158,7 @@ const TrialBillingInfoForm = (props: any) => {
                             full-priced monthly credit plan (currently $79 + any tax for 38
                             credits per month), until you cancel or change your plan. Cancel
                             anytime in Settings to avoid renewal. Fees apply for reservations
-                            missed or canceled late. No refunds. New members only. Inventory
+                            missed or cancelled late. No refunds. New members only. Inventory
                             varies per location and may be limited during trial. Privacy
                             Notice applies.
                         </p>

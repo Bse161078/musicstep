@@ -167,7 +167,7 @@ const UserSidebar = ({reservations, subscription, timeDifference}: any) => {
                     />
 
                     <HeadingTab
-                        heading="Total Canceled Events"
+                        heading="Total Cancelled Events"
                         count={
                             reservations &&
                             reservations.filter(
@@ -242,7 +242,7 @@ const UserSidebar = ({reservations, subscription, timeDifference}: any) => {
                 isModalVisible={isSuccessModalVisible}
                 setIsModalVisible={setSuccessModalVisible}
                 heading="Success"
-                message="Subscription canceled successfully."
+                message="Subscription cancelled successfully."
                 handleOkClick={() => {
                     history.push("/");
                 }}

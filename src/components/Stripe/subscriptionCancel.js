@@ -6,7 +6,7 @@ const SubscriptionCancel = () => {
     return (
         <StripeWrapper>
             <Grid container justifyContent="center" style={{width:"100%"}}>
-                <h1>You have canceled the subscription.</h1>
+                <h1>You have cancelled the subscription.</h1>
             </Grid>
         </StripeWrapper>
 
