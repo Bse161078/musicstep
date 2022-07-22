@@ -39,11 +39,10 @@ const PaymentInfoContent = (props: PaymentInfoContentProps) => {
     const deletePartnerPayment = (id: string, index: number) => {
         setLoading(true);
         axios.delete(`/v1/partners/partnerPayment/${id}`).then((res) => {
-            setPayments(res.data);
             setSuccessModalVisible(true);
             setLoading(false);
-            const tempPayments = JSON.parse(JSON.stringify(payments));
-            tempPayments.splice(0, 1);
+            let tempPayments = JSON.parse(JSON.stringify(payments));
+            tempPayments.splice(index, 1);
             setPayments(tempPayments)
 
         }).catch((error) => {
@@ -51,6 +50,7 @@ const PaymentInfoContent = (props: PaymentInfoContentProps) => {
         })
     }
 
+    console.log("payments = ",payments);
 
     const filteredPayments=payments  && payments.filter((payment:any)=>payment.type===type || type.length===0);
 
