@@ -60,6 +60,8 @@ const PriceCard = (props: any) => {
         axios.post('/v1/stripe/update-subscription', {id: user.id,subscriptionName:subscriptionType}).then((response) => {
             setLoading(false)
             window.open(response.data.url, '_blank');
+            window && window.top && window.top.close();
+
         }).catch((err) => {
             setLoading(false)
         })

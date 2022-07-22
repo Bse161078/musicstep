@@ -34,7 +34,7 @@ export const PaymentInfoListItem = (props: PaymentInfoListItemProps) => {
                         <p className="description">{payment.currency}</p>
                     </div>
 
-                    <div className="team-role">{payment.routing_number}</div>
+                    <div className="team-role">{payment.type}</div>
 
                     <div className="team-role">{payment.tax_number}</div>
 

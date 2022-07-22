@@ -19,6 +19,7 @@ const PaymentInfoContent = (props: PaymentInfoContentProps) => {
     const [isLoading, setLoading] = useState<any>();
     const [payments, setPayments] = useState<any>();
     const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
+    const [type,setType]=useState("");
 
     useEffect(() => {
         getPaymentMethod()
@@ -51,6 +52,10 @@ const PaymentInfoContent = (props: PaymentInfoContentProps) => {
         })
     }
 
+
+    const filteredPayments=payments  && payments.filter((payment:any)=>payment.type===type || type.length===0);
+
+    console.log("type = ",type);
     return (
 
         <PaymentInfoContentStyle>
@@ -64,8 +69,17 @@ const PaymentInfoContent = (props: PaymentInfoContentProps) => {
                 <Formik initialValues={{type: ""}} onSubmit={handleFilterSubmit}>
                     {() => (
                         <Form>
-                            <SelectBox options={[{key: "", value: "All"}]} name="type"/>
-
+                            <SelectBox
+                                width="fill"
+                                name="Type"
+                                options={[
+                                    {key: "Bank", value: "Bank"},
+                                    {key: "Paypal", value: "Paypal"},
+                                ]}
+                                values={['Bank', "Paypal"]}
+                                label=""
+                                handleSelectBoxChange={(value) =>setType(value) }
+                            />
                         </Form>
 
                     )}
@@ -85,11 +99,11 @@ const PaymentInfoContent = (props: PaymentInfoContentProps) => {
             <div className="table-wrapper">
                 <div className="table-header">
                     <h3 className="header-title">Payment Methods</h3>
-                    <h3 className="header-title">Routing Number</h3>
+                    <h3 className="header-title">Type</h3>
                     <h3 className="header-title">Tax Number</h3>
                 </div>
-                {payments &&
-                <PaymentInfoListItem setCurrentPage={setCurrentPage} payments={payments}
+                {filteredPayments &&
+                <PaymentInfoListItem setCurrentPage={setCurrentPage} payments={filteredPayments}
                                      deletePartnerPayment={deletePartnerPayment}/>
                 }
             </div>

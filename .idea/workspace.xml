@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f900495-2d01-4c96-a493-d43d1865075e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.8da952a0.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.8da952a0.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Stripe/addCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Stripe/addCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/authenticationContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/authenticationContext.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/Dashboard/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/Dashboard/Dashboard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/NewPaymentMethod/NewPaymentMethod.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/NewPaymentMethod/NewPaymentMethod.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoListItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PriceCard/PriceCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PriceCard/PriceCard.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +20,7 @@
     <session id="-6026431">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="55" />
+          <entry key="project.closed" value="56" />
           <entry key="project.open.time.0" value="13" />
           <entry key="project.open.time.1" value="23" />
           <entry key="project.open.time.10" value="4" />
@@ -32,6 +28,7 @@
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="2" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="3" />
@@ -43,7 +40,7 @@
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="60" />
+          <entry key="project.opened" value="61" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -56,8 +53,8 @@
           <entry key="json" value="8" />
           <entry key="png" value="3" />
           <entry key="svg" value="6" />
-          <entry key="ts" value="89" />
-          <entry key="tsx" value="394" />
+          <entry key="ts" value="91" />
+          <entry key="tsx" value="400" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -70,35 +67,35 @@
           <entry key="JavaScript" value="23" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="SVG" value="6" />
-          <entry key="TypeScript" value="89" />
-          <entry key="TypeScript JSX" value="394" />
+          <entry key="TypeScript" value="91" />
+          <entry key="TypeScript JSX" value="400" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="TypeScriptServerServiceImpl" value="55" />
+          <entry key="TypeScriptServerServiceImpl" value="56" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="env" value="210" />
+          <entry key="env" value="219" />
           <entry key="gitignore" value="25" />
           <entry key="html" value="8" />
           <entry key="js" value="3661" />
           <entry key="json" value="8" />
-          <entry key="ts" value="454" />
-          <entry key="tsx" value="25440" />
+          <entry key="ts" value="484" />
+          <entry key="tsx" value="25816" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Env File" value="210" />
+          <entry key="Env File" value="219" />
           <entry key="HTML" value="8" />
           <entry key="JSON" value="8" />
           <entry key="JavaScript" value="3661" />
           <entry key="PLAIN_TEXT" value="25" />
-          <entry key="TypeScript" value="454" />
-          <entry key="TypeScript JSX" value="25440" />
+          <entry key="TypeScript" value="484" />
+          <entry key="TypeScript JSX" value="25816" />
         </counts>
       </usages-collector>
     </session>
@@ -108,44 +105,62 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="143" column="61" selection-start-line="143" selection-start-column="61" selection-end-line="143" selection-end-column="61" />
+            <state relative-caret-position="150">
+              <caret line="226" column="33" lean-forward="true" selection-start-line="226" selection-start-column="33" selection-end-line="226" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/context/authenticationContext.tsx">
+        <entry file="file://$PROJECT_DIR$/src/admin/pages/PaymentInfo/PaymentInfo.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/userDashboard/components/Dashboard/Dashboard.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="46" column="5" lean-forward="true" selection-start-line="44" selection-start-column="4" selection-end-line="46" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-51">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="84">
+              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx">
+        <entry file="file://$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoContent.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="223" column="45" selection-start-line="223" selection-start-column="45" selection-end-line="223" selection-end-column="45" />
+            <state relative-caret-position="186">
+              <caret line="55" column="109" selection-start-line="55" selection-start-column="109" selection-end-line="55" selection-end-column="109" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoListItem.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/admin/components/NewPaymentMethod/NewPaymentMethod.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/admin/components/NewPaymentMethod/validation.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/CreateTicketModal/CreateTicketModal.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="119" column="30" lean-forward="true" selection-start-line="119" selection-end-line="120" />
             </state>
           </provider>
         </entry>
@@ -154,7 +169,7 @@
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -171,9 +186,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>admin/tax-payer-information</find>
-      <find>onChangeInput</find>
-      <find>admin/events-managment-home</find>
       <find>Upcoming</find>
       <find>explore-venue/venue-details</find>
       <find>location</find>
@@ -181,7 +193,6 @@
       <find>moment</find>
       <find>useLoginContext</find>
       <find>setSuccessModalVisible</find>
-      <find>admin/payment-information</find>
       <find>Dialog</find>
       <find>Modal</find>
       <find>confirmationModal</find>
@@ -200,7 +211,11 @@
       <find>Upcoming Itinerary</find>
       <find>dispatch</find>
       <find>NavbarWithSearch</find>
+      <find>_blank</find>
+      <find>this.close</find>
       <find>free-trial</find>
+      <find>admin/payment-information</find>
+      <find>Select</find>
     </findStrings>
     <replaceStrings>
       <replace>music-pass-f227c.web.app</replace>
@@ -216,9 +231,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/admin/components/PreviewOrganizationInfo/PreviewOrganizationInfo.tsx" />
-        <option value="$PROJECT_DIR$/src/admin/components/OrganizationProfilesList/OrganizationListItem.tsx" />
-        <option value="$PROJECT_DIR$/src/admin/pages/BasicInfo/BasicInfo.tsx" />
         <option value="$PROJECT_DIR$/src/admin/components/OrganizationProfileForm/OrganizationProfileForm.tsx" />
         <option value="$PROJECT_DIR$/src/admin/components/DashboardHeader/DashboardHeader.tsx" />
         <option value="$PROJECT_DIR$/src/components/MessageModal/MessageModal.tsx" />
@@ -260,13 +272,16 @@
         <option value="$PROJECT_DIR$/src/admin/components/TeamRolesList/TeamRoleListItem.tsx" />
         <option value="$PROJECT_DIR$/src/userDashboard/components/CardWithContent/CardWithContent.tsx" />
         <option value="$PROJECT_DIR$/src/App.tsx" />
-        <option value="$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoListItem.tsx" />
-        <option value="$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoContent.tsx" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/context/authenticationContext.tsx" />
         <option value="$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.tsx" />
         <option value="$PROJECT_DIR$/src/userDashboard/components/Dashboard/Dashboard.tsx" />
         <option value="$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx" />
+        <option value="$PROJECT_DIR$/src/components/PriceCard/PriceCard.tsx" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoListItem.tsx" />
+        <option value="$PROJECT_DIR$/src/admin/components/NewPaymentMethod/validation.ts" />
+        <option value="$PROJECT_DIR$/src/admin/components/NewPaymentMethod/NewPaymentMethod.tsx" />
+        <option value="$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoContent.tsx" />
       </list>
     </option>
   </component>
@@ -301,6 +316,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -311,31 +328,39 @@
             <path>
               <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
               <item name="musicstep" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="musicstep" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
               <item name="musicstep" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
+              <item name="musicstep" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
+              <item name="musicstep" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="NewPaymentMethod" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1658415091030" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1658472323984" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="ts.external.directory.path" value="D:\practice\musicstep\node_modules\typescript\lib" />
@@ -428,18 +453,19 @@
       <workItem from="1658314144704" duration="4660000" />
       <workItem from="1658322956463" duration="15000" />
       <workItem from="1658323050184" duration="640000" />
-      <workItem from="1658400690249" duration="9400000" />
+      <workItem from="1658400690249" duration="10568000" />
+      <workItem from="1658470475683" duration="1808000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="308007000" />
+    <option name="totallyTimeSpent" value="310983000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32416108" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32885906" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -457,7 +483,7 @@
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" visible="true" weight="0.4269341" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" visible="true" weight="0.4269341" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067115" side_tool="true" weight="0.256447" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
@@ -500,34 +526,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/CreateTicketModal/validation.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SelectBox/SelectBox.style.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="30" column="69" selection-start-line="30" selection-start-column="69" selection-end-line="30" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/Common.style.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1340">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin/components/TaxpayerInfoSteps/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="52" selection-start-column="52" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/antd/lib/radio/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -671,13 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CreateTicketModal/CreateTicketModal.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="211" column="23" lean-forward="true" selection-start-line="211" selection-start-column="23" selection-end-line="211" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/admin/components/SubmitEventStep2/SubmitEventStep2.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -755,27 +746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin/pages/PaymentInfo/PaymentInfo.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoListItem.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="65" column="30" lean-forward="true" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoContent.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="95" column="25" lean-forward="true" selection-start-line="95" selection-start-column="25" selection-end-line="95" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/admin/pages/TeamManagement/TeamManagement.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
@@ -807,17 +777,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
+    <entry file="file://$PROJECT_DIR$/src/components/PriceCard/PriceCard.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="124">
+          <caret line="62" column="35" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.tsx">
+    <entry file="file://$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="143" column="61" selection-start-line="143" selection-start-column="61" selection-end-line="143" selection-end-column="61" />
+        <state relative-caret-position="178">
+          <caret line="206" column="24" selection-start-line="206" selection-start-column="24" selection-end-line="206" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/userDashboard/components/Dashboard/Dashboard.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="46" column="5" selection-start-line="44" selection-start-column="4" selection-end-line="46" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -828,24 +812,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.tsx">
+    <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/userDashboard/components/Dashboard/Dashboard.tsx">
+    <entry file="file://$PROJECT_DIR$/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="46" column="5" lean-forward="true" selection-start-line="44" selection-start-column="4" selection-end-line="46" selection-end-column="5" />
+        <state relative-caret-position="150">
+          <caret line="226" column="33" lean-forward="true" selection-start-line="226" selection-start-column="33" selection-end-line="226" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx">
+    <entry file="file://$PROJECT_DIR$/src/components/CreateTicketModal/validation.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="223" column="45" selection-start-line="223" selection-start-column="45" selection-end-line="223" selection-end-column="45" />
+        <state relative-caret-position="34">
+          <caret line="3" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/CreateTicketModal/CreateTicketModal.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="119" column="30" lean-forward="true" selection-start-line="119" selection-end-line="120" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/pages/PaymentInfo/PaymentInfo.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/NewPaymentMethod/validation.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="60" selection-start-line="8" selection-start-column="60" selection-end-line="8" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoListItem.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/NewPaymentMethod/NewPaymentMethod.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoContent.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="55" column="109" selection-start-line="55" selection-start-column="109" selection-end-line="55" selection-end-column="109" />
         </state>
       </provider>
     </entry>
