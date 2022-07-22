@@ -81,7 +81,6 @@ const IRSSubstituteForm = (props: any) => {
 
     useEffect(() => {
         if (props.buttonClicked !== 0) {
-            console.log(ssn.textmask.length,"   ",ein.textmask.length)
             if (ssn.textmask.length !== 10 && ein.textmask.length !== 10) {
                 setError(true)
             } else {
@@ -93,7 +92,6 @@ const IRSSubstituteForm = (props: any) => {
 
     useEffect(() => {
         const taxInfo = props.taxInfo;
-        console.log(taxInfo.number);
         if (taxInfo && taxInfo.number) formikForm.setFieldValue("textmask", taxInfo.number);
         if (props.federalTaxClassification === "Individual/sole proprietor or LLC(Single member)") {
             setSSN({...ssn, textmask: taxInfo.number})

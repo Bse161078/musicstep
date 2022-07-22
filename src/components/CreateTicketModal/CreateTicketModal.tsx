@@ -71,7 +71,6 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
 
     const getValueFromDiscount = (discount: string) => {
 
-      console.log(discount);
         switch (discount) {
             case "Level 1":
                 return  3.75;

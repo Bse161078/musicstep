@@ -18,7 +18,6 @@ const NewPaymentMethod = (props: NewPaymentMethodProps) => {
     const [type,setType]=useState("Bank");
     const [errorMessage, setErrorMessage] = useState('')
     const handlePaymentMethodSubmit = (e: any) => {
-        console.log("e = ",e);
         setLoading(true)
         const user: any = JSON.parse(localStorage.getItem("data") || "{}");
         const body = {

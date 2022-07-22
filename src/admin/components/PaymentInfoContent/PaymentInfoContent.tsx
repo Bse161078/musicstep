@@ -37,7 +37,6 @@ const PaymentInfoContent = (props: PaymentInfoContentProps) => {
 
 
     const deletePartnerPayment = (id: string, index: number) => {
-        console.log(payments);
         setLoading(true);
         axios.delete(`/v1/partners/partnerPayment/${id}`).then((res) => {
             setPayments(res.data);
@@ -55,7 +54,6 @@ const PaymentInfoContent = (props: PaymentInfoContentProps) => {
 
     const filteredPayments=payments  && payments.filter((payment:any)=>payment.type===type || type.length===0);
 
-    console.log("type = ",type);
     return (
 
         <PaymentInfoContentStyle>

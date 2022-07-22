@@ -66,7 +66,6 @@ export default function TaxPayerInfo() {
 
 
     const onChangeInput = (value: any) => {
-        console.log("onChangeInput")
         setTaxInfo({...taxInfo, "number": value});
     }
 

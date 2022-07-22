@@ -9,7 +9,6 @@ const UpcomingEvents = ({events, venue, subscribtionCredit}: any) => {
     let tempresrvatoin = 0;
 
 
-    console.log("events = ", events)
 
     const filteredEvents=events.filter((event:any)=>new Date(event.date)>=new Date())
 

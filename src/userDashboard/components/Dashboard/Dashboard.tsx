@@ -41,7 +41,6 @@ const Dashboard = (props: DashboardProps) => {
         getUser();
     }, []);
 
-    console.log("state = ",state)
     if (state.refreshInfo) {
         getUser();
     }
