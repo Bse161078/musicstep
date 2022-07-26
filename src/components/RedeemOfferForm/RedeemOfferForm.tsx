@@ -87,7 +87,7 @@ const RedeemOfferForm = (props: TrailSetPasswordProps) => {
                 </div>
                 <div className="input-wrapper-phone">
                   <PhoneInput
-                    country={"pk"}
+                    country={"us"}
                     value={form.values.phoneNumber}
                     onChange={(phone) => {
                       form.setFieldValue("phoneNumber", phone.toString());

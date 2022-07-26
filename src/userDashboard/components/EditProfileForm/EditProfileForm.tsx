@@ -107,7 +107,7 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
                             dateOfBirth:
                                 userData.dateOfBirth && userData.dateOfBirth.slice(0, 10),
                             email: userData.email,
-                            countryCode: "+92",
+                            countryCode: "+1",
                             phone: userData.phoneNumber,
                             photo: "",
                             isPhoneNumberPublic: userData.isPhoneNumberPublic,

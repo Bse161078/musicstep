@@ -71,7 +71,7 @@ const TrialForm = (props: TrialFormProps) => {
         <h4 className="price-description">For 7 Days</h4>
 
         <IconWithText
-          heading="Get XX credits to book upcoming events."
+          heading="Get 15 credits to book upcoming events."
           icon={<UpcomingEventsIcon />}
         />
 

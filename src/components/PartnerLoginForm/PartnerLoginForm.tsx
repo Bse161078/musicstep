@@ -89,7 +89,7 @@ const PartnerLoginForm = () => {
             <h2 className="partner-login-form-heading">
               Partner Dashboard Login
             </h2>
-            <InputBox name="userName" label="Username" />
+            <InputBox name="userName" label="Email" />
             <InputBox name="password" type="password" label="Password" />
             <div className="checkbox-wrapper">
               <InputCheckbox

@@ -13,14 +13,18 @@ import {TrialBillingInfoValidationSchema} from "./validation";
 import {loadStripe} from "@stripe/stripe-js";
 import {Elements} from "@stripe/react-stripe-js";
 import AddCard from "../Stripe/addCard";
+import {Link} from "@reach/router";
 
 const TrialBillingInfoForm = (props: any) => {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [loading, setLoading] = useState(false);
     // const [errorMessage, setErrorMessage] = useState("");
-    const stripePromise = loadStripe("pk_test_51KtcQTFJ50BG2GSltkm4lfPaxH6c8raqCKt9hoBFpgAnJ9loSE8eWTU0PsTRV5wlAcgCY5n7ZMwMXfWg8FPwDPGC009SYAHTEk");
+    const stripePromise = loadStripe("pk_test_51KlypNIPUfXuvJ9SeWtumhiJ3BDNEVl0rzxcwsVjYliUjnUcpPQJvNCOxjg0NlUPR5NUuX6Iog038akazJrlNkBy00sn1itpn8");
     const [clientSecret, setClientSecret] = useState("");
     const history = useHistory();
+    const selectedSubscription = localStorage.getItem("subscription") ?
+        JSON.parse(localStorage.getItem("subscription") || "{}") :
+        {credits: "48", eventsCount: "3-4", musicType: "Enthusiast", price: "$99"};
 
 
     useEffect(() => {
@@ -126,6 +130,12 @@ const TrialBillingInfoForm = (props: any) => {
         clientSecret,
         appearance,
     };
+
+    const Terms = <a href={"terms-conditions"} target="_blank">Terms</a>;
+    const FeesApply = <a href={"terms-conditions"} target="_blank">Fees apply</a>;
+    const PrivacyNotice = <a href={"terms-conditions"} target="_blank">Privacy Notice</a>;
+
+
     return (
         <TrialBillingInfoFormStyle>
             {loading && <Loading/>}
@@ -152,29 +162,49 @@ const TrialBillingInfoForm = (props: any) => {
                         <p className="gift-code">I have a gift code</p>
 
                         <p className="description">
-                            By clicking the button below, you agree to the Terms, and your
-                            free 14 days 15-credit trial will begin. If you don't cancel
+                            {
+                                `By clicking the button below, you agree to the `
+                            }
+                            {
+                                Terms
+                            }
+                            {
+                                ` and your
+                            free 7 days ${selectedSubscription.credits}-credits trial will begin. If you don't cancel
                             before the trial ends, you'll automatically be charged for a
-                            full-priced monthly credit plan (currently $79 + any tax for 38
+                            full-priced monthly credit plan (currently ${selectedSubscription.price} + any tax for ${selectedSubscription.credits}
                             credits per month), until you cancel or change your plan. Cancel
-                            anytime in Settings to avoid renewal. Fees apply for reservations
+                            anytime in Settings to avoid renewal. `
+                            }
+                            {
+                                FeesApply
+                            }
+                            {
+                                ` for reservations
                             missed or cancelled late. No refunds. New members only. Inventory
-                            varies per location and may be limited during trial. Privacy
-                            Notice applies.
+                            varies per location and may be limited during trial. `
+                            }
+                            {
+                                PrivacyNotice
+                            }
+                            {
+                                `  applies.`
+                            }
+
                         </p>
 
                         {/* {errorMessage !== "" && (
               <p className="error-message">{errorMessage}</p>
             )} */}
                         {props.isPricing &&
-                            <FilledButtonStyle width="100%" height="60px" onClick={()=>{
-                                const selectedSubscription = localStorage.getItem("subscription") ?
-                                    JSON.parse(localStorage.getItem("subscription") || "{}"):
-                                    {credits: "48",eventsCount: "3-4",musicType: "Enthusiast",price: "$99"};
-                                props.createSubs(selectedSubscription.musicType);
-                            }}>
-                                Confirm
-                            </FilledButtonStyle>
+                        <FilledButtonStyle width="100%" height="60px" onClick={() => {
+                            const selectedSubscription = localStorage.getItem("subscription") ?
+                                JSON.parse(localStorage.getItem("subscription") || "{}") :
+                                {credits: "48", eventsCount: "3-4", musicType: "Enthusiast", price: "$99"};
+                            props.createSubs(selectedSubscription.musicType);
+                        }}>
+                            Confirm
+                        </FilledButtonStyle>
                         }
                     </Form>
                 )}

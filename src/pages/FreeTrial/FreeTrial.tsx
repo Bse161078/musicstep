@@ -34,6 +34,12 @@ export default function FreeTrial() {
     const [paymentMethod, setPaymentMethod] = useState()
     const [loading, setLoading] = useState(false);
 
+    const selectedSubscription = localStorage.getItem("subscription") ?
+        JSON.parse(localStorage.getItem("subscription") || "{}") :
+        {credits: "48", eventsCount: "3-4", musicType: "Enthusiast", price: "$99"};
+
+
+
     useEffect(() => {
         setLoading(true)
         const clientSecret = new URLSearchParams(window.location.search).get(
@@ -191,7 +197,7 @@ export default function FreeTrial() {
                             <BillingInformation
                                 leftHeading={
                                     <>
-                                        Music <span>Fan</span> Includes
+                                        Music <span>{`${selectedSubscription.musicType}`}</span> Includes
                                     </>
                                 }
                             />

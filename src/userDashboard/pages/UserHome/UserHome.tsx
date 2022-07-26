@@ -28,6 +28,8 @@ import {CustomCarousel} from "../../../components";
 import moment from "moment";
 import {UploadFile} from "../../../admin/components/UploadFile";
 import FutureEvents from "./FutureEvents";
+import {ExploreVenueStyle, TrialButton} from "../../../pages/ExploreVenue/ExploreVenue.style";
+import {Pricing} from "../../../pages/Pricing";
 
 const EventReservation = ({reservations, cancelreservation, subscription}: any) => {
     const [isCancelModalVisible, setCancelModalVisible] = useState(false);
@@ -40,6 +42,7 @@ const EventReservation = ({reservations, cancelreservation, subscription}: any) 
 
     return (
         <>
+
             {subscription.active === true ?
                 <SectionHeading heading="Events In Reservation">
                     <Grid container lg={3} xs={1} spacing={1}
@@ -162,12 +165,14 @@ export default function UserHome() {
     const [isLoading, setIsLoading] = useState(false);
     const [reservations, setReservations] = useState([]);
     const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
+    const [showPricing, setShowPricing] = useState(false);
 
     const [subscription, setSubscription] = useState({
         active: true
     })
     const [user, setUser] = useState({
-        credits: 0
+        credits: 0,
+        subscriptionEndDate: null
     })
     const [timeDifference, setTimeDifference] = useState(0)
 
@@ -180,14 +185,17 @@ export default function UserHome() {
     };
 
 
-    const getUser=()=>{
+    const getUser = () => {
         setIsLoading(true);
         const user: any = JSON.parse(localStorage.getItem("data") || "{}");
         axios.get(`v1/users/${user.id}`, {
             headers: {Authorization: `Bearer ${state.authToken}`},
         })
             .then((res: any) => {
-                setUser(res.data)
+
+                setUser(res.data);
+                setSubscriptionExpiration(res.data);
+
             }).catch((e) => {
         })
         axios
@@ -237,11 +245,6 @@ export default function UserHome() {
                 setIsLoading(false)
                 setReservations(res.data.reservation);
                 setSubscription(res.data.subscription)
-                const startDate = moment(res.data.subscription.created_at);
-                const timeEnd = moment(res.data.subscription.expires_at);
-                const diff = timeEnd.diff(startDate);
-                const diffDuration = moment.duration(diff);
-                setTimeDifference(diffDuration.days())
                 // setEvents(res.data);
                 // setIsLoading(false);
             })
@@ -250,19 +253,55 @@ export default function UserHome() {
             });
     };
 
+    const setSubscriptionExpiration = (user:any) => {
+        if (user && user.subscriptionEndDate) {
+            const startDate = moment(new Date());
+            const endDate = moment(user.subscriptionEndDate);
+            const diff = endDate.diff(startDate);
+            const diffDuration = moment.duration(diff);
+            setTimeDifference(diffDuration.days())
+
+        }
+    }
+
+
+    console.log("user = ",user.subscriptionEndDate)
+
     return (
         <>
+            {showPricing && <Pricing showPricing={showPricing} setShowPricing={setShowPricing} isCreateSubscription={true}/>}
             <NavbarWithSearch userCredit={user.credits}/>
             {isLoading && <Loading/>}
             {!subscription ?
-                <Typography variant='h3' align="center" sx={{padding: 10, fontWeight: 'bold'}}>
-                    Your Subscribtion has been cancelled. Create your Subscribtion again!
-                </Typography>
+                <ExploreVenueStyle>
+                    <h1
+                        style={{
+                            width: "100%",
+                            margin: "0px auto",
+                            fontSize: "40px",
+                            textAlign: "center",
+                        }}
+                    >
+                        Your Subscription has been Cancelled! Please create your Subscription package
+                    </h1>
+                    <div></div>
+                    {/* <FilledButtonStyle  class="" onClick={(e)=>onSubscribePackage(e)}>Checkout</FilledButtonStyle> */}
+                    <TrialButton style={{display: 'flex', justifyContent: 'center', marginLeft: 10, marginTop: 10}}
+                                 onClick={(e) => {
+
+                                     setShowPricing(true)
+
+
+                                 }}
+                                 className="text-center"><a className="free-trial-btn free-trial-secondary btn">
+                        Create Subscription</a>
+                    </TrialButton>
+                </ExploreVenueStyle>
                 :
                 <UserHomeStyle>
 
                     <UserSidebar reservations={reservations} subscription={subscription}
-                                 timeDifference={timeDifference}/>
+                                 timeDifference={timeDifference} expirationDate={user.subscriptionEndDate}/>
 
                     <div>
                         <EventReservation

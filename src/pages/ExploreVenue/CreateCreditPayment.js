@@ -19,7 +19,7 @@ const CreateCreditPayment = () => {
     const location = useLocation();
     const history = useHistory();
     const buyCredit = location.state.buyCredit;
-    const stripePromise = loadStripe("pk_test_51KtcQTFJ50BG2GSltkm4lfPaxH6c8raqCKt9hoBFpgAnJ9loSE8eWTU0PsTRV5wlAcgCY5n7ZMwMXfWg8FPwDPGC009SYAHTEk");
+    const stripePromise = loadStripe("pk_test_51KlypNIPUfXuvJ9SeWtumhiJ3BDNEVl0rzxcwsVjYliUjnUcpPQJvNCOxjg0NlUPR5NUuX6Iog038akazJrlNkBy00sn1itpn8");
     const [clientSecret, setClientSecret] = useState("");
     const [loading, setLoading] = useState(false);
 
