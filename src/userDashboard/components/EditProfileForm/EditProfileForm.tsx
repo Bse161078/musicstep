@@ -67,7 +67,7 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
                 lastName: e.lastName,
                 dob: e.dateOfBirth,
                 email: e.email,
-                phoneNumber: e.phone,
+                phoneNumber: `${e.countryCode}${e.phone}`,
                 isPhoneNumberPublic: e.isPhoneNumberPublic,
                 isPublicInfo: e.isPublicInfo,
                 bio: e.bio,
