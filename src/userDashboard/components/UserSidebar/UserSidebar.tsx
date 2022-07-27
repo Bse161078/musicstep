@@ -114,7 +114,7 @@ const UserSidebar = ({reservations, subscription, timeDifference,expirationDate}
         <span onClick={() => setSubscriptionVisible(true)}>
           <HeadingTab
               heading={"Music " + (subscription?.name ? subscription.name : "")}
-              description={!subscription ? "Your Subscription has Expired!" : subscription?.active === true ? moment(expirationDate).format("YYYY-MM-DD")  : ''}
+              description={!subscription ? "Your Subscription has Expired!" : subscription?.active === true ? moment(expirationDate).format("MM/DD/YYYY")  : ''}
           />
         </span>
 
