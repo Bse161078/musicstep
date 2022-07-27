@@ -348,7 +348,6 @@ export default function ExploreVenue() {
                             style={{
                                 width: "100%",
                                 margin: "0px auto",
-                                fontSize: "40px",
                                 textAlign: "center",
                             }}
                         >
@@ -356,7 +355,7 @@ export default function ExploreVenue() {
                         </h1>
                         <div></div>
 
-                        <TrialButton style={{display: 'flex', justifyContent: 'center', marginLeft: 10, marginTop: 10}}
+                        <TrialButton style={{display: 'flex', justifyContent: 'left', marginLeft: 40, marginTop: 10}}
                                      onClick={(e) => {
                                          if (subscribtion.status === 'canceled') {
                                              setShowPricing(true)
@@ -365,8 +364,7 @@ export default function ExploreVenue() {
                                              history.push("/update-subscription");
                                          }
                                      }}
-                                     className="text-center"><a className="free-trial-btn free-trial-secondary btn">
-                            »&nbsp;Subscribe&nbsp;Now!</a>
+                                     className="text-center"><a className="free-trial-btn free-trial-secondary btn">Create Subscription</a>
                         </TrialButton>
                     </ExploreVenueStyle> : !loading && !subscribtion && !showPricing &&
                     <ExploreVenueStyle>

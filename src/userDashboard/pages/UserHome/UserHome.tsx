@@ -278,7 +278,6 @@ export default function UserHome() {
                         style={{
                             width: "100%",
                             margin: "0px auto",
-                            fontSize: "40px",
                             textAlign: "center",
                         }}
                     >
@@ -286,7 +285,7 @@ export default function UserHome() {
                     </h1>
                     <div></div>
                     {/* <FilledButtonStyle  class="" onClick={(e)=>onSubscribePackage(e)}>Checkout</FilledButtonStyle> */}
-                    <TrialButton style={{display: 'flex', justifyContent: 'center', marginLeft: 10, marginTop: 10}}
+                    <TrialButton style={{display: 'flex', justifyContent: 'center', marginLeft: 40, marginTop: 10}}
                                  onClick={(e) => {
 
                                      setShowPricing(true)

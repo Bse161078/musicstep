@@ -9,6 +9,7 @@ import {EditProfileFormStyle} from "./EditProfileForm.style";
 import {PeopleWithMutualFreindsModal} from "../Modals";
 import {BasicInfoFormValidationSchema} from "./validation";
 import Loading from '../../../components/Loading/Loading'
+import {parsePhoneNumber } from "react-phone-number-input";
 
 const EditProfileForm = React.forwardRef((props: any, ref: any) => {
         // const { textInput } = props;
@@ -107,8 +108,8 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
                             dateOfBirth:
                                 userData.dateOfBirth && userData.dateOfBirth.slice(0, 10),
                             email: userData.email,
-                            countryCode: "+1",
-                            phone: userData.phoneNumber,
+                            countryCode: parsePhoneNumber("+"+userData.phoneNumber)?.countryCallingCode,
+                            phone: parsePhoneNumber("+"+userData.phoneNumber)?.nationalNumber,
                             photo: "",
                             isPhoneNumberPublic: userData.isPhoneNumberPublic,
                             isPublicInfo: (function () {

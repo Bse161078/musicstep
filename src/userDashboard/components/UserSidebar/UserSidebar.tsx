@@ -18,8 +18,9 @@ import {UserSidebarStyle} from "./UserSidebar.style";
 import {useLoginContext} from "../../../context/authenticationContext";
 import axios from "axios";
 import {Grid} from "@mui/material";
+import moment from "moment";
 
-const UserSidebar = ({reservations, subscription, timeDifference}: any) => {
+const UserSidebar = ({reservations, subscription, timeDifference,expirationDate}: any) => {
     const {dispatch, state} = useLoginContext();
     const [isLogoutVisible, setLogoutVisible] = useState(false);
     const [isSubscriptionVisible, setSubscriptionVisible] = useState(false);
@@ -65,6 +66,9 @@ const UserSidebar = ({reservations, subscription, timeDifference}: any) => {
                 setNotSuccessModalVisible(true)
             })
     };
+
+
+
     return (
         <UserSidebarStyle>
             {isLoading === true && <Loading/>}
@@ -110,7 +114,7 @@ const UserSidebar = ({reservations, subscription, timeDifference}: any) => {
         <span onClick={() => setSubscriptionVisible(true)}>
           <HeadingTab
               heading={"Music " + (subscription?.name ? subscription.name : "")}
-              description={!subscription ? "Your Subscription has Expired!" : subscription?.active === true ? timeDifference === 0 ? "Expires Today" : "Expires in " + timeDifference + " days." : ''}
+              description={!subscription ? "Your Subscription has Expired!" : subscription?.active === true ? moment(expirationDate).format("YYYY-MM-DD")  : ''}
           />
         </span>
 
