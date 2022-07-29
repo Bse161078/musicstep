@@ -1,12 +1,15 @@
 import React from "react";
 import {HeadingWithContent} from "../../components";
 import {PrivacyPolicyStyle} from "./PrivacyPolicy.style";
+import {useHistory} from "react-router";
 
 export default function PrivacyPolicy() {
+    const history = useHistory();
     return (
         <PrivacyPolicyStyle>
             <HeadingWithContent
                 handleButtonClick={() => {
+                    history.goBack()
                 }}
                 heading="Privacy Policy"
                 content={[

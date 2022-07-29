@@ -1,12 +1,15 @@
 import React from "react";
 import {HeadingWithContent} from "../../components";
 import {AboutUsStyle} from "./AboutUs.style";
+import {useHistory} from "react-router";
 
 export default function AboutUs() {
+    const history = useHistory();
     return (
         <AboutUsStyle>
             <HeadingWithContent
                 handleButtonClick={() => {
+                    history.goBack()
                 }}
                 heading="About"
                 content={[

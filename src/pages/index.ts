@@ -11,4 +11,5 @@ export * from "./VenueDetails"
 export * from './PartnerSignup'
 export * from './OrganizerProfile'
 export * from './PrivacyPolicy'
+export * from './FeesApply'
 export * from './AboutUs'

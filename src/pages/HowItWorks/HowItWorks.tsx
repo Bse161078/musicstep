@@ -2,12 +2,16 @@ import React from "react";
 import { HeadingWithContent } from "../../components";
 
 import { HowItWorksStyle } from "./HowItWorks.style";
+import {useHistory} from "react-router";
 
 export default function HowItWorks() {
-  return (
+    const history = useHistory();
+    return (
     <HowItWorksStyle>
       <HeadingWithContent
-        handleButtonClick={() => {}}
+        handleButtonClick={() => {
+            history.goBack();
+        }}
         heading="How It Works"
         content={[
             "A MusicPass membership runs on a recurring monthly basis. Each month credits are allotted, the amount of which depends on the membership plan.",

@@ -1,12 +1,15 @@
 import React from "react";
 import {HeadingWithContent} from "../../components";
 import {TermsAndConditionsStyle} from "./TermsAndConditions.style";
+import {useHistory} from "react-router";
 
 export default function TermsAndConditions() {
+    const history = useHistory();
     return (
         <TermsAndConditionsStyle>
             <HeadingWithContent
                 handleButtonClick={() => {
+                    history.goBack()
                 }}
                 heading="Terms & Conditions"
                 content={[

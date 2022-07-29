@@ -23,6 +23,7 @@ import {
     VenueDetails,
     PartnerSignup,
     OrganizerProfile,
+    FeesApply
 } from "./pages";
 
 import {
@@ -165,6 +166,7 @@ const RoutesList = (props: any) => {
                 <Route path="/terms-conditions" component={TermsAndConditions}/>
                 <Route path="/privacy-policy" component={PrivacyPolicy}/>
                 <Route path="/about-us" component={AboutUs}/>
+                <Route path="/fees-apply" component={FeesApply}/>
 
                 <Route
                     path="/admin/basic-info"

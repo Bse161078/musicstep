@@ -131,9 +131,9 @@ const TrialBillingInfoForm = (props: any) => {
         appearance,
     };
 
-    const Terms = <a href={"terms-conditions"} target="_blank">Terms</a>;
-    const FeesApply = <a href={"how-it-works"} target="_blank">Fees apply</a>;
-    const PrivacyNotice = <a href={"privacy-policy"} target="_blank">Privacy Notice</a>;
+    const Terms = <a href={"terms-conditions"}>Terms</a>;
+    const FeesApply = <a href={"fees-apply"}>Fees apply</a>;
+    const PrivacyNotice = <a href={"privacy-policy"}>Privacy Notice</a>;
 
 
     return (
