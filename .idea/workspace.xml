@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f900495-2d01-4c96-a493-d43d1865075e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.9a53bf81.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.9a53bf81.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/FeesApply/FeesApply.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/FeesApply/FeesApply.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/HelpCenter/HelpCenter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HelpCenter/HelpCenter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.da94c001.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.da94c001.chunk.js.map" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +52,7 @@
           <entry key="png" value="3" />
           <entry key="svg" value="6" />
           <entry key="ts" value="106" />
-          <entry key="tsx" value="455" />
+          <entry key="tsx" value="456" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -69,7 +66,7 @@
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="SVG" value="6" />
           <entry key="TypeScript" value="106" />
-          <entry key="TypeScript JSX" value="455" />
+          <entry key="TypeScript JSX" value="456" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -106,8 +103,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+            <state relative-caret-position="221">
+              <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
+              <folding>
+                <element signature="e#219#511#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="106">
+              <caret line="159" selection-start-line="159" selection-end-line="159" />
             </state>
           </provider>
         </entry>
@@ -139,69 +148,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/HelpCenter/HelpCenter.style.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="18" selection-start-column="18" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/HelpCenter/HelpCenter.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="77" column="26" selection-start-line="77" selection-end-line="163" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/FeesApply/FeesApply.style.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/FeesApply/FeesApply.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1699">
-              <caret line="102" selection-start-line="102" selection-end-line="102" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/index.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/TrialBillingInfoForm/TrialBillingInfoForm.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2023">
-              <caret line="134" column="42" selection-start-line="134" selection-start-column="32" selection-end-line="134" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -214,7 +160,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Your Subscribtion has been cancelled</find>
       <find>privacy-poli</find>
       <find>Create your Subscribtion again</find>
       <find>timeDifference</find>
@@ -244,6 +189,7 @@
       <find>selectedSubscription.credits</find>
       <find>Reservations</find>
       <find>Event Ratings and Reviews</find>
+      <find>No Event or</find>
     </findStrings>
     <replaceStrings>
       <replace>music-pass-f227c.web.app</replace>
@@ -289,7 +235,6 @@
         <option value="$PROJECT_DIR$/src/components/LoginForm/LoginForm.tsx" />
         <option value="$PROJECT_DIR$/src/components/PartnerLoginForm/PartnerLoginForm.tsx" />
         <option value="$PROJECT_DIR$/src/components/TrialForm/TrialForm.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx" />
         <option value="$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx" />
         <option value="$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.tsx" />
         <option value="$PROJECT_DIR$/src/userDashboard/components/UserSidebar/UserSidebar.tsx" />
@@ -310,6 +255,7 @@
         <option value="$PROJECT_DIR$/src/mockData/footer.tsx" />
         <option value="$PROJECT_DIR$/src/pages/HelpCenter/HelpCenter.tsx" />
         <option value="$PROJECT_DIR$/src/pages/FeesApply/FeesApply.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx" />
       </list>
     </option>
   </component>
@@ -333,11 +279,11 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="85" />
-    <option name="y" value="25" />
-    <option name="width" value="1750" />
-    <option name="height" value="970" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="50" />
+    <option name="y" value="15" />
+    <option name="width" value="1400" />
+    <option name="height" value="780" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -408,7 +354,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1659134594900" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1659135615471" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="ts.external.directory.path" value="D:\practice\musicstep\node_modules\typescript\lib" />
@@ -522,18 +468,18 @@
       <workItem from="1659080308959" duration="5568000" />
       <workItem from="1659089691986" duration="1746000" />
       <workItem from="1659130650946" duration="994000" />
-      <workItem from="1659133467200" duration="1088000" />
+      <workItem from="1659133467200" duration="2035000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="338476000" />
+    <option name="totallyTimeSpent" value="339423000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.40738255" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.40738255" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -551,7 +497,7 @@
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" visible="true" weight="0.3581662" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" visible="true" weight="0.3581662" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067115" side_tool="true" weight="0.256447" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
@@ -758,13 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3994">
-          <caret line="367" column="38" selection-start-line="367" selection-start-column="38" selection-end-line="367" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4590">
@@ -842,6 +781,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="36" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -849,6 +791,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="23" selection-start-line="11" selection-end-line="12" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -856,6 +801,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="27" selection-start-line="11" selection-end-line="12" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -873,34 +821,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Footer/Footer.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="61" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/HelpCenter/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="30" selection-start-column="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/FeesApply/FeesApply.style.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -925,10 +849,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/HelpCenter/HelpCenter.style.ts">
+    <entry file="file://$PROJECT_DIR$/src/pages/FeesApply/FeesApply.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
+        <state relative-caret-position="1734">
+          <caret line="102" selection-start-line="102" selection-end-line="102" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/FeesApply/FeesApply.style.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -942,13 +879,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/FeesApply/FeesApply.tsx">
+    <entry file="file://$PROJECT_DIR$/src/pages/HelpCenter/HelpCenter.style.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1699">
-          <caret line="102" selection-start-line="102" selection-end-line="102" />
+        <state>
+          <caret column="18" selection-start-column="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/HelpCenter/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="30" selection-start-column="30" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#219#511#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="159" selection-start-line="159" selection-end-line="159" />
         </state>
       </provider>
     </entry>

@@ -157,7 +157,7 @@ export default function ExploreVenue() {
                                                 style={{
                                                     width: "100%",
                                                     margin: "0px auto",
-                                                    fontSize: "40px",
+                                                    fontSize: "32px",
                                                     textAlign: "center",
                                                 }}
                                             >
