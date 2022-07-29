@@ -9,15 +9,25 @@ import { ProcessPaymentFormStyle } from "./ProcessPaymentForm.style";
 
 const ProcessPaymentForm = () => {
   const [isCongratulationsVisible, setCongratulationsVisible] = useState(false);
-  
-  const history = useHistory();
+
+    const selectedSubscription = localStorage.getItem("subscription") ?
+        JSON.parse(localStorage.getItem("subscription") || "{}") :
+        {credits: "48", eventsCount: "3-4", musicType: "Enthusiast", price: "$99"};
+
+
+    const history = useHistory();
 
   const handleCongratulationsButtonClick = () => {
     history.push('/explore-venue')
     setCongratulationsVisible(true)
   }
 
-  return (
+    const Terms = <a href={"terms-conditions"} target="_blank">Terms</a>;
+    const FeesApply = <a href={"how-it-works"} target="_blank">Fees apply</a>;
+    const PrivacyNotice = <a href={"privacy-policy"} target="_blank">Privacy Notice</a>;
+
+
+    return (
     <ProcessPaymentFormStyle>
       <h3 className="form-heading">Process Payment</h3>
 
@@ -35,15 +45,35 @@ const ProcessPaymentForm = () => {
             <p className="gift-code">I have a gift code</p>
 
             <p className="description">
-              By clicking the button below, you agree to the Terms, and your
-              free 14 days 15-credit trial will begin. If you don't cancel
-              before the trial ends, you'll automatically be charged for a
-              full-priced monthly credit plan (currently $79 + any tax for 38
-              credits per month), until you cancel or change your plan. Cancel
-              anytime in Settings to avoid renewal. Fees apply for reservations
-              missed or cancelled late. No refunds. New members only. Inventory
-              varies per location and may be limited during trial. Privacy
-              Notice applies.
+                {
+                    `By clicking the button below, you agree to the `
+                }
+                {
+                    Terms
+                }
+                {
+                    ` and your
+                            free 7 days ${selectedSubscription.credits}-credits trial will begin. If you don't cancel
+                            before the trial ends, you'll automatically be charged for a
+                            full-priced monthly credit plan (currently ${selectedSubscription.price} + any tax for ${selectedSubscription.credits}
+                            credits per month), until you cancel or change your plan. Cancel
+                            anytime in Settings to avoid renewal. `
+                }
+                {
+                    FeesApply
+                }
+                {
+                    ` for reservations
+                            missed or cancelled late. No refunds. New members only. Inventory
+                            varies per location and may be limited during trial. `
+                }
+                {
+                    PrivacyNotice
+                }
+                {
+                    `  applies.`
+                }
+
             </p>
 
             <FilledButtonStyle width="100%" height="60px">

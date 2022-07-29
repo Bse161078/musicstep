@@ -4,7 +4,7 @@ export const footerItems = [
     list: [
       {
         name: "About Us",
-        url: "#",
+        url: "/about-us",
       },
       {
         name: "Terms & Conditions",
@@ -16,7 +16,7 @@ export const footerItems = [
       },
       {
         name: "Privacy Policy",
-        url: "#",
+        url: "/privacy-policy",
       },
     ],
   },

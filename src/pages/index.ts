@@ -10,3 +10,5 @@ export * from "./TermsAndConditions"
 export * from "./VenueDetails"
 export * from './PartnerSignup'
 export * from './OrganizerProfile'
+export * from './PrivacyPolicy'
+export * from './AboutUs'

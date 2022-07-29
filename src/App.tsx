@@ -18,6 +18,8 @@ import {
     Pricing,
     ProcessPayment,
     TermsAndConditions,
+    PrivacyPolicy,
+    AboutUs,
     VenueDetails,
     PartnerSignup,
     OrganizerProfile,
@@ -161,6 +163,8 @@ const RoutesList = (props: any) => {
                 />
                 <Route path="/how-it-works" component={HowItWorks}/>
                 <Route path="/terms-conditions" component={TermsAndConditions}/>
+                <Route path="/privacy-policy" component={PrivacyPolicy}/>
+                <Route path="/about-us" component={AboutUs}/>
 
                 <Route
                     path="/admin/basic-info"
