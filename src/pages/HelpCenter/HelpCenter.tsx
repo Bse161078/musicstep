@@ -13,6 +13,68 @@ export default function HelpCenter() {
                 }}
                 heading="Help Center"
                 content={[
+                    "Subscription Plans",
+                    "We offer different subscription tiers based on your appetite for music events.",
+                    "Our most minimal subscription plan is called Music Dip. All our other plans step-up from there, offering more credits with each tier:",
+                    "Music Lite",
+                    "Music Enthusiast",
+                    "Music ",
+                    "Music Pro",
+                    "Please see our Pricing Page for details.",
+                    "Subscription Offerings",
+                    "The events listed on the MusicPass platform are operated by the Partners we work with.\n" +
+                    "\n" +
+                    "Don’t see an event or partner listed? Send us an email at suggestions@musicpassonline.com.\n",
+                    "If you are an interested Partner, please check out our Partner Portal.",
+                    "Changing Plans",
+                    "Access your Account Settings to change plans.\n" +
+                    "\n" +
+                    "Upgrading a plan involves immediate access to more credits. The date of your upgrade activates a new billing cycle, along with a new charge for the price of your new plan.\n" +
+                    "\n" +
+                    "Downgrading a plan does not change a billing cycle. When the downgrade is requested, it will be fulfilled on the next billing cycle.\n" +
+                    "\n" +
+                    "Whether you upgrade or downgrade, renewals will continue each month for the plan chosen unless another plan change is made.\n" +
+                    "\n" +
+                    "Plans are subject to change at any time and changes must be submitted 24 hours prior to your next cycle date in order to take effect. Current membership plans can be referenced in your Membership settings. \n" +
+                    "\n" +
+                    "To change your plan:\n" +
+                    "Navigate to your Membership Settings. \n" +
+                    "Select ‘Manage membership’. \n" +
+                    "Select your new plan.\n",
+                    "Reactivate Plan",
+                    "You can reactivate your membership at any time through your Profile page, where you can reference current membership options available in your location.\n" +
+                    "\n" +
+                    "Your account will activate at the time of sign up and will renew on the same date each month. \n" +
+                    "\n" +
+                    "There is no reactivation fee for resuming your MusicPass membership. \n",
+                    "Refund Policy",
+                    "We do not offer refunds for months of membership or additional credit purchases, including add-on credits. \n" +
+                    "\n" +
+                    "ClassPass memberships automatically renew each month. Any changes made to your membership will apply to your upcoming cycle. We are unable to retroactively make changes to your account. \n" +
+                    "\n" +
+                    "If you’re interested in cancelling your membership, please submit a cancellation request at least 24 hours prior to your cycle date. You can reference your cycle date in your Account Settings. More information on how to cancel your account can be found here. \n" +
+                    "\n" +
+                    "Our full refund policy can be viewed in Section 3c. of our Terms of Use. \n" +
+                    "\n" +
+                    "ClassPass trials and memberships automatically renew each month on your cycle date. You can cancel your ClassPass trial or membership at any time. \n" +
+                    "\n" +
+                    "Cancellations need to be requested at least 24 hours prior to your cycle date.\n" +
+                    "\n" +
+                    "After a cancellation request is made you’ll receive a cancellation confirmation email from our Customer Experience team. If you do not receive a cancellation confirmation email, your request was not received.\n" +
+                    "\n" +
+                    "If you are on a Commitment Plan, please contact us with any membership questions. \n" +
+                    "\n" +
+                    "To cancel your membership: \n" +
+                    "\n" +
+                    "On the website:\n" +
+                    "\n" +
+                    "Navigate to your Account Settings\n" +
+                    "Click the 'Cancel my membership or take a break' link\n" +
+                    "Follow the prompts to confirm your cancellation request\n",
+                    "Cancellation Fees",
+                    "There is no fee to cancel your ClassPass membership. Once an account is cancelled, you no longer have access to any unused credits, including rollover credits. ",
+                    "Still need help? Contact us here.",
+                    "Reservations",
                     "Search for an Event",
                     "You can search for Partners, Venues, and Events on the web. You can search for events by location, genre, partner, venue, time, credits, and amenities. If you don't see an event you’re looking for, you can submit a partnership request here!",
                     "Go to our search page ",
@@ -99,7 +161,66 @@ export default function HelpCenter() {
                     "We ask that our customers leave a star rating after they attend each event. We also provide a text box to encourage you to leave any comments you had about the event itself. These reviews are completely anonymous and appear on our website within a few days.\n" +
                     "\n" +
                     "Your contribution to ratings and reviews is voluntary and not required. However, we appreciate the feedback so that our Partners can continue to improve your experience moving forward.\n",
-
+                    "Promotions",
+                    "Trial membership",
+                    "For a limited time, you can try MusicPass for free. The trial is only available for new customers who have never had a MusicPass account before. \n" +
+                    "\n" +
+                    "The day of trial sign-up activates the trial membership. Please wait to sign-up if you aren’t ready to try MusicPass. \n" +
+                    "\n" +
+                    "The end of a trial membership triggers a paid membership plan. The plan you will automatically renew to is stated when you sign up for your trial.\n" +
+                    "\n" +
+                    "All event reservations, even within the trial membership, are subject to our event cancellation policy.\n" +
+                    "\n" +
+                    "The number of credits needed to book an event may change based on a number of factors.\n" +
+                    "\n" +
+                    "If you’d like to change your membership plan for your next cycle, you can do so in your Membership settings.\n" +
+                    "\n" +
+                    "Don’t want to continue with your MusicPass membership? You can cancel at anytime. \n",
+                    "Other Promotions",
+                    "We do not offer a student, first-responder, or military discount at this time.",
+                    "Credits",
+                    "Credit Roll-overs",
+                    "This is how it works.",
+                    "Rolling over un-used credits from a paid subscription month to the consecutive following month (“next month”) applies if a MusicPass member remains active and on a paid plan. The amount of un-used credits that can be rolled over depends on the transition from plan to plan:",
+                    "1)Keeping the same paid plan from one month to the next allows for a maximum roll-over equivalent to the next month’s subscription.",
+                    "For example, Emily is currently on the 50-credit Music Enthusiast plan. Next month she is going to also be on the 50-credit Music Enthusiast plan. She can rollover at maximum 50 credits, for an eligible total of 100 credits next month.",
+                    "2)\tDowngrading from one plan to another the next month allows for a maximum roll-over equivalent to the next month’s subscription.",
+                    "Using the same example, Emily decides she wants to downgrade her subscription. She is currently on the 50-credit Music Enthusiast plan. Next month she is going to be on the 25-credit Music Lite plan. She can rollover at maximum 25 credits, for an eligible total of 50 credits next month.",
+                    "3)\tUpgrading from one plan to another the next month allows for a maximum roll-over equivalent to the next month’s subscription.",
+                    "Emily decides she wants to upgrade her subscription. She is currently on the 50-credit Music Enthusiast plan. Next month she is going to be on the 99-credit Music Pro plan. She can rollover at maximum 99 credits, for an eligible total of 149 credits next month.",
+                    "4)\tCancelling a subscription from one plan to none the next month allows for a maximum of zero roll-over.",
+                    "Emily decides to cancel her monthly subscription. At the end of her current subscription, all remaining credits are forfeited.",
+                    "Please note the rollover of un-used credits can take up to 72 hours to appear in your account after renewal.",
+                    "Purchasing more Credits",
+                    "There is a way to buy additional credits (“add-on credits”). The add-on credits, upon purchase, will be available immediately and your cycle date won’t change. \n" +
+                    "\n" +
+                    "All credit purchases are final as noted in the purchase flow. Learn more about our Refund Policy here. \n" +
+                    "\n" +
+                    "If you have credits remaining at the end of your cycle, you can roll over up to the number of credits in your upcoming plan. Learn more about our Rollover Policy above. \n",
+                    "Remaining Credits",
+                    "MusicPass will adjust your remaining credits after you have booked or cancelled a reservation. Any upcoming reservations you’ve already made will be deducted from the number of credits you have remaining.\n" +
+                    "\n" +
+                    "Credits are deducted from your account based on the cycle the class takes place in, not the cycle that you booked the class in. \n" +
+                    "\n" +
+                    "If you have credits remaining at the end of your cycle, you can roll over up to the number of credits in your upcoming plan. Learn more about our Rollover Policy above.  \n" +
+                    "\n" +
+                    "You may not transfer, trade, or otherwise exchange MusicPass credits.\n",
+                    "Billing",
+                    "Update your credit card information",
+                    "On the web:\n" +
+                    "Go to your Account Settings \n" +
+                    "On the left side of the screen select ‘Billing’ \n" +
+                    "Select \"Update Billing Details\"\n" +
+                    "Update your payment method and billing information, then hit ‘Save changes’\n" +
+                    "\n" +
+                    "If you're having trouble updating your payment information, there are a couple of ways to easily troubleshoot. Try logging into a different browser or clearing your cache and browsing history. \n",
+                    "Receipt for MusicPass payment",
+                    "Log into your MusicPass account.",
+                    "Click on your initial from the right hand side of the menu bar.",
+                    "Select Membership from the dropdown.",
+                    "Click on Recent charges on the left hand side of the screen.",
+                    "Scroll down to the bottom of the page and click “Print this page.”",
+                    "Still need help? Get in touch with us."
                 ]}
             />
         </HelpCenterStyle>
