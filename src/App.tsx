@@ -23,7 +23,8 @@ import {
     VenueDetails,
     PartnerSignup,
     OrganizerProfile,
-    FeesApply
+    FeesApply,
+    HelpCenter
 } from "./pages";
 
 import {
@@ -167,6 +168,7 @@ const RoutesList = (props: any) => {
                 <Route path="/privacy-policy" component={PrivacyPolicy}/>
                 <Route path="/about-us" component={AboutUs}/>
                 <Route path="/fees-apply" component={FeesApply}/>
+                <Route path="/help-center" component={HelpCenter}/>
 
                 <Route
                     path="/admin/basic-info"
