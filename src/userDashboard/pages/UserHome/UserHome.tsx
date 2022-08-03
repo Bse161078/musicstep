@@ -292,8 +292,7 @@ export default function UserHome() {
 
 
                                  }}
-                                 className="text-center"><a className="free-trial-btn free-trial-secondary btn">
-                        Create Subscription</a>
+                                 className="text-center"><a className="free-trial-btn free-trial-secondary btn">Create Subscription</a>
                     </TrialButton>
                 </ExploreVenueStyle>
                 :

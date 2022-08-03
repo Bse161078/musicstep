@@ -45,7 +45,7 @@ export default function Pricing(props: any) {
                     updateSubscription={updateSubscription}
                 />
                 <PriceCard
-                    price="$139"
+                    price="$149"
                     musicType="Fan"
                     credits="68"
                     eventsCount="5-6"

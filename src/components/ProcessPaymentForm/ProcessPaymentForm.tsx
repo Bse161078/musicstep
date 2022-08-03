@@ -22,9 +22,9 @@ const ProcessPaymentForm = () => {
     setCongratulationsVisible(true)
   }
 
-    const Terms = <a href={"terms-conditions"} target="_blank">Terms</a>;
-    const FeesApply = <a href={"fees-apply"} target="_blank">Fees apply</a>;
-    const PrivacyNotice = <a href={"privacy-policy"} target="_blank">Privacy Notice</a>;
+    const Terms = <a href={"terms-conditions"}>Terms</a>;
+    const FeesApply = <a href={"help-center"}>Fees apply</a>;
+    const PrivacyNotice = <a href={"privacy-policy"}>Privacy Notice</a>;
 
 
     return (

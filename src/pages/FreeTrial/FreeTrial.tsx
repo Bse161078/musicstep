@@ -154,6 +154,7 @@ export default function FreeTrial() {
 
 
     const CurrentTrialStep = useMemo(() => {
+
         switch (currentForm) {
             case "trial-info":
                 return <TrialForm setCurrentForm={setCurrentForm}/>;

@@ -119,7 +119,7 @@ const RedeemOfferForm = (props: TrailSetPasswordProps) => {
         </p>
 
         <p className="info-footer-heading">
-          <span>Questions or Need Help?</span>
+            <a href={"help-center"}><span>Questions or Need Help?</span></a>
         </p>
       </RedeemOfferFormStyle>
     </TrialFormWrapper>

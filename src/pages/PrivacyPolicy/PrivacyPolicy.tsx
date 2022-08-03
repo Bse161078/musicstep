@@ -5,6 +5,9 @@ import {useHistory} from "react-router";
 
 export default function PrivacyPolicy() {
     const history = useHistory();
+    const beforeEmail=<p className='description-inline'>If you have any questions about our use of cookies or other technologies,</p>
+    const EmailLink = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}>please contact us here.</a></p>;
+
     return (
         <PrivacyPolicyStyle>
             <HeadingWithContent
@@ -106,7 +109,8 @@ export default function PrivacyPolicy() {
                     "We may update this Cookie Notice from time to time in order to reflect, for example, changes to the cookies we use or for other operational, legal or regulatory reasons. Please therefore revisit this Cookie Notice regularly to stay informed about our use of cookies and related technologies.",
                     "The date at the top of this Cookie Notice indicates when it was last updated.",
                     "Where can I get further information?",
-                    "If you have any questions about our use of cookies or other technologies, please contact us here."
+                    beforeEmail,
+                    EmailLink
 
                 ]}
             />

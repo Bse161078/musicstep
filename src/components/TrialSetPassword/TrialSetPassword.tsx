@@ -77,7 +77,11 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
       setLoading(false);
     }
   };
-  return (
+
+    const Pricing = <a href={"pricing"}>please click here</a>;
+
+
+    return (
     <TrialFormWrapper heading="Set Your Password">
       {loading && <Loading />}
 
@@ -116,10 +120,15 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
         </Formik>
 
         <p className="info-details">
-          You may cancel your trial at any time. After 7 calendar days, you'll
+            {
+                `You may cancel your trial at any time. After 7 calendar days, you'll
           auto-enroll in our $99/month plan. Trial cannot be combined with any
           other package. If you wish to forego trial and choose a different
-          membership package, please click here.
+          membership package, `
+            }
+            {
+                Pricing
+            }
         </p>
 
         <p className="info-details">

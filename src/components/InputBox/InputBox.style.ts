@@ -4,6 +4,7 @@ type TextFieldStyleProps = {
   width?: string;
   height?: string;
   radiusType?: string;
+  ref?:any
 };
 
 export const TextFieldStyle = styled.input<TextFieldStyleProps>`
