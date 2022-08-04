@@ -119,7 +119,10 @@ const LoginForm = (props: LoginFormProps) => {
       <p className="not-a-member">Not a member yet?</p>
 
       <Link to="/free-trial">
-        <OutlineButtonStyle width="100%" height="60px">
+        <OutlineButtonStyle width="100%" height="60px" onClick={(e)=>{
+            localStorage.clear();
+            history.push(`/free-trial`);
+        }}>
           Try For Free
         </OutlineButtonStyle>
       </Link>
