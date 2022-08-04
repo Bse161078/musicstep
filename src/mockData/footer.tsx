@@ -17,30 +17,19 @@ export const footerItems = [
             {
                 name: "Privacy Policy",
                 url: "/privacy-policy",
-            },
-            {
-                name: "Help Center",
-                url: "/help-center",
-            },
+            }
         ],
     },
-    // {
-    //   heading: "Support",
-    //   list: [
-    //     {
-    //       name: "Contact Us",
-    //       url: "#",
-    //     },
-    //     {
-    //       name: "Help Center",
-    //       url: "#",
-    //     },
-    //     {
-    //       name: "Language",
-    //       url: "#",
-    //     },
-    //   ],
-    // },
+    {
+      heading: "Support",
+      list: [
+
+          {
+              name: "Help Center",
+              url: "/help-center",
+          }
+      ],
+    },
 
     // {
     //   heading: "Partners",
