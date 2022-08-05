@@ -61,9 +61,11 @@ const TrialBillingInfoForm = (props: any) => {
 
     const handleFormSubmit = (e: any) => {
         setLoading(true);
+        const userId=!id?localStorage.getItem("id"):id;
+
         //d
         axios
-            .patch(`/v1/users/createBillingInformation/${id}`, {
+            .patch(`/v1/users/createBillingInformation/${userId}`, {
                 fullName: e.nameOnCard,
                 cardNumber: e.cardNumber,
                 expiryDate: e.date,

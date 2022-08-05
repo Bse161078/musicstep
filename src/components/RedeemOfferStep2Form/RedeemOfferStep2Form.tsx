@@ -26,11 +26,13 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
     const [otp, setOtp] = useState();
     const [isLoading, setLoading] = useState(false);
     const handleButtonSubmit = (e: any) => {
-        setLoading(true)
+        setLoading(true);
+        const userId=!id?localStorage.getItem("id"):id;
+
         if(otp)
         {
         axios
-            .patch(`/v1/users/createCode/${id}`, {
+            .patch(`/v1/users/createCode/${userId}`, {
                 code: otp,
             })
             .then((res) => {
@@ -52,23 +54,8 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
                 }
             })
             .catch((error) => {
-                // setErrorMessage(error.response?.data.message);
-                //   setLoading(false)
-                setContinueModal(true);
+                setErrorMessage(error.response?.data.message);
                 setLoading(false)
-                  dispatch({
-                      type: "SUBMIT_GENERAL_INFO",
-                      payload: {
-                          firstName: e.firstName,
-                          lastName: e.lastName,
-                          dob: e.dob,
-                          phoneNumber: e.phoneNumber,
-                          email: e.email,
-                      },
-                  });
-
-
-
             });
           }else{
             setLoading(false)

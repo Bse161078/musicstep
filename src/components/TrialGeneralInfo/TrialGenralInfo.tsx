@@ -42,9 +42,10 @@ const TrialGeneralInfo = (props: any) => {
             return;
         }
 
+        const userId=!id?localStorage.getItem("id"):id;
         setLoading(true);
         axios
-            .patch(`/v1/users/createPersonalInfo/${id}`, {
+            .patch(`/v1/users/createPersonalInfo/${userId}`, {
                 firstName: e.firstName,
                 lastName: e.lastName,
                 dob: dob.value,

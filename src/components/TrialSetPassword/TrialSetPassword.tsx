@@ -29,7 +29,7 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
   const loginContext = useLoginContext();
   const handleSetPasswordSubmit = (e: any) => {
     setLoading(true);
-
+      const userId=!id?localStorage.getItem("id"):id;
     if (e.password === e.confirmPassword) {
       axios
         .patch(
@@ -37,7 +37,7 @@ const TrialSetPassword = (props: TrailSetPasswordProps) => {
             partnerId
               ? "/v1/partners/createPassword/"
               : "/v1/users/createPassword/"
-          }${partnerId ? partnerId : id}`,
+          }${partnerId ? partnerId : userId}`,
           {
             password: e.password,
           }

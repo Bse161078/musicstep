@@ -25,10 +25,11 @@ const RedeemOfferForm = (props: TrailSetPasswordProps) => {
 
   const handleSetPasswordSubmit = (e: any) => {
     setLoading(true);
+      const userId=!id?localStorage.getItem("id"):id;
 
     //d
     axios
-      .patch(`/v1/users/createPhoneNumber/${id}`, {
+      .patch(`/v1/users/createPhoneNumber/${userId}`, {
         phoneNumber: `${e.phoneNumber}`,
       })
       .then((response) => {
