@@ -23,7 +23,7 @@ const ProcessPaymentForm = () => {
   }
 
     const Terms = <a href={"terms-conditions"}>Terms</a>;
-    const FeesApply = <a href={"help-center"}>Fees apply</a>;
+    const FeesApply = <a href={"help-center?fees-apply=true"}>Fees apply</a>;
     const PrivacyNotice = <a href={"privacy-policy"}>Privacy Notice</a>;
 
 

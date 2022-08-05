@@ -1,74 +1,93 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {HeadingWithContent} from "../../components";
 import {HelpCenterStyle} from "./HelpCenter.style";
 import {useHistory} from "react-router";
 
 export default function HelpCenter() {
 
-    const beforeEmail=<p className='description-inline'>The events listed on the MusicPass platform are operated by the Partners we work with.Don’t see an event or partner listed? Send us an email at</p>
-    const EmailLink = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}>contact@musicpassonline.com.</a></p>;
-    const afterEmail=<p className='description after-email-margin'>If you are an interested Partner, please check out our Partner Portal.</p>
+
+    useEffect(() => {
+        var url = new URL(window.document.URL);
+        var feesApply = url.searchParams.get("fees-apply");
+        if(feesApply){
+            const reservation: any = document && document?.getElementById('reservation');
+            reservation.scrollIntoView();
+        }
+    }, [])
 
 
-    const beforePricingPage=<p className='description-inline'>Please see our</p>
-    const pricingPageLink = <p className='description-inline email-margin'><a href={"pricing"}>Pricing Page for details.</a></p>;
-    const afterPricingPageLink=<p className='description-sub-heading after-email-margin'>Subscription Offerings</p>
+    const beforeEmail = <p className='description-inline'>The events listed on the MusicPass platform are operated by
+        the Partners we work with.Don’t see an event or partner listed? Send us an email at</p>
+    const EmailLink = <p className='description-inline email-margin'><a
+        href={"mailto:contact@musicpassonline.com"}>contact@musicpassonline.com.</a></p>;
+    const afterEmail = <p className='description after-email-margin'>If you are an interested Partner, please check out
+        our Partner Portal.</p>
 
 
-    const beforeEmail2=<p className='description-inline'>If you are on a Commitment Plan, please</p>
-    const EmailLink2 = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}>contact us</a></p>;
-    const beforeOtherEmail2=<p className='description-inline'> with any membership questions.</p>
-    const afterEmail2=<p className='description after-email-margin'>To cancel your membership:
+    const beforePricingPage = <p className='description-inline'>Please see our</p>
+    const pricingPageLink = <p className='description-inline email-margin'><a href={"pricing"}>Pricing Page for
+        details.</a></p>;
+    const afterPricingPageLink = <p className='description-sub-heading after-email-margin'>Subscription Offerings</p>
+
+
+    const beforeEmail2 = <p className='description-inline'>If you are on a Commitment Plan, please</p>
+    const EmailLink2 = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}>contact
+        us</a></p>;
+    const beforeOtherEmail2 = <p className='description-inline'> with any membership questions.</p>
+    const afterEmail2 = <p className='description after-email-margin'>To cancel your membership:
         Navigate to your Membership Settings.Select ‘Manage membership’.Select your new plan.</p>
 
 
-    const beforeEmail3=<p className='description-inline'>Still need help?</p>
-    const EmailLink3 = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}>Contact us here.</a></p>;
-    const afterEmail3=<p className='description-sub-heading after-email-margin'>Reservations</p>
+    const beforeEmail3 = <p className='description-inline'>Still need help?</p>
+    const EmailLink3 = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}>Contact
+        us here.</a></p>;
+    const afterEmail3 = <p className='description-sub-heading after-email-margin'>Reservations</p>
 
 
-    const beforeEmail4=<p className='description-inline'>Under the search bar select “More” on the right side of the screen.
+    const beforeEmail4 = <p className='description-inline'>Under the search bar select “More” on the right side of the
+        screen.
         Adjust the sliding credits filter to narrow your choices by credit range.Scroll down and select “Done”.
     </p>
-    const EmailLink4 = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}>Get in touch with us.</a></p>;
-    const afterEmail4=<p className='description-sub-heading after-email-margin'>Reserving an event</p>
+    const EmailLink4 = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}>Get
+        in touch with us.</a></p>;
+    const afterEmail4 = <p className='description-sub-heading after-email-margin'>Reserving an event</p>
 
 
-    const beforeEmail5=<p className='description-inline'>Still need help?</p>
-    const EmailLink5 = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}>Get in touch with us.</a></p>;
+    const beforeEmail5 = <p className='description-inline'>Still need help?</p>
+    const EmailLink5 = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}>Get
+        in touch with us.</a></p>;
 
 
-    const header1=<p className='description-sub-heading'>Subscription Plans</p>
-    const header2=<p className='description-sub-heading'>Changing Plans</p>
-    const header3=<p className='description-sub-heading'>Subscription Offerings</p>
-    const header4=<p className='description-sub-heading'>Changing Plans</p>
-    const header5=<p className='description-sub-heading'>Reactivate Plan</p>
-    const header6=<p className='description-sub-heading'>Refund Policy</p>
-    const header7=<p className='description-sub-heading'>Cancellation Fees</p>
-    const header9=<p className='description-sub-heading'>Reservations</p>
-    const header10=<p className='description-sub-heading'>Search for an Event</p>
-    const header11=<p className='description-sub-heading'>Go to our search page</p>
-    const header12=<p className='description-sub-heading'>Specific Partner or Venue Schedule</p>
-    const header13=<p className='description-sub-heading'>Go the search page</p>
-    const header14=<p className='description-sub-heading'>Reserving an event</p>
-    const header15=<p className='description-sub-heading'>Events per Subscription Cycle</p>
-    const header16=<p className='description-sub-heading'>Arrival time</p>
-    const header17=<p className='description-sub-heading'>Cancel a reservation</p>
-    const header18=<p className='description-sub-heading'>Reservation Cancellation Fees</p>
-    const header19=<p className='description-sub-heading'>Switching Reservations</p>
-    const header20=<p className='description-sub-heading'>Bad Weather</p>
-    const header21=<p className='description-sub-heading'>Event Cancelled</p>
-    const header22=<p className='description-sub-heading'>Event Ratings and Reviews</p>
-    const header23=<p className='description-sub-heading'>Promotions</p>
-    const header24=<p className='description-sub-heading'>Trial membership</p>
-    const header25=<p className='description-sub-heading'>Other Promotions</p>
-    const header26=<p className='description-sub-heading'>Credits</p>
-    const header27=<p className='description-sub-heading'>Credit Roll-overs</p>
-    const header28=<p className='description-sub-heading'>This is how it works.</p>
-    const header29=<p className='description-sub-heading'>Purchasing more Credits</p>
-    const header30=<p className='description-sub-heading'>Remaining Credits</p>
-    const header31=<p className='description-sub-heading'>Billing</p>
-    const header32=<p className='description-sub-heading'>Update your credit card information</p>
+    const header1 = <p className='description-sub-heading'>Subscription Plans</p>
+    const header2 = <p className='description-sub-heading'>Changing Plans</p>
+    const header3 = <p className='description-sub-heading'>Subscription Offerings</p>
+    const header4 = <p className='description-sub-heading'>Changing Plans</p>
+    const header5 = <p className='description-sub-heading'>Reactivate Plan</p>
+    const header6 = <p className='description-sub-heading'>Refund Policy</p>
+    const header7 = <p className='description-sub-heading'>Cancellation Fees</p>
+    const header10 = <p className='description-sub-heading' id='reservation'>Search for an Event</p>
+    const header11 = <p className='description-sub-heading'>Go to our search page</p>
+    const header12 = <p className='description-sub-heading'>Specific Partner or Venue Schedule</p>
+    const header13 = <p className='description-sub-heading'>Go the search page</p>
+    const header14 = <p className='description-sub-heading'>Reserving an event</p>
+    const header15 = <p className='description-sub-heading'>Events per Subscription Cycle</p>
+    const header16 = <p className='description-sub-heading'>Arrival time</p>
+    const header17 = <p className='description-sub-heading'>Cancel a reservation</p>
+    const header18 = <p className='description-sub-heading'>Reservation Cancellation Fees</p>
+    const header19 = <p className='description-sub-heading'>Switching Reservations</p>
+    const header20 = <p className='description-sub-heading'>Bad Weather</p>
+    const header21 = <p className='description-sub-heading'>Event Cancelled</p>
+    const header22 = <p className='description-sub-heading'>Event Ratings and Reviews</p>
+    const header23 = <p className='description-sub-heading'>Promotions</p>
+    const header24 = <p className='description-sub-heading'>Trial membership</p>
+    const header25 = <p className='description-sub-heading'>Other Promotions</p>
+    const header26 = <p className='description-sub-heading'>Credits</p>
+    const header27 = <p className='description-sub-heading'>Credit Roll-overs</p>
+    const header28 = <p className='description-sub-heading'>This is how it works.</p>
+    const header29 = <p className='description-sub-heading'>Purchasing more Credits</p>
+    const header30 = <p className='description-sub-heading'>Remaining Credits</p>
+    const header31 = <p className='description-sub-heading'>Billing</p>
+    const header32 = <p className='description-sub-heading'>Update your credit card information</p>
 
 
     const history = useHistory();
