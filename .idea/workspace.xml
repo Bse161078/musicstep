@@ -81,7 +81,7 @@
           <entry key="js" value="3661" />
           <entry key="json" value="8" />
           <entry key="ts" value="856" />
-          <entry key="tsx" value="30645" />
+          <entry key="tsx" value="30755" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -92,7 +92,7 @@
           <entry key="JavaScript" value="3661" />
           <entry key="PLAIN_TEXT" value="25" />
           <entry key="TypeScript" value="856" />
-          <entry key="TypeScript JSX" value="30645" />
+          <entry key="TypeScript JSX" value="30755" />
         </counts>
       </usages-collector>
     </session>
@@ -114,8 +114,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/HelpCenter/HelpCenter.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+            <state relative-caret-position="402">
+              <caret line="187" column="38" selection-start-line="187" selection-start-column="38" selection-end-line="187" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -132,8 +132,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/TrialBillingInfoForm/TrialBillingInfoForm.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="138" selection-start-line="135" selection-end-line="138" />
+            <state relative-caret-position="170">
+              <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
             </state>
           </provider>
         </entry>
@@ -159,7 +159,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Reservation Cancellation Fees</find>
       <find>Switching Reservations</find>
       <find>Bad Weather</find>
       <find>Event Cancelled</find>
@@ -187,8 +186,9 @@
       <find>Search for an Event</find>
       <find>header10</find>
       <find>fees-app</find>
-      <find>header9</find>
       <find>free 7 days</find>
+      <find>header9</find>
+      <find>you can submit</find>
     </findStrings>
     <replaceStrings>
       <replace>music-pass-f227c.web.app</replace>
@@ -312,7 +312,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1659681347973" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1659682783703" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="ts.external.directory.path" value="D:\practice\musicstep\node_modules\typescript\lib" />
@@ -434,12 +434,12 @@
       <workItem from="1659598118576" duration="528000" />
       <workItem from="1659598829625" duration="765000" />
       <workItem from="1659623685876" duration="1806000" />
-      <workItem from="1659674788120" duration="4403000" />
+      <workItem from="1659674788120" duration="5827000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="370384000" />
+    <option name="totallyTimeSpent" value="371808000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
@@ -463,7 +463,7 @@
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" visible="true" weight="0.28510028" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" weight="0.5530086" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067115" side_tool="true" weight="0.256447" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
@@ -835,13 +835,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TrialBillingInfoForm/TrialBillingInfoForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="138" selection-start-line="135" selection-end-line="138" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ProcessPaymentForm/ProcessPaymentForm.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-272">
@@ -849,10 +842,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TrialBillingInfoForm/TrialBillingInfoForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/HelpCenter/HelpCenter.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        <state relative-caret-position="402">
+          <caret line="187" column="38" selection-start-line="187" selection-start-column="38" selection-end-line="187" selection-end-column="38" />
         </state>
       </provider>
     </entry>

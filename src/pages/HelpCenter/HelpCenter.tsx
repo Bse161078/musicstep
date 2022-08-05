@@ -65,6 +65,17 @@ export default function HelpCenter() {
         in touch with us.</a></p>;
 
 
+
+
+    const beforePartnerLink1 = <p className='description-inline'>You can search for Partners, Venues, and Events on the web. You can search for events by location, genre, partner, venue, time, credits, and amenities.
+        If you don't see an event you’re looking for,</p>
+    const partnerLink1 = <p className='description-inline email-margin'><a href={"/partner-login"}>you can submit a partnership request here!</a></p>;
+    const afterPartnerLink1 = <p className='description-sub-heading after-email-margin'></p>
+
+
+
+
+
     const header1 = <p className='description-sub-heading'>Subscription Plans</p>
     const header2 = <p className='description-sub-heading'>Changing Plans</p>
     const header3 = <p className='description-sub-heading'>Subscription Offerings</p>
@@ -172,7 +183,9 @@ export default function HelpCenter() {
                     EmailLink3,
                     afterEmail3,
                     header10,
-                    "You can search for Partners, Venues, and Events on the web. You can search for events by location, genre, partner, venue, time, credits, and amenities. If you don't see an event you’re looking for, you can submit a partnership request here!",
+                    beforePartnerLink1,
+                    partnerLink1,
+                    afterPartnerLink1,
                     header11,
                     "In the search bar at the top of the screen type in the activity or studio name\n" +
                     "When you browse via the ‘Events’ tab, only events with open spots will populate in the search results. To see the full schedule of events available for a partner or venue, search the partner or venue name in the search bar. \n",
