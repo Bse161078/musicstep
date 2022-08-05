@@ -1,20 +1,27 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {HeadingWithContent} from "../../components";
 import {HelpCenterStyle} from "./HelpCenter.style";
 import {useHistory} from "react-router";
 
 export default function HelpCenter() {
+    const [reservation,setReservation]=useState(null);
 
 
     useEffect(() => {
+        const reservation: any = document && document?.getElementById('reservation');
+        setReservation(reservation);
+    }, [])
+
+
+    useEffect(()=>{
         var url = new URL(window.document.URL);
         var feesApply = url.searchParams.get("fees-apply");
-        if(feesApply){
+
+        if(feesApply && reservation){
             const reservation: any = document && document?.getElementById('reservation');
             reservation.scrollIntoView();
         }
-    }, [])
-
+    },[reservation])
 
     const beforeEmail = <p className='description-inline'>The events listed on the MusicPass platform are operated by
         the Partners we work with.Don’t see an event or partner listed? Send us an email at</p>
