@@ -23,45 +23,48 @@ export default function HelpCenter() {
         }
     },[reservation])
 
-    const beforeEmail = <p className='description-inline'>The events listed on the MusicPass platform are operated by
-        the Partners we work with.Don’t see an event or partner listed? Send us an email at</p>
-    const EmailLink = <p className='description-inline email-margin'><a
-        href={"mailto:contact@musicpassonline.com"}>contact@musicpassonline.com.</a></p>;
-    const afterEmail = <p className='description after-email-margin'>If you are an interested Partner, please check out
-        our Partner Portal.</p>
+    const beforeEmail = <p className='description-inline'> Send us an email at</p>
+    const EmailLink = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}> contact@musicpassonline.com.</a></p>;
+    const afterEmail = <p className='description after-email-margin'></p>
 
 
-    const beforePricingPage = <p className='description-inline'>Please see our</p>
-    const pricingPageLink = <p className='description-inline email-margin'><a href={"pricing"}>Pricing Page for
+
+    const beforePartnerLink2=<p className='description-inline'> If you are an interested Partner,</p>
+    const PartnerLink2 = <p className='description-inline email-margin'><a href={"/partner-login"}> please check out our Partner Portal.</a></p>;
+    const afterPartnerLink2 = <p className='description after-email-margin'></p>
+
+
+    const beforePricingPage = <p className='description-inline'> Please see our</p>
+    const pricingPageLink = <p className='description-inline email-margin'><a href={"pricing"}> Pricing Page for
         details.</a></p>;
     const afterPricingPageLink = <p className='description-sub-heading after-email-margin'>Subscription Offerings</p>
 
 
-    const beforeEmail2 = <p className='description-inline'>If you are on a Commitment Plan, please</p>
-    const EmailLink2 = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}>contact
+    const beforeEmail2 = <p className='description-inline'> If you are on a Commitment Plan, please</p>
+    const EmailLink2 = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}> contact
         us</a></p>;
     const beforeOtherEmail2 = <p className='description-inline'> with any membership questions.</p>
     const afterEmail2 = <p className='description after-email-margin'>To cancel your membership:
         Navigate to your Membership Settings.Select ‘Manage membership’.Select your new plan.</p>
 
 
-    const beforeEmail3 = <p className='description-inline'>Still need help?</p>
-    const EmailLink3 = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}>Contact
+    const beforeEmail3 = <p className='description-inline'> Still need help?</p>
+    const EmailLink3 = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}> Contact
         us here.</a></p>;
     const afterEmail3 = <p className='description-sub-heading after-email-margin'>Reservations</p>
 
 
-    const beforeEmail4 = <p className='description-inline'>Under the search bar select “More” on the right side of the
+    const beforeEmail4 = <p className='description-inline'> Under the search bar select “More” on the right side of the
         screen.
         Adjust the sliding credits filter to narrow your choices by credit range.Scroll down and select “Done”.
     </p>
-    const EmailLink4 = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}>Get
+    const EmailLink4 = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}> Get
         in touch with us.</a></p>;
     const afterEmail4 = <p className='description-sub-heading after-email-margin'>Reserving an event</p>
 
 
-    const beforeEmail5 = <p className='description-inline'>Still need help?</p>
-    const EmailLink5 = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}>Get
+    const beforeEmail5 = <p className='description-inline'> Still need help?</p>
+    const EmailLink5 = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}> Get
         in touch with us.</a></p>;
 
 
@@ -69,7 +72,7 @@ export default function HelpCenter() {
 
     const beforePartnerLink1 = <p className='description-inline'>You can search for Partners, Venues, and Events on the web. You can search for events by location, genre, partner, venue, time, credits, and amenities.
         If you don't see an event you’re looking for,</p>
-    const partnerLink1 = <p className='description-inline email-margin'><a href={"/partner-login"}>you can submit a partnership request here!</a></p>;
+    const partnerLink1 = <p className='description-inline email-margin'><a href={"/partner-login"}> you can submit a partnership request here!</a></p>;
     const afterPartnerLink1 = <p className='description-sub-heading after-email-margin'></p>
 
 
@@ -83,14 +86,14 @@ export default function HelpCenter() {
     const header5 = <p className='description-sub-heading'>Reactivate Plan</p>
     const header6 = <p className='description-sub-heading'>Refund Policy</p>
     const header7 = <p className='description-sub-heading'>Cancellation Fees</p>
-    const header10 = <p className='description-sub-heading' id='reservation'>Search for an Event</p>
+    const header10 = <p className='description-sub-heading'>Search for an Event</p>
     const header11 = <p className='description-sub-heading'>Go to our search page</p>
     const header12 = <p className='description-sub-heading'>Specific Partner or Venue Schedule</p>
     const header13 = <p className='description-sub-heading'>Go the search page</p>
     const header14 = <p className='description-sub-heading'>Reserving an event</p>
     const header15 = <p className='description-sub-heading'>Events per Subscription Cycle</p>
     const header16 = <p className='description-sub-heading'>Arrival time</p>
-    const header17 = <p className='description-sub-heading'>Cancel a reservation</p>
+    const header17 = <p className='description-sub-heading' id='reservation'>Cancel a reservation</p>
     const header18 = <p className='description-sub-heading'>Reservation Cancellation Fees</p>
     const header19 = <p className='description-sub-heading'>Switching Reservations</p>
     const header20 = <p className='description-sub-heading'>Bad Weather</p>
@@ -127,9 +130,13 @@ export default function HelpCenter() {
                     beforePricingPage,
                     pricingPageLink,
                     afterPricingPageLink,
+                    "The events listed on the MusicPass platform are operated by the Partners we work with.Don’t see an event or partner listed?",
                     beforeEmail,
                     EmailLink,
                     afterEmail,
+                    beforePartnerLink2,
+                    PartnerLink2,
+                    afterPartnerLink2,
                     header2,
                     "Access your Account Settings to change plans.\n" +
                     "\n" +

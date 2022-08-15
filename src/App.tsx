@@ -24,7 +24,12 @@ import {
     PartnerSignup,
     OrganizerProfile,
     FeesApply,
-    HelpCenter
+    HelpCenter,
+    TermsOfUse,
+    DCMA,
+    Billing,
+    Reservation,
+    Subscription
 } from "./pages";
 
 import {
@@ -169,6 +174,11 @@ const RoutesList = (props: any) => {
                 <Route path="/about-us" component={AboutUs}/>
                 <Route path="/fees-apply" component={FeesApply}/>
                 <Route path="/help-center" component={HelpCenter}/>
+                <Route path="/terms-of-use" component={TermsOfUse}/>
+                <Route path="/dcma" component={DCMA}/>
+                <Route path="/billing" component={Billing}/>
+                <Route path="/reservation" component={Reservation}/>
+                <Route path="/subscription" component={Subscription}/>
 
                 <Route
                     path="/admin/basic-info"

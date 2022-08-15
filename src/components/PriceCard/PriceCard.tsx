@@ -17,13 +17,15 @@ type PriceCardProps = {
     setShowPricing: any;
     buyMoreCredit?:boolean
     isCreateSubscription?:boolean
-    updateSubscription?:boolean
+    updateSubscription?:boolean;
+    isSubscribed?:boolean
+
 };
 
 const PriceCard = (props: any) => {
   const history = useHistory()
 
-    const {price, musicType, credits, eventsCount, showPricing, setShowPricing,buyMoreCredit,updateSubscription} = props;
+    const {price, musicType, credits, eventsCount, showPricing, setShowPricing,buyMoreCredit,updateSubscription,isSubscribed} = props;
     const [isLoading, setLoading] = useState(false)
     const createSubs = (subsname:any) => {
       const user: any = JSON.parse(localStorage.getItem("data") || "{}");
@@ -79,10 +81,10 @@ const PriceCard = (props: any) => {
             <p className="credits">Credits: {credits}</p>
 
             <p className="events-info">Events per month: {eventsCount}</p>
-            <p className="additional-info">(Approximately)</p>
+            {!isSubscribed && <p className="additional-info">(Approximately)</p>}
 
 
-            <OutlineButtonStyle buttonType="dark"
+            {!isSubscribed && <OutlineButtonStyle buttonType="dark"
                                 onClick={(e) => {
                                     if(localStorage.getItem("status") || buyMoreCredit || showPricing || updateSubscription){
                                         if(updateSubscription){
@@ -104,7 +106,7 @@ const PriceCard = (props: any) => {
                                         history.push("/free-trial");
                                     }
                                 }}
-            >That's Me</OutlineButtonStyle>
+            >That's Me</OutlineButtonStyle>}
         </PriceCardStyle>
     );
 };

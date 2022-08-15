@@ -75,7 +75,7 @@ export default function Pricing(props: any) {
             <h4 className="subscribed-heading">Only for subscribed members</h4>
             <PriceCard
                 price="$3"
-                musicType="Lite"
+                musicType="Add"
                 credits="1"
                 eventsCount="You Choose"
                 createSubscription={props.createSubscription} payment_method={props.payment_method}
@@ -83,6 +83,7 @@ export default function Pricing(props: any) {
                 buyMoreCredit={buyMoreCredit}
                 isCreateSubscription={props.isCreateSubscription}
                 updateSubscription={updateSubscription}
+                isSubscribed={true}
             />
         </PricingStyle>
     );

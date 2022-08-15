@@ -17,6 +17,14 @@ export const footerItems = [
             {
                 name: "Privacy Policy",
                 url: "/privacy-policy",
+            },
+            {
+                name: "Terms Of Use",
+                url: "/terms-of-use",
+            },
+            {
+                name: "DCMA",
+                url: "/dcma",
             }
         ],
     },
@@ -30,6 +38,24 @@ export const footerItems = [
           }
       ],
     },
+    {
+        heading: "Music Plan",
+        list: [
+
+            {
+                name: "Billing",
+                url: "/billing",
+            },
+            {
+                name: "Reservations",
+                url: "/reservation",
+            },
+            {
+                name: "Subscriptions",
+                url: "/subscription",
+            }
+        ],
+    }
 
     // {
     //   heading: "Partners",

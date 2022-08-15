@@ -27,8 +27,8 @@ export const HeadingWithContentStyle = styled.section`
       font-size: 20px;
       color: #0C0C0C;
       margin-bottom: 25px;
-      display:inline;
-      margin-left:10px!important
+      display:contents;
+      padding-left:10px!important
   }
   
   .email-margin {
