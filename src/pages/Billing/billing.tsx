@@ -9,6 +9,7 @@ export default function Billing() {
     const history = useHistory();
 
     const content=<>
+        <p className="description-sub-heading">Update Your Credit Card Information</p>
         <p className="description-without-margin">On the web:</p>
         <p className="description-without-margin" style={{marginTop:"-20px"}}>Go to your Account Settings </p>
         <p className="description-without-margin" style={{marginTop:"-20px"}}>On the left side of the screen select ‘Billing’ </p>

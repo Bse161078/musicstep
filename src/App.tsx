@@ -29,7 +29,9 @@ import {
     DCMA,
     Billing,
     Reservation,
-    Subscription
+    Subscription,
+    Credit,
+    Promotion
 } from "./pages";
 
 import {
@@ -179,6 +181,8 @@ const RoutesList = (props: any) => {
                 <Route path="/billing" component={Billing}/>
                 <Route path="/reservation" component={Reservation}/>
                 <Route path="/subscription" component={Subscription}/>
+                <Route path="/credit" component={Credit}/>
+                <Route path="/promotion" component={Promotion}/>
 
                 <Route
                     path="/admin/basic-info"

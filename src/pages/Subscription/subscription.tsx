@@ -33,7 +33,7 @@ export default function Subscription() {
         <p className="description-without-margin" style={{marginTop:"-20px"}}>Music Enthusiast</p>
         <p className="description-without-margin" style={{marginTop:"-20px"}}>Music </p>
         <p className="description-without-margin" style={{marginTop:"-20px"}}>Music Pro</p>
-        <p className="description-without-margin">Please see our Pricing Page for details.</p>
+        <p className="description-without-margin">Please see our <a href="/pricing">Pricing Page</a> for details.</p>
         <p className="description-sub-heading" >Subscription Offerings</p>
         <p className="description-without-margin">The events listed on the MusicPass platform are operated by the Partners we work with.</p>
         <p className="description-without-margin">Don’t see an event or partner listed? Send us an email at <span><a href={"mailto:contact@musicpassonline.com"}>contact@musicpassonline.com.</a></span></p>

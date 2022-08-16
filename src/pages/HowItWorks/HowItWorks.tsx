@@ -21,8 +21,8 @@ export default function HowItWorks() {
         <p className="description-without-margin" style={{marginLeft:20}}>1 – Rock concert (6 credits) :</p>
         <p className="description"><span style={{fontWeight:"bold"}}>Jen is a Music Lite member (23 credits), and decides to use her membership as follows:</span></p>
         <p className="description-without-margin" style={{marginLeft:20}}>1 – Rock concert (6 credits)</p>
-        <p className="description-without-margin" style={{marginLeft:20}}>1 – Indie show (3 credits)</p>
-        <p className="description-without-margin" style={{marginLeft:20}}>1 – Club night (13 credits)</p>
+        <p className="description-without-margin" style={{marginLeft:20}}>1 – Indie show (6 credits)</p>
+        <p className="description-without-margin" style={{marginLeft:20}}>1 – Club night (11 credits)</p>
         <p className="description"><span style={{fontWeight:"bold"}}>Carlos is a Music Enthusiast member (48 credits), and decides to use his membership as follows:</span></p>
         <p className="description-without-margin" style={{marginLeft:20}}>1 – Latino band (12 credits)</p>
         <p className="description-without-margin" style={{marginLeft:20}}>2 – Club nights (26 credits)</p>
@@ -36,7 +36,7 @@ export default function HowItWorks() {
         <p className="description-without-margin" style={{marginLeft:20}}>3 – Local DJ sets (15 credits)</p>
         <p className="description-without-margin" style={{marginLeft:20}}>1 – World symphony concert (6 credits)</p>
         <p className="description-without-margin" style={{marginLeft:20}}>3 – Club nights (39 credits)</p>
-        <p className="description-without-margin" style={{marginLeft:20}}>1 – Jazz night (7 credits)</p>
+        <p className="description-without-margin" style={{marginLeft:20}}>1 – Jazz night (6 credits)</p>
         <p className="description">Only events hosted by MusicPass Partners will be eligible for reservation. As our Partner network continues to expand, we hope to bring you access to the best experiences available.</p>
 
     </>;
