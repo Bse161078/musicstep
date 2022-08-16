@@ -17,8 +17,8 @@ export default function AboutUs() {
         <p className="description-without-margin">Our mission is to help people engage in music and dance by connecting them with the best experiences available.</p>
         <p className="description-sub-heading">{"Why MusicPass is Cool?"}</p>
         <p className="description-without-margin">As a MusicPass member, we offer admission at a 40-65% discount based on retail ticket prices.</p>
-        <p className="description-without-margin">We have a roll-over policy for un-used credits. (See Credits.)</p>
-        <p className="description-without-margin">We allow free cancellations of event reservations up until 1 day prior to event. (See Cancellation Policy.)</p>
+        <p className="description-without-margin">We have a roll-over policy for un-used credits. <a href={"/help-center?credit=true"}>(See Credits</a>.)</p>
+        <p className="description-without-margin">We allow free cancellations of event reservations up until 1 day prior to event. <a href={"/help-center?billing=true"}>(See Cancellation Policy</a>.)</p>
         <p className="description-without-margin">We offer access to local, upcoming events, anywhere that MusicPass reservations are accepted.</p>
         <p className="description-without-margin">We offer a visual view of music-related events in a given area.</p>
         <p className="description-without-margin">We allow a ratings and review process to aid in the transparency of music and dance events happening in local communities.</p>

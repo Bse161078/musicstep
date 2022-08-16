@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {SubscriptionStyle} from "./subscription.style";
 import {useHistory} from "react-router";
 import {HeadingWithContentStyle} from "../../components/HeadingWithContent/HeadingWithContent.style";
@@ -7,6 +7,23 @@ import {LeftChevronIcon} from "../../assets";
 
 export default function Subscription() {
     const history = useHistory();
+    const [refund,setRefund]=useState(null);
+
+    useEffect(() => {
+        const refundEle: any = document && document?.getElementById('refund');
+        setRefund(refundEle);
+    }, [])
+
+
+    useEffect(()=>{
+        var url = new URL(window.document.URL);
+        var refundPolicy = url.searchParams.get("refund-policy");
+
+        if(refundPolicy && refund){
+            const refundEle: any = document && document?.getElementById('refund');
+            refundEle.scrollIntoView();
+        }
+    },[refund])
 
     const content=<>
         <p className="description-sub-heading">Subscription Plans</p>
@@ -20,7 +37,7 @@ export default function Subscription() {
         <p className="description-sub-heading" >Subscription Offerings</p>
         <p className="description-without-margin">The events listed on the MusicPass platform are operated by the Partners we work with.</p>
         <p className="description-without-margin">Don’t see an event or partner listed? Send us an email at <span><a href={"mailto:contact@musicpassonline.com"}>contact@musicpassonline.com.</a></span></p>
-        <p className="description-without-margin">If you are an interested Partner, please check out our Partner Portal.</p>
+        <p className="description-without-margin">If you are an interested Partner, please check out our <a href={"/partner-login"}>Partner Portal</a>.</p>
         <p className="description-sub-heading">Changing Plans</p>
         <p className="description-without-margin">Access your Account Settings to change plans.</p>
         <p className="description-without-margin">Upgrading a plan involves immediate access to more credits. The date of your upgrade activates a new billing cycle, along with a new charge for the price of your new plan.</p>
@@ -33,13 +50,13 @@ export default function Subscription() {
         <p className="description-without-margin" style={{marginTop:"-20px"}}>Select your new plan.</p>
         <p className="description-sub-heading" >Reactivate Plan</p>
         <p className="description-without-margin">You can reactivate your membership at any time through your Profile page, where you can reference current membership options available in your location.</p>
-        <p className="description-without-margin">Your account will activate at the time of sign up and will renew on the same date each month. </p>
+        <p className="description-without-margin" id="refund">Your account will activate at the time of sign up and will renew on the same date each month. </p>
         <p className="description-without-margin">There is no reactivation fee for resuming your MusicPass membership. </p>
         <p className="description-sub-heading">Refund Policy</p>
         <p className="description-without-margin">We do not offer refunds for months of membership or additional credit purchases, including add-on credits. </p>
         <p className="description-without-margin">ClassPass memberships automatically renew each month. Any changes made to your membership will apply to your upcoming cycle. We are unable to retroactively make changes to your account. </p>
         <p className="description-without-margin">If you’re interested in cancelling your membership, please submit a cancellation request at least 24 hours prior to your cycle date. You can reference your cycle date in your Account Settings. More information on how to cancel your account can be found here. </p>
-        <p className="description-without-margin">If you’re interested in cancelling your membership, please submit a cancellation request at least 24 hours prior to your cycle date. You can reference your cycle date in your Account Settings. More information on how to cancel your account can be found here. </p>
+        <p className="description-without-margin">Our full refund policy can be viewed in <a href={"/terms-of-use?3c=true"}>Section 3c. of our Terms of Use</a>.</p>
         <p className="description-without-margin">ClassPass trials and memberships automatically renew each month on your cycle date. You can cancel your ClassPass trial or membership at any time. </p>
         <p className="description-without-margin">Cancellations need to be requested at least 24 hours prior to your cycle date.</p>
         <p className="description-without-margin">After a cancellation request is made you’ll receive a cancellation confirmation email from our Customer Experience team. If you do not receive a cancellation confirmation email, your request was not received.</p>

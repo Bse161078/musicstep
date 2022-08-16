@@ -4,24 +4,11 @@
     <list default="true" id="4f900495-2d01-4c96-a493-d43d1865075e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/images/mp-logo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/images/mp-logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/images/mp-logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.30ab5efa.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.30ab5efa.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/mp-logo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/mp-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HeadingWithContent/HeadingWithContent.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HeadingWithContent/HeadingWithContent.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PriceCard/PriceCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PriceCard/PriceCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mockData/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/mockData/footer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/AboutUs/AboutUs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AboutUs/AboutUs.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/HelpCenter/HelpCenter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HelpCenter/HelpCenter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/HowItWorks/HowItWorks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/HowItWorks/HowItWorks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Pricing/Pricing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Pricing/Pricing.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/PrivacyPolicy/PrivacyPolicy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/PrivacyPolicy/PrivacyPolicy.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Reservations/reservations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Reservations/reservations.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Subscription/subscription.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Subscription/subscription.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/TermsOfUse/TermsOfUse.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TermsOfUse/TermsOfUse.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,9 +20,9 @@
     <session id="-6026431">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="86" />
+          <entry key="project.closed" value="88" />
           <entry key="project.open.time.0" value="18" />
-          <entry key="project.open.time.1" value="35" />
+          <entry key="project.open.time.1" value="36" />
           <entry key="project.open.time.10" value="5" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.12" value="2" />
@@ -43,7 +30,7 @@
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.16" value="3" />
-          <entry key="project.open.time.17" value="2" />
+          <entry key="project.open.time.17" value="3" />
           <entry key="project.open.time.2" value="5" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.23" value="1" />
@@ -54,7 +41,7 @@
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="91" />
+          <entry key="project.opened" value="93" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -68,8 +55,8 @@
           <entry key="json" value="8" />
           <entry key="png" value="4" />
           <entry key="svg" value="6" />
-          <entry key="ts" value="130" />
-          <entry key="tsx" value="537" />
+          <entry key="ts" value="134" />
+          <entry key="tsx" value="551" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -82,13 +69,13 @@
           <entry key="JavaScript" value="24" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="SVG" value="6" />
-          <entry key="TypeScript" value="130" />
-          <entry key="TypeScript JSX" value="537" />
+          <entry key="TypeScript" value="134" />
+          <entry key="TypeScript JSX" value="551" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="TypeScriptServerServiceImpl" value="86" />
+          <entry key="TypeScriptServerServiceImpl" value="88" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -99,7 +86,7 @@
           <entry key="js" value="3661" />
           <entry key="json" value="8" />
           <entry key="ts" value="946" />
-          <entry key="tsx" value="31595" />
+          <entry key="tsx" value="32218" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -110,57 +97,27 @@
           <entry key="JavaScript" value="3661" />
           <entry key="PLAIN_TEXT" value="25" />
           <entry key="TypeScript" value="946" />
-          <entry key="TypeScript JSX" value="31595" />
+          <entry key="TypeScript JSX" value="32218" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="180" column="67" selection-start-line="180" selection-start-column="67" selection-end-line="180" selection-end-column="67" />
-              <folding>
-                <element signature="e#219#511#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/index.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/Billing/index.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="42" selection-start-column="42" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/Billing/billing.tsx">
+        <entry file="file://$PROJECT_DIR$/src/pages/TermsOfUse/TermsOfUse.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+            <state relative-caret-position="85">
+              <caret line="58" column="59" selection-start-line="58" selection-start-column="59" selection-end-line="58" selection-end-column="59" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/Subscription/index.ts">
+        <entry file="file://$PROJECT_DIR$/src/pages/HelpCenter/HelpCenter.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="48" lean-forward="true" selection-start-column="48" selection-end-column="48" />
+            <state relative-caret-position="850">
+              <caret line="122" column="67" selection-start-line="122" selection-start-column="60" selection-end-line="122" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -168,11 +125,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/Subscription/subscription.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="901">
+              <caret line="58" column="121" selection-start-line="58" selection-start-column="121" selection-end-line="58" selection-end-column="121" />
             </state>
           </provider>
         </entry>
@@ -189,19 +143,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Trial membership</find>
-      <find>Other Promotions</find>
-      <find>Credits</find>
-      <find>Credit Roll-overs</find>
-      <find>header26</find>
-      <find>This is how it works</find>
-      <find>Purchasing more Credits</find>
-      <find>Remaining Credits</find>
-      <find>tax</find>
-      <find>Create Subscription</find>
-      <find>`</find>
-      <find>Billing</find>
-      <find>mask</find>
       <find>his</find>
       <find>Join With</find>
       <find>login</find>
@@ -212,13 +153,26 @@
       <find>header9</find>
       <find>you can submit</find>
       <find>/pricing</find>
-      <find>header10</find>
       <find>beforePartnerLink1</find>
       <find>description-inline</find>
-      <find>header13</find>
       <find>description-without-margin</find>
       <find>Search for an Event</find>
       <find>HelpCenter</find>
+      <find>beforeEmail</find>
+      <find>The events listed on the MusicPass platform are operated by the Partners we work with</find>
+      <find>DMCA</find>
+      <find>header10</find>
+      <find>header13</find>
+      <find>header29</find>
+      <find>`</find>
+      <find>Credit</find>
+      <find>Cancellation Policy</find>
+      <find>See Cancellation Policy</find>
+      <find>Billing</find>
+      <find>mailto</find>
+      <find>partner</find>
+      <find>If you’re interested</find>
+      <find>contact us</find>
     </findStrings>
     <replaceStrings>
       <replace>music-pass-f227c.web.app</replace>
@@ -268,11 +222,8 @@
         <option value="$PROJECT_DIR$/src/components/HeadingWithContent/HeadingWithContent.style.ts" />
         <option value="$PROJECT_DIR$/src/pages/Pricing/Pricing.tsx" />
         <option value="$PROJECT_DIR$/src/components/PriceCard/PriceCard.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/HelpCenter/HelpCenter.tsx" />
         <option value="$PROJECT_DIR$/src/pages/HowItWorks/HowItWorks.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/AboutUs/AboutUs.tsx" />
         <option value="$PROJECT_DIR$/src/pages/TermsOfUse/index.ts" />
-        <option value="$PROJECT_DIR$/src/pages/TermsOfUse/TermsOfUse.tsx" />
         <option value="$PROJECT_DIR$/src/pages/DCMA/index.ts" />
         <option value="$PROJECT_DIR$/src/pages/DCMA/dcma.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Billing/index.ts" />
@@ -282,9 +233,12 @@
         <option value="$PROJECT_DIR$/src/pages/index.ts" />
         <option value="$PROJECT_DIR$/src/App.tsx" />
         <option value="$PROJECT_DIR$/src/mockData/footer.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/Billing/billing.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/AboutUs/AboutUs.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/HelpCenter/HelpCenter.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Reservations/reservations.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Subscription/subscription.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/Billing/billing.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/TermsOfUse/TermsOfUse.tsx" />
       </list>
     </option>
   </component>
@@ -319,6 +273,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -336,6 +292,20 @@
               <item name="musicstep" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
+              <item name="musicstep" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="FreeTrial" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
+              <item name="musicstep" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="HelpCenter" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
@@ -362,14 +332,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1660584419532" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1660646278247" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="ts.external.directory.path" value="D:\practice\musicstep\node_modules\typescript\lib" />
@@ -498,18 +466,20 @@
       <workItem from="1660234504339" duration="4140000" />
       <workItem from="1660301055023" duration="634000" />
       <workItem from="1660302343925" duration="329000" />
-      <workItem from="1660549586946" duration="12476000" />
+      <workItem from="1660549586946" duration="13286000" />
+      <workItem from="1660627924794" duration="92000" />
+      <workItem from="1660640211851" duration="6004000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="391604000" />
+    <option name="totallyTimeSpent" value="398510000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2872483" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.295302" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -527,7 +497,7 @@
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" visible="true" weight="0.35100287" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" visible="true" weight="0.30945557" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067115" side_tool="true" weight="0.256447" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
@@ -570,29 +540,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pages/HelpCenter/HelpCenter.style.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/faviconMP.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/favicon.ico">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/HeadingWithContent/HeadingWithContent.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/TrialGeneralInfo/validation.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -712,13 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/FreeTrial/FreeTrial.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2754">
-          <caret line="180" column="35" selection-start-line="180" selection-start-column="35" selection-end-line="180" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/TrialBillingInfoForm/TrialBillingInfoForm.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2091">
@@ -754,13 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/AboutUs/AboutUs.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="67" column="2244" selection-start-line="67" selection-start-column="2244" selection-end-line="67" selection-end-column="2244" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/HeadingWithContent/HeadingWithContent.style.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -768,21 +701,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/HelpCenter/HelpCenter.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/TermsOfUse/TermsOfUse.style.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/TermsOfUse/index.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -802,9 +722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="26" column="253" selection-start-line="26" selection-start-column="253" selection-end-line="26" selection-end-column="253" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -815,24 +732,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/TermsOfUse/TermsOfUse.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="11" column="28" selection-start-line="11" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Reservations/reservation.style.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/HowItWorks/HowItWorks.tsx">
       <provider selected="true" editor-type-id="text-editor">
@@ -841,29 +742,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/static/js/main.532c2273.chunk.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret column="476254" selection-start-column="476254" selection-end-column="476254" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/build/static/js/main.532c2273.chunk.js" />
     <entry file="file://$PROJECT_DIR$/src/pages/Billing/billing.style.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="25" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="25" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="180" column="67" selection-start-line="180" selection-start-column="67" selection-end-line="180" selection-end-column="67" />
-          <folding>
-            <element signature="e#219#511#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -876,23 +761,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Subscription/subscription.style.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Reservations/reservations.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="91" column="42" selection-start-line="91" selection-start-column="42" selection-end-line="91" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Reservations/index.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -904,24 +773,14 @@
     <entry file="file://$PROJECT_DIR$/src/pages/Subscription/index.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="48" lean-forward="true" selection-start-column="48" selection-end-column="48" />
+          <caret column="48" selection-start-column="48" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Subscription/subscription.tsx">
+    <entry file="file://$PROJECT_DIR$/src/pages/Billing/billing.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="66" column="42" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        <state relative-caret-position="368">
+          <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -932,10 +791,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/Billing/billing.tsx">
+    <entry file="file://$PROJECT_DIR$/src/pages/index.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+        <state relative-caret-position="306">
+          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/HelpCenter/HelpCenter.style.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/HelpCenter/index.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/AboutUs/AboutUs.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="20" column="167" selection-start-line="20" selection-start-column="167" selection-end-line="20" selection-end-column="167" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Reservations/reservations.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="72" column="154" selection-start-line="72" selection-start-column="154" selection-end-line="72" selection-end-column="154" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/FreeTrial/FreeTrial.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1023">
+          <caret line="180" column="35" selection-start-line="180" selection-start-column="35" selection-end-line="180" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/FreeTrial/index.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/TermsAndConditions/index.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/TermsAndConditions/TermsAndConditions.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="174" column="65" lean-forward="true" selection-start-line="174" selection-start-column="65" selection-end-line="174" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/Subscription/subscription.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="58" column="121" selection-start-line="58" selection-start-column="121" selection-end-line="58" selection-end-column="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/HelpCenter/HelpCenter.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="122" column="67" selection-start-line="122" selection-start-column="60" selection-end-line="122" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/TermsOfUse/TermsOfUse.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="58" column="59" selection-start-line="58" selection-start-column="59" selection-end-line="58" selection-end-column="59" />
         </state>
       </provider>
     </entry>

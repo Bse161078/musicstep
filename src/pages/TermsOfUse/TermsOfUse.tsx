@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {TermsOfUseStyle} from "./TermsOfUse.style";
 import {useHistory} from "react-router";
 import {HeadingWithContentStyle} from "../../components/HeadingWithContent/HeadingWithContent.style";
@@ -8,8 +8,28 @@ import {LeftChevronIcon} from "../../assets";
 export default function AboutUs() {
     const history = useHistory();
 
+    const [reservation,setReservation]=useState(null);
+
+
+    useEffect(() => {
+        const reservation: any = document && document?.getElementById('3c');
+        setReservation(reservation);
+    }, [])
+
+
+
+    useEffect(()=>{
+        var url = new URL(window.document.URL);
+        var c3 = url.searchParams.get("3c");
+
+        if(c3 && reservation){
+            const reservation: any = document && document?.getElementById('3c');
+            reservation.scrollIntoView();
+        }
+
+    },[reservation])
+
     const content=<>
-        <p className="description-sub-heading">{"Customer Terms of Use"}</p>
         <p className="description-without-margin" style={{marginTop:"-25px"}}>(last updated April 25, 2022)</p>
         <p className="description-without-margin">Welcome to MusicPass! These Terms of Use ("Terms") are a contract between you and MusicPass LLC ("MusicPass" or "we") and govern your access to and use of any MusicPass website, mobile application (such as for iPhone or Android) or content (the "Site") or any reservations, experiences, activities, events, services, recordings, and/or products made available through MusicPass (collectively, "Reservations"). Please read these Terms carefully before accessing and/or using the Site and/or Reservations.</p>
         <p className="description-without-margin">THESE TERMS CONTAIN A BINDING ARBITRATION AGREEMENT AND EVENT ACTION WAIVER THAT REQUIRE YOU TO ARBITRATE ALL DISPUTES YOU HAVE WITH EVENT PASS ON AN INDIVIDUAL BASIS. PLEASE SEE SECTION 18 FOR MORE INFORMATION ABOUT THE ARBITRATION AGREEMENT AND EVENT ACTION WAIVER. YOU EXPRESSLY AGREE THAT DISPUTES BETWEEN YOU AND MUSICPASS WILL BE RESOLVED BY BINDING, INDIVIDUAL ARBITRATION, AND YOU HEREBY WAIVE YOUR RIGHT TO PARTICIPATE IN A CLASS ACTION LAWSUIT OR EVENT WIDE ARBITRATION.</p>
@@ -36,10 +56,10 @@ export default function AboutUs() {
         <p className="description-without-margin">j) Subscribing Organizations. If you have express permission from MusicPass to open or use an account on behalf of a company, entity, or organization (a "Subscribing Organization"), then you represent and warrant that you are an authorized representative of such organization with the authority to bind such it to these Terms; and agree to be bound by these Terms on its behalf.</p>
         <p className="description-without-margin">3. Fees, Billing, Cancellation</p>
         <p className="description-without-margin">a) Recurring Billing. By initiating a MusicPass subscription, you authorize us to charge you for your initial subscription period and a recurring monthly subscription fee at the then current rate, which may change from time to time. You acknowledge that the amount billed each month may vary for reasons that may include differing amounts due to promotional offers and/or changing or adding a plan, and you authorize us to charge your Payment Method for such varying amounts, which may be billed monthly in one or more charges. You also authorize us to charge you any other fees you may incur in connection with your use of the Site, such as any applicable sign-up fee, taxes and cancellation or late fees, as further explained below. Note that even if you do not use the subscription or access the Site and/or Reservations, you will be responsible for subscription fees until you cancel your subscription, or it is otherwise terminated.</p>
-        <p className="description-without-margin">b) Subscription Cycle. When you sign up and purchase your MusicPass subscription, your first Subscription Cycle will be billed immediately. Unless we expressly communicate otherwise, your subscription will automatically renew each month and you will be billed on the same date each month. We reserve the right to change the timing of our billing (and if we do, we’ll make adjustments to the amounts we charge, as appropriate). In the event your paid subscription began on a day not contained in a given month, we may bill your Payment Method on a day in the applicable month or such other day as we deem appropriate. For example, if you started your MusicPass membership or became a paying member on January 31st, your next payment date is likely to be February 28th, and your Payment Method would be billed on that date. Your renewal date may change due to changes in your subscription.</p>
+        <p className="description-without-margin" id={"3c"}>b) Subscription Cycle. When you sign up and purchase your MusicPass subscription, your first Subscription Cycle will be billed immediately. Unless we expressly communicate otherwise, your subscription will automatically renew each month and you will be billed on the same date each month. We reserve the right to change the timing of our billing (and if we do, we’ll make adjustments to the amounts we charge, as appropriate). In the event your paid subscription began on a day not contained in a given month, we may bill your Payment Method on a day in the applicable month or such other day as we deem appropriate. For example, if you started your MusicPass membership or became a paying member on January 31st, your next payment date is likely to be February 28th, and your Payment Method would be billed on that date. Your renewal date may change due to changes in your subscription.</p>
         <p className="description-without-margin">c) Refunds. Generally, our fees (including the monthly fee for your membership and any other fees) are nonrefundable unless we specifically communicate otherwise at the time of purchase. However, we will provide a refund to subscribers for their current prepaid subscription period only in the following circumstances: (i) if you are canceling your subscription and request a refund within 5 days of the date of your first payment for your subscription or (ii) if your subscription is cancelled prior to the end of a period for which you have incurred a charge, due to your relocation, disability or death; provided, however, in each case we reserve the right to charge a fee to cover the cost of any event or other services or products you may have used or received prior to your cancellation and to ask for proof of such changed condition, to the extent permitted by law. WE DO NOT PROVIDE REFUNDS OR MAKE GOODS FOR ANY PRIOR MONTHS INCLUDING FOR UNUSED CREDITS OR RESERVATIONS.</p>
         <p className="description-without-margin">d) Price Changes. We reserve the right to adjust pricing at any time. Unless we expressly communicate otherwise, any price changes to your subscription will take effect on your next billing cycle upon notice communicated through a posting on the MusicPass website or mobile applicable or such other means as we may deem appropriate from time to time, such as email. If you do not cancel your subscription, you will be deemed to have accepted these new fees.</p>
-        <p className="description-without-margin">e) Payment Methods. You may edit your Payment Method information by logging onto our website or mobile app and editing it in your account settings. If a payment is not successfully settled due to expiration, insufficient funds or otherwise, you nonetheless will remain responsible for any uncollected amounts and authorize us to continue billing the Payment Method or any other payment method you have provided, as it may be updated, including in the event you attempt to create a new account, reactivate the unsettled account or sign up for a new account. This may result in a change to your payment billing dates. If we cannot charge your account, we reserve the right, but are not obligated, to terminate your access to our Site or any portion thereof.</p>
+        <p className="description-without-margin" >e) Payment Methods. You may edit your Payment Method information by logging onto our website or mobile app and editing it in your account settings. If a payment is not successfully settled due to expiration, insufficient funds or otherwise, you nonetheless will remain responsible for any uncollected amounts and authorize us to continue billing the Payment Method or any other payment method you have provided, as it may be updated, including in the event you attempt to create a new account, reactivate the unsettled account or sign up for a new account. This may result in a change to your payment billing dates. If we cannot charge your account, we reserve the right, but are not obligated, to terminate your access to our Site or any portion thereof.</p>
         <p className="description-without-margin">g) Other Fees. You are responsible for paying applicable fees if you do not cancel a Event you had reserved with appropriate notice or do not attend your scheduled Event. Click here for our current cancellation and missed Event rules, including the applicable fees. We reserve the right to change the policy regarding when we charge fees, to introduce additional fees (such as a sign-up fee) and to change the amount of any such fees at any time.</p>
         <p className="description-without-margin">h) Reservation and Cancellation of Reservations. As a MusicPass user, you must reserve and cancel your Reservations only through the Site. It is a breach of these Terms if you reserve or cancel directly with a Venue, including through any online or mobile account you have with a Venue, independent of MusicPass. If you reserve or cancel directly with such Venue, we reserve the right to charge you the full amount that the Venue charges for such event and/or any applicable cancellation fees, and/or to suspend or terminate your subscription.</p>
         <p className="description-without-margin">i) Fees Charged by Venues. In addition to fees we charge, Venues may also charge equipment or other amenity fees that you will be responsible for directly. For example, some Venues might charge extra to rent a yoga mat or cycling shoes. Further, MusicPass only gives you access to the event for which you signed up on the Site (and at the specified time and location). The Venue may have additional fees for use of additional reservations or spaces.</p>
@@ -125,7 +145,7 @@ export default function AboutUs() {
         <p className="description-without-margin">16. Venue Waivers and Terms.</p>
         <p className="description-without-margin">Members taking Reservations are deemed to agree to the liability waivers and terms of individual Venues. Your participation in any Event may be subject to addition policies, rules or conditions of the applicable Venue and you understand and agree that you may not be permitted to reserve or attend reservations or services if you do not comply with these Terms or the policies of the Venues or as otherwise determined by a Venue. If you have questions about a Venue’s waiver or other terms, please see the applicable Venue’s website or contact the Venue directly.</p>
         <p className="description-without-margin">17. Infringement Policy.</p>
-        <p className="description-without-margin">Please see our Digital Millennium Copyright Act (DMCA) document for an explanation of our copyright and trademark policies.</p>
+        <p className="description-without-margin">Please see our <span><a href={"/dcma"}>Digital Millennium Copyright Act (DMCA) document</a></span> for an explanation of our copyright and trademark policies.</p>
         <p className="description-without-margin">18. Arbitration Agreement</p>
         <p className="description-without-margin">PLEASE READ THE FOLLOWING CAREFULLY:</p>
         <p className="description-without-margin">a) Purpose. This Arbitration Agreement facilitates the prompt and efficient resolution of any disputes that may arise between you and MusicPass. Arbitration is a form of private dispute resolution in which parties to a contract agree to submit their disputes and potential disputes to a neutral third person (called an arbitrator) for a binding decision, instead of having such dispute(s) decided in a lawsuit, in court, by a judge or jury trial.</p>
@@ -162,7 +182,7 @@ export default function AboutUs() {
                     </div>
                 </Link>
 
-                <h2 className="heading">{"About"}</h2>
+                <h2 className="heading">{"Customer Terms of Use"}</h2>
                 {content}
             </HeadingWithContentStyle>
         </TermsOfUseStyle>

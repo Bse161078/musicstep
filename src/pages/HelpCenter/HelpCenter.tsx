@@ -16,63 +16,76 @@ export default function HelpCenter() {
     useEffect(()=>{
         var url = new URL(window.document.URL);
         var feesApply = url.searchParams.get("fees-apply");
+        var credit = url.searchParams.get("credit");
+        var billing = url.searchParams.get("billing");
 
         if(feesApply && reservation){
             const reservation: any = document && document?.getElementById('reservation');
             reservation.scrollIntoView();
         }
+
+        if(credit && reservation){
+            const credit: any = document && document?.getElementById('credit');
+            credit.scrollIntoView();
+        }
+
+        if(billing && reservation){
+            const billing: any = document && document?.getElementById('billing');
+            billing.scrollIntoView();
+        }
+
     },[reservation])
 
-    const beforeEmail = <p className='description-inline'> Send us an email at</p>
+    const beforeEmail = <span style={{marginLeft:10}}><p className='description-inline'> Send us an email at</p></span>
     const EmailLink = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}> contact@musicpassonline.com.</a></p>;
     const afterEmail = <p className='description after-email-margin'></p>
 
 
 
-    const beforePartnerLink2=<p className='description-inline'> If you are an interested Partner,</p>
+    const beforePartnerLink2= <span style={{marginLeft:10}}><p className='description-inline'> If you are an interested Partner,</p></span>
     const PartnerLink2 = <p className='description-inline email-margin'><a href={"/partner-login"}> please check out our Partner Portal.</a></p>;
     const afterPartnerLink2 = <p className='description after-email-margin'></p>
 
 
-    const beforePricingPage = <p className='description-inline'> Please see our</p>
+    const beforePricingPage =  <span style={{marginLeft:10}}><p className='description-inline'> Please see our</p></span>
     const pricingPageLink = <p className='description-inline email-margin'><a href={"pricing"}> Pricing Page for
         details.</a></p>;
     const afterPricingPageLink = <p className='description-sub-heading after-email-margin'>Subscription Offerings</p>
 
 
-    const beforeEmail2 = <p className='description-inline'> If you are on a Commitment Plan, please</p>
-    const EmailLink2 = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}> contact
-        us</a></p>;
-    const beforeOtherEmail2 = <p className='description-inline'> with any membership questions.</p>
+    const beforeEmail2 = <p className='description'> If you are on a Commitment Plan, please <a href={"mailto:contact@musicpassonline.com"}> contact
+        us</a> with any membership questions.</p>
+    const EmailLink2 = <p className='description-inline email-margin'></p>;
+    const beforeOtherEmail2 = <p className='description-inline'></p>
     const afterEmail2 = <p className='description after-email-margin'>To cancel your membership:
         Navigate to your Membership Settings.Select ‘Manage membership’.Select your new plan.</p>
 
 
-    const beforeEmail3 = <p className='description-inline'> Still need help?</p>
-    const EmailLink3 = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}> Contact
-        us here.</a></p>;
+    const beforeEmail3 = <p className='description'> Still need help? <a href={"mailto:contact@musicpassonline.com"}> Contact
+        us here.</a></p>
+    const EmailLink3 = <p className='description-inline email-margin'></p>;
     const afterEmail3 = <p className='description-sub-heading after-email-margin'>Reservations</p>
 
 
-    const beforeEmail4 = <p className='description-inline'> Under the search bar select “More” on the right side of the
+    const beforeEmail4 = <p className='description'> Under the search bar select “More” on the right side of the
         screen.
-        Adjust the sliding credits filter to narrow your choices by credit range.Scroll down and select “Done”.
+        Adjust the sliding credits filter to narrow your choices by credit range.Scroll down and select “Done”. <a href={"mailto:contact@musicpassonline.com"}> Get
+            in touch with us.</a>
     </p>
-    const EmailLink4 = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}> Get
-        in touch with us.</a></p>;
+    const EmailLink4 = <p className='description-inline email-margin'></p>;
     const afterEmail4 = <p className='description-sub-heading after-email-margin'>Reserving an event</p>
 
 
-    const beforeEmail5 = <p className='description-inline'> Still need help?</p>
-    const EmailLink5 = <p className='description-inline email-margin'><a href={"mailto:contact@musicpassonline.com"}> Get
-        in touch with us.</a></p>;
+    const beforeEmail5 = <p className='description'> Still need help? <a href={"mailto:contact@musicpassonline.com"}> Get
+        in touch with us.</a></p>
+    const EmailLink5 = <p className='description-inline email-margin'></p>;
 
 
 
 
-    const beforePartnerLink1 = <p className='description-inline'>You can search for Partners, Venues, and Events on the web. You can search for events by location, genre, partner, venue, time, credits, and amenities.
-        If you don't see an event you’re looking for,</p>
-    const partnerLink1 = <p className='description-inline email-margin'><a href={"/partner-login"}> you can submit a partnership request here!</a></p>;
+    const beforePartnerLink1 =<p className='description'>You can search for Partners, Venues, and Events on the web. You can search for events by location, genre, partner, venue, time, credits, and amenities.
+        If you don't see an event you’re looking for, <a href={"/partner-login"}> you can submit a partnership request here!</a></p>
+    const partnerLink1 = <p className='description-inline email-margin'></p>;
     const afterPartnerLink1 = <p className='description-sub-heading after-email-margin'></p>
 
 
@@ -101,15 +114,16 @@ export default function HelpCenter() {
     const header22 = <p className='description-sub-heading'>Event Ratings and Reviews</p>
     const header23 = <p className='description-sub-heading'>Promotions</p>
     const header24 = <p className='description-sub-heading'>Trial membership</p>
-    const header25 = <p className='description-sub-heading'>Other Promotions</p>
+    const header25 = <p className='description-sub-heading' id="credit">Other Promotions</p>
     const header26 = <p className='description-sub-heading'>Credits</p>
     const header27 = <p className='description-sub-heading'>Credit Roll-overs</p>
     const header28 = <p className='description-sub-heading'>This is how it works.</p>
     const header29 = <p className='description-sub-heading'>Purchasing more Credits</p>
-    const header30 = <p className='description-sub-heading'>Remaining Credits</p>
+    const header30 = <p className='description-sub-heading' id={"billing"}>Remaining Credits</p>
     const header31 = <p className='description-sub-heading'>Billing</p>
     const header32 = <p className='description-sub-heading'>Update your credit card information</p>
 
+    const LinkRefundPolicy=<p className='description'>There is a way to buy additional credits (“add-on credits”). The add-on credits, upon purchase, will be available immediately and your cycle date won’t change.All credit purchases are final as noted in the purchase flow. Learn more about our <a href={"/subscription?refund-policy=true"}>Refund Policy here</a>. If you have credits remaining at the end of your cycle, you can roll over up to the number of credits in your upcoming plan. Learn more about our Rollover Policy above.</p>
 
     const history = useHistory();
     return (
@@ -130,7 +144,7 @@ export default function HelpCenter() {
                     beforePricingPage,
                     pricingPageLink,
                     afterPricingPageLink,
-                    "The events listed on the MusicPass platform are operated by the Partners we work with.Don’t see an event or partner listed?",
+                    "The events listed on the MusicPass platform are operated by the Partners we work with. Don’t see an event or partner listed?",
                     beforeEmail,
                     EmailLink,
                     afterEmail,
@@ -306,11 +320,7 @@ export default function HelpCenter() {
                     "Emily decides to cancel her monthly subscription. At the end of her current subscription, all remaining credits are forfeited.",
                     "Please note the rollover of un-used credits can take up to 72 hours to appear in your account after renewal.",
                     header29,
-                    "There is a way to buy additional credits (“add-on credits”). The add-on credits, upon purchase, will be available immediately and your cycle date won’t change. \n" +
-                    "\n" +
-                    "All credit purchases are final as noted in the purchase flow. Learn more about our Refund Policy here. \n" +
-                    "\n" +
-                    "If you have credits remaining at the end of your cycle, you can roll over up to the number of credits in your upcoming plan. Learn more about our Rollover Policy above. \n",
+                    LinkRefundPolicy,
                     header30,
                     "MusicPass will adjust your remaining credits after you have booked or cancelled a reservation. Any upcoming reservations you’ve already made will be deducted from the number of credits you have remaining.\n" +
                     "\n" +
