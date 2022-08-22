@@ -23,23 +23,23 @@ const PartnerLoginForm = () => {
   //   history.push("/admin/metrics");
   // }
 
-  if (
-    state.data &&
-    state.isLoggedIn &&
-    // state.authToken &&
-    state.data.role === "user" &&
-    state.data.isOrganizer === false
-  ) {
-    history.push("/explore-venue");
-  } else if (
-    state.data &&
-    state.isLoggedIn &&
-    // state.authToken &&
-    state.data.role === "admin" &&
-    state.data.isOrganizer === false
-  ) {
-    history.push("/admin/metrics");
-  }
+  // if (
+  //   state.data &&
+  //   state.isLoggedIn &&
+  //   // state.authToken &&
+  //   state.data.role === "user" &&
+  //   state.data.isOrganizer === false
+  // ) {
+  //   history.push("/explore-venue");
+  // } else if (
+  //   state.data &&
+  //   state.isLoggedIn &&
+  //   // state.authToken &&
+  //   state.data.role === "admin" &&
+  //   state.data.isOrganizer === false
+  // ) {
+  //   history.push("/admin/metrics");
+  // }
   const handlePartnerLoginSubmit = (value: any) => {
     if (getLoginInfoFromStorage()) setLoading(true);
     axios

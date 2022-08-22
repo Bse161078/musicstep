@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {ReservationStyle} from "./reservation.style";
 import {useHistory} from "react-router";
 import {HeadingWithContentStyle} from "../../components/HeadingWithContent/HeadingWithContent.style";
@@ -8,21 +8,41 @@ import {LeftChevronIcon} from "../../assets";
 export default function Reservation() {
     const history = useHistory();
 
+    const [reservation,setReservation]=useState(null);
+
+
+    useEffect(() => {
+        const reservation: any = document && document?.getElementById('cancel');
+        setReservation(reservation);
+    }, [])
+
+
+    useEffect(()=>{
+        var url = new URL(window.document.URL);
+        var feesApply = url.searchParams.get("cancel");
+
+        if(feesApply && reservation){
+            const reservation: any = document && document?.getElementById('cancel');
+            reservation.scrollIntoView();
+        }
+    },[reservation])
+
+
     const content=<>
         <p className="description-sub-heading">Search for an Event</p>
-        <p className="description-without-margin">You can search for Partners, Venues, and Events on the web. You can search for events by location, genre, partner, venue, time, credits, and amenities. If you don't see an event you’re looking for, you can submit a partnership request here! </p>
+        <p className="description-without-margin">You can search for Partners, Venues, and Events on the web. You can search for events by location, genre, partner, venue, time, credits, and amenities. If you don't see an event you’re looking for, <a href={"/partner-login"}>you can submit a partnership request here!</a> </p>
         <p className="description-sub-heading">Go to our search page</p>
         <p className="description-without-margin">In the search bar at the top of the screen type in the activity or studio name
             When you browse via the ‘Events’ tab, only events with open spots will populate in the search results. To see the full schedule of events available for a partner or venue, search the partner or venue name in the search bar.
         </p>
         <p className="description-sub-heading">Specific Partner or Venue Schedule</p>
         <p className="description-without-margin">You can search for a specific studio’s schedule by typing in the name of the studio in the search bar. You can save a studio as one of your favorites by tapping the heart on the studio’s page. </p>
-        <p className="description-without-margin">We offer full schedules for the majority of our studios. However, some studios reserve certain eventes for their own members. If you don’t see the specific event you’re looking for on EventPass, it is not currently available on our platform.</p>
+        <p className="description-without-margin">We offer full schedules for the majority of our studios. However, some studios reserve certain events for their own members. If you don’t see the specific event you’re looking for on MusicPass, it is not currently available on our platform.</p>
         <p className="description-sub-heading">Go the search page </p>
         <p className="description-without-margin">Under the search bar select “More” on the right side of the screen
             Adjust the sliding credits filter to narrow your choices by credit range
             Scroll down and select “Done”
-            Still need help? Get in touch with us.
+            Still need help? <a href="mailto:contact@musicpassonline.com">Get in touch with us</a>.
         </p>
         <p className="description-sub-heading">Reserving an event</p>
         <p className="description-without-margin">Once an event has been successfully reserved, it will be listed in your Upcoming Events. The event host will automatically receive your reservation.</p>
@@ -45,19 +65,19 @@ export default function Reservation() {
         <p className="description-sub-heading">Cancel a reservation</p>
         <p className="description-without-margin">Things come up, and that’s why we’ve made it easy to cancel your reservation. More importantly, someone may want your spot!</p>
         <p className="description-without-margin">All reservations need to be cancelled directly through your MusicPass account to ensure a successful cancellation with the business. If you try to cancel your fitness event or wellness reservation through the business directly, please note the cancellation will not process successfully and you may be charged a fee.</p>
-        <p className="description-without-margin">You can read more about our event cancellation policy here.</p>
+        <p className="description-without-margin">You can read more about our event <a href="/subscription?cancellation=true">cancellation policy here</a>.</p>
         <p className="description-without-margin">To cancel a reservation via the MusicPass website:</p>
         <p className="description-without-margin">Log into the MusicPass website and click the "Upcoming" text at the top of the screen next to "Find a studio or activity" search bar.</p>
         <p className="description-without-margin">Find the reservation to be cancelled in the upcoming events list.</p>
         <p className="description-without-margin">Click on the "Cancel Event" button.</p>
-        <p className="description-without-margin">Click the "Cancel this event" button to confirm.</p>
+        <p className="description-without-margin" id="cancel">Click the "Cancel this event" button to confirm.</p>
         <p className="description-without-margin">The reservation will no longer appear in the upcoming events list.</p>
-        <p className="description-without-margin">Reservation Cancellation Policy:</p>
-        <p className="description-without-margin">Reservation Cancellation Fees</p>
+        <p className="description-without-margin" style={{fontWeight:"bold"}}>Reservation Cancellation Policy:</p>
+        <p className="description-without-margin" style={{fontWeight:"bold"}}>Reservation Cancellation Fees</p>
         <p className="description-without-margin">To ensure the MusicPass platform is working as intended for our Partners and for our Members, we enforce a reservation cancellation penalty. This is to maintain integrity. Incurred fees will appear on your bank statement 7-10 business days after the reservation date. </p>
-        <p className="description-without-margin">No fee: In-person reservations can be cancelled up to 24 hours prior to start time with no charge.</p>
-        <p className="description-without-margin">Late-to-Cancel Fee: Something happens within 24 hours of the event, and now you can’t make it. The credits you used to book the reservation are automatically returned to your account, and a late-to-cancel fee of $10 is incurred. From time to time we may review and/or update these fees. The latest fee will be noted in the Cancellation Policy section of the event/appointment page or otherwise before you make a reservation.</p>
-        <p className="description-without-margin">Never-Made-It Fee: If you miss a reservation without cancelling, the credits used to book will be automatically returned to your account. A missed reservation fee will be charged for select reservations if a cancellation is not made prior to start time. A never-made-it fee of $15 is incurred. From time to time we may review or update these fees. The applicable fee will be noted in the Cancellation Policy section of the event/appointment page or otherwise before you make a reservation.</p>
+        <p className="description-without-margin"><span style={{fontWeight:"bold"}}>No fee</span>: In-person reservations can be cancelled up to 24 hours prior to start time with no charge.</p>
+        <p className="description-without-margin"><span style={{fontWeight:"bold"}}>Late-to-Cancel Fee</span>: Something happens within 24 hours of the event, and now you can’t make it. The credits you used to book the reservation are automatically returned to your account, and a late-to-cancel fee of $10 is incurred. From time to time we may review and/or update these fees. The latest fee will be noted in the Cancellation Policy section of the event/appointment page or otherwise before you make a reservation.</p>
+        <p className="description-without-margin"><span style={{fontWeight:"bold"}}>Never-Made-It Fee</span>: If you miss a reservation without cancelling, the credits used to book will be automatically returned to your account. A missed reservation fee will be charged for select reservations if a cancellation is not made prior to start time. A never-made-it fee of $15 is incurred. From time to time we may review or update these fees. The applicable fee will be noted in the Cancellation Policy section of the event/appointment page or otherwise before you make a reservation.</p>
         <p className="description-sub-heading">Switching Reservations</p>
         <p className="description-without-margin">We are not able to transfer your reservation from one event to another, even if it's at the same venue.</p>
         <p className="description-without-margin">In order to switch your reservation, you will first need to cancel your original reservation and then book the event that you plan to attend on MusicPass. </p>

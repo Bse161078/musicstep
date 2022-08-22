@@ -21,7 +21,7 @@ export default function FeesApply() {
                     "When you browse via the ‘Events’ tab, only events with open spots will populate in the search results. To see the full schedule of events available for a partner or venue, search the partner or venue name in the search bar. \n",
                     "Specific Partner or Venue Schedule",
                     "You can search for a specific studio’s schedule by typing in the name of the studio in the search bar. You can save a studio as one of your favorites by tapping the heart on the studio’s page. ",
-                    "We offer full schedules for the majority of our studios. However, some studios reserve certain eventes for their own members. If you don’t see the specific event you’re looking for on EventPass, it is not currently available on our platform.",
+                    "We offer full schedules for the majority of our studios. However, some studios reserve certain events for their own members. If you don’t see the specific event you’re looking for on EventPass, it is not currently available on our platform.",
                     "Go the search page ",
                     "Under the search bar select “More” on the right side of the screen\n" +
                     "Adjust the sliding credits filter to narrow your choices by credit range\n" +

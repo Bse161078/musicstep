@@ -80,12 +80,13 @@ const PriceCard = (props: any) => {
 
             <p className="credits">Credits: {credits}</p>
 
-            <p className="events-info">Events per month: {eventsCount}</p>
-            {!isSubscribed && <p className="additional-info">(Approximately)</p>}
+            <p className="events-info" style={{marginBottom:isSubscribed?"130px":"0px"}}>Events per month: {eventsCount}</p>
+            <p style={{display:isSubscribed?'none':"auto"}} className="additional-info" >(Approximately)</p>
 
 
-            {!isSubscribed && <OutlineButtonStyle buttonType="dark"
-                                onClick={(e) => {
+             <OutlineButtonStyle buttonType="dark"
+                                 style={{display:isSubscribed?'none':"auto"}}
+                                 onClick={(e) => {
                                     if(localStorage.getItem("status") || buyMoreCredit || showPricing || updateSubscription){
                                         if(updateSubscription){
                                             onUpdateSubscription(e,musicType)
@@ -106,7 +107,7 @@ const PriceCard = (props: any) => {
                                         history.push("/free-trial");
                                     }
                                 }}
-            >That's Me</OutlineButtonStyle>}
+            >That's Me</OutlineButtonStyle>
         </PriceCardStyle>
     );
 };

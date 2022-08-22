@@ -7,24 +7,16 @@ export const footerItems = [
                 url: "/about-us",
             },
             {
-                name: "Terms & Conditions",
-                url: "/terms-conditions",
-            },
-            {
                 name: "How It Works?",
                 url: "/how-it-works",
-            },
-            {
-                name: "Privacy Policy",
-                url: "/privacy-policy",
             },
             {
                 name: "Terms Of Use",
                 url: "/terms-of-use",
             },
             {
-                name: "DCMA",
-                url: "/dcma",
+                name: "Privacy Policy",
+                url: "/privacy-policy",
             }
         ],
     },
@@ -37,24 +29,6 @@ export const footerItems = [
               url: "/help-center",
           }
       ],
-    },
-    {
-        heading: "Music Plan",
-        list: [
-
-            {
-                name: "Billing",
-                url: "/billing",
-            },
-            {
-                name: "Reservations",
-                url: "/reservation",
-            },
-            {
-                name: "Subscriptions",
-                url: "/subscription",
-            }
-        ],
     }
 
     // {
@@ -102,5 +76,9 @@ export const socialLinks = [
     {
         icon: "/images/social-links/linkedin.svg",
         url: "https://www.linkedin.com/company/musicpass",
+    },
+    {
+        icon: "/images/social-links/tiktok.png",
+        url: "https://www.tiktok.com/@_musicpass",
     },
 ];

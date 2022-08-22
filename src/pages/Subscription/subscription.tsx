@@ -18,11 +18,19 @@ export default function Subscription() {
     useEffect(()=>{
         var url = new URL(window.document.URL);
         var refundPolicy = url.searchParams.get("refund-policy");
+        var cancellation = url.searchParams.get("cancellation");
 
         if(refundPolicy && refund){
             const refundEle: any = document && document?.getElementById('refund');
             refundEle.scrollIntoView();
         }
+
+        if(cancellation){
+            const cancellation: any = document && document?.getElementById('cancellation');
+            cancellation.scrollIntoView();
+
+        }
+
     },[refund])
 
     const content=<>
@@ -57,7 +65,7 @@ export default function Subscription() {
         <p className="description-without-margin">ClassPass memberships automatically renew each month. Any changes made to your membership will apply to your upcoming cycle. We are unable to retroactively make changes to your account. </p>
         <p className="description-without-margin">If you’re interested in cancelling your membership, please submit a cancellation request at least 24 hours prior to your cycle date. You can reference your cycle date in your Account Settings. More information on how to cancel your account can be found here. </p>
         <p className="description-without-margin">Our full refund policy can be viewed in <a href={"/terms-of-use?3c=true"}>Section 3c. of our Terms of Use</a>.</p>
-        <p className="description-without-margin">ClassPass trials and memberships automatically renew each month on your cycle date. You can cancel your ClassPass trial or membership at any time. </p>
+        <p className="description-without-margin" id={"cancellation"}>ClassPass trials and memberships automatically renew each month on your cycle date. You can cancel your ClassPass trial or membership at any time. </p>
         <p className="description-without-margin">Cancellations need to be requested at least 24 hours prior to your cycle date.</p>
         <p className="description-without-margin">After a cancellation request is made you’ll receive a cancellation confirmation email from our Customer Experience team. If you do not receive a cancellation confirmation email, your request was not received.</p>
         <p className="description-without-margin">If you are on a Commitment Plan, please contact us with any membership questions. </p>

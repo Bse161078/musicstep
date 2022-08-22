@@ -29,12 +29,16 @@ export default function Credit() {
         <p className="description-sub-heading">Credit Roll-Overs</p>
         <p className="description-without-margin">This is how it works.</p>
         <p className="description-without-margin">Rolling over un-used credits from a paid subscription month to the consecutive following month (“next month”) applies if a MusicPass member remains active and on a paid plan. The amount of un-used credits that can be rolled over depends on the transition from plan to plan:</p>
+        <p className="description-sub-heading" style={{marginLeft:40}}>Keep Current</p>
         <p className="description-without-margin" style={{marginLeft:40}}>1) Keeping the same paid plan from one month to the next allows for a maximum roll-over equivalent to the next month’s subscription.</p>
         <p className="description-without-margin">For example, Emily is currently on the 50-credit Music Enthusiast plan. Next month she is going to also be on the 50-credit Music Enthusiast plan. She can rollover at maximum 50 credits, for an eligible total of 100 credits next month.</p>
+        <p className="description-sub-heading" style={{marginLeft:40}}>Downgrade</p>
         <p className="description-without-margin" style={{marginLeft:40}}>2) Downgrading from one plan to another the next month allows for a maximum roll-over equivalent to the next month’s subscription.</p>
         <p className="description-without-margin">Using the same example, Emily decides she wants to downgrade her subscription. She is currently on the 50-credit Music Enthusiast plan. Next month she is going to be on the 25-credit Music Lite plan. She can rollover at maximum 25 credits, for an eligible total of 50 credits next month.</p>
+        <p className="description-sub-heading" style={{marginLeft:40}}>Upgrade</p>
         <p className="description-without-margin" style={{marginLeft:40}}>3) Upgrading from one plan to another the next month allows for a maximum roll-over equivalent to the next month’s subscription.</p>
         <p className="description-without-margin">Emily decides she wants to upgrade her subscription. She is currently on the 50-credit Music Enthusiast plan. Next month she is going to be on the 99-credit Music Pro plan. She can rollover at maximum 99 credits, for an eligible total of 149 credits next month.</p>
+        <p className="description-sub-heading" style={{marginLeft:40}}>Cancel</p>
         <p className="description-without-margin" style={{marginLeft:40}}>4) Cancelling a subscription from one plan to none the next month allows for a maximum of zero roll-over.</p>
         <p className="description-without-margin">Emily decides to cancel her monthly subscription. At the end of her current subscription, all remaining credits are forfeited.</p>
         <p className="description-without-margin">Please note the rollover of un-used credits can take up to 72 hours to appear in your account after renewal.</p>

@@ -20,9 +20,9 @@ export default function HowItWorks() {
         <p className="description"><span style={{fontWeight:"bold"}}>Timmy is a Music Dip member (6 credits), and decides to use his membership as follows:</span></p>
         <p className="description-without-margin" style={{marginLeft:20}}>1 – Rock concert (6 credits) :</p>
         <p className="description"><span style={{fontWeight:"bold"}}>Jen is a Music Lite member (23 credits), and decides to use her membership as follows:</span></p>
-        <p className="description-without-margin" style={{marginLeft:20}}>1 – Rock concert (6 credits)</p>
+        <p className="description-without-margin" style={{marginLeft:20}}>1 – Rock concert (3 credits)</p>
         <p className="description-without-margin" style={{marginLeft:20}}>1 – Indie show (6 credits)</p>
-        <p className="description-without-margin" style={{marginLeft:20}}>1 – Club night (11 credits)</p>
+        <p className="description-without-margin" style={{marginLeft:20}}>1 – Club night (13 credits)</p>
         <p className="description"><span style={{fontWeight:"bold"}}>Carlos is a Music Enthusiast member (48 credits), and decides to use his membership as follows:</span></p>
         <p className="description-without-margin" style={{marginLeft:20}}>1 – Latino band (12 credits)</p>
         <p className="description-without-margin" style={{marginLeft:20}}>2 – Club nights (26 credits)</p>

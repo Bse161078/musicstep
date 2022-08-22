@@ -265,7 +265,6 @@ export default function UserHome() {
     }
 
 
-    console.log("user = ",user.subscriptionEndDate)
 
     return (
         <>
