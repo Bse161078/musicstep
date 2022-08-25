@@ -25,7 +25,7 @@ export default function AboutUs() {
         <p className="description-sub-heading">{"Would I make a good MusicPass member?"}</p>
         <p className="description-without-margin">If you like attending music events, the answer is likely, “Yes.” Our subscribers tend to be well-educated when it comes to music. If not educated, usually they are enthusiastic or curious with a heart for music and dance. No matter what your music and dance background is, anyone is welcomed to join. Partners have the right to enforce age and dress code requirements as publicized per event.</p>
         <p className="description-sub-heading">{"Partners"}</p>
-        <p className="description-without-margin">Are you interested in being a Partner? <span><a href={"/partner-login"}>Visit our Partners website.</a></span> </p>
+        <p className="description-without-margin">Are you interested in being a Partner? <span><a href={"/partner-signup"}>Visit our Partners website.</a></span> </p>
         <p className="description-sub-heading">{"MusicPass' API Access Terms of Use"}</p>
         <p className="description-without-margin" style={{marginTop:"-25px"}}>(last update April 27, 2022)</p>
         <p className="description-without-margin">By using MusicPass, Inc’s (MP) application programming interfaces (the “API”), associated tools, software, documentation, and MP Platform (the “Documentation”), and/or MusicPass Data (defined below), you agree to the terms of this Agreement. If you disagree with any of the terms, MP does not permit you to, and you will not, use any of the Licensed Materials (defined below). You and MP may be individually referred to herein as a “party” and collectively as the parties to this Agreement.</p>

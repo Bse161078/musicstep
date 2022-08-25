@@ -79,12 +79,12 @@ const ResetPasswordForm = ({match}: any) => {
             });
     };
 
-    const username=user? `${user.firstName} ${user.lastName}`:''
+    const username=user? `${user.firstName} ${user.lastName}`:'Member'
     return (
         <FormWrapper
             leftImage="/images/login/login-side.png"
             topHeading="Reset Password"
-            formHeading={`Hey ${username}!`}
+            formHeading={`“Hey ${username}!”`}
         >
             {loading && <Loading/>}
             <ResetPasswordFormStyle>

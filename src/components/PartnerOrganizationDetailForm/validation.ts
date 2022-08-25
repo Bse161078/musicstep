@@ -6,13 +6,13 @@ export const PartnerOrganizationDetailFormValidationSchema = yup
   .shape({
     organizationName: yup.string().required("Organization Name is required"),
     organizationType: yup.string().required("Organization Type is required"),
-    organizationURL: yup.string().required("Organization URL is required"),
-    yearlyEvents: yup
-      .number()
-      .typeError("Yearly Events must be number")
-      .min(1, "Yearly Events is required"),
-    capacity: yup
-      .number()
-      .typeError("Capacity must be number")
-      .min(1, "Capacity is required"),
+    // organizationURL: yup.string().required("Organization URL is required"),
+    // yearlyEvents: yup
+    //   .number()
+    //   .typeError("Yearly Events must be number")
+    //   .min(1, "Yearly Events is required"),
+    // capacity: yup
+    //   .number()
+    //   .typeError("Capacity must be number")
+    //   .min(1, "Capacity is required"),
   });

@@ -45,7 +45,7 @@ export default function Subscription() {
         <p className="description-sub-heading" >Subscription Offerings</p>
         <p className="description-without-margin">The events listed on the MusicPass platform are operated by the Partners we work with.</p>
         <p className="description-without-margin">Don’t see an event or partner listed? Send us an email at <span><a href={"mailto:contact@musicpassonline.com"}>contact@musicpassonline.com.</a></span></p>
-        <p className="description-without-margin">If you are an interested Partner, please check out our <a href={"/partner-login"}>Partner Portal</a>.</p>
+        <p className="description-without-margin">If you are an interested Partner, please check out our <a href={"/partner-signup"}>Partner Portal</a>.</p>
         <p className="description-sub-heading">Changing Plans</p>
         <p className="description-without-margin">Access your Account Settings to change plans.</p>
         <p className="description-without-margin">Upgrading a plan involves immediate access to more credits. The date of your upgrade activates a new billing cycle, along with a new charge for the price of your new plan.</p>

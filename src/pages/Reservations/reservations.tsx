@@ -30,19 +30,14 @@ export default function Reservation() {
 
     const content=<>
         <p className="description-sub-heading">Search for an Event</p>
-        <p className="description-without-margin">You can search for Partners, Venues, and Events on the web. You can search for events by location, genre, partner, venue, time, credits, and amenities. If you don't see an event you’re looking for, <a href={"/partner-login"}>you can submit a partnership request here!</a> </p>
+        <p className="description-without-margin">You can search for Partners, Venues, and Events on the web. You can search for events by location, genre, partner, venue, time, credits, and amenities. If you don't see an event you’re looking for, <a href={"/partner-signup"}>you can submit a partnership request here!</a> </p>
         <p className="description-sub-heading">Go to our search page</p>
-        <p className="description-without-margin">In the search bar at the top of the screen type in the activity or studio name
-            When you browse via the ‘Events’ tab, only events with open spots will populate in the search results. To see the full schedule of events available for a partner or venue, search the partner or venue name in the search bar.
-        </p>
+        <p className="description-without-margin">In the search bar at the top of the screen type in the activity, partner, or venue name.</p>
+        <p className="description-without-margin">When you browse via the ‘Events’ tab, only events with open spots will populate in the search results. To see the full schedule of events available for a partner or venue, search the partner or venue name in the search bar.</p>
         <p className="description-sub-heading">Specific Partner or Venue Schedule</p>
-        <p className="description-without-margin">You can search for a specific studio’s schedule by typing in the name of the studio in the search bar. You can save a studio as one of your favorites by tapping the heart on the studio’s page. </p>
+        <p className="description-without-margin">You can search for a specific schedule by typing in the name of the venue or partner in the search bar. You can save a studio as one of your favorites by tapping the heart on the studio’s page.</p>
         <p className="description-without-margin">We offer full schedules for the majority of our studios. However, some studios reserve certain events for their own members. If you don’t see the specific event you’re looking for on MusicPass, it is not currently available on our platform.</p>
-        <p className="description-sub-heading">Go the search page </p>
-        <p className="description-without-margin">Under the search bar select “More” on the right side of the screen
-            Adjust the sliding credits filter to narrow your choices by credit range
-            Scroll down and select “Done”
-            Still need help? <a href="mailto:contact@musicpassonline.com">Get in touch with us</a>.
+        <p className="description-without-margin">Still need help? <a href="mailto:contact@musicpassonline.com">Get in touch with us</a>.
         </p>
         <p className="description-sub-heading">Reserving an event</p>
         <p className="description-without-margin">Once an event has been successfully reserved, it will be listed in your Upcoming Events. The event host will automatically receive your reservation.</p>
@@ -51,9 +46,9 @@ export default function Reservation() {
         <p className="description-without-margin">Partners can offer the ability to book an event as late as its published end-time. If the booking window for an event has closed, you are unable to reserve the event through MusicPass. </p>
         <p className="description-without-margin">You can book an event scheduled to take place in your upcoming cycle! When booking an event in your next cycle it will use credits from your upcoming cycle, regardless of when the event is booked. For example, if your cycle date is the 3rd of the month and you book an event for the 4th, that event will use credits from your upcoming cycle, even if you reserved it on the 1st.</p>
         <p className="description-without-margin">You can visit most MusicPass Partners as often as you’d like each cycle. </p>
-        <p className="description-sub-heading">How to book an event:</p>
+        <p className="description-without-margin">How to book an event:</p>
         <p className="description-without-margin">Search for the event you want and select “Reserve”</p>
-        <p className="description-without-margin">Search for the event you want and select “Reserve”</p>
+        <p className="description-without-margin">Click "Reserve" again to confirm your reservation</p>
         <p className="description-sub-heading">Events per Subscription Cycle</p>
         <p className="description-without-margin">The number of events you can attend per cycle depends on the types of events you reserve and the credit value of each event. </p>
         <p className="description-without-margin">Events are worth different credit values based on a variety of factors such as the time, place, and artist that you’re booking. The lower the credit value for each event, the more you can take. </p>
@@ -67,8 +62,8 @@ export default function Reservation() {
         <p className="description-without-margin">All reservations need to be cancelled directly through your MusicPass account to ensure a successful cancellation with the business. If you try to cancel your fitness event or wellness reservation through the business directly, please note the cancellation will not process successfully and you may be charged a fee.</p>
         <p className="description-without-margin">You can read more about our event <a href="/subscription?cancellation=true">cancellation policy here</a>.</p>
         <p className="description-without-margin">To cancel a reservation via the MusicPass website:</p>
-        <p className="description-without-margin">Log into the MusicPass website and click the "Upcoming" text at the top of the screen next to "Find a studio or activity" search bar.</p>
-        <p className="description-without-margin">Find the reservation to be cancelled in the upcoming events list.</p>
+        <p className="description-without-margin">Log into the MusicPass website and click the "Profile" icon at the top of the screen next to "credits".</p>
+        <p className="description-without-margin">Find the reservation to be cancelled in the events in reservation.</p>
         <p className="description-without-margin">Click on the "Cancel Event" button.</p>
         <p className="description-without-margin" id="cancel">Click the "Cancel this event" button to confirm.</p>
         <p className="description-without-margin">The reservation will no longer appear in the upcoming events list.</p>

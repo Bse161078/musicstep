@@ -21,14 +21,24 @@ export const footerItems = [
         ],
     },
     {
-      heading: "Support",
-      list: [
+        heading: "Partner",
+        list: [
 
-          {
-              name: "Help Center",
-              url: "/help-center",
-          }
-      ],
+            {
+                name: "Partner Portal",
+                url: "/partner-signup",
+            }
+        ],
+    },
+    {
+        heading: "Support",
+        list: [
+
+            {
+                name: "Help Center",
+                url: "/help-center",
+            }
+        ],
     }
 
     // {

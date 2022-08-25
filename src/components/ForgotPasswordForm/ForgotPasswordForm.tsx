@@ -49,7 +49,7 @@ const ForgotPasswordForm = (props: ForgotPasswordFormProps) => {
         setIsModalVisible(true);
         setMessageHeading("Success");
         setMessage(
-          "We have successfully sent your password reset link on your email address. Please open the link from your email to reset your password."
+          "Your password has been successfully reset. Please log in with your new password."
         );
       })
       .catch((error) => {

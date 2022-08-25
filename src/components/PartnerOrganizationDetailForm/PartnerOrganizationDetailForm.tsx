@@ -88,29 +88,29 @@ const PartnerOrganizationDetailForm = () => {
                 label="Organization Type"
                 setFieldValue={setFieldValue}
               />
-              <InputBox
-                label="Organization URL"
-                placeholder="e.g. https://www.organization.com/"
-                name="organizationURL"
-                width="520px"
-                value={values.organizationURL}
-              />
-              <div className="feild-wrapper">
-                <InputBox
-                  label="Yearly Events"
-                  placeholder="Type any number..."
-                  name="yearlyEvents"
-                  width="520px"
-                  value={values.yearlyEvents}
-                />
-                <InputBox
-                  label="Capacity"
-                  placeholder="Type any number..."
-                  name="capacity"
-                  width="520px"
-                  value={values.capacity}
-                />
-              </div>
+              {/*<InputBox*/}
+                {/*label="Organization URL"*/}
+                {/*placeholder="e.g. https://www.organization.com/"*/}
+                {/*name="organizationURL"*/}
+                {/*width="520px"*/}
+                {/*value={values.organizationURL}*/}
+              {/*/>*/}
+              {/*<div className="feild-wrapper">*/}
+                {/*<InputBox*/}
+                  {/*label="Yearly Events"*/}
+                  {/*placeholder="Type any number..."*/}
+                  {/*name="yearlyEvents"*/}
+                  {/*width="520px"*/}
+                  {/*value={values.yearlyEvents}*/}
+                {/*/>*/}
+                {/*<InputBox*/}
+                  {/*label="Capacity"*/}
+                  {/*placeholder="Type any number..."*/}
+                  {/*name="capacity"*/}
+                  {/*width="520px"*/}
+                  {/*value={values.capacity}*/}
+                {/*/>*/}
+              {/*</div>*/}
               <FilledButtonStyle width="100%" height="60px" 
                onClick={(value) => handleDetailsSubmit(values)} >
                 Continue
