@@ -196,15 +196,15 @@ const UserSidebar = ({reservations, subscription, timeDifference,expirationDate}
                 }}
             />
 
-            <SubscriptionDetailsModal
+            {subscription && < SubscriptionDetailsModal
                 isModalVisible={isSubscriptionVisible}
                 setIsModalVisible={setSubscriptionVisible}
                 subscribtion={subscription}
                 handleCancelClick={() => setCancelSubscriptionVisible(true)}
                 handleChangeClick={() => history.push({pathname: "/pricing", state: {updateSubscription: true}})}
                 handleBuyMoreClick={() => history.push({pathname: "/pricing", state: {buyMoreCredit: true}})}
-            />
-
+                />
+            }
             <CreditHistoryModal
                 isModalVisible={isCreditModalVisible}
                 setIsModalVisible={setCreditModalVisible}

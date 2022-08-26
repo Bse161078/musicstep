@@ -68,7 +68,7 @@ const ResetPasswordForm = ({match}: any) => {
                 setIsModalVisible(true);
                 setMessageHeading("Success");
                 setMessage(
-                    "We have successfully  reset your password. Please loging with your new password."
+                    "We have successfully  reset your password. Please log in with your new password."
                 );
             })
             .catch((error) => {

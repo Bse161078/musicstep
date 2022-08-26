@@ -89,6 +89,6 @@ export const socialLinks = [
     },
     {
         icon: "/images/social-links/tiktok.png",
-        url: "https://www.tiktok.com/@_musicpass",
+        url: "https://www.tiktok.com/@_musicpass_",
     },
 ];

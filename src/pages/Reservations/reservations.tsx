@@ -35,8 +35,8 @@ export default function Reservation() {
         <p className="description-without-margin">In the search bar at the top of the screen type in the activity, partner, or venue name.</p>
         <p className="description-without-margin">When you browse via the ‘Events’ tab, only events with open spots will populate in the search results. To see the full schedule of events available for a partner or venue, search the partner or venue name in the search bar.</p>
         <p className="description-sub-heading">Specific Partner or Venue Schedule</p>
-        <p className="description-without-margin">You can search for a specific schedule by typing in the name of the venue or partner in the search bar. You can save a studio as one of your favorites by tapping the heart on the studio’s page.</p>
-        <p className="description-without-margin">We offer full schedules for the majority of our studios. However, some studios reserve certain events for their own members. If you don’t see the specific event you’re looking for on MusicPass, it is not currently available on our platform.</p>
+        <p className="description-without-margin">You can search for a specific schedule by typing in the name of the venue or partner in the search bar.</p>
+        <p className="description-without-margin">If you don’t see the specific event you’re looking for on MusicPass, it is not currently available on our platform.</p>
         <p className="description-without-margin">Still need help? <a href="mailto:contact@musicpassonline.com">Get in touch with us</a>.
         </p>
         <p className="description-sub-heading">Reserving an event</p>

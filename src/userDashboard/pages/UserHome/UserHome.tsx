@@ -43,7 +43,7 @@ const EventReservation = ({reservations, cancelreservation, subscription}: any) 
     return (
         <>
 
-            {subscription.active === true ?
+            {subscription && subscription.active === true ?
                 <SectionHeading heading="Events In Reservation">
                     <Grid container lg={3} xs={1} spacing={1}
                           sx={{maxWidth: "70vw!important", width: "70vw!important", zIndex: 100}}>
@@ -150,7 +150,7 @@ const EventReservation = ({reservations, cancelreservation, subscription}: any) 
                     Your Subscribtion has been Expired!.Please renew your Subscribtion
                 </Typography>
             }
-            {subscription.active === true && <GuestListModal
+            { subscription && subscription.active === true && <GuestListModal
                 isModalVisible={isModalVisible}
                 setIsModalVisible={setIsModalVisible}
             />}
@@ -271,30 +271,30 @@ export default function UserHome() {
             {showPricing && <Pricing showPricing={showPricing} setShowPricing={setShowPricing} isCreateSubscription={true}/>}
             <NavbarWithSearch userCredit={user.credits}/>
             {isLoading && <Loading/>}
-            {!subscription ?
-                <ExploreVenueStyle>
-                    <h1
-                        style={{
-                            width: "100%",
-                            margin: "0px auto",
-                            textAlign: "center",
-                        }}
-                    >
-                        Your Subscription has been Cancelled! Please create your Subscription package
-                    </h1>
-                    <div></div>
-                    {/* <FilledButtonStyle  class="" onClick={(e)=>onSubscribePackage(e)}>Checkout</FilledButtonStyle> */}
-                    <TrialButton style={{display: 'flex', justifyContent: 'center', marginLeft: 40, marginTop: 10}}
-                                 onClick={(e) => {
+            {/*{!subscription ?*/}
+                {/*<ExploreVenueStyle>*/}
+                    {/*<h1*/}
+                        {/*style={{*/}
+                            {/*width: "100%",*/}
+                            {/*margin: "0px auto",*/}
+                            {/*textAlign: "center",*/}
+                        {/*}}*/}
+                    {/*>*/}
+                        {/*Your Subscription has been Cancelled! Please create your Subscription package*/}
+                    {/*</h1>*/}
+                    {/*<div></div>*/}
+                    {/*/!* <FilledButtonStyle  class="" onClick={(e)=>onSubscribePackage(e)}>Checkout</FilledButtonStyle> *!/*/}
+                    {/*<TrialButton style={{display: 'flex', justifyContent: 'center', marginLeft: 40, marginTop: 10}}*/}
+                                 {/*onClick={(e) => {*/}
 
-                                     setShowPricing(true)
+                                     {/*setShowPricing(true)*/}
 
 
-                                 }}
-                                 className="text-center"><a className="free-trial-btn free-trial-secondary btn">Create Subscription</a>
-                    </TrialButton>
-                </ExploreVenueStyle>
-                :
+                                 {/*}}*/}
+                                 {/*className="text-center"><a className="free-trial-btn free-trial-secondary btn">Create Subscription</a>*/}
+                    {/*</TrialButton>*/}
+                {/*</ExploreVenueStyle>*/}
+                {/*:*/}
                 <UserHomeStyle>
 
                     <UserSidebar reservations={reservations} subscription={subscription}
@@ -331,7 +331,7 @@ export default function UserHome() {
                 </UserHomeStyle>
 
 
-            }
+            {/*}*/}
         </>
     );
 }
