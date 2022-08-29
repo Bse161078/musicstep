@@ -84,14 +84,14 @@ const PartnerSignupFormStyle = styled.div`
       .input-wrapper-phone {
         width: 100%;
         input {
-          margin-left: 41%;
+          margin-left: 35%;
           height: 53px;
           border-radius: 50px;
           border: 1px solid #0c0c0c;
           outline: 0;
           padding: 15px 25px;
           font-size: 18px;
-          width: 59%;
+          width: 65%;
           max-width: unset;
         }
         .flag-dropdown {
@@ -102,7 +102,7 @@ const PartnerSignupFormStyle = styled.div`
           outline: 0;
           padding: 15px 25px;
           font-size: 18px;
-          width: 40%;
+          width: 30%;
           max-width: unset;
         }
       }

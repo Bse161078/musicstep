@@ -10,7 +10,6 @@ import { PartnerSignupFormValidationSchema } from "./validation";
 import axios from "axios";
 import { usePartnerContext } from "../../context/partnerContext ";
 import PhoneInput from "react-phone-input-2";
-import "react-phone-input-2/lib/style.css";
 const PartnerSignupForm = () => {
   const { state, dispatch } = usePartnerContext();
   const [errorMessage, setErrorMessage] = useState("");
@@ -124,7 +123,7 @@ const PartnerSignupForm = () => {
                 </div>
               </div>
               <FilledButtonStyle width="100%" height="60px">
-                SignUp For Free
+                Sign up For Free
               </FilledButtonStyle>
               <div className="footer-wrapper">
                 <h3 className="already-text">
@@ -140,7 +139,7 @@ const PartnerSignupForm = () => {
                   partnership opportunities and provide other updates. By
                   submitting this form, you agree to the{" "}
                   <span className="terms-text">
-                    Terms of Use & Privacy Policy.
+                      <a href={"terms-of-use"}>Terms of Use</a> & <a href={"privacy-policy"}>Privacy Policy</a>.
                   </span>
                 </p>
               </div>

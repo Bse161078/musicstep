@@ -31,7 +31,7 @@ import FutureEvents from "./FutureEvents";
 import {ExploreVenueStyle, TrialButton} from "../../../pages/ExploreVenue/ExploreVenue.style";
 import {Pricing} from "../../../pages/Pricing";
 
-const EventReservation = ({reservations, cancelreservation, subscription}: any) => {
+const EventReservation = ({reservations, cancelreservation, subscription,setPricing}: any) => {
     const [isCancelModalVisible, setCancelModalVisible] = useState(false);
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [selectedReservation, setSelectedReservation] = useState(false);
@@ -146,8 +146,17 @@ const EventReservation = ({reservations, cancelreservation, subscription}: any) 
 
                 </SectionHeading>
                 :
-                <Typography variant='h3' align="center" sx={{padding: 10, fontWeight: 'bold'}}>
-                    Your Subscribtion has been Expired!.Please renew your Subscribtion
+                <Typography variant='h3' align="left" sx={{padding: 10, fontWeight: 'bold'}}>
+                    To active a membership, please click here
+                    <span>
+                        <TrialButton style={{display: 'inline', marginLeft: 10, marginTop: 10}}
+                                     onClick={(e) => {
+                                         setPricing(true);
+                                     }}
+                                     className="text-center"><a className="free-trial-btn free-trial-secondary btn">
+                            »&nbsp;Create&nbsp;Subscribtion!</a>
+                        </TrialButton>
+                    </span>
                 </Typography>
             }
             { subscription && subscription.active === true && <GuestListModal
@@ -312,6 +321,9 @@ export default function UserHome() {
                             }
                             cancelreservation={cancelreservation}
                             subscription={subscription}
+                            setPricing={(showPricing:boolean)=>{
+                                setShowPricing(showPricing)
+                            }}
                         />
                         <div className="divider"/>
                         {!isLoading ? (

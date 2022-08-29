@@ -46,7 +46,7 @@ const NavbarWithSearch = (props:any) => {
         <span>Upcoming Itinerary</span>
         {subscribtion?subscribtion.active===true?<span>{props.userCredit} Credits</span>:
         <span> Expired </span>:
-        <span> Cancelled </span>
+        <span> Inactive </span>
         }
         <Link to="/dashboard/home">
           <span>

@@ -21,7 +21,7 @@ export const footerItems = [
         ],
     },
     {
-        heading: "Partner",
+        heading: "Partners",
         list: [
 
             {

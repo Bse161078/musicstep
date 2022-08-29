@@ -54,14 +54,21 @@ export default function ExploreVenue() {
 
     const [filter, setFilter] = useState()
     useEffect(() => {
-        setLoading(true)
+        setLoading(true);
         navigator.geolocation.getCurrentPosition(function (position) {
         })
         getFilters();
         getEvents();
         getUser()
-
     }, []);
+
+    useEffect(()=>{
+        if(!loading && (!subscribtion  || !subscribtion.active)){
+            history.push('/dashboard/home')
+        }
+    },[subscribtion]);
+
+
     useEffect(() => {
         getUser()
     }, [user.credits])
@@ -118,7 +125,7 @@ export default function ExploreVenue() {
             .then((res) => {
                 setLoading(false)
                 setVenues(res.data.event);
-                setSubscribtion(res.data.subscription)
+                setSubscribtion(res.data.subscription);
             })
             .catch((error) => {
                 setLoading(false)
@@ -349,6 +356,7 @@ export default function ExploreVenue() {
                                 width: "100%",
                                 margin: "0px auto",
                                 textAlign: "center",
+                                fontFamily:`Montserrat!important`
                             }}
                         >
                             Your Subscription has been Expired! Please renew your Subscription package

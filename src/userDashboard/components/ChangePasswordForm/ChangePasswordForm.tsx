@@ -71,7 +71,7 @@ const ChangePasswordForm = () => {
         isModalVisible={isSuccessModalVisible}
         setIsModalVisible={setSuccessModalVisible}
         heading="Success"
-        message="Password changed successfully."
+        message="Password was changed successfully."
       />
     </ChangePasswordFormStyle>
   );

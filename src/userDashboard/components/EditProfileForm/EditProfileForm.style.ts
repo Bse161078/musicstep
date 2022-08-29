@@ -34,10 +34,34 @@ export const EditProfileFormStyle = styled.div`
         grid-template-columns: 1fr;
       }
     }
+    
+    
+     .custom-columns-2 {
+      display: grid;
+      grid-template-columns: 350px 350px;
+      grid-column: 1/2;
+      grid-gap: 20px;
 
+      @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+        grid-column: unset;
+      }
+    }
+
+    .custom-columns-1 {
+      display: grid;
+        grid-template-columns: 1fr;
+      grid-column: 1/2;
+      grid-gap: 20px;
+
+      @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+        grid-column: unset;
+      }
+    }
     .custom-columns {
       display: grid;
-      grid-template-columns: 170px 1fr;
+      grid-template-columns: 170px 0.95fr;
       grid-column: 1/3;
       grid-gap: 20px;
 

@@ -9,7 +9,7 @@ import {EditProfileFormStyle} from "./EditProfileForm.style";
 import {PeopleWithMutualFreindsModal} from "../Modals";
 import {BasicInfoFormValidationSchema} from "./validation";
 import Loading from '../../../components/Loading/Loading'
-import {parsePhoneNumber } from "react-phone-number-input";
+import {parsePhoneNumber} from "react-phone-number-input";
 
 const EditProfileForm = React.forwardRef((props: any, ref: any) => {
         // const { textInput } = props;
@@ -108,8 +108,8 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
                             dateOfBirth:
                                 userData.dateOfBirth && userData.dateOfBirth.slice(0, 10),
                             email: userData.email,
-                            countryCode: parsePhoneNumber("+"+userData.phoneNumber)?.countryCallingCode,
-                            phone: parsePhoneNumber("+"+userData.phoneNumber)?.nationalNumber,
+                            countryCode: parsePhoneNumber("+" + userData.phoneNumber)?.countryCallingCode,
+                            phone: parsePhoneNumber("+" + userData.phoneNumber)?.nationalNumber,
                             photo: "",
                             isPhoneNumberPublic: userData.isPhoneNumberPublic,
                             isPublicInfo: (function () {
@@ -132,16 +132,16 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
                             return (
                                 <Form className="form-wrapper">
                                     <div className="form-left">
-                                        <div className="multi-column">
-                                            <InputBox label="First Name" name="firstName"
-                                            />
-                                            <InputBox label="Last Name" name="lastName"
-                                            />
+                                        <div className="custom-columns-2">
+                                            <InputBox label="First Name" name="firstName"/>
+                                            <InputBox label="Last Name" name="lastName"/>
                                         </div>
-
-                                        <InputBox label="Date Of Birth" name="dateOfBirth"/>
-                                        <InputBox label="Email Address" name="email"
-                                        />
+                                        <div className="custom-columns-1">
+                                            <InputBox label="Date Of Birth" name="dateOfBirth"/>
+                                        </div>
+                                        <div className="custom-columns-1">
+                                            <InputBox label="Email Address" name="email"/>
+                                        </div>
                                         <div className="custom-columns">
                                             <InputBox label="Country Code" name="countryCode"/>
                                             <InputBox label="Phone Number" name="phone"/>
@@ -176,10 +176,7 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
                                                 "People With Mutual Events")
                                             </p>
                                             <p>
-                                                Your name, profile picture & phone number include in your
-                                                public info as well. Public info will be used for "People
-                                                With Mutual Events", where other people will able to see
-                                                your profile.
+                                                The Public Info function is to serve the community. If you wish to be seen by fellow MusicPass members, opting in allows for exchange of information, and also allows you to see other People with Mutual Events. You get to choose what message and contact information to display, as do they. Only your first name and last name initial will appear.
                                             </p>
                                         </div>
                                         <div className="public-info">

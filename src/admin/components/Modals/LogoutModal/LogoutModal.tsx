@@ -22,7 +22,7 @@ const LogoutModal = (props: LogoutModalProps) => {
     >
       <LogoutStyle>
         <img src="/images/logout.svg" alt="logout" />
-        <p>Are you sure you want to logout your account?</p>
+        <p>Are you sure you want to logout of this account?</p>
       </LogoutStyle>
     </ModalWrapper>
   );
