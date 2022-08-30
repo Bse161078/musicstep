@@ -5,18 +5,14 @@
       <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/images/social-links/tiktok.png" beforeDir="false" afterPath="$PROJECT_DIR$/build/images/social-links/tiktok.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.406f771e.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.406f771e.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/Modals/LogoutModal/LogoutModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/Modals/LogoutModal/LogoutModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PartneSignupForm/PartnerSignupForm.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PartneSignupForm/PartnerSignupForm.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PartneSignupForm/PartnerSignupForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PartneSignupForm/PartnerSignupForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mockData/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/mockData/footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/BillingInformationForm/BillingInformationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/BillingInformationForm/BillingInformationForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/ChangePasswordForm/ChangePasswordForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/ChangePasswordForm/ChangePasswordForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.2160b4a1.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.2160b4a1.chunk.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.2160b4a1.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.43f2be9d.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.43f2be9d.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.style.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx" afterDir="false" />
@@ -31,12 +27,12 @@
     <session id="-6026431">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="104" />
+          <entry key="project.closed" value="105" />
           <entry key="project.open.time.0" value="18" />
           <entry key="project.open.time.1" value="42" />
           <entry key="project.open.time.10" value="5" />
           <entry key="project.open.time.11" value="4" />
-          <entry key="project.open.time.12" value="3" />
+          <entry key="project.open.time.12" value="4" />
           <entry key="project.open.time.13" value="3" />
           <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.15" value="3" />
@@ -45,7 +41,7 @@
           <entry key="project.open.time.2" value="7" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.23" value="1" />
-          <entry key="project.open.time.24" value="3" />
+          <entry key="project.open.time.24" value="4" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.43" value="1" />
@@ -54,7 +50,7 @@
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="3" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="109" />
+          <entry key="project.opened" value="111" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -69,8 +65,8 @@
           <entry key="map" value="1" />
           <entry key="png" value="9" />
           <entry key="svg" value="9" />
-          <entry key="ts" value="149" />
-          <entry key="tsx" value="624" />
+          <entry key="ts" value="152" />
+          <entry key="tsx" value="629" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -84,13 +80,13 @@
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="SVG" value="9" />
           <entry key="SourceMap" value="1" />
-          <entry key="TypeScript" value="149" />
-          <entry key="TypeScript JSX" value="624" />
+          <entry key="TypeScript" value="152" />
+          <entry key="TypeScript JSX" value="629" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="TypeScriptServerServiceImpl" value="104" />
+          <entry key="TypeScriptServerServiceImpl" value="106" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -100,8 +96,8 @@
           <entry key="html" value="28" />
           <entry key="js" value="3661" />
           <entry key="json" value="8" />
-          <entry key="ts" value="1064" />
-          <entry key="tsx" value="34843" />
+          <entry key="ts" value="1070" />
+          <entry key="tsx" value="35043" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -111,8 +107,8 @@
           <entry key="JSON" value="8" />
           <entry key="JavaScript" value="3661" />
           <entry key="PLAIN_TEXT" value="25" />
-          <entry key="TypeScript" value="1064" />
-          <entry key="TypeScript JSX" value="34843" />
+          <entry key="TypeScript" value="1070" />
+          <entry key="TypeScript JSX" value="35043" />
         </counts>
       </usages-collector>
     </session>
@@ -122,8 +118,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="306" column="34" selection-start-line="306" selection-start-column="34" selection-end-line="306" selection-end-column="34" />
+            <state relative-caret-position="224">
+              <caret line="358" column="45" lean-forward="true" selection-start-line="358" selection-start-column="45" selection-end-line="358" selection-end-column="45" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -132,19 +128,61 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx">
+        <entry file="file://$PROJECT_DIR$/src/mockData/navItems.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="123" column="58" selection-start-line="123" selection-start-column="58" selection-end-line="123" selection-end-column="58" />
+            <state>
+              <caret column="21" selection-start-column="13" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/admin/components/Modals/LogoutModal/LogoutModal.tsx">
+        <entry file="file://$PROJECT_DIR$/src/components/Navbar/Navbar.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+            <state relative-caret-position="36">
+              <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/userDashboard/pages/EditProfile/EditProfile.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="139">
+              <caret line="178" column="79" selection-start-line="178" selection-start-column="79" selection-end-line="178" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.style.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="107" column="25" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Footer/Footer.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="76" column="82" selection-start-line="76" selection-start-column="82" selection-end-line="76" selection-end-column="82" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -161,12 +199,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Organization Details</find>
-      <find>/partner-login</find>
-      <find>Log into the MusicPass website and click</find>
-      <find>foorget-password</find>
-      <find>create-payment-intent</find>
-      <find>CreateCreditPayment</find>
       <find>How to book an event</find>
       <find>updateSubscriptionPaymentMethod</find>
       <find>setSetupIntent</find>
@@ -191,6 +223,12 @@
       <find>billing-information</find>
       <find>dashboard/home</find>
       <find>Are you sure you want to logout</find>
+      <find>avatar</find>
+      <find>To active</find>
+      <find>To ac</find>
+      <find>Explore Ve</find>
+      <find>dashboard/basic-info</find>
+      <find>navItems</find>
     </findStrings>
     <replaceStrings>
       <replace>music-pass-f227c.web.app</replace>
@@ -208,7 +246,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/TrialForm/TrialForm.tsx" />
         <option value="$PROJECT_DIR$/src/components/TrialGeneralInfo/TrialGenralInfo.tsx" />
         <option value="$PROJECT_DIR$/src/components/TrialSetPassword/TrialSetPassword.tsx" />
         <option value="$PROJECT_DIR$/src/components/RedeemOfferForm/RedeemOfferForm.tsx" />
@@ -238,7 +275,6 @@
         <option value="$PROJECT_DIR$/src/pages/Home/Home.tsx" />
         <option value="$PROJECT_DIR$/src/components/AuthenticatedRoute/AuthenticatedRoute.tsx" />
         <option value="$PROJECT_DIR$/src/components/PartnerLoginForm/PartnerLoginForm.tsx" />
-        <option value="$PROJECT_DIR$/src/components/Footer/Footer.tsx" />
         <option value="$PROJECT_DIR$/src/pages/Credits/credit.tsx" />
         <option value="$PROJECT_DIR$/src/pages/PrivacyPolicy/PrivacyPolicy.tsx" />
         <option value="$PROJECT_DIR$/src/components/PartnerOrganizationDetailForm/PartnerOrganizationDetailForm.tsx" />
@@ -254,11 +290,13 @@
         <option value="$PROJECT_DIR$/src/userDashboard/components/UserSidebar/UserSidebar.tsx" />
         <option value="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx" />
         <option value="$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx" />
-        <option value="$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.style.ts" />
-        <option value="$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.tsx" />
         <option value="$PROJECT_DIR$/src/userDashboard/components/ChangePasswordForm/ChangePasswordForm.tsx" />
         <option value="$PROJECT_DIR$/src/userDashboard/components/BillingInformationForm/BillingInformationForm.tsx" />
         <option value="$PROJECT_DIR$/src/admin/components/Modals/LogoutModal/LogoutModal.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Footer/Footer.tsx" />
+        <option value="$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.style.ts" />
+        <option value="$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" />
       </list>
     </option>
   </component>
@@ -282,7 +320,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="50" />
     <option name="y" value="15" />
     <option name="width" value="1400" />
@@ -293,8 +331,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -310,24 +346,20 @@
             <path>
               <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
               <item name="musicstep" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
-              <item name="musicstep" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1661787149097" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1661787453833" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="ts.external.directory.path" value="D:\practice\musicstep\node_modules\typescript\lib" />
@@ -474,18 +506,20 @@
       <workItem from="1661437315688" duration="95000" />
       <workItem from="1661455828869" duration="117000" />
       <workItem from="1661492829628" duration="1721000" />
-      <workItem from="1661781907433" duration="5192000" />
+      <workItem from="1661781907433" duration="5700000" />
+      <workItem from="1661832480503" duration="611000" />
+      <workItem from="1661840942903" duration="1390000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="436123000" />
+    <option name="totallyTimeSpent" value="438632000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.37114093" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27315435" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -503,7 +537,7 @@
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" visible="true" weight="0.35959885" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" visible="true" weight="0.252149" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067115" side_tool="true" weight="0.256447" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
@@ -546,23 +580,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pages/FreeTrial/FreeTrial.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="992">
-          <caret line="180" column="35" selection-start-line="180" selection-start-column="35" selection-end-line="180" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/HelpCenter/index.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/HelpCenter/HelpCenter.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/styles/Common.style.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -751,9 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="36" selection-start-column="30" selection-end-column="36" />
-          <folding>
-            <element signature="e#202#29125#2" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -768,23 +782,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="140" column="47" lean-forward="true" selection-start-line="140" selection-start-column="47" selection-end-line="140" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mockData/footer.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="21" column="6" lean-forward="true" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Footer/Footer.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="60" lean-forward="true" selection-start-line="2" selection-start-column="60" selection-end-line="2" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -806,27 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
           <caret line="47" selection-start-line="47" selection-end-line="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.style.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="63" column="39" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="179" column="26" selection-start-line="179" selection-start-column="26" selection-end-line="179" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/userDashboard/pages/EditProfile/EditProfile.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -858,27 +834,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="306" column="34" selection-start-line="306" selection-start-column="34" selection-end-line="306" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
+        <state relative-caret-position="1564">
           <caret line="123" column="58" selection-start-line="123" selection-start-column="58" selection-end-line="123" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/admin/components/Modals/LogoutModal/LogoutModal.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
+        <state relative-caret-position="325">
           <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mockData/footer.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="72" column="13" selection-start-line="72" selection-start-column="13" selection-end-line="72" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Footer/Footer.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="76" column="82" selection-start-line="76" selection-start-column="82" selection-end-line="76" selection-end-column="82" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/userDashboard/pages/EditProfile/EditProfile.style.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/userDashboard/pages/EditProfile/EditProfile.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.style.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="107" column="25" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="178" column="79" selection-start-line="178" selection-start-column="79" selection-end-line="178" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="358" column="45" lean-forward="true" selection-start-line="358" selection-start-column="45" selection-end-line="358" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mockData/navItems.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="13" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Navbar/Navbar.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

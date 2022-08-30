@@ -137,10 +137,10 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
                                             <InputBox label="Last Name" name="lastName"/>
                                         </div>
                                         <div className="custom-columns-1">
-                                            <InputBox label="Date Of Birth" name="dateOfBirth"/>
+                                            <InputBox label="Email Address" name="email"/>
                                         </div>
                                         <div className="custom-columns-1">
-                                            <InputBox label="Email Address" name="email"/>
+                                            <InputBox label="Date Of Birth" name="dateOfBirth"/>
                                         </div>
                                         <div className="custom-columns">
                                             <InputBox label="Country Code" name="countryCode"/>
@@ -185,14 +185,14 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
                                                 name="bio"
                                                 radiusType="27px"
                                                 height="74px"
-                                                placeholder="Dolor rem non inventore. Non rerum nostrum. Sit consectetur dolorem voluptatem sit dolorem. Deleniti vel sit dolorem illo sed culpa."
+                                                placeholder=""
                                             />
                                         </div>
                                         <div className="public-info column-3">
                                             <InputBox
                                                 label="Instagram"
                                                 name="instagram"
-                                                placeholder="@instagram"
+                                                placeholder="@username"
                                             />
                                             <InputBox
                                                 label="Facebook"

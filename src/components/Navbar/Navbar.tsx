@@ -1,100 +1,105 @@
-import React, { useEffect, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import {NavLink, useLocation} from "react-router-dom";
 
-import { navItems, NavItemType } from "../../mockData/navItems";
-import { FilledButtonStyle } from "../../styles/Common.style";
-import { NavbarStyle } from "./Navbar.style";
+import {navItems, NavItemType} from "../../mockData/navItems";
+import {FilledButtonStyle} from "../../styles/Common.style";
+import {NavbarStyle} from "./Navbar.style";
 
 const Navbar = () => {
-  const [showDropdown, setShowDropdown] = useState(false);
+    const [showDropdown, setShowDropdown] = useState(false);
 
-  const { pathname } = useLocation();
+    const {pathname} = useLocation();
 
 
-  const toggle = () => {
-    if (window.innerWidth < 768) {
-      setShowDropdown(!showDropdown);
-    }
-  };
-
-  const [isNavSticky, setStickyNav] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const nav = document.querySelector("nav");
-      const navTop = nav?.offsetTop || 30;
-      setStickyNav(window.scrollY > navTop);
+    const toggle = () => {
+        if (window.innerWidth < 768) {
+            setShowDropdown(!showDropdown);
+        }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    const [isNavSticky, setStickyNav] = useState(false);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll, false);
-    };
-  }, []);
-  return (
-    <NavbarStyle
-      style={{zIndex:1000}}
-      className={showDropdown ? "show-dropdown" : ""}
-    >
-      <section className="navbar-wrapper ">
-        <article className="branding-wrapper">
-          <a href="/">
-            <img
-              loading="lazy"
-              alt="loading"
-              className="logo"
-              src="/images/logo.png"
-            />
-          </a>
+    useEffect(() => {
+        const handleScroll = () => {
+            const nav = document.querySelector("nav");
+            const navTop = nav?.offsetTop || 30;
+            setStickyNav(window.scrollY > navTop);
+        };
 
-          <button className="menu-toggle-button " onClick={toggle}>
-            <span className="toggle-menu-bar" />
-            <span className="toggle-menu-bar" />
-            <span className="toggle-menu-bar" />
-          </button>
-        </article>
+        window.addEventListener("scroll", handleScroll);
 
-        <ul className="nav-items">
-          {pathname !== "/partner-login" &&
-            navItems.map((data: NavItemType, index: number) => {
-              const { name, url, type } = data;
+        return () => {
+            window.removeEventListener("scroll", handleScroll, false);
+        };
+    }, []);
 
-              return (
-                <li key={`nav-item-${index}`}>
-                  <NavLink
-                    target={type ? "_blank" : ""}
-                    rel="noreferrer"
-                    to={url}
-                    onClick={toggle}
-                  >
-                    {name}
-                  </NavLink>
-                </li>
-              );
-            })}
 
-          <li>
-            <NavLink
-              to={
-                pathname === "/partner-login"
-                  ? "/partner-signup"
-                  : "/free-trial"
-              }
-            >
-              <FilledButtonStyle as="span"
-              onClick={toggle}
-              >
-                {pathname === "/partner-login"
-                  ? "Sign Up For Free"
-                  : "Get Musicpass"}
-              </FilledButtonStyle>
-            </NavLink>
-          </li>
-        </ul>
-      </section>
-    </NavbarStyle>
-  );
+
+    return (
+
+        <NavbarStyle
+            style={{zIndex: 1000}}
+            className={showDropdown ? "show-dropdown" : ""}
+        >
+            <section className="navbar-wrapper ">
+                <article className="branding-wrapper">
+                    <a href="/">
+                        <img
+                            loading="lazy"
+                            alt="loading"
+                            className="logo"
+                            src="/images/logo.png"
+                        />
+                    </a>
+
+                    <button className="menu-toggle-button " onClick={toggle}>
+                        <span className="toggle-menu-bar"/>
+                        <span className="toggle-menu-bar"/>
+                        <span className="toggle-menu-bar"/>
+                    </button>
+                </article>
+
+                {pathname !== "/partner-signup" && <ul className="nav-items">
+                    {pathname !== "/partner-login" &&
+                    navItems.map((data: NavItemType, index: number) => {
+                        const {name, url, type} = data;
+
+                        return (
+                            <li key={`nav-item-${index}`}>
+                                <NavLink
+                                    target={type ? "_blank" : ""}
+                                    rel="noreferrer"
+                                    to={url}
+                                    onClick={toggle}
+                                >
+                                    {name}
+                                </NavLink>
+                            </li>
+                        );
+                    })}
+
+                    <li>
+                        <NavLink
+                            to={
+                                pathname === "/partner-login"
+                                    ? "/partner-signup"
+                                    : "/free-trial"
+                            }
+                        >
+                            <FilledButtonStyle as="span"
+                                               onClick={toggle}
+                            >
+                                {pathname === "/partner-login"
+                                    ? "Sign Up For Free"
+                                    : "Get Musicpass"}
+                            </FilledButtonStyle>
+                        </NavLink>
+                    </li>
+                </ul>
+                }
+            </section>
+        </NavbarStyle>
+    );
 };
 
 export default Navbar;

@@ -147,7 +147,7 @@ const EventReservation = ({reservations, cancelreservation, subscription,setPric
                 </SectionHeading>
                 :
                 <Typography variant='h3' align="left" sx={{padding: 10, fontWeight: 'bold'}}>
-                    To active a membership, please click here
+                    To activate a membership, please click here
                     <span>
                         <TrialButton style={{display: 'inline', marginLeft: 10, marginTop: 10}}
                                      onClick={(e) => {
