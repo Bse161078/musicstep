@@ -128,7 +128,7 @@ const AutoCompletePlaces=(props)=>{
                     marginTop: "2px",
                 }}
                 options={{
-                    types: ['amusement_park','aquarium','art_gallery','cafe','casino'],
+                    types: ['establishment'],
                 }}
                 onFail={error => console.error(error)}
                 onPlaceSelected={onPlaceSelected}

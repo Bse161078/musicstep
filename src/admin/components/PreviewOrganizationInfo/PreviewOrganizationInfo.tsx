@@ -18,6 +18,7 @@ type PreviewOrganizationInfoProps = {
 const PreviewOrganizationInfo = (props: PreviewOrganizationInfoProps) => {
   const { setCurrentPage, setOrganizerProfile,organizerProfile } = props;
   const { state } = useLoginContext();
+  console.log("state = ",state)
   const [profilesList, setProfilesList] = useState(null);
   const [isLoading,setLoading] = useState(false)
   useEffect(() => {

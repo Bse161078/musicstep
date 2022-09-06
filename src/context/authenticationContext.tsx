@@ -34,6 +34,7 @@ export type LoginContextType = {
 };
 
 const initialContent: any = {
+    initial:true,
     isLoggedIn: false,
     authToken: "",
     data: {},
@@ -57,6 +58,7 @@ const reducer = (state: any, action: any) => {
 
             return {
                 ...state,
+                initial:false,
                 isLoggedIn: action.payload.isLoggedIn,
                 authToken: action.payload.token,
                 data: action.payload.data,
@@ -72,6 +74,7 @@ const reducer = (state: any, action: any) => {
                 data: {...state.data, ...action.payload.data},
             };
         case "LOGOUT":
+            console.log("logout")
             localStorage.clear();
             return {
                 ...state,
@@ -107,6 +110,8 @@ export const LoginContextProvider = (props: any) => {
             ? JSON.parse(localStorage.getItem("data") + "")
             : {};
     useEffect(() => {
+        console.log("PresistedData = ",PresistedData,"  Presistedtoken = ",Presistedtoken)
+
         if (
             Presistedtoken !== undefined &&
             Presistedtoken !== null &&
@@ -119,6 +124,7 @@ export const LoginContextProvider = (props: any) => {
                     isLoggedIn: true,
                     token: Presistedtoken,
                     data: PresistedData,
+                    initial:false
                 },
             });
         }

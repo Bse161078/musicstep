@@ -35,6 +35,9 @@ const {
 Geocode.setApiKey("AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew");
 Geocode.enableDebug();
 
+let mapEndLocation={lat:0,lng:0}
+
+
 class Index extends React.Component {
     state = {
         address: "",
@@ -190,17 +193,31 @@ class Index extends React.Component {
     }
 
 
-    onSelectLocation=(location)=>{
-        if(location.markerPosition.lat!==0)
-        this.props.handleLocation(
-            location.country,
-            location.state,
-            location.city,
-            location.address,
-            location.markerPosition.lat,
-            location.markerPosition.lng
-        );
+    onSelectLocation=(autoLocation)=>{
+        if(autoLocation.markerPosition.lat!==0) {
+            this.props.handleLocation(
+                autoLocation.country,
+                autoLocation.state,
+                autoLocation.city,
+                autoLocation.address,
+                autoLocation.markerPosition.lat,
+                autoLocation.markerPosition.lng
+            );
+        }else if(mapEndLocation.lat!==0){
+            this.props.getLocation(mapEndLocation.lat,mapEndLocation.lng)
+
+        }
     }
+
+
+    onMarkerDragEnd = (coord, index) => {
+        const { latLng } = coord;
+        const lat = latLng.lat();
+        const lng = latLng.lng();
+        mapEndLocation={lat,lng}
+
+    };
+
 
     // const AsyncMap = compose(
     //     withProps({

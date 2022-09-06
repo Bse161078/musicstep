@@ -5,7 +5,7 @@ import { useLoginContext } from "../../context/authenticationContext";
 
 const AuthenticatedRoute = ({ children, redirectTo }: any) => {
   const {
-    state: { isLoggedIn },
+    state: { isLoggedIn,initial },
   } = useLoginContext();
 
     const history = useHistory();
@@ -14,8 +14,14 @@ const AuthenticatedRoute = ({ children, redirectTo }: any) => {
 
     useEffect(() => {}, []);
 
-  console.log("assad = ",history.location)
-  return !isLoggedIn || history.location.pathname==="/partner-login" ? <Redirect exact to={redirectTo} /> : children;
+  console.log("assad = ",isLoggedIn,"  ",redirectTo);
+
+  if(!initial){
+      return (!isLoggedIn) || history.location.pathname==="/partner-signup" ? <Redirect exact to={redirectTo} /> : children;
+  }else{
+    return null;
+  }
+
 };
 
 export default AuthenticatedRoute;
