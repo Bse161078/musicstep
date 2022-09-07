@@ -34,6 +34,7 @@ export const TeamRoleListItem = (props:any) => {
         <EditRole
           isModalVisible={showEditModal}
           setIsModalVisible={setShowEditModal}
+          role={props.role}
           handleOkClick={(e:any)=>{
               setShowEditModal(false)
               props.updateRole(e,props.index);

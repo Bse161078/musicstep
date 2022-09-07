@@ -123,9 +123,13 @@ export default function ExploreVenue() {
                 headers: {Authorization: `Bearer ${state.authToken}`},
             })
             .then((res) => {
-                setLoading(false)
-                setVenues(res.data.event);
-                setSubscribtion(res.data.subscription);
+                setLoading(false);
+                if((res.data.event).length<1){
+                    history.push(`/dashboard/home`)
+                }else{
+                    setVenues(res.data.event);
+                    setSubscribtion(res.data.subscription);
+                }
             })
             .catch((error) => {
                 setLoading(false)

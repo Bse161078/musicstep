@@ -7,10 +7,11 @@ import {EditRoleStyle} from "./EditRole.style";
 type EditRoleModalProps = {
     isModalVisible?: boolean;
     setIsModalVisible?: any;
-    handleOkClick?: any
+    handleOkClick?: any;
+    role?:any
 };
 const EditRole = (props: EditRoleModalProps) => {
-    const {isModalVisible, setIsModalVisible,handleOkClick} = props;
+    const {isModalVisible, setIsModalVisible,handleOkClick,role} = props;
     const [search,setSearch]=useState("");
 
     const onEditRole = (e: any) => {
@@ -37,7 +38,7 @@ const EditRole = (props: EditRoleModalProps) => {
             >
                 <EditRoleStyle>
                     <Form className="form-wrapper">
-                        <InputBox name="EditRole" label="Title" placeholder="Manager" setSearch={setSearch}/>
+                        <InputBox name="EditRole" placeholder={role.name} label="Title" setSearch={setSearch}/>
                     </Form>
                 </EditRoleStyle>
             </Formik>

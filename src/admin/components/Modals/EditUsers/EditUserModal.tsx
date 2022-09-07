@@ -10,16 +10,18 @@ type EditUserModalProps = {
     handleSubmit?: any;
     roles?: any
     updateTeam?:any
-
+    team?:any
+    setShowEditUserModal?:any
 };
 const EditUserModal = (props: EditUserModalProps) => {
-    const {showEditUserModal, handleSubmit, roles,updateTeam} = props;
+    const {showEditUserModal, handleSubmit, roles,updateTeam,team,setShowEditUserModal} = props;
 
-    const [role,setRole]=useState("");
+    const [role,setRole]=useState(team.to);
     const [email,setEmail]=useState("");
 
     const handleSubmitModal = () => {
-        handleSubmit()
+        //handleSubmit()
+        setShowEditUserModal(false)
     };
     // useEffect(()=>{
     //   setShowEditUserModal(false)
@@ -28,6 +30,7 @@ const EditUserModal = (props: EditUserModalProps) => {
     const filteredRoles = roles ? roles : []
 
 
+    console.log(filteredRoles,team)
     return (
         <>
             <ModalWrapper
@@ -37,7 +40,8 @@ const EditUserModal = (props: EditUserModalProps) => {
                 isModalVisible={showEditUserModal}
                 setIsModalVisible={handleSubmitModal}
                 handleOkClick={()=>{
-                    handleSubmit(role,email);
+                    console.log(role || team.role,email || team.email)
+                    handleSubmit(role || team.role,email || team.email);
                 }}
             >
                 <Formik
@@ -46,14 +50,14 @@ const EditUserModal = (props: EditUserModalProps) => {
                         userRole: "",
                         eventaccess: "",
                     }}
-                    onSubmit={handleSubmit}
+                    onSubmit={handleSubmitModal}
                 >
                     <InviteModalStyle>
                         <Form className="form-wrapper">
                             <div>
                                 <InputBox
                                     label="Email Address"
-                                    placeholder="example@gmail.com"
+                                    placeholder={team.email}
                                     name="email"
                                     setSearch={(value:any)=>{
                                         setEmail(value);
@@ -65,6 +69,7 @@ const EditUserModal = (props: EditUserModalProps) => {
                                     width="fill"
                                     label="User Role"
                                     name="userRole"
+                                    defaultValue={team.role}
                                     options={[
                                         ...filteredRoles.map((item: any) => {
                                             return {key: item.name, value: item.name};

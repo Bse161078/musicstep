@@ -6,7 +6,7 @@ import {InviteModalStyle} from "./InviteModal.style";
 import {roleItems} from "../../../../mockData/roleItems";
 import axios from "axios";
 import {useLoginContext} from "../../../../context/authenticationContext";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Loading from "../../../../components/Loading/Loading";
 
 
@@ -28,6 +28,12 @@ const InviteModal = (props: InviteModalProps) => {
     const [role,setRole]=useState("");
 
 
+
+    useEffect(()=>{
+       setEmail("");
+       setRole("");
+    },[isModalVisible])
+
     const sendInviteMail = () => {
         setLoading(true);
         const res = axios
@@ -36,6 +42,7 @@ const InviteModal = (props: InviteModalProps) => {
                 {
                     to: email,
                     musicPasslink: "",
+                    partnerName:(state.data).organizationName
                 },
                 {
                     headers: {Authorization: `Bearer ${state.authToken}`},
@@ -67,6 +74,7 @@ const InviteModal = (props: InviteModalProps) => {
     };
 
 
+    console.log("state  = ",state);
     const filteredRoles=roles?roles:[]
     return (
         <>
@@ -100,6 +108,7 @@ const InviteModal = (props: InviteModalProps) => {
                                 <InputBox
                                     label="Email Address"
                                     placeholder="example@gmail.com"
+                                    value={email}
                                     name="email"
                                     error={error}
                                     setSearch={(value:any)=>{

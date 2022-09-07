@@ -11,6 +11,7 @@ export const TeamUsersListItem = (props: any) => {
     const handleSubmit = (role:any,email:any) => {
         //setShow(false)
         setShowEditUserModal(false);
+        //console.log("update team = ",role,email)
         props.updateTeam(role,email,props.index)
     }
 
@@ -38,7 +39,9 @@ export const TeamUsersListItem = (props: any) => {
                 {showEditUserModal === true && <EditUserModal
                     showEditUserModal={showEditUserModal}
                     handleSubmit={handleSubmit}
+                    setShowEditUserModal={setShowEditUserModal}
                     roles={props.roles}
+                    team={props.team}
                     updateTeam={props.updateTeam}
                 />}
             </div>

@@ -129,6 +129,7 @@ export default function TeamManagement() {
     }, [])
 
 
+    console.log("partner = ",partner)
 
     return (
         <Dashboard>
@@ -170,17 +171,19 @@ export default function TeamManagement() {
                 </TabsStyle>
             </TeamManagementStyle>
 
-            <InviteModal
-                isModalVisible={isUserVisible}
-                setIsModalVisible={setUserVisible}
-                roles={partner && partner.roles}
-                addNewTeam={addNewTeam}
-            />
-            <AddRole
-                isModalVisible={isRoleVisible}
-                setIsModalVisible={setRoleVisible}
-                addNewRole={addNewRole}
-            />
+
+                <InviteModal
+                    isModalVisible={isUserVisible}
+                    setIsModalVisible={setUserVisible}
+                    roles={partner && partner.roles}
+                    addNewTeam={addNewTeam}
+                />
+
+                <AddRole
+                    isModalVisible={isRoleVisible}
+                    setIsModalVisible={setRoleVisible}
+                    addNewRole={addNewRole}
+                />
         </Dashboard>
     );
 }
