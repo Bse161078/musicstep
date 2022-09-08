@@ -81,6 +81,7 @@ const TicketInfoCard = (props: TicketInfoCardProps) => {
         </div>
       </TicketInfoCardStyle>
       <DeleteRoleModal
+        header={"Delete Ticket?"}
         message="Are you sure you want to delete this type of tickets?"
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}

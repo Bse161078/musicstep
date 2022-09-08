@@ -107,7 +107,6 @@ const FutureEvents = () => {
                             height="43px"
                             className="pricing"
                             onClick={() => {
-                                console.log("event = ", event);
                                 setSelectedEvent(event)
                                 setIsModalVisible(true)
                             }}

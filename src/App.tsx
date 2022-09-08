@@ -245,7 +245,7 @@ const RoutesList = (props: any) => {
                 <Route
                     path="/admin/payment-information"
                     render={() => (
-                        <AuthenticatedRoute redirectTo="/partner-login">
+                        <AuthenticatedRoute redirectTo="/admin/add-venueprofile">
                             <PaymentInfo/>
                         </AuthenticatedRoute>
                     )}

@@ -14,7 +14,6 @@ const AuthenticatedRoute = ({ children, redirectTo }: any) => {
 
     useEffect(() => {}, []);
 
-  console.log("assad = ",isLoggedIn,"  ",redirectTo);
 
   if(!initial){
       return (!isLoggedIn) || history.location.pathname==="/partner-signup" ? <Redirect exact to={redirectTo} /> : children;

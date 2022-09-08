@@ -50,7 +50,6 @@ const PaymentInfoContent = (props: PaymentInfoContentProps) => {
         })
     }
 
-    console.log("payments = ",payments);
 
     const filteredPayments=payments  && payments.filter((payment:any)=>payment.type===type || type.length===0);
 

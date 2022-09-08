@@ -10,7 +10,7 @@ import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 
-const SelectWithInput = ({placeholder, setSearch, search}: any) => {
+const SelectWithInput = ({placeholder, setSearch, search,navbar_search}: any) => {
     let dataa = '';
     const [latitude, setLatitude] = useState(0.0)
     const [menuItem, setMenuItem] = useState(["Current Location"])
@@ -107,6 +107,7 @@ const SelectWithInput = ({placeholder, setSearch, search}: any) => {
 
                         <span className="input-wrapper">
               <InputBox name="search" placeholder={placeholder}
+                        navbar_search={navbar_search}
                         setSearch={setSearch} search={search}
               />
             </span>

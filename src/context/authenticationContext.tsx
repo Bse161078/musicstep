@@ -24,6 +24,10 @@ type UserAction =
     payload: any;
 }
     | {
+    type: "UPDATE_SEARCH";
+    payload: any;
+}
+    | {
     type: "UPDATE_USER_CREDITS";
     payload: any;
 };
@@ -38,7 +42,8 @@ const initialContent: any = {
     isLoggedIn: false,
     authToken: "",
     data: {},
-    refreshInfo: false
+    refreshInfo: false,
+    search:''
 };
 
 export const LoginContext = createContext<LoginContextType>({
@@ -74,7 +79,6 @@ const reducer = (state: any, action: any) => {
                 data: {...state.data, ...action.payload.data},
             };
         case "LOGOUT":
-            console.log("logout")
             localStorage.clear();
             return {
                 ...state,
@@ -94,6 +98,11 @@ const reducer = (state: any, action: any) => {
                 ...state,
                 refreshInfo: action.payload.refreshInfo,
             };
+        case "UPDATE_SEARCH":
+            return {
+                ...state,
+                search: action.payload.search,
+            };
         default:
             return state;
     }
@@ -110,7 +119,6 @@ export const LoginContextProvider = (props: any) => {
             ? JSON.parse(localStorage.getItem("data") + "")
             : {};
     useEffect(() => {
-        console.log("PresistedData = ",PresistedData,"  Presistedtoken = ",Presistedtoken)
 
         if (
             Presistedtoken !== undefined &&

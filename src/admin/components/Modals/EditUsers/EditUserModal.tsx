@@ -30,7 +30,6 @@ const EditUserModal = (props: EditUserModalProps) => {
     const filteredRoles = roles ? roles : []
 
 
-    console.log(filteredRoles,team)
     return (
         <>
             <ModalWrapper
@@ -40,7 +39,6 @@ const EditUserModal = (props: EditUserModalProps) => {
                 isModalVisible={showEditUserModal}
                 setIsModalVisible={handleSubmitModal}
                 handleOkClick={()=>{
-                    console.log(role || team.role,email || team.email)
                     handleSubmit(role || team.role,email || team.email);
                 }}
             >

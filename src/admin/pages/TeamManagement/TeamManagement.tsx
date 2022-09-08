@@ -129,7 +129,6 @@ export default function TeamManagement() {
     }, [])
 
 
-    console.log("partner = ",partner)
 
     return (
         <Dashboard>

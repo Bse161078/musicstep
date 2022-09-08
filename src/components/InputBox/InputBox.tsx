@@ -44,7 +44,7 @@ const InputBox = (props: any) => {
                 className={props.className}
                 name={field.name}
                 color="primary"
-                value={field.value}
+                value={field.value || props.navbar_search}
                 onBlur={field.onBlur}
                 onChange={field.onChange}
                 placeholder={props.label}

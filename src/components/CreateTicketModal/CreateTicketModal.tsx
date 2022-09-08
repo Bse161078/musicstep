@@ -47,12 +47,12 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
 
   const handleSubmit = (e: any, { resetForm }: any) => {
     if (ticket) {
-      props.handleEditTicket(props.index, e);
+      props.handleEditTicket(props.index, {...e,credits:Math.floor(getCredits(e.price, discount))});
       setSuccessModalVisible(true);
       setIsModalVisible(false);
       setmessage("Ticket Updated Successfully");
     } else {
-      setTickets([e, ...tickets]);
+      setTickets([{...e,credits:Math.floor(getCredits(e.price, discount))}, ...tickets]);
       setSuccessModalVisible(true);
       setIsModalVisible(false);
       resetForm();

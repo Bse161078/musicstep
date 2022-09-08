@@ -69,6 +69,9 @@ export default function ExploreVenue() {
     },[subscribtion]);
 
 
+
+
+
     useEffect(() => {
         getUser()
     }, [user.credits])
@@ -123,26 +126,21 @@ export default function ExploreVenue() {
                 headers: {Authorization: `Bearer ${state.authToken}`},
             })
             .then((res) => {
-                setLoading(false);
-                if((res.data.event).length<1){
-                    history.push(`/dashboard/home`)
-                }else{
-                    setVenues(res.data.event);
-                    setSubscribtion(res.data.subscription);
-                }
+                setLoading(false)
+                setVenues(res.data.event);
+                setSubscribtion(res.data.subscription);
             })
             .catch((error) => {
                 setLoading(false)
             });
     }
 
-    const venueFilter = venues && venues.filter((venue: any) => (venue?.name).toLowerCase().includes((search).toLowerCase()))
-
+    const venueFilter = venues && venues.filter((venue: any) => (venue?.name).toLowerCase().includes((state.search).toLowerCase()))
 
     return (
         <>
-            <NavbarWithSearch setSearch={setSearch}
-                              search={search}
+            <NavbarWithSearch
+                navbar_search={state.search}
                               active={subscribtion?.active}
                               userCredit={user.credits}
             />

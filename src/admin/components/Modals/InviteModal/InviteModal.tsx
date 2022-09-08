@@ -74,7 +74,6 @@ const InviteModal = (props: InviteModalProps) => {
     };
 
 
-    console.log("state  = ",state);
     const filteredRoles=roles?roles:[]
     return (
         <>

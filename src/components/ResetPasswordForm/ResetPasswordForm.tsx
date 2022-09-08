@@ -45,7 +45,6 @@ const ResetPasswordForm = ({match}: any) => {
         setLoading(true);
         axios.get(`v1/users/userToken/${value.token}`)
             .then((response) => {
-                console.log("response = ",response.data.data);
                 setUser(response.data.data);
                 setLoading(false);
             })

@@ -95,7 +95,6 @@ const AddVenueProfileForm = () => {
         Geocode.fromLatLng(lat, lng).then(
             (response) => {
 
-                console.log("location = ",response.results[0].formatted_address)
                 if (formikForm) {
                     formikForm.setFieldValue("address", response.results[0].formatted_address);
                     formikForm.setFieldValue("location", {

@@ -74,7 +74,6 @@ const TrialGeneralInfo = (props: any) => {
     const Pricing = <a href={"pricing"}>please click here</a>;
 
 
-    console.log(props.value)
     return (
         <TrialFormWrapper heading="General Info">
             {loading && <Loading/>}

@@ -6,12 +6,13 @@ type DeleteRoleModalProps = {
   setIsModalVisible?: any;
   message?: any;
   handleOkClick?: any;
+  header?:any
 };
 const DeleteRoleModal = (props: DeleteRoleModalProps) => {
-  const { isModalVisible, setIsModalVisible, message, handleOkClick } = props;
+  const { isModalVisible, setIsModalVisible, message, handleOkClick,header } = props;
   return (
     <ModalWrapper
-      heading="Delete Role?"
+      heading={header?header:"Delete Role?"}
       leftButtonTitle="No"
       rightButtonTitle="Delete Role"
       isModalVisible={isModalVisible}
