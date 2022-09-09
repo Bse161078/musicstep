@@ -488,7 +488,7 @@ const AddVenueProfileForm = () => {
                                             <img
                                                 src={location.lat === 0 ? "/images/explore-venue/map-2.png"
                                                     :
-                                                    `https://maps.googleapis.com/maps/api/staticmap?size=600x400&markers=icon%3Ahttp%3A%2F%2Fwww.google.com%2Fmapfiles%2Farrow.png%7C${location.lat}%2C${location.lng}&visible=${location.lat}%2C${location.lng}%7C${location.lat}%2C${location.lng}&key=AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew`}
+                                                    `https://maps.googleapis.com/maps/api/staticmap?size=600x400&markers=icon%3Ahttps://musicpassonline.com:3000/images/location.png%7C${location.lat}%2C${location.lng}&visible=${location.lat}%2C${location.lng}%7C${location.lat}%2C${location.lng}&key=AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew`}
                                                 className="map"
                                                 alt="map"
                                             />

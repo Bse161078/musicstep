@@ -99,13 +99,12 @@ const RoutesList = (props: any) => {
         },
         (error) => {
             if (error.response.status === 401) {
-                if(!window.location.href.includes("partner-login"))
-                {
-                dispatch({
-                    type: "LOGOUT",
-                    payload: {},
-                });
-               history.push("/login");
+                if (!window.location.href.includes("partner-login")) {
+                    dispatch({
+                        type: "LOGOUT",
+                        payload: {},
+                    });
+                    history.push("/login");
                 }
             }
 
@@ -159,17 +158,6 @@ const RoutesList = (props: any) => {
                 <Route exact path="/subscription-success" component={SubscriptionSuccess}/>
                 <Route exact path="/subscription-cancel" component={SubscriptionCancel}/>
                 <Route exact path="/credit-payment-success" component={CreditPaymentSuccess}/>
-
-                <Route path="/explore-venue/venue-details" component={VenueDetails}/>
-                <Route path="/dashboard/home/venue-details" component={VenueDetails}/>
-                <Route
-                    path="/explore-venue/organizer-profile"
-                    component={OrganizerProfile}
-                />
-                <Route
-                    path="/dashboard/home/organizer-profile"
-                    component={OrganizerProfile}
-                />
                 <Route path="/how-it-works" component={HowItWorks}/>
                 <Route path="/terms-conditions" component={TermsAndConditions}/>
                 <Route path="/privacy-policy" component={PrivacyPolicy}/>
@@ -183,6 +171,31 @@ const RoutesList = (props: any) => {
                 <Route path="/subscription" component={Subscription}/>
                 <Route path="/credit" component={Credit}/>
                 <Route path="/promotion" component={Promotion}/>
+
+
+                <Route path="/explore-venue/venue-details"
+                       render={() => (
+                           <AuthenticatedRoute redirectTo="/login">
+                               <VenueDetails/>
+                           </AuthenticatedRoute>
+                       )}/>
+                <Route
+                    path="/explore-venue/organizer-profile"
+                    render={() => (
+                        <AuthenticatedRoute redirectTo="/login">
+                            <OrganizerProfile/>
+                        </AuthenticatedRoute>
+                    )}
+                />
+                <Route
+                    path="/dashboard/home/organizer-profile"
+                    render={() => (
+                        <AuthenticatedRoute redirectTo="/partner-login">
+                            <OrganizerProfile/>
+                        </AuthenticatedRoute>
+                    )}
+                />
+
 
                 <Route
                     path="/admin/basic-info"
@@ -215,7 +228,7 @@ const RoutesList = (props: any) => {
                     exact
                     path="/update-subscription"
                     render={() => (
-                            <UpdateSubscription/>
+                        <UpdateSubscription/>
                     )}
                 />
                 <Route
@@ -235,11 +248,11 @@ const RoutesList = (props: any) => {
                         </AuthenticatedRoute>
                     )}
                 />
-                 <Route
+                <Route
                     exact
                     path="/update-subscription"
                     render={() => (
-                            <UpdateSubscription/>
+                        <UpdateSubscription/>
                     )}
                 />
                 <Route
