@@ -29,7 +29,7 @@ export const SubmitEventStep1Style = styled.div`
 
   .thirdrow-wrapper {
     display: grid;
-    grid-template-columns: 1.5fr 0.3fr 1.5fr;
+    grid-template-columns: 0.6fr 0.6fr 0.5fr;
     gap:30px;
     max-width:1330px;
 

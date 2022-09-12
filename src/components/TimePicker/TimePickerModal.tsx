@@ -11,15 +11,16 @@ const TimePickerModal = (props: TimePickerModalProps) => {
   // const [value, onChange] = useState(new Date());
 
   return (
-    <TimePickerModalStyle>
-      <label className="input-label">{lable}</label>
+    <div className="dateTimepicker">
+      <span className="input-label">{lable}</span>
+      <div></div>
       <TimePicker
         onChange={(e: any) => onChange(e)}
         value={value}
         // isOpen={false}
         disableClock={true}
       />
-    </TimePickerModalStyle>
+    </div>
   );
 };
 export default TimePickerModal;

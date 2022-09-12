@@ -43,6 +43,7 @@ font-size: 18px important;
    flex-grow: 1;
    flex-shrink: 0;
    border: 0px solid gray;
+   width: 100%;
 
  }
  .react-time-picker__inputGroup {
@@ -57,7 +58,7 @@ font-size: 18px important;
  }
  .react-time-picker__inputGroup__input {
    min-width: 0.54em;
-   width: 25px !important;
+  //  width: 25px !important;
    height: 100%;
    position: relative;
    padding: 0 1px;
