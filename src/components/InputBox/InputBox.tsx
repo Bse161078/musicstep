@@ -5,15 +5,27 @@ import {
     TextFieldErrorStyle,
     InputBoxStyle,
 } from "./InputBox.style";
+import {useHistory} from "react-router";
 
 const InputBox = (props: any) => {
-    const [field, meta] = useField(props);
-    const inputRef = useRef();
-    const [showPassword, setShowPassword] = useState(false)
-    useEffect(() => {
-        props.setSearch && props.setSearch(field.value)
+    const [field, meta,helpers] = useField(props);
+    const history = useHistory();
 
-    }, [field])
+    const inputRef = useRef();
+    const [showPassword, setShowPassword] = useState(false);
+    const [locationChanged,setLocationChanged]=useState(true);
+
+    useEffect(()=>{
+        if(props.navbar_search && (props.navbar_search).length>0 ){
+            helpers.setValue(props.navbar_search)
+        }
+    },[])
+
+    useEffect(() => {
+            props.setSearch && props.setSearch(field.value)
+    }, [field]);
+
+
     const handlePasswordIconClick = () => {
         if (inputRef.current && props.type === "password") {
             //@ts-ignore
@@ -34,6 +46,7 @@ const InputBox = (props: any) => {
     //   props.setSearch(value)
     //   field.value=value
     // }
+
 
     return (
         <InputBoxStyle>

@@ -27,7 +27,7 @@ type SubmitEventStep1Props = {
 };
 
 
-let formikForm:any;
+let formikForm: any;
 
 const SubmitEvent = (props: SubmitEventStep1Props) => {
     const {setCurrentStep, setEventData, eventData} = props;
@@ -213,13 +213,13 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
     const handleAdditionalPhotoUpload = async (event: any, form: any) => {
         const imageType = event.target.files[0].type;
         if (imageType === "image/jpeg" || imageType === "image/png" || imageType === "image/jpg" || imageType === "image/svg") {
-            let prevFiles=form.values.additionalPhotos;
-            if(prevFiles) prevFiles.push(event.target.files[0]);
-            else prevFiles=[event.target.files[0]];
+            let prevFiles = form.values.additionalPhotos;
+            if (prevFiles) prevFiles.push(event.target.files[0]);
+            else prevFiles = [event.target.files[0]];
 
 
             form.setFieldValue("additionalPhotos", prevFiles);
-            formikForm=form;
+            formikForm = form;
             if (event.target.files) {
                 const files = Array.from(prevFiles);
                 Promise.all(
@@ -257,7 +257,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
             },
         });
 
-        const filteredEvent: any = venues.find((v: any) => e.venue === v.location.address);
+        const filteredEvent: any = venues.find((v: any) => e.venue === v.name + ' - ' + v.location.address);
         const filteredOrganizer: any = organizers.find((org: any) => e.organizer === org.organizerName);
 
 
@@ -269,10 +269,10 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
     };
 
 
-    const onDeleteFile=(form:any,index:any)=>{
-        const tempPhotos=previewVenuePhoto;
-        const tempFormPhotos=form.values.additionalPhotos
-        if(tempPhotos && tempPhotos.length>index){
+    const onDeleteFile = (form: any, index: any) => {
+        const tempPhotos = previewVenuePhoto;
+        const tempFormPhotos = form.values.additionalPhotos
+        if (tempPhotos && tempPhotos.length > index) {
             tempPhotos.splice(index, 1);
             tempFormPhotos.splice(index, 1);
             setPreviewVenuePhotoss(tempPhotos)
@@ -282,7 +282,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
 
 
     const filteredVenues = venues.map((venue: any) => {
-        return venue.location.address;
+        return venue.name + ' - ' + venue.location.address;
     });
 
     return (
@@ -369,6 +369,10 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                     label="Country"
                     placeholder="Select Country"
                     options={countries}
+                    handleSelectBoxChange={(e) => {
+                        form.setFieldValue("state", null);
+                        form.setFieldValue("city", null)
+                    }}
                     values={countries}
                     defaultValue={form.values.country}
                     setFieldValue={form.setFieldValue}
@@ -377,58 +381,58 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                   {form.touched.country && form.errors.country && (
                       <span className="error-message">{form.errors.country}</span>
                   )}
-              </span>
+                        </span>
                             <span>
-                <SelectBox
-                    width="350px"
-                    name="state"
-                    label="State"
-                    placeholder="Select State"
-                    defaultValue={form.values.state}
-                    options={states}
-                    values={states}
-                    setFieldValue={form.setFieldValue}
-                />
+                        <SelectBox
+                            width="350px"
+                            name="state"
+                            label="State"
+                            placeholder="Select State"
+                            defaultValue={form.values.state}
+                            options={states}
+                            values={states}
+                            setFieldValue={form.setFieldValue}
+                        />
                                 {form.touched.state && form.errors.state && (
                                     <span className="error-message">{form.errors.state}</span>
                                 )}
-              </span>
+                        </span>
                             <span>
-                <SelectBox
-                    width="350px"
-                    name="city"
-                    label="City"
-                    placeholder="Select City"
-                    defaultValue={form.values.city}
-                    options={cities}
-                    setFieldValue={form.setFieldValue}
-                    values={cities}
-                />
+                        <SelectBox
+                            width="350px"
+                            name="city"
+                            label="City"
+                            placeholder="Select City"
+                            defaultValue={form.values.city}
+                            options={cities}
+                            setFieldValue={form.setFieldValue}
+                            values={cities}
+                        />
                                 {form.touched.city && form.errors.city && (
                                     <span className="error-message">{form.errors.city}</span>
                                 )}
-              </span>
+                        </span>
                         </div>
                         {/* <div className="error-row-wrapper">
               <span className="error-message">2</span>
               <span className="error-message">3</span>
             </div> */}
                         <div className="thirdrow-wrapper">
-              <span>
-                <SelectBox
-                    name="venue"
-                    label="Venue"
-                    width="large"
-                    placeholder="Select a venue"
-                    options={filteredVenues}
-                    setFieldValue={form.setFieldValue}
-                    // options={countries}
-                    values={filteredVenues}
-                />
-                  {form.touched.venue && form.errors.venue && (
-                      <span className="error-message">{form.errors.venue}</span>
-                  )}
-              </span>
+                        <span>
+                        <SelectBox
+                            name="venue"
+                            label="Venue"
+                            width="large"
+                            placeholder="Select a venue"
+                            options={filteredVenues}
+                            setFieldValue={form.setFieldValue}
+                            // options={countries}
+                            values={filteredVenues}
+                        />
+                            {form.touched.venue && form.errors.venue && (
+                                <span className="error-message">{form.errors.venue}</span>
+                            )}
+                        </span>
                             {/* onClick go to add venue page */}
                             <OutlineButtonStyle
                                 buttonType="light"
@@ -455,19 +459,19 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                                 Add Venue
                             </OutlineButtonStyle>
                             <span>
-                <SelectBox
-                    name="organizer"
-                    label="Organizer"
-                    width="large"
-                    placeholder="Select an organizer"
-                    options={organizersForDropDown}
-                    setFieldValue={form.setFieldValue}
-                    values={organizersForDropDown}
-                />
+                        <SelectBox
+                            name="organizer"
+                            label="Organizer"
+                            width="large"
+                            placeholder="Select an organizer"
+                            options={organizersForDropDown}
+                            setFieldValue={form.setFieldValue}
+                            values={organizersForDropDown}
+                        />
                                 {form.touched.organizer && form.errors.organizer && (
                                     <span className="error-message">{form.errors.organizer}</span>
                                 )}
-              </span>
+                        </span>
                         </div>
                         <div className="fourth-row-wrapper">
                             <InputBox

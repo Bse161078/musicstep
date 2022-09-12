@@ -136,6 +136,7 @@ const RoutesList = (props: any) => {
     return (
         <>
             {!isAdminSide && !isDashboardSide && showNavbar ? <Navbar/> : ""}
+
             <Switch>
                 <Route
                     path="/admin/events-management"

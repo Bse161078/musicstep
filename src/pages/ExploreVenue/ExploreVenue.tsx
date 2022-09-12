@@ -15,13 +15,7 @@ import {loadStripe} from "@stripe/stripe-js";
 import {useHistory} from "react-router-dom";
 
 export default function ExploreVenue() {
-    const defaultProps = {
-        center: {
-            lat: 25.788,
-            lng: -80.29,
-        },
-        zoom: 11,
-    };
+
 
     const style = {
         position: 'absolute' as 'absolute',
@@ -136,6 +130,28 @@ export default function ExploreVenue() {
     }
 
     const venueFilter = venues && venues.filter((venue: any) => (venue?.name).toLowerCase().includes((state.search).toLowerCase()))
+    const venueLocations=venueFilter.filter((venue:any)=>venue.location && venue.location.address)
+
+    let defaultProps = {
+        center: {
+            lat: 25.788,
+            lng: -80.29,
+        },
+        zoom: 11,
+    };
+
+    if(venueLocations.length>0){
+        const selectedVenueLocation:any=venueLocations[0];
+        defaultProps = {
+            center: {
+                lat: Number(selectedVenueLocation.location.lat),
+                lng: Number(selectedVenueLocation.location.lng),
+            },
+            zoom: 11,
+        };
+
+    }
+
 
     return (
         <>
@@ -210,7 +226,7 @@ export default function ExploreVenue() {
                                 //  className={styles.mapConatiner}
                                 style={{width: "100%", height: "100%"}}
                             >
-                                {venues.length > 0 && (
+                                {venueLocations.length > 0 && (
                                     <GoogleMapReact
                                         bootstrapURLKeys={{
                                             key: "AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew",
@@ -309,6 +325,7 @@ export default function ExploreVenue() {
                                             ],
                                         }}
                                     >
+
                                         {/* {browseEvents &&
                                     browseEvents.map((event) => ( */}
                                         {/* <Marker
@@ -331,15 +348,15 @@ export default function ExploreVenue() {
                   color={"blue"}
                   id="1"
                 /> */}
-                                        {venues.length > 0 &&
-                                        venues.map(
+                                        {venueLocations.length > 0 &&
+                                        venueLocations.map(
                                             (venue: any) => (
                                                 <Marker
                                                     // lat={31.582045}
                                                     // lng={74.329376}
                                                     lat={venue.location.lat}
                                                     lng={venue.location.lng}
-                                                    name="Your location"
+                                                    name={venue.name}
                                                     color={"blue"}
                                                     id="1"
                                                 />

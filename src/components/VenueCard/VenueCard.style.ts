@@ -17,6 +17,7 @@ export const VenueCardStyle = styled.div`
     width:240px;
     height:135px;
     border-radius: 16px;
+    background:#f2f7f7;
   }
   .top-heading {
     color: #0c0c0c;

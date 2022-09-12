@@ -39,6 +39,10 @@ const NavbarWithSearch = (props: any) => {
             }
             dispatch({ type: "UPDATE_SEARCH", payload: { search } });
         }
+
+        if(search.length===0 && state.search!==search){
+            dispatch({ type: "UPDATE_SEARCH", payload: { search:"" } });
+        }
     }
 
 
@@ -51,7 +55,7 @@ const NavbarWithSearch = (props: any) => {
 
             <SelectWithInput placeholder="Find a venue or event 24/7"
                              navbar_search={props.navbar_search}
-                             setSearch={handleSearch} search={props.search}
+                             setSearch={handleSearch} search={props.navbar_search}
             />
 
             <div className="links-wrapper">
