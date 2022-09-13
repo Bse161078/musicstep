@@ -8,30 +8,30 @@ import {
 } from "..";
 import { PreviewOrganizationInfoStyle } from "./PreviewOrganizationInfo.style";
 import { useLoginContext } from "../../../context/authenticationContext";
-import Loading from "../../../components/Loading/Loading"
+import Loading from "../../../components/Loading/Loading";
 type PreviewOrganizationInfoProps = {
   setCurrentPage: (data: string) => void;
   setOrganizerProfile?: (data: any) => void;
-  organizerProfile?:any;
+  organizerProfile?: any;
 };
 
 const PreviewOrganizationInfo = (props: PreviewOrganizationInfoProps) => {
-  const { setCurrentPage, setOrganizerProfile,organizerProfile } = props;
+  const { setCurrentPage, setOrganizerProfile, organizerProfile } = props;
   const { state } = useLoginContext();
   const [profilesList, setProfilesList] = useState(null);
-  const [isLoading,setLoading] = useState(false)
+  const [isLoading, setLoading] = useState(false);
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     axios
       .get("/v1/organizer/All", {
         headers: { Authorization: `Bearer ${state.authToken}` },
       })
       .then((res) => {
         setProfilesList(res.data);
-        setLoading(false)
+        setLoading(false);
       })
       .catch((error) => {
-        setLoading(false)
+        setLoading(false);
       });
   }, []);
 
@@ -40,7 +40,7 @@ const PreviewOrganizationInfo = (props: PreviewOrganizationInfoProps) => {
     <PreviewOrganizationInfoStyle>
       <DashboardHeader
         //class="dashboardHeader"
-        heading="Basic Info"
+        heading="Basic Info "
         handleCancelClick={() => {}}
         handleSaveClick={() => {
           submitBasicInfoRef.current.click();

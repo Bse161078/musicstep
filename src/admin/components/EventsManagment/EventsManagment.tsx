@@ -11,7 +11,7 @@ const EventsManagment = () => {
   const history = useHistory();
   const { state } = useLoginContext();
   const [events, setEvents] = useState([]);
-  const [search,setSearch]=useState("");
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     axios
@@ -23,14 +23,14 @@ const EventsManagment = () => {
         setEvents(res.data);
         // setProfilesList(res.data);
       })
-      .catch((error) => {
-      });
+      .catch((error) => {});
   }, []);
 
-
-
-  const filteredEvents=events.filter((event:any)=>(event.title).includes(search) || (event.organizerInfo[0].organizerName).includes(search));
-
+  const filteredEvents = events.filter(
+    (event: any) =>
+      event.title.includes(search) ||
+      event.organizerInfo[0].organizerName.includes(search)
+  );
 
   return (
     <Dashboard>
@@ -40,7 +40,7 @@ const EventsManagment = () => {
           description="Easily manage your events and promoters."
         />
         <div className="searchbar-wrapper">
-          <SearchInputWithButton setSearch={setSearch}/>
+          <SearchInputWithButton setSearch={setSearch} />
           <OutlineButtonStyle
             name="submitEvent"
             height="54px"
