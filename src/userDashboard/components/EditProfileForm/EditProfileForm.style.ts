@@ -70,6 +70,17 @@ export const EditProfileFormStyle = styled.div`
         grid-column: unset;
       }
     }
+    .custom-columns-new {
+      display: grid;
+      grid-template-columns: 115px 0.35fr;
+      grid-column: 1/3;
+      grid-gap: 20px;
+
+      @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+        grid-column: unset;
+      }
+    }
 
     .public-info {
       grid-column: 1/-1;

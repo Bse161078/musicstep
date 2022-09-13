@@ -608,7 +608,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
               <div className="attributes-wrapper">
                 <LabelWithTag
                   label="Organization Attributes"
-                  description="Let Music Pass members know more about your organization."
+                  description="Let MusicPass members know more about your organization."
                   tagType="none"
                 />
                 <div className="list-wrapper">
@@ -634,7 +634,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                   description="Let members know what your Vaccination Policies are, if they need to bring proof, and how this impacts other measures (eg. if vaccinated members can attend without a mask)."
                   tagType="Recomended"
                 />
-                handlePolicies
+
                 <div className="policy-list">
                   {policiesState.map((currentValue, index) => {
                     return (

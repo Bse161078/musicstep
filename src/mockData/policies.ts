@@ -31,7 +31,7 @@ export const policies = [
   },
   {
     id: "temeratureChecks",
-    name: "Temprature Checks",
+    name: "Temperature Checks",
     description: "",
     value: false,
   },
@@ -41,12 +41,12 @@ export const policies = [
     description: "",
     value: false,
   },
-  {
-    id: "equipmentPolicies",
-    name: "Equipment Policies",
-    description: "",
-    value: false,
-  },
+  // {
+  //   id: "equipmentPolicies",
+  //   name: "Equipment Policies",
+  //   description: "",
+  //   value: false,
+  // },
   {
     id: "extraSanitation",
     name: "Extra Sanitation",

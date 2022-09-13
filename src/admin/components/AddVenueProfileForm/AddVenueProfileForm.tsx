@@ -484,7 +484,7 @@ const AddVenueProfileForm = () => {
                       height="118px"
                       width="1380px"
                       name="venueBio"
-                      placeholder="Enter Venue BIO"
+                      placeholder="Enter Venue bio"
                     />
                   </div>
                   <div className="location-and-amenstiesWrapper">
@@ -607,28 +607,28 @@ const AddVenueProfileForm = () => {
                     <div className="socialLinks-wrapper">
                       <InputBox
                         name="phoneNumber"
-                        placeholder="+14166966270"
+                        placeholder="999-999-9999"
                         label="Phone Number"
                       />
                       <InputBox
                         name="facebook"
-                        placeholder="https://www.facebook.com/Organizer"
+                        placeholder="https://www.facebook.com/venue"
                         label="FaceBook"
                       />
                       <InputBox
                         name="instagram"
-                        placeholder=" https://www.instagram.com/Organizer"
+                        placeholder=" https://www.instagram.com/venue"
                         label="Instagram"
                       />
                       <InputBox
                         name="twitter"
-                        placeholder=" https://www.eventbritemusic.com/"
+                        placeholder=" https://www.twitter.com/venue"
                         label="Twitter"
                       />
                       <InputBox
                         name="youtube"
                         label="Youtube"
-                        placeholder=" https://www.youtube.com/organizer"
+                        placeholder=" https://www.youtube.com/venue"
                       />
                     </div>
                   </div>

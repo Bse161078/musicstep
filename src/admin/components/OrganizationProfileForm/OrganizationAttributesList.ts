@@ -11,7 +11,7 @@ export const attributesList = [
   },
   {
     id: "veteranOwned",
-    name: "veteranOwned",
+    name: "Veteran-Owner",
     value: false,
   },
   {
@@ -19,11 +19,7 @@ export const attributesList = [
     name: "Black-Owned",
     value: false,
   },
-  {
-    id: "LGBTQfriendly",
-    name: "LGBTQ-friendly",
-    value: false,
-  },
+
   {
     id: "wheelchairAccessible",
     name: "Wheelchair accessible",
@@ -32,6 +28,11 @@ export const attributesList = [
   {
     id: "hispanicLatinxOwned",
     name: "Hispanic/Latinx-owned",
+    value: false,
+  },
+  {
+    id: "LGBTQfriendly",
+    name: "LGBTQ-friendly",
     value: false,
   },
   {

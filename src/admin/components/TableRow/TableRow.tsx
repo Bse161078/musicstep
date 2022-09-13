@@ -12,7 +12,6 @@ type TableRowProps = {
 const TableRow = (props: TableRowProps) => {
   const { rowLabel3, reservation } = props;
 
-
   return (
     <TableRowStyle>
       <span>

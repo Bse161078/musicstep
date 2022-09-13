@@ -38,7 +38,7 @@
   font-size: 14px;
   color: #0c0c0c;
   font-weight: 500;
-  margin-left: -119px;
+  margin-left: 14px;
 }
 .d-flex
 {
@@ -47,3 +47,7 @@
 .justify-content-center{
   justify-content: center;
 }
+.ant-select-item-option-content {
+overflow: initial !important;
+white-space: initial !important;
+text-overflow: initial !important; }

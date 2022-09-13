@@ -66,7 +66,8 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
 
   const [initialValues, setInitialValues] = useState({
     title: EventStateContext.state.title,
-    date: EventStateContext.state.date,
+    startdate: EventStateContext.state.startdate,
+    enddate: EventStateContext.state.enddate,
     startingTime: EventStateContext.state.startingTime,
     endingTime: EventStateContext.state.endingTime,
     country: EventStateContext.state.country,
@@ -286,7 +287,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
   return (
     <SubmitEventStep1Style>
       <DashboardHeader
-        heading="Submit An Event"
+        heading="Submit An Event "
         backButtonText="Back To Events Management"
         handleSaveClick={() => {
           // setCurrentStep(2);
@@ -309,29 +310,29 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
             <div className="inputs-wrapper">
               <InputBox
                 label="Event Title"
-                placeholder="e.g. Eventbrite Music"
+                placeholder="Enter Event Title"
                 name="title"
                 width="640px"
               />
               {/* <InputBox label="Date" name="date" width="200px" /> */}
               {/* <DatePickerModal /> */}
 
-              <span>
-                <DatePickerModal
-                  value={form.values.date}
-                  onChange={(e: any) => {
-                    form.setFieldValue("date", e);
-                  }}
-                  lable="Date"
-                />
-                {form.touched.date && form.errors.date && (
-                  <span className="error-message">{form.errors.date}</span>
-                )}
-              </span>
-
               {/* <TimePicker onChange={(e: any) => onChange(e)} value={value} /> */}
             </div>
-            <div style={{ textAlign: "center" }}>
+            <div className="dropdown-row-wrapper">
+              <span></span>
+              <span>
+                <DatePickerModal
+                  value={form.values.startdate}
+                  onChange={(e: any) => {
+                    form.setFieldValue("startdate", e);
+                  }}
+                  lable="Start Date"
+                />
+                {form.touched.startdate && form.errors.startdate && (
+                  <span className="error-message">{form.errors.startdate}</span>
+                )}
+              </span>
               <span>
                 <TimePickerModal
                   value={form.values.startingTime}
@@ -346,7 +347,23 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                   </span>
                 )}
               </span>
-              <br />
+            </div>
+            <div className="dropdown-row-wrapper">
+              <span></span>
+
+              <span>
+                <DatePickerModal
+                  value={form.values.enddate}
+                  onChange={(e: any) => {
+                    form.setFieldValue("enddate", e);
+                  }}
+                  lable="End Date"
+                />
+                {form.touched.enddate && form.errors.enddate && (
+                  <span className="error-message">{form.errors.enddate}</span>
+                )}
+              </span>
+
               <span>
                 <TimePickerModal
                   value={form.values.endingTime}
@@ -362,58 +379,11 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                 )}
               </span>
             </div>
-            <div className="dropdown-row-wrapper">
-              <span>
-                <SelectBox
-                  width="350px"
-                  name="country"
-                  label="Country"
-                  placeholder="Select Country"
-                  options={countries}
-                  handleSelectBoxChange={(e) => {
-                    form.setFieldValue("state", null);
-                    form.setFieldValue("city", null);
-                  }}
-                  values={countries}
-                  defaultValue={form.values.country}
-                  setFieldValue={form.setFieldValue}
-                  // values={[{ key: "", value: "United States of America" }]}
-                />
-                {form.touched.country && form.errors.country && (
-                  <span className="error-message">{form.errors.country}</span>
-                )}
-              </span>
-              <span>
-                <SelectBox
-                  width="350px"
-                  name="state"
-                  label="State"
-                  placeholder="Select State"
-                  defaultValue={form.values.state}
-                  options={states}
-                  values={states}
-                  setFieldValue={form.setFieldValue}
-                />
-                {form.touched.state && form.errors.state && (
-                  <span className="error-message">{form.errors.state}</span>
-                )}
-              </span>
-              <span>
-                <SelectBox
-                  width="350px"
-                  name="city"
-                  label="City"
-                  placeholder="Select City"
-                  defaultValue={form.values.city}
-                  options={cities}
-                  setFieldValue={form.setFieldValue}
-                  values={cities}
-                />
-                {form.touched.city && form.errors.city && (
-                  <span className="error-message">{form.errors.city}</span>
-                )}
-              </span>
-            </div>
+            {/* <div className="dropdown-row-wrapper">
+             
+             
+          
+            </div> */}
             {/* <div className="error-row-wrapper">
               <span className="error-message">2</span>
               <span className="error-message">3</span>
@@ -421,6 +391,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
             <div className="thirdrow-wrapper">
               <span>
                 <SelectBox
+                  // style={{ maxWidth: "100%" }}
                   name="venue"
                   label="Venue"
                   width="large"
