@@ -15,11 +15,18 @@ type TabRowProps = {
   event?: any;
   reservation?: number;
   subscribtionCredit?: any;
-  venue?:any
+  venue?: any;
 };
 
 export const TabRow = (props: TabRowProps) => {
-  const { buttonType, buttonText, event, reservation,subscribtionCredit,venue } = props;
+  const {
+    buttonType,
+    buttonText,
+    event,
+    reservation,
+    subscribtionCredit,
+    venue,
+  } = props;
   const [isEventDetailsModalVisibel, setIsEventDetailsModalVisibel] = useState(
     false
   );
@@ -37,13 +44,12 @@ export const TabRow = (props: TabRowProps) => {
       ? (endTime.diff(startTime, "minutes") % 60) + "mint"
       : null;
 
-
   return (
     <>
       <TabRowStyle>
         <div className="time">
           <span>
-            {week[moment(event.date).day()]},{" "}
+            {week[moment(event.date?.time?.toLocaleDateString("en-US")).day()]},{" "}
             {moment(event.date).date() + " " + moment(event.date).format("MMM")}
           </span>
           <span className="hour">
