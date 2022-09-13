@@ -18,3 +18,32 @@
 .pac-container {
   z-index: 9999;
 }
+.react-calendar__month-view__days__day--weekend {
+  color: #000 !important;
+}
+.dateTimepicker .react-time-picker__inputGroup__input{
+  width: auto !important;
+}
+.dateTimepicker .react-time-picker__wrapper{
+  border-radius: 24px;
+  margin-top: 5px;
+    height: 53px;
+    border-radius: 50px;
+    border: 1px solid #0c0c0c;
+    outline: 0;
+    padding: 15px 25px;
+    font-size: 18px;
+}
+.dateTimepicker .input-label{
+  font-size: 14px;
+  color: #0c0c0c;
+  font-weight: 500;
+  margin-left: -119px;
+}
+.d-flex
+{
+  display: flex;
+}
+.justify-content-center{
+  justify-content: center;
+}
