@@ -357,7 +357,7 @@ export default function ExploreVenue() {
                                                     lat={venue.location.lat}
                                                     lng={venue.location.lng}
                                                     name={venue.name}
-                                                    color={"blue"}
+                                                    color={"#56AAFF"}
                                                     id="1"
                                                 />
                                             )

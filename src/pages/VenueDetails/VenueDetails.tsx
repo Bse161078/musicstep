@@ -204,7 +204,7 @@ export default function VenueDetails() {
                         <img
                             src={!venueDetail.location ? "/images/explore-venue/map-2.png"
                                 :
-                                `https://maps.googleapis.com/maps/api/staticmap?size=600x400&markers=icon%3Ahttps://musicpassonline.com:3000/images/location.png%7C${venueDetail.location.lat}%2C${venueDetail.location.lng}&visible=${venueDetail.location.lat}%2C${venueDetail.location.lng}%7C${venueDetail.location.lat}%2C${venueDetail.location.lng}&key=AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew`}
+                                `https://maps.googleapis.com/maps/api/staticmap?size=600x400&markers=icon%3Ahttps://musicpassonline.com:3000/images/new-location.png%7C${venueDetail.location.lat}%2C${venueDetail.location.lng}&visible=${venueDetail.location.lat}%2C${venueDetail.location.lng}%7C${venueDetail.location.lat}%2C${venueDetail.location.lng}&key=AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew`}
                             className="map"
                             alt="map"
                         />

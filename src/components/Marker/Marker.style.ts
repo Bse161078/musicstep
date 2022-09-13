@@ -11,13 +11,14 @@ export const MarkerStyle = styled.div`
     left: 50%;
     top: 50%;
     margin: -20px 0 0 -20px;
+    border:1px solid black;
 }
 .pin:after {
     content: "";
-    width: 14px;
-    height: 14px;
-    margin: 8px 0 0 8px;
-    background: #e6e6e6;
+    width: 10px;
+    height: 10px;
+    margin: 9px 0 0 9px;
+    background: black;
     position: absolute;
     border-radius: 50%;
 }

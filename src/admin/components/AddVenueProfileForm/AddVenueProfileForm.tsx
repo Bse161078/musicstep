@@ -21,6 +21,7 @@ import { MapModalWrapper } from "../../../admin/components/Modals/MapModalWrappe
 import Map from "../../../components/Map";
 import { Loading } from "../../../components";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import Grid from "@mui/material/Grid/Grid";
 
 const {
   MarkerWithLabel,
@@ -398,16 +399,21 @@ const AddVenueProfileForm = () => {
                       </div>
                       <div>
                         <LabelWithTag label="Your Cover Photo" />
-                        <UploadFile
-                          buttonType="large"
-                          previewProfileImage={previewCoverImage}
-                          handleClick={handleClickCover}
-                        />
-                        {form.touched.coverPhoto && form.errors.coverPhoto && (
-                          <span className="error-message">
+                          <Grid container justifyContent="center" alignItems="center" style={{width:"200px",height:"200px"}}>
+                              <UploadFile
+                                  buttonType="large"
+                                  previewProfileImage={previewCoverImage}
+                                  handleClick={handleClickCover}
+                                  width={"200px"}
+                                  height={"135px"}
+                              />
+
+                          </Grid>
+                          {form.touched.coverPhoto && form.errors.coverPhoto && (
+                              <span className="error-message">
                             {form.errors.coverPhoto}
                           </span>
-                        )}
+                          )}
                       </div>
                     </div>
                     <div>
@@ -505,7 +511,7 @@ const AddVenueProfileForm = () => {
                         src={
                           location.lat === 0
                             ? "/images/explore-venue/map-2.png"
-                            : `https://maps.googleapis.com/maps/api/staticmap?size=600x400&markers=icon%3Ahttps://musicpassonline.com:3000/images/location.png%7C${location.lat}%2C${location.lng}&visible=${location.lat}%2C${location.lng}%7C${location.lat}%2C${location.lng}&key=AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew`
+                            : `https://maps.googleapis.com/maps/api/staticmap?size=600x400&markers=icon%3Ahttps://musicpassonline.com:3000/images/new-location.png%7C${location.lat}%2C${location.lng}&visible=${location.lat}%2C${location.lng}%7C${location.lat}%2C${location.lng}&key=AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew`
                         }
                         className="map"
                         alt="map"
