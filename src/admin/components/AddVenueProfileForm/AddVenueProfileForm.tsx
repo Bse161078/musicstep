@@ -349,7 +349,7 @@ const AddVenueProfileForm = () => {
 
   const onDeleteFile = (form: any, index: any) => {
     let tempFiles = JSON.parse(JSON.stringify(previewAdditionalImage));
-    tempFiles.splice(index, 1);
+    tempFiles?.splice(index, 1);
     setAdditionalImage(tempFiles);
   };
 
@@ -482,15 +482,15 @@ const AddVenueProfileForm = () => {
                   </div>
                   <div>
                     <LabelWithTag
-                      label="Venue Bio"
-                      description="Describe who you are, the types of events you host, or your mission. The bio is displayed on your organizer profile."
+                      label="Venue bio"
+                      description="Describe who you are, the types of events you host, or your mission. The bio is displayed on your organizer profile"
                     />
                     <InputBox
                       radiusType="27px"
                       height="118px"
                       width="1380px"
                       name="venueBio"
-                      placeholder="Enter Venue bio"
+                      placeholder="Enter venue bio"
                     />
                   </div>
                   <div className="location-and-amenstiesWrapper">

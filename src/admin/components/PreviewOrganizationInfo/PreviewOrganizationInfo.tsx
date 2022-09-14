@@ -40,7 +40,7 @@ const PreviewOrganizationInfo = (props: PreviewOrganizationInfoProps) => {
     <PreviewOrganizationInfoStyle>
       <DashboardHeader
         //class="dashboardHeader"
-        heading="Basic Info "
+        heading="Basic Info"
         handleCancelClick={() => {}}
         handleSaveClick={() => {
           submitBasicInfoRef.current.click();
@@ -51,7 +51,7 @@ const PreviewOrganizationInfo = (props: PreviewOrganizationInfoProps) => {
       />
 
       <ContentHeader
-        heading="Organization"
+        heading="Add Organizer Profile"
         description="Details that apply across your events and venues."
       />
 

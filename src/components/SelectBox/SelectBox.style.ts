@@ -1,34 +1,34 @@
 import styled from "styled-components";
-import {Select} from "antd";
+import { Select } from "antd";
 
 type SelectBoxStyleProps = {
-    name: string;
-    width?: string;
-    error?: boolean;
+  name: string;
+  width?: string;
+  error?: boolean;
 };
 
 const getInputWidth = (width: string) => {
-    switch (width) {
-        case "xs":
-            return "max-width: 170px";
-        case "small":
-            return "max-width: 238px";
-        case "medium":
-            return "max-width: 266px";
-        case "fill":
-            return "max-width: 100%";
-        default:
-            return `max-width: ${width}`;
-        case "large":
-            return "max-width: 600px";
-        case "350px":
-            return "max-width: 350px";
-    }
+  switch (width) {
+    case "xs":
+      return "max-width: 170px";
+    case "small":
+      return "max-width: 238px";
+    case "medium":
+      return "max-width: 266px";
+    case "fill":
+      return "max-width: 100%";
+    default:
+      return `max-width: ${width}`;
+    case "large":
+      return "max-width: 600px";
+    case "350px":
+      return "max-width: 350px";
+  }
 };
 
-export const SelectBoxStyle = styled(Select)<SelectBoxStyleProps>`
+export const SelectBoxStyle = styled(Select) <SelectBoxStyleProps>`
   &.ant-select {
-    ${(props) =>  getInputWidth((props.width && props.width) || "xs")};
+    ${(props) => getInputWidth((props.width && props.width) || "xs")};
     margin: 5px 0;
     font-size: 13px;
     color: #5d5d5d;
@@ -48,7 +48,7 @@ export const SelectBoxStyle = styled(Select)<SelectBoxStyleProps>`
     }
 
     .ant-select-selector {
-      height: 53px;
+      height: 40px;
       border-radius: 50px;
       display: flex;
       align-items: center;
@@ -59,7 +59,7 @@ export const SelectBoxStyle = styled(Select)<SelectBoxStyleProps>`
     }
   }
 `;
-export const SelectHoverInputStyle = styled(Select)<any>`
+export const SelectHoverInputStyle = styled(Select) <any>`
   &.ant-select {
     font-size: 1.3rem;
     color: #3ba0d6;
@@ -80,7 +80,7 @@ export const SelectHoverInputStyle = styled(Select)<any>`
 `;
 
 type SelectInputStyleProps = {
-    type?: string;
+  type?: string;
 };
 
 export const SelectInputStyle = styled.div<SelectInputStyleProps>`

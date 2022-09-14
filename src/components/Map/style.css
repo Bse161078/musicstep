@@ -47,7 +47,34 @@
 .justify-content-center{
   justify-content: center;
 }
+.align-items-center{
+  align-items: center;
+}
 .ant-select-item-option-content {
 overflow: initial !important;
 white-space: initial !important;
 text-overflow: initial !important; }
+
+.customTextare{
+
+  height: 118px;
+  border-radius: 27px;
+  border: 1px solid #0c0c0c;
+  outline: 0;
+  padding: 15px 25px;
+  font-size: 18px;
+  width: 100%;
+  max-width: 1380px;
+}
+.hideScrollBar{
+
+}
+.hideScrollBar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hideScrollBar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

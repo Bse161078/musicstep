@@ -84,7 +84,7 @@ const OrganizationDetailsForm = React.forwardRef((props: any, ref: any) => {
           {(form) => (
             <Form className="organization-details-form">
               <InputBox label="Organization Name" name="organizationName" />
-              <InputBox label="Prefered Country" name="preferedCountry" />
+              <InputBox label="Prefered Country" name="prefferedCountry" />
               {/* {console.log(form)} */}
               {/* <SelectBox
                 width="fill"

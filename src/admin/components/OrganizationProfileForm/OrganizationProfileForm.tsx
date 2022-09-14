@@ -322,7 +322,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
   //
   const removePhoto = async (image: any, index: any) => {
     image =
-      image.split("images/").length > 1 ? image.split("images/")[1] : image;
+      image?.split("images/").length > 1 ? image?.split("images/")[1] : image;
 
     if (organizerProfile) {
       const body = {
@@ -469,7 +469,13 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
             submitRef.current.click();
           }}
           backButtonText="Back To Basic Info"
-          saveButtonText="Add"
+          saveButtonText={
+            props.currentPage === "add-organization"
+              ? "Add"
+              : props.currentPage === "preview-organization"
+              ? "Update"
+              : "Update"
+          }
           heading={
             props.currentPage === "add-organization"
               ? "Add Organizer Profile"
@@ -568,12 +574,13 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                   width="1380px"
                   // value={}
                   name="organizerName"
-                  placeholder="Enter Your name here"
+                  placeholder="Enter Your name here "
                 />
                 <LabelWithTag
                   label="Organizer Bio"
                   description="Describe who you are, the types of events you host, or your mission. The bio is displayed on your organizer profile."
                 />
+
                 <input
                   ref={logoUpload}
                   type={"file"}
@@ -596,14 +603,19 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                   onChange={(e) => handleAdditionalPhotoUpload(e, form)}
                   multiple
                 />
+                <textarea
+                  placeholder="Enter Your name here"
+                  className="customTextare"
+                  name="organizerBio"
+                ></textarea>
 
-                <InputBox
+                {/* <InputBox
                   radiusType="27px"
                   height="118px"
                   width="1380px"
                   name="organizerBio"
-                  placeholder="Enter Your name here"
-                />
+                  placeholder="Enter Your name here afds"
+                /> */}
               </div>
               <div className="attributes-wrapper">
                 <LabelWithTag
@@ -674,7 +686,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                     <InputBox
                       name="facebook"
                       placeholder="https://www.facebook.com/organizer"
-                      label="FaceBook"
+                      label="Facebook"
                     />
                     <InputBox
                       name="instagram"

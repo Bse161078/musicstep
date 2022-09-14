@@ -1,87 +1,87 @@
-import React, {useRef, useState, useEffect} from "react";
-import {useField} from "formik";
+import React, { useRef, useState, useEffect } from "react";
+import { useField } from "formik";
 import {
-    TextFieldStyle,
-    TextFieldErrorStyle,
-    InputBoxStyle,
+  TextFieldStyle,
+  TextFieldErrorStyle,
+  InputBoxStyle,
 } from "./InputBox.style";
-import {useHistory} from "react-router";
+import { useHistory } from "react-router";
 
 const InputBox = (props: any) => {
-    const [field, meta,helpers] = useField(props);
-    const history = useHistory();
+  const [field, meta, helpers] = useField(props);
+  const history = useHistory();
 
-    const inputRef = useRef();
-    const [showPassword, setShowPassword] = useState(false);
-    const [locationChanged,setLocationChanged]=useState(true);
+  const inputRef = useRef();
+  const [showPassword, setShowPassword] = useState(false);
+  const [locationChanged, setLocationChanged] = useState(true);
 
-    useEffect(()=>{
-        if(props.navbar_search && (props.navbar_search).length>0 ){
-            helpers.setValue(props.navbar_search)
-        }
-    },[])
+  useEffect(() => {
+    if (props.navbar_search && props.navbar_search.length > 0) {
+      helpers.setValue(props.navbar_search);
+    }
+  }, []);
 
-    useEffect(() => {
-            props.setSearch && props.setSearch(field.value)
-    }, [field]);
+  useEffect(() => {
+    props.setSearch && props.setSearch(field.value);
+  }, [field]);
 
+  const handlePasswordIconClick = () => {
+    if (inputRef.current && props.type === "password") {
+      //@ts-ignore
+      if (inputRef.current?.type === "password") {
+        //@ts-ignore
+        inputRef.current.type = "text";
+        setShowPassword(true);
+      } else {
+        //@ts-ignore
+        inputRef.current.type = "password";
+        setShowPassword(false);
+      }
+    }
+  };
 
-    const handlePasswordIconClick = () => {
-        if (inputRef.current && props.type === "password") {
-            //@ts-ignore
-            if (inputRef.current?.type === "password") {
-                //@ts-ignore
-                inputRef.current.type = "text";
-                setShowPassword(true)
-            } else {
-                //@ts-ignore
-                inputRef.current.type = "password";
-                setShowPassword(false)
-            }
-        }
-    };
+  // const handleInputChange=(e:any)=>{
+  //   const value = e.target.value
+  //   props.setSearch(value)
+  //   field.value=value
+  // }
 
-    // const handleInputChange=(e:any)=>{
-    //   const value = e.target.value
-    //   props.setSearch(value)
-    //   field.value=value
-    // }
+  return (
+    <InputBoxStyle>
+      <label className="input-label">
+        {props.name === "explaination" ? "" : props.label}
+      </label>
 
+      <TextFieldStyle
+        ref={inputRef}
+        className={props.className}
+        name={field.name}
+        color="primary"
+        value={field.value || props.navbar_search}
+        onBlur={field.onBlur}
+        onChange={field.onChange}
+        placeholder={props.label}
+        width={props.width}
+        height={props.height}
+        {...props}
+      />
 
-    return (
-        <InputBoxStyle>
-            <label className="input-label">{props.name === "explaination" ? "" : props.label}</label>
-
-            <TextFieldStyle
-                ref={inputRef}
-                className={props.className}
-                name={field.name}
-                color="primary"
-                value={field.value || props.navbar_search}
-                onBlur={field.onBlur}
-                onChange={field.onChange}
-                placeholder={props.label}
-                width={props.width}
-                height={props.height}
-                {...props}
-            />
-
-            {props.type === "password" &&
-            (showPassword ? (
-                <span onClick={handlePasswordIconClick} className="password-icon">
-            <img alt="icon" src="/images/icons/Password-hide-icon.svg"/>
+      {props.type === "password" &&
+        (showPassword ? (
+          <span onClick={handlePasswordIconClick} className="password-icon">
+            <img alt="icon" src="/images/icons/Password-hide-icon.svg" />
           </span>
-            ) : (
-                <span onClick={handlePasswordIconClick} className="password-icon">
-            <img alt="icon" src="/images/icons/password-show-icon.svg"/>
+        ) : (
+          <span onClick={handlePasswordIconClick} className="password-icon">
+            <img alt="icon" src="/images/icons/password-show-icon.svg" />
           </span>
-            ))}
-            {(meta.touched && meta.error) || props.error ? (
-                <TextFieldErrorStyle>{meta.error || props.error}</TextFieldErrorStyle>
-            ) : null}
-            {props.info && <p className="input-info">{props.info}</p>}
-        </InputBoxStyle>
-    );
+        ))}
+      {(meta.touched && meta.error) || props.error ? (
+        <TextFieldErrorStyle>{meta.error || props.error}</TextFieldErrorStyle>
+      ) : null}
+      {props.info && <p className="input-info">{props.info}</p>}
+    </InputBoxStyle>
+  );
 };
 
 export default InputBox;

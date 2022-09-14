@@ -36,7 +36,7 @@ const EventsManagment = () => {
     <Dashboard>
       <EventsManagmentStyle>
         <DashboardHeader
-          heading="Events Management"
+          heading="Events Management "
           description="Easily manage your events and promoters."
         />
         <div className="searchbar-wrapper">

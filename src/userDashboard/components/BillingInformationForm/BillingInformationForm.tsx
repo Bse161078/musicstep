@@ -12,6 +12,7 @@ const BillingInformationForm = () => {
   const { state, dispatch } = useLoginContext();
 
   const { billingInformation } = state.data;
+  console.log({ state });
   const handleBillingFormSubmit = (e: any) => {
     //na
     axios
