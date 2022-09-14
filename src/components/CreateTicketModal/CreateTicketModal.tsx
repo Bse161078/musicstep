@@ -16,9 +16,8 @@ type CreateTicketModalProps = {
   index?: number;
 };
 
-
 const CreateTicketModal = (props: CreateTicketModalProps) => {
-  const history = useHistory()
+  const history = useHistory();
   const {
     isModalVisible,
     setIsModalVisible,
@@ -31,8 +30,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
   const [ticketForm, setTicketForm] = useState<any>(null);
   const submitRef: any = React.createRef();
   const ticketFromRef: any = React.createRef();
-  const [discount,setDiscount]=useState("Level 1");
-
+  const [discount, setDiscount] = useState("Level 1");
 
   let initialValues: any = {
     title: ticket ? ticket.title : "",
@@ -47,12 +45,18 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
 
   const handleSubmit = (e: any, { resetForm }: any) => {
     if (ticket) {
-      props.handleEditTicket(props.index, {...e,credits:Math.floor(getCredits(e.price, discount))});
+      props.handleEditTicket(props.index, {
+        ...e,
+        credits: Math.floor(getCredits(e.price, discount)),
+      });
       setSuccessModalVisible(true);
       setIsModalVisible(false);
       setmessage("Ticket Updated Successfully");
     } else {
-      setTickets([{...e,credits:Math.floor(getCredits(e.price, discount))}, ...tickets]);
+      setTickets([
+        { ...e, credits: Math.floor(getCredits(e.price, discount)) },
+        ...tickets,
+      ]);
       setSuccessModalVisible(true);
       setIsModalVisible(false);
       resetForm();
@@ -64,25 +68,24 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
         description: "",
         price: 0,
         discount: "Level 1",
-        credits: 0
+        credits: 0,
       };
     }
   };
 
-    const getValueFromDiscount = (discount: string) => {
-
-        switch (discount) {
-            case "Level 1":
-                return  3.75;
-            case "Level 2":
-                return  4.5;
-            case "Level 3":
-                return  5.25;
-            case "Level 4":
-                return  6;
-        }
-        return 1;
-    };
+  const getValueFromDiscount = (discount: string) => {
+    switch (discount) {
+      case "Level 1":
+        return 3.75;
+      case "Level 2":
+        return 4.5;
+      case "Level 3":
+        return 5.25;
+      case "Level 4":
+        return 6;
+    }
+    return 1;
+  };
 
   const getCredits = (price: number, discount: string) => {
     switch (discount) {
@@ -104,8 +107,8 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
   return (
     <>
       <ModalWrapper
-        heading="Create a Ticket"
-        rightButtonTitle="Create Tickets"
+        heading="Create a Reservation Type"
+        rightButtonTitle="Create Reservation Type"
         leftButtonTitle="Cancel"
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}
@@ -129,7 +132,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                     name="title"
                   />
                   <InputBox
-                    label="Ticekts Available"
+                    label="Ticekts Reservation"
                     placeholder="50"
                     name="numberOfTickets"
                     type="number"
@@ -150,6 +153,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                         name="price"
                         width="660px"
                         type="number"
+                        startText="$"
                       />
                       <span>
                         <SelectBox
@@ -163,16 +167,14 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                             { key: 4, value: "Level 4" },
                           ]}
                           defaultValue={"Level1"}
-                          values={["Level 1","Level 2","Level 3","Level 4"]}
+                          values={["Level 1", "Level 2", "Level 3", "Level 4"]}
                           setFieldValue={form.setFieldValue}
                           handleSelectBoxChange={(e: any) => {
                             setDiscount(e);
                             form.setFieldValue(
                               "credits",
 
-                              Math.round(
-                                getCredits(form.values.price, e)
-                              )
+                              Math.round(getCredits(form.values.price, e))
                             );
                           }}
                         />
@@ -198,7 +200,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                   </div>
 
                   <div className="price-holder">
-                    <div>
+                    {/* <div>
                       <div className="retail-price">
                         <p className="price-label">Retail Price</p>
                         <h3 className="title">{form.values.price}$</h3>
@@ -206,13 +208,18 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                       <div className="payout-price">
                         <p className="price-label">Payout to brand</p>
                         <h3 className="title">
-                            {`${form.values.price}/${getValueFromDiscount(discount)}`}
+                          {`${form.values.price}/${getValueFromDiscount(
+                            discount
+                          )}`}
                         </h3>
                       </div>
-                    </div>
+                    </div> */}
                     <div className="right-section">
-                      <p className="price-label">Value in Musicpass Credits</p>
-                      <h3 className="title">{Math.floor(getCredits(form.values.price, discount))} Credits</h3>
+                      <p className="price-label">Value in MusicPass Credits</p>
+                      <h3 className="title">
+                        {Math.floor(getCredits(form.values.price, discount))}{" "}
+                        Credits
+                      </h3>
                     </div>
                   </div>
                 </div>
@@ -242,7 +249,6 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
         setIsModalVisible={setSuccessModalVisible}
         heading="Success"
         message={message}
-        
       />
     </>
   );

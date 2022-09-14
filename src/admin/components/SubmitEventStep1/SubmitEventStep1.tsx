@@ -287,11 +287,11 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
   return (
     <SubmitEventStep1Style>
       <DashboardHeader
-        heading="Submit An Event "
+        heading="Submit An Event"
         backButtonText="Back To Events Management"
         handleSaveClick={() => {
-          // setCurrentStep(2);
           submitRef.current.click();
+          setCurrentStep(2);
         }}
         handleBackClick={() => {
           history.push("/admin/events-management");

@@ -53,7 +53,7 @@ const ForgotPasswordForm = (props: ForgotPasswordFormProps) => {
         );
       })
       .catch((error) => {
-        setMessage("Server Error. Please Try Again Later");
+        setMessage("This email is not yet registered.");
         setIsModalVisible(true);
         setMessageHeading("Error");
         setLoading(false);
@@ -110,7 +110,7 @@ const ForgotPasswordForm = (props: ForgotPasswordFormProps) => {
           onClick={() => {
             history.push("/partner-login");
           }}
-          style={{cursor:'pointer'}}
+          style={{ cursor: "pointer" }}
         >
           Partner Dashboard Login
         </p>

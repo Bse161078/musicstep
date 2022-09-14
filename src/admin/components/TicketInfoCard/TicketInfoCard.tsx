@@ -19,8 +19,8 @@ type TicketInfoCardProps = {
   handleEditTicket?: any;
   ticketIndex?: number;
   event?: any;
-  subscribtionCredit?:number;
-  venue?:any
+  subscribtionCredit?: number;
+  venue?: any;
 };
 
 const TicketInfoCard = (props: TicketInfoCardProps) => {
@@ -55,7 +55,9 @@ const TicketInfoCard = (props: TicketInfoCardProps) => {
         <h2>{props.heading}</h2>
         <p className="credits">Credits: {props.eventCredit}</p>
         {props.disableTicketsAvailbilty ? null : (
-          <p className="tickets">Tickets Available: {props.availableTickets}</p>
+          <p className="tickets">
+            Seats or Spots Available: {props.availableTickets}
+          </p>
         )}
         <p className="description">{props.description}</p>
         <div className="button-wrapper">

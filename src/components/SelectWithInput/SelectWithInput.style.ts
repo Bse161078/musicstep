@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const SelectWithInputStyle = styled.div`
   max-width: 900px;
-  width: 100%;
+  width: 57%;
 
   .search-form-wrapper {
     display: flex;

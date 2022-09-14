@@ -13,7 +13,12 @@ const EventsManagmentListItem = ({ event }: EventsManagmentListItemProps) => {
         <div className="event-details">
           <div className="event-date-name">
             <span className="event-date">
-              {week[moment(event.date).day()]}, {moment(event.date).date()} /
+              {
+                week[
+                  moment(event.date?.time?.toLocaleDateString("en-US")).day()
+                ]
+              }
+              , {moment(event.date).date()} /
             </span>
             <span className="event-name">{event?.title}</span>
           </div>
@@ -26,8 +31,12 @@ const EventsManagmentListItem = ({ event }: EventsManagmentListItemProps) => {
           </div>
         </div>
         <div className="engagments">
-           <span style={{fontSize:17,fontWeight:"bold"}}>{`${event.reviewCount} Reviews`}</span>
-          <span style={{fontSize:17,fontWeight:"bold"}}>{`${event.reservationCount} Reservations Made`}</span>
+          <span
+            style={{ fontSize: 17, fontWeight: "bold" }}
+          >{`${event.reviewCount} Reviews`}</span>
+          <span
+            style={{ fontSize: 17, fontWeight: "bold" }}
+          >{`${event.reservationCount} Reservations Made`}</span>
         </div>
         <div className="Organizer">
           <span className="org-name">

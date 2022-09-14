@@ -20,11 +20,11 @@ export const attributesList = [
     value: false,
   },
 
-  {
-    id: "wheelchairAccessible",
-    name: "Wheelchair accessible",
-    value: false,
-  },
+  // {
+  //   id: "wheelchairAccessible",
+  //   name: "Wheelchair accessible",
+  //   value: false,
+  // },
   {
     id: "hispanicLatinxOwned",
     name: "Hispanic/Latinx-owned",

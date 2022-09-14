@@ -9,8 +9,8 @@ import { ChangePasswordFormStyle } from "./ChangePasswordForm.style";
 
 const ChangePasswordForm = () => {
   const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
-  const [showErrorMessage,setErrorMessage] = useState(false)
-  const [error,setError] = useState('')
+  const [showErrorMessage, setErrorMessage] = useState(false);
+  const [error, setError] = useState("");
   const { state } = useLoginContext();
 
   const handlePasswordSubmit = (e: any) => {
@@ -25,16 +25,13 @@ const ChangePasswordForm = () => {
           { headers: { Authorization: `Bearer ${state.authToken}` } }
         )
         .then(() => setSuccessModalVisible(true))
-        .catch((error) => 
-        {
-        setError("Your Current Password is not right")
-        }
-        );
-        else
-       {
-          setError("Your Password is not same")
-          setErrorMessage(true)
-       }
+        .catch((error) => {
+          setError("Your Current Password is not right");
+        });
+    else {
+      setError("Your Password is not same");
+      setErrorMessage(true);
+    }
   };
   return (
     <ChangePasswordFormStyle>
@@ -59,7 +56,9 @@ const ChangePasswordForm = () => {
               label="Confirm Password"
               name="confirmPassword"
             />
-              {showErrorMessage&&<h6 style={{color:'red',marginLeft:5}} >{error}</h6>}
+            {showErrorMessage && (
+              <h6 style={{ color: "red", marginLeft: 5 }}>{error}</h6>
+            )}
             <FilledButtonStyle buttonType="dark" width="520px" height="60px">
               Change Password
             </FilledButtonStyle>

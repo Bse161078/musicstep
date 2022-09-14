@@ -47,7 +47,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
     const bodyData = new FormData();
 
     bodyData.append("title", eventData.title);
-    setLoading(true)
+    setLoading(true);
     bodyData.append("date", new Date(eventData.date).toISOString());
     bodyData.append("startingTime", eventData.startingTime);
     bodyData.append("endingTime", eventData.endingTime);
@@ -71,12 +71,15 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
     }
     const res = await axios
       .post("/v1/event", bodyData, {
-        headers: { Authorization: `Bearer ${state.authToken}`,"Content-Type": "multipart/form-data"  },
+        headers: {
+          Authorization: `Bearer ${state.authToken}`,
+          "Content-Type": "multipart/form-data",
+        },
       })
       .catch((error) => {
         //  setSuccessModalVisible(true);
         setIsModalVisible(true);
-        setLoading(false)
+        setLoading(false);
         //setMessage(error);
         setMessageType("error");
         //  setMessage(error.response.data.error);
@@ -86,7 +89,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
       //  setSuccessModalVisible(true);
       //  setMessage("Organizer created Successfully");
       //  setHeading("Success");
-      setLoading(false)
+      setLoading(false);
       setMessage("Event created Successfully");
       setMessageType("success");
       setIsModalVisible(true);
@@ -100,7 +103,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
   return (
     <>
       <DashboardHeader
-        heading="Submit An Event"
+        heading="Submit An Reservations"
         backButtonText="Back To Step 1"
         handleSaveClick={() => {
           createEventHandlet();
@@ -121,13 +124,13 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
         cancelButtonText="Back"
         saveButtonWidth="190px"
       />
-      {isLoading&&<Loading/>}
+      {isLoading && <Loading />}
       <SubmitEventStep2Style>
         <div className="text-wrapper">
-          <h3>Events Tickets</h3>
+          <h3>Events Tickets </h3>
           <p>
-            Create different type of tickets for your event. You must have to
-            create at least one ticket to get reservations on your event.
+            Create different types of reservations for your event. You must have
+            at least one reservation type for your event.
           </p>
         </div>
         <div className="tickets-wrapper">

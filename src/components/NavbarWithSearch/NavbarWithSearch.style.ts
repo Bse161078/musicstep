@@ -4,7 +4,7 @@ export const NavbarWithSearchStyle = styled.nav`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  grid-column-gap: 60px;
+  grid-column-gap: 30px;
   padding: 16px 60px;
   background: #fff;
   position: sticky;
@@ -23,8 +23,8 @@ export const NavbarWithSearchStyle = styled.nav`
 
   .links-wrapper {
     display: flex;
-    grid-gap: 60px;
-    margin-left: auto;
+    grid-gap: 30px;
+    // margin-left: auto;
     justify-self: flex-end;
     align-items: center;
 

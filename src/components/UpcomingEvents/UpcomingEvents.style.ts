@@ -21,8 +21,8 @@ export const UpcomingEventsStyle = styled.div`
   }
 `;
 
-  // grid-template-columns: auto 1fr 0.3fr auto;
-  // grid-template-areas: 'myArea myArea . . .';
+// grid-template-columns: auto 1fr 0.3fr auto;
+// grid-template-areas: 'myArea myArea . . .';
 export const TabRowStyle = styled.div`
   display: grid;
 
@@ -56,13 +56,13 @@ export const TabRowStyle = styled.div`
   }
 
   .time {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     color: #0c0c0c;
     display: grid;
 
     .hour {
-      font-size: 16px;
+      font-size: 15px;
       color: #0c0c0c;
       opacity: 0.5;
     }
@@ -76,14 +76,14 @@ export const TabRowStyle = styled.div`
  
   }
   .name {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     color: #0c0c0c;
     display: grid;
 
 
     .genre {
-      font-size: 16px;
+      font-size: 15px;
       color: #0c0c0c;
       opacity: 0.5;
     }

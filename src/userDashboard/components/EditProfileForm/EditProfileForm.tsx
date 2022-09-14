@@ -159,30 +159,29 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
                     isCorrectOption={form.values.isPhoneNumberPublic}
                   />
                   <div className="public-info">
-                    <h1>
-                      Public Info
-                      <Switch
-                        onChange={() => {
-                          form.setFieldValue(
-                            "isPublicInfo",
-                            !form.values.isPublicInfo
-                          );
-                        }}
-                        checked={form.values.isPublicInfo || false}
-                      />
-                    </h1>
-                    <p className="red-text">
-                      (Turning off this will not show your profile publicly in
-                      "People With Mutual Events")
-                    </p>
-                    <p>
-                      The Public Info function is to serve the community. If you
-                      wish to be seen by fellow MusicPass members, opting in
-                      allows for exchange of information, and also allows you to
-                      see other People with Mutual Events. You get to choose
-                      what message and contact information to display, as do
-                      they. Only your first name and last name initial will
-                      appear.
+                    <div className="d-flex align-items-center">
+                      <h1>
+                        Public Info <span></span>
+                        <Switch
+                          onChange={() => {
+                            form.setFieldValue(
+                              "isPublicInfo",
+                              !form.values.isPublicInfo
+                            );
+                          }}
+                          checked={form.values.isPublicInfo || false}
+                        />
+                      </h1>
+                      <span className="red-text" style={{ paddingLeft: 10 }}>
+                        (Turning off this will not show your profile publicly in
+                        <strong> "People With Mutual Events"</strong>)
+                      </span>
+                    </div>
+                    <p style={{ color: "#D8D8D8" }}>
+                      Your name, profile picture & phone number include in your
+                      public info as well. Public info will be used for{" "}
+                      <strong>"People With Mutual Events"</strong>, where other
+                      people will able to see your profile.
                     </p>
                   </div>
                   <div className="public-info">

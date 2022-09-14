@@ -8,6 +8,7 @@ export const HeadingWithContentStyle = styled.section`
     align-items: center;
     font-size: 16px;
     color: #100840;
+    font-weight: bold;
   }
 
   .heading {

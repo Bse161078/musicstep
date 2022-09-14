@@ -19,7 +19,7 @@ const CreateTicket = ({ setTickets, tickets }: CreateTicketProps) => {
         className="create-ticket-wrapper"
       >
         <p className="add-icon">+</p>
-        <p className="create-ticket">Create a Ticket</p>
+        <p className="create-ticket">Create Reservations</p>
       </CreateTicketStyle>
       <CreateTicketModal
         isModalVisible={isModalVisible}
