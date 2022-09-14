@@ -174,6 +174,15 @@ const RoutesList = (props: any) => {
                 <Route path="/promotion" component={Promotion}/>
 
 
+
+                <Route path="/dashboard/home/venue-details"
+                       render={() => (
+                           <AuthenticatedRoute redirectTo="/login">
+                               <VenueDetails/>
+                           </AuthenticatedRoute>
+                       )}/>
+
+
                 <Route path="/explore-venue/venue-details"
                        render={() => (
                            <AuthenticatedRoute redirectTo="/login">
