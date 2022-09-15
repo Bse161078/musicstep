@@ -1,10 +1,7 @@
 import { Form, Formik } from "formik";
 import React, { useState } from "react";
 import { SelectBox } from "../../components";
-import {
-  FilledButtonStyle,
-  OutlineButtonStyle,
-} from "../../styles/Common.style";
+import { FilledButtonStyle, OutlineButtonStyle } from "../../styles/Common.style";
 
 import { DropdownsListStyle } from "./ExploreVenue.style";
 
@@ -29,7 +26,7 @@ export const DropdownsList = (props: any) => {
           <Form className="drodown-form-wrapper">
             <span>
               <SelectBox
-                name="categoriesType"
+                name="All Categories"
                 setFieldValue={setFieldValue}
                 options={[{ key: "", value: filter?.categories }]}
                 values={filter?.categories}
@@ -39,9 +36,9 @@ export const DropdownsList = (props: any) => {
                 setLoading={setLoading}
               />
             </span>
-            <span style={{ width: "150px" }}>
+            <span style={{ minWidth: "150px" }}>
               <SelectBox
-                name="genre"
+                name="Genres"
                 setFieldValue={setFieldValue}
                 clear={clear}
                 options={[{ key: "", value: filter?.liveStream }]}
@@ -53,7 +50,7 @@ export const DropdownsList = (props: any) => {
             </span>
             <span style={{ width: "150px" }}>
               <SelectBox
-                name="distance"
+                name="Distance"
                 setFieldValue={setFieldValue}
                 options={[{ key: "", value: filter?.distance }]}
                 values={filter?.distance}
@@ -65,7 +62,7 @@ export const DropdownsList = (props: any) => {
             </span>
             <span style={{ width: "150px" }}>
               <SelectBox
-                name="time"
+                name="Time Frame"
                 setFieldValue={setFieldValue}
                 options={[{ key: "", value: filter?.timeFrame }]}
                 values={filter?.timeFrame}
@@ -78,7 +75,7 @@ export const DropdownsList = (props: any) => {
 
             <span style={{ width: "150px" }}>
               <SelectBox
-                name="amenities"
+                name="Amenities"
                 setFieldValue={setFieldValue}
                 options={[{ key: "", value: filter?.amenities }]}
                 values={filter?.amenities}

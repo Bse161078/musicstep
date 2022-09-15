@@ -2,12 +2,7 @@ import { Form, Formik, useFormikContext } from "formik";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { ContentHeader, DashboardHeader } from "..";
-import {
-  Slider,
-  InputBox,
-  InputCheckbox,
-  MessageModal,
-} from "../../../components";
+import { Slider, InputBox, InputCheckbox, MessageModal } from "../../../components";
 import { useHistory } from "react-router-dom";
 import LabelWithTag from "../LabelWithTag/LabelWithTag";
 import { UploadFile } from "..";
@@ -16,10 +11,7 @@ import ShowCaseYourEvents from "./ShowCaseYourEvent";
 import { policies } from "../../../mockData/policies";
 import { attributesList } from "./OrganizationAttributesList";
 import { OrganizerFormValidationSchema } from "./validation";
-import {
-  LoginContext,
-  useLoginContext,
-} from "../../../context/authenticationContext";
+import { LoginContext, useLoginContext } from "../../../context/authenticationContext";
 import Loading from "../../../components/Loading/Loading";
 import set = Reflect.set;
 
@@ -55,9 +47,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
 
   //State
   const { state } = useLoginContext();
-  const [attributesListState, setAttributesListState] = useState([
-    ...attributesList,
-  ]);
+  const [attributesListState, setAttributesListState] = useState([...attributesList]);
   const [policiesState, setPoliciesState] = useState([...policies]);
 
   const [previewLogoImage, setLogoImage] = useState<string>(
@@ -75,17 +65,9 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
   //useEffect
   useEffect(() => {
     if (organizerProfile) {
-      setLogoImage(
-        process.env.REACT_APP_BASE_URL + "/images/" + organizerProfile.logoUrl
-      );
-      setCoverImage(
-        process.env.REACT_APP_BASE_URL +
-          "/images/" +
-          organizerProfile.coverPhotoUrl
-      );
-      const photos: [] = organizerProfile.additionalPhotosUrls.map(
-        (photo: any) => process.env.REACT_APP_BASE_URL + "/images/" + photo
-      );
+      setLogoImage(process.env.REACT_APP_BASE_URL + "/images/" + organizerProfile.logoUrl);
+      setCoverImage(process.env.REACT_APP_BASE_URL + "/images/" + organizerProfile.coverPhotoUrl);
+      const photos: [] = organizerProfile.additionalPhotosUrls.map((photo: any) => process.env.REACT_APP_BASE_URL + "/images/" + photo);
 
       setAdditionalImage(photos);
 
@@ -149,12 +131,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
   const handleLogoUpload = async (event: any, form: any) => {
     // Sceniro 1:Add organizer
     const imageType = event.target.files[0].type;
-    if (
-      imageType === "image/jpeg" ||
-      imageType === "image/png" ||
-      imageType === "image/jpg" ||
-      imageType === "image/svg"
-    ) {
+    if (imageType === "image/jpeg" || imageType === "image/png" || imageType === "image/jpg" || imageType === "image/svg") {
       form.setFieldValue("logo", event.target.files[0]);
       let reader = new FileReader();
       let file = event.target.files[0];
@@ -171,13 +148,9 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         const bodyData = new FormData();
         bodyData.append("logo", file);
         const res = await axios
-          .patch(
-            `/v1/organizer/editOrganizerProfileLogo/${organizerProfile.id}`,
-            bodyData,
-            {
-              headers: { Authorization: `Bearer ${state.authToken}` },
-            }
-          )
+          .patch(`/v1/organizer/editOrganizerProfileLogo/${organizerProfile.id}`, bodyData, {
+            headers: { Authorization: `Bearer ${state.authToken}` },
+          })
           .catch((error) => {
             setSuccessModalVisible(true);
             setMessage(error.response.data.error);
@@ -197,12 +170,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
   //Handle Upload Coever
   const handleCoverUpload = async (event: any, form: any) => {
     const imageType = event.target.files[0].type;
-    if (
-      imageType === "image/jpeg" ||
-      imageType === "image/png" ||
-      imageType === "image/jpg" ||
-      imageType === "image/svg"
-    ) {
+    if (imageType === "image/jpeg" || imageType === "image/png" || imageType === "image/jpg" || imageType === "image/svg") {
       form.setFieldValue("coverPhoto", event.target.files[0]);
       let reader = new FileReader();
       let file = event.target.files[0];
@@ -218,13 +186,9 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         const bodyData = new FormData();
         bodyData.append("coverPhoto", file);
         const res = await axios
-          .patch(
-            `/v1/organizer/editOrganizerProfileCoverPhoto/${organizerProfile.id}`,
-            bodyData,
-            {
-              headers: { Authorization: `Bearer ${state.authToken}` },
-            }
-          )
+          .patch(`/v1/organizer/editOrganizerProfileCoverPhoto/${organizerProfile.id}`, bodyData, {
+            headers: { Authorization: `Bearer ${state.authToken}` },
+          })
           .catch((error) => {
             setSuccessModalVisible(true);
             setMessage(error.response.data.error);
@@ -246,12 +210,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
     let images = [];
     for (let file of event.target.files) {
       let imageType = file.type;
-      if (
-        imageType === "image/jpeg" ||
-        imageType === "image/png" ||
-        imageType === "image/jpg" ||
-        imageType === "image/svg"
-      ) {
+      if (imageType === "image/jpeg" || imageType === "image/png" || imageType === "image/jpg" || imageType === "image/svg") {
         images.push(file);
       }
     }
@@ -291,13 +250,9 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         }
 
         const res = await axios
-          .patch(
-            `/v1/organizer/editOrganizerProfileAdditionalPhotos/${organizerProfile.id}`,
-            bodyData,
-            {
-              headers: { Authorization: `Bearer ${state.authToken}` },
-            }
-          )
+          .patch(`/v1/organizer/editOrganizerProfileAdditionalPhotos/${organizerProfile.id}`, bodyData, {
+            headers: { Authorization: `Bearer ${state.authToken}` },
+          })
           .catch((error) => {
             setSuccessModalVisible(true);
             setMessage(error.response.data.error);
@@ -308,9 +263,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
           setMessage("Organizer Additional photos Updated Successfully");
           setHeading("Success");
           // if (!isSuccessModalVisible)
-          const photos: [] = res.data.additionalPhotosUrls.map(
-            (photo: any) => process.env.REACT_APP_BASE_URL + "/images/" + photo
-          );
+          const photos: [] = res.data.additionalPhotosUrls.map((photo: any) => process.env.REACT_APP_BASE_URL + "/images/" + photo);
           photos.reverse();
           setAdditionalImage(photos);
         }
@@ -321,8 +274,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
 
   //
   const removePhoto = async (image: any, index: any) => {
-    image =
-      image?.split("images/").length > 1 ? image?.split("images/")[1] : image;
+    image = image?.split("images/").length > 1 ? image?.split("images/")[1] : image;
 
     if (organizerProfile) {
       const body = {
@@ -330,13 +282,9 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
       };
       setIsLoading(true);
       const res = await axios
-        .patch(
-          `/v1/organizer/removeAdditionalPhotos/${organizerProfile.id}`,
-          body,
-          {
-            headers: { Authorization: `Bearer ${state.authToken}` },
-          }
-        )
+        .patch(`/v1/organizer/removeAdditionalPhotos/${organizerProfile.id}`, body, {
+          headers: { Authorization: `Bearer ${state.authToken}` },
+        })
         .catch((error) => {
           setIsLoading(false);
           setSuccessModalVisible(true);
@@ -380,15 +328,9 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
 
     bodyData.append("organizerBio", e.organizerBio);
     bodyData.append("organizerName", e.organizerName);
-    bodyData.append(
-      "organizationAttributes",
-      JSON.stringify(organizationAttributes)
-    );
+    bodyData.append("organizationAttributes", JSON.stringify(organizationAttributes));
     bodyData.append("saftyAndCleaness", JSON.stringify(saftyAndCleaness));
-    bodyData.append(
-      "socialMediaAndMarketingLinks",
-      JSON.stringify(socialMediaAndMarketingLinks)
-    );
+    bodyData.append("socialMediaAndMarketingLinks", JSON.stringify(socialMediaAndMarketingLinks));
 
     //Photos
     // Add organizer
@@ -431,13 +373,9 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
       setIsLoading(true);
 
       const res = await axios
-        .patch(
-          `/v1/organizer/editOrganizerProfile/${organizerProfile.id}`,
-          body,
-          {
-            headers: { Authorization: `Bearer ${state.authToken}` },
-          }
-        )
+        .patch(`/v1/organizer/editOrganizerProfile/${organizerProfile.id}`, body, {
+          headers: { Authorization: `Bearer ${state.authToken}` },
+        })
         .catch((error) => {
           setSuccessModalVisible(true);
           setMessage("something went wrong");
@@ -469,13 +407,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
             submitRef.current.click();
           }}
           backButtonText="Back To Basic Info"
-          saveButtonText={
-            props.currentPage === "add-organization"
-              ? "Add"
-              : props.currentPage === "preview-organization"
-              ? "Update"
-              : "Update"
-          }
+          saveButtonText={props.currentPage === "add-organization" ? "Add" : props.currentPage === "preview-organization" ? "Update" : "Update"}
           heading={
             props.currentPage === "add-organization"
               ? "Add Organizer Profile"
@@ -517,46 +449,25 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         </div>
       </div> */}
 
-        <Formik
-          initialValues={initialValues}
-          onSubmit={handleProfileForm}
-          validationSchema={OrganizerFormValidationSchema}
-          enableReinitialize={true}
-        >
+        <Formik initialValues={initialValues} onSubmit={handleProfileForm} validationSchema={OrganizerFormValidationSchema} enableReinitialize={true}>
           {(form) => (
             <Form className="form-wrapper">
               <div className="file-wrapper">
                 <div className="child-Filewrapper">
                   <div>
                     <LabelWithTag label="Your logo" />
-                    <UploadFile
-                      previewProfileImage={previewLogoImage}
-                      handleClick={handleClickLogo}
-                    />
-                    {form.touched.logo && form.errors.logo && (
-                      <span className="error-message">{form.errors.logo}</span>
-                    )}
+                    <UploadFile previewProfileImage={previewLogoImage} handleClick={handleClickLogo} />
+                    {form.touched.logo && form.errors.logo && <span className="error-message">{form.errors.logo}</span>}
                   </div>
 
                   <div>
                     <LabelWithTag label="Your Cover Photo" />
-                    <UploadFile
-                      buttonType="large"
-                      previewProfileImage={previewCoverImage}
-                      handleClick={handleClickCover}
-                    />
-                    {form.touched.coverPhoto && form.errors.coverPhoto && (
-                      <span className="error-message">
-                        {form.errors.coverPhoto}
-                      </span>
-                    )}
+                    <UploadFile buttonType="large" previewProfileImage={previewCoverImage} handleClick={handleClickCover} />
+                    {form.touched.coverPhoto && form.errors.coverPhoto && <span className="error-message">{form.errors.coverPhoto}</span>}
                   </div>
                 </div>
                 <div>
-                  <LabelWithTag
-                    label="Your Additional Photos"
-                    tagType="Recomended"
-                  />
+                  <LabelWithTag label="Your Additional Photos" tagType="Recomended" />
                   <Slider
                     handleAdditionalPhoto={handleAdditionalPhoto}
                     previewAdditionalImage={previewAdditionalImage}
@@ -603,11 +514,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                   onChange={(e) => handleAdditionalPhotoUpload(e, form)}
                   multiple
                 />
-                <textarea
-                  placeholder="Enter Your name here"
-                  className="customTextare"
-                  name="organizerBio"
-                ></textarea>
+                <textarea placeholder="Type here" className="customTextare" name="organizerBio"></textarea>
 
                 {/* <InputBox
                   radiusType="27px"
@@ -618,11 +525,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                 /> */}
               </div>
               <div className="attributes-wrapper">
-                <LabelWithTag
-                  label="Organization Attributes"
-                  description="Let MusicPass members know more about your organization."
-                  tagType="none"
-                />
+                <LabelWithTag label="Organization Attributes" description="Let MusicPass members know more about your organization." tagType="none" />
                 <div className="list-wrapper">
                   {attributesListState.map((currentValue, index) => {
                     return (
@@ -678,39 +581,13 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                     tagType="Recomended"
                   />
                   <div className="socialLinks-wrapper">
-                    <InputBox
-                      name="phoneNumber"
-                      placeholder="+14166966270"
-                      label="Phone Number"
-                    />
-                    <InputBox
-                      name="facebook"
-                      placeholder="https://www.facebook.com/organizer"
-                      label="Facebook"
-                    />
-                    <InputBox
-                      name="instagram"
-                      placeholder="e.g. https://www.Instagram.com/organizer"
-                      label="Instagram"
-                    />
-                    <InputBox
-                      name="twitter"
-                      placeholder="e.g. https://www.twitter.com/"
-                      label="Twitter"
-                    />
-                    <InputBox
-                      name="youtube"
-                      label="Youtube"
-                      placeholder="e.g. https://www.youtube.com/organizer"
-                    />
+                    <InputBox name="phoneNumber" placeholder="+14166966270" label="Phone Number" />
+                    <InputBox name="facebook" placeholder="https://www.facebook.com/organizer" label="Facebook" />
+                    <InputBox name="instagram" placeholder="e.g. https://www.Instagram.com/organizer" label="Instagram" />
+                    <InputBox name="twitter" placeholder="e.g. https://www.twitter.com/" label="Twitter" />
+                    <InputBox name="youtube" label="Youtube" placeholder="e.g. https://www.youtube.com/organizer" />
                   </div>
-                  <input
-                    type="submit"
-                    value="Submit"
-                    ref={submitRef}
-                    style={{ display: "none" }}
-                    onClick={() => {}}
-                  />
+                  <input type="submit" value="Submit" ref={submitRef} style={{ display: "none" }} onClick={() => {}} />
                 </div>
               </div>
             </Form>
@@ -722,9 +599,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
           heading={heading}
           message={message}
           handleOkClick={() => {
-            heading === "Success" &&
-              !organizerProfile &&
-              setCurrentPage("preview");
+            heading === "Success" && !organizerProfile && setCurrentPage("preview");
 
             setSuccessModalVisible(false);
           }}
