@@ -13,7 +13,7 @@ const EditProfile = () => {
   return (
     <Dashboard handleSubmit={handleSubmit}>
       <EditProfileStyle>
-        <SectionHeading heading="Basic Info">
+        <SectionHeading heading="Basic Info ">
           <EditProfileForm ref={submitButton} />
         </SectionHeading>
       </EditProfileStyle>

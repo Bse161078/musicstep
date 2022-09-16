@@ -87,8 +87,10 @@ const NewPaymentMethod = (props: NewPaymentMethodProps) => {
             <InputBox label="Beneficiary's Name" name="benifieciaryName" />
             <InputBox label="Routing Number" name="routingNumber" />
             <InputBox label="Account Number or IBAN" name="accountNumber" />
-            {/* <InputBox label="Currency" name="currency" /> */}
-            <SelectBox
+            {/* <InputBox label="Currency" name="accountNumber" /> */}
+
+            <InputBox label="Currency" name="currency" />
+            {/* <SelectBox
               width="fill"
               name="currency"
               options={Currency}
@@ -96,7 +98,7 @@ const NewPaymentMethod = (props: NewPaymentMethodProps) => {
               label="Currency"
               defaultValue="Currency "
               handleSelectBoxChange={(value) => setselectedCurrency(value)}
-            />
+            /> */}
             <InputBox label="Tax ID Number" name="taxId" />
             <FilledButtonStyle
               //onClick={() =>{}}

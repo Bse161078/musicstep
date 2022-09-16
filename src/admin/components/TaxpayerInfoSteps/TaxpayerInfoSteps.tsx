@@ -140,7 +140,8 @@ const TaxpayerInfoSteps = ({
             setIsModalVisible={setIsModalVisible}
             handleOkClick={() => setCurrentPage("taxpayer-home")}
             message="Your taxpayer information has been saved and 
-                        submitted
+            Submitted
+            
                         "
           />
         </div>

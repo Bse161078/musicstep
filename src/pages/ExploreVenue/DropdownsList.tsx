@@ -26,10 +26,13 @@ export const DropdownsList = (props: any) => {
         }}
       >
         {(values: any, setFieldValue: any) => (
-          <Form className="drodown-form-wrapper">
+          <Form
+            className="drodown-form-wrapper hideScrollBar"
+            style={{ flexFlow: "nowrap" }}
+          >
             <span>
               <SelectBox
-                name="categoriesType"
+                name="All Categories"
                 setFieldValue={setFieldValue}
                 options={[{ key: "", value: filter?.categories }]}
                 values={filter?.categories}
@@ -39,7 +42,7 @@ export const DropdownsList = (props: any) => {
                 setLoading={setLoading}
               />
             </span>
-            <span style={{ width: "150px" }}>
+            <span>
               <SelectBox
                 name="genre"
                 setFieldValue={setFieldValue}
@@ -51,7 +54,7 @@ export const DropdownsList = (props: any) => {
                 width={"large"}
               />
             </span>
-            <span style={{ width: "150px" }}>
+            <span>
               <SelectBox
                 name="distance"
                 setFieldValue={setFieldValue}
@@ -63,9 +66,9 @@ export const DropdownsList = (props: any) => {
                 setLoading={setLoading}
               />
             </span>
-            <span style={{ width: "150px" }}>
+            <span>
               <SelectBox
-                name="time"
+                name="Timeframe"
                 setFieldValue={setFieldValue}
                 options={[{ key: "", value: filter?.timeFrame }]}
                 values={filter?.timeFrame}
@@ -76,7 +79,7 @@ export const DropdownsList = (props: any) => {
               />
             </span>
 
-            <span style={{ width: "150px" }}>
+            <span>
               <SelectBox
                 name="amenities"
                 setFieldValue={setFieldValue}
@@ -92,7 +95,7 @@ export const DropdownsList = (props: any) => {
               <OutlineButtonStyle
                 style={{
                   width: "120%",
-                  marginTop: 10,
+                  marginTop: 5,
                   border: "white",
                   background: "#F7F7F7",
                   padding: "5px",
@@ -112,7 +115,7 @@ export const DropdownsList = (props: any) => {
               <FilledButtonStyle
                 style={{
                   width: "120%",
-                  marginTop: 10,
+                  marginTop: 5,
                   background: "#fff",
                   padding: "5px",
                   color: "#100840",

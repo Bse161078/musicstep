@@ -19,6 +19,7 @@ import { useLoginContext } from "../../../context/authenticationContext";
 import moment from "moment";
 // import { initialValues } from "./initialvalues";
 import { useEventContext } from "../../../context/eventContext";
+import { Label } from "semantic-ui-react";
 
 type SubmitEventStep1Props = {
   setCurrentStep: any;
@@ -287,7 +288,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
   return (
     <SubmitEventStep1Style>
       <DashboardHeader
-        heading="Submit An Event"
+        heading="Submit a Event"
         backButtonText="Back To Events Management"
         handleSaveClick={() => {
           submitRef.current.click();
@@ -411,7 +412,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                 name="addvenue"
                 value="Add venue"
                 width="153px;"
-                height="53px"
+                // height="53px"
                 className="addvenue-btn"
                 type="button"
                 onClick={() => {
@@ -447,13 +448,20 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
               )}
             </span>
             <div className="fourth-row-wrapper">
-              <InputBox
+              {/* <InputBox
                 label="Event Description"
                 name="eventDescription"
                 width="1330px"
                 placeholder="Write a short description about the event."
                 setFieldValue={form.setFieldValue}
-              />
+              /> */}
+              <Label className="mylabel">Event Description</Label>
+              <textarea
+                style={{ width: "80%", marginTop: 10 }}
+                placeholder="Write a short description about the event."
+                className="customTextare"
+                name="eventDescription"
+              ></textarea>
             </div>
             {form.values.country !== selectedCountry &&
               setSelectedCountry(form.values.country)}

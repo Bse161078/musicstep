@@ -51,7 +51,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
       });
       setSuccessModalVisible(true);
       setIsModalVisible(false);
-      setmessage("Ticket Updated Successfully");
+      setmessage("Reservation Updated Successfully");
     } else {
       setTickets([
         { ...e, credits: Math.floor(getCredits(e.price, discount)) },
@@ -60,7 +60,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
       setSuccessModalVisible(true);
       setIsModalVisible(false);
       resetForm();
-      setmessage("Ticket Created Successfully");
+      setmessage("Reservation Created Successfully");
 
       initialValues = {
         title: "",
@@ -107,8 +107,8 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
   return (
     <>
       <ModalWrapper
-        heading="Create a Reservation Type"
-        rightButtonTitle="Create Reservation Type"
+        heading="Create a Reservation"
+        rightButtonTitle="Create a Reservation "
         leftButtonTitle="Cancel"
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}
@@ -127,12 +127,12 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
               <Form className="form-wrapper">
                 <div className="first-row">
                   <InputBox
-                    label="Ticket Title"
+                    label="Reservation Type/Title"
                     placeholder="Premium Ticket"
                     name="title"
                   />
                   <InputBox
-                    label="Ticekts Reservation"
+                    label="Open Seats or Spots Available "
                     placeholder="50"
                     name="numberOfTickets"
                     type="number"
@@ -140,9 +140,9 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                 </div>
 
                 <InputBox
-                  label="Ticket Description"
+                  label="Description of Reservation Type"
                   name="description"
-                  placeholder="Possimus Sunt Vitae Aut Ut Eaque Earum. Est At Cum. Qui Sit Quia Omnis Enim Ex Quos."
+                  placeholder="Anytime entry"
                 />
                 <div className="second-row">
                   <div>

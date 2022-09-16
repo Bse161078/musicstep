@@ -128,7 +128,7 @@ export default function VenueDetails() {
                         // images={[
                         //   venueDetail.coverPhotoUrl,
                         //   ...venueDetail.additionalPhotosUrls,
-                        // ]}
+                        // ]}   
                     >
                         {[
                             venueDetail.coverPhotoUrl,

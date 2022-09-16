@@ -103,7 +103,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
   return (
     <>
       <DashboardHeader
-        heading="Submit An Reservations"
+        heading="Submit a Event"
         backButtonText="Back To Step 1"
         handleSaveClick={() => {
           createEventHandlet();
@@ -127,7 +127,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
       {isLoading && <Loading />}
       <SubmitEventStep2Style>
         <div className="text-wrapper">
-          <h3>Events Tickets </h3>
+          <h3>Reservations </h3>
           <p>
             Create different types of reservations for your event. You must have
             at least one reservation type for your event.

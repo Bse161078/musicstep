@@ -77,7 +77,7 @@ const ResetPasswordForm = ({ match }: any) => {
       });
   };
 
-  const username = user ? `${user.firstName} ${user.lastName}` : "Member";
+  const username = user ? `${user.firstName}` : "Member";
   return (
     <FormWrapper
       leftImage="/images/login/login-side.png"

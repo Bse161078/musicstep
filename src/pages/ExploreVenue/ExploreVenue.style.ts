@@ -38,7 +38,9 @@ export const DropdownsListStyle = styled.div`
     grid-gap: 30px;
     flex-wrap: wrap;
     flex-direction: row;
+    overflow-x: scroll;
   }
+  
 `;
 export const TrialButton = styled.div`
 .free-trial-btn {

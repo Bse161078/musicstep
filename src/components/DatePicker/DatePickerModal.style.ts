@@ -18,11 +18,11 @@ font-size: 18px important;
 .react-date-picker {
   display: inline-flex;
   position: relative;
-  height: 53px;
+  // height: 53px;
   border-radius: 50px;
   border: 1px solid #0c0c0c;
   outline: 0;
-  padding: 15px 25px;
+  padding: 7px 25px;
   font-size: 18px;
   width: 100%;
   max-width: 230px;
@@ -58,7 +58,7 @@ font-size: 18px important;
 }
 .react-date-picker__inputGroup__input {
   min-width: 0.54em;
-  height: 100%;
+  // height: 100%;
   position: relative;
   padding: 0 1px;
   border: 0;

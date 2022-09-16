@@ -184,7 +184,7 @@ const AddVenueProfileForm = () => {
 
   //Handle Additional photo
   const handleAdditionalPhotoUpload = async (event: any, form: any) => {
-    const imageType = event.target.files[0].type;
+    const imageType = event.target && event.target.files[0].type;
     if (
       imageType === "image/jpeg" ||
       imageType === "image/png" ||

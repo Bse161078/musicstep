@@ -11,19 +11,16 @@ export const SliderStyle = styled.div`
 
   &::-webkit-scrollbar {
     width: 100px;
-    display: none;
   }
 
   &::-webkit-scrollbar {
     width: 100px;
-    display: none;
   }
 
   /* Track */
   &::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
     border-radius: 10px;
-    display: none;
   }
 
   /* Handle */
