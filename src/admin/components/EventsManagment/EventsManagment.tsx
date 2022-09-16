@@ -46,7 +46,7 @@ const EventsManagment = () => {
             height="54px"
             onClick={() => history.push("/admin/events-managment-home")}
           >
-            Submit A Event
+            Submit <a href=""></a> Event
           </OutlineButtonStyle>
         </div>
         <EventsManagmentList events={filteredEvents} />
