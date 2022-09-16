@@ -18,7 +18,13 @@ type CreateTicketModalProps = {
 
 const CreateTicketModal = (props: CreateTicketModalProps) => {
   const history = useHistory();
-  const { isModalVisible, setIsModalVisible, setTickets, tickets, ticket } = props;
+  const {
+    isModalVisible,
+    setIsModalVisible,
+    setTickets,
+    tickets,
+    ticket,
+  } = props;
   const [message, setmessage] = useState("");
   const [selectedDiscount, setSelectedDiscount] = useState(0);
   const [ticketForm, setTicketForm] = useState<any>(null);
@@ -45,13 +51,16 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
       });
       setSuccessModalVisible(true);
       setIsModalVisible(false);
-      setmessage("Ticket Updated Successfully");
+      setmessage("Reservation Updated Successfully");
     } else {
-      setTickets([{ ...e, credits: Math.floor(getCredits(e.price, discount)) }, ...tickets]);
+      setTickets([
+        { ...e, credits: Math.floor(getCredits(e.price, discount)) },
+        ...tickets,
+      ]);
       setSuccessModalVisible(true);
       setIsModalVisible(false);
       resetForm();
-      setmessage("Ticket Created Successfully");
+      setmessage("Reservation Created Successfully");
 
       initialValues = {
         title: "",
@@ -99,7 +108,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
     <>
       <ModalWrapper
         heading="Create a Reservation"
-        rightButtonTitle="Create Reservation Type"
+        rightButtonTitle="Create a Reservation "
         leftButtonTitle="Cancel"
         isModalVisible={isModalVisible}
         setIsModalVisible={setIsModalVisible}
@@ -117,19 +126,35 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
             {(form) => (
               <Form className="form-wrapper">
                 <div className="first-row">
-                  <InputBox label="Ticket Title" placeholder="Premium Ticket" name="title" />
-                  <InputBox label="Tickets Reservation" placeholder="50" name="numberOfTickets" type="number" />
+                  <InputBox
+                    label="Reservation Type/Title"
+                    placeholder="Premium Ticket"
+                    name="title"
+                  />
+                  <InputBox
+                    label="Open Seats or Spots Available "
+                    placeholder="50"
+                    name="numberOfTickets"
+                    type="number"
+                  />
                 </div>
 
                 <InputBox
-                  label="Ticket Description"
+                  label="Description of Reservation Type"
                   name="description"
-                  placeholder="Possimus Sunt Vitae Aut Ut Eaque Earum. Est At Cum. Qui Sit Quia Omnis Enim Ex Quos."
+                  placeholder="Anytime entry"
                 />
                 <div className="second-row">
                   <div>
                     <div className="secondrow-leftsection">
-                      <InputBox label="Ticket Price($)" placeholder="$50" name="price" width="660px" type="number" startText="$" />
+                      <InputBox
+                        label="Ticket Price($)"
+                        placeholder="$50"
+                        name="price"
+                        width="660px"
+                        type="number"
+                        startText="$"
+                      />
                       <span>
                         <SelectBox
                           label="Discount(%)"
@@ -159,12 +184,18 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                         placeholder="50%"
                         width="660px"
                       /> */}
-                        {form.touched.discount && form.errors.discount && <span className="error-message">{form.errors.discount}</span>}
+                        {form.touched.discount && form.errors.discount && (
+                          <span className="error-message">
+                            {form.errors.discount}
+                          </span>
+                        )}
                       </span>
                     </div>
                     <div>
                       {" "}
-                      <p className="bottom-text">You can offer minimum 50% discount of retail.</p>
+                      <p className="bottom-text">
+                        You can offer minimum 50% discount of retail.
+                      </p>
                     </div>
                   </div>
 
@@ -185,11 +216,20 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                     </div> */}
                     <div className="right-section">
                       <p className="price-label">Value in MusicPass Credits</p>
-                      <h3 className="title">{Math.floor(getCredits(form.values.price, discount))} Credits</h3>
+                      <h3 className="title">
+                        {Math.floor(getCredits(form.values.price, discount))}{" "}
+                        Credits
+                      </h3>
                     </div>
                   </div>
                 </div>
-                <input type="submit" value="Submit" ref={submitRef} style={{ display: "none" }} onClick={() => {}} />
+                <input
+                  type="submit"
+                  value="Submit"
+                  ref={submitRef}
+                  style={{ display: "none" }}
+                  onClick={() => {}}
+                />
 
                 {/* {parseInt(form.values.discount) !== selectedDiscount &&
                   setSelectedDiscount(parseInt(form.values.discount))} */}
@@ -204,7 +244,12 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
           </Formik>
         </CreateTicketModalStyle>
       </ModalWrapper>
-      <MessageModal isModalVisible={isSuccessModalVisible} setIsModalVisible={setSuccessModalVisible} heading="Success" message={message} />
+      <MessageModal
+        isModalVisible={isSuccessModalVisible}
+        setIsModalVisible={setSuccessModalVisible}
+        heading="Success"
+        message={message}
+      />
     </>
   );
 };

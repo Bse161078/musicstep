@@ -32,7 +32,7 @@ export const DropdownsList = (props: any) => {
           >
             <span>
               <SelectBox
-                name="categoriesType"
+                name="All Categories"
                 setFieldValue={setFieldValue}
                 options={[{ key: "", value: filter?.categories }]}
                 values={filter?.categories}
@@ -68,7 +68,7 @@ export const DropdownsList = (props: any) => {
             </span>
             <span>
               <SelectBox
-                name="time"
+                name="Timeframe"
                 setFieldValue={setFieldValue}
                 options={[{ key: "", value: filter?.timeFrame }]}
                 values={filter?.timeFrame}

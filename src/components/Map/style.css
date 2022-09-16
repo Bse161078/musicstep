@@ -27,11 +27,11 @@
 .dateTimepicker .react-time-picker__wrapper{
   border-radius: 24px;
   margin-top: 5px;
-    height: 53px;
+    /* height: 53px; */
     border-radius: 50px;
     border: 1px solid #0c0c0c;
     outline: 0;
-    padding: 15px 25px;
+    padding: 7px 25px;
     font-size: 18px;
 }
 .dateTimepicker .input-label{
@@ -75,4 +75,10 @@ text-overflow: initial !important; }
 .hideScrollBar {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+.mylabel{
+  font-size: 14px;
+  color: #0c0c0c;
+  font-weight: 500;
+  margin-left: 15px;
 }

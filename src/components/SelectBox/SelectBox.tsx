@@ -122,7 +122,7 @@ const SelectBox = (props: SelectBoxProps) => {
   const handleFilter = (value: any) => {
     setLoading(true);
     let data;
-    if (field.name === "categoriesType" || field.name === "genre") {
+    if (field.name === "All Categories" || field.name === "genre") {
       data = [{ type: "tags", search: [value] }];
     } else if (field.name === "distance") {
       data = [
