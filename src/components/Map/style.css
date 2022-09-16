@@ -66,9 +66,7 @@ text-overflow: initial !important; }
   width: 100%;
   max-width: 1380px;
 }
-.hideScrollBar{
 
-}
 .hideScrollBar::-webkit-scrollbar {
   display: none;
 }

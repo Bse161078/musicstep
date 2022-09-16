@@ -51,10 +51,14 @@ const SliderCustom = (props: SliderProps) => {
               return (
                 <ImageListItem>
                   <Grid container style={{ position: "relative" }}>
-                    <Grid item style={{ zIndex: 0 }}>
+                    <Grid
+                      item
+                      // style={{ zIndex: 0 }}
+                      style={{ position: "relative", zIndex: 0 }}
+                    >
                       <img
                         key={index}
-                        className="carousel-image"
+                        className="carousel-image crosimg"
                         alt="carousel tab"
                         src={imageurl}
                         onClick={(e) =>
@@ -67,17 +71,14 @@ const SliderCustom = (props: SliderProps) => {
                         style={{
                           width: "32px",
                           height: "32px",
-                          top: "16px",
-                          right: "16%",
+                          top: "7%",
+                          right: "5%",
                           position: "absolute",
                           cursor: "pointer",
                         }}
                         onClick={(e) => {
                           debugger;
-                          props.onDeleteFile(
-                            props.previewAdditionalImage[index],
-                            index
-                          );
+                          props.onDeleteFile(props.form, index);
                         }}
                       />
                       {/* <Grid

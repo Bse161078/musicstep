@@ -574,7 +574,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                   width="1380px"
                   // value={}
                   name="organizerName"
-                  placeholder="Enter Your name here "
+                  placeholder="Type here..."
                 />
                 <LabelWithTag
                   label="Organizer Bio"
