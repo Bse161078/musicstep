@@ -14,7 +14,7 @@ const ContentHeader = (props: ContentHeaderProps) => {
   const { heading, description, handleButtonClick, actionButtons } = props;
 
   return (
-    <ContentHeaderStyle style={{paddingRight:10}}>
+    <ContentHeaderStyle style={{ paddingRight: 10 }}>
       <div className="content-heading-wrapper">
         <h2 className="content-heading">{heading}</h2>
         <p className="content-description">{description}</p>
@@ -22,12 +22,8 @@ const ContentHeader = (props: ContentHeaderProps) => {
 
       <div className="buttons-wrapper">
         {handleButtonClick && (
-          <OutlineButtonStyle
-            onClick={handleButtonClick}
-            width="250px"
-            height="60px"
-          >
-            Add Organization Profile
+          <OutlineButtonStyle onClick={handleButtonClick} width="250px" height="60px">
+            Add Organizer Profile
           </OutlineButtonStyle>
         )}
 

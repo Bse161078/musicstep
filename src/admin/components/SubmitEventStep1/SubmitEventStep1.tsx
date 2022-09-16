@@ -2,12 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Form, Formik } from "formik";
 
-import {
-  InputBox,
-  SelectBox,
-  TimePickerModal,
-  DatePickerModal,
-} from "../../../components";
+import { InputBox, SelectBox, TimePickerModal, DatePickerModal } from "../../../components";
 import { OutlineButtonStyle } from "../../../styles/Common.style";
 import { EventManagmenPhotoScroller } from "../EventManagmenPhotoScroller";
 import { SubmitEventStep1Style } from "./SubmitEventStep1.style";
@@ -19,6 +14,7 @@ import { useLoginContext } from "../../../context/authenticationContext";
 import moment from "moment";
 // import { initialValues } from "./initialvalues";
 import { useEventContext } from "../../../context/eventContext";
+import { Label } from "semantic-ui-react";
 
 type SubmitEventStep1Props = {
   setCurrentStep: any;
@@ -37,29 +33,17 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
   const [cities, setcities] = useState([]);
   const [states, setStates] = useState([]);
   const [organizersForDropDown, setOrganizersForDropDown] = useState([]);
-  const [organizers, setOrganizers] = useState(
-    EventStateContext.state.organizersList
-  );
+  const [organizers, setOrganizers] = useState(EventStateContext.state.organizersList);
   const [venues, setVenues] = useState([]);
   const [statesObj, setStatesObj] = useState([]);
   const [countries, setCountries] = useState([]);
   const [selectedCountry, setSelectedCountry] = useState("");
   const [selectedState, setSelectedState] = useState("");
   const [selectedCountryIndex, setSelectedCountryIndex] = useState(0);
-  const [selectedOrganizerId, setSelectedOrganizerId] = useState(
-    EventStateContext.state.selectedOrganizerId
-  );
-  const [previewVenuePhoto, setPreviewVenuePhotoss] = useState(
-    EventStateContext.state.previewVenuePhoto
-  );
-  const [
-    previewVenuePhotoOfOrganizer,
-    setPreviewVenuePhotosOfOrganizer,
-  ] = useState([]);
-  const [
-    isVenuePhotoSameAsOrganizer,
-    setIsVenuePhotoSameAsOrganizer,
-  ] = useState(true);
+  const [selectedOrganizerId, setSelectedOrganizerId] = useState(EventStateContext.state.selectedOrganizerId);
+  const [previewVenuePhoto, setPreviewVenuePhotoss] = useState(EventStateContext.state.previewVenuePhoto);
+  const [previewVenuePhotoOfOrganizer, setPreviewVenuePhotosOfOrganizer] = useState([]);
+  const [isVenuePhotoSameAsOrganizer, setIsVenuePhotoSameAsOrganizer] = useState(true);
 
   let additionalPhotoUpload: any = React.createRef();
   let submitRef: any = React.createRef();
@@ -76,17 +60,13 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
     venue: EventStateContext.state.venue,
     organizer: EventStateContext.state.organizer,
     eventDescription: EventStateContext.state.eventDescription,
-    eventPhotoSameAsOrganizerPhoto:
-      EventStateContext.state.eventPhotoSameAsOrganizerPhoto,
+    eventPhotoSameAsOrganizerPhoto: EventStateContext.state.eventPhotoSameAsOrganizerPhoto,
     additionalPhotos: EventStateContext.state.additionalPhotos,
   });
 
   ////////////// countrystatecity config ///////////////////////////
   let headers = new Headers();
-  headers.append(
-    "X-CSCAPI-KEY",
-    "MWN2RzlpS0xhVHFTdzBUR3VMS0xoejRud0x5Qm94M1U5SjcxZ0U5Ng=="
-  );
+  headers.append("X-CSCAPI-KEY", "MWN2RzlpS0xhVHFTdzBUR3VMS0xoejRud0x5Qm94M1U5SjcxZ0U5Ng==");
 
   let requestOptions: any = {
     method: "GET",
@@ -134,18 +114,11 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
 
   useEffect(() => {
     if (selectedCountry) {
-      const countryId = countries.findIndex(
-        (item: any) => item === selectedCountry
-      );
+      const countryId = countries.findIndex((item: any) => item === selectedCountry);
       if (countryId) {
         setSelectedCountryIndex(countryId + 1);
 
-        fetch(
-          `https://api.countrystatecity.in/v1/countries/${
-            countryId + 1
-          }/states`,
-          requestOptions
-        )
+        fetch(`https://api.countrystatecity.in/v1/countries/${countryId + 1}/states`, requestOptions)
           .then((response) => response.json())
           .then((result) => {
             setStatesObj(result);
@@ -161,17 +134,12 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
 
   useEffect(() => {
     if (selectedState) {
-      const stateObj: any = statesObj.find(
-        (item: any) => item.name === selectedState
-      );
+      const stateObj: any = statesObj.find((item: any) => item.name === selectedState);
 
       if (stateObj) {
         const stateId = stateObj.iso2;
 
-        fetch(
-          `https://api.countrystatecity.in/v1/countries/${selectedCountryIndex}/states/${stateId}/cities`,
-          requestOptions
-        )
+        fetch(`https://api.countrystatecity.in/v1/countries/${selectedCountryIndex}/states/${stateId}/cities`, requestOptions)
           .then((response) => response.json())
           .then((result) => {
             const tempCities = result.map((city: any) => {
@@ -186,14 +154,10 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
 
   useEffect(() => {
     if (isVenuePhotoSameAsOrganizer && selectedOrganizerId) {
-      const singleorganizer: any = organizers.find(
-        (item: any) => item.id === selectedOrganizerId
-      );
+      const singleorganizer: any = organizers.find((item: any) => item.id === selectedOrganizerId);
 
       // const additionalPhoto = singleorganizer?.additionalPhotosUrls;
-      const additionalPhoto: [] = singleorganizer?.additionalPhotosUrls.map(
-        (photo: any) => process.env.REACT_APP_BASE_URL + "/images/" + photo
-      );
+      const additionalPhoto: [] = singleorganizer?.additionalPhotosUrls.map((photo: any) => process.env.REACT_APP_BASE_URL + "/images/" + photo);
 
       setPreviewVenuePhotosOfOrganizer(additionalPhoto);
     }
@@ -206,12 +170,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
 
   const handleAdditionalPhotoUpload = async (event: any, form: any) => {
     const imageType = event.target.files[0].type;
-    if (
-      imageType === "image/jpeg" ||
-      imageType === "image/png" ||
-      imageType === "image/jpg" ||
-      imageType === "image/svg"
-    ) {
+    if (imageType === "image/jpeg" || imageType === "image/png" || imageType === "image/jpg" || imageType === "image/svg") {
       let prevFiles = form.values.additionalPhotos;
       if (prevFiles) prevFiles.push(event.target.files[0]);
       else prevFiles = [event.target.files[0]];
@@ -255,12 +214,8 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
       },
     });
 
-    const filteredEvent: any = venues.find(
-      (v: any) => e.venue === v.name + " - " + v.location.address
-    );
-    const filteredOrganizer: any = organizers.find(
-      (org: any) => e.organizer === org.organizerName
-    );
+    const filteredEvent: any = venues.find((v: any) => e.venue === v.name + " - " + v.location.address);
+    const filteredOrganizer: any = organizers.find((org: any) => e.organizer === org.organizerName);
 
     e.venue_id = filteredEvent.id;
     e.organizer_id = filteredOrganizer.id;
@@ -299,21 +254,11 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
         saveButtonText="Next Step(1/2)"
         saveButtonWidth="190px"
       />
-      <Formik
-        initialValues={initialValues}
-        onSubmit={handleFormSubmit}
-        validationSchema={EventFormValidationSchema}
-        enableReinitialize={true}
-      >
+      <Formik initialValues={initialValues} onSubmit={handleFormSubmit} validationSchema={EventFormValidationSchema} enableReinitialize={true}>
         {(form) => (
           <Form className="form-wrapper">
             <div className="inputs-wrapper">
-              <InputBox
-                label="Event Title"
-                placeholder="Enter Event Title"
-                name="title"
-                width="640px"
-              />
+              <InputBox label="Event Title" placeholder="Enter Event Title" name="title" width="640px" />
               {/* <InputBox label="Date" name="date" width="200px" /> */}
               {/* <DatePickerModal /> */}
 
@@ -329,9 +274,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                   }}
                   lable="Start Date"
                 />
-                {form.touched.startdate && form.errors.startdate && (
-                  <span className="error-message">{form.errors.startdate}</span>
-                )}
+                {form.touched.startdate && form.errors.startdate && <span className="error-message">{form.errors.startdate}</span>}
               </span>
               <span>
                 <TimePickerModal
@@ -341,11 +284,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                   }}
                   lable="Start Time"
                 />
-                {form.touched.startingTime && form.errors.startingTime && (
-                  <span className="error-message">
-                    {form.errors.startingTime}
-                  </span>
-                )}
+                {form.touched.startingTime && form.errors.startingTime && <span className="error-message">{form.errors.startingTime}</span>}
               </span>
             </div>
             <div className="dropdown-row-wrapper">
@@ -359,9 +298,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                   }}
                   lable="End Date"
                 />
-                {form.touched.enddate && form.errors.enddate && (
-                  <span className="error-message">{form.errors.enddate}</span>
-                )}
+                {form.touched.enddate && form.errors.enddate && <span className="error-message">{form.errors.enddate}</span>}
               </span>
 
               <span>
@@ -372,11 +309,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                   }}
                   lable="End Time"
                 />
-                {form.touched.endingTime && form.errors.endingTime && (
-                  <span className="error-message">
-                    {form.errors.endingTime}
-                  </span>
-                )}
+                {form.touched.endingTime && form.errors.endingTime && <span className="error-message">{form.errors.endingTime}</span>}
               </span>
             </div>
             {/* <div className="dropdown-row-wrapper">
@@ -401,9 +334,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                   // options={countries}
                   values={filteredVenues}
                 />
-                {form.touched.venue && form.errors.venue && (
-                  <span className="error-message">{form.errors.venue}</span>
-                )}
+                {form.touched.venue && form.errors.venue && <span className="error-message">{form.errors.venue}</span>}
               </span>
               {/* onClick go to add venue page */}
               <OutlineButtonStyle
@@ -442,49 +373,35 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                 setFieldValue={form.setFieldValue}
                 values={organizersForDropDown}
               />
-              {form.touched.organizer && form.errors.organizer && (
-                <span className="error-message">{form.errors.organizer}</span>
-              )}
+              {form.touched.organizer && form.errors.organizer && <span className="error-message">{form.errors.organizer}</span>}
             </span>
             <div className="fourth-row-wrapper">
-              <InputBox
+              {/* <InputBox
                 label="Event Description"
                 name="eventDescription"
                 width="1330px"
                 placeholder="Write a short description about the event."
                 setFieldValue={form.setFieldValue}
-              />
+              /> */}
+              {/* <Label>Event Description</Label> */}
+              <textarea placeholder="Write a short description about the event." className="customTextare" name="eventDescription"></textarea>
             </div>
-            {form.values.country !== selectedCountry &&
-              setSelectedCountry(form.values.country)}
-            {form.values.state !== selectedState &&
-              setSelectedState(form.values.state)}
-            {form.values.eventPhotoSameAsOrganizerPhoto !==
-              isVenuePhotoSameAsOrganizer &&
-              setIsVenuePhotoSameAsOrganizer(
-                form.values.eventPhotoSameAsOrganizerPhoto
-              )}
-            {form.values.organizer !== selectedOrganizerId &&
-              setSelectedOrganizerId(form.values.organizer)}
+            {form.values.country !== selectedCountry && setSelectedCountry(form.values.country)}
+            {form.values.state !== selectedState && setSelectedState(form.values.state)}
+            {form.values.eventPhotoSameAsOrganizerPhoto !== isVenuePhotoSameAsOrganizer &&
+              setIsVenuePhotoSameAsOrganizer(form.values.eventPhotoSameAsOrganizerPhoto)}
+            {form.values.organizer !== selectedOrganizerId && setSelectedOrganizerId(form.values.organizer)}
 
             <EventManagmenPhotoScroller
               setField={form.setFieldValue}
-              eventPhotoSameAsOrganizerPhoto={
-                form.values.eventPhotoSameAsOrganizerPhoto
-              }
+              eventPhotoSameAsOrganizerPhoto={form.values.eventPhotoSameAsOrganizerPhoto}
               previewVenuePhoto={previewVenuePhoto}
               handleAdditionalPhoto={handleAdditionalPhoto}
               previewVenuePhotoOfOrganizer={previewVenuePhotoOfOrganizer}
               form={form}
               onDeleteFile={onDeleteFile}
             />
-            <input
-              type="submit"
-              value="Submit"
-              ref={submitRef}
-              style={{ display: "none" }}
-              onClick={() => {}}
-            />
+            <input type="submit" value="Submit" ref={submitRef} style={{ display: "none" }} onClick={() => {}} />
             <input
               ref={additionalPhotoUpload}
               type={"file"}

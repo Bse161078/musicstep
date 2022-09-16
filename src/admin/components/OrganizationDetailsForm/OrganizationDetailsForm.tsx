@@ -11,9 +11,7 @@ import { OrganizationDetailFormValidationSchema } from "./validation";
 const OrganizationDetailsForm = React.forwardRef((props: any, ref: any) => {
   const { state, dispatch } = useLoginContext();
   const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
-  const [previewProfileImage, setPreviewProfileImage] = useState<string>(
-    process.env.REACT_APP_BASE_URL + "/images/" + state.data.imageUrl
-  );
+  const [previewProfileImage, setPreviewProfileImage] = useState<string>(process.env.REACT_APP_BASE_URL + "/images/" + state.data.imageUrl);
 
   //Handle file upload
   let fileUpload: any = React.createRef();
@@ -24,12 +22,7 @@ const OrganizationDetailsForm = React.forwardRef((props: any, ref: any) => {
   //handle file
   const handleFileUpload = (event: any, form: any) => {
     const imageType = event.target.files[0].type;
-    if (
-      imageType === "image/jpeg" ||
-      imageType === "image/png" ||
-      imageType === "image/jpg" ||
-      imageType === "image/svg"
-    ) {
+    if (imageType === "image/jpeg" || imageType === "image/png" || imageType === "image/jpg" || imageType === "image/svg") {
       form.setFieldValue("photo", event.target.files[0]);
       let reader = new FileReader();
       let file = event.target.files[0];
@@ -66,10 +59,7 @@ const OrganizationDetailsForm = React.forwardRef((props: any, ref: any) => {
 
   return (
     <OrganizationDetailsFormStyle>
-      <UploadFile
-        handleClick={handleClick}
-        previewProfileImage={previewProfileImage}
-      />
+      <UploadFile handleClick={handleClick} previewProfileImage={previewProfileImage} />
 
       <div>
         <Formik
@@ -84,7 +74,7 @@ const OrganizationDetailsForm = React.forwardRef((props: any, ref: any) => {
           {(form) => (
             <Form className="organization-details-form">
               <InputBox label="Organization Name" name="organizationName" />
-              <InputBox label="Prefered Country" name="prefferedCountry" />
+              <InputBox label="Preferred Country" name="prefferedCountry" />
               {/* {console.log(form)} */}
               {/* <SelectBox
                 width="fill"
@@ -106,12 +96,7 @@ const OrganizationDetailsForm = React.forwardRef((props: any, ref: any) => {
                 style={{ display: "none" }}
                 onChange={(e) => handleFileUpload(e, form)}
               />
-              <input
-                type="submit"
-                value="Submit"
-                ref={ref}
-                style={{ display: "none" }}
-              />
+              <input type="submit" value="Submit" ref={ref} style={{ display: "none" }} />
             </Form>
           )}
         </Formik>

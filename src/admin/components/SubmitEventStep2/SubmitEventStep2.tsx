@@ -55,10 +55,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
     bodyData.append("city", eventData.city);
     bodyData.append("country", eventData.country);
     bodyData.append("venue", eventData.venue_id);
-    bodyData.append(
-      "eventPhotoSameAsOrganizerPhoto",
-      eventData.eventPhotoSameAsOrganizerPhoto
-    );
+    bodyData.append("eventPhotoSameAsOrganizerPhoto", eventData.eventPhotoSameAsOrganizerPhoto);
     bodyData.append("organizer", eventData.organizer_id);
     bodyData.append("tickets", JSON.stringify(formatedTickets));
     bodyData.append("eventDescription", eventData.eventDescription);
@@ -103,7 +100,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
   return (
     <>
       <DashboardHeader
-        heading="Submit An Reservations"
+        heading="Submit An Event"
         backButtonText="Back To Step 1"
         handleSaveClick={() => {
           createEventHandlet();
@@ -127,11 +124,8 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
       {isLoading && <Loading />}
       <SubmitEventStep2Style>
         <div className="text-wrapper">
-          <h3>Events Tickets </h3>
-          <p>
-            Create different types of reservations for your event. You must have
-            at least one reservation type for your event.
-          </p>
+          <h3>Reservations </h3>
+          <p>Create different types of reservations for your event. You must have at least one reservation type for your event.</p>
         </div>
         <div className="tickets-wrapper">
           <CreateTicket setTickets={setTickets} tickets={tickets} />
