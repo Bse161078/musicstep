@@ -148,7 +148,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                   <div>
                     <div className="secondrow-leftsection">
                       <InputBox
-                        label="Ticket Price($)"
+                        label="Retail Price Equivalent for this type of seat or spot"
                         placeholder="$50"
                         name="price"
                         width="660px"
@@ -157,7 +157,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                       />
                       <span>
                         <SelectBox
-                          label="Discount(%)"
+                          label="Discount Level=(higher level=higher discount)"
                           name="Level 1"
                           disabled={form.values.price === 0}
                           options={[

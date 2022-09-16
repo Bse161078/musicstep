@@ -178,11 +178,14 @@ export default function TeamManagement() {
                     addNewTeam={addNewTeam}
                 />
 
+            {
+                isRoleVisible &&
                 <AddRole
                     isModalVisible={isRoleVisible}
                     setIsModalVisible={setRoleVisible}
                     addNewRole={addNewRole}
                 />
+            }
         </Dashboard>
     );
 }

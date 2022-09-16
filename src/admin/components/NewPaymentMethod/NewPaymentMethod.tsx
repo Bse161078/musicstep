@@ -47,7 +47,6 @@ const NewPaymentMethod = (props: NewPaymentMethodProps) => {
         setErrorMessage("Please fill all the fields");
       });
   };
-  console.log(currencies);
   return (
     <NewPaymentMethodStyle>
       <DashboardHeader

@@ -48,7 +48,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
 
     bodyData.append("title", eventData.title);
     setLoading(true);
-    bodyData.append("date", new Date(eventData.date).toISOString());
+    bodyData.append("date", new Date(eventData.enddate).toISOString());
     bodyData.append("startingTime", eventData.startingTime);
     bodyData.append("endingTime", eventData.endingTime);
     bodyData.append("state", eventData.state);
@@ -103,7 +103,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
   return (
     <>
       <DashboardHeader
-        heading="Submit a Event"
+        heading="Submit an Event"
         backButtonText="Back To Step 1"
         handleSaveClick={() => {
           createEventHandlet();

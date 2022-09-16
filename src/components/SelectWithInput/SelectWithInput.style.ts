@@ -10,6 +10,7 @@ export const SelectWithInputStyle = styled.div`
 
     .input-label {
       display: none;
+      text-align:left;
     }
 
     .select-wrapper {

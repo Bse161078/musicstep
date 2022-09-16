@@ -170,7 +170,6 @@ const SelectBox = (props: SelectBoxProps) => {
   };
   let count = 0;
   useEffect(() => {}, [values]);
-  console.log(values);
   return (
     <SelectInputStyle type={type}>
       {label && <label className="select-label">{label}</label>}

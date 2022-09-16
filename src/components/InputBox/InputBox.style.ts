@@ -38,6 +38,7 @@ export const InputBoxStyle = styled.div`
     color: #0c0c0c;
     font-weight: 500;
     margin-left: 15px;
+    text-align:left;
   }
 
   .input-info {

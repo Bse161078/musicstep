@@ -81,11 +81,16 @@ const OrganizationDetailsForm = React.forwardRef((props: any, ref: any) => {
           onSubmit={handleOrganizationDetailsSubmit}
           validationSchema={OrganizationDetailFormValidationSchema}
         >
-          {(form) => (
+          {(form:any) => (
             <Form className="organization-details-form">
               <InputBox label="Organization Name" name="organizationName" />
-              <InputBox label="Preferred Country" name="prefferedCountry" />
 
+              <InputBox label="Preferred Country" name="preferredCountry" />
+                { form.errors.prefferedCountry && (
+                    <span style={{color:"red",marginTop:-20,marginLeft:10}}>
+                            {form.errors.prefferedCountry}
+                          </span>
+                )}
               {/* {console.log(form)} */}
               {/* <SelectBox
                 width="fill"

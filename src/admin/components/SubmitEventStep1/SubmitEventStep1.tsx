@@ -38,6 +38,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
   const [cities, setcities] = useState([]);
   const [states, setStates] = useState([]);
   const [organizersForDropDown, setOrganizersForDropDown] = useState([]);
+  const [description,setDescription]=useState("");
   const [organizers, setOrganizers] = useState(
     EventStateContext.state.organizersList
   );
@@ -101,7 +102,6 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
     fetch("https://api.countrystatecity.in/v1/countries", requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        console.log("result = ", result);
         const tempcountry = result.map((country: any) => {
           return country.name;
         });
@@ -266,7 +266,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
     e.venue_id = filteredEvent.id;
     e.organizer_id = filteredOrganizer.id;
 
-    setEventData({ ...eventData, ...e });
+    setEventData({ ...eventData, ...e,eventDescription:description });
     setCurrentStep(2);
   };
 
@@ -288,11 +288,10 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
   return (
     <SubmitEventStep1Style>
       <DashboardHeader
-        heading="Submit a Event"
+        heading="Submit an Event"
         backButtonText="Back To Events Management"
         handleSaveClick={() => {
           submitRef.current.click();
-          setCurrentStep(2);
         }}
         handleBackClick={() => {
           history.push("/admin/events-management");
@@ -461,6 +460,8 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                 placeholder="Write a short description about the event."
                 className="customTextare"
                 name="eventDescription"
+                value={description}
+                onChange={(e)=>setDescription(e.target.value)}
               ></textarea>
             </div>
             {form.values.country !== selectedCountry &&
