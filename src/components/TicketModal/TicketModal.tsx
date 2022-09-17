@@ -82,7 +82,7 @@ const TicketModal = (props: TicketModalProps) => {
   const venue=props.venue;
   return (
     <ModalWrapper
-      heading="Ticket"
+      heading="Reservation"
       isFooter={false}
       isModalVisible={isModalVisible}
       setIsModalVisible={setIsModalVisible}
@@ -151,7 +151,7 @@ const TicketModal = (props: TicketModalProps) => {
             setIsCheckingAvailablityModalVisible(true);
           }}
         >
-          Reserve Ticket
+          Reserve
         </FilledButtonStyle>
         <div>
           <p id="cancel-text">

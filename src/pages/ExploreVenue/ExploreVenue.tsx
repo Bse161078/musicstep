@@ -166,7 +166,7 @@ export default function ExploreVenue() {
       {}
       {subscribtion?.active ? (
         <>
-          <div style={{ padding: "30px 60px" }}>
+          <div style={{ padding: "30px 60px"}}>
             <DropdownsList
               filter={filter}
               setLoading={setLoading}

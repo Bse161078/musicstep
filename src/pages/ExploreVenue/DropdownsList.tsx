@@ -1,134 +1,211 @@
-import { Form, Formik } from "formik";
-import React, { useState } from "react";
-import { SelectBox } from "../../components";
+import {Form, Formik} from "formik";
+import React, {useEffect, useState} from "react";
+import {SelectBox} from "../../components";
 import {
-  FilledButtonStyle,
-  OutlineButtonStyle,
+    FilledButtonStyle,
+    OutlineButtonStyle,
 } from "../../styles/Common.style";
 
-import { DropdownsListStyle } from "./ExploreVenue.style";
+import {DropdownsListStyle} from "./ExploreVenue.style";
+import axios from "axios";
 
 export const DropdownsList = (props: any) => {
-  const { filter, setVenues, setLoading, getEvents, getFilters } = props;
-  const [clear, setClear] = useState(false);
-  return (
-    <DropdownsListStyle>
-      <Formik
-        initialValues={{
-          categoriesType: "All Categories",
-          genre: "Genres",
-          distance: "distance",
-          time: "Timeframe",
-          amenities: "Amenities",
-        }}
-        onSubmit={(values: any, { resetForm }) => {
-          resetForm({ values: "" });
-        }}
-      >
-        {(values: any, setFieldValue: any) => (
-          <Form
-            className="drodown-form-wrapper hideScrollBar"
-            style={{ flexFlow: "nowrap" }}
-          >
+    const {filter, setVenues, setLoading, getEvents, getFilters} = props;
+    const [clear, setClear] = useState(false);
+    const [selectedFilter,setSelectedFilter]=useState(null);
+
+    const handleFilter = (value: any) => {
+        setLoading(true);
+        let data;
+        if (value.key === "All Categories" || value.key === "genre") {
+            data = [{type: "tags", search: [value.data]}];
+        } else if (value.key === "distance") {
+            data = [
+                {
+                    type: "distance",
+                    search: [
+                        {
+                            location: {latitude: value.latitude, longitude: value.longtitude},
+                            value: parseInt((value.data).split(" ")),
+                        },
+                    ],
+                },
+            ];
+        } else if (value.key === "time") {
+            if (value.data === "Now") {
+                data = [{type: "time", search: [{unit: "hours", value: 0}]}];
+            } else if ((value.data).includes("Not now")) {
+                data = [{type: "time", search: [{unit: "hours", value: 12}]}];
+            } else {
+                data = [{type: "time", search: [{unit: "days", value: 7}]}];
+            }
+        } else {
+            data = [{type: "amenities", search: [value.data]}];
+        }
+
+        axios
+            .post("/v1/filter/event", {filters: data})
+            .then((response) => {
+                setLoading(false);
+                setVenues(response.data);
+            })
+            .catch((err) => {
+                setLoading(false);
+            });
+    };
+
+
+    useEffect(() => {
+        const filterData = localStorage.getItem("filter");
+        if (filterData && filterData.length > 0){
+            handleFilter(JSON.parse(filterData));
+        }
+    }, [])
+
+    const clearFilter=()=>{
+        localStorage.removeItem("filter");
+        setTimeout(()=>{
+            setClear(false);
+        },100);
+    }
+
+
+    let prevFilter:any=localStorage.getItem("filter");
+
+    if (prevFilter && prevFilter.length > 0){
+        prevFilter=JSON.parse(prevFilter);
+    }
+
+
+
+    return (
+        <DropdownsListStyle>
+            {!clear && <Formik
+                initialValues={{
+                    categoriesType: "All Categories",
+                    genre: "Genres",
+                    distance: "Distance",
+                    time: "Timeframe",
+                    amenities: "Amenities",
+                }}
+                onSubmit={(values: any, {resetForm}) => {
+                    resetForm({values: ""});
+                }}
+            >
+                {(values: any, setFieldValue: any) => (
+                    <Form
+                        className="drodown-form-wrapper"
+                        style={{flexFlow: "nowrap", overflowX: "auto", padding: "10px"}}
+                    >
             <span>
               <SelectBox
-                name="All Categories"
-                setFieldValue={setFieldValue}
-                options={[{ key: "", value: filter?.categories }]}
-                values={filter?.categories}
-                setVenues={setVenues}
-                clear={clear}
-                width={"large"}
-                setLoading={setLoading}
+                  name={prevFilter && prevFilter.key==="All Categories"?prevFilter.data:"All Categories"}
+                  setFieldValue={setFieldValue}
+                  options={[{key: "", value: filter?.categories}]}
+                  values={filter?.categories}
+                  setVenues={setVenues}
+                  clear={clear}
+                  width={"large"}
+                  setLoading={setLoading}
+                  handleSelectBoxChange={(data)=>setSelectedFilter(data)}
               />
             </span>
-            <span>
+                        <span>
               <SelectBox
-                name="genre"
-                setFieldValue={setFieldValue}
-                clear={clear}
-                options={[{ key: "", value: filter?.liveStream }]}
-                values={filter?.liveStream}
-                setVenues={setVenues}
-                setLoading={setLoading}
-                width={"large"}
+                  name={prevFilter && prevFilter.key==="Genre"?prevFilter.data:"Genre"}
+                  setFieldValue={setFieldValue}
+                  clear={clear}
+                  options={[{key: "", value: filter?.liveStream}]}
+                  values={filter?.liveStream}
+                  setVenues={setVenues}
+                  setLoading={setLoading}
+                  width={"large"}
+                  handleSelectBoxChange={(data)=>setSelectedFilter(data)}
               />
             </span>
-            <span>
+                        <span>
               <SelectBox
-                name="distance"
-                setFieldValue={setFieldValue}
-                options={[{ key: "", value: filter?.distance }]}
-                values={filter?.distance}
-                width={"large"}
-                setVenues={setVenues}
-                clear={clear}
-                setLoading={setLoading}
+                  name={prevFilter && prevFilter.key==="Distance"?prevFilter.data:"Distance"}
+                  setFieldValue={setFieldValue}
+                  options={[{key: "", value: filter?.distance}]}
+                  values={filter?.distance}
+                  width={"large"}
+                  setVenues={setVenues}
+                  clear={clear}
+                  setLoading={setLoading}
+                  handleSelectBoxChange={(data)=>setSelectedFilter(data)}
               />
             </span>
-            <span>
+                        <span>
               <SelectBox
-                name="Timeframe"
-                setFieldValue={setFieldValue}
-                options={[{ key: "", value: filter?.timeFrame }]}
-                values={filter?.timeFrame}
-                setVenues={setVenues}
-                clear={clear}
-                setLoading={setLoading}
-                width={"large"}
+                  name={prevFilter && prevFilter.key==="Timeframe"?prevFilter.data:"Timeframe"}
+                  setFieldValue={setFieldValue}
+                  options={[{key: "", value: filter?.timeFrame}]}
+                  values={filter?.timeFrame}
+                  setVenues={setVenues}
+                  clear={clear}
+                  setLoading={setLoading}
+                  width={"large"}
+                  handleSelectBoxChange={(data)=>setSelectedFilter(data)}
               />
             </span>
 
-            <span>
+                        <span>
               <SelectBox
-                name="amenities"
-                setFieldValue={setFieldValue}
-                options={[{ key: "", value: filter?.amenities }]}
-                values={filter?.amenities}
-                setVenues={setVenues}
-                width={"large"}
-                clear={clear}
-                setLoading={setLoading}
+                  name={prevFilter && prevFilter.key==="Amenities"?prevFilter.data:"Amenities"}
+                  setFieldValue={setFieldValue}
+                  options={[{key: "", value: filter?.amenities}]}
+                  values={filter?.amenities}
+                  setVenues={setVenues}
+                  width={"large"}
+                  clear={clear}
+                  setLoading={setLoading}
+                  handleSelectBoxChange={(data)=>setSelectedFilter(data)}
               />
             </span>
-            <span>
+                        <span>
               <OutlineButtonStyle
-                style={{
-                  width: "120%",
-                  marginTop: 5,
-                  border: "white",
-                  background: "#F7F7F7",
-                  padding: "5px",
-                }}
-                type="submit"
-                onClick={() => {
-                  setClear(true);
-                  getEvents();
-                  //setFieldValue(name)
-                  getFilters();
-                }}
+                  style={{
+                      width: "120%",
+                      marginTop: 5,
+                      border: "white",
+                      background: "#F7F7F7",
+                      padding: "5px",
+                  }}
+                  type="submit"
+                  onClick={() => {
+                      setClear(true);
+                      getEvents();
+                      //setFieldValue(name)
+                      getFilters();
+                      clearFilter()
+                  }}
               >
                 Clear All
               </OutlineButtonStyle>
             </span>
-            <span>
+                        <span>
               <FilledButtonStyle
-                style={{
-                  width: "120%",
-                  marginTop: 5,
-                  background: "#fff",
-                  padding: "5px",
-                  color: "#100840",
-                  border: "1px solid #100840",
-                }}
-                type="submit"
+                  style={{
+                      width: "120%",
+                      marginTop: 5,
+                      background: "#fff",
+                      padding: "5px",
+                      color: "#100840",
+                      border: "1px solid #100840",
+                  }}
+                  onClick={(e)=>{
+                      if(selectedFilter){
+                          localStorage.setItem("filter",JSON.stringify(selectedFilter));
+                      }
+                  }}
               >
                 Save filter preferences
               </FilledButtonStyle>
             </span>
-          </Form>
-        )}
-      </Formik>
-    </DropdownsListStyle>
-  );
+                    </Form>
+                )}
+            </Formik>}
+        </DropdownsListStyle>
+    );
 };

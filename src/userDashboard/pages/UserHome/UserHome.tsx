@@ -76,7 +76,7 @@ const EventReservation = ({reservations, cancelreservation, subscription,setPric
                                         date={new Date(reservation.eventInfo[0].date)}
                                         originalTime={moment(reservation.eventInfo[0].startingTime)}
                                         categoryTags={reservation.venueInfo[0].categoryTags}
-
+                                        reservation={reservation}
                                     />
                                 </ImageListItem>
 

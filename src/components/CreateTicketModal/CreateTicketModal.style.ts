@@ -23,7 +23,7 @@ const CreateTicketModalStyle = styled.div`
     border-top: 1px solid #c0c0c0;
     padding-top: 30px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
     gap: 20px;
     .secondrow-leftsection {
       display: flex;
@@ -39,7 +39,7 @@ const CreateTicketModalStyle = styled.div`
   }
 
   .price-holder {
-    width: 260px;
+    width: 120px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     text-align: left;

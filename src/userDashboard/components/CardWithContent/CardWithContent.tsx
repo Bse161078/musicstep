@@ -17,7 +17,8 @@ type CardWithContentProps = {
     handleButtonClick?: any;
     date?: any;
     originalTime?: any;
-    categoryTags?: any
+    categoryTags?: any;
+    reservation?:any;
 };
 
 const CardWithContent = (props: CardWithContentProps) => {
@@ -31,17 +32,28 @@ const CardWithContent = (props: CardWithContentProps) => {
         handleButtonClick,
         date,
         originalTime,
-        categoryTags
+        categoryTags,
+        reservation
     } = props;
 
     const formattedFutureDate = moment(moment(date).format("YYYY-MM-DD") + ' ' + time);
 
     const differenceInHours = formattedFutureDate.diff(new Date(), "hours");
+
+
+    let imageUrl=null;
+
+    if(reservation && reservation.venueInfo && (reservation.venueInfo).length>0){
+        imageUrl=reservation.venueInfo[0].logoUrl;
+    }
+
+
     return (
         <>
             <CardWithContentStyle>
                 <img
-                    src="/images/sample.png"
+                    src={imageUrl?`${process.env.REACT_APP_BASE_URL}/images/${imageUrl}`:"/images/sample.png"}
+                    style={{width:92,height:92,borderRadius:10}}
                     className="card-thumbnail"
                     alt="thumbnail"
                 />
