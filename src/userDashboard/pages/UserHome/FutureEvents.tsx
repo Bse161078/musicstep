@@ -150,7 +150,7 @@ const FutureEvents = () => {
                                 Event Name & Genre
                             </TableCell>
                             <TableCell align="left" style={{minWidth: 2}}>
-                                Event Name
+                                Venue Name
                             </TableCell>
                             <TableCell align="left" style={{minWidth: 2}}>
                             </TableCell>

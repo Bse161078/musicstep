@@ -1,6 +1,6 @@
 import {Form, Formik} from "formik";
 import React, {useEffect, useState} from "react";
-import {SelectBox} from "../../components";
+import {MessageModal, SelectBox} from "../../components";
 import {
     FilledButtonStyle,
     OutlineButtonStyle,
@@ -8,11 +8,15 @@ import {
 
 import {DropdownsListStyle} from "./ExploreVenue.style";
 import axios from "axios";
+import {useLoginContext} from "../../context/authenticationContext";
+import {BillingInformationFormStyle} from "../../userDashboard/components/BillingInformationForm/BillingInformationForm.style";
 
 export const DropdownsList = (props: any) => {
     const {filter, setVenues, setLoading, getEvents, getFilters} = props;
     const [clear, setClear] = useState(false);
-    const [selectedFilter,setSelectedFilter]=useState(null);
+    const [selectedFilter, setSelectedFilter] = useState(null);
+    const {state, dispatch} = useLoginContext();
+    const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
 
     const handleFilter = (value: any) => {
         setLoading(true);
@@ -56,26 +60,47 @@ export const DropdownsList = (props: any) => {
 
 
     useEffect(() => {
-        const filterData = localStorage.getItem("filter");
-        if (filterData && filterData.length > 0){
+        const locallyStoredUser=JSON.parse(localStorage.getItem("data") || "{}");
+
+        const filterData = locallyStoredUser.preferences;
+        if (filterData && filterData.length > 0) {
             handleFilter(JSON.parse(filterData));
         }
     }, [])
 
-    const clearFilter=()=>{
+    const clearFilter = () => {
         localStorage.removeItem("filter");
-        setTimeout(()=>{
+        setTimeout(() => {
             setClear(false);
-        },100);
+        }, 100);
     }
 
 
-    let prevFilter:any=localStorage.getItem("filter");
+    const locallyStoredUser=JSON.parse(localStorage.getItem("data") || "{}");
+    let prevFilter: any = locallyStoredUser.preferences;
 
-    if (prevFilter && prevFilter.length > 0){
-        prevFilter=JSON.parse(prevFilter);
+    try{
+        if (prevFilter && prevFilter.length > 0) {
+            prevFilter = JSON.parse(prevFilter);
+        }
+    }catch (e) {
     }
 
+
+    const saveFilterPreferences = async (preferences: any) => {
+        try {
+            setLoading(true);
+            const response = await axios.put("/v1/users/preferences", {preferences},
+                {headers: {Authorization: `Bearer ${state.authToken}`}});
+            const locallyStoredUser=JSON.parse(localStorage.getItem("data") || "{}");
+            locallyStoredUser.preferences=preferences;
+            localStorage.setItem("data",JSON.stringify(locallyStoredUser));
+            setLoading(false);
+            setSuccessModalVisible(true);
+        } catch (e) {
+            setLoading(false);
+        }
+    }
 
 
     return (
@@ -99,7 +124,7 @@ export const DropdownsList = (props: any) => {
                     >
             <span>
               <SelectBox
-                  name={prevFilter && prevFilter.key==="All Categories"?prevFilter.data:"All Categories"}
+                  name={prevFilter && prevFilter.key === "All Categories" ? prevFilter.data : "All Categories"}
                   setFieldValue={setFieldValue}
                   options={[{key: "", value: filter?.categories}]}
                   values={filter?.categories}
@@ -107,12 +132,12 @@ export const DropdownsList = (props: any) => {
                   clear={clear}
                   width={"large"}
                   setLoading={setLoading}
-                  handleSelectBoxChange={(data)=>setSelectedFilter(data)}
+                  handleSelectBoxChange={(data) => setSelectedFilter(data)}
               />
             </span>
                         <span>
               <SelectBox
-                  name={prevFilter && prevFilter.key==="Genre"?prevFilter.data:"Genre"}
+                  name={prevFilter && prevFilter.key === "Genre" ? prevFilter.data : "Genre"}
                   setFieldValue={setFieldValue}
                   clear={clear}
                   options={[{key: "", value: filter?.liveStream}]}
@@ -120,12 +145,12 @@ export const DropdownsList = (props: any) => {
                   setVenues={setVenues}
                   setLoading={setLoading}
                   width={"large"}
-                  handleSelectBoxChange={(data)=>setSelectedFilter(data)}
+                  handleSelectBoxChange={(data) => setSelectedFilter(data)}
               />
             </span>
                         <span>
               <SelectBox
-                  name={prevFilter && prevFilter.key==="Distance"?prevFilter.data:"Distance"}
+                  name={prevFilter && prevFilter.key === "Distance" ? prevFilter.data : "Distance"}
                   setFieldValue={setFieldValue}
                   options={[{key: "", value: filter?.distance}]}
                   values={filter?.distance}
@@ -133,12 +158,12 @@ export const DropdownsList = (props: any) => {
                   setVenues={setVenues}
                   clear={clear}
                   setLoading={setLoading}
-                  handleSelectBoxChange={(data)=>setSelectedFilter(data)}
+                  handleSelectBoxChange={(data) => setSelectedFilter(data)}
               />
             </span>
                         <span>
               <SelectBox
-                  name={prevFilter && prevFilter.key==="Timeframe"?prevFilter.data:"Timeframe"}
+                  name={prevFilter && prevFilter.key === "Timeframe" ? prevFilter.data : "Timeframe"}
                   setFieldValue={setFieldValue}
                   options={[{key: "", value: filter?.timeFrame}]}
                   values={filter?.timeFrame}
@@ -146,13 +171,13 @@ export const DropdownsList = (props: any) => {
                   clear={clear}
                   setLoading={setLoading}
                   width={"large"}
-                  handleSelectBoxChange={(data)=>setSelectedFilter(data)}
+                  handleSelectBoxChange={(data) => setSelectedFilter(data)}
               />
             </span>
 
                         <span>
               <SelectBox
-                  name={prevFilter && prevFilter.key==="Amenities"?prevFilter.data:"Amenities"}
+                  name={prevFilter && prevFilter.key === "Amenities" ? prevFilter.data : "Amenities"}
                   setFieldValue={setFieldValue}
                   options={[{key: "", value: filter?.amenities}]}
                   values={filter?.amenities}
@@ -160,7 +185,7 @@ export const DropdownsList = (props: any) => {
                   width={"large"}
                   clear={clear}
                   setLoading={setLoading}
-                  handleSelectBoxChange={(data)=>setSelectedFilter(data)}
+                  handleSelectBoxChange={(data) => setSelectedFilter(data)}
               />
             </span>
                         <span>
@@ -194,9 +219,9 @@ export const DropdownsList = (props: any) => {
                       color: "#100840",
                       border: "1px solid #100840",
                   }}
-                  onClick={(e)=>{
-                      if(selectedFilter){
-                          localStorage.setItem("filter",JSON.stringify(selectedFilter));
+                  onClick={(e) => {
+                      if (selectedFilter) {
+                          saveFilterPreferences(JSON.stringify(selectedFilter));
                       }
                   }}
               >
@@ -206,6 +231,12 @@ export const DropdownsList = (props: any) => {
                     </Form>
                 )}
             </Formik>}
+            <MessageModal
+                isModalVisible={isSuccessModalVisible}
+                setIsModalVisible={setSuccessModalVisible}
+                heading="Success"
+                message="Preferences saved."
+            />
         </DropdownsListStyle>
     );
 };

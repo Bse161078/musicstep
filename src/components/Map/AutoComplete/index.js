@@ -2,8 +2,14 @@ import Autocomplete from "react-google-autocomplete";
 import React, {Fragment, useState} from "react";
 import Grid from "@mui/material/Grid/Grid";
 import {FilledButtonStyle} from "../../../styles/Common.style";
+import Geocode from "react-geocode";
+import Loading from "../../Loading/Loading";
+import {DashboardHeaderStyle} from "../../../admin/components/DashboardHeader/DashboardHeader.style";
 
 const AutoCompletePlaces=(props)=>{
+
+    const [isLoading, setLoading] = useState(false);
+
     const [location,setLocation]=useState({
         address: "",
         city: "",
@@ -83,40 +89,58 @@ const AutoCompletePlaces=(props)=>{
         }
     };
 
-    const onPlaceSelected = (place) => {
-        const address = place.formatted_address,
-            addressArray = place.address_components,
-            city = getCity(addressArray),
-            area = getArea(addressArray),
-            state = getState(addressArray),
-            latValue = place.geometry.location.lat(),
-            lngValue = place.geometry.location.lng(),
-            country = getCountry(addressArray);
+    const onPlaceSelected = (place,isTypeAddress) => {
+        if(place.formatted_address){
+            const address = place.formatted_address,
+                addressArray = place.address_components,
+                city = getCity(addressArray),
+                area = getArea(addressArray),
+                state = getState(addressArray),
+                latValue = isTypeAddress?place.geometry.location.lat:place.geometry.location.lat(),
+                lngValue = isTypeAddress?place.geometry.location.lng:place.geometry.location.lng(),
+                country = getCountry(addressArray);
 
 
 
-        const location={
-            address: address ? address : "",
-            area: area ? area : "",
-            city: city ? city : "",
-            state: state ? state : "",
-            markerPosition: {
-                lat: latValue,
-                lng: lngValue,
-            },
-            mapPosition: {
-                lat: latValue,
-                lng: lngValue,
-            },
-        };
-        // Set these values in the state.
-        setLocation(location);
-        props.onChangeLocation(location);
+            const location={
+                address: address ? address : "",
+                area: area ? area : "",
+                city: city ? city : "",
+                state: state ? state : "",
+                markerPosition: {
+                    lat: latValue,
+                    lng: lngValue,
+                },
+                mapPosition: {
+                    lat: latValue,
+                    lng: lngValue,
+                },
+            };
+            // Set these values in the state.
+            setLocation(location);
+            props.onChangeLocation(location);
+
+            if(isTypeAddress) props.onSelectLocation(location);
+        }
+
+
     };
 
 
+    const getLocationFromAddress=async (address)=>{
+        try{
+            const locationFromAddress= await Geocode.fromAddress(address);
+            onPlaceSelected(locationFromAddress.results[0],true)
+        }catch (e) {
+            console.log(e);
+        }
+    }
+
+
+    console.log(document.getElementsByClassName("pac-target-input").value)
     return(
         <Fragment>
+            {isLoading&&<Loading/>}
             <Autocomplete
                 apiKey={"AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew"}
                 style={{
@@ -131,12 +155,20 @@ const AutoCompletePlaces=(props)=>{
                     types: ['establishment'],
                 }}
                 onFail={error => console.error(error)}
-                onPlaceSelected={onPlaceSelected}
+                onPlaceSelected={(e)=>onPlaceSelected(e,false)}
             />
             <Grid container style={{marginTop:20}} justifyContent="center">
                 <FilledButtonStyle
                     onClick={(e)=>{
-                        props.onSelectLocation(location)
+                        const address=document.getElementsByClassName("pac-target-input")[0]?.value;
+                        if(address){
+                            if(location.address===address){
+                                props.onSelectLocation(location);
+                            }else{
+                                getLocationFromAddress(address);
+                            }
+                        }
+
                     }}
                     width={  "80%"}
                     height="60px"

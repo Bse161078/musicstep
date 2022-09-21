@@ -57,7 +57,7 @@ const NavbarWithSearch = (props: any) => {
       />
 
       <div className="links-wrapper">
-        <span onClick={() => history.push("/explore-venue")}>
+        <span style={{cursor:"pointer"}} onClick={() => history.push("/explore-venue")}>
           Upcoming Itinerary{" "}
         </span>
         {subscribtion ? (

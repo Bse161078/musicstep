@@ -90,7 +90,7 @@ const TicketModal = (props: TicketModalProps) => {
       <TicketModalStyle>
         <div className="text-wrapper">
           <div>
-            <p>Verify Details & Reserve Your Ticket</p>
+            <p>Verify Details & Your Reservation</p>
           </div>
 
           <div className="first-wrapper">
