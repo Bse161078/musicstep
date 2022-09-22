@@ -103,10 +103,7 @@ export const EventDetailWrapper = ({ event,venue }: EventDetailWrapperProps) => 
             }
             >{organizerInfo && organizerInfo.organizerName}</span>
           </p>
-          <p>
-            Available Tickets :{" "}
-            <span className="link">{event.tickets[0]?.availableTickets}</span>
-          </p>
+
         </div>
       </div>
     </div>

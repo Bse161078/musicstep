@@ -122,10 +122,15 @@ const RoutesList = (props: any) => {
             case "/explore-venue/venue-details":
                 setShowNavbar(false);
                 break;
+            case "/create-credit-payment":
+                setShowNavbar(false);
+                break;
 
             default:
                 setShowNavbar(true);
         }
+
+        if(pathname.includes("credit-payment-success")) setShowNavbar(false)
 
         window.scrollTo(0, 0);
     }, [pathname]);
@@ -158,7 +163,6 @@ const RoutesList = (props: any) => {
                 <Route exact path="/pricing" component={Pricing}/>
                 <Route exact path="/subscription-success" component={SubscriptionSuccess}/>
                 <Route exact path="/subscription-cancel" component={SubscriptionCancel}/>
-                <Route exact path="/credit-payment-success" component={CreditPaymentSuccess}/>
                 <Route path="/how-it-works" component={HowItWorks}/>
                 <Route path="/terms-conditions" component={TermsAndConditions}/>
                 <Route path="/privacy-policy" component={PrivacyPolicy}/>
@@ -172,7 +176,6 @@ const RoutesList = (props: any) => {
                 <Route path="/subscription" component={Subscription}/>
                 <Route path="/credit" component={Credit}/>
                 <Route path="/promotion" component={Promotion}/>
-
 
 
                 <Route path="/dashboard/home/venue-details"
@@ -323,6 +326,13 @@ const RoutesList = (props: any) => {
                 />
 
                 {/* User Admin Routes */}
+                <Route path="/credit-payment-success"
+                       render={() => (
+                           <AuthenticatedRoute redirectTo="/login">
+                               <CreditPaymentSuccess/>
+                           </AuthenticatedRoute>
+                       )}/>
+
                 <Route
                     path="/dashboard/home"
                     render={() => (

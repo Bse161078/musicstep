@@ -1,6 +1,7 @@
 import moment from "moment";
 import * as yup from "yup";
 import {date} from "yup/lib/locale";
+import {end} from "@popperjs/core";
 
 export const EventFormValidationSchema = yup.object().shape({
 
@@ -30,8 +31,8 @@ export const EventFormValidationSchema = yup.object().shape({
             "End time must be after start time",
             function (value) {
                 //   const parent :any = this.parent;
-                const {startingTime} = this.parent;
-                return isSameOrBefore(startingTime, value as any);
+                const {startingTime,startdate,enddate} = this.parent;
+                return isSameOrBefore(startingTime,startdate,enddate, value as any);
             }
         ),
     //   endingTime: yup.string(),
@@ -39,9 +40,13 @@ export const EventFormValidationSchema = yup.object().shape({
     organizer: yup.string().required("Organizer is required").nullable(),
 });
 
-const isSameOrBefore = (startTime: string, endTime: string) => {
+const isSameOrBefore = (startingTime:string,startdate:string,enddate:string, endTime: string) => {
     // return moment(startTime, 'HH:mm').isSameOrBefore(moment(endTime, 'HH:mm'));
     // "h:mma"
     // return moment(startTime, 'h:mma').isSameOrBefore(moment(endTime, 'h:mma'));
-    return moment(endTime, 'h:mma').isAfter(moment(startTime, 'h:mma'));
+
+    const startDate=new Date(moment(startdate).format("YYYY-MM-DD")+"T"+startingTime+":00");
+    const endDate=new Date(moment(enddate).format("YYYY-MM-DD")+"T"+endTime+":00");
+
+    return moment(endDate).isAfter(moment(startDate));
 }

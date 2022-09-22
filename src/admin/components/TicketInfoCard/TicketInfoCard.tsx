@@ -79,7 +79,7 @@ const TicketInfoCard = (props: TicketInfoCardProps) => {
 
             <TicketInfoCardStyle disableTicketsAvailbilty>
                 <h2>{props.heading}</h2>
-                <p className="credits">Credits: {props.eventCredit}</p>
+                <p className="credits">Credits : {props.eventCredit}</p>
                 {props.disableTicketsAvailbilty ? null : (
                     <p className="tickets">
                         Seats or Spots Available: {props.availableTickets}

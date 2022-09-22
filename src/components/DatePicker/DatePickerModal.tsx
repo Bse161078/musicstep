@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import DatePickerModalStyle from "./DatePickerModal.style";
 import DatePicker from "react-date-picker";
 
+
 type DatePickerModalProps = {
   value: any;
   onChange: any;
@@ -14,7 +15,7 @@ const DatePickerModal = (props: DatePickerModalProps) => {
   return (
     <DatePickerModalStyle>
       <label className="input-label">{lable}</label>
-      <DatePicker onChange={(e: any) => onChange(e)} value={value} />
+      <DatePicker locale="en-CA" onChange={(e: any) => onChange(e)} value={value} />
     </DatePickerModalStyle>
   );
 };

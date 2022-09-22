@@ -3,8 +3,7 @@ import styled from "styled-components";
 export const CheckingAvailablityModalStyle = styled.div`
   display: flex;
   flex-direction: column;
-  height: 600px;
-   justify-content: center;
+  height: 400px;
    gap: 50px;
   h1{
     font-size:22px;

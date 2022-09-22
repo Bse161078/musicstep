@@ -296,7 +296,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
         handleBackClick={() => {
           history.push("/admin/events-management");
         }}
-        saveButtonText="Next Step(1/2)"
+        saveButtonText="Next Step (1/2)"
         saveButtonWidth="190px"
       />
       <Formik
