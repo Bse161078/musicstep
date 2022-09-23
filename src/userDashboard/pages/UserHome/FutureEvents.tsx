@@ -72,7 +72,7 @@ const FutureEvents = () => {
 
                         </Grid>
                         <Grid item xs={12}>
-                            <p className="description">{moment(moment(event.date).format("YYYY-MM-DD") + ' ' + event.startingTime).diff(new Date(), "hours") + "  " + " Hours"}</p>
+                            <p className="description">{moment(event.city).diff(event.state, "hours") + "  " + " Hours"}</p>
                         </Grid>
                     </Grid>
                 </TableCell>

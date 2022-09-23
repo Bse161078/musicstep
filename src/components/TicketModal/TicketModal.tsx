@@ -136,8 +136,7 @@ const TicketModal = (props: TicketModalProps) => {
               {props.event && props.event.tickets[props.ticketIndex].title}
             </h1>
             <p className="credit-text">
-              Credits:
-              {props.event && props.event.tickets[props.ticketIndex].credits}
+              Credits : {props.event && props.event.tickets[props.ticketIndex].credits}
             </p>
             <p>{props.event && props.event.eventDescription}</p>
           </div>

@@ -64,8 +64,9 @@ const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
     const emailHandleSubmit = (values: any, {resetForm}: any) => {
         const res = axios
             .post(
-                "/v1/users/sendInvitationEmail",
+                "/v1/users/eventInvitationEmail",
                 {
+                    partnerName:state.data.firstName+" "+(state.data.lastName.charAt(0)).toUpperCase(),
                     to: values.email,
                     musicPasslink: baseUrl,
                 },
@@ -151,11 +152,6 @@ const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
                     Close
                 </FilledButtonStyle>
                 <div className="border-div">
-                    <p className="description">
-                        Want free events? Refer a friend and get $30 worth credits when your
-                        friend becomes a paid subscriber. Limited time offer. Terms &
-                        Conditions apply.
-                    </p>
                     <div className="form-wrapper">
                         <Formik
                             initialValues={{
@@ -169,7 +165,7 @@ const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
                                         label="Invite Link"
                                         width="100%"
                                         name="inviteLink"
-                                        value={baseUrl}
+                                        value={"https://music-pass-f227c.web.app/"}
                                     />
                                 </Form>
                             )}

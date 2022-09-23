@@ -137,7 +137,6 @@ const AutoCompletePlaces=(props)=>{
     }
 
 
-    console.log(document.getElementsByClassName("pac-target-input").value)
     return(
         <Fragment>
             {isLoading&&<Loading/>}

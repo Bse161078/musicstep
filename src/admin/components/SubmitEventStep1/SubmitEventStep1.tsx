@@ -246,10 +246,13 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
   };
 
   const handleFormSubmit = (e: any) => {
-    EventStateContext.dispatch({
+      const startDate=new Date(moment(e.startdate).format("YYYY-MM-DD")+"T"+e.startingTime+":00");
+      const endDate=new Date(moment(e.enddate).format("YYYY-MM-DD")+"T"+e.endingTime+":00");
+
+      EventStateContext.dispatch({
       type: "SAVE_EVENT",
       payload: {
-        data: e,
+        data: {...e,startDate,endDate},
         selectedOrganizerId: selectedOrganizerId,
         organizersList: organizers,
         previewVenuePhoto: previewVenuePhoto,
@@ -266,7 +269,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
     e.venue_id = filteredEvent.id;
     e.organizer_id = filteredOrganizer.id;
 
-    setEventData({ ...eventData, ...e,eventDescription:description });
+    setEventData({ ...eventData, ...e,startDate,endDate,eventDescription:description });
     setCurrentStep(2);
   };
 

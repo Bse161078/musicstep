@@ -28,6 +28,7 @@ type SelectBoxProps = {
     type?: "horizontal" | "vertical";
     placeholder?: string;
     clear?: any;
+    setWidthManually?:boolean;
     handleSelectBoxChange?: (e: any) => void;
 };
 
@@ -55,6 +56,7 @@ const SelectBox = (props: SelectBoxProps) => {
         setVenues,
         setLoading,
         clear,
+        setWidthManually,
         handleSelectBoxChange,
     } = props;
     useEffect(() => {
@@ -186,6 +188,7 @@ const SelectBox = (props: SelectBoxProps) => {
                 suffixIcon={<ArrowDownIcon/>}
                 name="hamza"
                 width={width}
+                setWidthManually={setWidthManually}
                 defaultValue={defaultValue || field.name}
                 value={val}
                 onChange={handleChange}

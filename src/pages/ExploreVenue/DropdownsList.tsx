@@ -69,7 +69,10 @@ export const DropdownsList = (props: any) => {
     }, [])
 
     const clearFilter = () => {
+        let locallyStoredUser=JSON.parse(localStorage.getItem("data") || "{}");
+        delete locallyStoredUser["preferences"];
         localStorage.removeItem("filter");
+        localStorage.setItem("data",JSON.stringify(locallyStoredUser))
         setTimeout(() => {
             setClear(false);
         }, 100);
@@ -144,7 +147,8 @@ export const DropdownsList = (props: any) => {
                   values={filter?.liveStream}
                   setVenues={setVenues}
                   setLoading={setLoading}
-                  width={"large"}
+                  width={"150px"}
+                  setWidthManually={true}
                   handleSelectBoxChange={(data) => setSelectedFilter(data)}
               />
             </span>

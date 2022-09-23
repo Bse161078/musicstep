@@ -18,7 +18,7 @@ type CardWithContentProps = {
     date?: any;
     originalTime?: any;
     categoryTags?: any;
-    reservation?:any;
+    reservation?: any;
 };
 
 const CardWithContent = (props: CardWithContentProps) => {
@@ -41,10 +41,16 @@ const CardWithContent = (props: CardWithContentProps) => {
     const differenceInHours = formattedFutureDate.diff(new Date(), "hours");
 
 
-    let imageUrl=null;
+    let imageUrl = null;
 
-    if(reservation && reservation.venueInfo && (reservation.venueInfo).length>0){
-        imageUrl=reservation.venueInfo[0].logoUrl;
+    if (reservation && reservation.venueInfo && (reservation.venueInfo).length > 0) {
+        imageUrl = reservation.venueInfo[0].logoUrl;
+    }
+
+
+    let hours = 0;
+    if (reservation && reservation.eventInfo && (reservation.eventInfo).length > 0) {
+        hours = moment(reservation.eventInfo[0].city).diff(reservation.eventInfo[0].state, "hours");
     }
 
 
@@ -52,8 +58,8 @@ const CardWithContent = (props: CardWithContentProps) => {
         <>
             <CardWithContentStyle>
                 <img
-                    src={imageUrl?`${process.env.REACT_APP_BASE_URL}/images/${imageUrl}`:"/images/sample.png"}
-                    style={{width:92,height:92,borderRadius:10}}
+                    src={imageUrl ? `${process.env.REACT_APP_BASE_URL}/images/${imageUrl}` : "/images/sample.png"}
+                    style={{width: 92, height: 92, borderRadius: 10}}
                     className="card-thumbnail"
                     alt="thumbnail"
                 />
@@ -87,7 +93,7 @@ const CardWithContent = (props: CardWithContentProps) => {
                     <div className="row-wrapper">
                         <div>
                             <h4 className="heading">{time}</h4>
-                            <p className="description">{`${differenceInHours} ${differenceInHours === 1 ? "Hour" : "Hours"}`}</p>
+                            <p className="description">{`${hours} ${hours === 1 ? "Hour" : "Hours"}`}</p>
                         </div>
 
                     </div>
