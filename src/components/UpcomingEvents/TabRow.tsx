@@ -31,27 +31,27 @@ export const TabRow = (props: TabRowProps) => {
         false
     );
     const [isTicketsAvailabe, setIsTicketsAvailabe] = useState(true);
-    const week = ["Sun", "Mon", "Thu", "Wed", "Thr", "Fri", "Sat"];
+    const week = ["Mon", "Thu", "Wed", "Thr", "Fri", "Sat", "Sun"];
 
-    let hours = moment(event.city).diff(event.state, "hours");
-    let minutes = (moment(event.city).diff(event.state, "minutes")% 60);
+    let hours = moment(event.state).diff(new Date(), "hours");
+    let minutes = (moment(event.state).diff(new Date(), "minutes") % 60);
 
     return (
         <>
             <TabRowStyle>
                 <div className="time">
           <span>
-            {week[moment(event.date?.time?.toLocaleDateString("en-US")).day()]},{" "}
-              {moment(event.date).date() + " " + moment(event.date).format("MMM")}
+            {moment(event.state).format("ddd")},{" "}
+              {moment(event.state).date() + " " + moment(event.date).format("MMM")}
           </span>
                     <span className="hour">
-            {moment(event.date).diff(moment(new Date()), "days")} days left
+            {moment(event.state).diff(moment(new Date()), "days") + 1} days left
           </span>
                 </div>
                 <div className="time">
                     <span>{moment(event.startingTime, ["hh:mm"]).format("hh:mm a")}</span>
                     <span className="hour">
-            {hours>0 && hours+" hr"} {minutes>0 && minutes+" mint"}
+            {hours > 0 && hours + " hr"}
           </span>
                 </div>
                 <div className="name">

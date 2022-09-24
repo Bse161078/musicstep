@@ -51,10 +51,10 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
         bodyData.append("date", new Date(eventData.enddate).toISOString());
         bodyData.append("startingTime", eventData.startingTime);
         bodyData.append("endingTime", eventData.endingTime);
-        bodyData.append("startDate", (eventData.startDate).toISOString());
-        bodyData.append("endDate", (eventData.endDate).toISOString());
-        bodyData.append("state", (eventData.startDate).toISOString());
-        bodyData.append("city", (eventData.endDate).toISOString());
+        bodyData.append("startDate", eventData.startDate);
+        bodyData.append("endDate", eventData.endDate);
+        bodyData.append("state", eventData.startDate);
+        bodyData.append("city", eventData.endDate);
         bodyData.append("country", eventData.country);
         bodyData.append("venue", eventData.venue_id);
         bodyData.append(

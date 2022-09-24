@@ -50,7 +50,7 @@ const CardWithContent = (props: CardWithContentProps) => {
 
     let hours = 0;
     if (reservation && reservation.eventInfo && (reservation.eventInfo).length > 0) {
-        hours = moment(reservation.eventInfo[0].city).diff(reservation.eventInfo[0].state, "hours");
+        hours = moment(reservation.eventInfo[0].state).diff(new Date(), "hours");
     }
 
 

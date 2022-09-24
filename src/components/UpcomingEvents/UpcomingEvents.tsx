@@ -10,7 +10,7 @@ const UpcomingEvents = ({events, venue, subscribtionCredit}: any) => {
 
 
 
-    const filteredEvents=events.filter((event:any)=>new Date(event.date)>=new Date())
+    const filteredEvents=events.filter((event:any)=>new Date(event.state)>=new Date())
 
     return (
         <UpcomingEventsStyle>
