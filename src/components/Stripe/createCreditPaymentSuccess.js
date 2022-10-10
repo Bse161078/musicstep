@@ -42,7 +42,7 @@ const CreditPaymentSuccess = () => {
             <NavbarWithSearch userCredit={user.credits}/>
             <StripeWrapper>
                 <Grid container justifyContent="center" style={{width: "100%"}}>
-                    <h1>Thanks for purchasing credits. Your credits are in process.</h1>
+                    <h1>Credits have been added. Please go back to reservation page.</h1>
                 </Grid>
             </StripeWrapper>
         </div>

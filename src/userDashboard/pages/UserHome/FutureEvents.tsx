@@ -23,7 +23,7 @@ import VenueDetailsModal from "../../../components/EventDetailsModal/VenueDetail
 import {EventDetailsModal} from "../../../components";
 import {useHistory} from "react-router-dom";
 
-const FutureEvents = () => {
+const FutureEvents = ({refreshSuggestedEvents}: any) => {
 
     const {state, dispatch} = useLoginContext();
     const [isModalVisible, setIsModalVisible] = useState(false)
@@ -45,7 +45,8 @@ const FutureEvents = () => {
     };
     useEffect(() => {
         getAllFutureEvents();
-    }, [])
+    }, [refreshSuggestedEvents])
+
 
 
     const ContainerData = futureEvents.filter((event: any) => (event.tickets).length > 0).map((event: any, index: any) => {
@@ -72,11 +73,12 @@ const FutureEvents = () => {
 
                         </Grid>
                         <Grid item xs={12}>
-                            <p className="description">{moment(event.state).diff(new Date(), "hours") + "  " + " Hours"}</p>
+                            <p className="description">{moment(event.city).diff(event.state, "hours") + "  " + " Hours"}</p>
                         </Grid>
                     </Grid>
                 </TableCell>
-                <TableCell key={event.title + index} align="left" style={{wordBreak: "break-word"}}>
+                <TableCell key={event.title + index} align="left" style={{wordBreak: "break-word",cursor:"pointer"}}
+                           onClick={(e)=>handleViewVenue(event)}>
                     <Grid container>
                         <Grid item xs={12}>
                             <h4 className="heading">{event.title}</h4>
@@ -92,11 +94,10 @@ const FutureEvents = () => {
                 </TableCell>
                 <TableCell key={event.venuesInfo[0].name + index} align="left" style={{wordBreak: "break-word"}}>
                     <Grid container>
-                        <Grid item xs={5}>
+                        <Grid item xs={12}>
                             <OutlineButtonStyle
                                 width="150px"
                                 height="43px"
-                                style={{marginRight: 20}}
                                 className="pricing"
                                 onClick={() => {
                                     handleViewVenue(event)
@@ -105,8 +106,11 @@ const FutureEvents = () => {
                                 View Venue
                             </OutlineButtonStyle>
                         </Grid>
-                        <Grid item xs={1}></Grid>
-                        <Grid item xs={5}>
+                    </Grid>
+                </TableCell>
+                <TableCell key={event.venuesInfo[0].name + index} align="left" style={{wordBreak: "break-word"}}>
+                    <Grid container>
+                        <Grid item xs={12}>
                             <OutlineButtonStyle
                                 width="150px"
                                 height="43px"

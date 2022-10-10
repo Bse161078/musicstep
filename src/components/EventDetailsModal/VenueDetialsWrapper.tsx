@@ -82,10 +82,10 @@ export const VenueDetailWrapper = ({ event,venue }: VenueDetailWrapperProps) => 
             }}
             >{event.organizerInfo[0]?.organizerName}</span>
           </p>
-          <p>
-            Available Tickets :{" "}
-            <span className="link">{event.tickets[0]?.availableTickets}</span>
-          </p>
+          {/*<p>*/}
+            {/*Available Tickets :{" "}*/}
+            {/*<span className="link">{event.tickets[0]?.availableTickets}</span>*/}
+          {/*</p>*/}
         </div>
       </div>
     </div>

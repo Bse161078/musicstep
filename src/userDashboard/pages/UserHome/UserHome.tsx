@@ -31,7 +31,7 @@ import FutureEvents from "./FutureEvents";
 import {ExploreVenueStyle, TrialButton} from "../../../pages/ExploreVenue/ExploreVenue.style";
 import {Pricing} from "../../../pages/Pricing";
 
-const EventReservation = ({reservations, cancelreservation, subscription,setPricing}: any) => {
+const EventReservation = ({reservations, cancelreservation, subscription, setPricing, refreshSuggestedEvents}: any) => {
     const [isCancelModalVisible, setCancelModalVisible] = useState(false);
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [selectedReservation, setSelectedReservation] = useState(false);
@@ -86,7 +86,7 @@ const EventReservation = ({reservations, cancelreservation, subscription,setPric
                         </ImageList>
 
                     </Grid>
-                    <FutureEvents/>
+                    <FutureEvents refreshSuggestedEvents={refreshSuggestedEvents}/>
                     <EventReservationStyle>
                         {/* <CustomCarousel
           // images={[
@@ -159,7 +159,7 @@ const EventReservation = ({reservations, cancelreservation, subscription,setPric
                     </span>
                 </Typography>
             }
-            { subscription && subscription.active === true && <GuestListModal
+            {subscription && subscription.active === true && <GuestListModal
                 isModalVisible={isModalVisible}
                 setIsModalVisible={setIsModalVisible}
             />}
@@ -175,6 +175,8 @@ export default function UserHome() {
     const [reservations, setReservations] = useState([]);
     const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
     const [showPricing, setShowPricing] = useState(false);
+    const [refreshSuggestedEvents, setRefreshSuggestedEvents] = useState(0);
+    const [reservationStats, setReservationStats] = useState(null);
 
     const [subscription, setSubscription] = useState({
         active: true
@@ -217,7 +219,9 @@ export default function UserHome() {
             })
             .catch((error) => {
             });
+
     }
+
 
     useEffect(() => {
         getUser();
@@ -239,6 +243,7 @@ export default function UserHome() {
                 getReservation();
                 getUser()
                 setSuccessModalVisible(true);
+                setRefreshSuggestedEvents(refreshSuggestedEvents + 1);
             })
             .catch((error) => {
                 setIsLoading(false);
@@ -262,7 +267,7 @@ export default function UserHome() {
             });
     };
 
-    const setSubscriptionExpiration = (user:any) => {
+    const setSubscriptionExpiration = (user: any) => {
         if (user && user.subscriptionEndDate) {
             const startDate = moment(new Date());
             const endDate = moment(user.subscriptionEndDate);
@@ -274,73 +279,74 @@ export default function UserHome() {
     }
 
 
-
     return (
         <>
-            {showPricing && <Pricing showPricing={showPricing} setShowPricing={setShowPricing} isCreateSubscription={true}/>}
+            {showPricing &&
+            <Pricing showPricing={showPricing} setShowPricing={setShowPricing} isCreateSubscription={true}/>}
             <NavbarWithSearch userCredit={user.credits}/>
             {isLoading && <Loading/>}
             {/*{!subscription ?*/}
-                {/*<ExploreVenueStyle>*/}
-                    {/*<h1*/}
-                        {/*style={{*/}
-                            {/*width: "100%",*/}
-                            {/*margin: "0px auto",*/}
-                            {/*textAlign: "center",*/}
-                        {/*}}*/}
-                    {/*>*/}
-                        {/*Your Subscription has been Cancelled! Please create your Subscription package*/}
-                    {/*</h1>*/}
-                    {/*<div></div>*/}
-                    {/*/!* <FilledButtonStyle  class="" onClick={(e)=>onSubscribePackage(e)}>Checkout</FilledButtonStyle> *!/*/}
-                    {/*<TrialButton style={{display: 'flex', justifyContent: 'center', marginLeft: 40, marginTop: 10}}*/}
-                                 {/*onClick={(e) => {*/}
+            {/*<ExploreVenueStyle>*/}
+            {/*<h1*/}
+            {/*style={{*/}
+            {/*width: "100%",*/}
+            {/*margin: "0px auto",*/}
+            {/*textAlign: "center",*/}
+            {/*}}*/}
+            {/*>*/}
+            {/*Your Subscription has been Cancelled! Please create your Subscription package*/}
+            {/*</h1>*/}
+            {/*<div></div>*/}
+            {/*/!* <FilledButtonStyle  class="" onClick={(e)=>onSubscribePackage(e)}>Checkout</FilledButtonStyle> *!/*/}
+            {/*<TrialButton style={{display: 'flex', justifyContent: 'center', marginLeft: 40, marginTop: 10}}*/}
+            {/*onClick={(e) => {*/}
 
-                                     {/*setShowPricing(true)*/}
+            {/*setShowPricing(true)*/}
 
 
-                                 {/*}}*/}
-                                 {/*className="text-center"><a className="free-trial-btn free-trial-secondary btn">Create Subscription</a>*/}
-                    {/*</TrialButton>*/}
-                {/*</ExploreVenueStyle>*/}
-                {/*:*/}
-                <UserHomeStyle>
+            {/*}}*/}
+            {/*className="text-center"><a className="free-trial-btn free-trial-secondary btn">Create Subscription</a>*/}
+            {/*</TrialButton>*/}
+            {/*</ExploreVenueStyle>*/}
+            {/*:*/}
+            <UserHomeStyle>
 
-                    <UserSidebar reservations={reservations} subscription={subscription}
-                                 timeDifference={timeDifference} expirationDate={user.subscriptionEndDate}/>
+                <UserSidebar reservations={reservations} subscription={subscription}
+                             timeDifference={timeDifference} expirationDate={user.subscriptionEndDate}/>
 
-                    <div>
-                        <EventReservation
-                            reservations={
-                                reservations &&
-                                reservations.filter(
-                                    (reservation: any) =>
-                                        reservation.eventReservation === "reserved" &&
-                                        reservation.isTicketUsed === false
-                                )
-                            }
-                            cancelreservation={cancelreservation}
-                            subscription={subscription}
-                            setPricing={(showPricing:boolean)=>{
-                                setShowPricing(showPricing)
-                            }}
-                        />
-                        <div className="divider"/>
-                        {!isLoading ? (
-                            events.length > 0 ? (
-                                <UpcomingEvents events={events}/>
-                            ) : null
-                        ) : (
-                            ""
-                        )}
-                    </div>
-                    <MessageModal
-                        isModalVisible={isSuccessModalVisible}
-                        setIsModalVisible={setSuccessModalVisible}
-                        heading="Success"
-                        message="Reservation cancelled successfully."
+                <div>
+                    <EventReservation
+                        refreshSuggestedEvents={refreshSuggestedEvents}
+                        reservations={
+                            reservations &&
+                            reservations.filter(
+                                (reservation: any) =>
+                                    reservation.eventReservation === "reserved" &&
+                                    reservation.isTicketUsed === false
+                            )
+                        }
+                        cancelreservation={cancelreservation}
+                        subscription={subscription}
+                        setPricing={(showPricing: boolean) => {
+                            setShowPricing(showPricing)
+                        }}
                     />
-                </UserHomeStyle>
+                    <div className="divider"/>
+                    {!isLoading ? (
+                        events.length > 0 ? (
+                            <UpcomingEvents events={events}/>
+                        ) : null
+                    ) : (
+                        ""
+                    )}
+                </div>
+                <MessageModal
+                    isModalVisible={isSuccessModalVisible}
+                    setIsModalVisible={setSuccessModalVisible}
+                    heading="Success"
+                    message="Reservation cancelled successfully."
+                />
+            </UserHomeStyle>
 
 
             {/*}*/}

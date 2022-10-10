@@ -16,7 +16,7 @@ import {
 import {OutlineButtonStyle} from "../../styles/Common.style";
 import {TabPaneStyle, TabsStyle} from "../../styles/Fields.style";
 
-import { VenueDetailsStyle,HeadingWithContentStyle } from "../VenueDetails/VenueDetails.style";
+import {VenueDetailsStyle, HeadingWithContentStyle} from "../VenueDetails/VenueDetails.style";
 import {useLocation} from "react-router-dom";
 
 import {useLoginContext} from "../../context/authenticationContext";
@@ -50,16 +50,19 @@ export default function VenueDetails() {
     const [isLoading, setIsLoading] = React.useState(false);
     const [amentiesState, setamentiesState] = useState(amenties);
     const [reviews, setreviews] = useState(null);
-    const venueDetail = window.location.href.includes("dashboard")?location.state.organizerDetail.venuesInfo[0]: location.state.organizerDetail;
+    const venueDetail = window.location.href.includes("dashboard") ? location.state.organizerDetail.venuesInfo[0] : location.state.organizerDetail;
+    const [count,setCount]=useState(0);
+
     function getVenue() {
         setIsLoading(true);
         axios
-            .get(`/v1/users/allEventsOfVenue?organizerId=${location.state.organizerDetail.organizerInfo[0]._id}&search=organizer`, {
+            .get(`/v1/users/allEventsOfVenue?organizerId=${location.state.organizerDetail.organizerInfo[0]._id}&search=organizer&review_type=organizer`, {
                 headers: {Authorization: `Bearer ${state.authToken}`},
             })
             .then((res) => {
                 setEvents(res.data.event[0]);
                 setIsLoading(false);
+                setCount(count+1);
             })
             .catch((error) => {
             });
@@ -72,6 +75,8 @@ export default function VenueDetails() {
         })
             .then((res: any) => {
                 setUser(res.data)
+                setCount(count+1);
+
             }).catch((e) => {
         })
         const tempAmenties = amentiesState.map((item) => {
@@ -85,11 +90,13 @@ export default function VenueDetails() {
 
     const getReviews = () => {
         axios
-            .get(`/v1/review?venueId=${venueDetail._id}`, {
+            .get(`/v1/review?venueId=${venueDetail._id}&review_type=organizer`, {
                 headers: {Authorization: `Bearer ${state.authToken}`},
             })
             .then((res) => {
                 setreviews(res.data);
+                setCount(count+1);
+
                 // setEvents(res.data);
                 // setEvents(res.data);
                 // setProfilesList(res.data);
@@ -100,19 +107,19 @@ export default function VenueDetails() {
     const organizerDetail = location.state.organizerDetail.organizerInfo[0]
     const attributes = organizerDetail?.organizationAttributes;
     // const amenities = events && events?.event?.length>0 && JSON.parse(events.event[0].venueInfo[0].amenities)
-    let attributeValues:any = [];
-   if(attributes)
-    {
+    let attributeValues: any = [];
+    if (attributes) {
+
         for (const property in attributes) {
-            attributeValues.push({name:property,value:attributes[property]});
+            if (attributes[property]) attributeValues.push({name: property, value: attributes[property]});
         }
     }
 
     return (
         <>
             <NavbarWithSearch userCredit={user.credits}/>
-            {isLoading&&<Loading/>}
-            {events&&<VenueDetailsStyle>
+            {isLoading && <Loading/>}
+            {events && <VenueDetailsStyle>
                 <div className="left-side">
                     <CustomCarousel
                         // images={[
@@ -138,9 +145,9 @@ export default function VenueDetails() {
                     />
 
                     <div className="buttons-wrapper">
-                        {venueDetail?.categoryTags?venueDetail.categoryTags.map((categoryTag: any) => (
+                        {venueDetail?.categoryTags ? venueDetail.categoryTags.map((categoryTag: any) => (
                             <OutlineButtonStyle>{categoryTag}</OutlineButtonStyle>
-                        )): venueDetail.venuesInfo[0].categoryTags.map((categoryTag: any) => (
+                        )) : venueDetail.venuesInfo[0].categoryTags.map((categoryTag: any) => (
                             <OutlineButtonStyle>{categoryTag}</OutlineButtonStyle>
                         ))}
                     </div>
@@ -156,7 +163,8 @@ export default function VenueDetails() {
                         }}
                     >
                         <TabPaneStyle tab="Info" key="1">
-                            <HeadingWithContent description={[organizerDetail?.organizerBio]} heading={organizerDetail.organizerName}/>
+                            <HeadingWithContent description={[organizerDetail?.organizerBio]}
+                                                heading={organizerDetail.organizerName}/>
                             {/* <HeadingWithContent
                 heading="This is heading for venue"
                 description={[
@@ -177,6 +185,9 @@ export default function VenueDetails() {
                                     reviews={reviews}
                                     venueId={venueDetail._id}
                                     getReviews={getReviews}
+                                    review_type={"organizer"}
+                                    getVenue={getVenue}
+                                    count={count}
                                 />
                             </div>
                         </TabPaneStyle>
@@ -255,14 +266,16 @@ export default function VenueDetails() {
                         </div>
                     )}
 
-                    <Formik initialValues={{}} onSubmit={() => {
-                    }}>
-                        {() => (
-                            <Form className="attributes-wrapper">
-                                <LabelWithTag label={"Attributes"} tagType="none"/>
-                                <div className="list-wrapper">
-                                    {attributeValues.map((attribute:any) => {
-                                        return (
+                    {
+                        attributeValues.length>0 &&
+                        <Formik initialValues={{}} onSubmit={() => {
+                        }}>
+                            {() => (
+                                <Form className="attributes-wrapper">
+                                    <LabelWithTag label={"Attributes"} tagType="none"/>
+                                    <div className="list-wrapper">
+                                        {attributeValues.map((attribute: any) => {
+                                            return (
                                                 <InputCheckbox
                                                     name={attribute.name}
                                                     onClick={() => {
@@ -271,12 +284,13 @@ export default function VenueDetails() {
                                                     label={attribute.name}
                                                     isCorrectOption={attribute.value}
                                                 />
-                                        );
-                                    })}
-                                </div>
-                            </Form>
-                        )}
-                    </Formik>
+                                            );
+                                        })}
+                                    </div>
+                                </Form>
+                            )}
+                        </Formik>
+                    }
                 </div>
             </VenueDetailsStyle>}
         </>

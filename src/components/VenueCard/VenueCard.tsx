@@ -85,6 +85,7 @@ const VenueCard = ({ venue, subscribtionCredit }: any) => {
                 subscribtionCredit={subscribtionCredit}
                 events={events}
                 venue={venue}
+                handleClick={handleClick}
               />
             )}
           </Panel>

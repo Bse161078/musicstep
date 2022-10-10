@@ -92,8 +92,8 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
             //  setMessage("Organizer created Successfully");
             //  setHeading("Success");
             setLoading(false);
-            setMessage("Event created Successfully");
-            setMessageType("success");
+            setMessage("Event created successfully");
+            setMessageType("Success");
             setIsModalVisible(true);
             EventStateContext.dispatch({
                 type: "REMOVE_EVENT_INFO",

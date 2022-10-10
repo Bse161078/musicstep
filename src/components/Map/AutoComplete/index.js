@@ -149,6 +149,7 @@ const AutoCompletePlaces=(props)=>{
                     paddingLeft: "16px",
                     margin: "0px auto",
                     marginTop: "2px",
+                    
                 }}
                 options={{
                     types: ['establishment'],

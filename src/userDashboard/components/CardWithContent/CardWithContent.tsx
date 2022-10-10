@@ -6,6 +6,7 @@ import {
 import {GuestListModal} from "../../Modals";
 import {CardWithContentStyle} from "./CardWithContent.style";
 import moment from "moment";
+import {useHistory} from "react-router";
 
 type CardWithContentProps = {
     heading: string;
@@ -36,6 +37,8 @@ const CardWithContent = (props: CardWithContentProps) => {
         reservation
     } = props;
 
+    const history = useHistory();
+
     const formattedFutureDate = moment(moment(date).format("YYYY-MM-DD") + ' ' + time);
 
     const differenceInHours = formattedFutureDate.diff(new Date(), "hours");
@@ -50,10 +53,17 @@ const CardWithContent = (props: CardWithContentProps) => {
 
     let hours = 0;
     if (reservation && reservation.eventInfo && (reservation.eventInfo).length > 0) {
-        hours = moment(reservation.eventInfo[0].state).diff(new Date(), "hours");
+        hours = moment(reservation.eventInfo[0].city).diff(reservation.eventInfo[0].state, "hours");
     }
+    const handleViewVenue = (e:any) => {
+        history.push({
+            pathname: `/explore-venue/venue-details`,
 
+            state: {venueDetail: reservation.venueInfo[0]},
+        });
+    };
 
+    console.log("reservation = ",reservation);
     return (
         <>
             <CardWithContentStyle>
@@ -66,7 +76,7 @@ const CardWithContent = (props: CardWithContentProps) => {
 
                 <div>
                     <div className="row-wrapper">
-                        <div>
+                        <div style={{cursor:"pointer"}} onClick={handleViewVenue}>
                             <h4 className="heading">{heading}</h4>
                             <p className="description">{categoryTags.join(",")}</p>
                         </div>

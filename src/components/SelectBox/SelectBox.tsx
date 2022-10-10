@@ -128,41 +128,11 @@ const SelectBox = (props: SelectBoxProps) => {
         if(handleSelectBoxChange) handleSelectBoxChange({key:field.name,data:value,latitude,longtitude});
 
 
-        if (field.name === "All Categories" || field.name === "genre") {
-            data = [{type: "tags", search: [value]}];
-        } else if (field.name === "distance") {
-            data = [
-                {
-                    type: "distance",
-                    search: [
-                        {
-                            location: {latitude: latitude, longitude: longtitude},
-                            value: parseInt(value.split(" ")),
-                        },
-                    ],
-                },
-            ];
-        } else if (field.name === "time") {
-            if (value === "Now") {
-                data = [{type: "time", search: [{unit: "hours", value: 0}]}];
-            } else if (value.includes("Not now")) {
-                data = [{type: "time", search: [{unit: "hours", value: 12}]}];
-            } else {
-                data = [{type: "time", search: [{unit: "days", value: 7}]}];
-            }
-        } else {
-            data = [{type: "amenities", search: [value]}];
-        }
 
-        axios
-            .post("/v1/filter/event", {filters: data})
-            .then((response) => {
-                setLoading(false);
-                setVenues(response.data);
-            })
-            .catch((err) => {
-                setLoading(false);
-            });
+
+
+
+
     };
 
     const handleChange = (value: any) => {

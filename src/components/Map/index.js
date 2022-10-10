@@ -346,6 +346,7 @@ class Index extends React.Component {
                             lat: this.state.markerPosition.lat,
                             lng: this.state.markerPosition.lng,
                         }}
+                        icon={"https://musicpassonline.com:3000/images/location.png"}
                     />
                     {/* <InfoWindow
             onClose={this.onInfoWindowClose}

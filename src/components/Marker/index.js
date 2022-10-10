@@ -9,7 +9,7 @@ export default function Marker({ lat, lng, color, name, id }) {
       <MarkerStyle>
         <div
           className="pin bounce"
-          style={{ backgroundColor: color, cursor: "pointer" }}
+          style={{  cursor: "pointer" }}
           title={name}
         />
       </MarkerStyle>

@@ -20,7 +20,7 @@ type CheckingAvailablityModalProps = {
     event?: any;
     ticketIndex?: number;
     buyCredit?: any;
-
+    isBuyCredit?:any;
 };
 
 const CheckingAvailablityModal = (props: CheckingAvailablityModalProps) => {
@@ -46,6 +46,7 @@ const CheckingAvailablityModal = (props: CheckingAvailablityModalProps) => {
         setIsReservationConfirmedModalVisible,
         event,
         ticketIndex,
+        isBuyCredit
     } = props;
 
     return (
@@ -80,12 +81,14 @@ const CheckingAvailablityModal = (props: CheckingAvailablityModalProps) => {
                 }
                 {message === "Not Enough credits" ? '' : <img alt="loading" src="/images/loading.svg"/>}
             </ModalWrapper>
-            <ReservationConfirmedModal
+            {
+                !isBuyCredit &&  <ReservationConfirmedModal
                 isModalVisible={isReservationConfirmedModalVisible}
                 setIsModalVisible={setIsReservationConfirmedModalVisible}
                 event={event}
                 ticketIndex={ticketIndex}
             />
+            }
         </>
     );
 };

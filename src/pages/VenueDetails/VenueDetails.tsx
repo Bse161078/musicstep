@@ -46,6 +46,7 @@ const HeadingWithContent = (props: HeadingWithContentProps) => {
 export default function VenueDetails() {
     const location: any = useLocation();
     const {state, dispatch} = useLoginContext();
+    const [count,setCount]=useState(0);
     const [events, setEvents] = React.useState<any>(null);
     const [user, setUser] = useState({
         credits: 0
@@ -57,11 +58,12 @@ export default function VenueDetails() {
     function getVenue() {
         setIsLoading(true);
         axios
-            .get(`/v1/users/allEventsOfVenue?venueId=${venueDetail._id}`, {
+            .get(`/v1/users/allEventsOfVenue?venueId=${venueDetail._id}&review_type=venue`, {
                 headers: {Authorization: `Bearer ${state.authToken}`},
             })
             .then((res) => {
                 setEvents(res.data.event[0]);
+                setCount(count+1);
                 setIsLoading(false);
             })
             .catch((error) => {
@@ -88,11 +90,12 @@ export default function VenueDetails() {
 
     const getReviews = () => {
         axios
-            .get(`/v1/review?venueId=${venueDetail._id}`, {
+            .get(`/v1/review?venueId=${venueDetail._id}&review_type=venue`, {
                 headers: {Authorization: `Bearer ${state.authToken}`},
             })
             .then((res) => {
                 setreviews(res.data);
+                setCount(count+1);
                 // setEvents(res.data);
                 // setEvents(res.data);
                 // setProfilesList(res.data);
@@ -185,6 +188,9 @@ export default function VenueDetails() {
                                     reviews={reviews}
                                     venueId={venueDetail._id}
                                     getReviews={getReviews}
+                                    getVenue={getVenue}
+                                    review_type={"venue"}
+                                    count={count}
                                 />
                             </div>
                         </TabPaneStyle>
@@ -204,7 +210,7 @@ export default function VenueDetails() {
                         <img
                             src={!venueDetail.location ? "/images/explore-venue/map-2.png"
                                 :
-                                `https://maps.googleapis.com/maps/api/staticmap?size=600x400&markers=icon%3Ahttps://musicpassonline.com:3000/images/new-location.png%7C${venueDetail.location.lat}%2C${venueDetail.location.lng}&visible=${venueDetail.location.lat}%2C${venueDetail.location.lng}%7C${venueDetail.location.lat}%2C${venueDetail.location.lng}&key=AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew`}
+                                `https://maps.googleapis.com/maps/api/staticmap?size=600x400&markers=icon%3Ahttps://musicpassonline.com:3000/images/location.png%7C${venueDetail.location.lat}%2C${venueDetail.location.lng}&visible=${venueDetail.location.lat}%2C${venueDetail.location.lng}%7C${venueDetail.location.lat}%2C${venueDetail.location.lng}&key=AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew`}
                             className="map"
                             alt="map"
                         />

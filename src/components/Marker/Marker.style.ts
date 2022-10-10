@@ -2,25 +2,15 @@ import styled from "styled-components";
 
 export const MarkerStyle = styled.div`
 .pin {
-    width: 30px;
-    height: 30px;
-    border-radius: 50% 50% 50% 0;
-    background: #00cae9;
-    position: absolute;
-    transform: rotate(-45deg);
-    left: 50%;
-    top: 50%;
-    margin: -20px 0 0 -20px;
-    border:1px solid black;
+    width:56px;
+    height: 52px;
+    background-image:url('https://musicpassonline.com:3000/images/location.png')
 }
 .pin:after {
-    content: "";
-    width: 10px;
-    height: 10px;
-    margin: 9px 0 0 9px;
-    background: black;
-    position: absolute;
-    border-radius: 50%;
+    width:56px;
+    height: 52px;
+
+    background-image:url('https://musicpassonline.com:3000/images/location.png')
 }
 
 .bounce {
@@ -29,31 +19,6 @@ export const MarkerStyle = styled.div`
     animation-duration: 1s;
 }
 
-.pulse {
-    background: #d6d4d4;
-    border-radius: 50%;
-    height: 14px;
-    width: 14px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin: 11px 0px 0px -12px;
-    transform: rotateX(55deg);
-    z-index: -2;
-}
-.pulse:after {
-    content: "";
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    position: absolute;
-    margin: -13px 0 0 -13px;
-    animation: pulsate 1s ease-out;
-    animation-iteration-count: infinite;
-    opacity: 0;
-    box-shadow: 0 0 1px 2px #00cae9;
-    animation-delay: 1.1s;
-}
 
 @keyframes pulsate {
     0% {
@@ -74,20 +39,20 @@ export const MarkerStyle = styled.div`
 @keyframes bounce {
     0% {
         opacity: 0;
-        transform: translateY(-2000px) rotate(-45deg);
+        transform: translateY(-2000px) 
     }
 
     60% {
         opacity: 1;
-        transform: translateY(30px) rotate(-45deg);
+        transform: translateY(30px) 
     }
 
     80% {
-        transform: translateY(-10px) rotate(-45deg);
+        transform: translateY(-10px) 
     }
 
     100% {
-        transform: translateY(0) rotate(-45deg);
+        transform: translateY(0) 
     }
 } 
 `;

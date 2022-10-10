@@ -14,9 +14,7 @@ const EventsManagmentListItem = ({ event }: EventsManagmentListItemProps) => {
           <div className="event-date-name">
             <span className="event-date">
               {
-                week[
-                  moment(event.date?.time?.toLocaleDateString("en-US")).day()
-                ]
+                  moment(event.date).format("ddd")
               }
               , {moment(event.date).date()} /
             </span>

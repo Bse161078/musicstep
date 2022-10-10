@@ -16,6 +16,7 @@ type TabRowProps = {
     reservation?: number;
     subscribtionCredit?: any;
     venue?: any;
+    handleClick?:any;
 };
 
 export const TabRow = (props: TabRowProps) => {
@@ -26,6 +27,7 @@ export const TabRow = (props: TabRowProps) => {
         reservation,
         subscribtionCredit,
         venue,
+        handleClick
     } = props;
     const [isEventDetailsModalVisibel, setIsEventDetailsModalVisibel] = useState(
         false
@@ -33,8 +35,8 @@ export const TabRow = (props: TabRowProps) => {
     const [isTicketsAvailabe, setIsTicketsAvailabe] = useState(true);
     const week = ["Mon", "Thu", "Wed", "Thr", "Fri", "Sat", "Sun"];
 
-    let hours = moment(event.state).diff(new Date(), "hours");
-    let minutes = (moment(event.state).diff(new Date(), "minutes") % 60);
+    let hours = moment(event.city).diff(event.state, "hours");
+    let minutes = (moment(event.city).diff(event.state, "minutes") % 60);
 
     return (
         <>
@@ -54,7 +56,7 @@ export const TabRow = (props: TabRowProps) => {
             {hours > 0 && hours + " hr"}
           </span>
                 </div>
-                <div className="name">
+                <div className="name" style={{cursor:"pointer"}} onClick={(e)=>handleClick()}>
                     <p>{event.title}</p>
                     <p className="genre">{venue.categoryTags.join(",")}</p>
                 </div>

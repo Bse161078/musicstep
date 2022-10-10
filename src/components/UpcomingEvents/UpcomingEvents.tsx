@@ -4,13 +4,12 @@ import {TabRow} from "./TabRow";
 
 import {UpcomingEventsStyle} from "./UpcomingEvents.style";
 
-const UpcomingEvents = ({events, venue, subscribtionCredit}: any) => {
+const UpcomingEvents = ({events, venue, subscribtionCredit, handleClick}: any) => {
     const [reservation, setReservation] = useState(0);
     let tempresrvatoin = 0;
 
 
-
-    const filteredEvents=events.filter((event:any)=>new Date(event.state)>=new Date())
+    const filteredEvents = events.filter((event: any) => new Date(event.state) >= new Date())
 
     return (
         <UpcomingEventsStyle>
@@ -29,6 +28,7 @@ const UpcomingEvents = ({events, venue, subscribtionCredit}: any) => {
                         buttonText={"Reservation Full"}
                         reservation={((event.tickets).length > 0) && event.tickets[0].bookedTickets}
                         venue={venue}
+                        handleClick={handleClick}
                     />
                 ) : (
                     <TabRow
@@ -39,6 +39,7 @@ const UpcomingEvents = ({events, venue, subscribtionCredit}: any) => {
                             } Credits`}
                         reservation={event.tickets[0].bookedTickets}
                         venue={venue}
+                        handleClick={handleClick}
                     />
                 );
 
