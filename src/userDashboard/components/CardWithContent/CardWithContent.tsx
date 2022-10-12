@@ -63,7 +63,6 @@ const CardWithContent = (props: CardWithContentProps) => {
         });
     };
 
-    console.log("reservation = ",reservation);
     return (
         <>
             <CardWithContentStyle>

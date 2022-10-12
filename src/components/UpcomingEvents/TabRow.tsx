@@ -16,7 +16,7 @@ type TabRowProps = {
     reservation?: number;
     subscribtionCredit?: any;
     venue?: any;
-    handleClick?:any;
+    handleClick?: any;
 };
 
 export const TabRow = (props: TabRowProps) => {
@@ -37,6 +37,17 @@ export const TabRow = (props: TabRowProps) => {
 
     let hours = moment(event.city).diff(event.state, "hours");
     let minutes = (moment(event.city).diff(event.state, "minutes") % 60);
+    let daysLeft = moment(event.state).diff(moment(new Date()), "days");
+    let daysLeftLabel = "";
+
+    if (daysLeft === 0) {
+        daysLeftLabel = "Today"
+    } else if (daysLeft === 1) {
+        daysLeftLabel = "Tomorrow"
+    } else {
+        daysLeftLabel = daysLeft + " days left"
+    }
+
 
     return (
         <>
@@ -47,7 +58,7 @@ export const TabRow = (props: TabRowProps) => {
               {moment(event.state).date() + " " + moment(event.date).format("MMM")}
           </span>
                     <span className="hour">
-            {moment(event.state).diff(moment(new Date()), "days") + 1} days left
+            {daysLeftLabel}
           </span>
                 </div>
                 <div className="time">
@@ -56,7 +67,7 @@ export const TabRow = (props: TabRowProps) => {
             {hours > 0 && hours + " hr"}
           </span>
                 </div>
-                <div className="name" style={{cursor:"pointer"}} onClick={(e)=>handleClick()}>
+                <div className="name" style={{cursor: "pointer"}} onClick={(e) => handleClick()}>
                     <p>{event.title}</p>
                     <p className="genre">{venue.categoryTags.join(",")}</p>
                 </div>

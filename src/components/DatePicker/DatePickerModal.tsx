@@ -15,7 +15,7 @@ const DatePickerModal = (props: DatePickerModalProps) => {
   return (
     <DatePickerModalStyle>
       <label className="input-label">{lable}</label>
-      <DatePicker locale="en-CA" onChange={(e: any) => onChange(e)} value={value} />
+      <DatePicker locale="en-CA" onChange={(e: any) => onChange(e)} value={value} format={"MM-dd-yyyy"}/>
     </DatePickerModalStyle>
   );
 };

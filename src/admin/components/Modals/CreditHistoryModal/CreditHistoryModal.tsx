@@ -21,7 +21,6 @@ const CreditHistoryModal = (props: CreditHistoryModalProps) => {
     const {dispatch, state} = useLoginContext();
 
 
-    console.log("reservations = ", reservations);
 
 
     const TableHeader = () => {

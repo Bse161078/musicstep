@@ -276,7 +276,7 @@ const AddVenueProfileForm = () => {
     if (res) {
       setLoading(false);
       setSuccessModalVisible(true);
-      setMessage("Venue created Successfully");
+      setMessage("Venue created successfully");
       setHeading("Success");
     }
     // }

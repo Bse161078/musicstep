@@ -132,7 +132,6 @@ const AutoCompletePlaces=(props)=>{
             const locationFromAddress= await Geocode.fromAddress(address);
             onPlaceSelected(locationFromAddress.results[0],true)
         }catch (e) {
-            console.log(e);
         }
     }
 

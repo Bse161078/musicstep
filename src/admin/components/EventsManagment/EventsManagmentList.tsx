@@ -8,6 +8,17 @@ type EventsManagmentListProps = {
     events: any;
 };
 const EventsManagmentList = ({events}: EventsManagmentListProps) => {
+    const sortEvents=()=>{
+        return events.sort((a:any,b:any)=>{
+            const c:any = new Date(a.date);
+            const d:any = new Date(b.date);
+
+            return d-c;
+        });
+
+    }
+    const sortedEvents=sortEvents();
+
     return (
         <EventsManagmentListStyle>
             <div className="table-header">
@@ -18,8 +29,8 @@ const EventsManagmentList = ({events}: EventsManagmentListProps) => {
 
             {
                 // events.length > 0 && <span>{events[0]._id.month}</span>
-                events.length > 0 &&
-                events.map((element: any) => {
+                sortedEvents.length > 0 &&
+                sortedEvents.map((element: any) => {
                     const eventData = element;
                     return (
                         <span>

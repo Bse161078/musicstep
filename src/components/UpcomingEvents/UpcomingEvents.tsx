@@ -9,7 +9,7 @@ const UpcomingEvents = ({events, venue, subscribtionCredit, handleClick}: any) =
     let tempresrvatoin = 0;
 
 
-    const filteredEvents = events.filter((event: any) => new Date(event.state) >= new Date())
+    const filteredEvents = events.filter((event: any) => new Date(event.date) >= new Date())
 
     return (
         <UpcomingEventsStyle>

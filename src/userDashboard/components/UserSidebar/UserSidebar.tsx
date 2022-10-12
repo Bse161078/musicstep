@@ -92,7 +92,6 @@ const UserSidebar = ({
             });
     }
 
-    console.log("reservation stats = ",reservationStats)
     return (
         <UserSidebarStyle>
             {isLoading === true && <Loading/>}

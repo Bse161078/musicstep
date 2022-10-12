@@ -20,7 +20,6 @@ export const DropdownsList = (props: any) => {
 
     const handleFilter = (value: any) => {
         let data: any = [];
-        console.log("value = ", value)
         if (value["All Categories"]) {
             data = [{type: "tags", search: [value["All Categories"].data]}];
         }
@@ -130,7 +129,6 @@ export const DropdownsList = (props: any) => {
         setSelectedFilter({...selectedFilter, ...prevFilter, [type]: data});
     }
 
-    console.log("selected filter = ", selectedFilter)
 
     return (
         <DropdownsListStyle>

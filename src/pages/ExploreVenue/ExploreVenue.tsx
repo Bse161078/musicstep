@@ -378,8 +378,8 @@ export default function ExploreVenue() {
                                             <Marker
                                                 // lat={31.582045}
                                                 // lng={74.329376}
-                                                lat={venue.location.lat}
-                                                lng={venue.location.lng}
+                                                lat={defaultProps.center.lat}
+                                                lng={defaultProps.center.lng}
                                                 name={venue.name}
                                                 color={"blue"}
                                                 id="1"
