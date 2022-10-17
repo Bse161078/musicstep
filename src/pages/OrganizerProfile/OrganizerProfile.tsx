@@ -90,7 +90,7 @@ export default function VenueDetails() {
 
     const getReviews = () => {
         axios
-            .get(`/v1/review?venueId=${venueDetail._id}&review_type=organizer`, {
+            .get(`/v1/review?venueId=${location.state.organizerDetail.organizerInfo[0]._id}&review_type=organizer`, {
                 headers: {Authorization: `Bearer ${state.authToken}`},
             })
             .then((res) => {
@@ -183,7 +183,7 @@ export default function VenueDetails() {
                             <div className="table-wrapper">
                                 <Reviews
                                     reviews={reviews}
-                                    venueId={venueDetail._id}
+                                    venueId={location.state.organizerDetail.organizerInfo[0]._id}
                                     getReviews={getReviews}
                                     review_type={"organizer"}
                                     getVenue={getVenue}

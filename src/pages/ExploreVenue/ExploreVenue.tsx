@@ -153,18 +153,18 @@ export default function ExploreVenue() {
             lat: 25.761681,
             lng: -80.191788,
         },
-        zoom: 11,
+        zoom: 18,
     };
 
     if (venueLocations.length > 0) {
         const selectedVenueLocation: any = venueLocations[0];
-        /*defaultProps = {
+        defaultProps = {
           center: {
             lat: Number(selectedVenueLocation.location.lat),
             lng: Number(selectedVenueLocation.location.lng),
           },
-          zoom: 11,
-        };*/
+          zoom: 18,
+        };
     }
 
     return (
@@ -378,8 +378,8 @@ export default function ExploreVenue() {
                                             <Marker
                                                 // lat={31.582045}
                                                 // lng={74.329376}
-                                                lat={defaultProps.center.lat}
-                                                lng={defaultProps.center.lng}
+                                                lat={venue.location.lat}
+                                                lng={venue.location.lng}
                                                 name={venue.name}
                                                 color={"blue"}
                                                 id="1"

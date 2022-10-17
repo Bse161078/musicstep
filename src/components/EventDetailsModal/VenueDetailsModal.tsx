@@ -25,6 +25,9 @@ const VenueDetailsModal = (props: VenueDetailsModalProps) => {
         venue
     } = props;
     const history = useHistory();
+
+
+
     return (
         <>
             { (

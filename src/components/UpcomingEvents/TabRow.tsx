@@ -45,7 +45,7 @@ export const TabRow = (props: TabRowProps) => {
     } else if (daysLeft === 1) {
         daysLeftLabel = "Tomorrow"
     } else {
-        daysLeftLabel = daysLeft + " days left"
+        daysLeftLabel = "In "+daysLeft + " days"
     }
 
 

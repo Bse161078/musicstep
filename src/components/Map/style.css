@@ -24,6 +24,16 @@
 .dateTimepicker .react-time-picker__inputGroup__input{
   width: auto !important;
 }
+
+.dateTimepicker .react-time-picker__inputGroup__hour{
+    max-width:25px !important;
+}
+
+.dateTimepicker .react-time-picker__inputGroup__minute{
+    max-width:25px !important;
+}
+
+
 .dateTimepicker .react-time-picker__wrapper{
   border-radius: 24px;
   margin-top: 5px;

@@ -137,6 +137,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
                     </p>
                 </div>
                 <div className="tickets-wrapper">
+
                     <CreateTicket setTickets={setTickets} tickets={tickets}/>
 
                     {tickets.map((ticket: any, index: any) => (

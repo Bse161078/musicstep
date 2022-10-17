@@ -85,8 +85,20 @@ export default function VenueDetails() {
         });
         getVenue();
         setamentiesState(tempAmenties);
+
+
+
         // setAttributesListState(tempAttributesList);
     }, []);
+
+
+    useEffect(()=>{
+        var element:any = document.getElementById("tab");
+        console.log("element = ",element)
+        if(element) element.scrollIntoView();
+
+    },[events])
+
 
     const getReviews = () => {
         axios
@@ -150,14 +162,14 @@ export default function VenueDetails() {
                         reviewCount={events.reviewCount}
                     />
 
-                    <div className="buttons-wrapper">
+                    <div className="buttons-wrapper" id={"tab"}>
                         {venueDetail.categoryTags.map((categoryTag: any) => (
                             <OutlineButtonStyle>{categoryTag}</OutlineButtonStyle>
                         ))}
                     </div>
 
                     <TabsStyle
-                        defaultActiveKey="1"
+                        defaultActiveKey="2"
                         onChange={(key) => {
                             if (key === "2") {
                                 setEvents(events)
@@ -210,7 +222,7 @@ export default function VenueDetails() {
                         <img
                             src={!venueDetail.location ? "/images/explore-venue/map-2.png"
                                 :
-                                `https://maps.googleapis.com/maps/api/staticmap?size=600x400&markers=icon%3Ahttps://musicpassonline.com:3000/images/location.png%7C${venueDetail.location.lat}%2C${venueDetail.location.lng}&visible=${venueDetail.location.lat}%2C${venueDetail.location.lng}%7C${venueDetail.location.lat}%2C${venueDetail.location.lng}&key=AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew`}
+                                `https://maps.googleapis.com/maps/api/staticmap?size=600x400&markers=icon%3Ahttps://musicpassonline.com:3000/images/location.png%7C${venueDetail.location.lat}%2C${venueDetail.location.lng}&visible=${venueDetail.location.lat}%2C${venueDetail.location.lng}%7C${venueDetail.location.lat}%2C${venueDetail.location.lng}&style=element:labels.text.stroke%7color:0x242f3e%7Celement:geometry%7Ccolor:0x242f3e&key=AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew`}
                             className="map"
                             alt="map"
                         />

@@ -21,12 +21,15 @@ const CreateTicket = ({ setTickets, tickets }: CreateTicketProps) => {
         <p className="add-icon">+</p>
         <p className="create-ticket">Create Reservations</p>
       </CreateTicketStyle>
-      <CreateTicketModal
-        isModalVisible={isModalVisible}
-        setIsModalVisible={setModalVisible}
-        setTickets={setTickets}
-        tickets={tickets}
-      />
+        {
+            isModalVisible &&
+            <CreateTicketModal
+                isModalVisible={isModalVisible}
+                setIsModalVisible={setModalVisible}
+                setTickets={setTickets}
+                tickets={tickets}
+            />
+        }
     </>
   );
 };
