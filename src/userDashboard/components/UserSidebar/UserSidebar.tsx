@@ -92,6 +92,11 @@ const UserSidebar = ({
             });
     }
 
+    const futureReservations = reservations.filter((reserve: any) => (reserve.eventInfo).length > 0 && (new Date(reserve.eventInfo[0].date) >= new Date()));
+
+    console.log("reservations = ",reservations)
+
+
     return (
         <UserSidebarStyle>
             {isLoading === true && <Loading/>}
@@ -191,8 +196,8 @@ const UserSidebar = ({
                         <HeadingTab
                             heading="Events in Reservation"
                             count={
-                                reservations &&
-                                reservations.filter(
+                                futureReservations &&
+                                futureReservations.filter(
                                     (reservation: any) =>
                                         reservation.eventReservation === "reserved" &&
                                         reservation.isTicketUsed === false

@@ -17,6 +17,7 @@ type TabRowProps = {
     subscribtionCredit?: any;
     venue?: any;
     handleClick?: any;
+    isDetails: boolean
 };
 
 export const TabRow = (props: TabRowProps) => {
@@ -27,7 +28,8 @@ export const TabRow = (props: TabRowProps) => {
         reservation,
         subscribtionCredit,
         venue,
-        handleClick
+        handleClick,
+        isDetails
     } = props;
     const [isEventDetailsModalVisibel, setIsEventDetailsModalVisibel] = useState(
         false
@@ -45,7 +47,7 @@ export const TabRow = (props: TabRowProps) => {
     } else if (daysLeft === 1) {
         daysLeftLabel = "Tomorrow"
     } else {
-        daysLeftLabel = "In "+daysLeft + " days"
+        daysLeftLabel = "In " + daysLeft + " days"
     }
 
 
@@ -67,7 +69,10 @@ export const TabRow = (props: TabRowProps) => {
             {hours > 0 && hours + " hr"}
           </span>
                 </div>
-                <div className="name" style={{cursor: "pointer"}} onClick={(e) => handleClick()}>
+                <div className="name" style={{cursor: "pointer"}} onClick={(e) => {
+                    if (isDetails) setIsEventDetailsModalVisibel(true)
+                    else handleClick()
+                }}>
                     <p>{event.title}</p>
                     <p className="genre">{venue.categoryTags.join(",")}</p>
                 </div>

@@ -11,10 +11,10 @@ export const sidebarItems = [
     name: "Events Managment",
     url: "/admin/events-management",
   },
-  {
-    name: "Team Management",
-    url: "/admin/team-management",
-  },
+  // {
+  //   name: "Team Management",
+  //   url: "/admin/team-management",
+  // },
 
   {
     name: "Payment Information",

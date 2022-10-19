@@ -68,6 +68,7 @@ import SubscriptionCancel from "./components/Stripe/subscriptionCancel";
 import UpdateSubscription from "./pages/ExploreVenue/UpdateSubscription";
 import CreateCreditPayment from "./pages/ExploreVenue/CreateCreditPayment";
 import CreditPaymentSuccess from "./components/Stripe/createCreditPaymentSuccess";
+import OrientationModal from "./components/ChangeOrientation/OrientationModal/OrientationModal";
 
 // axios.defaults.baseURL = "https://music-pass-backend.herokuapp.com/v1";
 axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
@@ -113,6 +114,8 @@ const RoutesList = (props: any) => {
     );
     //
 
+
+
     //use
     useEffect(() => {
         switch (pathname) {
@@ -120,6 +123,9 @@ const RoutesList = (props: any) => {
                 setShowNavbar(false);
                 break;
             case "/explore-venue/venue-details":
+                setShowNavbar(false);
+                break;
+            case "/explore-venue/organizer-profile":
                 setShowNavbar(false);
                 break;
             case "/create-credit-payment":
@@ -130,13 +136,14 @@ const RoutesList = (props: any) => {
                 setShowNavbar(true);
         }
 
-        if(pathname.includes("credit-payment-success")) setShowNavbar(false)
+        if (pathname.includes("credit-payment-success")) setShowNavbar(false)
 
         window.scrollTo(0, 0);
     }, [pathname]);
 
     const isAdminSide = pathname.includes("/admin");
     const isDashboardSide = pathname.includes("/dashboard");
+
 
     return (
         <>
@@ -376,26 +383,39 @@ const RoutesList = (props: any) => {
                     )}
                 />
             </Switch>
+
         </>
     );
 };
 
 function App() {
+    const [isPortrait, setIsPortrait] = useState(false);
+    useEffect(() => {
+        setIsPortrait(window.matchMedia("(orientation: portrait)").matches)
+        window.addEventListener("orientationchange", function () {
+
+            setIsPortrait(!window.matchMedia("(orientation: portrait)").matches)
+        });
+
+    }, [])
     return (
         <div className="App">
-            <LoginContextProvider>
-                <UserContextProvider>
-                    <PartnerContextProvider>
-                        <EventContextProvider>
-                            <BaseStyle/>
-                            <BrowserRouter>
-                                <RoutesList/>
-                                <Footer/>
-                            </BrowserRouter>
-                        </EventContextProvider>
-                    </PartnerContextProvider>
-                </UserContextProvider>
-            </LoginContextProvider>
+            {isPortrait && <OrientationModal/>}
+            {!isPortrait &&
+                <LoginContextProvider>
+                    <UserContextProvider>
+                        <PartnerContextProvider>
+                            <EventContextProvider>
+                                <BaseStyle/>
+                                <BrowserRouter>
+                                    <RoutesList/>
+                                    <Footer/>
+                                </BrowserRouter>
+                            </EventContextProvider>
+                        </PartnerContextProvider>
+                    </UserContextProvider>
+                </LoginContextProvider>
+            }
         </div>
     );
 }

@@ -4,7 +4,7 @@ import {TabRow} from "./TabRow";
 
 import {UpcomingEventsStyle} from "./UpcomingEvents.style";
 
-const UpcomingEvents = ({events, venue, subscribtionCredit, handleClick}: any) => {
+const UpcomingEvents = ({events, venue, subscribtionCredit, handleClick,isDetails}: any) => {
     const [reservation, setReservation] = useState(0);
     let tempresrvatoin = 0;
 
@@ -29,6 +29,7 @@ const UpcomingEvents = ({events, venue, subscribtionCredit, handleClick}: any) =
                         reservation={((event.tickets).length > 0) && event.tickets[0].bookedTickets}
                         venue={venue}
                         handleClick={handleClick}
+                        isDetails={isDetails}
                     />
                 ) : (
                     <TabRow
@@ -40,6 +41,7 @@ const UpcomingEvents = ({events, venue, subscribtionCredit, handleClick}: any) =
                         reservation={event.tickets[0].bookedTickets}
                         venue={venue}
                         handleClick={handleClick}
+                        isDetails={isDetails}
                     />
                 );
 

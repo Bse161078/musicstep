@@ -4,6 +4,9 @@ export const SelectWithInputStyle = styled.div`
   max-width: 900px;
   width: 57%;
 
+  @media (max-width: 800px){
+  display:none;
+  }
   .search-form-wrapper {
     display: flex;
     align-items: center;

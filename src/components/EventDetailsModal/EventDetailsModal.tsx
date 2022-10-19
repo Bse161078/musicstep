@@ -26,9 +26,11 @@ const EventDetailsModal = (props: EventDetailsModalProps) => {
     const history = useHistory();
 
 
-    (event.tickets).sort((a: any, b: any) => {
+    const sortedTicket=(event.tickets).sort((a: any, b: any) => {
         return a.credits - b.credits;
     });
+
+
     return (
         <>
             {isTicketsAvailable ? (
@@ -75,25 +77,15 @@ const EventDetailsModal = (props: EventDetailsModalProps) => {
                     width="1050px"
                     button={[
                         <OutlineButtonStyle
-                            width="100%"
+                            width="40%"
                             height="60px"
                             onClick={() => {
                                 setIsModalVisible(false);
-                                history.push("/dashboard/home");
                             }}
                         >
-                            Explore Events
+                            Close
                         </OutlineButtonStyle>,
-                        <OutlineButtonStyle
-                            width="100%"
-                            height="60px"
-                            onClick={() => {
-                                setIsModalVisible(false);
-                                history.push("/dashboard/home");
-                            }}
-                        >
-                            Explore Venue
-                        </OutlineButtonStyle>,
+                       ,
                     ]}
                 >
                     <EventDetailsModalStyle>

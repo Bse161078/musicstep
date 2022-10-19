@@ -92,12 +92,6 @@ export default function VenueDetails() {
     }, []);
 
 
-    useEffect(()=>{
-        var element:any = document.getElementById("tab");
-        console.log("element = ",element)
-        if(element) element.scrollIntoView();
-
-    },[events])
 
 
     const getReviews = () => {
@@ -133,6 +127,7 @@ export default function VenueDetails() {
     // }
 
 
+    console.log("vaneus = ",venueDetail)
     return (
         <>
             <NavbarWithSearch userCredit={user.credits}/>
@@ -169,7 +164,7 @@ export default function VenueDetails() {
                     </div>
 
                     <TabsStyle
-                        defaultActiveKey="2"
+                        defaultActiveKey="1"
                         onChange={(key) => {
                             if (key === "2") {
                                 setEvents(events)
@@ -191,7 +186,7 @@ export default function VenueDetails() {
                             <div className="table-wrapper" onClick={() => {
 
                             }}>
-                                {isLoading ? <Spinner/> : <UpcomingEvents events={events.events} venue={venueDetail}/>}
+                                {isLoading ? <Spinner/> : <UpcomingEvents events={events.events} venue={venueDetail} isDetails={true}/>}
                             </div>
                         </TabPaneStyle>
                         <TabPaneStyle tab="Reviews" key="3">

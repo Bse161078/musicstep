@@ -68,6 +68,7 @@ const ModalWrapper = (props: ModalWrapperProps) => {
                 onCancel={handleCancel}
                 className="target"
                 title={heading}
+                closable={false}
                 width={width ? width : "660px"}
                 footer={
                     isFooter

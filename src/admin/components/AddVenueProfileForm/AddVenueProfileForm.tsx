@@ -353,6 +353,7 @@ const AddVenueProfileForm = () => {
     setAdditionalImage(tempFiles);
   };
 
+  console.log("location ")
   return (
     <>
       <Dashboard>

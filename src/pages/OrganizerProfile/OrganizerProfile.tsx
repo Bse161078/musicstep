@@ -51,7 +51,7 @@ export default function VenueDetails() {
     const [amentiesState, setamentiesState] = useState(amenties);
     const [reviews, setreviews] = useState(null);
     const venueDetail = window.location.href.includes("dashboard") ? location.state.organizerDetail.venuesInfo[0] : location.state.organizerDetail;
-    const [count,setCount]=useState(0);
+    const [count, setCount] = useState(0);
 
     function getVenue() {
         setIsLoading(true);
@@ -62,7 +62,7 @@ export default function VenueDetails() {
             .then((res) => {
                 setEvents(res.data.event[0]);
                 setIsLoading(false);
-                setCount(count+1);
+                setCount(count + 1);
             })
             .catch((error) => {
             });
@@ -75,7 +75,7 @@ export default function VenueDetails() {
         })
             .then((res: any) => {
                 setUser(res.data)
-                setCount(count+1);
+                setCount(count + 1);
 
             }).catch((e) => {
         })
@@ -95,7 +95,7 @@ export default function VenueDetails() {
             })
             .then((res) => {
                 setreviews(res.data);
-                setCount(count+1);
+                setCount(count + 1);
 
                 // setEvents(res.data);
                 // setEvents(res.data);
@@ -114,6 +114,9 @@ export default function VenueDetails() {
             if (attributes[property]) attributeValues.push({name: property, value: attributes[property]});
         }
     }
+
+
+    console.log("organizerDetail = ", organizerDetail)
 
     return (
         <>
@@ -176,7 +179,8 @@ export default function VenueDetails() {
                             <div className="table-wrapper" onClick={() => {
 
                             }}>
-                                {isLoading ? <Spinner/> : <UpcomingEvents events={events.events} venue={venueDetail}/>}
+                                {isLoading ? <Spinner/> :
+                                    <UpcomingEvents events={events.events} venue={venueDetail} isDetails={true}/>}
                             </div>
                         </TabPaneStyle>
                         <TabPaneStyle tab="Reviews" key="3">
@@ -195,20 +199,31 @@ export default function VenueDetails() {
                 </div>
 
                 <div className="venue-info-wrapper">
-                    <div
-                        className="map-wrapper"
-                        onClick={() =>
-                            window.open(
-                                `http://maps.google.com?q=${venueDetail.location.lat},${venueDetail.location.lng}`,
-                                "_blank"
-                            )
-                        }
-                    >
-                        <img
-                            src="/images/explore-venue/map-2.png"
-                            className="map"
-                            alt="map"
-                        />
+
+                    <div className="icon-with-content">
+                        <img alt="icon" src="/images/icons/phone-icon.svg"/>
+                        <span>{organizerDetail["socialMediaAndMarketingLinks"].phoneNumber}</span>
+                    </div>
+
+
+                    <div className="icon-with-content">
+                        <img alt="icon" src="/images/icons/website-icon.svg"/>
+                        <span>{organizerDetail["socialMediaAndMarketingLinks"].youtube}</span>
+                    </div>
+
+                    <div className="icon-with-content">
+                        <img alt="icon" src="/images/icons/instagram-icon.svg"/>
+                        <span>{organizerDetail["socialMediaAndMarketingLinks"].instagram}</span>
+                    </div>
+
+                    <div className="icon-with-content">
+                        <img alt="icon" src="/images/icons/facebook-icon.svg"/>
+                        <span>{organizerDetail["socialMediaAndMarketingLinks"].facebook}</span>
+                    </div>
+
+                    <div className="icon-with-content">
+                        <img alt="icon" src="/images/icons/twitter-icon.svg"/>
+                        <span>{organizerDetail["socialMediaAndMarketingLinks"].twitter}</span>
                     </div>
 
                     <div
@@ -225,49 +240,12 @@ export default function VenueDetails() {
                         <span>{venueDetail.location.address}</span>
                     </div>
 
-                    {organizerDetail["socialMediaAndMarketingLinks"].phoneNumber && (
-                        <div className="icon-with-content">
-                            <img alt="icon" src="/images/icons/phone-icon.svg"/>
-                            <span>
-                {organizerDetail["socialMediaAndMarketingLinks"].phoneNumber}
-              </span>
-                        </div>
-                    )}
 
-                    {organizerDetail["socialMediaAndMarketingLinks"].youtube && (
-                        <div className="icon-with-content">
-                            <img alt="icon" src="/images/icons/website-icon.svg"/>
-                            <span>{organizerDetail["socialMediaAndMarketingLinks"].youtube}</span>
-                        </div>
-                    )}
 
-                    {organizerDetail["socialMediaAndMarketingLinks"].instagram && (
-                        <div className="icon-with-content">
-                            <img alt="icon" src="/images/icons/instagram-icon.svg"/>
-                            <span>
-                {organizerDetail["socialMediaAndMarketingLinks"].instagram}
-              </span>
-                        </div>
-                    )}
 
-                    {organizerDetail["socialMediaAndMarketingLinks"].facebook && (
-                        <div className="icon-with-content">
-                            <img alt="icon" src="/images/icons/facebook-icon.svg"/>
-                            <span>
-                {organizerDetail["socialMediaAndMarketingLinks"].facebook}
-              </span>
-                        </div>
-                    )}
-
-                    {organizerDetail["socialMediaAndMarketingLinks"].twitter && (
-                        <div className="icon-with-content">
-                            <img alt="icon" src="/images/icons/twitter-icon.svg"/>
-                            <span>{organizerDetail["socialMediaAndMarketingLinks"].twitter}</span>
-                        </div>
-                    )}
 
                     {
-                        attributeValues.length>0 &&
+                        attributeValues.length > 0 &&
                         <Formik initialValues={{}} onSubmit={() => {
                         }}>
                             {() => (

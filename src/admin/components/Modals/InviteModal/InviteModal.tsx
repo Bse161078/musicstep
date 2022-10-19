@@ -51,13 +51,13 @@ const InviteModal = (props: InviteModalProps) => {
             .then((response) => {
                 setsuccessModel(true);
                 setMessageHeading("Success");
-                setMessage("Invitation Email send Successfully");
+                setMessage("Invitation email sent");
                 setLoading(false);
             })
             .catch((error) => {
                 setsuccessModel(true);
                 setMessageHeading("Success");
-                setMessage("Invitation Email send Successfully");
+                setMessage("Invitation email sent");
                 setLoading(false);
             });
     };

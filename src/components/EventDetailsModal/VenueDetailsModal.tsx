@@ -27,7 +27,9 @@ const VenueDetailsModal = (props: VenueDetailsModalProps) => {
     const history = useHistory();
 
 
-
+    const sortedTicket=(event.tickets).sort((a: any, b: any) => {
+        return a.credits - b.credits;
+    });
     return (
         <>
             { (

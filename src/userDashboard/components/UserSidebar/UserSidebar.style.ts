@@ -7,6 +7,9 @@ export const UserSidebarStyle = styled.div`
   padding: 30px 15px;
   max-width: 360px;
 
+    @media ( max-width: 800px ) {
+    display:none
+    }
   .divider {
     height: 1px;
     width: 90%;

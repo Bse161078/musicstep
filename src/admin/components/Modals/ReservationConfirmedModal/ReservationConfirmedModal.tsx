@@ -77,7 +77,7 @@ const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
             .then((response) => {
                 setsuccessModel(true);
                 setMessageHeading("Success");
-                setMessage("Invitation Email send Successfully");
+                setMessage("Invitation email sent");
                 resetForm();
             })
             .catch((error) => {

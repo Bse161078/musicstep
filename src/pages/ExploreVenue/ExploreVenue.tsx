@@ -6,13 +6,14 @@ import {DropdownsList} from "./DropdownsList";
 import {ExploreVenueStyle, TrialButton} from "./ExploreVenue.style";
 import {useLoginContext} from "../../context/authenticationContext";
 import Marker from "../../components/Marker";
-import {Button, Grid} from "@mui/material";
+import {Box, Button, Grid} from "@mui/material";
 import {Pricing} from "../Pricing";
 import {Loading} from "../../components";
 import {Elements} from "@stripe/react-stripe-js";
 import AddCard from "../../components/Stripe/addCard";
 import {loadStripe} from "@stripe/stripe-js";
 import {useHistory, useLocation} from "react-router-dom";
+import OrientationModal from "../../components/ChangeOrientation/OrientationModal/OrientationModal";
 
 export default function ExploreVenue() {
     const style = {
@@ -167,6 +168,8 @@ export default function ExploreVenue() {
         };
     }
 
+
+
     return (
         <>
             <NavbarWithSearch
@@ -248,9 +251,9 @@ export default function ExploreVenue() {
             alt="map"
           /> */}
 
-                            <div
+                            <Box
                                 //  className={styles.mapConatiner}
-                                style={{width: "100%", height: "100%"}}
+                                sx={{width: "100%", height: "100%",display:{lg:"block",md:"none"}}}
                             >
                                 {venueLocations.length > 0 && (
                                     <GoogleMapReact
@@ -387,7 +390,7 @@ export default function ExploreVenue() {
                                         ))}
                                     </GoogleMapReact>
                                 )}
-                            </div>
+                            </Box>
                         </section>
                     </ExploreVenueStyle>
                 </>
@@ -461,6 +464,7 @@ export default function ExploreVenue() {
                                 »&nbsp;Create&nbsp;Subscribtion!
                             </a>
                         </TrialButton>
+
                     </ExploreVenueStyle>
                 )
             )}

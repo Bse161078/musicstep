@@ -30,29 +30,28 @@ import {UploadFile} from "../../../admin/components/UploadFile";
 import FutureEvents from "./FutureEvents";
 import {ExploreVenueStyle, TrialButton} from "../../../pages/ExploreVenue/ExploreVenue.style";
 import {Pricing} from "../../../pages/Pricing";
+import OrientationModal from "../../../components/ChangeOrientation/OrientationModal/OrientationModal";
 
 const EventReservation = ({reservations, cancelreservation, subscription, setPricing, refreshSuggestedEvents}: any) => {
     const [isCancelModalVisible, setCancelModalVisible] = useState(false);
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [selectedReservation, setSelectedReservation] = useState(false);
 
-
     reservations = reservations.filter((reserve: any) => (reserve.eventInfo).length > 0 && (new Date(reserve.eventInfo[0].date) >= new Date()));
-
 
     return (
         <>
 
             {subscription && subscription.active === true ?
                 <SectionHeading heading="Events In Reservation">
-                    <Grid container lg={3} xs={1} spacing={1}
-                          sx={{maxWidth: "70vw!important", width: "70vw!important", zIndex: 100}}>
+                    <Grid container lg={3} xs={2} spacing={1}
+                          sx={{maxWidth: {lg:"65vw!important",xs:"95vw!important"}, width: {lg:"65vw!important",xs:"95vw!important"}, zIndex: 100}}>
                         <ImageList
 
                             sx={{
                                 gridAutoFlow: "column",
-                                gridTemplateColumns: "repeat(auto-fill,minmax(450px,1fr)) !important",
-                                gridAutoColumns: "minmax(450px, 1fr)",
+                                gridTemplateColumns: {lg:"repeat(auto-fill,minmax(450px,1fr)) !important",xs:"repeat(auto-fill,minmax(350px,1fr)) !important"},
+                                gridAutoColumns: {lg:"minmax(450px, 1fr)",xs:"minmax(350px, 1fr)"},
                                 textAlign: "left",
                                 marginRight: 10,
                                 paddingBottom: 4
@@ -178,6 +177,8 @@ export default function UserHome() {
     const [refreshSuggestedEvents, setRefreshSuggestedEvents] = useState(0);
     const [reservationStats, setReservationStats] = useState(null);
 
+
+
     const [subscription, setSubscription] = useState({
         active: true
     })
@@ -278,6 +279,8 @@ export default function UserHome() {
         }
     }
 
+
+    const isPortrait=window.matchMedia("(orientation: portrait)").matches;
 
     return (
         <>

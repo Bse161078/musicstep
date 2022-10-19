@@ -48,11 +48,11 @@ export const TabRowStyle = styled.div`
   }
   @media (max-width: 1250px) {
     display: grid;
-    grid-template: auto / 50% 50%;
+    grid-template: auto auto auto auto auto;
   }
   @media (max-width: 767px) {
     display: grid;
-    grid-template-columns: 210px 1fr 1fr;
+    grid-template-columns: auto auto auto auto auto;
   }
 
   .time {

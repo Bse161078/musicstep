@@ -32,8 +32,9 @@ const FutureEvents = ({refreshSuggestedEvents}: any) => {
 
 
     const getAllFutureEvents = async () => {
-        const response = await axios.get("/v1/event/future", {headers: {Authorization: `Bearer ${state.authToken}`}})
-        setFutureEvents(response.data)
+        const response = await axios.get("/v1/event/future", {headers: {Authorization: `Bearer ${state.authToken}`}});
+        let events=response.data;
+        setFutureEvents(events);
     }
     const history = useHistory()
     const handleViewVenue = (event: any) => {
@@ -140,23 +141,25 @@ const FutureEvents = ({refreshSuggestedEvents}: any) => {
 
             />
             }
-            <TableContainer style={{height: "91%", overflowY: "scroll"}}>
-                <Table stickyHeader aria-label="sticky table">
+            <TableContainer sx={{ overflow: "auto",width:{lg:"65vw",xs:"90vw"},maxHeight:"420px"}}>
+                <Table>
                     <TableHead>
                         <TableRow>
-                            <TableCell align="left" style={{minWidth: 1}}>
+                            <TableCell align="left" style={{minWidth: 150}}>
 
                             </TableCell>
-                            <TableCell align="left" style={{minWidth: 1}}>
+                            <TableCell align="left" style={{minWidth: 150}}>
                                 Time & Duration
                             </TableCell>
-                            <TableCell align="left" style={{minWidth: 2}}>
+                            <TableCell align="left" style={{minWidth: 250}}>
                                 Event Name & Genre
                             </TableCell>
-                            <TableCell align="left" style={{minWidth: 2}}>
+                            <TableCell align="left" style={{minWidth: 250}}>
                                 Venue Name
                             </TableCell>
-                            <TableCell align="left" style={{minWidth: 2}}>
+                            <TableCell align="left" style={{minWidth: 150}}>
+                            </TableCell>
+                            <TableCell align="left" style={{minWidth: 150}}>
                             </TableCell>
                         </TableRow>
                     </TableHead>
