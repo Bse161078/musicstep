@@ -20,10 +20,10 @@ const ContactInfoForm = (props: any) => {
         phoneNumber: '',
         organizationName: '',
         organizationURL: '',
-        prefix:'',
-        suffix:'',
-        jobTitle:'',
-        blog:''
+        prefix: '',
+        suffix: '',
+        jobTitle: '',
+        blog: ''
     })
     const [isLoading, setLoading] = useState(false)
     const [messageModalVisible, setMessageModalVissible] = useState(false)
@@ -63,21 +63,22 @@ const ContactInfoForm = (props: any) => {
     }
 
 
-
     return (
         <ContactInfoFormStyle>
             <MessageModal
                 isModalVisible={messageModalVisible}
                 setIsModalVisible={setMessageModalVissible}
                 heading="Success"
-                message={"Your Profile is Updated"}
+                message={"Your profile is updated"}
 
             />
             <DashboardHeader heading="Contact Info"
-                             handleSaveClick={()=>{editProfile()}}
+                             handleSaveClick={() => {
+                                 editProfile()
+                             }}
                              isLoading={isLoading}
                              saveButtonText="Save"
-                             handleBackClick={handleBackClick} />
+                             handleBackClick={handleBackClick}/>
 
             <Formik
                 initialValues={{
@@ -96,13 +97,15 @@ const ContactInfoForm = (props: any) => {
                 }}
             >
 
-
+`
                 {() => (
                     <Form>
                         <div className="headings-with-inputs">
-                            <ContentHeader heading="Full Name"/>
-                            <div className="inputs-wrapper">
-                                <InputBox label="Prefix" name="prefix" width="690px"
+                            <div className="inputs-wrapper-header">
+                                <ContentHeader heading="Full Name"/>
+                            </div>
+                            <div className="inputs-wrapper-4">
+                                <InputBox label="Prefix" name="prefix"
                                           value={contactInfo.prefix}
                                           onChange={(e: any) => {
                                               setContactInfo({...contactInfo, prefix: e.target.value})
@@ -111,7 +114,6 @@ const ContactInfoForm = (props: any) => {
                                     label="First Name"
                                     name="firstName"
                                     value={contactInfo.firstName}
-                                    width="400px"
                                     onChange={(e: any) => {
                                         setContactInfo({...contactInfo, firstName: e.target.value})
                                     }}
@@ -120,12 +122,11 @@ const ContactInfoForm = (props: any) => {
                                     label="Last Name"
                                     value={contactInfo.lastName}
                                     name="lastName"
-                                    width="350px"
                                     onChange={(e: any) => {
                                         setContactInfo({...contactInfo, lastName: e.target.value})
                                     }}
                                 />
-                                <InputBox label="Suffix" name="suffix" width="250px"
+                                <InputBox label="Suffix" name="suffix"
                                           value={contactInfo.suffix}
                                           onChange={(e: any) => {
                                               setContactInfo({...contactInfo, suffix: e.target.value})
@@ -135,7 +136,7 @@ const ContactInfoForm = (props: any) => {
 
                         <div className="headings-with-inputs">
                             <ContentHeader heading="Email & Phone"/>
-                            <div className="inputs-wrapper">
+                            <div className="inputs-wrapper-2">
                                 <InputBox
                                     label="Email Address"
                                     value={contactInfo.email}
@@ -154,12 +155,14 @@ const ContactInfoForm = (props: any) => {
                                         setContactInfo({...contactInfo, phoneNumber: e.target.value})
                                     }}
                                 />
+                                <div style={{display:'none'}}/>
+                                <div style={{display:'none'}}/>
                             </div>
                         </div>
 
                         <div className="headings-with-inputs">
                             <ContentHeader heading="Designation"/>
-                            <div className="inputs-wrapper">
+                            <div className="inputs-wrapper-2">
                                 <InputBox label="Job Title" name="jobTitle" width="400px"
                                           value={contactInfo.jobTitle}
                                           onChange={(e: any) => {
@@ -174,12 +177,15 @@ const ContactInfoForm = (props: any) => {
                                         setContactInfo({...contactInfo, organizationName: e.target.value})
                                     }}
                                 />
+                                <div style={{display:'none'}}/>
+                                <div style={{display:'none'}}/>
+
                             </div>
                         </div>
 
                         <div className="headings-with-inputs">
                             <ContentHeader heading="Internet"/>
-                            <div className="inputs-wrapper">
+                            <div className="inputs-wrapper-2">
                                 <InputBox
                                     label="Website"
                                     value={contactInfo.organizationURL}
@@ -194,6 +200,9 @@ const ContactInfoForm = (props: any) => {
                                           onChange={(e: any) => {
                                               setContactInfo({...contactInfo, blog: e.target.value})
                                           }}/>
+                                <div style={{display:'none'}}/>
+                                <div style={{display:'none'}}/>
+
                             </div>
                         </div>
                     </Form>

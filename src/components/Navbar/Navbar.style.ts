@@ -24,8 +24,7 @@ export const NavbarStyle = styled.nav<NavbarStyleProps>`
       .nav-items {
         height: 110vh;
         top:15px;
-        overflow-x:hidden;
-        overflow-y:hidden;
+        overflow:auto;
         visibility: visible;
         opacity: 1;
       }

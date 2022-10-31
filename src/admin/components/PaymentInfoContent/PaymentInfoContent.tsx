@@ -62,7 +62,6 @@ const PaymentInfoContent = (props: PaymentInfoContentProps) => {
                 description="The money you make from your events will issued to you as a payout."
             />
             <div className="filter">
-                Filter By Type
                 <Formik initialValues={{type: ""}} onSubmit={handleFilterSubmit}>
                     {() => (
                         <Form>
@@ -74,7 +73,7 @@ const PaymentInfoContent = (props: PaymentInfoContentProps) => {
                                     {key: "Paypal", value: "Paypal"},
                                 ]}
                                 values={['Bank', "Paypal"]}
-                                label=""
+                                label="Filter By Type"
                                 handleSelectBoxChange={(value) =>setType(value) }
                             />
                         </Form>

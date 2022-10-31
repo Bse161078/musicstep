@@ -36,7 +36,6 @@ export const EventDetailWrapper = ({event, venue}: EventDetailWrapperProps) => {
 
 
     const getOrganizer=async (organizerId:any)=>{
-        console.log("organizerId = ",organizerId)
         try {
             const response = await axios.get("/v1/organizer/"+organizerId, {headers: {Authorization: `Bearer ${state.authToken}`}});
             setOrganizer(response.data);
@@ -80,8 +79,6 @@ export const EventDetailWrapper = ({event, venue}: EventDetailWrapperProps) => {
         organizerInfo=organizer;
     }
 
-
-    console.log("venue  = ", venue, "  event  = ", event,"  organizer = ",organizer);
 
     return (
         <div className="first-row-wrapper">

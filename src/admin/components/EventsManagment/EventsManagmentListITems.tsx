@@ -7,16 +7,16 @@ type EventsManagmentListItemProps = {
 };
 const EventsManagmentListItem = ({ event }: EventsManagmentListItemProps) => {
   const week = ["Sun", "Mon", "Thu", "Wed", "Thr", "Fri", "Sat"];
+  console.log("event = ",event);
+
+  const venueName=event.venueInfo && (event.venueInfo).length>0 && event.venueInfo[0].name;
   return (
     <EventsManagmentListItemStyle>
       <div className="content-wrapper">
         <div className="event-details">
           <div className="event-date-name">
             <span className="event-date">
-              {
-                  moment(event.date).format("ddd")
-              }
-              , {moment(event.date).date()} /
+             {venueName && venueName} /
             </span>
             <span className="event-name">{event?.title}</span>
           </div>

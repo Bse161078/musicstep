@@ -14,7 +14,7 @@ export const TaxpayerFormStyle = styled.div`
 
   .inputs-wrapper {
     display: grid;
-    grid-template-columns: 700px 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
 
     @media ( max-width: 1024px ) {

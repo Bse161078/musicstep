@@ -158,7 +158,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                     });
                 if (res) {
                     setSuccessModalVisible(true);
-                    setMessage("Organizer Logo Updated Successfully");
+                    setMessage("Organizer logo updated successfully");
                     setHeading("Success");
                     // if (!isSuccessModalVisible)
                 }
@@ -196,7 +196,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                     });
                 if (res) {
                     setSuccessModalVisible(true);
-                    setMessage("Organizer Cover Photo Updated Successfully");
+                    setMessage("Organizer cover photo updated successfully");
                     setHeading("Success");
                     // if (!isSuccessModalVisible)
                 }
@@ -261,7 +261,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                     });
                 if (res) {
                     setSuccessModalVisible(true);
-                    setMessage("Organizer Additional photos Updated Successfully");
+                    setMessage("Organizer additional photos updated successfully");
                     setHeading("Success");
                     // if (!isSuccessModalVisible)
                     const photos: [] = res.data.additionalPhotosUrls.map((photo: any) => process.env.REACT_APP_BASE_URL + "/images/" + photo);
@@ -294,7 +294,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                 });
             if (res) {
                 setSuccessModalVisible(true);
-                setMessage("Photo remove Successfully");
+                setMessage("Photo remove successfully");
                 setHeading("Success");
                 let tempFiles = JSON.parse(JSON.stringify(previewAdditionalImage));
                 tempFiles.splice(index, 1);
@@ -358,7 +358,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                 });
             if (res) {
                 setSuccessModalVisible(true);
-                setMessage("Organizer created Successfully");
+                setMessage("Organizer created successfully");
                 setHeading("Success");
                 setIsLoading(false);
             }
@@ -385,7 +385,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                 });
             if (res) {
                 setSuccessModalVisible(true);
-                setMessage("Organizer updated Successfully");
+                setMessage("Organizer updated successfully");
                 setHeading("Success");
                 setIsLoading(false);
 

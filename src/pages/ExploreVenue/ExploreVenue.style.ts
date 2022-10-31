@@ -35,7 +35,7 @@ export const ExploreVenueStyle = styled.main`
 export const DropdownsListStyle = styled.div`
   .drodown-form-wrapper {
     display: flex;
-    grid-gap: 30px;
+    grid-gap: 10px;
     flex-wrap: wrap;
     flex-direction: row;
     overflow-x: scroll;

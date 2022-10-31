@@ -127,7 +127,6 @@ export default function VenueDetails() {
     // }
 
 
-    console.log("vaneus = ",venueDetail)
     return (
         <>
             <NavbarWithSearch userCredit={user.credits}/>
@@ -277,15 +276,15 @@ export default function VenueDetails() {
                             <span>{venueDetail["socialMediaAndMarketingLinks"].twitter}</span>
                         </div>
                     )}
-
-                    <Formik initialValues={{}} onSubmit={() => {
-                    }}>
-                        {() => (
-                            <Form className="attributes-wrapper">
-                                <LabelWithTag label={"Amenities"} tagType="none"/>
-                                <div className="list-wrapper">
-                                    {attributeValues.map((attribute:any) => {
-                                        return (
+                    {  attributeValues && attributeValues.length>0 &&
+                        <Formik initialValues={{}} onSubmit={() => {
+                        }}>
+                            {() => (
+                                <Form className="attributes-wrapper">
+                                    <LabelWithTag label={"Amenities"} tagType="none"/>
+                                    <div className="list-wrapper">
+                                        {attributeValues.map((attribute: any) => {
+                                            return (
                                                 <InputCheckbox
                                                     name={attribute.name}
                                                     onClick={() => {
@@ -294,12 +293,13 @@ export default function VenueDetails() {
                                                     label={attribute.name}
                                                     isCorrectOption={attribute.value}
                                                 />
-                                        );
-                                    })}
-                                </div>
-                            </Form>
-                        )}
-                    </Formik>
+                                            );
+                                        })}
+                                    </div>
+                                </Form>
+                            )}
+                        </Formik>
+                    }
                 </div>
             </VenueDetailsStyle>}
         </>

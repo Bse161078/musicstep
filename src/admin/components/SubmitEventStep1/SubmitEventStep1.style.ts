@@ -12,8 +12,7 @@ export const SubmitEventStep1Style = styled.div`
 
   .inputs-wrapper {
     display: grid;
-    grid-template-columns: 1.7fr 0.7fr 0.7fr 0.7fr;
-    gap:30px;    
+    grid-template-columns: 1fr 0.7fr 0.7fr;
   }
 
   .dropdown-row-wrapper  {

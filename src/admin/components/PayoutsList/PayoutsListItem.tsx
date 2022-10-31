@@ -12,7 +12,6 @@ type PayoutListItemProps = {
 };
 export const PayoutsListItem = (props: PayoutListItemProps) => {
     const {reserveEvent, from, to, search,handleShowDetails} = props
-    // console.log('event : ',props,moment(reserveEvent.date).format("MMM Do YYYY"))
     return (
         reserveEvent?.reservations ? reserveEvent.reservations.filter((event: any) => (new Date(event.date) >= new Date(from) && new Date(event.date) <= new Date(to)) && event.title.toLowerCase().includes(search)).map((event: any) =>
             <PayoutsListItemStyle onClick={(e)=>{
@@ -24,7 +23,7 @@ export const PayoutsListItem = (props: PayoutListItemProps) => {
                     <h4 className="heading">{event._id.slice(-7)}</h4>
                 </div>
                 <div className="payout-detail">
-                    <p className="payout-value">${event.allReservationCredit}</p>
+                    <p className="payout-value">${(event.allReservationCredit).toFixed(2)}</p>
                     <p className="payout-status">SENT</p>
                 </div>
 

@@ -98,6 +98,7 @@ export const SelectInputStyle = styled.div<SelectInputStyleProps>`
     color: #0c0c0c;
     font-weight: 500;
     margin-left: 15px;
-    text-align:left
+    text-align:left;
+    
   }
 `;

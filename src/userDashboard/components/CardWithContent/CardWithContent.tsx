@@ -9,6 +9,7 @@ import moment from "moment";
 import {useHistory} from "react-router";
 import {Grid} from "@mui/material";
 import {EventDetailsModal} from "../../../components/EventDetailsModal";
+import QrCodeModal from "../../../admin/components/Modals/QrCode/QrCodeModal";
 
 type CardWithContentProps = {
     heading: string;
@@ -26,6 +27,8 @@ type CardWithContentProps = {
 
 const CardWithContent = (props: CardWithContentProps) => {
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const [isQrCodeModalVisible, setIsQrCodeModalVisible] = useState(false);
+
     const {
         heading,
         time,
@@ -65,6 +68,11 @@ const CardWithContent = (props: CardWithContentProps) => {
         // });
         setIsModalVisible(true);
     };
+
+    const handleShowQrCode=(e:any)=>{
+        setIsQrCodeModalVisible(true);
+    }
+
 
     const event=reservation && reservation.eventInfo && (reservation.eventInfo).length>0 &&  reservation.eventInfo[0];
     const venue=reservation && reservation.venueInfo && (reservation.venueInfo).length>0 && reservation.venueInfo[0];
@@ -109,6 +117,7 @@ const CardWithContent = (props: CardWithContentProps) => {
                                 buttonType="dark"
                                 width="100px"
                                 height="35px"
+                                onClick={handleShowQrCode}
                             >QR Code</FilledButtonStyle>
                         </Grid>
                     </Grid>
@@ -118,6 +127,13 @@ const CardWithContent = (props: CardWithContentProps) => {
                 {/*isModalVisible={isModalVisible}*/}
                 {/*setIsModalVisible={setIsModalVisible}*/}
             {/*/>*/}
+
+            <QrCodeModal
+                event={event}
+                isModalVisible={isQrCodeModalVisible}
+                setIsModalVisible={setIsQrCodeModalVisible}
+                ticketId={reservation.ticketId}
+            />
 
             <EventDetailsModal
                 isModalVisible={isModalVisible}

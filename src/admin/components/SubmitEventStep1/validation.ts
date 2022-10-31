@@ -38,6 +38,8 @@ export const EventFormValidationSchema = yup.object().shape({
     //   endingTime: yup.string(),
     venue: yup.string().required("Venue is required").nullable(),
     organizer: yup.string().required("Organizer is required").nullable(),
+    genre: yup.string().required("Genre is required").nullable(),
+
 });
 
 const isSameOrBefore = (startingTime:string,startdate:string,enddate:string, endTime: string) => {

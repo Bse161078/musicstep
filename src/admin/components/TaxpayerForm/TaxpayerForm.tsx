@@ -1,13 +1,16 @@
 import {Form, Formik} from "formik";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {InputBox, SelectBox} from "../../../components";
 
 import {TaxpayerFormStyle} from "./TaxpayerForm.style";
 import {ValidationStep1} from "../TaxpayerInfoSteps/validation";
+import PayeeCodeInfoModal from "../Modals/PayeeCodeInfo/PayeeCodeInfoModal";
 let formikForm: any = null;
 
 const TaxpayerForm = (props: any) => {
     let ref: any = React.createRef();
+
+    const [showPayeeInfo,setShowPayeeInfo]=useState(false);
 
     const handleTaxpayerSubmit = (event: any, form: any) => {
         props.handleNextStep()
@@ -88,13 +91,13 @@ const TaxpayerForm = (props: any) => {
                             }}
                         />
                         <span className="description-code">
-              See description of each code here.
+                            See description of each code <span  style={{cursor:"pointer"}} onClick={(e)=>setShowPayeeInfo(true)}>here</span>.
             </span>
 
                         <InputBox label="Address" name="address"
                                   setSearch={(value:any)=>props.onChangeInput( form)}/>
                         <div className="inputs-wrapper">
-                            <InputBox width="700px" label="City" name="city"
+                            <InputBox  label="City" name="city"
                                       setSearch={(value:any)=>props.onChangeInput(form)}
                             />
                             <InputBox label="State" name="state"
@@ -111,6 +114,10 @@ const TaxpayerForm = (props: any) => {
                     </Form>
                 )}}
             </Formik>
+            <PayeeCodeInfoModal
+                setIsModalVisible={setShowPayeeInfo}
+                isModalVisible={showPayeeInfo}
+            />
         </TaxpayerFormStyle>
     );
 };

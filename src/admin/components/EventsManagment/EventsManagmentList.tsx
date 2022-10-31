@@ -22,7 +22,7 @@ const EventsManagmentList = ({events}: EventsManagmentListProps) => {
     return (
         <EventsManagmentListStyle>
             <div className="table-header">
-                <h3 className="header-title">Event Details111</h3>
+                <h3 className="header-title">Event Details</h3>
                 <h3 className="header-title">Engagements</h3>
                 <h3 className="header-title">Organizer</h3>
             </div>

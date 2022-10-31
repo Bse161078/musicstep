@@ -139,7 +139,7 @@ const PartnerSignupForm = () => {
                   partnership opportunities and provide other updates. By
                   submitting this form, you agree to the{" "}
                   <span className="terms-text">
-                      <a href={"terms-of-use"}>Terms of Use</a> & <a href={"privacy-policy"}>Privacy Policy</a>.
+                      <a href={"partner-terms"}>Partner Terms and Conditions</a>.
                   </span>
                 </p>
               </div>

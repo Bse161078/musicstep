@@ -6,7 +6,7 @@ export const FormWrapperStyle = styled.section`
   grid-template-columns: 1.2fr 1fr;
   grid-column-gap: 100px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 800px) {
     grid-template-columns: 1fr;
   }
 
@@ -14,7 +14,7 @@ export const FormWrapperStyle = styled.section`
     max-width: 860px;
     width: 100%;
 
-    @media (max-width: 767px) {
+    @media (max-width: 800px) {
       display: none;
     }
   }

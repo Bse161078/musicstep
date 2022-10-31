@@ -51,7 +51,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
       });
       setSuccessModalVisible(true);
       setIsModalVisible(false);
-      setmessage("Reservation Updated Successfully");
+      setmessage("Reservation updated successfully");
     } else {
       setTickets([
         { ...e, credits: Math.floor(getCredits(e.price, discount)) },
@@ -60,7 +60,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
       setSuccessModalVisible(true);
       setIsModalVisible(false);
       resetForm();
-      setmessage("Reservation Created Successfully");
+      setmessage("Reservation created successfully");
 
       initialValues = {
         title: "",

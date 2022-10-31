@@ -64,6 +64,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
         bodyData.append("organizer", eventData.organizer_id);
         bodyData.append("tickets", JSON.stringify(formatedTickets));
         bodyData.append("eventDescription", eventData.eventDescription);
+        bodyData.append("genre", eventData.genre);
 
         if (eventData.additionalPhotos) {
             const files = eventData.additionalPhotos;

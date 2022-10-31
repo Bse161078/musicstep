@@ -36,7 +36,7 @@ export const SelectWithInputStyle = styled.div`
         }
 
         @media (max-width: 1280px) {
-          width: 100px;
+          width: 150px;
         }
       }
 

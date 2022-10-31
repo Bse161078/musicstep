@@ -49,7 +49,7 @@ export const EventsManagmentListStyle = styled.div`
     color: #0c0c0c;
     border-radius: 16px;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 1.8fr 1fr 1fr;
     margin-top: 20px;
     @media (min-width: 766px) and (max-width: 1024px) {
       grid-template-columns: 50px 1fr 1fr 106px;
@@ -65,7 +65,7 @@ export const EventsManagmentListItemStyle = styled.div`
   margin-bottom:10px; 
   .content-wrapper {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 1.8fr 1fr 1fr;
     background: #f7f7f7;
     border-radius: 16px;
     padding: 16px;

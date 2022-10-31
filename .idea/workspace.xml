@@ -6,43 +6,60 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/css/main.49b793f1.chunk.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/css/main.49b793f1.chunk.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/2.c911a4e6.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/2.c911a4e6.chunk.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/2.c911a4e6.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/3.1ff7f274.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/3.1ff7f274.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.36e7d56e.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.36e7d56e.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/runtime-main.cef5088d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/runtime-main.cef5088d.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.ff22b3f6.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.ff22b3f6.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.86dd5278.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.86dd5278.chunk.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.86dd5278.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/3.751fdf17.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/3.751fdf17.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.03f647ed.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.03f647ed.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/runtime-main.e42dbf27.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/runtime-main.e42dbf27.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/admin/components/AddVenueProfileForm/AddVenueProfileForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/AddVenueProfileForm/AddVenueProfileForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/Modals/InviteModal/InviteModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/Modals/InviteModal/InviteModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/Modals/ModalWrapper/ModalWrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/Modals/ModalWrapper/ModalWrapper.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/Modals/ReservationConfirmedModal/ReservationConfirmedModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/Modals/ReservationConfirmedModal/ReservationConfirmedModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/CloseAccount/CloseAccount.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/CloseAccount/CloseAccount.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/ContactInfoForm/ContactInfoForm.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/ContactInfoForm/ContactInfoForm.style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/ContactInfoForm/ContactInfoForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/ContactInfoForm/ContactInfoForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/CreateTicket/CreateTicket.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/CreateTicket/CreateTicket.style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/Dashboard/Dashboard.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/Dashboard/Dashboard.style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagment.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagment.style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagmentList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagmentList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagmentListITems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagmentListITems.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/OrganizationProfileForm/OrganizationProfileForm.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/OrganizationProfileForm/OrganizationProfileForm.style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/OrganizationProfileForm/OrganizationProfileForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/OrganizationProfileForm/OrganizationProfileForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoContent.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoContent.style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/PayoutsList/PayoutsListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/PayoutsList/PayoutsListItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/SubmitEventStep1/SubmitEventStep1.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/SubmitEventStep1/SubmitEventStep1.style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/SubmitEventStep1/SubmitEventStep1.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/SubmitEventStep1/SubmitEventStep1.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/SubmitEventStep1/validation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/SubmitEventStep1/validation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/SubmitEventStep2/SubmitEventStep2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/SubmitEventStep2/SubmitEventStep2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/TaxpayerForm/TaxpayerForm.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/TaxpayerForm/TaxpayerForm.style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/TaxpayerForm/TaxpayerForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/TaxpayerForm/TaxpayerForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/pages/Metrics/Metrics.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/pages/Metrics/Metrics.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CreateTicketModal/CreateTicketModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateTicketModal/CreateTicketModal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/EventDetailsModal/EventDetailWrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EventDetailsModal/EventDetailWrapper.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EventDetailsModal/EventDetailsModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EventDetailsModal/EventDetailsModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EventDetailsModal/VenueDetailsModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/EventDetailsModal/VenueDetailsModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormWrapper/FormWrapper.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormWrapper/FormWrapper.style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.style.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PartneSignupForm/PartnerSignupForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PartneSignupForm/PartnerSignupForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SelectBox/SelectBox.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SelectBox/SelectBox.style.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SelectWithInput/SelectWithInput.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SelectWithInput/SelectWithInput.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UpcomingEvents/TabRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UpcomingEvents/TabRow.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mockData/sideBarItems.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/mockData/sideBarItems.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Slider/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Slider/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StartTrialWrapper/StartTrialWrapper.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StartTrialWrapper/StartTrialWrapper.style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/VenueCard/VenueCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VenueCard/VenueCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ExploreVenue/DropdownsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ExploreVenue/DropdownsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.style.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/OrganizerProfile/OrganizerProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/OrganizerProfile/OrganizerProfile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/VenueDetails/VenueDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/VenueDetails/VenueDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/CardWithContent/CardWithContent.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/CardWithContent/CardWithContent.style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Common.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Common.style.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/userDashboard/components/CardWithContent/CardWithContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/CardWithContent/CardWithContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/SectionHeading/SectionHeading.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/SectionHeading/SectionHeading.style.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/UserSidebar/UserSidebar.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/UserSidebar/UserSidebar.style.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/userDashboard/components/UserSidebar/UserSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/UserSidebar/UserSidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/pages/UserHome/FutureEvents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/pages/UserHome/FutureEvents.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,9 +71,9 @@
     <session id="-6026431">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="179" />
-          <entry key="project.open.time.0" value="28" />
-          <entry key="project.open.time.1" value="75" />
+          <entry key="project.closed" value="190" />
+          <entry key="project.open.time.0" value="29" />
+          <entry key="project.open.time.1" value="79" />
           <entry key="project.open.time.10" value="6" />
           <entry key="project.open.time.11" value="6" />
           <entry key="project.open.time.12" value="8" />
@@ -64,14 +81,15 @@
           <entry key="project.open.time.14" value="3" />
           <entry key="project.open.time.15" value="4" />
           <entry key="project.open.time.16" value="4" />
-          <entry key="project.open.time.17" value="5" />
+          <entry key="project.open.time.17" value="6" />
           <entry key="project.open.time.18" value="1" />
-          <entry key="project.open.time.2" value="16" />
+          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.2" value="17" />
           <entry key="project.open.time.20" value="3" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.23" value="2" />
           <entry key="project.open.time.24" value="5" />
-          <entry key="project.open.time.3" value="4" />
+          <entry key="project.open.time.3" value="6" />
           <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.40" value="2" />
@@ -81,69 +99,69 @@
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="3" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="187" />
+          <entry key="project.opened" value="197" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="6" />
+          <entry key="css" value="7" />
           <entry key="env" value="29" />
           <entry key="gitignore" value="3" />
-          <entry key="html" value="10" />
-          <entry key="ico" value="1" />
+          <entry key="html" value="13" />
+          <entry key="ico" value="2" />
           <entry key="js" value="49" />
-          <entry key="json" value="10" />
+          <entry key="json" value="11" />
           <entry key="map" value="1" />
-          <entry key="png" value="9" />
+          <entry key="png" value="15" />
           <entry key="svg" value="9" />
-          <entry key="ts" value="251" />
-          <entry key="tsx" value="1042" />
+          <entry key="ts" value="295" />
+          <entry key="tsx" value="1124" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="6" />
+          <entry key="CSS" value="7" />
           <entry key="Env File" value="29" />
-          <entry key="HTML" value="10" />
-          <entry key="Image" value="10" />
-          <entry key="JSON" value="10" />
+          <entry key="HTML" value="13" />
+          <entry key="Image" value="17" />
+          <entry key="JSON" value="11" />
           <entry key="JavaScript" value="49" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="SVG" value="9" />
           <entry key="SourceMap" value="1" />
-          <entry key="TypeScript" value="251" />
-          <entry key="TypeScript JSX" value="1042" />
+          <entry key="TypeScript" value="295" />
+          <entry key="TypeScript JSX" value="1124" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="TypeScriptServerServiceImpl" value="181" />
+          <entry key="TypeScriptServerServiceImpl" value="191" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="195" />
+          <entry key="css" value="197" />
           <entry key="env" value="228" />
           <entry key="gitignore" value="25" />
-          <entry key="html" value="28" />
+          <entry key="html" value="45" />
           <entry key="js" value="4471" />
           <entry key="json" value="8" />
-          <entry key="ts" value="2874" />
-          <entry key="tsx" value="48335" />
+          <entry key="ts" value="3323" />
+          <entry key="tsx" value="51700" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="195" />
+          <entry key="CSS" value="197" />
           <entry key="Env File" value="228" />
-          <entry key="HTML" value="28" />
+          <entry key="HTML" value="45" />
           <entry key="JSON" value="8" />
           <entry key="JavaScript" value="4471" />
           <entry key="PLAIN_TEXT" value="29" />
-          <entry key="TypeScript" value="2874" />
-          <entry key="TypeScript JSX" value="48335" />
+          <entry key="TypeScript" value="3323" />
+          <entry key="TypeScript JSX" value="51700" />
         </counts>
       </usages-collector>
     </session>
@@ -153,58 +171,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="402" column="32" lean-forward="true" selection-start-line="402" selection-start-column="32" selection-end-line="402" selection-end-column="32" />
+            <state relative-caret-position="2550">
+              <caret line="221" column="42" selection-start-line="221" selection-start-column="42" selection-end-line="221" selection-end-column="42" />
               <folding>
                 <element signature="e#219#612#0" expanded="true" />
-                <element signature="e#4209#13574#0" />
-                <element signature="e#15058#15597#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/ChangeOrientation/OrientationModal/OrientationModal.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/admin/components/Modals/ModalWrapper/ModalWrapper.tsx">
+        <entry file="file://$PROJECT_DIR$/src/pages/VenueDetails/VenueDetails.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="70" column="32" selection-start-line="70" selection-start-column="32" selection-end-line="70" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/admin/components/Modals/ModalWrapper/ModalWrapper.style.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1205">
-              <caret line="350" column="18" selection-start-line="350" selection-start-column="18" selection-end-line="350" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="188" column="14" lean-forward="true" selection-start-line="188" selection-start-column="14" selection-end-line="188" selection-end-column="14" />
+            <state relative-caret-position="136">
+              <caret line="278" column="69" selection-start-line="278" selection-start-column="69" selection-end-line="278" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -221,41 +201,42 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>filter</find>
+      <find>admin/payouts</find>
+      <find>gap:30px;</find>
+      <find>Dialog</find>
+      <find>tax-payer-information</find>
+      <find>Grid</find>
+      <find>inputs-wrapper</find>
+      <find>Your Profile</find>
+      <find>Thank you for using MusicPass</find>
+      <find>Thank you for using MusicPass Events</find>
+      <find>headings-with-inputs</find>
+      <find>admin/account-settings</find>
+      <find>select-label</find>
+      <find>Discount Level=(higher level=higher discount)</find>
+      <find>organizersForDropDown</find>
+      <find>val</find>
+      <find>setVal</find>
+      <find>setOrganizersForDropDown</find>
       <find>admin/events-managment-home</find>
-      <find>dateTimepicker</find>
-      <find>console.log</find>
-      <find>key</find>
-      <find>Invitation</find>
-      <find>admin/metrics</find>
-      <find>Team</find>
-      <find>location.png</find>
-      <find>explore-venue/organizer-profile</find>
-      <find>subscribtionCredit</find>
-      <find>explore-venue/venue-details</find>
-      <find>event.ticket</find>
-      <find>event</find>
-      <find>EventWrapper</find>
-      <find>event.tickets</find>
-      <find>axios.get</find>
-      <find>musicpassonline.com</find>
-      <find>show-dropdown</find>
-      <find>menu-toggle-button</find>
-      <find>showDropdown</find>
-      <find>nav-items</find>
-      <find>logo-wrapper</find>
-      <find>SelectWithInput</find>
-      <find>links-wrapper</find>
-      <find>&lt;img</find>
-      <find>card-thumbnail</find>
-      <find>Events In Reservation</find>
-      <find>dashboard/home</find>
+      <find>Upcoming Events</find>
+      <find>search-form-wrapper</find>
+      <find>SafetySheildIcon</find>
+      <find>imageLink</find>
+      <find>img</find>
       <find>explore-venue</find>
-      <find>alert</find>
+      <find>src/</find>
+      <find>explore-venue/venue-details</find>
+      <find>amenities</find>
+      <find>setamentiesState</find>
+      <find>amentiesState</find>
     </findStrings>
     <replaceStrings>
       <replace>music-pass-f227c.web.app</replace>
       <replace>MusicPass, Inc</replace>
       <replace>events</replace>
+      <replace />
     </replaceStrings>
     <dirStrings>
       <dir>D:\practice\musicstep\src\components\SelectBox</dir>
@@ -268,57 +249,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/SelectBox/SelectBox.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/ExploreVenue/DropdownsList.tsx" />
-        <option value="$PROJECT_DIR$/src/components/Stripe/createCreditPaymentSuccess.js" />
-        <option value="$PROJECT_DIR$/src/components/VenueCard/VenueCard.tsx" />
-        <option value="$PROJECT_DIR$/src/components/Map/AutoComplete/index.js" />
-        <option value="$PROJECT_DIR$/src/components/Map/index.js" />
-        <option value="$PROJECT_DIR$/src/admin/pages/Metrics/Metrics.tsx" />
-        <option value="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagmentListITems.tsx" />
-        <option value="$PROJECT_DIR$/src/components/Reviews/Reviews.tsx" />
-        <option value="$PROJECT_DIR$/src/components/Reviews/ReviewsList.tsx" />
-        <option value="$PROJECT_DIR$/src/userDashboard/components/UpcomingEvents/UpcomingEvents.tsx" />
-        <option value="$PROJECT_DIR$/src/admin/components/Modals/CheckingAvailablityModal/CheckingAvailablityModal.tsx" />
-        <option value="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagmentList.tsx" />
-        <option value="$PROJECT_DIR$/src/components/DatePicker/DatePickerModal.tsx" />
-        <option value="$PROJECT_DIR$/public/robots.txt" />
-        <option value="$PROJECT_DIR$/src/admin/components/SubmitEventStep2/SubmitEventStep2.tsx" />
-        <option value="$PROJECT_DIR$/src/admin/components/CreateTicket/CreateTicket.tsx" />
-        <option value="$PROJECT_DIR$/src/admin/components/Modals/EventDetailsModal/EventDetailsModal.tsx" />
-        <option value="$PROJECT_DIR$/src/components/Map/style.css" />
-        <option value="$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.tsx" />
-        <option value="$PROJECT_DIR$/src/components/UpcomingEvents/TabRow.tsx" />
-        <option value="$PROJECT_DIR$/src/mockData/sideBarItems.ts" />
-        <option value="$PROJECT_DIR$/src/admin/components/AddVenueProfileForm/AddVenueProfileForm.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/VenueDetails/VenueDetails.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/OrganizerProfile/OrganizerProfile.tsx" />
-        <option value="$PROJECT_DIR$/src/components/EventDetailsModal/VenueDetailsModal.tsx" />
-        <option value="$PROJECT_DIR$/src/components/EventDetailsModal/EventDetailsModal.tsx" />
-        <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/src/components/EventDetailsModal/EventDetailWrapper.tsx" />
-        <option value="$PROJECT_DIR$/src/components/Navbar/Navbar.tsx" />
         <option value="$PROJECT_DIR$/src/components/Navbar/Navbar.style.ts" />
-        <option value="$PROJECT_DIR$/src/userDashboard/components/UserSidebar/UserSidebar.tsx" />
-        <option value="$PROJECT_DIR$/src/components/SelectWithInput/SelectWithInput.style.ts" />
+        <option value="$PROJECT_DIR$/src/components/FormWrapper/FormWrapper.style.ts" />
+        <option value="$PROJECT_DIR$/src/admin/components/Modals/QrCode/QrCodeModal.style.ts" />
+        <option value="$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx" />
+        <option value="$PROJECT_DIR$/src/userDashboard/components/CardWithContent/CardWithContent.tsx" />
+        <option value="$PROJECT_DIR$/src/admin/components/Modals/QrCode/QrCodeModal.tsx" />
+        <option value="$PROJECT_DIR$/build/index.html" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/src/components/StartTrialWrapper/StartTrialWrapper.style.ts" />
+        <option value="$PROJECT_DIR$/src/pages/PartnerTermsAndCondition/dcma.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/PartnerTermsAndCondition/index.ts" />
+        <option value="$PROJECT_DIR$/src/components/PartneSignupForm/PartnerSignupForm.tsx" />
+        <option value="$PROJECT_DIR$/src/App.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/PartnerTermsAndCondition/partner-terms.tsx" />
+        <option value="$PROJECT_DIR$/src/admin/pages/Metrics/Metrics.tsx" />
+        <option value="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagmentList.tsx" />
+        <option value="$PROJECT_DIR$/src/admin/components/SideBar/SideBar.style.ts" />
+        <option value="$PROJECT_DIR$/src/admin/components/Dashboard/Dashboard.style.ts" />
+        <option value="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagment.style.ts" />
+        <option value="$PROJECT_DIR$/src/admin/components/EventsManagment/EventsManagmentListITems.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Slider/style.css" />
+        <option value="$PROJECT_DIR$/src/admin/components/OrganizationProfileForm/OrganizationProfileForm.tsx" />
+        <option value="$PROJECT_DIR$/src/admin/components/DashboardHeader/DashboardHeader.tsx" />
+        <option value="$PROJECT_DIR$/src/styles/Common.style.ts" />
+        <option value="$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoContent.tsx" />
+        <option value="$PROJECT_DIR$/src/admin/components/PaymentInfoContent/PaymentInfoContent.style.ts" />
+        <option value="$PROJECT_DIR$/src/admin/components/PayoutsList/PayoutsListItem.tsx" />
+        <option value="$PROJECT_DIR$/src/admin/components/SubmitEventStep1/SubmitEventStep1.style.ts" />
+        <option value="$PROJECT_DIR$/src/admin/components/TaxpayerForm/TaxpayerForm.style.ts" />
+        <option value="$PROJECT_DIR$/src/admin/components/TaxpayerForm/TaxInfoModal/TicketModal.tsx" />
+        <option value="$PROJECT_DIR$/src/admin/components/Modals/PayeeCodeInfo/ReservationConfirmedModal.tsx" />
+        <option value="$PROJECT_DIR$/src/admin/components/Modals/PayeeCodeInfo/PayeeCodeInfoModal.style.ts" />
+        <option value="$PROJECT_DIR$/src/admin/components/Modals/PayeeCodeInfo/index.ts" />
+        <option value="$PROJECT_DIR$/src/admin/components/TaxpayerForm/TaxpayerForm.tsx" />
+        <option value="$PROJECT_DIR$/src/admin/components/Modals/PayeeCodeInfo/PayeeCodeInfoModal.tsx" />
+        <option value="$PROJECT_DIR$/src/admin/components/OrganizationProfileForm/OrganizationProfileForm.style.ts" />
+        <option value="$PROJECT_DIR$/src/admin/components/ContactInfoForm/ContactInfoForm.style.ts" />
+        <option value="$PROJECT_DIR$/src/admin/components/ContactInfoForm/ContactInfoForm.tsx" />
+        <option value="$PROJECT_DIR$/src/admin/components/CreateTicket/CreateTicket.style.ts" />
+        <option value="$PROJECT_DIR$/src/components/SelectBox/SelectBox.style.ts" />
+        <option value="$PROJECT_DIR$/src/components/SelectBox/SelectBox.tsx" />
+        <option value="$PROJECT_DIR$/src/admin/components/SubmitEventStep1/validation.ts" />
+        <option value="$PROJECT_DIR$/src/admin/components/SubmitEventStep1/SubmitEventStep1.tsx" />
+        <option value="$PROJECT_DIR$/src/admin/components/SubmitEventStep2/SubmitEventStep2.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.style.ts" />
+        <option value="$PROJECT_DIR$/src/pages/ExploreVenue/DropdownsList.tsx" />
         <option value="$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.tsx" />
         <option value="$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.style.ts" />
-        <option value="$PROJECT_DIR$/src/components/ChangeOrientation/GuestListModal/GuestListModal.tsx" />
-        <option value="$PROJECT_DIR$/src/components/ChangeOrientation/GuestListModal/OrientationModal.tsx" />
-        <option value="$PROJECT_DIR$/src/components/ChangeOrientation/index.ts" />
-        <option value="$PROJECT_DIR$/src/components/ChangeOrientation/OrientationModal/index.ts" />
-        <option value="$PROJECT_DIR$/src/components/ChangeOrientation/OrientationModal/OrientationModal.tsx" />
-        <option value="$PROJECT_DIR$/src/admin/components/Modals/ModalWrapper/ModalWrapper.style.ts" />
-        <option value="$PROJECT_DIR$/src/userDashboard/components/UserSidebar/UserSidebar.style.ts" />
-        <option value="$PROJECT_DIR$/src/userDashboard/components/CardWithContent/CardWithContent.style.ts" />
-        <option value="$PROJECT_DIR$/src/userDashboard/components/CardWithContent/CardWithContent.tsx" />
-        <option value="$PROJECT_DIR$/src/userDashboard/components/SectionHeading/SectionHeading.style.ts" />
-        <option value="$PROJECT_DIR$/src/userDashboard/pages/UserHome/FutureEvents.tsx" />
-        <option value="$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.style.ts" />
-        <option value="$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx" />
-        <option value="$PROJECT_DIR$/src/App.tsx" />
-        <option value="$PROJECT_DIR$/src/admin/components/Modals/ModalWrapper/ModalWrapper.tsx" />
+        <option value="$PROJECT_DIR$/src/components/SelectWithInput/SelectWithInput.style.ts" />
+        <option value="$PROJECT_DIR$/src/components/VenueCard/VenueCard.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/VenueDetails/VenueDetails.tsx" />
       </list>
     </option>
   </component>
@@ -370,8 +351,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -388,39 +367,65 @@
               <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
               <item name="musicstep" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
+              <item name="musicstep" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
               <item name="musicstep" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="ChangeOrientation" type="462c0819:PsiDirectoryNode" />
+              <item name="Modals" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
               <item name="musicstep" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="ChangeOrientation" type="462c0819:PsiDirectoryNode" />
-              <item name="OrientationModal" type="462c0819:PsiDirectoryNode" />
+              <item name="Modals" type="462c0819:PsiDirectoryNode" />
+              <item name="PayeeCodeInfo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
               <item name="musicstep" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="TaxpayerForm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
+              <item name="musicstep" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
+              <item name="musicstep" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="PartnerTermsAndCondition" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1666115983917" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1667135691967" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="ts.external.directory.path" value="D:\practice\musicstep\node_modules\typescript\lib" />
@@ -429,10 +434,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\practice\musicstep\public\images" />
-      <recent name="D:\practice\musicstep\src\components" />
       <recent name="D:\practice\musicstep\src\admin\components\Modals" />
-      <recent name="D:\practice\musicstep\src\components\BillingInformation" />
-      <recent name="D:\practice\musicstep\src\components\Slider" />
+      <recent name="D:\practice\musicstep\src\admin\components\TaxpayerForm" />
+      <recent name="D:\practice\musicstep\src\pages" />
+      <recent name="D:\practice\musicstep\src\components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\practice\musicstep\src\pages" />
@@ -646,18 +651,27 @@
       <workItem from="1666087338733" duration="3335000" />
       <workItem from="1666098892872" duration="14337000" />
       <workItem from="1666159831312" duration="1248000" />
-      <workItem from="1666165526042" duration="1796000" />
+      <workItem from="1666165526042" duration="8091000" />
+      <workItem from="1666174063004" duration="1711000" />
+      <workItem from="1666250588136" duration="1250000" />
+      <workItem from="1666252905331" duration="2159000" />
+      <workItem from="1666262074418" duration="162000" />
+      <workItem from="1666262974983" duration="548000" />
+      <workItem from="1666264659207" duration="5069000" />
+      <workItem from="1666277206103" duration="278000" />
+      <workItem from="1666877686658" duration="6245000" />
+      <workItem from="1667107311007" duration="18265000" />
+      <workItem from="1667142611203" duration="56000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="655226000" />
+    <option name="totallyTimeSpent" value="697264000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31543624" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3281879" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -675,7 +689,7 @@
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3295129" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" visible="true" weight="0.3739255" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" visible="true" weight="0.256447" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067115" side_tool="true" weight="0.256447" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
@@ -707,7 +721,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/admin/components/TaxpayerForm/TaxpayerForm.tsx</url>
-          <line>112</line>
+          <line>115</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -723,349 +737,321 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/Map/style.css">
+    <entry file="file://$PROJECT_DIR$/src/admin/components/PayoutsList/PayoutsListItem.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="31" column="54" selection-start-line="31" selection-start-column="54" selection-end-line="31" selection-end-column="54" />
+        <state relative-caret-position="269">
+          <caret line="25" column="88" selection-start-line="25" selection-start-column="88" selection-end-line="25" selection-end-column="88" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TimePicker/TimePickerModal.tsx">
+    <entry file="file://$PROJECT_DIR$/src/admin/components/SubmitEventStep1/SubmitEventStep1.style.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="13" column="36" lean-forward="true" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+        <state relative-caret-position="134">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin/components/SubmitEventStep1/SubmitEventStep1.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-272">
-          <caret line="339" column="23" lean-forward="true" selection-start-line="339" selection-start-column="23" selection-end-line="339" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin/pages/EventsManagmentSteps/EventsManagementSteps.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin/pages/Metrics/Metrics.style.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-340">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin/components/DashboardHeader/DashboardHeader.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="82" column="12" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mockData/sideBarItems.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="16" column="4" selection-start-line="13" selection-start-column="5" selection-end-line="16" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin/pages/Metrics/Metrics.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="47" column="14" lean-forward="true" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin/components/AddVenueProfileForm/AddVenueProfileForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="358" column="17" lean-forward="true" selection-start-line="358" selection-start-column="17" selection-end-line="358" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/OrganizerProfile/OrganizerProfile.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2612">
-          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/components/TicketModal/index.ts">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/TicketModal/TicketModal.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="42" column="63" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="63" />
-        </state>
+        <state relative-caret-position="-1377" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/admin/components/TicketInfoCard/TicketInfoCard.tsx">
+    <entry file="file://$PROJECT_DIR$/src/components/MessageModal/MessageModal.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-490">
-          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
-        </state>
+        <state relative-caret-position="-765" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/VenueDetails/VenueDetails.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1379">
-          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/userDashboard/components/UpcomingEvents/UpcomingEvents.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-88">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/EventDetailsModal/EventDetailWrapper.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="79" column="31" selection-start-line="79" selection-start-column="31" selection-end-line="79" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/EventDetailsModal/EventDetailsModal.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="91" column="33" selection-start-line="91" selection-start-column="33" selection-end-line="91" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Navbar/Navbar.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="61" column="75" selection-start-line="61" selection-start-column="66" selection-end-line="61" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Navbar/Navbar.style.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
-          <caret line="68" column="12" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/react-router-dom/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="64" column="16" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SelectWithInput/SelectWithInput.style.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SelectWithInput/SelectWithInput.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="69" column="26" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/EventDetailsModal/index.ts">
+    <entry file="file://$PROJECT_DIR$/src/components/MessageModal/index.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/EventDetailsModal/VenueDetailsModal.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/userDashboard/Modals/GuestListModal/GuestListModal.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="110" column="17" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/userDashboard/Modals/index.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ChangeOrientation/OrientationModal/OrientationModal.style.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ChangeOrientation/OrientationModal/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="26" lean-forward="true" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ChangeOrientation/index.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="47" column="19" lean-forward="true" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/userDashboard/components/UserSidebar/UserSidebar.style.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/userDashboard/components/UserSidebar/UserSidebar.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1309">
-          <caret line="100" column="18" lean-forward="true" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@mui/material/ImageList/ImageList.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="59" column="14" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/userDashboard/components/CardWithContent/CardWithContent.style.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/userDashboard/components/CardWithContent/CardWithContent.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="69" column="14" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.style.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="22" column="3" selection-start-line="22" selection-start-column="3" selection-end-line="25" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.style.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@mui/material/TableCell/TableCell.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="81" column="24" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/userDashboard/components/SectionHeading/SectionHeading.style.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/userDashboard/components/SectionHeading/SectionHeading.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/userDashboard/pages/UserHome/FutureEvents.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="156" column="73" selection-start-line="156" selection-start-column="70" selection-end-line="156" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UpcomingEvents/TabRow.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="55" column="20" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.style.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/VenueCard/VenueCard.tsx">
+    <entry file="file://$PROJECT_DIR$/src/admin/components/TaxpayerForm/TaxpayerForm.style.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="83" column="24" selection-start-line="83" selection-start-column="24" selection-end-line="83" selection-end-column="24" />
+          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1205">
-          <caret line="350" column="18" selection-start-line="350" selection-start-column="18" selection-end-line="350" selection-end-column="18" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/TaxpayerForm/index.ts">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="188" column="14" lean-forward="true" selection-start-line="188" selection-start-column="14" selection-end-line="188" selection-end-column="14" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/Modals/ReservationConfirmedModal/index.ts">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.tsx">
+    <entry file="file://$PROJECT_DIR$/src/admin/components/TaxpayerForm/TaxInfoModal/TicketModal.tsx" />
+    <entry file="file://$PROJECT_DIR$/src/admin/components/TaxpayerForm/TaxInfoModal/index.ts" />
+    <entry file="file://$PROJECT_DIR$/src/admin/components/Modals/QrCode/QrCodeModal.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="402" column="32" lean-forward="true" selection-start-line="402" selection-start-column="32" selection-end-line="402" selection-end-column="32" />
-          <folding>
-            <element signature="e#219#612#0" expanded="true" />
-            <element signature="e#4209#13574#0" />
-            <element signature="e#15058#15597#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ChangeOrientation/OrientationModal/OrientationModal.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
+        <state relative-caret-position="-2703" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/admin/components/Modals/ModalWrapper/ModalWrapper.style.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+        <state relative-caret-position="-476">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/admin/components/Modals/ModalWrapper/ModalWrapper.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="70" column="32" selection-start-line="70" selection-start-column="32" selection-end-line="70" selection-end-column="32" />
+        <state relative-caret-position="201">
+          <caret line="96" column="33" lean-forward="true" selection-start-line="96" selection-end-line="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/Modals/ReservationConfirmedModal/ReservationConfirmedModal.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1020" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/Modals/PayeeCodeInfo/index.ts" />
+    <entry file="file://$PROJECT_DIR$/src/admin/components/Modals/PayeeCodeInfo/PayeeCodeInfoModal.style.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-389">
+          <caret line="2" column="36" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/Modals/PayeeCodeInfo/PayeeCodeInfoModal.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="45" column="89" selection-start-line="45" selection-start-column="89" selection-end-line="45" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/TaxpayerForm/TaxpayerForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1457">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/TaxpayerInfoSteps/TaxpayerInfoSteps.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="57" column="18" lean-forward="true" selection-start-line="57" selection-start-column="11" selection-end-line="57" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/pages/TaxPayerInfo/TaxPayerInfo.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="81" column="27" lean-forward="true" selection-start-line="81" selection-start-column="27" selection-end-line="81" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/InputBox/InputBox.style.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-117">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/OrganizationProfileForm/OrganizationProfileForm.style.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="50" column="31" selection-start-line="50" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/InputBox/InputBox.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="49" column="14" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/ContactInfoForm/ContactInfoForm.style.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/ContactInfoForm/ContactInfoForm.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="185" column="40" lean-forward="true" selection-start-line="185" selection-start-column="40" selection-end-line="185" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/pages/AccountSettings/AccountSettings.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="72" column="25" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/CreateTicket/CreateTicket.style.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SelectBox/SelectBox.style.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="101" column="4" selection-start-line="101" selection-start-column="4" selection-end-line="101" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/CreateTicketModal/CreateTicketModal.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="158" column="30" selection-start-line="158" selection-start-column="30" selection-end-line="158" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/CreateTicket/CreateTicket.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/SubmitEventStep1/validation.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SelectBox/SelectBox.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="161" column="42" selection-start-line="161" selection-start-column="30" selection-end-line="161" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/SubmitEventStep2/SubmitEventStep2.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="64" column="68" lean-forward="true" selection-start-line="64" selection-start-column="68" selection-end-line="64" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/components/SubmitEventStep1/SubmitEventStep1.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="283" column="8" selection-start-line="283" selection-start-column="8" selection-end-line="283" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/admin/pages/EventsManagmentSteps/EventsManagementSteps.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/context/eventContext.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="55" column="55" lean-forward="true" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/styles/Common.style.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ExploreVenue/DropdownsList.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="245" column="36" selection-start-line="245" selection-start-column="36" selection-end-line="245" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/userDashboard/components/UpcomingEvents/UpcomingEvents.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.style.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="37" column="15" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SelectWithInput/SelectWithInput.style.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SelectWithInput/SelectWithInput.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="69" column="15" lean-forward="true" selection-start-line="69" selection-start-column="15" selection-end-line="69" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.style.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="54" column="22" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="212" column="39" lean-forward="true" selection-start-line="212" selection-start-column="39" selection-end-line="212" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/VenueCard/VenueCard.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="73" column="73" selection-start-line="73" selection-start-column="73" selection-end-line="73" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="917" column="29" selection-start-line="917" selection-start-column="13" selection-end-line="917" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="221" column="42" selection-start-line="221" selection-start-column="42" selection-end-line="221" selection-end-column="42" />
+          <folding>
+            <element signature="e#219#612#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/VenueDetails/VenueDetails.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="278" column="69" selection-start-line="278" selection-start-column="69" selection-end-line="278" selection-end-column="69" />
         </state>
       </provider>
     </entry>

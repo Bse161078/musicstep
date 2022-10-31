@@ -216,7 +216,7 @@ export const DropdownsList = (props: any) => {
                   handleSelectBoxChange={(data) => saveSelectedFilter("Amenities", data)}
               />
             </span>
-                        <span>
+                        <div>
               <OutlineButtonStyle
                   style={{
                       width: "120%",
@@ -236,14 +236,14 @@ export const DropdownsList = (props: any) => {
               >
                 Clear All
               </OutlineButtonStyle>
-            </span>
-                        <span>
+            </div>
+                        <div>
               <FilledButtonStyle
                   style={{
-                      width: "120%",
                       marginTop: 5,
                       background: "#fff",
                       padding: "5px",
+                      marginLeft:10,
                       color: "#100840",
                       border: "1px solid #100840",
                   }}
@@ -255,7 +255,7 @@ export const DropdownsList = (props: any) => {
               >
                 Save filter preferences
               </FilledButtonStyle>
-            </span>
+            </div>
                     </Form>
                 )}
             </Formik>}

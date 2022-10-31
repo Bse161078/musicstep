@@ -51,7 +51,7 @@ const CloseAccount = (props: any) => {
         <CloseAccountStyle>
             <DashboardHeader
                 heading="Close Account"
-                description="Thank you for using MusicPass Events. If there is anything we can do to keep you with us, please Let Us Know."
+                description="Thank you for using MusicPass. If there is anything we can do to keep you with us, please let us know."
                 handleBackClick={handleBackClick}
                 isLoading={isLoading}
             />

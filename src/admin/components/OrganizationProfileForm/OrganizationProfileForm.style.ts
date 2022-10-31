@@ -10,7 +10,7 @@ export const OrganizationProfileFormStyle = styled.main`
   }
   .showCase-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.7fr 1fr;
     background: #f7f7f7;
     padding: 30px;
     border-radius: 32px;
@@ -48,7 +48,7 @@ export const OrganizationProfileFormStyle = styled.main`
     padding-top: 30px;
     display: grid;
     grid-gap: 30px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.8fr 1.2fr 1fr 1fr;
 
     @media (max-width: 767px) {
       grid-template-columns: 1fr;

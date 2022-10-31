@@ -2,13 +2,15 @@ import styled from "styled-components";
 
 export const StartTrialWrapperStyle = styled.section`
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1.2fr 1fr;
   grid-gap: 30px;
   align-items: flex-start;
   padding: 30px;
   background: #f7f7f7;
   margin: 100px 50px;
   border-radius: 32px;
+
+ 
 
   @media ( max-width: 1024px ) {
     grid-template-columns: 0.5fr 1fr;

@@ -94,7 +94,6 @@ const UserSidebar = ({
 
     const futureReservations = reservations.filter((reserve: any) => (reserve.eventInfo).length > 0 && (new Date(reserve.eventInfo[0].date) >= new Date()));
 
-    console.log("reservations = ",reservations)
 
 
     return (

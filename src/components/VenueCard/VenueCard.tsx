@@ -71,7 +71,7 @@ const VenueCard = ({ venue, subscribtionCredit }: any) => {
             </div>
 
             <div className="guidelines-wrapper">
-              <SafetySheildIcon /> Safety Guidelines
+                <span style={{marginLeft:5}}><img src="/images/SafetyIcon.png" alt="profile" /></span> <span style={{marginLeft:5}}>Safety Guidelines</span>
             </div>
           </div>
         </div>

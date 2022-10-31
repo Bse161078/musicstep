@@ -12,10 +12,12 @@ export const PaymentInfoContentStyle = styled.div`
   
   .filter {
     font-size: 14px;
+    
     font-weight: bold;
     color: #0c0c0c;
     display: flex;
     align-items: center;
+    justify-content:space-between;
     grid-column-gap: 15px;
   }
 .button{

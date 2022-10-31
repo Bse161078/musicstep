@@ -28,7 +28,9 @@ export const FilledButtonStyle = styled.button<FilledButtonStyleProps>`
   cursor: pointer;
   transition: all 200ms linear;
 
-  @media (max-width: 600px) {
+
+
+  @media (max-width: 1024px) {
     width: 100%;
     padding: 0 20px;
   }

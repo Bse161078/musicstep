@@ -69,6 +69,8 @@ import UpdateSubscription from "./pages/ExploreVenue/UpdateSubscription";
 import CreateCreditPayment from "./pages/ExploreVenue/CreateCreditPayment";
 import CreditPaymentSuccess from "./components/Stripe/createCreditPaymentSuccess";
 import OrientationModal from "./components/ChangeOrientation/OrientationModal/OrientationModal";
+import {subscribe, isSupported} from 'on-screen-keyboard-detector';
+import {PartnerTermsAndCondition} from "./pages/PartnerTermsAndCondition";
 
 // axios.defaults.baseURL = "https://music-pass-backend.herokuapp.com/v1";
 axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
@@ -114,6 +116,26 @@ const RoutesList = (props: any) => {
     );
     //
 
+    useEffect(() => {
+        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        if (!isSafari) {
+            const unsubscribe = subscribe(visibility => {
+                if (visibility === "hidden") {
+                    // ...
+                    if (pathname === "/login" || pathname === "/register" || pathname === "/forgot-password"
+                        || pathname === "reset-password" || pathname === "partner-login")
+                        setShowNavbar(true)
+                }
+                else { // visibility === "visible"
+                    // ...
+                    if (pathname === "/login" || pathname === "/register" || pathname === "/forgot-password"
+                        || pathname === "reset-password" || pathname === "partner-login")
+                        setShowNavbar(false);
+
+                }
+            });
+        }
+    }, [])
 
 
     //use
@@ -144,7 +166,7 @@ const RoutesList = (props: any) => {
     const isAdminSide = pathname.includes("/admin");
     const isDashboardSide = pathname.includes("/dashboard");
 
-
+    //localStorage.clear();
     return (
         <>
             {!isAdminSide && !isDashboardSide && showNavbar ? <Navbar/> : ""}
@@ -183,6 +205,7 @@ const RoutesList = (props: any) => {
                 <Route path="/subscription" component={Subscription}/>
                 <Route path="/credit" component={Credit}/>
                 <Route path="/promotion" component={Promotion}/>
+                <Route path="/partner-terms" component={PartnerTermsAndCondition}/>
 
 
                 <Route path="/dashboard/home/venue-details"
@@ -391,30 +414,33 @@ const RoutesList = (props: any) => {
 function App() {
     const [isPortrait, setIsPortrait] = useState(false);
     useEffect(() => {
-        setIsPortrait(window.matchMedia("(orientation: portrait)").matches)
-        window.addEventListener("orientationchange", function () {
+        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        console.log("isSafari = ", isSafari)
 
+        setIsPortrait(window.matchMedia("(orientation: portrait)").matches);
+        window.addEventListener("orientationchange", function () {
             setIsPortrait(!window.matchMedia("(orientation: portrait)").matches)
         });
+
 
     }, [])
     return (
         <div className="App">
             {isPortrait && <OrientationModal/>}
             {!isPortrait &&
-                <LoginContextProvider>
-                    <UserContextProvider>
-                        <PartnerContextProvider>
-                            <EventContextProvider>
-                                <BaseStyle/>
-                                <BrowserRouter>
-                                    <RoutesList/>
-                                    <Footer/>
-                                </BrowserRouter>
-                            </EventContextProvider>
-                        </PartnerContextProvider>
-                    </UserContextProvider>
-                </LoginContextProvider>
+            <LoginContextProvider>
+                <UserContextProvider>
+                    <PartnerContextProvider>
+                        <EventContextProvider>
+                            <BaseStyle/>
+                            <BrowserRouter>
+                                <RoutesList/>
+                                <Footer/>
+                            </BrowserRouter>
+                        </EventContextProvider>
+                    </PartnerContextProvider>
+                </UserContextProvider>
+            </LoginContextProvider>
             }
         </div>
     );
