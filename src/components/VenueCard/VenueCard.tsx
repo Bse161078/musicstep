@@ -49,7 +49,16 @@ const VenueCard = ({ venue, subscribtionCredit }: any) => {
       .catch((error) => {});
   }
 
-  return venue ? (
+    let safety = venue  && venue.saftyAndCleaness?venue.saftyAndCleaness:[]
+    let safetyValues:any = [];
+    if(safety)
+    {
+        for (const property in safety) {
+            if(safety[property]) safetyValues.push({name:property,value:safety[property]});
+        }
+    }
+
+    return venue ? (
     <>
       <VenueCardStyle onClick={handleClick}>
         <img
@@ -61,7 +70,7 @@ const VenueCard = ({ venue, subscribtionCredit }: any) => {
         />
         <div className="venue-details">
           {/* <h3 className="top-heading">DOLORES POUROS</h3> */}
-          <h4 className="heading">{venue.name}</h4>
+          <h4 className="heading">{venue.name+"asad"}</h4>
           <p className="address">{venue["location"].address}</p>
 
           <div className="row">
@@ -69,10 +78,12 @@ const VenueCard = ({ venue, subscribtionCredit }: any) => {
               <StarIcon /> {getRating(venue.averageRating)}{" "}
               <span>({`${venue.reviewCount} Reviews`})</span>
             </div>
-
-            <div className="guidelines-wrapper">
-                <span style={{marginLeft:5}}><img src="/images/SafetyIcon.png" alt="profile" /></span> <span style={{marginLeft:5}}>Safety Guidelines</span>
-            </div>
+              {safetyValues && safetyValues.length>0 &&
+                  <div className="guidelines-wrapper">
+                      <span style={{marginLeft: 5}}><img src="/images/SafetyIcon.png" alt="profile"/></span> <span
+                      style={{marginLeft: 5}}>Safety Guidelines</span>
+                  </div>
+              }
           </div>
         </div>
       </VenueCardStyle>

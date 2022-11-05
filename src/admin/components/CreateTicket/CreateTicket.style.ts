@@ -7,7 +7,7 @@ export const CreateTicketStyle  = styled.div`
   background:#FFEAFA;
   max-width: 280px;
   height: 100%;
-  max-height:200px;
+  max-height:400px;
   border-radius: 32px;
   align-items:center;
   cursor: pointer;

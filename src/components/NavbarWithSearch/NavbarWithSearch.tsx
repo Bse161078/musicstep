@@ -17,17 +17,9 @@ const NavbarWithSearch = (props: any) => {
         active: true,
     });
     const status = localStorage.getItem("status");
+    let search=props.latlng && props.latlng;
     useEffect(() => {
-        axios
-            .get("/v1/users/allEventsByVenues", {
-                headers: {Authorization: `Bearer ${state.authToken}`},
-            })
-            .then((res) => {
-                setVenues(res.data.event);
-                setSubscribtion(res.data.subscription);
-            })
-            .catch((error) => {
-            });
+
     }, []);
 
     const handleSearch = (search: string) => {
@@ -41,6 +33,18 @@ const NavbarWithSearch = (props: any) => {
         if (search.length === 0 && state.search !== search) {
             dispatch({type: "UPDATE_SEARCH", payload: {search: ""}});
         }
+
+
+        // axios.get(`/v1/users/allEventsByVenues?search=${JSON.stringify(props.latlng)}`, {
+        //         headers: {Authorization: `Bearer ${state.authToken}`},
+        //     })
+        //     .then((res) => {
+        //         setVenues(res.data.event);
+        //         setSubscribtion(res.data.subscription);
+        //     })
+        //     .catch((error) => {
+        //     });
+
     };
 
     const {active} = props;
@@ -57,6 +61,8 @@ const NavbarWithSearch = (props: any) => {
                 navbar_search={props.navbar_search}
                 setSearch={handleSearch}
                 search={props.navbar_search}
+                latlng={props.latlng}
+                refreshNearbyVenues={props.refreshNearbyVenues}
             />
 
             <div className="links-wrapper">

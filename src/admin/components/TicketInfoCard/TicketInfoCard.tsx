@@ -25,6 +25,7 @@ type TicketInfoCardProps = {
     event?: any;
     subscribtionCredit?: number;
     venue?: any;
+    hideReserve?:any;
 };
 
 const TicketInfoCard = (props: TicketInfoCardProps) => {
@@ -86,27 +87,30 @@ const TicketInfoCard = (props: TicketInfoCardProps) => {
                     </p>
                 )}
                 <p className="description">{props.description}</p>
-                <div className="button-wrapper">
-                    {props.outlineButton ? (
-                        <OutlineButtonStyle
-                            height="53px"
-                            onClick={() => {
-                                checkReservation();
-                            }}
-                        >
-                            Reserve
-                        </OutlineButtonStyle>
-                    ) : (
-                        <>
-                            <div onClick={handleDeleteModal}>
-                                <DeleteIcon/>
-                            </div>
-                            <div onClick={handleEditTicketModal}>
-                                <EditButtonIcon/>
-                            </div>
-                        </>
-                    )}
-                </div>
+                {
+                    !props.hideReserve &&
+                    <div className="button-wrapper">
+                        {props.outlineButton  ? (
+                            <OutlineButtonStyle
+                                height="53px"
+                                onClick={() => {
+                                    checkReservation();
+                                }}
+                            >
+                                Reserve
+                            </OutlineButtonStyle>
+                        ) : (
+                            <>
+                                <div onClick={handleDeleteModal}>
+                                    <DeleteIcon/>
+                                </div>
+                                <div onClick={handleEditTicketModal}>
+                                    <EditButtonIcon/>
+                                </div>
+                            </>
+                        )}
+                    </div>
+                }
             </TicketInfoCardStyle>
             <ErrorDialog
                 header={"Error"}

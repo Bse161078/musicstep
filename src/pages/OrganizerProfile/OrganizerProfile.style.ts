@@ -43,7 +43,7 @@ export const OrganizerProfileStyle = styled.div`
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding: 0 60px;
+    padding: 0 10px;
     padding-left: 120px;
 
     @media (max-width: 768px) {

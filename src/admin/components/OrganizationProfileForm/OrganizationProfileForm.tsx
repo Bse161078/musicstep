@@ -301,6 +301,9 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                 setAdditionalImage(tempFiles);
             }
             setIsLoading(false);
+        } else {
+            const filteredPreviewImage: any = previewAdditionalImage.filter((image, i) => index !== i)
+            setAdditionalImage(filteredPreviewImage);
         }
     };
     //
@@ -394,8 +397,9 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         }
     };
 
-    const onDeleteFile = (form: any, index: any) => {
-        removePhoto(previewAdditionalImage[index], index);
+    const onDeleteFile = (form: any, selectedindex: any) => {
+        removePhoto(previewAdditionalImage[selectedindex], selectedindex);
+
     };
 
     return (

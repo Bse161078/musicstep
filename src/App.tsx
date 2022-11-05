@@ -163,7 +163,8 @@ const RoutesList = (props: any) => {
         window.scrollTo(0, 0);
     }, [pathname]);
 
-    const isAdminSide = pathname.includes("/admin");
+
+    const isAdminSide = pathname.includes("/admin") || (state && state.data && state.data.role==="admin");
     const isDashboardSide = pathname.includes("/dashboard");
 
     //localStorage.clear();
@@ -415,8 +416,6 @@ function App() {
     const [isPortrait, setIsPortrait] = useState(false);
     useEffect(() => {
         const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-        console.log("isSafari = ", isSafari)
-
         setIsPortrait(window.matchMedia("(orientation: portrait)").matches);
         window.addEventListener("orientationchange", function () {
             setIsPortrait(!window.matchMedia("(orientation: portrait)").matches)

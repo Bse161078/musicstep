@@ -9,14 +9,13 @@ export const VenueDetailsStyle = styled.div`
   align-items: flex-start;
   padding-top: 50px;
   padding-bottom: 50px;
-
   @media (max-width: 1600px) {
     grid-template-columns: 1.5fr 1fr;
   }
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    grid-gap: 50px;
+    grid-gap: 10px;
   }
 
   .attributes-wrapper {
@@ -40,7 +39,7 @@ export const VenueDetailsStyle = styled.div`
   }
 
   .left-side {
-    padding: 0 60px;
+    padding: 0 10px;
     padding-left: 120px;
 
     @media (max-width: 768px) {

@@ -24,13 +24,7 @@ export const DropdownsList = (props: any) => {
             data = [{type: "tags", search: [value["All Categories"].data]}];
         }
         if (value["Genre"]) {
-            if (data.length > 0) {
-                let prevSearch = data[0].search;
-                prevSearch.push(value["Genre"].data)
-                data[0] = {...data[0], search: prevSearch};
-            } else {
-                data = [{type: "tags", search: [value["Genre"].data]}];
-            }
+            data = [{type: "genre", search: [value["Genre"].data]}];
         }
         if (value["Distance"]) {
             data.push({

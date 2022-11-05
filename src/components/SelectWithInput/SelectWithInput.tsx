@@ -9,8 +9,9 @@ import Select, {SelectChangeEvent} from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
+import axios from "axios";
 
-const SelectWithInput = ({placeholder, setSearch, search,navbar_search}: any) => {
+const SelectWithInput = ({placeholder, setSearch, search,navbar_search,latlng,refreshNearbyVenues}: any) => {
     let dataa = '';
     const [latitude, setLatitude] = useState(0.0)
     const [menuItem, setMenuItem] = useState(["Current Location"])
@@ -60,6 +61,9 @@ const SelectWithInput = ({placeholder, setSearch, search,navbar_search}: any) =>
         })
     }
 
+
+
+
     const handleMenuItem = menuItem && menuItem.map((item: any) => {
         return (
             <MenuItem value={item.name}>{item.name}</MenuItem>
@@ -100,7 +104,9 @@ const SelectWithInput = ({placeholder, setSearch, search,navbar_search}: any) =>
               } */}
                             {address.locality != '' && <LocationSelectBox
                                 name={address.locality != '' && address.locality + " , " + address.countryCode + " , " + address.countryName}
-                                options={menuItem} values={menuItem}/>}
+                                options={menuItem} values={menuItem}
+                                handleSelectBoxChange={(value:any)=>refreshNearbyVenues()}
+                            />}
 
                             {/* {/* <p>{address.locality+ address.countryCode+ address.countryName}</p> */}
             </span>

@@ -53,7 +53,7 @@ const Reviews = (props: any) => {
         <ReviewsStyle>
             {isLoading&&<Loading/>}
             {
-                !hideForm &&
+                (!hideForm && !props.fromPartner) &&
                 <Formik
                     initialValues={{
                         review: "",

@@ -63,8 +63,8 @@ const Metrics = () => {
                             {/*<Tile heading="Total Reservations" value={`$${stats.totalReservations}`} />*/}
                             {/*<Tile heading="Sold Reservations" value={`$${stats.soldReservations}`}/>*/}
                             {/*<Tile heading="Sold Tickets" value={stats.soldTickets}/>*/}
-                            <Tile heading="Total Reservations Completed (#)" value={reservationStats && reservationStats.data && `$${reservationStats.data.count}`}/>
-                            <Tile heading="Total Reservations Completed ($)" value={reservationStats && reservationStats.data && `$${reservationStats.data.amount}`}/>
+                            <Tile heading="Total Reservations Completed (#)" value={reservationStats && reservationStats.data && `${reservationStats.data.count}`}/>
+                            <Tile heading="Total Reservations Completed ($)" value={reservationStats && reservationStats.data && `$${(reservationStats.data.amount).toFixed(2)}`}/>
                         </div>
                         {/*<ContentHeader heading="Charts" actionButtons={<>Events Filter</>} />*/}
                         {/*<div className="charts-wrapper">*/}

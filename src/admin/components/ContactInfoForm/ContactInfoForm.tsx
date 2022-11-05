@@ -63,6 +63,7 @@ const ContactInfoForm = (props: any) => {
     }
 
 
+
     return (
         <ContactInfoFormStyle>
             <MessageModal
@@ -97,7 +98,7 @@ const ContactInfoForm = (props: any) => {
                 }}
             >
 
-`
+
                 {() => (
                     <Form>
                         <div className="headings-with-inputs">

@@ -6,13 +6,14 @@ import {useLoginContext} from "../../context/authenticationContext";
 
 type EventDetailWrapperProps = {
     event?: any;
-    venue?: any
+    venue?: any;
+    hideReserve?: any;
 };
-export const EventDetailWrapper = ({event, venue}: EventDetailWrapperProps) => {
+export const EventDetailWrapper = ({event, venue, hideReserve}: EventDetailWrapperProps) => {
     const history = useHistory();
     const eventImage = venue.coverPhotoUrl || venue.logoUrl;
     const {state, dispatch} = useLoginContext();
-    const [organizer,setOrganizer]=useState<any>(null);
+    const [organizer, setOrganizer] = useState<any>(null);
 
 
     const week = [
@@ -27,17 +28,32 @@ export const EventDetailWrapper = ({event, venue}: EventDetailWrapperProps) => {
 
 
     const handleViewOrganizer = () => {
-        history.push({
-            pathname: `/explore-venue/organizer-profile`,
+        if (state.data.role === "admin") {
+            if (event.organizerInfo && (event.organizerInfo).length > 0) {
+                history.push({
+                    pathname: `/explore-venue/organizer-profile`,
 
-            state: {organizerDetail: venue},
-        });
+                    state: {
+                        organizerDetail: {organizerInfo: event.organizerInfo, venuesInfo: event.venueInfo},
+                        isOrganizer: true
+                    },
+                });
+            }
+        } else {
+            history.push({
+                pathname: `/explore-venue/organizer-profile`,
+
+                state: {organizerDetail: venue},
+            });
+        }
+
+
     };
 
 
-    const getOrganizer=async (organizerId:any)=>{
+    const getOrganizer = async (organizerId: any) => {
         try {
-            const response = await axios.get("/v1/organizer/"+organizerId, {headers: {Authorization: `Bearer ${state.authToken}`}});
+            const response = await axios.get("/v1/organizer/" + organizerId, {headers: {Authorization: `Bearer ${state.authToken}`}});
             setOrganizer(response.data);
         } catch (e) {
         }
@@ -59,10 +75,14 @@ export const EventDetailWrapper = ({event, venue}: EventDetailWrapperProps) => {
 
     const handleViewVenue = () => {
         history.push({
-            pathname: `/dashboard/home/venue-details`,
-
-            state: {venueDetail: venue},
+            pathname: `/explore-venue/venue-details`,
+            state: {venueDetail: venue,fromPartner:state.data.role === "admin"?true:false},
         });
+        // history.push({
+        //     pathname: `/dashboard/home/venue-details`,
+        //
+        //     state: {venueDetail: venue},
+        // });
     };
 
 
@@ -75,8 +95,8 @@ export const EventDetailWrapper = ({event, venue}: EventDetailWrapperProps) => {
     }
 
 
-    if(!organizerInfo && organizer){
-        organizerInfo=organizer;
+    if (!organizerInfo && organizer) {
+        organizerInfo = organizer;
     }
 
 
@@ -115,14 +135,22 @@ export const EventDetailWrapper = ({event, venue}: EventDetailWrapperProps) => {
                     </p>
                 </div>
 
-                <div>
-                    <p>Venue : {venue?.name}</p>
+                <div className="organizedBy-text">
+                    <p>
+                        Venue :
+                        <span className="link" onClick={() => {
+                            handleViewVenue()
+                        }}>{venue?.name}</span>
+                    </p>
                     <p>
                         {" "}
                         <img src="/images/icons/location-icon.svg" alt="location"/>
+                        {" "}
                         {venue.location?.address}
                     </p>
+
                 </div>
+
 
                 <div className="organizedBy-text">
                     <p>

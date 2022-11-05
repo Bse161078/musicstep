@@ -78,7 +78,6 @@ const CardWithContent = (props: CardWithContentProps) => {
     const venue=reservation && reservation.venueInfo && (reservation.venueInfo).length>0 && reservation.venueInfo[0];
 
 
-    console.log("reservation = ",reservation)
 
     return (
         <>

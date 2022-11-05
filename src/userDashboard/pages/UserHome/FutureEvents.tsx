@@ -20,7 +20,7 @@ import {
 import moment from "moment";
 import {OutlineButtonStyle} from "../../../styles/Common.style";
 import VenueDetailsModal from "../../../components/EventDetailsModal/VenueDetailsModal";
-import {EventDetailsModal} from "../../../components";
+import {EventDetailsModal, Loading} from "../../../components";
 import {useHistory} from "react-router-dom";
 
 const FutureEvents = ({refreshSuggestedEvents}: any) => {
@@ -29,11 +29,26 @@ const FutureEvents = ({refreshSuggestedEvents}: any) => {
     const [isModalVisible, setIsModalVisible] = useState(false)
     const [futureEvents, setFutureEvents] = useState([]);
     const [selectedEvent, setSelectedEvent] = useState<any>(null);
+    const [loading, setLoading] = useState(true);
 
 
-    const getAllFutureEvents = async () => {
-        const response = await axios.get("/v1/event/future", {headers: {Authorization: `Bearer ${state.authToken}`}});
-        let events=response.data;
+    const getCurrentLocation = () => {
+        setLoading(true);
+        navigator.geolocation.getCurrentPosition(function (position) {
+            setLoading(false)
+            if (position) {
+                getAllFutureEvents({latitude: position.coords.latitude, longitude: position.coords.longitude});
+            }
+        });
+    }
+
+
+    const getAllFutureEvents = async (latLng:any) => {
+        setLoading(true);
+        latLng=latLng && latLng.latitude && latLng.longitude?JSON.stringify(latLng):""
+        const response = await axios.get(`/v1/event/future?search=${latLng}`, {headers: {Authorization: `Bearer ${state.authToken}`}});
+        setLoading(false);
+        let events = response.data;
         setFutureEvents(events);
     }
     const history = useHistory()
@@ -45,25 +60,26 @@ const FutureEvents = ({refreshSuggestedEvents}: any) => {
         });
     };
     useEffect(() => {
-        getAllFutureEvents();
+        getCurrentLocation();
+        //getAllFutureEvents();
     }, [refreshSuggestedEvents])
 
 
-
     const ContainerData = futureEvents.filter((event: any) => (event.tickets).length > 0).map((event: any, index: any) => {
-        let imageUrl=null;
+        let imageUrl = null;
 
-        if(event && event.venuesInfo && (event.venuesInfo).length>0){
-            imageUrl=event.venuesInfo[0].logoUrl;
+        if (event && event.venuesInfo && (event.venuesInfo).length > 0) {
+            imageUrl = event.venuesInfo[0].logoUrl;
         }
         return (
             <TableRow hover tabIndex={-1} key={event._id + index}>
+                {loading && <Loading/>}
 
                 <TableCell key={event._id + index} align="left" style={{wordBreak: "break-word"}}>
                     <img
-                        src={imageUrl?`${process.env.REACT_APP_BASE_URL}/images/${imageUrl}`:"/images/sample.png"}
+                        src={imageUrl ? `${process.env.REACT_APP_BASE_URL}/images/${imageUrl}` : "/images/sample.png"}
                         className="card-thumbnail"
-                        style={{width:92,height:92,borderRadius:10}}
+                        style={{width: 92, height: 92, borderRadius: 10}}
                         alt="thumbnail"
                     />
                 </TableCell>
@@ -78,8 +94,8 @@ const FutureEvents = ({refreshSuggestedEvents}: any) => {
                         </Grid>
                     </Grid>
                 </TableCell>
-                <TableCell key={event.title + index} align="left" style={{wordBreak: "break-word",cursor:"pointer"}}
-                           onClick={(e)=>handleViewVenue(event)}>
+                <TableCell key={event.title + index} align="left" style={{wordBreak: "break-word", cursor: "pointer"}}
+                           onClick={(e) => handleViewVenue(event)}>
                     <Grid container>
                         <Grid item xs={12}>
                             <h4 className="heading">{event.title}</h4>
@@ -141,7 +157,7 @@ const FutureEvents = ({refreshSuggestedEvents}: any) => {
 
             />
             }
-            <TableContainer sx={{ overflow: "auto",width:{lg:"65vw",xs:"90vw"},maxHeight:"420px"}}>
+            <TableContainer sx={{overflow: "auto", width: {lg: "65vw", xs: "90vw"}, maxHeight: "420px"}}>
                 <Table>
                     <TableHead>
                         <TableRow>

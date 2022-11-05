@@ -35,6 +35,8 @@ export default function ExploreVenue() {
     const [user, setUser] = useState({
         credits: 0,
     });
+    const [latlng,setLatlng]=useState<any>(null)
+
     const [subscribtion, setSubscribtion] = useState({
         active: false,
         status: "",
@@ -48,6 +50,9 @@ export default function ExploreVenue() {
     useEffect(() => {
         setLoading(true);
         navigator.geolocation.getCurrentPosition(function (position) {
+            if(position){
+                setLatlng({latitude:position.coords.latitude,longitude:position.coords.longitude})
+            }
         });
         getFilters();
         getEvents();
@@ -140,6 +145,22 @@ export default function ExploreVenue() {
             });
     };
 
+
+    const refreshNearbyVenues=()=>{
+        setLoading(true)
+        axios.get(`/v1/users/allEventsByVenues?search=${JSON.stringify(latlng)}`, {
+            headers: {Authorization: `Bearer ${state.authToken}`},
+        })
+            .then((res) => {
+                setLoading(false)
+                setVenues(res.data.event);
+                setSubscribtion(res.data.subscription);
+            })
+            .catch((error) => {
+                setLoading(false)
+            });
+    }
+
     const venueFilter =
         venues &&
         venues.filter((venue: any) =>
@@ -154,19 +175,19 @@ export default function ExploreVenue() {
             lat: 25.761681,
             lng: -80.191788,
         },
-        zoom: 18,
+        zoom: 12,
     };
 
-    if (venueLocations.length > 0) {
-        const selectedVenueLocation: any = venueLocations[0];
-        defaultProps = {
-          center: {
-            lat: Number(selectedVenueLocation.location.lat),
-            lng: Number(selectedVenueLocation.location.lng),
-          },
-          zoom: 18,
-        };
-    }
+    // if (venueLocations.length > 0) {
+    //     const selectedVenueLocation: any = venueLocations[0];
+    //     defaultProps = {
+    //       center: {
+    //         lat: Number(selectedVenueLocation.location.lat),
+    //         lng: Number(selectedVenueLocation.location.lng),
+    //       },
+    //       zoom: 18,
+    //     };
+    // }
 
 
 
@@ -176,6 +197,8 @@ export default function ExploreVenue() {
                 navbar_search={state.search}
                 active={subscribtion?.active}
                 userCredit={user.credits}
+                latlng={latlng}
+                refreshNearbyVenues={refreshNearbyVenues}
             />
 
             {showPricing && (

@@ -82,7 +82,6 @@ const SliderCustom = (props: SliderProps) => {
                                                   cursor: "pointer",
                                               }}
                                               onClick={(e) => {
-                                                  debugger;
                                                   props.onDeleteFile(props.form, index);
                                               }}
                                           />

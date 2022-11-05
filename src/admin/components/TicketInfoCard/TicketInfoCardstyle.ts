@@ -13,6 +13,7 @@ const TicketInfoCardStyle = styled.div<TicketInfoCardStyleProps>`
   max-width: 280px;
   padding: 20px;
   text-align: center;
+  max-height:400px;
 
   .credits {
     color: #ff33cc;

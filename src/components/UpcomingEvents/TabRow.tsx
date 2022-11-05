@@ -17,7 +17,8 @@ type TabRowProps = {
     subscribtionCredit?: any;
     venue?: any;
     handleClick?: any;
-    isDetails: boolean
+    isDetails: boolean;
+    fromPartner?:boolean
 };
 
 export const TabRow = (props: TabRowProps) => {
@@ -29,7 +30,8 @@ export const TabRow = (props: TabRowProps) => {
         subscribtionCredit,
         venue,
         handleClick,
-        isDetails
+        isDetails,
+        fromPartner
     } = props;
     const [isEventDetailsModalVisibel, setIsEventDetailsModalVisibel] = useState(
         false
@@ -47,7 +49,7 @@ export const TabRow = (props: TabRowProps) => {
     } else if (daysLeft === 1) {
         daysLeftLabel = "Tomorrow"
     } else {
-        daysLeftLabel = "In " + daysLeft + " days"
+        daysLeftLabel = "in " + daysLeft + " days"
     }
 
 
@@ -57,7 +59,7 @@ export const TabRow = (props: TabRowProps) => {
                 <div className="time">
           <span>
             {moment(event.state).format("ddd")},{" "}
-              {moment(event.state).date() + " " + moment(event.date).format("MMM")}
+              {moment(event.date).format("MMM")+" "+moment(event.state).date()}
           </span>
                     <span className="hour">
             {daysLeftLabel}
@@ -84,32 +86,36 @@ export const TabRow = (props: TabRowProps) => {
                 </div>
                 {buttonType === "filled" ? (
                     <div>
-                        <FilledButtonStyle
-                            buttonType="dark"
-                            width="150px"
-                            height="43px"
-                            onClick={() => {
-                                setIsEventDetailsModalVisibel(true);
-                                setIsTicketsAvailabe(false);
-                            }}
-                            // className="pricing"
-                        >
-                            {buttonText}
-                        </FilledButtonStyle>
+                        {!fromPartner &&
+                            <FilledButtonStyle
+                                buttonType="dark"
+                                width="150px"
+                                height="43px"
+                                onClick={() => {
+                                    setIsEventDetailsModalVisibel(true);
+                                    setIsTicketsAvailabe(false);
+                                }}
+                                // className="pricing"
+                            >
+                                {buttonText}
+                            </FilledButtonStyle>
+                        }
                     </div>
                 ) : (
                     <div>
-                        <OutlineButtonStyle
-                            width="150px"
-                            height="43px"
-                            className="pricing"
-                            onClick={() => {
-                                setIsEventDetailsModalVisibel(true);
-                                setIsTicketsAvailabe(true);
-                            }}
-                        >
-                            {buttonText}
-                        </OutlineButtonStyle>
+                        {!fromPartner &&
+                            <OutlineButtonStyle
+                                width="150px"
+                                height="43px"
+                                className="pricing"
+                                onClick={() => {
+                                    setIsEventDetailsModalVisibel(true);
+                                    setIsTicketsAvailabe(true);
+                                }}
+                            >
+                                {buttonText}
+                            </OutlineButtonStyle>
+                        }
                     </div>
                 )}
             </TabRowStyle>
@@ -120,6 +126,7 @@ export const TabRow = (props: TabRowProps) => {
                 event={event}
                 subscribtionCredit={subscribtionCredit}
                 venue={venue}
+                hideReserve={fromPartner}
             />
         </>
     );

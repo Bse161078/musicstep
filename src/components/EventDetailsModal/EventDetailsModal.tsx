@@ -12,7 +12,8 @@ type EventDetailsModalProps = {
     isTicketsAvailable?: boolean;
     event?: any;
     subscribtionCredit?: any;
-    venue?: any
+    venue?: any,
+    hideReserve?:any;
 };
 const EventDetailsModal = (props: EventDetailsModalProps) => {
     const {
@@ -21,7 +22,8 @@ const EventDetailsModal = (props: EventDetailsModalProps) => {
         isTicketsAvailable,
         event,
         subscribtionCredit,
-        venue
+        venue,
+        hideReserve
     } = props;
     const history = useHistory();
 
@@ -29,7 +31,6 @@ const EventDetailsModal = (props: EventDetailsModalProps) => {
     const sortedTicket=(event.tickets).sort((a: any, b: any) => {
         return a.credits - b.credits;
     });
-
 
     return (
         <>
@@ -56,6 +57,7 @@ const EventDetailsModal = (props: EventDetailsModalProps) => {
                                     event={event}
                                     subscribtionCredit={subscribtionCredit}
                                     venue={venue}
+                                    hideReserve={hideReserve}
                                 />
                             ))}
                             {/* <TicketInfoCard
@@ -89,7 +91,7 @@ const EventDetailsModal = (props: EventDetailsModalProps) => {
                     ]}
                 >
                     <EventDetailsModalStyle>
-                        <EventDetailWrapper event={event} venue={venue}/>
+                        <EventDetailWrapper hideReserve={hideReserve} event={event} venue={venue} />
                     </EventDetailsModalStyle>
                 </ModalWrapper>
             )}
