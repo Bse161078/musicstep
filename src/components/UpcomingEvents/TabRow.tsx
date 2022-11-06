@@ -77,6 +77,8 @@ export const TabRow = (props: TabRowProps) => {
                 }}>
                     <p>{event.title}</p>
                     <p className="genre">{venue.categoryTags.join(",")}</p>
+                    <p className="genre">{event.country  && (event.country)}</p>
+
                 </div>
                 <div className="time">
                     <p className="person-number">

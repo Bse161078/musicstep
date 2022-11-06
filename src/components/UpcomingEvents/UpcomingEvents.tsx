@@ -11,6 +11,7 @@ const UpcomingEvents = ({events, venue, subscribtionCredit, handleClick,isDetail
 
     const filteredEvents = events.filter((event: any) => new Date(event.date) >= new Date())
 
+    console.log("events = ",events,venue);
     return (
         <UpcomingEventsStyle>
             {/* <div className="list-header">

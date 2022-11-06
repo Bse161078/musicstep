@@ -1,6 +1,11 @@
 import styled from 'styled-components'
 
-const DatePickerModalStyle = styled.div`
+type DatePickerModalStyleProps = {
+    day?: "";
+    month?: "";
+};
+
+const DatePickerModalStyle = styled.div<DatePickerModalStyleProps>`
 
 display: flex;
 flex-direction: column;
@@ -66,12 +71,20 @@ font-size: 18px important;
   font: inherit;
   box-sizing: content-box;
   -moz-appearance: textfield;
-  width: 25px !important;
   &:focus-visible{
     outline:0px
   }
   
 }
+
+.react-date-picker__inputGroup__month{
+  width: ${({ month }) => (month && month[0] ==='0'?"15px !important":'25px !important'  )};
+}
+
+.react-date-picker__inputGroup__day{
+  width: ${({ day }) => (day && day[0] ==='0'?"15px !important":'25px !important'  )};
+}
+
 .react-date-picker__inputGroup__year {
   width: 50px !important;
 }
