@@ -39,7 +39,7 @@ const UserSidebar = ({
     const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
     const [isNotSuccessModalVisible, setNotSuccessModalVisible] = useState(false);
     const [reservationStats, setReservationStats] = useState<any>(null);
-    const [isShowBuyCredit,setIsShowBuyCredit]=useState(false);
+    const [isShowBuyCredit, setIsShowBuyCredit] = useState(false);
 
     const [isNotificationModalVisible, setNotificationModalVisible] = useState(
         false
@@ -54,9 +54,9 @@ const UserSidebar = ({
         setCancelSubscriptionVisible(false);
     };
 
-    useEffect(()=>{
+    useEffect(() => {
         getReservationStats();
-    },[])
+    }, [])
 
     const handleModalOkClick = () => {
         setSuccessModalVisible(true);
@@ -93,7 +93,6 @@ const UserSidebar = ({
     }
 
     const futureReservations = reservations.filter((reserve: any) => (reserve.eventInfo).length > 0 && (new Date(reserve.eventInfo[0].date) >= new Date()));
-
 
 
     return (
@@ -157,16 +156,15 @@ const UserSidebar = ({
               }
           />
         </span>
-
-                {/* <div className="divider" />
-        <span onClick={() => setPeopelWithMutualFreindsModalVisible(true)}>
+                <div className="divider"/>
+                <span onClick={() => setPeopelWithMutualFreindsModalVisible(true)}>
           <HeadingTab
-            heading="People With Mutual Friends"
-            icon={
-              <img src="/images/icons/mutual-friends-icon.svg" alt="icon" />
-            }
+              heading="People With Mutual Friends"
+              icon={
+                  <img src="/images/icons/mutual-friends-icon.svg" alt="icon"/>
+              }
           />
-        </span>  */}
+        </span>
                 {subscription?.active === true && (
                     <div>
                         <div className="divider"/>
@@ -311,10 +309,13 @@ const UserSidebar = ({
                 isModalVisible={isNotificationModalVisible}
                 setIsModalVisible={setNotificationModalVisible}
             />
-            <PeopleWithMutualFreindsModal
-                isModalVisible={isPeopelWithMutualFreindsModalVisible}
-                setIsModalVisible={setPeopelWithMutualFreindsModalVisible}
-            />
+            {
+                isPeopelWithMutualFreindsModalVisible &&
+                <PeopleWithMutualFreindsModal
+                    isModalVisible={isPeopelWithMutualFreindsModalVisible}
+                    setIsModalVisible={setPeopelWithMutualFreindsModalVisible}
+                />
+            }
             <CheckingAvailablityModal
                 isModalVisible={isShowBuyCredit}
                 setIsModalVisible={setIsShowBuyCredit}
