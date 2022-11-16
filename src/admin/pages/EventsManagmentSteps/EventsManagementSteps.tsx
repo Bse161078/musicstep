@@ -15,7 +15,7 @@ const EventsManagementSteps = () => {
   return (
     <Dashboard>
       <EventsManagementStepsStyle>
-        {currentStep === 1 && (
+            {currentStep === 1 && (
           <SubmitEventStep1
             setEventData={setEventData}
             setCurrentStep={setCurrentStep}

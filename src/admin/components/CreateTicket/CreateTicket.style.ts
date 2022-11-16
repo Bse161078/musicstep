@@ -1,13 +1,18 @@
-import  styled  from 'styled-components';
+import styled from 'styled-components';
 
-export const CreateTicketStyle  = styled.div`
+type CreateTicketProps = {
+    tickets?: any;
+};
+
+export const CreateTicketStyle = styled.div<CreateTicketProps>`
   display: flex;
   flex-direction: column;
   justify-content:center;
   background:#FFEAFA;
   max-width: 280px;
-  height: 100%;
-  max-height:400px;
+  min-width:250px;
+  height:${(props) => (props.tickets && (props.tickets).length > 0 ? "400px" : "200px")};
+  max-height:${(props) => (props.tickets && (props.tickets).length > 0 ? "400px" : "200px")};
   border-radius: 32px;
   align-items:center;
   cursor: pointer;

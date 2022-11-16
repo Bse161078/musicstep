@@ -5,7 +5,7 @@ import {NavbarWithSearch, VenueCard} from "../../components";
 import {DropdownsList} from "./DropdownsList";
 import {ExploreVenueStyle, TrialButton} from "./ExploreVenue.style";
 import {useLoginContext} from "../../context/authenticationContext";
-import Marker from "../../components/Marker";
+// import Marker from "../../components/Marker";
 import {Box, Button, Grid} from "@mui/material";
 import {Pricing} from "../Pricing";
 import {Loading} from "../../components";
@@ -14,6 +14,7 @@ import AddCard from "../../components/Stripe/addCard";
 import {loadStripe} from "@stripe/stripe-js";
 import {useHistory, useLocation} from "react-router-dom";
 import OrientationModal from "../../components/ChangeOrientation/OrientationModal/OrientationModal";
+import {GoogleMap, Marker, withGoogleMap} from "react-google-maps"
 
 export default function ExploreVenue() {
     const style = {
@@ -35,7 +36,7 @@ export default function ExploreVenue() {
     const [user, setUser] = useState({
         credits: 0,
     });
-    const [latlng,setLatlng]=useState<any>(null)
+    const [latlng, setLatlng] = useState<any>(null)
 
     const [subscribtion, setSubscribtion] = useState({
         active: false,
@@ -50,8 +51,8 @@ export default function ExploreVenue() {
     useEffect(() => {
         setLoading(true);
         navigator.geolocation.getCurrentPosition(function (position) {
-            if(position){
-                setLatlng({latitude:position.coords.latitude,longitude:position.coords.longitude})
+            if (position) {
+                setLatlng({latitude: position.coords.latitude, longitude: position.coords.longitude})
             }
         });
         getFilters();
@@ -60,9 +61,9 @@ export default function ExploreVenue() {
     }, []);
 
 
-    useEffect(()=>{
+    useEffect(() => {
         getEvents();
-    },[location])
+    }, [location])
 
     useEffect(() => {
         if (!loading && (!subscribtion || !subscribtion.active)) {
@@ -115,7 +116,7 @@ export default function ExploreVenue() {
     };
 
     const getFilters = () => {
-      //  setLoading(true);
+        //  setLoading(true);
         axios
             .get("/v1/filter", {
                 headers: {Authorization: `Bearer ${state.authToken}`},
@@ -146,7 +147,7 @@ export default function ExploreVenue() {
     };
 
 
-    const refreshNearbyVenues=()=>{
+    const refreshNearbyVenues = () => {
         setLoading(true)
         axios.get(`/v1/users/allEventsByVenues?search=${JSON.stringify(latlng)}`, {
             headers: {Authorization: `Bearer ${state.authToken}`},
@@ -164,16 +165,19 @@ export default function ExploreVenue() {
     const venueFilter =
         venues &&
         venues.filter((venue: any) =>
-            (venue?.name).toLowerCase().includes(state.search.toLowerCase())
+            (venue?.name).toLowerCase().includes(state.search.toLowerCase()) ||
+            ((venue.location.address.toLowerCase()).includes(state.search.toLowerCase()))
         );
     const venueLocations = venueFilter.filter(
         (venue: any) => venue.location && venue.location.address
     );
 
+
+
     let defaultProps = {
         center: {
-            lat: 25.761681,
-            lng: -80.191788,
+            lat: latlng && latlng.latitude,
+            lng: latlng && latlng.longitude,
         },
         zoom: 12,
     };
@@ -189,6 +193,32 @@ export default function ExploreVenue() {
     //     };
     // }
 
+
+    const MyMapComponent = withGoogleMap((props: any) =>
+        <GoogleMap
+            defaultZoom={props.zoom}
+            defaultCenter={props.center}
+            options={props.options}
+        >
+
+            {venueLocations.length > 0 &&
+            venueLocations.map((venue: any) => (
+                <Marker
+                    // lat={31.582045}
+                    // lng={74.329376}
+                    icon={{
+
+                        url: 'https://musicpassonline.com:3000/images/location.png',
+                        anchor: new google.maps.Point(0, 49),
+                        scaledSize: new google.maps.Size(37, 37)
+
+                    }}
+                    position={{lat: Number(venue.location.lat), lng: Number(venue.location.lng)}}
+                    title={venue.name}
+                />
+            ))}
+        </GoogleMap>
+    )
 
 
     return (
@@ -276,142 +306,107 @@ export default function ExploreVenue() {
 
                             <Box
                                 //  className={styles.mapConatiner}
-                                sx={{width: "100%", height: "100%",display:{lg:"block",md:"none"}}}
+                                sx={{width: "100%", height: "100%", display: {lg: "block", md: "none",xs:'none',sm:'none'}}}
                             >
                                 {venueLocations.length > 0 && (
-                                    <GoogleMapReact
-                                        bootstrapURLKeys={{
-                                            key: "AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew",
-                                        }}
-                                        center={defaultProps.center}
-                                        zoom={defaultProps.zoom}
-                                        options={{
-                                            styles: [
-                                                {
-                                                    elementType: "geometry",
-                                                    stylers: [{color: "#242f3e"}],
-                                                },
-                                                {
-                                                    elementType: "labels.text.stroke",
-                                                    stylers: [{color: "#242f3e"}],
-                                                },
-                                                {
-                                                    elementType: "labels.text.fill",
-                                                    stylers: [{color: "#746855"}],
-                                                },
-                                                {
-                                                    featureType: "administrative.locality",
-                                                    elementType: "labels.text.fill",
-                                                    stylers: [{color: "#d59563"}],
-                                                },
-                                                {
-                                                    featureType: "poi",
-                                                    elementType: "labels.text.fill",
-                                                    stylers: [{color: "#d59563"}],
-                                                },
-                                                {
-                                                    featureType: "poi.park",
-                                                    elementType: "geometry",
-                                                    stylers: [{color: "#263c3f"}],
-                                                },
-                                                {
-                                                    featureType: "poi.park",
-                                                    elementType: "labels.text.fill",
-                                                    stylers: [{color: "#6b9a76"}],
-                                                },
-                                                {
-                                                    featureType: "road",
-                                                    elementType: "geometry",
-                                                    stylers: [{color: "#38414e"}],
-                                                },
-                                                {
-                                                    featureType: "road",
-                                                    elementType: "geometry.stroke",
-                                                    stylers: [{color: "#212a37"}],
-                                                },
-                                                {
-                                                    featureType: "road",
-                                                    elementType: "labels.text.fill",
-                                                    stylers: [{color: "#9ca5b3"}],
-                                                },
-                                                {
-                                                    featureType: "road.highway",
-                                                    elementType: "geometry",
-                                                    stylers: [{color: "#746855"}],
-                                                },
-                                                {
-                                                    featureType: "road.highway",
-                                                    elementType: "geometry.stroke",
-                                                    stylers: [{color: "#1f2835"}],
-                                                },
-                                                {
-                                                    featureType: "road.highway",
-                                                    elementType: "labels.text.fill",
-                                                    stylers: [{color: "#f3d19c"}],
-                                                },
-                                                {
-                                                    featureType: "transit",
-                                                    elementType: "geometry",
-                                                    stylers: [{color: "#2f3948"}],
-                                                },
-                                                {
-                                                    featureType: "transit.station",
-                                                    elementType: "labels.text.fill",
-                                                    stylers: [{color: "#d59563"}],
-                                                },
-                                                {
-                                                    featureType: "water",
-                                                    elementType: "geometry",
-                                                    stylers: [{color: "#17263c"}],
-                                                },
-                                                {
-                                                    featureType: "water",
-                                                    elementType: "labels.text.fill",
-                                                    stylers: [{color: "#515c6d"}],
-                                                },
-                                                {
-                                                    featureType: "water",
-                                                    elementType: "labels.text.stroke",
-                                                    stylers: [{color: "#17263c"}],
-                                                },
-                                            ],
-                                        }}
-                                    >
-                                        {/* {browseEvents &&
-                                    browseEvents.map((event) => ( */}
-                                        {/* <Marker
-                lat={31.582045}
-                lng={74.329376}
-                // lat={event.lat}
-                // lng={event.lng}
-                name={"Request Titile:" + " " + "adeel"}
-                color={event.markerColor}
-                // handlePinClcik={handlePinClcik}
-                // request={event}
-              />
-              ))} */}
-                                        {/* <Marker
-                  // lat={31.582045}
-                  // lng={74.329376}
-                  lat={31.582045}
-                  lng={75.329376}
-                  name="Your location"
-                  color={"blue"}
-                  id="1"
-                /> */}
-                                        {venueLocations.length > 0 &&
-                                        venueLocations.map((venue: any) => (
-                                            <Marker
-                                                // lat={31.582045}
-                                                // lng={74.329376}
-                                                lat={venue.location.lat}
-                                                lng={venue.location.lng}
-                                                name={venue.name}
-                                                color={"blue"}
-                                                id="1"
-                                            />
-                                        ))}
-                                    </GoogleMapReact>
+                                    <MyMapComponent isMarkerShown
+                                                    loadingElement={<div style={{height: `100%`}}/>}
+                                                    containerElement={<div style={{height: `100%`}}/>}
+                                                    mapElement={<div style={{height: `100%`,maxHeight:"520px"}}/>}
+                                                    center={defaultProps.center}
+                                                    zoom={defaultProps.zoom}
+                                                    options={{
+                                                        styles: [
+                                                            {
+                                                                elementType: "geometry",
+                                                                stylers: [{color: "#242f3e"}],
+                                                            },
+                                                            {
+                                                                elementType: "labels.text.stroke",
+                                                                stylers: [{color: "#242f3e"}],
+                                                            },
+                                                            {
+                                                                elementType: "labels.text.fill",
+                                                                stylers: [{color: "#746855"}],
+                                                            },
+                                                            {
+                                                                featureType: "administrative.locality",
+                                                                elementType: "labels.text.fill",
+                                                                stylers: [{color: "#d59563"}],
+                                                            },
+                                                            {
+                                                                featureType: "poi",
+                                                                elementType: "labels.text.fill",
+                                                                stylers: [{color: "#d59563"}],
+                                                            },
+                                                            {
+                                                                featureType: "poi.park",
+                                                                elementType: "geometry",
+                                                                stylers: [{color: "#263c3f"}],
+                                                            },
+                                                            {
+                                                                featureType: "poi.park",
+                                                                elementType: "labels.text.fill",
+                                                                stylers: [{color: "#6b9a76"}],
+                                                            },
+                                                            {
+                                                                featureType: "road",
+                                                                elementType: "geometry",
+                                                                stylers: [{color: "#38414e"}],
+                                                            },
+                                                            {
+                                                                featureType: "road",
+                                                                elementType: "geometry.stroke",
+                                                                stylers: [{color: "#212a37"}],
+                                                            },
+                                                            {
+                                                                featureType: "road",
+                                                                elementType: "labels.text.fill",
+                                                                stylers: [{color: "#9ca5b3"}],
+                                                            },
+                                                            {
+                                                                featureType: "road.highway",
+                                                                elementType: "geometry",
+                                                                stylers: [{color: "#746855"}],
+                                                            },
+                                                            {
+                                                                featureType: "road.highway",
+                                                                elementType: "geometry.stroke",
+                                                                stylers: [{color: "#1f2835"}],
+                                                            },
+                                                            {
+                                                                featureType: "road.highway",
+                                                                elementType: "labels.text.fill",
+                                                                stylers: [{color: "#f3d19c"}],
+                                                            },
+                                                            {
+                                                                featureType: "transit",
+                                                                elementType: "geometry",
+                                                                stylers: [{color: "#2f3948"}],
+                                                            },
+                                                            {
+                                                                featureType: "transit.station",
+                                                                elementType: "labels.text.fill",
+                                                                stylers: [{color: "#d59563"}],
+                                                            },
+                                                            {
+                                                                featureType: "water",
+                                                                elementType: "geometry",
+                                                                stylers: [{color: "#17263c"}],
+                                                            },
+                                                            {
+                                                                featureType: "water",
+                                                                elementType: "labels.text.fill",
+                                                                stylers: [{color: "#515c6d"}],
+                                                            },
+                                                            {
+                                                                featureType: "water",
+                                                                elementType: "labels.text.stroke",
+                                                                stylers: [{color: "#17263c"}],
+                                                            },
+                                                        ],
+                                                    }}
+                                    />
                                 )}
                             </Box>
                         </section>

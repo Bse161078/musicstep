@@ -70,6 +70,18 @@ export const footerItems = [
     // },
 ];
 
+
+export const checkIfPathIsFooter=(path:string)=>{
+    for(let footer of footerItems){
+        const list=footer.list;
+        const index=list.findIndex((l:any)=>(l.url).includes(path));
+        if(index!==-1) return true;
+
+    }
+    return false;
+}
+
+
 export const socialLinks = [
     {
         icon: "/images/social-links/output-onlinepngtools.png",

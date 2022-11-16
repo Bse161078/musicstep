@@ -3,22 +3,19 @@ import styled from "styled-components";
 export const EditProfileFormStyle = styled.div`
   .form-wrapper {
     display: grid;
-    grid-template-columns: 1fr auto;
-    grid-gap: 125px;
-    margin-right: 20px;
-
-    @media (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    @media (max-width: 1240px) {
       display: flex;
       flex-direction: column;
       grid-template-columns: 1fr;
-      grid-gap: 50px;
+      grid-gap: 10px;
     }
 
     .form-left {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       grid-gap: 30px;
-
       @media (max-width: 1024px) {
         grid-template-columns: 1fr;
       }
@@ -30,7 +27,7 @@ export const EditProfileFormStyle = styled.div`
       grid-template-columns: 1fr 1fr;
       grid-gap: 20px;
 
-      @media (max-width: 767px) {
+      @media (max-width: 950px) {
         grid-template-columns: 1fr;
       }
     }
@@ -38,11 +35,11 @@ export const EditProfileFormStyle = styled.div`
     
      .custom-columns-2 {
       display: grid;
-      grid-template-columns: 350px 350px;
+      grid-template-columns: 300px 300px;
       grid-column: 1/2;
-      grid-gap: 20px;
+      grid-gap: 10px;
 
-      @media (max-width: 767px) {
+      @media (max-width: 950px) {
         grid-template-columns: 1fr;
         grid-column: unset;
       }
@@ -54,18 +51,18 @@ export const EditProfileFormStyle = styled.div`
       grid-column: 1/2;
       grid-gap: 20px;
 
-      @media (max-width: 767px) {
+      @media (max-width: 950px) {
         grid-template-columns: 1fr;
         grid-column: unset;
       }
     }
     .custom-columns {
       display: grid;
-      grid-template-columns: 170px 0.95fr;
+      grid-template-columns: 170px 300px;
       grid-column: 1/3;
       grid-gap: 20px;
 
-      @media (max-width: 767px) {
+      @media (max-width: 950px) {
         grid-template-columns: 1fr;
         grid-column: unset;
       }
@@ -76,7 +73,7 @@ export const EditProfileFormStyle = styled.div`
       grid-column: 1/3;
       grid-gap: 20px;
 
-      @media (max-width: 767px) {
+      @media (max-width: 950px) {
         grid-template-columns: 1fr;
         grid-column: unset;
       }
@@ -91,7 +88,7 @@ export const EditProfileFormStyle = styled.div`
       grid-gap: 30px;
       grid-template-columns: 1fr 1fr 1fr;
 
-      @media (max-width: 767px) {
+      @media (max-width: 950px) {
         grid-template-columns: 1fr;
       }
     }

@@ -13,7 +13,6 @@ const DatePickerModal = (props: DatePickerModalProps) => {
   const { value, onChange, lable } = props;
   // const [value, onChange] = useState(new Date());
 
-    console.log(value,"   ",value && moment(value).format('MM'))
     const day=value && moment(value).format('DD');
     const month=value && moment(value).format('MM');
     return (

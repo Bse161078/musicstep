@@ -5,11 +5,11 @@ import { MarkerStyle } from "./Marker.style.ts";
 export default function Marker({ lat, lng, color, name, id }) {
   // const { color, name, id } = props;
   return (
-    <div>
+    <div style={{background:"red"}}>
       <MarkerStyle>
         <div
           className="pin bounce"
-          style={{  cursor: "pointer" }}
+          style={{  cursor: "pointer",background:"" }}
           title={name}
         />
       </MarkerStyle>

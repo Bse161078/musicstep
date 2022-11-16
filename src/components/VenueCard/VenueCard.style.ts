@@ -8,7 +8,7 @@ export const VenueCardStyle = styled.div`
   grid-gap: 30px;
   cursor: pointer;
 
-  @media ( max-width: 1440px ) {
+  @media ( max-width: 1024px ) {
     grid-template-columns: 1fr;
   }
 

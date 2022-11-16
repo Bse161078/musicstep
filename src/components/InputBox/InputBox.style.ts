@@ -4,7 +4,8 @@ type TextFieldStyleProps = {
   width?: string;
   height?: string;
   radiusType?: string;
-  ref?: any
+  ref?: any;
+  type?:any;
 };
 
 export const TextFieldStyle = styled.input<TextFieldStyleProps>`
@@ -12,7 +13,7 @@ export const TextFieldStyle = styled.input<TextFieldStyleProps>`
   border-radius: ${(props) => (props.radiusType ? props.radiusType : "50px")};
   border: 1px solid #0c0c0c;
   outline: 0;
-  padding: 15px 25px;
+  padding: ${(props)=>( props.type && props.type==="countryCode"?"15px 35px":"15px 25px")};
   font-size: 18px;
   width: 100%;
   max-width: ${(props) => (props.width ? props.width : "unset")};
@@ -29,8 +30,14 @@ export const InputBoxStyle = styled.div`
 
   .password-icon {
     position: absolute;
-    top: 35px;
+    top: 30px;
     right: 20px;
+  }
+  
+  .country-code-icon {
+    position: absolute;
+    top: 33px;
+    left: 10px;
   }
 
   .input-label {

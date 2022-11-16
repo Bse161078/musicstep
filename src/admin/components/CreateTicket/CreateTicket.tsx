@@ -17,6 +17,7 @@ const CreateTicket = ({ setTickets, tickets }: CreateTicketProps) => {
       <CreateTicketStyle
         onClick={handleModalVisiblity}
         className="create-ticket-wrapper"
+        tickets={tickets}
       >
         <p className="add-icon">+</p>
         <p className="create-ticket">Create Reservations</p>

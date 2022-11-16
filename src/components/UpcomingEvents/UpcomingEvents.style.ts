@@ -24,7 +24,7 @@ export const UpcomingEventsStyle = styled.div`
 // grid-template-areas: 'myArea myArea . . .';
 export const TabRowStyle = styled.div`
   display: grid;
-  grid-template: auto / 13% 12% 10% 9% 20%;
+  grid-template: auto / 13% 12% 18% 9% 20%;
   grid-gap: 30px;
   padding: 15px 0;
   margin: 0 30px;
@@ -39,20 +39,20 @@ export const TabRowStyle = styled.div`
 
   @media (max-width: 1760px) {
     display: grid;
-    grid-template: auto / 13% 12% 10% 10% 25%;
+    grid-template: auto / 20% 12% 18% 10% 25%;
   }
   @media (max-width: 1500px) {
     display: grid;
-    grid-template: auto / 17% 15% 10% 10% 21%;
+    grid-template: auto / 20% 15% 25% 10% 21%;
   }
   @media (max-width: 1250px) {
     display: grid;
-    grid-template-columns: 17% 17% 10% auto auto;
+    grid-template-columns: 25% 17% 30% auto auto;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 1024px) {
     display: grid;
     padding-right:10px;
-    grid-template-columns: 20% 20% 10% auto auto;
+    grid-template-columns: 30% 20% 30% auto auto;
   }
 
   .time {

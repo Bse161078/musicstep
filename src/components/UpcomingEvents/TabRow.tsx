@@ -41,7 +41,7 @@ export const TabRow = (props: TabRowProps) => {
 
     let hours = moment(event.city).diff(event.state, "hours");
     let minutes = (moment(event.city).diff(event.state, "minutes") % 60);
-    let daysLeft = moment(event.state).diff(moment(new Date()), "days");
+    let daysLeft = moment(event.city).diff(moment(new Date()), "days");
     let daysLeftLabel = "";
 
     if (daysLeft === 0) {
@@ -75,9 +75,8 @@ export const TabRow = (props: TabRowProps) => {
                     if (isDetails) setIsEventDetailsModalVisibel(true)
                     else handleClick()
                 }}>
-                    <p>{event.title}</p>
-                    <p className="genre">{venue.categoryTags.join(",")}</p>
-                    <p className="genre">{event.country  && (event.country)}</p>
+                    <p style={{wordBreak:'break-word'}}>{event.title}</p>
+                    <p className="genre" style={{wordBreak:'break-word'}}>{event.country  && (event.country)}</p>
 
                 </div>
                 <div className="time">

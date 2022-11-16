@@ -25,6 +25,34 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
     process.env.REACT_APP_BASE_URL + "/images/" + userData.imageUrl
   );
 
+  const uploadProfileImage=async (imagePreview:any)=>{
+      if (imagePreview) {
+          const bodyData = new FormData();
+          bodyData.append("profileImage", imagePreview);
+          try {
+              setLoading(true)
+              const res:any = await axios.put("/v1/users/updateProfileImage", bodyData, {
+                  headers: { Authorization: `Bearer ${state.authToken}` },
+              });
+              const updatedProfileImage=res.data.profileImageUrl;
+              const localUser:any=JSON.parse(localStorage.getItem("data")||"{}");
+              localUser.imageUrl=updatedProfileImage;
+              localStorage.setItem("data",JSON.stringify(localUser));
+              setPreviewProfileImage(process.env.REACT_APP_BASE_URL + "/images/" + updatedProfileImage)
+              setLoading(false);
+              dispatch({
+                  type: "UPDATE_USER",
+                  payload: {
+                      data: {...state,imageUrl:updatedProfileImage},
+                  },
+              });
+          } catch (error) {
+              setLoading(false);
+          }
+      }
+  }
+
+
   const handleBackgroundImageUpload = (event: any, form: any) => {
     const imageType = event.target.files[0].type;
     if (
@@ -39,9 +67,10 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
 
       setProfileImage(event.target.files[0]);
 
-      reader.onloadend = () => {
+      reader.onloadend =  () => {
         const imagePreview: any = reader.result;
         setPreviewProfileImage(imagePreview);
+          uploadProfileImage(event.target.files[0])
       };
 
       reader.readAsDataURL(file);
@@ -49,18 +78,7 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
   };
   const handleEditProfile = async (e: any) => {
     setLoading(true);
-    if (e.photo) {
-      const bodyData = new FormData();
-      bodyData.append("profileImage", e.photo);
-      try {
-        const res = await axios.put("/v1/users/updateProfileImage", bodyData, {
-          headers: { Authorization: `Bearer ${state.authToken}` },
-        });
-        setLoading(false);
-      } catch (error) {
-        setLoading(false);
-      }
-    }
+
 
     const bodyData: any = {
       firstName: e.firstName,
@@ -97,6 +115,7 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
     }
   };
 
+  const country=parsePhoneNumber("+" + userData.phoneNumber)?.country;
   return (
     <>
       <EditProfileFormStyle>
@@ -143,7 +162,7 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
                   </div>
 
                   <div className="custom-columns-new">
-                    <InputBox label="Country Code" name="countryCode" />
+                    <InputBox label="Country Code" name="countryCode" type={"countryCode"} country={country}/>
                     <InputBox label="Phone Number" name="phone" />
                   </div>
                   <InputCheckbox
@@ -238,9 +257,9 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
                     <img
                       // src={"/images/sample-image.webp"}
                       src={
-                        !previewProfileImage.includes("null")
+                          (userData && userData.imageUrl && (userData.imageUrl).trim().length>0)
                           ? previewProfileImage
-                          : "/images/sample-image.webp"
+                          : "/images/person.svg"
                       }
                       alt="avatar"
                       className="avatar"

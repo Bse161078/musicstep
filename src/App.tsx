@@ -71,6 +71,7 @@ import CreditPaymentSuccess from "./components/Stripe/createCreditPaymentSuccess
 import OrientationModal from "./components/ChangeOrientation/OrientationModal/OrientationModal";
 import {subscribe, isSupported} from 'on-screen-keyboard-detector';
 import {PartnerTermsAndCondition} from "./pages/PartnerTermsAndCondition";
+import {checkIfPathIsFooter} from "./mockData/footer";
 
 // axios.defaults.baseURL = "https://music-pass-backend.herokuapp.com/v1";
 axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
@@ -170,7 +171,7 @@ const RoutesList = (props: any) => {
     //localStorage.clear();
     return (
         <>
-            {!isAdminSide && !isDashboardSide && showNavbar ? <Navbar/> : ""}
+            {(!isAdminSide && !isDashboardSide && showNavbar) || (checkIfPathIsFooter(pathname)) ? <Navbar/> : ""}
 
             <Switch>
                 <Route

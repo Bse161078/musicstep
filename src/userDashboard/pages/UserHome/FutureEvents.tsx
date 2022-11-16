@@ -75,7 +75,7 @@ const FutureEvents = ({refreshSuggestedEvents}: any) => {
             <TableRow hover tabIndex={-1} key={event._id + index}>
                 {loading && <Loading/>}
 
-                <TableCell key={event._id + index} align="left" style={{wordBreak: "break-word"}}>
+                <TableCell align="left" style={{wordBreak: "break-word"}}>
                     <img
                         src={imageUrl ? `${process.env.REACT_APP_BASE_URL}/images/${imageUrl}` : "/images/sample.png"}
                         className="card-thumbnail"
@@ -83,7 +83,7 @@ const FutureEvents = ({refreshSuggestedEvents}: any) => {
                         alt="thumbnail"
                     />
                 </TableCell>
-                <TableCell key={event.startingTime + index} align="left" style={{wordBreak: "break-word"}}>
+                <TableCell align="left" style={{wordBreak: "break-word"}}>
                     <Grid container>
                         <Grid item xs={12}>
                             <h4 className="heading">{moment(event.startingTime, ("hh:mm")).format("hh:mm a")}</h4>
@@ -94,7 +94,7 @@ const FutureEvents = ({refreshSuggestedEvents}: any) => {
                         </Grid>
                     </Grid>
                 </TableCell>
-                <TableCell key={event.title + index} align="left" style={{wordBreak: "break-word", cursor: "pointer"}}
+                <TableCell align="left" style={{wordBreak: "break-word", cursor: "pointer"}}
                            onClick={(e) => handleViewVenue(event)}>
                     <Grid container>
                         <Grid item xs={12}>
@@ -102,14 +102,14 @@ const FutureEvents = ({refreshSuggestedEvents}: any) => {
 
                         </Grid>
                         <Grid item xs={12}>
-                            <p className="description">{event.venuesInfo[0].categoryTags}</p>
+                            <p className="description">{event.country}</p>
                         </Grid>
                     </Grid>
                 </TableCell>
-                <TableCell key={event.venuesInfo[0].name + index} align="left" style={{wordBreak: "break-word"}}>
+                <TableCell align="left" style={{wordBreak: "break-word"}}>
                     <h4 className="heading">{event.venuesInfo[0].name}</h4>
                 </TableCell>
-                <TableCell key={event.venuesInfo[0].name + index} align="left" style={{wordBreak: "break-word"}}>
+                <TableCell align="left" style={{wordBreak: "break-word"}}>
                     <Grid container>
                         <Grid item xs={12}>
                             <OutlineButtonStyle
@@ -125,7 +125,7 @@ const FutureEvents = ({refreshSuggestedEvents}: any) => {
                         </Grid>
                     </Grid>
                 </TableCell>
-                <TableCell key={event.venuesInfo[0].name + index} align="left" style={{wordBreak: "break-word"}}>
+                <TableCell align="left" style={{wordBreak: "break-word"}}>
                     <Grid container>
                         <Grid item xs={12}>
                             <OutlineButtonStyle

@@ -8,7 +8,7 @@ export const MarkerStyle = styled.div`
 }
 .pin:after {
     width:56px;
-    height: 52px;
+    height: 40px;
 
     background-image:url('https://musicpassonline.com:3000/images/location.png')
 }

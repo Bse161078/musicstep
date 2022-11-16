@@ -10,7 +10,7 @@ const TicketInfoCardStyle = styled.div<TicketInfoCardStyleProps>`
   background: #f7f7f7;
   border-radius: 32px;
   gap: 25px;
-  max-width: 280px;
+  min-width: 280px;
   padding: 20px;
   text-align: center;
   max-height:400px;
