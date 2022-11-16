@@ -32,7 +32,7 @@ const RedeemOfferStep2Form = (props: TrailSetPasswordProps) => {
         if(otp)
         {
         axios
-            .patch(`/v1/users/createCode/${userId}`, {
+            .patch(`/v1/users/createCode/${userId}/false`, {
                 code: otp,
             })
             .then((res) => {
