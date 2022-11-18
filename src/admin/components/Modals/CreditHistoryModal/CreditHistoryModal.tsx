@@ -36,6 +36,9 @@ const CreditHistoryModal = (props: CreditHistoryModalProps) => {
     };
 
 
+
+    const filteredReservation=reservations.filter((reservation:any)=>reservation && reservation.eventInfo && (reservation.eventInfo).length>0)
+
     return (
         <>
 
@@ -66,8 +69,8 @@ const CreditHistoryModal = (props: CreditHistoryModalProps) => {
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
-                                    {reservations &&
-                                    reservations.map((reservation: any) => {
+                                    {filteredReservation &&
+                                    filteredReservation.map((reservation: any) => {
                                         return (
                                             <TableRow>
                                                 <TableCell align="left" style={{minWidth: 1}}>

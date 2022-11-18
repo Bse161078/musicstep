@@ -12,7 +12,9 @@ type EventHistoryModalProps = {
 
 const EventHistoryModal = (props: EventHistoryModalProps) => {
   const { isModalVisible, setIsModalVisible, reservations } = props;
-  return (
+    const filteredReservation=reservations.filter((reservation:any)=>reservation && reservation.eventInfo && (reservation.eventInfo).length>0)
+
+    return (
     <ModalWrapper
       isModalVisible={isModalVisible}
       setIsModalVisible={setIsModalVisible}
@@ -23,7 +25,7 @@ const EventHistoryModal = (props: EventHistoryModalProps) => {
         <TabsStyle defaultActiveKey="1">
           <TabPaneStyle tab="All" key="1">
             <div className="table-wrapper">
-              {reservations.map((reservation: any) => {
+              {filteredReservation.map((reservation: any) => {
                 return reservation.eventReservation === "reserved" ? (
                   <TableRow reservation={reservation} rowLabel3="Reserved" />
                 ) : (
@@ -35,7 +37,7 @@ const EventHistoryModal = (props: EventHistoryModalProps) => {
 
           <TabPaneStyle tab="Reserved" key="2">
             <div className="table-wrapper">
-              {reservations.map((reservation: any) => {
+              {filteredReservation.map((reservation: any) => {
                 return reservation.eventReservation === "reserved" ? (
                   <TableRow reservation={reservation} rowLabel3="Reserved" />
                 ) : null;
@@ -45,7 +47,7 @@ const EventHistoryModal = (props: EventHistoryModalProps) => {
 
           <TabPaneStyle tab="Cancelled" key="3">
             <div className="table-wrapper">
-              {reservations.map((reservation: any) => {
+              {filteredReservation.map((reservation: any) => {
                 return reservation.eventReservation === "cancelled" ? (
                   <TableRow reservation={reservation} rowLabel3="Cancelled" />
                 ) : null;
