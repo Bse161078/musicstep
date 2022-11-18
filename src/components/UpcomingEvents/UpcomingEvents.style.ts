@@ -39,20 +39,29 @@ export const TabRowStyle = styled.div`
 
   @media (max-width: 1760px) {
     display: grid;
-    grid-template: auto / 20% 12% 18% 10% 25%;
+    grid-template: auto / 15% 12% 18% 10% 25%;
   }
   @media (max-width: 1500px) {
     display: grid;
-    grid-template: auto / 20% 15% 25% 10% 21%;
+    grid-gap: 10px;
+    grid-template: auto / 15% 15% 25% 12% 21%;
   }
   @media (max-width: 1250px) {
     display: grid;
-    grid-template-columns: 25% 17% 30% auto auto;
+      grid-gap: 10px;
+    grid-template-columns: 20% 17% 30% auto auto;
   }
   @media (max-width: 1024px) {
     display: grid;
     padding-right:10px;
-    grid-template-columns: 30% 20% 30% auto auto;
+      grid-gap: 5px;
+    grid-template-columns: 20% 22% 30% auto auto;
+  }
+  @media (max-width: 768px) {
+    display: grid;
+    padding-right:10px;
+      grid-gap: 5px;
+    grid-template-columns: 25% 25% 30% auto auto;
   }
 
   .time {

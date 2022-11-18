@@ -8,7 +8,7 @@ export const sidebarItems = [
     url: "/admin/basic-info",
   },
   {
-    name: "Events Managment",
+    name: "Events Management",
     url: "/admin/events-management",
   },
   // {

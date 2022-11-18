@@ -32,6 +32,8 @@ let formikForm: any;
 const staticGenresList = ["Alternative", "Blues", "Classical", "Country/Folk", "Dance/Electronic", "Hip-Hop/Rap", "Jazz", "Latin", "Metal", "New Age",
     "Pop", "R&B", "Reggae", "Rock", "World"];
 
+const staticAgeRestrictionList=["18+","21+","All ages"]
+
 const SubmitEvent = (props: SubmitEventStep1Props) => {
     const {setCurrentStep, setEventData, eventData} = props;
     const [value, onChange] = useState("10:00");
@@ -86,7 +88,8 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
         eventPhotoSameAsOrganizerPhoto:
         EventStateContext.state.eventPhotoSameAsOrganizerPhoto,
         additionalPhotos: EventStateContext.state.additionalPhotos,
-        genre:EventStateContext.state.genre
+        genre: EventStateContext.state.genre,
+        age_restriction:EventStateContext.state.age_restriction
     });
 
     ////////////// countrystatecity config ///////////////////////////
@@ -299,6 +302,7 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
         return venue.name + " - " + venue.location.address;
     });
 
+    console.log("event context = ", EventStateContext)
 
     return (
         <SubmitEventStep1Style>
@@ -471,10 +475,25 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                   setFieldValue={form.setFieldValue}
                   values={genreList}
               />
-                            {form.touched.genre && form.errors.genre  && (
+                            {form.touched.genre && form.errors.genre && (
                                 <span className="error-message">{form.errors.genre}</span>
                             )}
             </span>
+                        <span>
+              <SelectBox
+                  name="age_restriction"
+                  label="Age requirement"
+                  width="large"
+                  defaultValue="Select"
+                  options={staticAgeRestrictionList}
+                  setFieldValue={form.setFieldValue}
+                  values={staticAgeRestrictionList}
+              />
+                            {form.touched.genre && form.errors.genre && (
+                                <span className="error-message">{form.errors.genre}</span>
+                            )}
+            </span>
+
                         <div className="fourth-row-wrapper">
                             {/* <InputBox
                 label="Event Description"

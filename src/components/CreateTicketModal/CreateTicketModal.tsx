@@ -149,7 +149,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                     <div className="secondrow-leftsection">
                       <InputBox
                         label="Retail Price Equivalent for this type of seat or spot"
-                        placeholder="$50"
+                        placeholder="50"
                         name="price"
                         width="660px"
                         type="number"

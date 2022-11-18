@@ -11,19 +11,11 @@ type UploadFileProps = {
 };
 
 const UploadFile = (props: UploadFileProps) => {
+    console.log("props = ",props)
     return (
         <UploadFileStyle
             src={
-                props.buttonType === "large"
-                    ? !props.previewProfileImage ||
-                    props.previewProfileImage?.includes("null") ||
-                    props.previewProfileImage?.includes("undefined")
-                    ? "/images/group69.svg"
-                    : props.previewProfileImage
-                    : props.previewProfileImage?.includes("null") ||
-                    props.previewProfileImage?.includes("undefined")
-                    ? "/images/icons/drag-drop-icon.svg"
-                    : props.previewProfileImage
+                (!props.previewProfileImage || props.previewProfileImage=="null")? "/images/icons/drag-drop-icon.svg" : props.previewProfileImage
             }
             alt="drag drop"
             width={props.width}

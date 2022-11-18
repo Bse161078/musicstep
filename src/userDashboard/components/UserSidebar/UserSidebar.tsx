@@ -159,7 +159,7 @@ const UserSidebar = ({
                 <div className="divider"/>
                 <span onClick={() => setPeopelWithMutualFreindsModalVisible(true)}>
           <HeadingTab
-              heading="People With Mutual Friends"
+              heading="Mutual Events History"
               icon={
                   <img src="/images/icons/mutual-friends-icon.svg" alt="icon"/>
               }

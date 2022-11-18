@@ -70,7 +70,7 @@ const VenueCard = ({ venue, subscribtionCredit }: any) => {
         />
         <div className="venue-details">
           {/* <h3 className="top-heading">DOLORES POUROS</h3> */}
-          <h4 className="heading">{venue.name+"asad"}</h4>
+          <h4 className="heading">{venue.name}</h4>
           <p className="address">{venue["location"].address}</p>
 
           <div className="row">

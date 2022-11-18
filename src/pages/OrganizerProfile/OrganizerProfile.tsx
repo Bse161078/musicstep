@@ -118,6 +118,7 @@ export default function VenueDetails() {
         }
     }
 
+    console.log("organizerDetail = ",organizerDetail,"   ",venueDetail)
 
     return (
         <>

@@ -37,6 +37,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         logo: null,
         coverPhoto: null,
         additionalPhotos: null,
+        code:""
     });
 
     //Ref
@@ -51,12 +52,12 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
     const [policiesState, setPoliciesState] = useState([...policies]);
 
     const [previewLogoImage, setLogoImage] = useState<string>(
-        process.env.REACT_APP_BASE_URL + "/images/" + "null"
+         "null"
         // state.data.imageUrl
     );
 
     const [previewCoverImage, setCoverImage] = useState<string>(
-        process.env.REACT_APP_BASE_URL + "/images/" + "null"
+         "null"
         // state.data.imageUrl
     );
     const [previewAdditionalImage, setAdditionalImage] = useState<[]>([]);
@@ -68,7 +69,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
             setLogoImage(process.env.REACT_APP_BASE_URL + "/images/" + organizerProfile.logoUrl);
             setCoverImage(process.env.REACT_APP_BASE_URL + "/images/" + organizerProfile.coverPhotoUrl);
             const photos: [] = organizerProfile.additionalPhotosUrls.map((photo: any) => process.env.REACT_APP_BASE_URL + "/images/" + photo);
-
+            console.log("organizerProfile  = ",organizerProfile)
             setAdditionalImage(photos);
 
             const tempPoliciesState = policiesState.map((item) => {
@@ -92,6 +93,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                 twitter: organizerProfile.socialMediaAndMarketingLinks?.twitter,
                 instagram: organizerProfile.socialMediaAndMarketingLinks?.instagram,
                 youtube: organizerProfile.socialMediaAndMarketingLinks?.youtube,
+                code: organizerProfile.socialMediaAndMarketingLinks?.countryCode,
                 logo: {} as any,
                 coverPhoto: {} as any,
                 additionalPhotos: null,
@@ -320,6 +322,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         });
 
         const socialMediaAndMarketingLinks: any = {
+            countryCode:e.code,
             phoneNumber: e.phoneNumber,
             twitter: e.twitter,
             facebook: e.facebook,
@@ -364,6 +367,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                 setMessage("Organizer created successfully");
                 setHeading("Success");
                 setIsLoading(false);
+
             }
         } else {
             var body: any = {
@@ -391,7 +395,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                 setMessage("Organizer updated successfully");
                 setHeading("Success");
                 setIsLoading(false);
-
+                setCurrentPage("preview")
                 // if (!isSuccessModalVisible)
             }
         }
@@ -599,7 +603,10 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                                         tagType="Recomended"
                                     />
                                     <div className="socialLinks-wrapper">
-                                        <InputBox name="phoneNumber" placeholder="+14166966270" label="Phone Number"/>
+                                        <div className={"phone-number"}>
+                                            <InputBox name="code" placeholder="+1" label="Country Code"/>
+                                            <InputBox name="phoneNumber" placeholder="999-999-9999" label="Phone Number"/>
+                                        </div>
                                         <InputBox name="facebook" placeholder="https://www.facebook.com/organizer"
                                                   label="Facebook"/>
                                         <InputBox name="instagram"

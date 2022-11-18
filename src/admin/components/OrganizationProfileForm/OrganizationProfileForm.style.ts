@@ -75,7 +75,16 @@ export const OrganizationProfileFormStyle = styled.main`
     display: grid;
     grid-gap: 30px;
     grid-template-columns: 1fr 1fr;
+    
+    .phone-number {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: 0.5fr 1fr;
+    align-items:flex-end;
+    }
+    
   }
+ 
   .policy-list {
     display: grid;
     grid-template-columns: 1fr 1fr;

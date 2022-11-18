@@ -240,7 +240,6 @@ const RoutesList = (props: any) => {
                         </AuthenticatedRoute>
                     )}
                 />
-                admin/basic-info
 
                 <Route
                     path="/admin/basic-info"

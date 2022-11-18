@@ -84,6 +84,12 @@ const InputBox = (props: any) => {
           </span>
             )}
 
+            {props.startText === "$" &&
+            (
+                <span style={{position:"relative"}}>
+                    <h2 style={{position:"absolute",top:-40,left:"10px"}}>$</h2></span>
+            )}
+
             {(meta.touched && meta.error) || props.error ? (
                 <TextFieldErrorStyle>{meta.error || props.error}</TextFieldErrorStyle>
             ) : null}

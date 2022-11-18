@@ -40,6 +40,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
                 ...ticket,
                 availableTickets: ticket.numberOfTickets,
                 bookedTickets: 0,
+                age:eventData.age_restriction
             };
         });
         // setTickets(tempTickets);
@@ -65,7 +66,6 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
         bodyData.append("tickets", JSON.stringify(formatedTickets));
         bodyData.append("eventDescription", eventData.eventDescription);
         bodyData.append("genre", eventData.genre);
-
         if (eventData.additionalPhotos) {
             const files = eventData.additionalPhotos;
             for (let i = 0; i < files.length; i++) {

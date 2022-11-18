@@ -39,6 +39,12 @@ export const InputBoxStyle = styled.div`
     top: 33px;
     left: 10px;
   }
+  
+  .placeholder-text {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+  }
 
   .input-label {
     font-size: 14px;

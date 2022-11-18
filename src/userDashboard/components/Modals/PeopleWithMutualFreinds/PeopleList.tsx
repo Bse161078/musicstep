@@ -16,7 +16,9 @@ export const PeopleList = () => {
         try {
             setLoading(true);
             const response = await axios.get("/v1/reservation/mutual", {headers: {Authorization: `Bearer ${state.authToken}`}});
-            setReservations(response.data.data);
+            let users=response.data.data;
+            users=users.filter((user:any)=>user.publicInfo && user.publicInfo.isPublicInfo)
+            setReservations(users);
             setLoading(false);
         } catch (e) {
             setLoading(false);
@@ -35,7 +37,7 @@ export const PeopleList = () => {
             imageLink={`${reservation.imageUrl && (reservation.imageUrl).length>0?
                 process.env.REACT_APP_BASE_URL + "/images/" + reservation.imageUrl : "/images/person.svg"}`}
             recentEventName={reservation.recentEvent}
-            nextEventName={reservation.nextEvent}
+            nextEventName={reservation.publicNextReservation?reservation.nextEvent:""}
             user={reservation}
         />
     )

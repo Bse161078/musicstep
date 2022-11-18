@@ -55,7 +55,7 @@ const ProfileModal = (props: ProfileModalProps) => {
                         <>
                             <span className="text-wrapper">
                 <p className="title">Next Event: </p>
-                <p>{user && user.nextEvent}</p>
+                <p>{user && user.publicNextReservation && user.nextEvent ? user.nextEvent:"Not found"}</p>
               </span>
                         </>
                     )}
