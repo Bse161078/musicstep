@@ -29,7 +29,7 @@ const PersonListItem = (props: PersonListItemProps) => {
             <PersonListItemStyle>
                 {listType === 'normal' ? (
                     <div className="simple-list-wrapper">
-                        <img src={imageLink} alt="" className="person-image"/>
+                        <img src={imageLink} alt="" className="person-image" style={{borderRadius: "50%", border: "1px solid black"}}/>
                         <p className="person-name">{personName}</p>
                     </div>
                 ) : (
