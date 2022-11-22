@@ -69,7 +69,6 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
             setLogoImage(process.env.REACT_APP_BASE_URL + "/images/" + organizerProfile.logoUrl);
             setCoverImage(process.env.REACT_APP_BASE_URL + "/images/" + organizerProfile.coverPhotoUrl);
             const photos: [] = organizerProfile.additionalPhotosUrls.map((photo: any) => process.env.REACT_APP_BASE_URL + "/images/" + photo);
-            console.log("organizerProfile  = ",organizerProfile)
             setAdditionalImage(photos);
 
             const tempPoliciesState = policiesState.map((item) => {

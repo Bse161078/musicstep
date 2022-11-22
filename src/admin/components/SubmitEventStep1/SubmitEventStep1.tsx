@@ -302,7 +302,6 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
         return venue.name + " - " + venue.location.address;
     });
 
-    console.log("event context = ", EventStateContext)
 
     return (
         <SubmitEventStep1Style>

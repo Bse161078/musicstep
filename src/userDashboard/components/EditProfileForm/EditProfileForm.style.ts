@@ -5,6 +5,7 @@ export const EditProfileFormStyle = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+   
     @media (max-width: 1240px) {
       display: flex;
       flex-direction: column;
@@ -36,6 +37,18 @@ export const EditProfileFormStyle = styled.div`
      .custom-columns-2 {
       display: grid;
       grid-template-columns: 300px 300px;
+      grid-column: 1/2;
+      grid-gap: 10px;
+
+      @media (max-width: 950px) {
+        grid-template-columns: 1fr;
+        grid-column: unset;
+      }
+    }
+    
+    .custom-columns-email {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
       grid-column: 1/2;
       grid-gap: 10px;
 

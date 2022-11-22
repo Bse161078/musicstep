@@ -37,7 +37,7 @@ export default function ExploreVenue() {
         credits: 0,
     });
     const [latlng, setLatlng] = useState<any>(null)
-
+    const [isfilterApply,setIsFilterApply]=useState(false);
     const [subscribtion, setSubscribtion] = useState({
         active: false,
         status: "",
@@ -58,6 +58,12 @@ export default function ExploreVenue() {
         getFilters();
         getEvents();
         getUser();
+
+        const locallyStoredUser = JSON.parse(localStorage.getItem("data") || "{}");
+        const isFilterApply = locallyStoredUser.preferences && (locallyStoredUser.preferences).length>0;
+        setIsFilterApply(isFilterApply);
+
+
     }, []);
 
 
@@ -220,7 +226,6 @@ export default function ExploreVenue() {
         </GoogleMap>
     )
 
-
     return (
         <>
             <NavbarWithSearch
@@ -248,6 +253,7 @@ export default function ExploreVenue() {
                             setLoading={setLoading}
                             setVenues={setVenues}
                             getEvents={getEvents}
+                            setIsFilterApply={setIsFilterApply}
                             getFilters={getFilters}
                         />
                     </div>
@@ -271,7 +277,7 @@ export default function ExploreVenue() {
                                             textAlign: "center",
                                         }}
                                     >
-                                        No Event or Venue to explore
+                                        {isfilterApply || (state.search && (state.search).length>0) ?"Hm…no events to show here. Please adjust your search":"No Event or Venue to explore"}
                                     </h1>
                                 )
                             ) : (
@@ -283,7 +289,7 @@ export default function ExploreVenue() {
                                         textAlign: "center",
                                     }}
                                 >
-                                    No Event or Venue to explore
+                                    {isfilterApply || (state.search && (state.search).length>0) ?"Hm…no events to show here. Please adjust your search":"No Event or Venue to explore"}
                                 </h1>
                             )}
                             {/* <VenueCard pageUrl="/explore-venue/organizer-profile" />

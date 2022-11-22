@@ -128,7 +128,6 @@ const AddVenueProfileForm = () => {
     const handleLogoUpload = async (event: any, form: any) => {
         // Sceniro 1:Add organizer
         const imageType = event.target.files[0].type;
-        console.log("imageType = ", imageType)
         if (
             imageType === "image/jpeg" ||
             imageType === "image/png" ||
@@ -144,7 +143,6 @@ const AddVenueProfileForm = () => {
                     const imagePreview: any = reader.result;
                     setLogoImage(imagePreview);
                     setLoading(false);
-                    console.log("imageType = ", imagePreview)
                 };
                 reader.readAsDataURL(file);
             }

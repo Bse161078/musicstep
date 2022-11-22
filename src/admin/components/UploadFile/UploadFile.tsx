@@ -11,7 +11,6 @@ type UploadFileProps = {
 };
 
 const UploadFile = (props: UploadFileProps) => {
-    console.log("props = ",props)
     return (
         <UploadFileStyle
             src={

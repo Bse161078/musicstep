@@ -12,7 +12,7 @@ import {useLoginContext} from "../../context/authenticationContext";
 import {BillingInformationFormStyle} from "../../userDashboard/components/BillingInformationForm/BillingInformationForm.style";
 
 export const DropdownsList = (props: any) => {
-    const {filter, setVenues, setLoading, getEvents, getFilters} = props;
+    const {filter, setVenues, setLoading, getEvents, getFilters,setIsFilterApply} = props;
     const [clear, setClear] = useState(false);
     const [selectedFilter, setSelectedFilter] = useState<any>(null);
     const {state, dispatch} = useLoginContext();
@@ -78,6 +78,7 @@ export const DropdownsList = (props: any) => {
     useEffect(()=>{
         if(selectedFilter){
             handleFilter(selectedFilter);
+            setIsFilterApply(true)
         }
     },[selectedFilter]);
 
