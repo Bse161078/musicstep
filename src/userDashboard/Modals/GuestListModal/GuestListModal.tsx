@@ -44,8 +44,8 @@ const GuestListModal = (props: InviteModalProps) => {
     const container=reservations.map((reservation:any)=>
         <PersonListItem
             personName={reservation.user.firstName+' '+reservation.user.lastName}
-            imageLink={`${reservation.imageUrl && (reservation.imageUrl).length>0?
-                process.env.REACT_APP_BASE_URL + "/images/" + reservation.imageUrl : "/images/person.svg"}`}
+            imageLink={`${reservation.user.imageUrl && (reservation.user.imageUrl).length>0?
+                process.env.REACT_APP_BASE_URL + "/images/" + reservation.user.imageUrl : "/images/person.svg"}`}
             recentEventName=""
             nextEventName=""
             listType="normal"
