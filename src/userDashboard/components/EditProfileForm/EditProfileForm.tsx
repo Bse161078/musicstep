@@ -1,6 +1,6 @@
 import axios from "axios";
 import {Form, Formik} from "formik";
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {InputBox, InputCheckbox, MessageModal} from "../../../components";
 import {useLoginContext} from "../../../context/authenticationContext";
 import {OutlineButtonStyle} from "../../../styles/Common.style";
@@ -10,6 +10,8 @@ import {PeopleWithMutualFreindsModal} from "../Modals";
 import {BasicInfoFormValidationSchema} from "./validation";
 import Loading from "../../../components/Loading/Loading";
 import {parsePhoneNumber} from "react-phone-number-input";
+import LabelWithTag from "../../../admin/components/LabelWithTag/LabelWithTag";
+import {TextFieldErrorStyle} from "../../../components/InputBox/InputBox.style";
 
 const EditProfileForm = React.forwardRef((props: any, ref: any) => {
     // const { textInput } = props;
@@ -24,6 +26,12 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
     const [previewProfileImage, setPreviewProfileImage] = useState<string>(
         process.env.REACT_APP_BASE_URL + "/images/" + userData.imageUrl
     );
+    const [bio,setBio]=useState<any>({value:"",showError:false,error:"Venue bio is required"});
+
+    useEffect(()=>{
+        setBio({value:userData.publicInfo && userData.publicInfo.bio,showError:false,error:"Venue bio is required"})
+    },[])
+
 
     const uploadProfileImage = async (imagePreview: any) => {
         if (imagePreview) {
@@ -77,8 +85,11 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
         }
     };
     const handleEditProfile = async (e: any) => {
+        if((bio.value).trim().length<1){
+            setBio({showError:true,value:"",error:"Bio is required"});
+            return;
+        }
         setLoading(true);
-
 
         const bodyData: any = {
             firstName: e.firstName,
@@ -88,7 +99,7 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
             phoneNumber: `${e.countryCode}${e.phone}`,
             isPhoneNumberPublic: e.isPhoneNumberPublic,
             isPublicInfo: e.isPublicInfo,
-            bio: e.bio,
+            bio: bio.value,
             instagram: e.instagram,
             facebook: e.facebook,
             twitter: e.twitter,
@@ -114,6 +125,7 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
             });
         }
     };
+
 
     //const country = parsePhoneNumber("+" + userData.phoneNumber)?.country;
     return (
@@ -169,13 +181,28 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
                                     </div>
 
                                     <div className="public-info">
-                                        <InputBox
-                                            label="Bio"
-                                            name="bio"
-                                            radiusType="27px"
-                                            height="74px"
-                                            placeholder=""
-                                        />
+                                        <label style={{fontSize:"14px",color:"#0c0c0c",fontWeight:"500",marginLeft:"15px",textAlign:"left"}}>
+                                            Bio
+                                        </label>
+                                        <div>
+                                            <textarea
+                                                style={{width: "100%", marginTop: 10}}
+                                                placeholder="Enter venue bio."
+                                                className="customTextare"
+                                                name="venueBio"
+                                                value={bio.value}
+                                                onChange={(e) => {
+                                                    if((e.target.value).length>0){
+                                                        setBio({value:e.target.value,showError:false,error:bio.error});
+                                                    }else{
+                                                        setBio({value:e.target.value})
+                                                    }
+                                                }}
+                                            ></textarea>
+                                            {bio.showError ? (
+                                                <TextFieldErrorStyle>{bio.error}</TextFieldErrorStyle>
+                                            ) : null}
+                                        </div>
                                     </div>
 
                                     {/*<InputCheckbox*/}
@@ -205,55 +232,54 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
                                                 />
                                             </h1>
                                             <span className="red-text" style={{paddingLeft: 10}}>
-                        Be included on
-                        <strong> Guest Lists</strong>)
+                        (Turning off this will not show your profile publicly in
+                        <strong> "People With Mutual Events"</strong>
                       </span>
-                                        </div>
-                                        <p style={{color: "#D8D8D8"}}>
-                                            By checking this box, members will be able to see your name and picture
-                                            displayed in the Guest List of events you make a reservation to.
-                                        </p>
-                                    </div>
-
-                                    <div className="public-info column-3">
-                                        <InputBox
-                                            label="Instagram"
-                                            name="instagram"
-                                            placeholder="@username"
-                                        />
-                                        <InputBox
-                                            label="Facebook"
-                                            placeholder="@username"
-                                            name="facebook"
-                                        />
-                                        <InputBox
-                                            label="Twitter"
-                                            placeholder="@username"
-                                            name="twitter"
-                                        />
-                                    </div>
-                                    <div className="public-info">
-                                        <h1>
-                                            <InputCheckbox
-                                                name="publicNextReservation"
-                                                onClick={() => {
-                                                    form.setFieldValue(
-                                                        "publicNextReservation",
-                                                        !form.values.publicNextReservation
-                                                    );
-                                                }}
-                                                className=""
-                                                label="Public My Next Reservation"
-                                                isCorrectOption={form.values.publicNextReservation}
-                                            />
-                                        </h1>
-                                        <p>
-                                            By checking this public will able see your next
-                                            reservation in People With Mutual Events. Also your name &
-                                            picture will be displayed in Guest List of that event.
-                                        </p>
-                                    </div>
-                                </div>
+                    </div>
+                    <p>
+                      Your name, profile picture & phone number include in your
+                      public info as well. Public info will be used for{" "}
+                      <strong>"People With Mutual Events"</strong>, where other
+                      people will able to see your profile.
+                    </p>
+                  </div>
+                  <div className="public-info column-3">
+                    <InputBox
+                      label="Instagram"
+                      name="instagram"
+                      placeholder="@username"
+                    />
+                    <InputBox
+                      label="Facebook"
+                      placeholder="@username"
+                      name="facebook"
+                    />
+                    <InputBox
+                      label="Twitter"
+                      placeholder="@username"
+                      name="twitter"
+                    />
+                  </div>
+                  <div className="public-info">
+                    <h1>
+                      <InputCheckbox
+                        name="publicNextReservation"
+                        onClick={() => {
+                          form.setFieldValue(
+                            "publicNextReservation",
+                            !form.values.publicNextReservation
+                          );
+                        }}
+                        className=""
+                        label="Be included on Guest Lists"
+                        isCorrectOption={form.values.publicNextReservation}
+                      />
+                    </h1>
+                    <p>
+                        By checking this box, members will be able to see your name and picture displayed in the Guest List of events you make a reservation to.
+                    </p>
+                  </div>
+                </div>
 
                                 <div className="right-side">
                                     <div className="avatar-wrapper">

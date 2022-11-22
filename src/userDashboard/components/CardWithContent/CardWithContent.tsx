@@ -10,6 +10,7 @@ import {useHistory} from "react-router";
 import {Grid} from "@mui/material";
 import {EventDetailsModal} from "../../../components/EventDetailsModal";
 import QrCodeModal from "../../../admin/components/Modals/QrCode/QrCodeModal";
+import {PeopleWithMutualFreindsModal} from "../Modals/PeopleWithMutualFreinds";
 
 type CardWithContentProps = {
     heading: string;
@@ -28,6 +29,8 @@ type CardWithContentProps = {
 const CardWithContent = (props: CardWithContentProps) => {
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [isQrCodeModalVisible, setIsQrCodeModalVisible] = useState(false);
+    const [isPeopelWithMutualFreindsModalVisible, setPeopelWithMutualFreindsModalVisible,] = useState(false);
+    const [isGuestVisible, setIsGuestVisible,] = useState(false);
 
     const {
         heading,
@@ -78,7 +81,6 @@ const CardWithContent = (props: CardWithContentProps) => {
     const venue=reservation && reservation.venueInfo && (reservation.venueInfo).length>0 && reservation.venueInfo[0];
 
 
-
     return (
         <>
             <CardWithContentStyle>
@@ -120,12 +122,21 @@ const CardWithContent = (props: CardWithContentProps) => {
                             >QR Code</FilledButtonStyle>
                         </Grid>
                     </Grid>
+                    <Grid container justifyContent={"flex-end"} style={{marginTop:"10px"}}>
+                        <Grid item onClick={(e)=>setIsGuestVisible(true)}>
+                            <p><a style={{color:'#100840'}}>(Click to View Guest List)</a></p>
+                        </Grid>
+                    </Grid>
                 </Grid>
             </CardWithContentStyle>
-            {/*<GuestListModal*/}
-                {/*isModalVisible={isModalVisible}*/}
-                {/*setIsModalVisible={setIsModalVisible}*/}
-            {/*/>*/}
+            {
+                isGuestVisible &&
+                <GuestListModal
+                    isModalVisible={isGuestVisible}
+                    setIsModalVisible={setIsGuestVisible}
+                    event={event._id}
+                />
+            }
 
             <QrCodeModal
                 event={event}
@@ -142,6 +153,15 @@ const CardWithContent = (props: CardWithContentProps) => {
                 subscribtionCredit={null}
                 venue={venue}
             />
+
+            {
+                isPeopelWithMutualFreindsModalVisible &&
+                <PeopleWithMutualFreindsModal
+                    isModalVisible={isPeopelWithMutualFreindsModalVisible}
+                    setIsModalVisible={setPeopelWithMutualFreindsModalVisible}
+                />
+            }
+
 
         </>
     );

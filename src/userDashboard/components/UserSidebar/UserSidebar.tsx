@@ -44,10 +44,7 @@ const UserSidebar = ({
     const [isNotificationModalVisible, setNotificationModalVisible] = useState(
         false
     );
-    const [
-        isPeopelWithMutualFreindsModalVisible,
-        setPeopelWithMutualFreindsModalVisible,
-    ] = useState(false);
+    const [isPeopelWithMutualFreindsModalVisible, setPeopelWithMutualFreindsModalVisible,] = useState(false);
     const history = useHistory();
 
     const handleModalCancelClick = () => {

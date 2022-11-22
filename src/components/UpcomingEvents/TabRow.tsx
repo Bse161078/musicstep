@@ -79,12 +79,15 @@ export const TabRow = (props: TabRowProps) => {
                     <p className="genre" style={{wordBreak:'break-word'}}>{event.country  && (event.country)}</p>
 
                 </div>
-                <div className="time">
-                    <p className="person-number">
-                        <img alt="logout" src="/images/icons/profile.svg"/>
-                        <span>{reservation}</span>
-                    </p>
-                </div>
+                {
+                    buttonText!=="Reservation Full" &&
+                    <div className="time">
+                        <p className="person-number">
+                            <img alt="logout" src="/images/icons/profile.svg"/>
+                            <span>{reservation}</span>
+                        </p>
+                    </div>
+                }
                 {buttonType === "filled" ? (
                     <div>
                         {!fromPartner &&

@@ -176,6 +176,7 @@ export default function UserHome() {
     const [showPricing, setShowPricing] = useState(false);
     const [refreshSuggestedEvents, setRefreshSuggestedEvents] = useState(0);
     const [reservationStats, setReservationStats] = useState(null);
+    const [latlng, setLatlng] = useState<any>(null)
 
 
 
@@ -225,6 +226,11 @@ export default function UserHome() {
 
 
     useEffect(() => {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            if (position) {
+                setLatlng({latitude: position.coords.latitude, longitude: position.coords.longitude})
+            }
+        });
         getUser();
         getReservation();
     }, []);
@@ -280,13 +286,17 @@ export default function UserHome() {
     }
 
 
+
+
     const isPortrait=window.matchMedia("(orientation: portrait)").matches;
 
     return (
         <>
             {showPricing &&
             <Pricing showPricing={showPricing} setShowPricing={setShowPricing} isCreateSubscription={true}/>}
-            <NavbarWithSearch userCredit={user.credits}/>
+            <NavbarWithSearch
+                navbar_search={state.search}
+                userCredit={user.credits}/>
             {isLoading && <Loading/>}
             {/*{!subscription ?*/}
             {/*<ExploreVenueStyle>*/}

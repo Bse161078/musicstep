@@ -57,7 +57,7 @@ const DashboardHeader = (props: DashboardHeaderProps) => {
           <h1 className="heading">{heading}</h1>
           <p className="description">{description}</p>
         </div>
-        <div className="button-wrapper" style={{marginRight:"10px"}}>
+        <div className="button-wrapper" style={{marginRight:"10px",marginTop:"10px"}}>
           {handleCancelClick && heading!=="Preview Organization"  && (
             <OutlineButtonStyle
               onClick={handleCancelClick}

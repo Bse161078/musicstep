@@ -17,7 +17,8 @@ export const PeopleList = () => {
             setLoading(true);
             const response = await axios.get("/v1/reservation/mutual", {headers: {Authorization: `Bearer ${state.authToken}`}});
             let users=response.data.data;
-            users=users.filter((user:any)=>user.publicInfo && user.publicInfo.isPublicInfo)
+            const ownUser=state.data;
+            users=users.filter((user:any)=>user.publicInfo && user.publicInfo.isPublicInfo && ownUser.id!==user._id)
             setReservations(users);
             setLoading(false);
         } catch (e) {

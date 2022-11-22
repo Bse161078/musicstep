@@ -105,7 +105,7 @@ const SelectWithInput = ({placeholder, setSearch, search,navbar_search,latlng,re
                             {address.locality != '' && <LocationSelectBox
                                 name={address.locality != '' && address.locality + " , " + address.countryCode + " , " + address.countryName}
                                 options={menuItem} values={menuItem}
-                                handleSelectBoxChange={(value:any)=>refreshNearbyVenues()}
+                                handleSelectBoxChange={(value:any)=>refreshNearbyVenues && refreshNearbyVenues()}
                             />}
 
                             {/* {/* <p>{address.locality+ address.countryCode+ address.countryName}</p> */}
