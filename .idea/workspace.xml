@@ -4,21 +4,6 @@
     <list default="true" id="4f900495-2d01-4c96-a493-d43d1865075e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.a416d9a9.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.a416d9a9.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/DashboardHeader/DashboardHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/DashboardHeader/DashboardHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SelectWithInput/SelectWithInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SelectWithInput/SelectWithInput.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UpcomingEvents/TabRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UpcomingEvents/TabRow.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/Modals/GuestListModal/GuestListModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/Modals/GuestListModal/GuestListModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/CardWithContent/CardWithContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/CardWithContent/CardWithContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/Modals/PeopleWithMutualFreinds/PeopleList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/Modals/PeopleWithMutualFreinds/PeopleList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/Modals/PeopleWithMutualFreinds/PeopleWithMutualFreindsModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/Modals/PeopleWithMutualFreinds/PeopleWithMutualFreindsModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/UserSidebar/UserSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/UserSidebar/UserSidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -128,11 +113,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="40" lean-forward="true" selection-start-column="40" selection-end-column="40" />
+              <caret column="51" selection-start-column="51" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -141,7 +126,7 @@
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
-              <caret line="265" column="36" lean-forward="true" selection-start-line="265" selection-start-column="36" selection-end-line="265" selection-end-column="36" />
+              <caret line="265" column="36" selection-start-line="265" selection-start-column="36" selection-end-line="265" selection-end-column="36" />
               <folding>
                 <element signature="e#219#612#0" expanded="true" />
               </folding>
@@ -176,7 +161,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/UpcomingEvents/TabRow.tsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
@@ -289,13 +274,13 @@
         <option value="$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.tsx" />
         <option value="$PROJECT_DIR$/src/admin/components/DashboardHeader/DashboardHeader.tsx" />
         <option value="$PROJECT_DIR$/src/userDashboard/components/UserSidebar/UserSidebar.tsx" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/userDashboard/components/Modals/PeopleWithMutualFreinds/PeopleWithMutualFreindsModal.tsx" />
         <option value="$PROJECT_DIR$/src/userDashboard/components/CardWithContent/CardWithContent.tsx" />
         <option value="$PROJECT_DIR$/src/userDashboard/components/Modals/PeopleWithMutualFreinds/PeopleList.tsx" />
         <option value="$PROJECT_DIR$/src/userDashboard/Modals/GuestListModal/GuestListModal.tsx" />
         <option value="$PROJECT_DIR$/src/components/VenueCard/VenueCard.tsx" />
         <option value="$PROJECT_DIR$/src/components/UpcomingEvents/TabRow.tsx" />
+        <option value="$PROJECT_DIR$/.env" />
       </list>
     </option>
   </component>
@@ -370,7 +355,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1669139867153" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1669140433963" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="ts.external.directory.path" value="D:\practice\musicstep\node_modules\typescript\lib" />
@@ -640,12 +625,12 @@
       <workItem from="1669081958240" duration="5860000" />
       <workItem from="1669104105924" duration="350000" />
       <workItem from="1669107641832" duration="3232000" />
-      <workItem from="1669132938132" duration="6143000" />
+      <workItem from="1669132938132" duration="6742000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="803309000" />
+    <option name="totallyTimeSpent" value="803908000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
@@ -669,7 +654,7 @@
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3295129" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" visible="true" weight="0.24928367" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" visible="true" weight="0.24928367" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067115" side_tool="true" weight="0.256447" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -984,13 +969,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="40" lean-forward="true" selection-start-column="40" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/userDashboard/components/Modals/PeopleWithMutualFreinds/PeopleWithMutualFreindsModal.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1043,7 +1021,7 @@
     <entry file="file://$PROJECT_DIR$/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="265" column="36" lean-forward="true" selection-start-line="265" selection-start-column="36" selection-end-line="265" selection-end-column="36" />
+          <caret line="265" column="36" selection-start-line="265" selection-start-column="36" selection-end-line="265" selection-end-column="36" />
           <folding>
             <element signature="e#219#612#0" expanded="true" />
           </folding>
@@ -1075,6 +1053,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="82" column="31" selection-start-line="82" selection-start-column="31" selection-end-line="82" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="51" selection-start-column="51" selection-end-column="51" />
         </state>
       </provider>
     </entry>
