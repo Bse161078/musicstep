@@ -7,7 +7,6 @@ import {
 import { PartnerSignupForm } from "../../components";
 const PartnerSignup = () => {
   const history = useHistory();
-  // console.log(history.location.pathname);
 
   return (
     <StartTrialWrapper
