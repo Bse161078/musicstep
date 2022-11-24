@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150" height="150" viewBox="0 0 150 150">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_474" data-name="Rectangle 474" width="150" height="150" transform="translate(885 430)" fill="#100840" stroke="#fff" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_32" data-name="Mask Group 32" transform="translate(-885 -430)" clip-path="url(#clip-path)">
+    <g id="exclamation-mark-inside-a-circle" transform="translate(884.997 430)">
+      <g id="c129_exclamation">
+        <path id="Path_1968" data-name="Path 1968" d="M75.008,0A75,75,0,1,0,150,74.987,75,75,0,0,0,75.008,0Zm0,142.318a67.324,67.324,0,1,1,67.316-67.337A67.322,67.322,0,0,1,75.008,142.318Z" fill="#100840"/>
+        <path id="Path_1969" data-name="Path 1969" d="M83.569,92.039l3.283-67.477H63.319l3.272,67.477Z" fill="#100840"/>
+        <path id="Path_1970" data-name="Path 1970" d="M75.089,99.485c-7.891,0-13.411,5.52-13.411,13.55,0,7.741,5.359,13.561,13.11,13.561h.3c8.041,0,13.244-5.82,13.244-13.561C88.193,105,82.974,99.485,75.089,99.485Z" fill="#100840"/>
+      </g>
+    </g>
+  </g>
+</svg>

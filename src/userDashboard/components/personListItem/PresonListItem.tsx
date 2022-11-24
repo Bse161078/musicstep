@@ -10,6 +10,7 @@ type PersonListItemProps = {
     listType?: string
     nextEventDisable?: boolean
     user?: any;
+    refreshApi?:any
 }
 
 const PersonListItem = (props: PersonListItemProps) => {
@@ -69,6 +70,7 @@ const PersonListItem = (props: PersonListItemProps) => {
             <ProfileModal
                 isModalVisible={isProfileModalVisible}
                 user={user}
+                refreshApi={props.refreshApi}
                 setIsModalVisible={setIsProfileModalVisible}
             />
         </>

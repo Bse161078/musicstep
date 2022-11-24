@@ -41,7 +41,7 @@ export const TabRow = (props: TabRowProps) => {
 
     let hours = moment(event.city).diff(event.state, "hours");
     let minutes = (moment(event.city).diff(event.state, "minutes") % 60);
-    let daysLeft = moment(event.city).diff(moment(new Date()), "days");
+    let daysLeft = moment(event.state).diff(moment(new Date()), "days");
     let daysLeftLabel = "";
 
     if (daysLeft === 0) {
@@ -52,6 +52,9 @@ export const TabRow = (props: TabRowProps) => {
         daysLeftLabel = "in " + daysLeft + " days"
     }
 
+    if(daysLeft<0){
+        daysLeftLabel=""
+    }
 
     return (
         <>

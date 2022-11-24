@@ -7,11 +7,12 @@ import {UserSidebarStyle} from "../../UserSidebar/UserSidebar.style";
 import React from "react";
 
 
-export const PeopleList = () => {
+export const PeopleList = (props:any) => {
+    const {setIsModalVisible}=props;
     const [reservations, setReservations] = useState<any>([]);
     const {state, dispatch} = useLoginContext();
     const [isLoading, setLoading] = useState(false);
-
+    const [refreshApis,setRefreshApis]=useState(0);
     const getMutualReservations = async () => {
         try {
             setLoading(true);
@@ -26,9 +27,15 @@ export const PeopleList = () => {
         }
     }
 
+
+
+    const refreshApi=()=>{
+        setRefreshApis(refreshApis+1);
+    }
+
     useEffect(() => {
         getMutualReservations();
-    }, [])
+    }, [refreshApis])
 
 
 
@@ -39,6 +46,7 @@ export const PeopleList = () => {
                 process.env.REACT_APP_BASE_URL + "/images/" + reservation.imageUrl : "/images/person.svg"}`}
             recentEventName={reservation.recentEvent}
             nextEventName={reservation.publicNextReservation?reservation.nextEvent:""}
+            refreshApi={refreshApi}
             user={reservation}
         />
     )

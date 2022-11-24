@@ -1,16 +1,48 @@
-import React from 'react'
+import React, {useState} from 'react'
 import ProfileModalStyle from './ProfileModal.style'
 import {ModalWrapper} from '../../../../admin/components/Modals/ModalWrapper'
 import {OutlineButtonStyle} from '../../../../styles/Common.style'
+import {LogoutModal} from "../../../../admin/components/Modals/LogoutModal";
+import BlockUserModal from "../../../Modals/BlockUserModal/BlockUserModal";
+import axios from "axios";
+import {useLoginContext} from "../../../../context/authenticationContext";
+import {Loading} from "../../../../components/Loading";
 
 type ProfileModalProps = {
     isModalVisible: boolean
     setIsModalVisible: (data: boolean) => void
     nextEventDisable?: boolean
-    user?: any
+    user?: any;
+    refreshApi?:any;
 }
 const ProfileModal = (props: ProfileModalProps) => {
-    const {isModalVisible, setIsModalVisible, nextEventDisable,user} = props
+    const {isModalVisible, setIsModalVisible, nextEventDisable,user} = props;
+    const [showBlockDialog,setShowBlockDialog]=useState(false);
+    const {state, dispatch} = useLoginContext();
+    const [isLoading, setLoading] = useState(false);
+
+    const blockUser=async ()=>{
+        setLoading(true);
+        setShowBlockDialog(false);
+        try {
+            const res = await axios
+                .post("/v1/users/block", {blocked: user._id}, {
+                    headers: {
+                        Authorization: `Bearer ${state.authToken}`
+                    },
+                });
+            setLoading(false);
+            props.setIsModalVisible(false);
+            props.refreshApi();
+
+        }catch (e) {
+            setLoading(false);
+            props.setIsModalVisible(false);
+            props.refreshApi(false);
+        }
+    }
+
+    console.log("user = ",user);
     return (
         <ModalWrapper
             isModalVisible={isModalVisible}
@@ -20,9 +52,10 @@ const ProfileModal = (props: ProfileModalProps) => {
             height="648px"
             button={
                 <>
+                    {isLoading === true && <Loading/>}
                     <OutlineButtonStyle buttonType="light" width="270px" height="60px"
                                         onClick={() => {
-                                            props.setIsModalVisible(false)
+                                            setShowBlockDialog(true);
                                         }}
                     >
                         Dont Show This Person Again
@@ -81,6 +114,14 @@ const ProfileModal = (props: ProfileModalProps) => {
                     <span style={{marginLeft:"10px"}}>{user && user.publicInfo && user.publicInfo.twitter?user.publicInfo.twitter:"Not found"}</span>
                 </div>
             </ProfileModalStyle>
+            <BlockUserModal
+                isModalVisible={showBlockDialog}
+                setIsModalVisible={setShowBlockDialog}
+                handleOk={() => {
+                    console.log("call block user api")
+                    blockUser();
+                }}
+            />
         </ModalWrapper>
     )
 }

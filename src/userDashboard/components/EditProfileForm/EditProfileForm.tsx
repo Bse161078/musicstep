@@ -85,7 +85,7 @@ const EditProfileForm = React.forwardRef((props: any, ref: any) => {
         }
     };
     const handleEditProfile = async (e: any) => {
-        if((bio.value).trim().length<1){
+        if(!bio.value || (bio.value).trim().length<1){
             setBio({showError:true,value:"",error:"Bio is required"});
             return;
         }
