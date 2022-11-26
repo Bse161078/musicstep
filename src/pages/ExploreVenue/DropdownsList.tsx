@@ -85,10 +85,12 @@ export const DropdownsList = (props: any) => {
 
     const clearFilter = () => {
 
+        setLoading(true);
         saveFilterPreferences(null);
-
+        setSelectedFilter(null);
         setTimeout(() => {
             setClear(false);
+            setLoading(false);
         }, 100);
     }
 
@@ -121,9 +123,11 @@ export const DropdownsList = (props: any) => {
 
 
     const saveSelectedFilter = (type: string, data: any) => {
+        console.log("type = ",type,"   ",data);
         setSelectedFilter({...selectedFilter, ...prevFilter, [type]: data});
     }
 
+    console.log("selectedFilter =  ",selectedFilter)
 
     return (
         <DropdownsListStyle>
