@@ -82,8 +82,8 @@ export default function VenueDetails() {
 
             }).catch((e) => {
         })
-        const tempAmenties = amentiesState.map((item) => {
-            item.value = venueDetail.amenities[item.id];
+        const tempAmenties:any = amentiesState.map((item) => {
+            item.value = venueDetail.amenities && venueDetail.amenities[item.id];
             return item;
         });
         getVenue();
@@ -438,7 +438,7 @@ export default function VenueDetails() {
                                 }}>
                                     {() => (
                                         <Form className="attributes-wrapper">
-                                            <LabelWithTag label={"Amenities"} tagType="none"/>
+                                            <LabelWithTag label={"Attributes"} tagType="none"/>
                                             <div className="list-wrapper">
                                                 {attributeValues.map((attribute: any) => {
                                                     return (

@@ -14,7 +14,7 @@ const UploadFile = (props: UploadFileProps) => {
     return (
         <UploadFileStyle
             src={
-                (!props.previewProfileImage || props.previewProfileImage=="null")? "/images/icons/drag-drop-icon.svg" : props.previewProfileImage
+                (!props.previewProfileImage || props.previewProfileImage=="null" || (props.previewProfileImage).length<=0)? "/images/icons/drag-drop-icon.svg" : props.previewProfileImage
             }
             alt="drag drop"
             width={props.width}

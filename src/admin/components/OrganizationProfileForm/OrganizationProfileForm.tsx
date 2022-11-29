@@ -14,6 +14,7 @@ import {OrganizerFormValidationSchema} from "./validation";
 import {LoginContext, useLoginContext} from "../../../context/authenticationContext";
 import Loading from "../../../components/Loading/Loading";
 import set = Reflect.set;
+import {TextFieldErrorStyle} from "../../../components/InputBox/InputBox.style";
 
 type OrganizationProfileFormProps = {
     setCurrentPage: (data: string) => void;
@@ -39,6 +40,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         additionalPhotos: null,
         code:""
     });
+    const [bio,setBio]=useState<any>({value:"",showError:false,error:"Venue bio is required"});
 
     //Ref
     let logoUpload: any = React.createRef();
@@ -82,6 +84,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                 return item;
             });
             setAttributesListState(tempAttributesList);
+            setBio({value:organizerProfile.organizerBio,showError:false,error:"Venue bio is required"})
 
             setInitialValues({
                 ...initialValues,
@@ -332,7 +335,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         /////form Data
         const bodyData = new FormData();
 
-        bodyData.append("organizerBio", e.organizerBio);
+        bodyData.append("organizerBio", bio.value);
         bodyData.append("organizerName", e.organizerName);
         bodyData.append("organizationAttributes", JSON.stringify(organizationAttributes));
         bodyData.append("saftyAndCleaness", JSON.stringify(saftyAndCleaness));
@@ -370,7 +373,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
             }
         } else {
             var body: any = {
-                organizerBio: e.organizerBio,
+                organizerBio: bio.value,
                 organizationAttributes: organizationAttributes,
                 organizerName: e.organizerName,
                 saftyAndCleaness: saftyAndCleaness,
@@ -501,17 +504,32 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                                     name="organizerName"
                                     placeholder="Type here..."
                                 />
-                                <LabelWithTag
-                                    label="Organizer Bio"
-                                    description="Describe who you are, the types of events you host, or your mission. The bio is displayed on your organizer profile."
-                                />
-                                <InputBox
-                                    radiusType="27px"
-                                    height="118px"
-                                    width="1380px"
-                                    name="organizerBio"
-                                    placeholder=""
-                                />
+
+                                <div className="public-info">
+                                    <LabelWithTag
+                                        label="Organizer Bio"
+                                        description="Describe who you are, the types of events you host, or your mission. The bio is displayed on your organizer profile."
+                                    />
+                                    <div>
+                                            <textarea
+                                                style={{width: "100%", marginTop: 10}}
+                                                placeholder="Enter organizer bio."
+                                                className="customTextare"
+                                                name="venueBio"
+                                                value={bio.value}
+                                                onChange={(e) => {
+                                                    if((e.target.value).length>0){
+                                                        setBio({value:e.target.value,showError:false,error:bio.error});
+                                                    }else{
+                                                        setBio({value:e.target.value})
+                                                    }
+                                                }}
+                                            ></textarea>
+                                        {bio.showError ? (
+                                            <TextFieldErrorStyle>{bio.error}</TextFieldErrorStyle>
+                                        ) : null}
+                                    </div>
+                                </div>
                                 <input
                                     ref={logoUpload}
                                     type={"file"}

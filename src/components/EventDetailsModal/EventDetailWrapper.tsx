@@ -40,11 +40,23 @@ export const EventDetailWrapper = ({event, venue, hideReserve}: EventDetailWrapp
                 });
             }
         } else {
-            history.push({
-                pathname: `/explore-venue/organizer-profile`,
 
-                state: {organizerDetail: venue},
-            });
+            let tempVenue=JSON.parse(JSON.stringify(venue));
+            if(tempVenue && tempVenue.organizerInfo && (tempVenue.organizerInfo).length>0){
+                history.push({
+                    pathname: `/explore-venue/organizer-profile`,
+
+                    state: {organizerDetail: tempVenue},
+                });
+            }else{
+                tempVenue.organizerInfo=[organizer];
+                history.push({
+                    pathname: `/explore-venue/organizer-profile`,
+
+                    state: {organizerDetail: tempVenue},
+                });
+            }
+
         }
 
 
@@ -54,6 +66,7 @@ export const EventDetailWrapper = ({event, venue, hideReserve}: EventDetailWrapp
     const getOrganizer = async (organizerId: any) => {
         try {
             const response = await axios.get("/v1/organizer/" + organizerId, {headers: {Authorization: `Bearer ${state.authToken}`}});
+            response.data._id=response.data.id;
             setOrganizer(response.data);
         } catch (e) {
         }

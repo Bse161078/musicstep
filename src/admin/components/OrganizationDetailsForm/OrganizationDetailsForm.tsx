@@ -12,7 +12,7 @@ const OrganizationDetailsForm = React.forwardRef((props: any, ref: any) => {
     const {state, dispatch} = useLoginContext();
     const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
     const [previewProfileImage, setPreviewProfileImage] = useState<string>(
-        process.env.REACT_APP_BASE_URL + "/images/" + state.data.imageUrl
+        state.data.imageUrl?process.env.REACT_APP_BASE_URL + "/images/" + state.data.imageUrl:""
     );
 
     //Handle file upload
