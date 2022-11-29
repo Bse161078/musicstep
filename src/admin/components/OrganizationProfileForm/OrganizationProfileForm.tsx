@@ -40,7 +40,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
         additionalPhotos: null,
         code:""
     });
-    const [bio,setBio]=useState<any>({value:"",showError:false,error:"Venue bio is required"});
+    const [bio,setBio]=useState<any>({value:"",showError:false,error:"Bio is required"});
 
     //Ref
     let logoUpload: any = React.createRef();
@@ -312,6 +312,10 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
     };
     //
     const handleProfileForm = async (e: any) => {
+        if(!bio.value || (bio.value).length<1){
+            setBio(({...bio,showError:true,error:"Bio is required"}));
+            return;
+        }
         const organizationAttributes: any = {};
 
         attributesListState.forEach((currentValue: any) => {
