@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f900495-2d01-4c96-a493-d43d1865075e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admin/components/Modals/ModalWrapper/ModalWrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/Modals/ModalWrapper/ModalWrapper.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CreateTicketModal/CreateTicketModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateTicketModal/CreateTicketModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CreateTicketModal/validation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateTicketModal/validation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InputBox/InputBox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InputBox/InputBox.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UpcomingEvents/TabRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UpcomingEvents/TabRow.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/userDashboard/pages/UserHome/FutureEvents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/pages/UserHome/FutureEvents.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -355,7 +346,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1669802268468" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1669802487479" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="ts.external.directory.path" value="D:\practice\musicstep\node_modules\typescript\lib" />
@@ -638,16 +629,15 @@
       <workItem from="1669538594298" duration="608000" />
       <workItem from="1669714003926" duration="274000" />
       <workItem from="1669726565641" duration="6997000" />
-      <workItem from="1669790910355" duration="10842000" />
+      <workItem from="1669790910355" duration="10993000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="838285000" />
+    <option name="totallyTimeSpent" value="838436000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="830" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3033557" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -667,7 +657,7 @@
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3295129" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" visible="true" weight="0.28510028" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" visible="true" weight="0.28510028" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067115" side_tool="true" weight="0.256447" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
