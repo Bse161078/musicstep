@@ -24,7 +24,7 @@ const UpcomingEvents = ({events, venue, subscribtionCredit, handleClick,isDetail
                     <TabRow
                         event={event}
                         buttonType="filled"
-                        buttonText={"Reservation Full"}
+                        buttonText={"Reservations Full"}
                         reservation={((event.tickets).length > 0) && event.tickets[0].bookedTickets}
                         venue={venue}
                         handleClick={handleClick}

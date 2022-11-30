@@ -18,7 +18,7 @@ type TabRowProps = {
     venue?: any;
     handleClick?: any;
     isDetails: boolean;
-    fromPartner?:boolean
+    fromPartner?: boolean
 };
 
 export const TabRow = (props: TabRowProps) => {
@@ -52,8 +52,8 @@ export const TabRow = (props: TabRowProps) => {
         daysLeftLabel = "in " + daysLeft + " days"
     }
 
-    if(daysLeft<0){
-        daysLeftLabel=""
+    if (daysLeft < 0) {
+        daysLeftLabel = ""
     }
 
     return (
@@ -62,7 +62,7 @@ export const TabRow = (props: TabRowProps) => {
                 <div className="time">
           <span>
             {moment(event.state).format("ddd")},{" "}
-              {moment(event.date).format("MMM")+" "+moment(event.state).date()}
+              {moment(event.state).format("MMM") + " " + moment(event.state).date()}
           </span>
                     <span className="hour">
             {daysLeftLabel}
@@ -75,53 +75,61 @@ export const TabRow = (props: TabRowProps) => {
           </span>
                 </div>
                 <div className="name" style={{cursor: "pointer"}} onClick={(e) => {
-                    if (isDetails) setIsEventDetailsModalVisibel(true)
-                    else handleClick()
+                    // if (isDetails) setIsEventDetailsModalVisibel(true)
+                    // else handleClick()
+                    setIsEventDetailsModalVisibel(true);
+                    if(buttonType === "filled"){
+                        setIsTicketsAvailabe(false);
+                    }else{
+                        setIsTicketsAvailabe(true);
+                    }
                 }}>
-                    <p style={{wordBreak:'break-word'}}>{event.title}</p>
-                    <p className="genre" style={{wordBreak:'break-word'}}>{event.country  && (event.country)}</p>
+                    <p style={{wordBreak: 'break-word'}}>{event.title}</p>
+                    <p className="genre" style={{wordBreak: 'break-word'}}>{event.country && (event.country)}</p>
 
                 </div>
-                {
-                    buttonText!=="Reservation Full" &&
-                    <div className="time">
-                        <p className="person-number">
+
+                <div className="time">
+                    <p className="person-number">
+                        {buttonText !== "Reservations Full" &&
+                        <>
                             <img alt="logout" src="/images/icons/profile.svg"/>
-                            <span>{reservation}</span>
-                        </p>
-                    </div>
-                }
+                            < span> {reservation}</span>
+                        </>
+                        }
+                    </p>
+                </div>
                 {buttonType === "filled" ? (
                     <div>
                         {!fromPartner &&
-                            <FilledButtonStyle
-                                buttonType="dark"
-                                width="150px"
-                                height="43px"
-                                onClick={() => {
-                                    setIsEventDetailsModalVisibel(true);
-                                    setIsTicketsAvailabe(false);
-                                }}
-                                // className="pricing"
-                            >
-                                {buttonText}
-                            </FilledButtonStyle>
+                        <FilledButtonStyle
+                            buttonType="dark"
+                            width="150px"
+                            height="43px"
+                            onClick={() => {
+                                setIsEventDetailsModalVisibel(true);
+                                setIsTicketsAvailabe(false);
+                            }}
+                            // className="pricing"
+                        >
+                            {buttonText}
+                        </FilledButtonStyle>
                         }
                     </div>
                 ) : (
                     <div>
                         {!fromPartner &&
-                            <OutlineButtonStyle
-                                width="150px"
-                                height="43px"
-                                className="pricing"
-                                onClick={() => {
-                                    setIsEventDetailsModalVisibel(true);
-                                    setIsTicketsAvailabe(true);
-                                }}
-                            >
-                                {buttonText}
-                            </OutlineButtonStyle>
+                        <OutlineButtonStyle
+                            width="150px"
+                            height="43px"
+                            className="pricing"
+                            onClick={() => {
+                                setIsEventDetailsModalVisibel(true);
+                                setIsTicketsAvailabe(true);
+                            }}
+                        >
+                            {buttonText}
+                        </OutlineButtonStyle>
                         }
                     </div>
                 )}

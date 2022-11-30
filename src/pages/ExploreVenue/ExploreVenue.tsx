@@ -318,7 +318,7 @@ export default function ExploreVenue() {
                                     <MyMapComponent isMarkerShown
                                                     loadingElement={<div style={{height: `100%`}}/>}
                                                     containerElement={<div style={{height: `100%`}}/>}
-                                                    mapElement={<div style={{height: `100%`,maxHeight:"520px"}}/>}
+                                                    mapElement={<div style={{height: `100%`,minHeight:"240px",maxHeight:"520px"}}/>}
                                                     center={defaultProps.center}
                                                     zoom={defaultProps.zoom}
                                                     options={{

@@ -16,6 +16,7 @@ const InputBox = (props: any) => {
     const [locationChanged, setLocationChanged] = useState(true);
 
     useEffect(() => {
+
         if (props.navbar_search && props.navbar_search.length > 0) {
             helpers.setValue(props.navbar_search);
         }
@@ -23,6 +24,9 @@ const InputBox = (props: any) => {
 
     useEffect(() => {
         props.setSearch && props.setSearch(field.value);
+        if(props.startText && (props.startText).length>0){
+            //helpers.setValue("$"+field.value);
+        }
     }, [field]);
 
     const handlePasswordIconClick = () => {
@@ -57,7 +61,7 @@ const InputBox = (props: any) => {
                 className={props.className}
                 name={field.name}
                 color="primary"
-                value={field.value || props.navbar_search}
+                value={props.ticket_price || field.value || props.navbar_search}
                 onBlur={field.onBlur}
                 onChange={field.onChange}
                 placeholder={props.label}
@@ -84,7 +88,7 @@ const InputBox = (props: any) => {
           </span>
             )}
 
-            {props.startText === "$" &&
+            {props.startText === "$" && false &&
             (
                 <span style={{position:"relative"}}>
                     <h2 style={{position:"absolute",top:-40,left:"10px"}}>$</h2></span>

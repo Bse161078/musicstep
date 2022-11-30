@@ -109,6 +109,11 @@ const FutureEvents = ({refreshSuggestedEvents}: any) => {
                 <TableCell align="left" style={{wordBreak: "break-word"}}>
                     <h4 className="heading">{event.venuesInfo[0].name}</h4>
                 </TableCell>
+
+                <TableCell align="left" style={{wordBreak: "break-word"}}>
+                    <h4 className="heading">{moment(event.date).format("yyyy-M-DD")}</h4>
+                </TableCell>
+
                 <TableCell align="left" style={{wordBreak: "break-word"}}>
                     <Grid container>
                         <Grid item xs={12}>
@@ -172,6 +177,9 @@ const FutureEvents = ({refreshSuggestedEvents}: any) => {
                             </TableCell>
                             <TableCell align="left" style={{minWidth: 250}}>
                                 Venue Name
+                            </TableCell>
+                            <TableCell align="left" style={{minWidth: 150}}>
+                                Date
                             </TableCell>
                             <TableCell align="left" style={{minWidth: 150}}>
                             </TableCell>
