@@ -9,7 +9,7 @@ const UpcomingEvents = ({events, venue, subscribtionCredit, handleClick,isDetail
     let tempresrvatoin = 0;
 
 
-    const filteredEvents = events.filter((event: any) => new Date(event.city) >= new Date())
+    let filteredEvents = events.filter((event: any) => new Date(event.city) >= new Date());
     return (
         <UpcomingEventsStyle>
             {/* <div className="list-header">

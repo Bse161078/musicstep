@@ -111,7 +111,7 @@ const FutureEvents = ({refreshSuggestedEvents}: any) => {
                 </TableCell>
 
                 <TableCell align="left" style={{wordBreak: "break-word"}}>
-                    <h4 className="heading">{moment(event.date).format("yyyy-M-DD")}</h4>
+                    <h4 className="heading">{moment(event.date).format("DD-MM-yyyy")}</h4>
                 </TableCell>
 
                 <TableCell align="left" style={{wordBreak: "break-word"}}>

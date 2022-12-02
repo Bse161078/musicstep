@@ -89,7 +89,7 @@ export const CollapseStyle = styled(Collapse)`
    .ant-collapse {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    padding: 0!important;
     color: rgba(0, 0, 0, 0.85);
     font-size: 14px;
     font-variant: tabular-nums;
@@ -108,5 +108,10 @@ export const CollapseStyle = styled(Collapse)`
 
   .ant-collapse-content {
     background: transparent;
+    padding:0px!important;
+    .ant-collapse-content-box{
+       padding:0px;
+    }
   }
+ 
 `
