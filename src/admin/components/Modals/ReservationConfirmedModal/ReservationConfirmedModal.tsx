@@ -165,7 +165,7 @@ const ReservationConfirmedModal = (props: ReservationConfirmedModalProps) => {
                                         label="Invite Link"
                                         width="100%"
                                         name="inviteLink"
-                                        value={"https://music-pass-f227c.web.app/"}
+                                        value={"https://musicpassonline.com/"}
                                     />
                                 </Form>
                             )}
