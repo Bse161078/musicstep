@@ -260,7 +260,7 @@ export default function ExploreVenue() {
                     <div/>
                     <ExploreVenueStyle>
                         <section className="venues-list">
-                            {venues.length > 0 ? (
+                            {(venues.length > 0 && !loading)? (
                                 venueFilter.length > 0 ? (
                                     venueFilter.map((venue: any) => (
                                         <VenueCard
@@ -268,7 +268,7 @@ export default function ExploreVenue() {
                                             venue={venue}
                                         />
                                     ))
-                                ) : (
+                                ) : !loading && (
                                     <h1
                                         style={{
                                             width: "100%",
@@ -280,7 +280,7 @@ export default function ExploreVenue() {
                                         {isfilterApply || (state.search && (state.search).length>0) ?"Hm…no events to show here. Please adjust your search":"No Event or Venue to explore"}
                                     </h1>
                                 )
-                            ) : (
+                            ) : !loading &&(
                                 <h1
                                     style={{
                                         width: "100%",
