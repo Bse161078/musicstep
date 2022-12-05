@@ -85,7 +85,7 @@ export default function AddCard(props) {
             elements,
             confirmParams: {
                 // Make sure to change this to your payment completion page
-               return_url: props.isUpdateSubscription?"https://musicpassonline.com/update-subscription":"https://musicpassonline.com/free-trial",
+               return_url: props.isUpdateSubscription?`${process.env.SITE_URL}/update-subscription`:`${process.env.SITE_URL}/free-trial`,
 
             },
         });
