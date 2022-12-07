@@ -7,10 +7,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.b9b582b8.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.b9b582b8.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.9c6e1505.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.9c6e1505.chunk.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.9c6e1505.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.28d67d67.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.28d67d67.chunk.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Stripe/addCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Stripe/addCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Stripe/paymentIntentCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Stripe/paymentIntentCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ExploreVenue/DropdownsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ExploreVenue/DropdownsList.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +26,7 @@
     <session id="-6026431">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="245" />
+          <entry key="project.closed" value="247" />
           <entry key="project.open.time.0" value="33" />
           <entry key="project.open.time.1" value="107" />
           <entry key="project.open.time.10" value="6" />
@@ -35,7 +39,7 @@
           <entry key="project.open.time.17" value="9" />
           <entry key="project.open.time.18" value="2" />
           <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.2" value="21" />
+          <entry key="project.open.time.2" value="23" />
           <entry key="project.open.time.20" value="3" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.23" value="2" />
@@ -52,7 +56,7 @@
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="3" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="253" />
+          <entry key="project.opened" value="255" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -62,13 +66,13 @@
           <entry key="gitignore" value="3" />
           <entry key="html" value="16" />
           <entry key="ico" value="2" />
-          <entry key="js" value="53" />
+          <entry key="js" value="54" />
           <entry key="json" value="11" />
           <entry key="map" value="1" />
           <entry key="png" value="15" />
           <entry key="svg" value="9" />
           <entry key="ts" value="363" />
-          <entry key="tsx" value="1416" />
+          <entry key="tsx" value="1420" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
@@ -79,53 +83,53 @@
           <entry key="HTML" value="16" />
           <entry key="Image" value="17" />
           <entry key="JSON" value="11" />
-          <entry key="JavaScript" value="53" />
+          <entry key="JavaScript" value="54" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="SVG" value="9" />
           <entry key="SourceMap" value="1" />
           <entry key="TypeScript" value="363" />
-          <entry key="TypeScript JSX" value="1416" />
+          <entry key="TypeScript JSX" value="1420" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="TypeScriptServerServiceImpl" value="238" />
+          <entry key="TypeScriptServerServiceImpl" value="239" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="197" />
-          <entry key="env" value="267" />
+          <entry key="env" value="286" />
           <entry key="gitignore" value="25" />
           <entry key="html" value="45" />
-          <entry key="js" value="4638" />
+          <entry key="js" value="4668" />
           <entry key="json" value="8" />
           <entry key="ts" value="4655" />
-          <entry key="tsx" value="62845" />
+          <entry key="tsx" value="62860" />
           <entry key="txt" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="197" />
-          <entry key="Env File" value="267" />
+          <entry key="Env File" value="286" />
           <entry key="HTML" value="45" />
           <entry key="JSON" value="8" />
-          <entry key="JavaScript" value="4638" />
+          <entry key="JavaScript" value="4668" />
           <entry key="PLAIN_TEXT" value="43" />
           <entry key="TypeScript" value="4655" />
-          <entry key="TypeScript JSX" value="62845" />
+          <entry key="TypeScript JSX" value="62860" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+            <state relative-caret-position="17">
+              <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -133,8 +137,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3281">
-              <caret line="265" column="33" selection-start-line="265" selection-start-column="33" selection-end-line="265" selection-end-column="33" />
+            <state relative-caret-position="180">
+              <caret line="265" column="34" selection-start-line="265" selection-start-column="34" selection-end-line="265" selection-end-column="34" />
               <folding>
                 <element signature="e#219#612#0" expanded="true" />
               </folding>
@@ -145,26 +149,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="282" column="43" selection-start-line="282" selection-start-column="43" selection-end-line="282" selection-end-column="43" />
+            <state relative-caret-position="187">
+              <caret line="250" column="31" selection-start-line="250" selection-start-column="31" selection-end-line="250" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/ExploreVenue/DropdownsList.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            <state relative-caret-position="204">
+              <caret line="23" column="78" selection-start-line="23" selection-start-column="78" selection-end-line="23" selection-end-column="78" />
             </state>
           </provider>
         </entry>
@@ -181,10 +176,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>attributes</find>
-      <find>Amenities</find>
-      <find>venue</find>
-      <find>explore-venue/organizer-profile</find>
       <find>admin/basic-info</find>
       <find>textare</find>
       <find>setBio</find>
@@ -207,10 +198,14 @@
       <find>music-pas</find>
       <find>ant-collapse-content-box</find>
       <find>dashboard/home</find>
-      <find>explore-venue</find>
       <find>musicpassonline.com</find>
       <find>music-pass-f227c.web.app</find>
       <find>process.env</find>
+      <find>process.env.SI</find>
+      <find>process</find>
+      <find>SITE_URL</find>
+      <find>process.env.PUBLIC_URL</find>
+      <find>explore-venue</find>
     </findStrings>
     <replaceStrings>
       <replace>music-pass-f227c.web.app</replace>
@@ -229,7 +224,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/admin/components/Modals/ReservationConfirmedModal/ReservationConfirmedModal.tsx" />
         <option value="$PROJECT_DIR$/src/userDashboard/components/personListItem/PersonListItem.style.ts" />
         <option value="$PROJECT_DIR$/src/mockData/sideBarItems.ts" />
         <option value="$PROJECT_DIR$/src/admin/components/OrganizationProfileForm/OrganizationProfileForm.style.ts" />
@@ -256,7 +250,6 @@
         <option value="$PROJECT_DIR$/src/userDashboard/components/Modals/PeopleWithMutualFreinds/PeopleList.tsx" />
         <option value="$PROJECT_DIR$/src/userDashboard/components/personListItem/PresonListItem.tsx" />
         <option value="$PROJECT_DIR$/src/userDashboard/components/Modals/ProfileModal/ProfileModal.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/ExploreVenue/DropdownsList.tsx" />
         <option value="$PROJECT_DIR$/src/App.tsx" />
         <option value="$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx" />
         <option value="$PROJECT_DIR$/src/components/EventDetailsModal/EventDetailWrapper.tsx" />
@@ -279,7 +272,9 @@
         <option value="$PROJECT_DIR$/src/userDashboard/pages/UserHome/FutureEvents.tsx" />
         <option value="$PROJECT_DIR$/src/components/VenueCard/VenueCard.tsx" />
         <option value="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx" />
+        <option value="$PROJECT_DIR$/src/components/Stripe/addCard.js" />
         <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/src/pages/ExploreVenue/DropdownsList.tsx" />
       </list>
     </option>
   </component>
@@ -340,6 +335,11 @@
               <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
               <item name="musicstep" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="musicstep" type="b2602c69:ProjectViewProjectNode" />
+              <item name="musicstep" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -349,7 +349,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1670263078309" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1670266024471" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="ts.external.directory.path" value="D:\practice\musicstep\node_modules\typescript\lib" />
@@ -640,18 +640,20 @@
       <workItem from="1670044462599" duration="14000" />
       <workItem from="1670091344122" duration="1828000" />
       <workItem from="1670095170453" duration="13000" />
-      <workItem from="1670258154553" duration="3392000" />
+      <workItem from="1670258154553" duration="6114000" />
+      <workItem from="1670394906509" duration="600000" />
+      <workItem from="1670432820967" duration="332000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="847498000" />
+    <option name="totallyTimeSpent" value="851152000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34496644" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.35503355" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -669,7 +671,7 @@
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3295129" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" visible="true" weight="0.3338109" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" visible="true" weight="0.3338109" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067115" side_tool="true" weight="0.256447" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -718,13 +720,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/@mui/material/ImageListItem/ImageListItem.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/userDashboard/components/CardWithContent/CardWithContent.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -809,13 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="32" selection-start-line="31" selection-end-line="32" />
         </state>
       </provider>
     </entry>
@@ -1036,27 +1024,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.tsx">
+    <entry file="file://$PROJECT_DIR$/src/userDashboard/components/EditProfileForm/EditProfileForm.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3281">
-          <caret line="265" column="33" selection-start-line="265" selection-start-column="33" selection-end-line="265" selection-end-column="33" />
+        <state relative-caret-position="221">
+          <caret line="26" column="38" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="38" />
           <folding>
-            <element signature="e#219#612#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/ExploreVenue/DropdownsList.tsx">
+    <entry file="file://$PROJECT_DIR$/src/components/Stripe/addCard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="282" column="43" selection-start-line="282" selection-start-column="43" selection-end-line="282" selection-end-column="43" />
+        <state relative-caret-position="1785">
+          <caret line="112" column="53" selection-start-line="112" selection-start-column="53" selection-end-line="112" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -1069,8 +1050,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+        <state relative-caret-position="17">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="265" column="34" selection-start-line="265" selection-start-column="34" selection-end-line="265" selection-end-column="34" />
+          <folding>
+            <element signature="e#219#612#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="250" column="31" selection-start-line="250" selection-start-column="31" selection-end-line="250" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ExploreVenue/DropdownsList.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="23" column="78" selection-start-line="23" selection-start-column="78" selection-end-line="23" selection-end-column="78" />
         </state>
       </provider>
     </entry>

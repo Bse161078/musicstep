@@ -85,7 +85,7 @@ export default function AddCard(props) {
             elements,
             confirmParams: {
                 // Make sure to change this to your payment completion page
-               return_url: props.isUpdateSubscription?`${process.env.SITE_URL}/update-subscription`:`${process.env.SITE_URL}/free-trial`,
+               return_url: props.isUpdateSubscription?`${process.env.REACT_APP_PUBLIC_URL}/update-subscription`:`${process.env.REACT_APP_PUBLIC_URL}/free-trial`,
 
             },
         });
@@ -110,6 +110,7 @@ export default function AddCard(props) {
 
     };
 
+    console.log("process.env.SITE_URL = ",process.env)
     return (
         <Fragment>
            

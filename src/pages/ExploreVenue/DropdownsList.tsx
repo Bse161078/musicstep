@@ -21,10 +21,10 @@ export const DropdownsList = (props: any) => {
     const handleFilter = (value: any) => {
         let data: any = [];
         if (value["All Categories"]) {
-            data = [{type: "tags", search: [value["All Categories"].data]}];
+            data.push({type: "tags", search: [value["All Categories"].data]});
         }
         if (value["Genre"]) {
-            data = [{type: "genre", search: [value["Genre"].data]}];
+            data.push({type: "genre", search: [value["Genre"].data]});
         }
         if (value["Distance"]) {
             data.push({
