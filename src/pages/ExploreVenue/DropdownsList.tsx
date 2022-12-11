@@ -123,11 +123,9 @@ export const DropdownsList = (props: any) => {
 
 
     const saveSelectedFilter = (type: string, data: any) => {
-        console.log("type = ",type,"   ",data);
         setSelectedFilter({...selectedFilter, ...prevFilter, [type]: data});
     }
 
-    console.log("selectedFilter =  ",selectedFilter)
 
     return (
         <DropdownsListStyle>

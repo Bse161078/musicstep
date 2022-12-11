@@ -110,7 +110,6 @@ export default function AddCard(props) {
 
     };
 
-    console.log("process.env.SITE_URL = ",process.env)
     return (
         <Fragment>
            

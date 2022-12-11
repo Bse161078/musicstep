@@ -2,19 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f900495-2d01-4c96-a493-d43d1865075e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/2.9c6e1505.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/2.9c6e1505.chunk.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/2.9c6e1505.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.28d67d67.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.28d67d67.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CreateTicketModal/CreateTicketModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateTicketModal/CreateTicketModal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Stripe/addCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Stripe/addCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Stripe/paymentIntentCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Stripe/paymentIntentCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UpcomingEvents/TabRow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UpcomingEvents/TabRow.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/ExploreVenue/DropdownsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ExploreVenue/DropdownsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/CardWithContent/CardWithContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/CardWithContent/CardWithContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/Modals/ProfileModal/ProfileModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/Modals/ProfileModal/ProfileModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/userDashboard/pages/UserHome/FutureEvents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/pages/UserHome/FutureEvents.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,9 +22,9 @@
     <session id="-6026431">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="247" />
+          <entry key="project.closed" value="248" />
           <entry key="project.open.time.0" value="33" />
-          <entry key="project.open.time.1" value="107" />
+          <entry key="project.open.time.1" value="108" />
           <entry key="project.open.time.10" value="6" />
           <entry key="project.open.time.11" value="6" />
           <entry key="project.open.time.12" value="13" />
@@ -56,7 +52,7 @@
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="3" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="255" />
+          <entry key="project.opened" value="256" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -72,7 +68,7 @@
           <entry key="png" value="15" />
           <entry key="svg" value="9" />
           <entry key="ts" value="363" />
-          <entry key="tsx" value="1420" />
+          <entry key="tsx" value="1440" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
@@ -88,12 +84,12 @@
           <entry key="SVG" value="9" />
           <entry key="SourceMap" value="1" />
           <entry key="TypeScript" value="363" />
-          <entry key="TypeScript JSX" value="1420" />
+          <entry key="TypeScript JSX" value="1440" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="TypeScriptServerServiceImpl" value="239" />
+          <entry key="TypeScriptServerServiceImpl" value="240" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -105,7 +101,7 @@
           <entry key="js" value="4668" />
           <entry key="json" value="8" />
           <entry key="ts" value="4655" />
-          <entry key="tsx" value="62860" />
+          <entry key="tsx" value="63270" />
           <entry key="txt" value="18" />
         </counts>
       </usages-collector>
@@ -118,7 +114,7 @@
           <entry key="JavaScript" value="4668" />
           <entry key="PLAIN_TEXT" value="43" />
           <entry key="TypeScript" value="4655" />
-          <entry key="TypeScript JSX" value="62860" />
+          <entry key="TypeScript JSX" value="63270" />
         </counts>
       </usages-collector>
     </session>
@@ -137,8 +133,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="265" column="34" selection-start-line="265" selection-start-column="34" selection-end-line="265" selection-end-column="34" />
+            <state relative-caret-position="181">
+              <caret line="265" column="31" lean-forward="true" selection-start-line="265" selection-start-column="31" selection-end-line="265" selection-end-column="31" />
               <folding>
                 <element signature="e#219#612#0" expanded="true" />
               </folding>
@@ -147,19 +143,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx">
+        <entry file="file://$PROJECT_DIR$/src/components/VenueCard/VenueCard.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="250" column="31" selection-start-line="250" selection-start-column="31" selection-end-line="250" selection-end-column="31" />
+            <state relative-caret-position="119">
+              <caret line="94" column="20" lean-forward="true" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="94">
+              <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/UpcomingEvents/TabRow.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="85" column="41" selection-start-line="85" selection-start-column="14" selection-end-line="85" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/ExploreVenue/DropdownsList.tsx">
+        <entry file="file://$PROJECT_DIR$/src/userDashboard/pages/UserHome/FutureEvents.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="23" column="78" selection-start-line="23" selection-start-column="78" selection-end-line="23" selection-end-column="78" />
+            <state relative-caret-position="281">
+              <caret line="107" column="85" selection-start-line="107" selection-start-column="85" selection-end-line="107" selection-end-column="85" />
             </state>
           </provider>
         </entry>
@@ -176,8 +190,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>admin/basic-info</find>
-      <find>textare</find>
       <find>setBio</find>
       <find>Add Organizer Profile</find>
       <find>Organizer</find>
@@ -188,7 +200,6 @@
       <find>price</find>
       <find>bio</find>
       <find>checkLengthAndNumber</find>
-      <find>console.log</find>
       <find>field.value</find>
       <find>admin/events-managment-home</find>
       <find>admin/events-management</find>
@@ -197,7 +208,6 @@
       <find>music_pass</find>
       <find>music-pas</find>
       <find>ant-collapse-content-box</find>
-      <find>dashboard/home</find>
       <find>musicpassonline.com</find>
       <find>music-pass-f227c.web.app</find>
       <find>process.env</find>
@@ -205,6 +215,10 @@
       <find>process</find>
       <find>SITE_URL</find>
       <find>process.env.PUBLIC_URL</find>
+      <find>minutes</find>
+      <find>console.log</find>
+      <find>dashboard/home</find>
+      <find>hours</find>
       <find>explore-venue</find>
     </findStrings>
     <replaceStrings>
@@ -224,7 +238,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/userDashboard/components/personListItem/PersonListItem.style.ts" />
         <option value="$PROJECT_DIR$/src/mockData/sideBarItems.ts" />
         <option value="$PROJECT_DIR$/src/admin/components/OrganizationProfileForm/OrganizationProfileForm.style.ts" />
         <option value="$PROJECT_DIR$/src/admin/components/SubmitEventStep1/SubmitEventStep1.tsx" />
@@ -239,7 +252,6 @@
         <option value="$PROJECT_DIR$/src/components/SelectWithInput/SelectWithInput.tsx" />
         <option value="$PROJECT_DIR$/src/admin/components/DashboardHeader/DashboardHeader.tsx" />
         <option value="$PROJECT_DIR$/src/userDashboard/components/UserSidebar/UserSidebar.tsx" />
-        <option value="$PROJECT_DIR$/src/userDashboard/components/CardWithContent/CardWithContent.tsx" />
         <option value="$PROJECT_DIR$/src/pages/PartnerSignup/PartnerSignup.tsx" />
         <option value="$PROJECT_DIR$/src/userDashboard/Modals/GuestListModal/GuestListModal.tsx" />
         <option value="$PROJECT_DIR$/src/userDashboard/Modals/BlockUserModal/LogoutModal.style.ts" />
@@ -251,7 +263,6 @@
         <option value="$PROJECT_DIR$/src/userDashboard/components/personListItem/PresonListItem.tsx" />
         <option value="$PROJECT_DIR$/src/userDashboard/components/Modals/ProfileModal/ProfileModal.tsx" />
         <option value="$PROJECT_DIR$/src/App.tsx" />
-        <option value="$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx" />
         <option value="$PROJECT_DIR$/src/components/EventDetailsModal/EventDetailWrapper.tsx" />
         <option value="$PROJECT_DIR$/src/pages/OrganizerProfile/OrganizerProfile.tsx" />
         <option value="$PROJECT_DIR$/src/components/Slider/Slider.tsx" />
@@ -264,17 +275,20 @@
         <option value="$PROJECT_DIR$/src/admin/components/Modals/ModalWrapper/ModalWrapper.tsx" />
         <option value="$PROJECT_DIR$/src/components/CreateTicketModal/validation.ts" />
         <option value="$PROJECT_DIR$/src/components/InputBox/InputBox.tsx" />
-        <option value="$PROJECT_DIR$/src/components/UpcomingEvents/TabRow.tsx" />
         <option value="$PROJECT_DIR$/src/components/CreateTicketModal/CreateTicketModal.tsx" />
         <option value="$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.style.ts" />
         <option value="$PROJECT_DIR$/src/components/VenueCard/VenueCard.style.ts" />
         <option value="$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.tsx" />
-        <option value="$PROJECT_DIR$/src/userDashboard/pages/UserHome/FutureEvents.tsx" />
         <option value="$PROJECT_DIR$/src/components/VenueCard/VenueCard.tsx" />
         <option value="$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx" />
         <option value="$PROJECT_DIR$/src/components/Stripe/addCard.js" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/pages/ExploreVenue/DropdownsList.tsx" />
+        <option value="$PROJECT_DIR$/src/components/UpcomingEvents/TabRow.tsx" />
+        <option value="$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx" />
+        <option value="$PROJECT_DIR$/src/userDashboard/components/CardWithContent/CardWithContent.tsx" />
+        <option value="$PROJECT_DIR$/src/userDashboard/components/UpcomingEvents/UpcomingEvents.tsx" />
+        <option value="$PROJECT_DIR$/src/userDashboard/pages/UserHome/FutureEvents.tsx" />
       </list>
     </option>
   </component>
@@ -298,7 +312,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="85" />
     <option name="y" value="25" />
     <option name="width" value="1750" />
@@ -326,8 +340,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -344,12 +356,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1670266024471" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1670769950539" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="ts.external.directory.path" value="D:\practice\musicstep\node_modules\typescript\lib" />
@@ -642,18 +656,19 @@
       <workItem from="1670095170453" duration="13000" />
       <workItem from="1670258154553" duration="6114000" />
       <workItem from="1670394906509" duration="600000" />
-      <workItem from="1670432820967" duration="332000" />
+      <workItem from="1670432820967" duration="1265000" />
+      <workItem from="1670766206093" duration="3698000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="851152000" />
+    <option name="totallyTimeSpent" value="855783000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.35503355" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24295302" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -671,7 +686,7 @@
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3295129" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" visible="true" weight="0.3338109" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" visible="true" weight="0.3295129" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50067115" side_tool="true" weight="0.256447" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -720,20 +735,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/userDashboard/components/CardWithContent/CardWithContent.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="147" column="28" lean-forward="true" selection-start-line="147" selection-start-column="28" selection-end-line="147" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/OrganizerProfile/OrganizerProfile.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="441" column="70" selection-start-line="441" selection-start-column="70" selection-end-line="441" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/EventDetailsModal/EventDetailWrapper.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
@@ -961,24 +962,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UpcomingEvents/TabRow.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="60" column="19" selection-start-line="60" selection-start-column="19" selection-end-line="60" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.style.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
@@ -996,27 +983,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/userDashboard/pages/UserHome/FutureEvents.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="121" column="13" selection-start-line="121" selection-start-column="13" selection-end-line="121" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="87" column="28" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/VenueCard/VenueCard.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="91" column="64" lean-forward="true" selection-start-line="91" selection-start-column="64" selection-end-line="91" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/NavbarWithSearch/NavbarWithSearch.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-624">
@@ -1028,9 +994,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="26" column="38" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1055,10 +1018,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/ExploreVenue/DropdownsList.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/userDashboard/components/UpcomingEvents/UpcomingEvents.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="54" lean-forward="true" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/userDashboard/components/CardWithContent/CardWithContent.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="75" column="5" lean-forward="true" selection-start-line="61" selection-start-column="4" selection-end-line="75" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/userDashboard/pages/UserHome/UserHome.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="87" column="29" lean-forward="true" selection-start-line="87" selection-start-column="29" selection-end-line="87" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="265" column="34" selection-start-line="265" selection-start-column="34" selection-end-line="265" selection-end-column="34" />
+        <state relative-caret-position="181">
+          <caret line="265" column="31" lean-forward="true" selection-start-line="265" selection-start-column="31" selection-end-line="265" selection-end-column="31" />
           <folding>
             <element signature="e#219#612#0" expanded="true" />
           </folding>
@@ -1067,15 +1058,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/ExploreVenue/ExploreVenue.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="250" column="31" selection-start-line="250" selection-start-column="31" selection-end-line="250" selection-end-column="31" />
+        <state relative-caret-position="182">
+          <caret line="265" column="47" lean-forward="true" selection-start-line="265" selection-start-column="47" selection-end-line="265" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/ExploreVenue/DropdownsList.tsx">
+    <entry file="file://$PROJECT_DIR$/src/components/VenueCard/VenueCard.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="23" column="78" selection-start-line="23" selection-start-column="78" selection-end-line="23" selection-end-column="78" />
+        <state relative-caret-position="119">
+          <caret line="94" column="20" lean-forward="true" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/UpcomingEvents/TabRow.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="85" column="41" selection-start-line="85" selection-start-column="14" selection-end-line="85" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/userDashboard/pages/UserHome/FutureEvents.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="107" column="85" selection-start-line="107" selection-start-column="85" selection-end-line="107" selection-end-column="85" />
         </state>
       </provider>
     </entry>

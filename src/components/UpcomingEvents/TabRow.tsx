@@ -40,7 +40,18 @@ export const TabRow = (props: TabRowProps) => {
     const week = ["Mon", "Thu", "Wed", "Thr", "Fri", "Sat", "Sun"];
 
     let hours = moment(event.city).diff(event.state, "hours");
-    let minutes = (moment(event.city).diff(event.state, "minutes") % 60);
+    let minutes = 0;
+    if(event.startingTime && event.endingTime){
+        let convertedStartTime=moment(event.startingTime,"hh:mm:ss");
+        let convertedEndTime=moment(event.endingTime,"hh:mm:ss");
+
+
+        if(parseInt(event.startingTime.split(":")[0])>parseInt(event.endingTime.split(":")[0])){
+            convertedEndTime=convertedEndTime.add(1, 'days');
+        }
+        minutes=moment(convertedEndTime).diff(convertedStartTime, "hours");
+
+    }
     let daysLeft = moment(event.state).diff(moment(new Date()), "days");
     let daysLeftLabel = "";
 
@@ -56,6 +67,7 @@ export const TabRow = (props: TabRowProps) => {
         daysLeftLabel = ""
     }
 
+    console.log()
     return (
         <>
             <TabRowStyle>
@@ -71,7 +83,7 @@ export const TabRow = (props: TabRowProps) => {
                 <div className="time">
                     <span>{moment(event.startingTime, ["hh:mm"]).format("hh:mm a")}</span>
                     <span className="hour">
-            {hours > 0 && hours + " hr"}
+            { minutes>0 && minutes+ " hr"}
           </span>
                 </div>
                 <div className="name" style={{cursor: "pointer"}} onClick={(e) => {

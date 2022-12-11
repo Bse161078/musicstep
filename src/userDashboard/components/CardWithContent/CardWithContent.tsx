@@ -61,7 +61,18 @@ const CardWithContent = (props: CardWithContentProps) => {
 
     let hours = 0;
     if (reservation && reservation.eventInfo && (reservation.eventInfo).length > 0) {
-        hours = moment(reservation.eventInfo[0].city).diff(reservation.eventInfo[0].state, "hours");
+
+            let convertedStartTime=moment(reservation.eventInfo[0].startingTime,"hh:mm:ss");
+            let convertedEndTime=moment(reservation.eventInfo[0].endingTime,"hh:mm:ss");
+
+
+            if(parseInt(reservation.eventInfo[0].startingTime.split(":")[0])>parseInt(reservation.eventInfo[0].endingTime.split(":")[0])){
+                convertedEndTime=convertedEndTime.add(1, 'days');
+            }
+        hours=moment(convertedEndTime).diff(convertedStartTime, "hours");
+
+
+
     }
     const handleViewVenue = (e:any) => {
         // history.push({
@@ -99,7 +110,7 @@ const CardWithContent = (props: CardWithContentProps) => {
                             <h4 className="heading">{heading}</h4>
                             <p className="description">{categoryTags.join(",")}</p>
                             <h4 className="heading">{time}</h4>
-                            <p className="description">{`${hours} ${hours === 1 ? "Hour" : "Hours"}`}</p>
+                            <p className="description">{hours>0 && `${hours} ${hours === 1 ? "Hour" : "Hours"}`}</p>
                         </div>
                     </Grid>
                     <Grid item xs={4} container alignItems={"center"}>

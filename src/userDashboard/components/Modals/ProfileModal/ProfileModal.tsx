@@ -42,7 +42,6 @@ const ProfileModal = (props: ProfileModalProps) => {
         }
     }
 
-    console.log("user = ",user);
     return (
         <ModalWrapper
             isModalVisible={isModalVisible}
@@ -118,7 +117,6 @@ const ProfileModal = (props: ProfileModalProps) => {
                 isModalVisible={showBlockDialog}
                 setIsModalVisible={setShowBlockDialog}
                 handleOk={() => {
-                    console.log("call block user api")
                     blockUser();
                 }}
             />
