@@ -71,8 +71,8 @@ export const UserSidebarStyle = styled.div`
     }
 
     .avatar {
-      width: 70px;
-      height: 70px;
+      width: 130px;
+      height: 130px;
       object-fit: cover;
       border-radius: 50%;
     }

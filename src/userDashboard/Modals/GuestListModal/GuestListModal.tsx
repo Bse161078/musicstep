@@ -55,8 +55,8 @@ const GuestListModal = (props: InviteModalProps) => {
     return (
         <>
             <ModalWrapper
-                heading="Guest List"
-                description={`${data.listed-1} Listed, ${data.anonymousReservations} Anonymous`}
+                heading="Guest List111"
+                description={`${reservations.length} Listed, ${data.anonymousReservations} Anonymous`}
                 isModalVisible={isModalVisible}
                 setIsModalVisible={setIsModalVisible}
                 isFooter={false}

@@ -71,6 +71,21 @@ const FutureEvents = ({refreshSuggestedEvents}: any) => {
         if (event && event.venuesInfo && (event.venuesInfo).length > 0) {
             imageUrl = event.venuesInfo[0].logoUrl;
         }
+
+
+        let minutes = 0;
+        if(event.startingTime && event.endingTime){
+            let convertedStartTime=moment(event.startingTime,"hh:mm:ss");
+            let convertedEndTime=moment(event.endingTime,"hh:mm:ss");
+
+
+            if(parseInt(event.startingTime.split(":")[0])>parseInt(event.endingTime.split(":")[0])){
+                convertedEndTime=convertedEndTime.add(1, 'days');
+            }
+            minutes=moment(convertedEndTime).diff(convertedStartTime, "hours");
+
+        }
+
         return (
             <TableRow hover tabIndex={-1} key={event._id + index}>
                 {loading && <Loading/>}
@@ -90,7 +105,7 @@ const FutureEvents = ({refreshSuggestedEvents}: any) => {
 
                         </Grid>
                         <Grid item xs={12}>
-                            <p className="description">{moment(event.city).diff(event.state, "hours") + "  " + " Hours"}</p>
+                            <p className="description">{minutes>0 && minutes+ " Hours"}</p>
                         </Grid>
                     </Grid>
                 </TableCell>

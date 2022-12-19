@@ -46,7 +46,6 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
     const [isSuccessModalVisible, setSuccessModalVisible] = useState(false);
 
     const handleSubmit = (e: any, {resetForm}: any) => {
-        console.log(parseInt(price));
         if (parseInt(price) && parseInt(price) > 0) {
             if (ticket) {
                 props.handleEditTicket(props.index, {
@@ -120,7 +119,6 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
         submitRef.current.click();
     };
 
-    console.log("price = ", price)
     return (
         <>
             <ModalWrapper

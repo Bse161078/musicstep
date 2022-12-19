@@ -36,14 +36,14 @@ export const SuccessIcon = (props:any) => (
   >
     <g transform="translate(50.001 53.126)">
       <path
-        fill={props.message.includes("4-digit code has been successfully")||props.message?.includes("You have been verified")?"#1981FC":"#100840"}
+        fill={props.message?.includes("4-digit code has been successfully")||props.message?.includes("You have been verified")?"#1981FC":"#100840"}
         d="M185.545,137.832a6.249,6.249,0,0,0-8.837,0l-26.831,26.828-11.206-11.2a6.249,6.249,0,1,0-8.837,8.837l15.625,15.625a6.247,6.247,0,0,0,8.837,0l31.25-31.25A6.249,6.249,0,0,0,185.545,137.832Z"
         transform="translate(-128.002 -136.002)"
       />
     </g>
     <g transform="translate(0 0)">
       <path
-        fill={props.message.includes("4-digit code has been successfully")||props.message?.includes("You have been verified")?"#1981FC":"#100840"}
+        fill={props.message?.includes("4-digit code has been successfully")||props.message?.includes("You have been verified")?"#1981FC":"#100840"}
         d="M143.75,68.75A6.252,6.252,0,0,0,137.5,75a62.5,62.5,0,1,1-18.147-44.037,6.249,6.249,0,1,0,8.869-8.806A75,75,0,1,0,150,75,6.252,6.252,0,0,0,143.75,68.75Z"
         transform="translate(0 0)"
       />

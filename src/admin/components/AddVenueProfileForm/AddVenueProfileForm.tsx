@@ -277,8 +277,9 @@ const AddVenueProfileForm = () => {
                 headers: {Authorization: `Bearer ${state.authToken}`},
             })
             .catch((error) => {
+                const message=(error.response && error.response.data && error.response.data.message) || "Server error"
                 setSuccessModalVisible(true);
-                setMessage(error.response.data.error);
+                setMessage(message);
                 setLoading(false);
                 setHeading("Error");
             });
@@ -395,7 +396,7 @@ const AddVenueProfileForm = () => {
                                     <div className="file-wrapper">
                                         <div className="child-Filewrapper">
                                             <div>
-                                                <LabelWithTag label="Your logo"/>
+                                                <LabelWithTag label="Venue logo"/>
                                                 <UploadFile
                                                     previewProfileImage={previewLogoImage}
                                                     handleClick={handleClickLogo}
@@ -407,7 +408,7 @@ const AddVenueProfileForm = () => {
                                                 )}
                                             </div>
                                             <div>
-                                                <LabelWithTag label="Your Cover Photo"/>
+                                                <LabelWithTag label="Venue Cover Photo"/>
                                                 <Grid container justifyContent="center" alignItems="center"
                                                       style={{width: "200px", height: "200px"}}>
                                                     <UploadFile
@@ -673,15 +674,17 @@ const AddVenueProfileForm = () => {
                 </AddVenueProfileFormStyle>
             </Dashboard>
 
+
             <MessageModal
                 isModalVisible={isModalVisible}
                 setIsModalVisible={setIsModalVisible}
                 heading={heading}
                 message={message}
+                icon={heading==="Error"?<img src={"/images/close.png"}/>:null}
                 handleOkClick={() => {
-                    heading === "Success" && history.goBack();
+                    heading === "Success"  && history.goBack();
 
-                    setSuccessModalVisible(false);
+                    setIsModalVisible(false);
                 }}
             />
         </>
