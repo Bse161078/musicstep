@@ -99,15 +99,10 @@ const FutureEvents = ({refreshSuggestedEvents}: any) => {
                     />
                 </TableCell>
                 <TableCell align="left" style={{wordBreak: "break-word"}}>
-                    <Grid container>
-                        <Grid item xs={12}>
-                            <h4 className="heading">{moment(event.startingTime, ("hh:mm")).format("hh:mm a")}</h4>
-
-                        </Grid>
-                        <Grid item xs={12}>
-                            <p className="description">{minutes>0 && minutes+ " Hours"}</p>
-                        </Grid>
-                    </Grid>
+                    <h4 className="heading">{moment(event.date).format("DD-MM-yyyy")}</h4>
+                </TableCell>
+                <TableCell align="left" style={{wordBreak: "break-word"}}>
+                    <h4 className="heading">{event.venuesInfo[0].name}</h4>
                 </TableCell>
                 <TableCell align="left" style={{wordBreak: "break-word", cursor: "pointer"}}
                            onClick={(e) => handleViewVenue(event)}>
@@ -122,13 +117,16 @@ const FutureEvents = ({refreshSuggestedEvents}: any) => {
                     </Grid>
                 </TableCell>
                 <TableCell align="left" style={{wordBreak: "break-word"}}>
-                    <h4 className="heading">{event.venuesInfo[0].name}</h4>
-                </TableCell>
+                    <Grid container>
+                        <Grid item xs={12}>
+                            <h4 className="heading">{moment(event.startingTime, ("hh:mm")).format("hh:mm a")}</h4>
 
-                <TableCell align="left" style={{wordBreak: "break-word"}}>
-                    <h4 className="heading">{moment(event.date).format("DD-MM-yyyy")}</h4>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <p className="description">{minutes>0 && minutes+ " Hours"}</p>
+                        </Grid>
+                    </Grid>
                 </TableCell>
-
                 <TableCell align="left" style={{wordBreak: "break-word"}}>
                     <Grid container>
                         <Grid item xs={12}>
@@ -185,16 +183,16 @@ const FutureEvents = ({refreshSuggestedEvents}: any) => {
 
                             </TableCell>
                             <TableCell align="left" style={{minWidth: 150}}>
-                                Time & Duration
-                            </TableCell>
-                            <TableCell align="left" style={{minWidth: 250}}>
-                                Event Name & Genre
+                                Date
                             </TableCell>
                             <TableCell align="left" style={{minWidth: 250}}>
                                 Venue Name
                             </TableCell>
+                            <TableCell align="left" style={{minWidth: 250}}>
+                                Event Name & Genre
+                            </TableCell>
                             <TableCell align="left" style={{minWidth: 150}}>
-                                Date
+                                Time & Duration
                             </TableCell>
                             <TableCell align="left" style={{minWidth: 150}}>
                             </TableCell>

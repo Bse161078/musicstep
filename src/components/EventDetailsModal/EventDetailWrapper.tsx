@@ -148,7 +148,7 @@ export const EventDetailWrapper = ({event, venue, hideReserve}: EventDetailWrapp
 
                 <div className="organizedBy-text">
                     <p>
-                        Venue :
+                        Venue:
                         <span className="link" onClick={() => {
                             handleViewVenue()
                         }}>{" "+venue?.name}</span>
@@ -165,7 +165,7 @@ export const EventDetailWrapper = ({event, venue, hideReserve}: EventDetailWrapp
 
                 <div className="organizedBy-text">
                     <p>
-                        Organized by : {" "}
+                        Organized by: {" "}
                         <span className="link"
                               onClick={() => {
                                   handleViewOrganizer()
