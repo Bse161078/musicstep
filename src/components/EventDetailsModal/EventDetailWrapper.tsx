@@ -137,14 +137,12 @@ export const EventDetailWrapper = ({event, venue, hideReserve}: EventDetailWrapp
 
                 <div className="date-time">
                     <p>
-                        {week[moment(event.date).day()]},
-                        {moment(event.date).format("MMMM") +
+                        {week[moment(event.date).day()]} , {moment(event.date).format("MMMM") +
                         " " +
                         moment(event.date).date()}
                     </p>
                     <p>
-                        {moment(event.startingTime, ["hh:mm"]).format("hh:mm a")} -
-                        {moment(event.endingTime, ["hh:mm"]).format("hh:mm a")}
+                        {moment(event.startingTime, ["hh:mm"]).format("h:mm a")} - {moment(event.endingTime, ["hh:mm"]).format("h:mm a")}
                     </p>
                 </div>
 
@@ -153,7 +151,7 @@ export const EventDetailWrapper = ({event, venue, hideReserve}: EventDetailWrapp
                         Venue :
                         <span className="link" onClick={() => {
                             handleViewVenue()
-                        }}>{venue?.name}</span>
+                        }}>{" "+venue?.name}</span>
                     </p>
                     <p>
                         {" "}
@@ -167,7 +165,7 @@ export const EventDetailWrapper = ({event, venue, hideReserve}: EventDetailWrapp
 
                 <div className="organizedBy-text">
                     <p>
-                        Organized by:{" "}
+                        Organized by : {" "}
                         <span className="link"
                               onClick={() => {
                                   handleViewOrganizer()

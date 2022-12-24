@@ -471,7 +471,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                             <div className="file-wrapper">
                                 <div className="child-Filewrapper">
                                     <div>
-                                        <LabelWithTag label="Your logo"/>
+                                        <LabelWithTag label="Organization Logo"/>
                                         <UploadFile previewProfileImage={previewLogoImage}
                                                     handleClick={handleClickLogo}/>
                                         {form.touched.logo && form.errors.logo &&
@@ -479,7 +479,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                                     </div>
 
                                     <div>
-                                        <LabelWithTag label="Your Cover Photo"/>
+                                        <LabelWithTag label="Organization Cover Photo"/>
                                         <UploadFile buttonType="large" previewProfileImage={previewCoverImage}
                                                     handleClick={handleClickCover}/>
                                         {form.touched.coverPhoto && form.errors.coverPhoto &&
@@ -487,7 +487,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                                     </div>
                                 </div>
                                 <div>
-                                    <LabelWithTag label="Your Additional Photos" tagType="Recomended"/>
+                                    <LabelWithTag label="Organization Additional Photos" tagType="Recomended"/>
                                     <Slider
                                         handleAdditionalPhoto={handleAdditionalPhoto}
                                         previewAdditionalImage={previewAdditionalImage}
