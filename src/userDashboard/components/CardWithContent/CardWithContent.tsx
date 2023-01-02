@@ -111,6 +111,8 @@ const CardWithContent = (props: CardWithContentProps) => {
                             <p className="description">{categoryTags.join(",")}</p>
                             <h4 className="heading">{time}</h4>
                             <p className="description">{hours>0 && `${hours} ${hours === 1 ? "Hour" : "Hours"}`}</p>
+                            <h4 className="heading">{moment(event.state).format("ddd")},{" "}
+                                {moment(event.state).format("MMM") + " " + moment(event.state).date()}</h4>
                         </div>
                     </Grid>
                     <Grid item xs={4} container alignItems={"center"}>
@@ -154,6 +156,7 @@ const CardWithContent = (props: CardWithContentProps) => {
                 isModalVisible={isQrCodeModalVisible}
                 setIsModalVisible={setIsQrCodeModalVisible}
                 ticketId={reservation.ticketId}
+                reservationId={reservation._id}
             />
 
             <EventDetailsModal

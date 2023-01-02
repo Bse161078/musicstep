@@ -23,10 +23,11 @@ type ReservationConfirmedModalProps = {
     setIsModalVisible?: any;
     event?: any;
     ticketId?: string;
+    reservationId?:string;
 };
 
 const QrCodeModal = (props: ReservationConfirmedModalProps) => {
-    const {isModalVisible, setIsModalVisible, ticketId, event} = props;
+    const {isModalVisible, setIsModalVisible, ticketId, event,reservationId} = props;
     const [baseUrl, setBaseUrl] = useState("");
     const {state} = useLoginContext();
     const [messageHeading, setMessageHeading] = useState("");
@@ -85,6 +86,8 @@ const QrCodeModal = (props: ReservationConfirmedModalProps) => {
 
     }, []);
     let icon = {'calendar-plus-o': 'left'};
+
+
     return (
         <ModalWrapper
             heading="Reservation Confirmed"
@@ -110,7 +113,7 @@ const QrCodeModal = (props: ReservationConfirmedModalProps) => {
 
                     <QRCode
                         // id={"qr-gen"}
-                        value={props.event.tickets[index]._id}
+                        value={reservationId||""}
                         size={290}
                         level={"H"}
                         includeMargin={true}

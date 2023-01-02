@@ -44,12 +44,12 @@ export const TabRowStyle = styled.div`
   @media (max-width: 1500px) {
     display: grid;
     grid-gap: 10px;
-    grid-template: auto / 20% 15% 15% 15% 21%;
+    grid-template: auto / 20% 17% 15% 15% 21%;
   }
   @media (max-width: 1250px) {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 20% 17% 30% auto auto;
+    grid-template-columns: 20% 20% 25% auto auto;
   }
   @media (max-width: 1024px) {
     display: grid;
