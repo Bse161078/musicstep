@@ -7,7 +7,7 @@ export const CardWithContentStyle = styled.div`
   grid-gap: 20px;
   border-radius: 32px;
   padding: 10px;
-  
+  margin-top:10px;
   .card-thumbnail{
   @media (max-width: 800px) {
   text-align:center;

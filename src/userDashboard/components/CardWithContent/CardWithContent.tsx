@@ -7,7 +7,7 @@ import {GuestListModal} from "../../Modals";
 import {CardWithContentStyle} from "./CardWithContent.style";
 import moment from "moment";
 import {useHistory} from "react-router";
-import {Grid} from "@mui/material";
+import {Box, Grid} from "@mui/material";
 import {EventDetailsModal} from "../../../components/EventDetailsModal";
 import QrCodeModal from "../../../admin/components/Modals/QrCode/QrCodeModal";
 import {PeopleWithMutualFreindsModal} from "../Modals/PeopleWithMutualFreinds";
@@ -94,6 +94,11 @@ const CardWithContent = (props: CardWithContentProps) => {
 
     return (
         <>
+            <Grid container>
+                <Box component={"p"} sx={{fontWeight:"bold",fontSize:{xs:"15px",md:"18px"}}} className="heading">{moment(event.state).format("ddd")},{" "}
+                    {moment(event.state).format("MMM") + " " + moment(event.state).date()}</Box>
+            </Grid>
+
             <CardWithContentStyle>
                 <Grid container justifyContent={"center"}>
                 <img
@@ -104,6 +109,7 @@ const CardWithContent = (props: CardWithContentProps) => {
                 />
                 </Grid>
 
+
                 <Grid container>
                     <Grid item xs={8}>
                         <div style={{cursor:"pointer"}} onClick={handleViewVenue}>
@@ -111,8 +117,6 @@ const CardWithContent = (props: CardWithContentProps) => {
                             <p className="description">{categoryTags.join(",")}</p>
                             <h4 className="heading">{time}</h4>
                             <p className="description">{hours>0 && `${hours} ${hours === 1 ? "Hour" : "Hours"}`}</p>
-                            <h4 className="heading">{moment(event.state).format("ddd")},{" "}
-                                {moment(event.state).format("MMM") + " " + moment(event.state).date()}</h4>
                         </div>
                     </Grid>
                     <Grid item xs={4} container alignItems={"center"}>
