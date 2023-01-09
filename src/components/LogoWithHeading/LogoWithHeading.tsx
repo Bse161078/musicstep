@@ -18,6 +18,7 @@ const LogoWithHeading = ({
     const getRating = (rating: any) => {
         return rating > 0 ? ((rating / 100) * 5).toFixed(1) : 0
     }
+    const ReviewText=reviewCount===1?`${reviewCount} Review`:`${reviewCount} Reviews`
 
     return (
         <LogoWithHeadingStyle>
@@ -35,7 +36,7 @@ const LogoWithHeading = ({
                 <h1 className="heading">{heading}</h1>
 
                 <div className="content">
-                    <StarIcon /> {getRating(averageRating)} <span>({`${reviewCount} Reviews`})</span>
+                    <StarIcon /> {getRating(averageRating)} <span>({ReviewText})</span>
                 </div>
             </div>
         </LogoWithHeadingStyle>

@@ -9,11 +9,16 @@ const UpcomingEvents = ({events, venue, subscribtionCredit, handleClick,isDetail
     let tempresrvatoin = 0;
 
 
-    let filteredEvents = events.filter((event: any) => new Date(event.city) >= new Date());
+    let filteredEvents = (events.filter((event: any) => new Date(event.city) >= new Date())).sort((a:any,b:any)=>{
+        let date1:any=new Date(a.state);
+        let date2:any=new Date(b.state)
+        return date1 - date2;
+    });
+
     return (
         <UpcomingEventsStyle>
             {/* <div className="list-header">
-        <span>Today, 1 September</span>
+        <span>Today, 1 September</span>F
 
         <span>Availability</span>
       </div> */}

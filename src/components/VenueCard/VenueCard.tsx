@@ -57,6 +57,7 @@ const VenueCard = ({ venue, subscribtionCredit }: any) => {
             if(safety[property]) safetyValues.push({name:property,value:safety[property]});
         }
     }
+    const ReviewText=venue.reviewCount===1?`${venue.reviewCount} Review`:`${venue.reviewCount} Reviews`
 
     return venue ? (
     <>
@@ -76,7 +77,7 @@ const VenueCard = ({ venue, subscribtionCredit }: any) => {
           <div className="row">
             <div className="star-wrapper">
               <StarIcon /> {getRating(venue.averageRating)}{" "}
-              <span>({`${venue.reviewCount} Reviews`})</span>
+              <span>({ReviewText})</span>
             </div>
               {safetyValues && safetyValues.length>0 &&
                   <div className="guidelines-wrapper">
