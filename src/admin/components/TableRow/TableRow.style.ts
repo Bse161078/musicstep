@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const TableRowStyle = styled.div`
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1.5fr 1fr 1fr;
   grid-gap: 60px;
   padding: 10px 0px;
   margin: 0 20px;

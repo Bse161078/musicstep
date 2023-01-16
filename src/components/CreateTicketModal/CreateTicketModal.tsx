@@ -246,7 +246,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
                                         <div className="right-section">
                                             <p className="price-label">Value in MusicPass Credits</p>
                                             <h3 className="title">
-                                                {Math.floor(getCredits(parseInt(price), discount))}{" "}
+                                                {Math.floor(getCredits(parseInt(price), discount))||0}{" "}
                                                 Credits
                                             </h3>
                                         </div>
