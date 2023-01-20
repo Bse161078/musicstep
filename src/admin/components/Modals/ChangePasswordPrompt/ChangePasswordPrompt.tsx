@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import {ChangePasswordPromptStyle} from "./ChangePasswordPrompt.style";
 import {ModalWrapper} from "../ModalWrapper";
-import {MessageModal} from "../../../../components";
+import {Loading, MessageModal, TrialFormWrapper} from "../../../../components";
 import axios from "axios";
+import {useHistory} from "react-router";
 
 type ChangePasswordPromptProps = {
     isModalVisible?: boolean;
@@ -12,6 +13,8 @@ type ChangePasswordPromptProps = {
 
 const ChangePasswordPrompt = (props: ChangePasswordPromptProps) => {
     const {isModalVisible, setIsModalVisible} = props;
+    const [loading,setLoading]=useState(false);
+    const history = useHistory();
     const [isMessageModalVisible, setMessageModalVisible] = useState({message: "", show: false,heading:""})
     const handleOkClick = () => {
         setIsModalVisible(false)
@@ -21,16 +24,22 @@ const ChangePasswordPrompt = (props: ChangePasswordPromptProps) => {
 
     const changePassword = async (data: any) => {
         try {
+            setLoading(true)
             const response = await axios.put(`/v1/partners/update/password`, data, {
                 headers: {Authorization: `Bearer ${localStorage.getItem("authToken")}`},
             });
+
 
             setMessageModalVisible({
                 heading:"Success",
                 message: "Your password has been reset successfully. You can now login with your new password.",
                 show: true
-            })
+            });
+
+            setLoading(false);
+
         } catch (e: any) {
+            setLoading(false)
             setMessageModalVisible({
                 heading:"Error",
                 message: e.response.data.message,
@@ -40,11 +49,13 @@ const ChangePasswordPrompt = (props: ChangePasswordPromptProps) => {
     }
 
     const handleMessageModal=()=>{
+        history.push('/admin/metrics')
         setMessageModalVisible({message:"",show:false,heading:""});
     }
 
     return (
         <>
+            {loading && <Loading/>}
             <ModalWrapper
                 heading="Change Password?"
                 isModalVisible={isModalVisible}

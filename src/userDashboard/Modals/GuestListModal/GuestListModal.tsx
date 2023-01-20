@@ -25,9 +25,7 @@ const GuestListModal = (props: InviteModalProps) => {
             const response = await axios.get(`/v1/reservation/event?event=${event}`, {headers: {Authorization: `Bearer ${state.authToken}`}});
             let data = response.data.data;
             const ownUser = state.data;
-            const reservations = (data.reservations).filter((reservation: any) => reservation.user
-                && ownUser.id!==reservation.user.id);
-            data.reservations=reservations;
+           // data.reservations=reservations;
             setData(data);
             setLoading(false);
         } catch (e) {
