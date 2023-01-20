@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {SubmitEventStep2Style} from "./SubmitEventStep2.style";
 import {CreateTicket, TicketInfoCard, DashboardHeader} from "..";
@@ -23,84 +23,98 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
     const [message, setMessage] = useState("");
     const [messageType, setMessageType] = useState("");
     const [isLoading, setLoading] = useState(false);
+    const [ticketError,setTicketError]=useState(false);
 
     const handleDeleteTicket = (index: number) => {
         const newTickets = [...tickets];
         newTickets.splice(index, 1);
         setTickets(newTickets);
+        setTicketError(false);
     };
     const handleEditTicket = (index: number, data: any) => {
         const newTickets: any = [...tickets];
         newTickets[index] = data;
         setTickets(newTickets);
+        setTicketError(false);
     };
-    const createEventHandlet = async () => {
-        const formatedTickets = tickets.map((ticket: any) => {
-            return {
-                ...ticket,
-                availableTickets: ticket.numberOfTickets,
-                bookedTickets: 0,
-                age:eventData.age_restriction
-            };
-        });
-        // setTickets(tempTickets);
-        // debugger;
-        const bodyData = new FormData();
 
-        bodyData.append("title", eventData.title);
-        setLoading(true);
-        bodyData.append("date", new Date(eventData.enddate).toISOString());
-        bodyData.append("startingTime", eventData.startingTime);
-        bodyData.append("endingTime", eventData.endingTime);
-        bodyData.append("startDate", eventData.startDate);
-        bodyData.append("endDate", eventData.endDate);
-        bodyData.append("state", eventData.startDate);
-        bodyData.append("city", eventData.endDate);
-        bodyData.append("country", eventData.country);
-        bodyData.append("venue", eventData.venue_id);
-        bodyData.append(
-            "eventPhotoSameAsOrganizerPhoto",
-            eventData.eventPhotoSameAsOrganizerPhoto
-        );
-        bodyData.append("organizer", eventData.organizer_id);
-        bodyData.append("tickets", JSON.stringify(formatedTickets));
-        bodyData.append("eventDescription", eventData.eventDescription);
-        bodyData.append("genre", eventData.genre);
-        if (eventData.additionalPhotos) {
-            const files = eventData.additionalPhotos;
-            for (let i = 0; i < files.length; i++) {
-                bodyData.append("additionalPhotos", files[i]);
+    useEffect(()=>{
+        setTicketError(false)
+    },[tickets]);
+
+
+    const createEventHandlet = async () => {
+        if(tickets.length<=0){
+            setTicketError(true);
+        }else{
+            const formatedTickets = tickets.map((ticket: any) => {
+                return {
+                    ...ticket,
+                    availableTickets: ticket.numberOfTickets,
+                    bookedTickets: 0,
+                    age:eventData.age_restriction
+                };
+            });
+            // setTickets(tempTickets);
+            // debugger;
+            const bodyData = new FormData();
+
+            bodyData.append("title", eventData.title);
+            setLoading(true);
+            bodyData.append("date", new Date(eventData.enddate).toISOString());
+            bodyData.append("startingTime", eventData.startingTime);
+            bodyData.append("endingTime", eventData.endingTime);
+            bodyData.append("startDate", eventData.startDate);
+            bodyData.append("endDate", eventData.endDate);
+            bodyData.append("state", eventData.startDate);
+            bodyData.append("city", eventData.endDate);
+            bodyData.append("country", eventData.country);
+            bodyData.append("venue", eventData.venue_id);
+            bodyData.append(
+                "eventPhotoSameAsOrganizerPhoto",
+                eventData.eventPhotoSameAsOrganizerPhoto
+            );
+            bodyData.append("organizer", eventData.organizer_id);
+            bodyData.append("tickets", JSON.stringify(formatedTickets));
+            bodyData.append("eventDescription", eventData.eventDescription);
+            bodyData.append("genre", eventData.genre);
+            if (eventData.additionalPhotos) {
+                const files = eventData.additionalPhotos;
+                for (let i = 0; i < files.length; i++) {
+                    bodyData.append("additionalPhotos", files[i]);
+                }
+            }
+            const res = await axios
+                .post("/v1/event", bodyData, {
+                    headers: {
+                        Authorization: `Bearer ${state.authToken}`,
+                        "Content-Type": "multipart/form-data",
+                    },
+                })
+                .catch((error) => {
+                    //  setSuccessModalVisible(true);
+                    setIsModalVisible(true);
+                    setLoading(false);
+                    //setMessage(error);
+                    setMessageType("error");
+                    //  setMessage(error.response.data.error);
+                    //  setHeading("Error");
+                });
+            if (res) {
+                //  setSuccessModalVisible(true);
+                //  setMessage("Organizer created Successfully");
+                //  setHeading("Success");
+                setLoading(false);
+                setMessage("Event created successfully");
+                setMessageType("Success");
+                setIsModalVisible(true);
+                EventStateContext.dispatch({
+                    type: "REMOVE_EVENT_INFO",
+                    payload: {},
+                });
             }
         }
-        const res = await axios
-            .post("/v1/event", bodyData, {
-                headers: {
-                    Authorization: `Bearer ${state.authToken}`,
-                    "Content-Type": "multipart/form-data",
-                },
-            })
-            .catch((error) => {
-                //  setSuccessModalVisible(true);
-                setIsModalVisible(true);
-                setLoading(false);
-                //setMessage(error);
-                setMessageType("error");
-                //  setMessage(error.response.data.error);
-                //  setHeading("Error");
-            });
-        if (res) {
-            //  setSuccessModalVisible(true);
-            //  setMessage("Organizer created Successfully");
-            //  setHeading("Success");
-            setLoading(false);
-            setMessage("Event created successfully");
-            setMessageType("Success");
-            setIsModalVisible(true);
-            EventStateContext.dispatch({
-                type: "REMOVE_EVENT_INFO",
-                payload: {},
-            });
-        }
+
     };
 
 
@@ -154,6 +168,7 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
                         />
                     ))}
                 </div>
+                {ticketError && <p  style={{color:"red"}}>Please create at least one ticket</p>}
             </SubmitEventStep2Style>
 
             <MessageModal

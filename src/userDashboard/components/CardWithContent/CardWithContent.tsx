@@ -7,7 +7,7 @@ import {GuestListModal} from "../../Modals";
 import {CardWithContentStyle} from "./CardWithContent.style";
 import moment from "moment";
 import {useHistory} from "react-router";
-import {Grid} from "@mui/material";
+import {Box, Grid} from "@mui/material";
 import {EventDetailsModal} from "../../../components/EventDetailsModal";
 import QrCodeModal from "../../../admin/components/Modals/QrCode/QrCodeModal";
 import {PeopleWithMutualFreindsModal} from "../Modals/PeopleWithMutualFreinds";
@@ -94,6 +94,11 @@ const CardWithContent = (props: CardWithContentProps) => {
 
     return (
         <>
+            <Grid container>
+                <Box component={"p"} sx={{fontWeight:"bold",fontSize:{xs:"15px",md:"18px"}}} className="heading">{moment(event.state).format("ddd")},{" "}
+                    {moment(event.state).format("MMM") + " " + moment(event.state).date()}</Box>
+            </Grid>
+
             <CardWithContentStyle>
                 <Grid container justifyContent={"center"}>
                 <img
@@ -103,6 +108,7 @@ const CardWithContent = (props: CardWithContentProps) => {
                     alt="thumbnail"
                 />
                 </Grid>
+
 
                 <Grid container>
                     <Grid item xs={8}>
@@ -154,6 +160,7 @@ const CardWithContent = (props: CardWithContentProps) => {
                 isModalVisible={isQrCodeModalVisible}
                 setIsModalVisible={setIsQrCodeModalVisible}
                 ticketId={reservation.ticketId}
+                reservationId={reservation._id}
             />
 
             <EventDetailsModal

@@ -16,6 +16,10 @@ type TicketModalProps = {
   eventCredit?:number;
   venue?:any
 };
+
+let reservation:any;
+
+
 const TicketModal = (props: TicketModalProps) => {
   const [
     isCheckingAvailablityModalVisible,
@@ -30,6 +34,9 @@ const TicketModal = (props: TicketModalProps) => {
   );
   const { state, dispatch } = useLoginContext();
   const { isModalVisible, setIsModalVisible } = props;
+
+
+
   const [buyCredit,setBuyCredit] = useState(0)
   const week = [
     "Sunday",
@@ -60,6 +67,9 @@ const TicketModal = (props: TicketModalProps) => {
       setIsCheckingAvailablityModalVisible(false);
       setIsReservationConfirmedModalVisible(true);
 
+      reservation=res.data.reservation;
+
+
       const response = await axios
         .get(`/v1/users/${state.data.id}`, {
           headers: { Authorization: `Bearer ${state.authToken}` },
@@ -78,6 +88,8 @@ const TicketModal = (props: TicketModalProps) => {
       }
     }
   };
+
+
 
   const venue=props.venue;
   return (
@@ -169,7 +181,7 @@ const TicketModal = (props: TicketModalProps) => {
         setIsReservationConfirmedModalVisible={
           setIsReservationConfirmedModalVisible
         }
-        
+        reservation={reservation}
         event={props.event}
         ticketIndex={props.ticketIndex}
       />
