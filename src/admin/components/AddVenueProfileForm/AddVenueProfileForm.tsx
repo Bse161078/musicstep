@@ -249,7 +249,7 @@ const AddVenueProfileForm = () => {
 
         /////form Data
         const bodyData = new FormData();
-        bodyData.append("venueBio", e.venueBio);
+        bodyData.append("venueBio", venueBio.value);
         bodyData.append("name", e.name);
         bodyData.append("location", JSON.stringify(e.location));
         bodyData.append("saftyAndCleaness", JSON.stringify(saftyAndCleaness));

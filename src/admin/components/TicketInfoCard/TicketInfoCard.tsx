@@ -123,8 +123,8 @@ const TicketInfoCard = (props: TicketInfoCardProps) => {
                 }}
             />
             <DeleteRoleModal
-                header={"Delete Ticket?"}
-                message="Are you sure you want to delete this type of tickets?"
+                header={"Delete Reservation Type?"}
+                message="Are you sure you want to delete this type of reservation?"
                 isModalVisible={isModalVisible}
                 setIsModalVisible={setIsModalVisible}
                 handleOkClick={() => {

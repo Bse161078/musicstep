@@ -488,8 +488,8 @@ const SubmitEvent = (props: SubmitEventStep1Props) => {
                   setFieldValue={form.setFieldValue}
                   values={staticAgeRestrictionList}
               />
-                            {form.touched.genre && form.errors.genre && (
-                                <span className="error-message">{form.errors.genre}</span>
+                            {form.touched.age_restriction && form.errors.age_restriction && (
+                                <span className="error-message">{form.errors.age_restriction}</span>
                             )}
             </span>
 

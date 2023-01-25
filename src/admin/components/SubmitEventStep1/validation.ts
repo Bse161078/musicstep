@@ -39,6 +39,7 @@ export const EventFormValidationSchema = yup.object().shape({
     venue: yup.string().required("Venue is required").nullable(),
     organizer: yup.string().required("Organizer is required").nullable(),
     genre: yup.string().required("Genre is required").nullable(),
+    age_restriction: yup.string().required("Age requirement is required"),
 
 });
 
