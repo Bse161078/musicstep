@@ -35,7 +35,8 @@ export const SelectBoxStyle = styled(Select) <SelectBoxStyleProps>`
     font-size: 13px;
     color: #5d5d5d;
 
-    .ant-select-selection-search {
+    .ant-select-selection-search {Events History
+
       padding-left: 30px;
     }
 

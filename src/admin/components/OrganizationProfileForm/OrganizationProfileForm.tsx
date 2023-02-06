@@ -481,6 +481,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                                     <div>
                                         <LabelWithTag label="Organization Cover Photo"/>
                                         <UploadFile buttonType="large" previewProfileImage={previewCoverImage}
+                                                    height={"65%"}
                                                     handleClick={handleClickCover}/>
                                         {form.touched.coverPhoto && form.errors.coverPhoto &&
                                         <span className="error-message">{form.errors.coverPhoto}</span>}

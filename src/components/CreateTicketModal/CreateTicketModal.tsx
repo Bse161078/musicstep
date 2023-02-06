@@ -25,6 +25,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
         setTickets,
         tickets,
         ticket,
+        index
     } = props;
     const [message, setmessage] = useState("");
     const [selectedDiscount, setSelectedDiscount] = useState(0);
@@ -122,8 +123,8 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
     return (
         <>
             <ModalWrapper
-                heading="Create a Reservation"
-                rightButtonTitle="Create a Reservation "
+                heading={!ticket?"Create a Reservation":"Update reservation"}
+                rightButtonTitle={!ticket?"Create Reservation":"Update reservation"}
                 leftButtonTitle="Cancel"
                 isModalVisible={isModalVisible}
                 setIsModalVisible={setIsModalVisible}
