@@ -72,6 +72,8 @@ import OrientationModal from "./components/ChangeOrientation/OrientationModal/Or
 import {subscribe, isSupported} from 'on-screen-keyboard-detector';
 import {PartnerTermsAndCondition} from "./pages/PartnerTermsAndCondition";
 import {checkIfPathIsFooter} from "./mockData/footer";
+import StaticAboutUs from "./pages/AboutUs/about-us";
+import StaticPrivacyPolicy from "./pages/PrivacyPolicy/privacy-policy";
 
 // axios.defaults.baseURL = "https://music-pass-backend.herokuapp.com/v1";
 axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
