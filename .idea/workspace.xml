@@ -4,13 +4,138 @@
     <list default="true" id="4f900495-2d01-4c96-a493-d43d1865075e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.YnVpbGQ.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.5f766b9b.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.5f766b9b.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/faviconMP.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/AdminNavBar/Group 506.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/AdminNavBar/Group 506@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/DeleteRole.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/Group 492.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/Group 492@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/NoPath - Copy (5).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/Profile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/Recomended.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/Required.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/SafetyIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/Small Icon Button.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/ad.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/arrow-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/changepasswordpromt.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/cross-small.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/crystal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/crystal2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/explore-venue/image1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/explore-venue/image2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/explore-venue/image3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/explore-venue/image4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/explore-venue/map-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/explore-venue/map.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/explore-venue/venue-detail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/free-trial/free-trial-illustration.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/group69.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/help-center/billing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/help-center/credits.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/help-center/promotion.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/help-center/reservation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/help-center/subscription-plans.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/hero/add-credit.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/hero/blured-background.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/hero/cancel-reservation.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/hero/events.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/hero/header-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/hero/hero-background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/hero/location-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/hero/membership-visual.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/hero/membership.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/hero/share-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/hero/share-image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/hero/unenroll.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/Password-hide-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/address-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/arrow-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/bell-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/cancel-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/cancel-lock-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/credit-history-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/drag-drop-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/edit-profile-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/event-history-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/facebook-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/gallery.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/instagram-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/location-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/lock-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/logout-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/mutual-friends-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/password-show-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/phone-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/preview-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/profile-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/profile.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/reminder-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/twitter-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/icons/website-icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/info.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/ionic-ios-checkmark-circle.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/loading.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/login/login-side.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/logout.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/metrics/event-chart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/metrics/payouts-chart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/metrics/reservation-chart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/mp-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/mp-logo_resized.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/orientation.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/partner-login-background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/party.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/person.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/person.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/profile-image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/qrcodee.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/sample-image.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/sample.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/sampleevent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/showcaseevents.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/social-links/FB.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/social-links/LogowithTrademark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/social-links/app-store.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/social-links/facebook.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/social-links/fbicon (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/social-links/google-play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/social-links/icons8-facebook-80.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/social-links/icons8-facebook-circled-24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/social-links/instagram.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/social-links/linkedin.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/social-links/output-onlinepngtools.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/social-links/tiktok.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/social-links/tiktok.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/images/social-links/twitter.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/2.fd837279.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/2.fd837279.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.17a92247.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.17a92247.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.62bd8b4b.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.62bd8b4b.chunk.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.62bd8b4b.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/3.9bea7c27.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/3.9bea7c27.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.8cc9ab44.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.8cc9ab44.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/runtime-main.ef29ff1a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/runtime-main.ef29ff1a.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admin/components/SubmitEventStep2/SubmitEventStep2.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin/components/SubmitEventStep2/SubmitEventStep2.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DatePicker/DatePickerModal.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DatePicker/DatePickerModal.style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UpcomingEvents/UpcomingEvents.style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/userDashboard/components/personListItem/PresonListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/userDashboard/components/personListItem/PresonListItem.tsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +147,8 @@
     <session id="-6026431">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="275" />
-          <entry key="project.open.time.0" value="35" />
+          <entry key="project.closed" value="276" />
+          <entry key="project.open.time.0" value="36" />
           <entry key="project.open.time.1" value="124" />
           <entry key="project.open.time.10" value="6" />
           <entry key="project.open.time.11" value="6" />
@@ -52,7 +177,7 @@
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="3" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="283" />
+          <entry key="project.opened" value="284" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -89,7 +214,7 @@
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="TypeScriptServerServiceImpl" value="265" />
+          <entry key="TypeScriptServerServiceImpl" value="266" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -101,7 +226,7 @@
           <entry key="js" value="4940" />
           <entry key="json" value="8" />
           <entry key="ts" value="4777" />
-          <entry key="tsx" value="63635" />
+          <entry key="tsx" value="63763" />
           <entry key="txt" value="18" />
         </counts>
       </usages-collector>
@@ -114,7 +239,7 @@
           <entry key="JavaScript" value="4940" />
           <entry key="PLAIN_TEXT" value="43" />
           <entry key="TypeScript" value="4777" />
-          <entry key="TypeScript JSX" value="63635" />
+          <entry key="TypeScript JSX" value="63763" />
         </counts>
       </usages-collector>
     </session>
@@ -124,8 +249,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="200" column="25" selection-start-line="200" selection-start-column="25" selection-end-line="200" selection-end-column="25" />
+            <state relative-caret-position="313">
+              <caret line="143" column="6" lean-forward="true" selection-start-line="143" selection-start-column="6" selection-end-line="145" selection-end-column="9" />
               <folding>
                 <element signature="e#219#612#0" expanded="true" />
               </folding>
@@ -147,7 +272,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/AboutUs/about-us.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
+            <state relative-caret-position="595">
               <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
@@ -159,7 +284,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/PrivacyPolicy/PrivacyPolicy.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="272">
               <caret line="19" column="23" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="23" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -171,7 +296,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/PrivacyPolicy/privacy-policy.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1156">
+            <state relative-caret-position="918">
               <caret line="68" column="1" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
@@ -206,7 +331,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>musicpassonline.com</find>
       <find>process.env</find>
       <find>process.env.SI</find>
       <find>process</find>
@@ -215,7 +339,6 @@
       <find>minutes</find>
       <find>dashboard/home</find>
       <find>hours</find>
-      <find>explore-venue</find>
       <find>music-pass-f227c.web.app</find>
       <find>111</find>
       <find>Guest List</find>
@@ -236,6 +359,8 @@
       <find>axios</find>
       <find>axios.get</find>
       <find>privacy-pol</find>
+      <find>explore-venue</find>
+      <find>token</find>
     </findStrings>
     <replaceStrings>
       <replace>music-pass-f227c.web.app</replace>
@@ -356,6 +481,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -392,14 +518,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1675671037667" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1675765673130" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="ts.external.directory.path" value="D:\practice\musicstep\node_modules\typescript\lib" />
@@ -720,18 +845,19 @@
       <workItem from="1675060871227" duration="35000" />
       <workItem from="1675670971882" duration="85000" />
       <workItem from="1675679817337" duration="459000" />
-      <workItem from="1675681777953" duration="247000" />
+      <workItem from="1675681777953" duration="682000" />
+      <workItem from="1675765165107" duration="350000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="879722000" />
+    <option name="totallyTimeSpent" value="880507000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.35503355" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.36040267" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1113,8 +1239,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="200" column="25" selection-start-line="200" selection-start-column="25" selection-end-line="200" selection-end-column="25" />
+        <state relative-caret-position="313">
+          <caret line="143" column="6" lean-forward="true" selection-start-line="143" selection-start-column="6" selection-end-line="145" selection-end-column="9" />
           <folding>
             <element signature="e#219#612#0" expanded="true" />
           </folding>
@@ -1132,7 +1258,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/AboutUs/about-us.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
+        <state relative-caret-position="595">
           <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
@@ -1142,7 +1268,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/PrivacyPolicy/PrivacyPolicy.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="272">
           <caret line="19" column="23" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="23" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -1152,7 +1278,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/PrivacyPolicy/privacy-policy.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
+        <state relative-caret-position="918">
           <caret line="68" column="1" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="1" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />

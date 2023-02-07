@@ -31,7 +31,7 @@ const PersonListItem = (props: PersonListItemProps) => {
                 {listType === 'normal' ? (
                     <div className="simple-list-wrapper">
                         <img src={imageLink} alt="" className="person-image" style={{borderRadius: "50%", border: "1px solid black"}}/>
-                        <p className="person-name">{personName}</p>
+                        <p className="person-name" style={{marginLeft:"10px"}}>{personName}</p>
                     </div>
                 ) : (
                     <div className="image-list-wrapper">

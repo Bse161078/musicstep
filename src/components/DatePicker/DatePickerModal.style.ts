@@ -31,7 +31,6 @@ font-size: 18px important;
   font-size: 18px;
   width: 100%;
   max-width: 230px;
-
 }
 .react-date-picker,
 .react-date-picker *,
@@ -76,6 +75,7 @@ font-size: 18px important;
   }
   
 }
+
 
 .react-date-picker__inputGroup__month{
   width: ${({ month }) => (month && month[0] ==='0'?"15px !important":'25px !important'  )};
@@ -124,7 +124,7 @@ font-size: 18px important;
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 1;
+  z-index: 10001;
 }
 .react-date-picker__calendar--closed {
   display: none;

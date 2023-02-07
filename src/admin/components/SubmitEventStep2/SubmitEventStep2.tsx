@@ -39,7 +39,10 @@ const SubmitEventStep2 = (props: SubmitEventStep2Props) => {
     };
 
     useEffect(()=>{
-        setTicketError(false)
+        setTicketError(false);
+        setTimeout(()=>{
+            window.scrollTo(0, 0);
+        },100)
     },[tickets]);
 
 

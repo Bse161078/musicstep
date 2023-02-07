@@ -111,6 +111,8 @@ const RoutesList = (props: any) => {
                         payload: {},
                     });
                     history.push("/login");
+                }else{
+                    history.push('/')
                 }
             }
 
@@ -138,6 +140,11 @@ const RoutesList = (props: any) => {
                 }
             });
         }
+
+        if(!localStorage.getItem("authToken") ||  (localStorage.getItem("authToken") || "").length<=0){
+            history.push('/')
+        }
+
     }, [])
 
 
