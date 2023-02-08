@@ -141,9 +141,12 @@ const RoutesList = (props: any) => {
             });
         }
 
-        if(!localStorage.getItem("authToken") ||  (localStorage.getItem("authToken") || "").length<=0){
-            history.push('/')
+        if(pathname!=='/partner-login' && !pathname.includes('/free-trial')){
+            if(!localStorage.getItem("authToken") ||  (localStorage.getItem("authToken") || "").length<=0){
+                history.push('/')
+            }
         }
+
 
     }, [])
 
@@ -176,6 +179,8 @@ const RoutesList = (props: any) => {
 
     const isAdminSide = pathname.includes("/admin") || (state && state.data && state.data.role==="admin");
     const isDashboardSide = pathname.includes("/dashboard");
+
+
 
     //localStorage.clear();
     return (
