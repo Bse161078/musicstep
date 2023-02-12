@@ -81,8 +81,25 @@ const IRSSubstituteForm = (props: any) => {
 
     useEffect(() => {
         if (props.buttonClicked !== 0) {
-            if (ssn.textmask.length !== 10 && ein.textmask.length !== 10) {
+            console.log(ssn,"   ",ein);
+            if(!ssn.textmask && !ein.textmask){
                 setError(true)
+            } else if (ssn.textmask && ssn.textmask==='000-00-0000' ) {
+                if(!ein.textmask || (ein.textmask.length<10)){
+                    setError(true)
+                }else{
+                    props.handleNextStep();
+                    setError(false);
+
+                }
+            }else if (ein.textmask && ein.textmask==='00-000000' ) {
+                if(!ssn.textmask || (ssn.textmask.length<11)){
+                    setError(true)
+                }else{
+                    props.handleNextStep();
+                    setError(false);
+
+                }
             } else {
                 props.handleNextStep();
                 setError(false);
