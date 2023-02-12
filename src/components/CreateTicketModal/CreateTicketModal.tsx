@@ -39,7 +39,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
         title: ticket ? ticket.title : "",
         numberOfTickets: ticket ? ticket.numberOfTickets : "",
         description: ticket ? ticket.description : "",
-        price: ticket ? ticket.price : 0,
+        price: ticket ? '0'+ticket.price : 0,
         discount: ticket ? ticket.discount : "Level 1",
         credits: ticket ? ticket.credits : 0,
     };
@@ -119,6 +119,7 @@ const CreateTicketModal = (props: CreateTicketModalProps) => {
     const handleFormSubmit = () => {
         submitRef.current.click();
     };
+
 
     return (
         <>

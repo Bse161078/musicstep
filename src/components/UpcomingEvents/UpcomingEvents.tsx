@@ -11,9 +11,28 @@ const UpcomingEvents = ({events, venue, subscribtionCredit, handleClick,isDetail
 
     let filteredEvents = (events.filter((event: any) => new Date(event.city) >= new Date())).sort((a:any,b:any)=>{
         let date1:any=new Date(a.state);
-        let date2:any=new Date(b.state)
+        let date2:any=new Date(b.state);
+
         return date1 - date2;
     });
+
+    filteredEvents = filteredEvents.map((event:any)=>{
+        let credits=0;
+        let availableTickets=0;
+        let bookedTickets=0;
+        let tickets=event.tickets || [];
+        tickets.reduce((partialSum:any, ticket:any) => partialSum + parseInt(ticket.credits), 0)
+        const sumTicketCredit=tickets.reduce((partialSum:any, ticket:any) => partialSum + parseInt(ticket.credits), 0);
+        const sumAvailableTickets=tickets.reduce((partialSum:any, ticket:any) => partialSum + parseInt(ticket.availableTickets), 0);
+        const sumBookedTickets=tickets.reduce((partialSum:any, ticket:any) => partialSum + parseInt(ticket.bookedTickets), 0);
+
+        event.credits=sumTicketCredit;
+        event.availableTickets=sumAvailableTickets;
+        event.bookedTickets=sumBookedTickets;
+        return event;
+    })
+
+
 
     return (
         <UpcomingEventsStyle>
@@ -25,12 +44,12 @@ const UpcomingEvents = ({events, venue, subscribtionCredit, handleClick,isDetail
             {filteredEvents &&
             filteredEvents.map((event: any, index: number) => {
 
-                return event && (event.tickets).length === 0 || event.tickets[0].availableTickets === 0 ? (
+                return event &&  event.availableTickets === 0 ? (
                     <TabRow
                         event={event}
                         buttonType="filled"
                         buttonText={"Reservations Full"}
-                        reservation={((event.tickets).length > 0) && event.tickets[0].bookedTickets}
+                        reservation={event.bookedTickets}
                         venue={venue}
                         handleClick={handleClick}
                         isDetails={isDetails}
@@ -41,9 +60,9 @@ const UpcomingEvents = ({events, venue, subscribtionCredit, handleClick,isDetail
                         event={event}
                         subscribtionCredit={subscribtionCredit}
                         buttonText={`${
-                        event.tickets && event.tickets[0].credits
+                        event.credits
                             } Credits`}
-                        reservation={event.tickets[0].bookedTickets}
+                        reservation={event.bookedTickets}
                         venue={venue}
                         handleClick={handleClick}
                         isDetails={isDetails}

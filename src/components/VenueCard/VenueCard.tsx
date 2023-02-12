@@ -81,7 +81,7 @@ const VenueCard = ({ venue, subscribtionCredit }: any) => {
             </div>
               {safetyValues && safetyValues.length>0 &&
                   <div className="guidelines-wrapper">
-                      <span style={{marginLeft: 5}}><img src="/images/SafetyIcon.png" alt="profile"/></span> <span
+                      <span style={{marginLeft: 10}}><img src="/images/SafetyIcon.png" alt="profile"/></span> <span
                       style={{marginLeft: 5}}>Safety Guidelines</span>
                   </div>
               }
