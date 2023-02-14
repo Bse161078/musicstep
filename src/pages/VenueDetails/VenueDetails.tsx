@@ -270,28 +270,28 @@ export default function VenueDetails() {
 
                         <Grid container alignItems={"center"} justifyContent={"space-between"} style={{marginTop:"50px"}}>
                             {venueDetail["socialMediaAndMarketingLinks"].phoneNumber &&
-                                <Grid item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].phoneNumber)}>
+                                <Grid item onClick={(e)=>openLink('tel:'+venueDetail["socialMediaAndMarketingLinks"].phoneNumber)}>
                                     <img alt="icon" src="/images/icons/phone-icon.svg"/>
                                 </Grid>
                             }
                             {venueDetail["socialMediaAndMarketingLinks"].youtube &&
-                            <Grid item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].youtube)}>
+                            <Grid style={{cursor:"pointer"}} item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].youtube)}>
                                 <img alt="icon" src="/images/icons/website-icon.svg"/>
                             </Grid>
                             }
                             {venueDetail["socialMediaAndMarketingLinks"].instagram &&
-                            <Grid item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].instagram)}>
+                            <Grid style={{cursor:"pointer"}}  item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].instagram)}>
                                 <img alt="icon" src="/images/icons/instagram-icon.svg"/>
                             </Grid>
                             }
                             {venueDetail["socialMediaAndMarketingLinks"].facebook &&
-                            <Grid item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].facebook)}>
+                            <Grid style={{cursor:"pointer"}} item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].facebook)}>
                                 <img alt="icon" src="/images/icons/facebook-icon.svg"/>
                             </Grid>
                             }
                             {venueDetail["socialMediaAndMarketingLinks"].twitter &&
-                            <Grid item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].twitter)}>
-                                <img alt="icon" src="/images/icons/phone-icon.svg"/>
+                            <Grid style={{cursor:"pointer"}} item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].twitter)}>
+                                <img alt="icon" src="/images/icons/twitter-icon.svg"/>
                             </Grid>
                             }
                         </Grid>
@@ -465,46 +465,34 @@ export default function VenueDetails() {
                                 <span>{venueDetail.location.address}</span>
                             </div>
 
-                            {venueDetail["socialMediaAndMarketingLinks"].phoneNumber && (
-                                <div className="icon-with-content">
+                            <Grid container alignItems={"center"} justifyContent={"space-between"} style={{marginTop:"50px"}}>
+                                {venueDetail["socialMediaAndMarketingLinks"].phoneNumber &&
+                                <Grid style={{cursor:"pointer"}} item onClick={(e)=>openLink('tel:'+venueDetail["socialMediaAndMarketingLinks"].phoneNumber)}>
                                     <img alt="icon" src="/images/icons/phone-icon.svg"/>
-                                    <span>
-                {venueDetail["socialMediaAndMarketingLinks"].phoneNumber}
-              </span>
-                                </div>
-                            )}
-
-                            {venueDetail["socialMediaAndMarketingLinks"].youtube && (
-                                <div className="icon-with-content">
+                                </Grid>
+                                }
+                                {venueDetail["socialMediaAndMarketingLinks"].youtube &&
+                                <Grid style={{cursor:"pointer"}} item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].youtube)}>
                                     <img alt="icon" src="/images/icons/website-icon.svg"/>
-                                    <span>{venueDetail["socialMediaAndMarketingLinks"].youtube}</span>
-                                </div>
-                            )}
-
-                            {venueDetail["socialMediaAndMarketingLinks"].instagram && (
-                                <div className="icon-with-content">
+                                </Grid>
+                                }
+                                {venueDetail["socialMediaAndMarketingLinks"].instagram &&
+                                <Grid style={{cursor:"pointer"}} item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].instagram)}>
                                     <img alt="icon" src="/images/icons/instagram-icon.svg"/>
-                                    <span>
-                {venueDetail["socialMediaAndMarketingLinks"].instagram}
-              </span>
-                                </div>
-                            )}
-
-                            {venueDetail["socialMediaAndMarketingLinks"].facebook && (
-                                <div className="icon-with-content">
+                                </Grid>
+                                }
+                                {venueDetail["socialMediaAndMarketingLinks"].facebook &&
+                                <Grid style={{cursor:"pointer"}} item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].facebook)}>
                                     <img alt="icon" src="/images/icons/facebook-icon.svg"/>
-                                    <span>
-                {venueDetail["socialMediaAndMarketingLinks"].facebook}
-              </span>
-                                </div>
-                            )}
-
-                            {venueDetail["socialMediaAndMarketingLinks"].twitter && (
-                                <div className="icon-with-content">
+                                </Grid>
+                                }
+                                {venueDetail["socialMediaAndMarketingLinks"].twitter &&
+                                <Grid style={{cursor:"pointer"}} item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].twitter)}>
                                     <img alt="icon" src="/images/icons/twitter-icon.svg"/>
-                                    <span>{venueDetail["socialMediaAndMarketingLinks"].twitter}</span>
-                                </div>
-                            )}
+                                </Grid>
+                                }
+                            </Grid>
+
                             {attributeValues && attributeValues.length > 0 &&
                             <Formik initialValues={{}} onSubmit={() => {
                             }}>

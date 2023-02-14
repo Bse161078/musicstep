@@ -168,6 +168,8 @@ export default function ExploreVenue() {
             });
     }
 
+
+
     const venueFilter =
         venues &&
         venues.filter((venue: any) =>
@@ -177,6 +179,8 @@ export default function ExploreVenue() {
     const venueLocations = venueFilter.filter(
         (venue: any) => venue.location && venue.location.address
     );
+
+
 
 
 

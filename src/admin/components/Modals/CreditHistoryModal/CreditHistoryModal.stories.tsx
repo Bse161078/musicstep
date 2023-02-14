@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { storiesOf } from "@storybook/react";
 
-import "antd/dist/antd.css";
 import { CreditHistoryModal } from ".";
 
 storiesOf("CreditHistory Modal", module).add("Modal", () => {

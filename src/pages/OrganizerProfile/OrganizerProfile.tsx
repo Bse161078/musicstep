@@ -23,6 +23,7 @@ import {useLoginContext} from "../../context/authenticationContext";
 import {Spinner} from "../../components/Spinner";
 import {amenties} from "../../mockData/amenties";
 import Dashboard from "../../admin/components/Dashboard/Dashboard";
+import Grid from "@mui/material/Grid/Grid";
 
 type HeadingWithContentProps = {
     heading?: string;
@@ -107,6 +108,18 @@ export default function VenueDetails() {
             .catch((error) => {
             });
     };
+
+
+    const openLink = (url:any) => {
+        let a:any = document.createElement("a");
+        document.body.appendChild(a);
+        a.style = "display: none";
+        a.href = url;
+        a.click();
+        document.body.removeChild(a);
+
+    }
+
     const organizerDetail = location.state.organizerDetail.organizerInfo[0]
     const attributes = organizerDetail?.organizationAttributes;
     // const amenities = events && events?.event?.length>0 && JSON.parse(events.event[0].venueInfo[0].amenities)
@@ -205,45 +218,39 @@ export default function VenueDetails() {
 
                         <div className="venue-info-wrapper">
 
-                            <div className="icon-with-content">
-                                <img alt="icon" src="/images/icons/phone-icon.svg"/>
-                                <span>{organizerDetail["socialMediaAndMarketingLinks"].phoneNumber}</span>
-                            </div>
-
-
-                            <div className="icon-with-content">
-                                <img alt="icon" src="/images/icons/website-icon.svg"/>
-                                <span>{organizerDetail["socialMediaAndMarketingLinks"].youtube}</span>
-                            </div>
-
-                            <div className="icon-with-content">
-                                <img alt="icon" src="/images/icons/instagram-icon.svg"/>
-                                <span>{organizerDetail["socialMediaAndMarketingLinks"].instagram}</span>
-                            </div>
-
-                            <div className="icon-with-content">
-                                <img alt="icon" src="/images/icons/facebook-icon.svg"/>
-                                <span>{organizerDetail["socialMediaAndMarketingLinks"].facebook}</span>
-                            </div>
-
-                            <div className="icon-with-content">
-                                <img alt="icon" src="/images/icons/twitter-icon.svg"/>
-                                <span>{organizerDetail["socialMediaAndMarketingLinks"].twitter}</span>
-                            </div>
-
-                            <div
-                                style={{cursor: "pointer"}}
-                                className="icon-with-content"
-                                onClick={() =>
-                                    window.open(
-                                        `http://maps.google.com?q=${venueDetail.location.lat},${venueDetail.location.lng}`,
-                                        "_blank"
-                                    )
+                            <Grid container alignItems={"center"} justifyContent={"space-between"} style={{marginTop:"50px"}}>
+                                {venueDetail["socialMediaAndMarketingLinks"].phoneNumber &&
+                                <Grid item onClick={(e)=>openLink('tel:'+venueDetail["socialMediaAndMarketingLinks"].phoneNumber)}>
+                                    <img alt="icon" src="/images/icons/phone-icon.svg"/>
+                                </Grid>
                                 }
-                            >
-                                <img alt="icon" src="/images/icons/address-icon.svg"/>
-                                <span>{venueDetail.location.address}</span>
-                            </div>
+                                {venueDetail["socialMediaAndMarketingLinks"].youtube &&
+                                <Grid style={{cursor:"pointer"}} item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].youtube)}>
+                                    <img alt="icon" src="/images/icons/website-icon.svg"/>
+                                </Grid>
+                                }
+                                {venueDetail["socialMediaAndMarketingLinks"].instagram &&
+                                <Grid style={{cursor:"pointer"}}  item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].instagram)}>
+                                    <img alt="icon" src="/images/icons/instagram-icon.svg"/>
+                                </Grid>
+                                }
+                                {venueDetail["socialMediaAndMarketingLinks"].facebook &&
+                                <Grid style={{cursor:"pointer"}} item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].facebook)}>
+                                    <img alt="icon" src="/images/icons/facebook-icon.svg"/>
+                                </Grid>
+                                }
+                                {venueDetail["socialMediaAndMarketingLinks"].twitter &&
+                                <Grid style={{cursor:"pointer"}} item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].twitter)}>
+                                    <img alt="icon" src="/images/icons/twitter-icon.svg"/>
+                                </Grid>
+                                }
+                                <Grid style={{cursor:"pointer"}} item onClick={(e)=>
+                                    openLink(`http://maps.google.com?q=${venueDetail.location.lat},${venueDetail.location.lng}`)}>
+                                    <img alt="icon" src="/images/icons/address-icon.svg"/>
+                                </Grid>
+
+                            </Grid>
+
 
 
                             {

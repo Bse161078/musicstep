@@ -69,7 +69,7 @@ const SliderCustom = (props: SliderProps) => {
                                               onClick={(e) =>
                                                   props.handleImageClick && props.handleImageClick(e)
                                               }
-                                              style={{ padding: 10, height: "220px", width: "350px",objectFit:"scale-down" }}
+                                              style={{ padding: 10, height: "220px", width: "350px",objectFit:"scale-down",background:"#ececec" }}
                                           />
                                           <img
                                               src={"/images/cross-small.svg"}
