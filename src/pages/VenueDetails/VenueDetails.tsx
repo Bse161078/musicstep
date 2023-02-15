@@ -58,6 +58,8 @@ export default function VenueDetails() {
     const [reviews, setreviews] = useState(null);
     const venueDetail = location.state.venueDetail;
     const fromPartner = location.state.fromPartner;
+    const [selectedTab, setSelectedTab] = useState<any>("one");
+    const [hide,setHide]=useState(false);
 
     function getVenue() {
         setIsLoading(true);
@@ -91,6 +93,11 @@ export default function VenueDetails() {
         setamentiesState(tempAmenties);
 
 
+        setInterval(()=>{
+            //setSelectedTab(2)
+        },1500)
+
+
         // setAttributesListState(tempAttributesList);
     }, []);
 
@@ -111,8 +118,8 @@ export default function VenueDetails() {
             });
     };
 
-    const openLink = (url:any) => {
-        let a:any = document.createElement("a");
+    const openLink = (url: any) => {
+        let a: any = document.createElement("a");
         document.body.appendChild(a);
         a.style = "display: none";
         a.href = url;
@@ -152,6 +159,8 @@ export default function VenueDetails() {
     // }
 
 
+
+    console.log("selected tab = ",selectedTab)
     return (
         <>
             {!fromPartner &&
@@ -159,7 +168,8 @@ export default function VenueDetails() {
                 <NavbarWithSearch userCredit={user.credits}/>
 
                 {isLoading && <Loading/>}
-                {events && <VenueDetailsStyle>
+                {events && !hide &&
+                <VenueDetailsStyle selectedTab={selectedTab}>
                     <div className="left-side">
                         <CustomCarousel
                             // images={[
@@ -191,12 +201,17 @@ export default function VenueDetails() {
                         </div>
 
                         <TabsStyle
-                            defaultActiveKey="1"
+                            defaultActiveKey={selectedTab}
                             onChange={(key) => {
                                 if (key === "2") {
                                     setEvents(events)
+                                    setSelectedTab("two")
+
                                 } else if (key === "3") {
                                     getReviews();
+                                    setSelectedTab("three")
+                                }else{
+                                    setSelectedTab("one")
                                 }
                             }}
                         >
@@ -234,7 +249,7 @@ export default function VenueDetails() {
                         </TabsStyle>
                     </div>
 
-                    <div className="venue-info-wrapper">
+                    <div className="venue-info-wrapper" >
                         <div
                             className="map-wrapper"
                             onClick={() =>
@@ -253,245 +268,59 @@ export default function VenueDetails() {
                             />
                         </div>
 
-                        <div
-                            style={{cursor: "pointer"}}
-                            className="icon-with-content"
-                            onClick={() =>
-                                window.open(
-                                    `http://maps.google.com?q=${venueDetail.location.lat},${venueDetail.location.lng}`,
-                                    "_blank"
-                                )
-                            }
-                        >
-                            <img alt="icon" src="/images/icons/address-icon.svg"/>
-                            <span>{venueDetail.location.address}</span>
-                        </div>
 
-
-                        <Grid container alignItems={"center"} justifyContent={"space-between"} style={{marginTop:"50px"}}>
-                            {venueDetail["socialMediaAndMarketingLinks"].phoneNumber &&
-                                <Grid item onClick={(e)=>openLink('tel:'+venueDetail["socialMediaAndMarketingLinks"].phoneNumber)}>
-                                    <img alt="icon" src="/images/icons/phone-icon.svg"/>
-                                </Grid>
-                            }
-                            {venueDetail["socialMediaAndMarketingLinks"].youtube &&
-                            <Grid style={{cursor:"pointer"}} item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].youtube)}>
-                                <img alt="icon" src="/images/icons/website-icon.svg"/>
-                            </Grid>
-                            }
-                            {venueDetail["socialMediaAndMarketingLinks"].instagram &&
-                            <Grid style={{cursor:"pointer"}}  item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].instagram)}>
-                                <img alt="icon" src="/images/icons/instagram-icon.svg"/>
-                            </Grid>
-                            }
-                            {venueDetail["socialMediaAndMarketingLinks"].facebook &&
-                            <Grid style={{cursor:"pointer"}} item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].facebook)}>
-                                <img alt="icon" src="/images/icons/facebook-icon.svg"/>
-                            </Grid>
-                            }
-                            {venueDetail["socialMediaAndMarketingLinks"].twitter &&
-                            <Grid style={{cursor:"pointer"}} item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].twitter)}>
-                                <img alt="icon" src="/images/icons/twitter-icon.svg"/>
-                            </Grid>
-                            }
-                        </Grid>
-
-
-                        {attributeValues && attributeValues.length > 0 &&
-                        <Formik initialValues={{}} onSubmit={() => {
-                        }}>
-                            {() => (
-                                <Form className="attributes-wrapper">
-                                    <LabelWithTag label={"Amenities"} tagType="none"/>
-                                    <div className="list-wrapper">
-                                        {attributeValues.map((attribute: any) => {
-                                            return (
-                                                <InputCheckbox
-                                                    name={attribute.name}
-                                                    onClick={() => {
-                                                    }}
-                                                    className=""
-                                                    label={attribute.name}
-                                                    isCorrectOption={attribute.value}
-                                                />
-                                            );
-                                        })}
-                                    </div>
-                                </Form>
-                            )}
-                        </Formik>
-                        }
-
-                        {safetyValues && safetyValues.length > 0 &&
-                        <Formik initialValues={{}} onSubmit={() => {
-                        }}>
-                            {() => (
-                                <Form className="attributes-wrapper">
-                                    <LabelWithTag label={"Safety Guidelines"} tagType="none"/>
-                                    <div className="list-wrapper">
-                                        {safetyValues.map((attribute: any) => {
-                                            return (
-                                                <InputCheckbox
-                                                    name={attribute.name}
-                                                    onClick={() => {
-                                                    }}
-                                                    className=""
-                                                    label={attribute.name}
-                                                    isCorrectOption={attribute.value}
-                                                />
-                                            );
-                                        })}
-                                    </div>
-                                </Form>
-                            )}
-                        </Formik>
-                        }
-                    </div>
-                </VenueDetailsStyle>}
-            </>
-            }
-            {
-                fromPartner &&
-                <>
-
-                    {isLoading && <Loading/>}
-                    <Dashboard hideSidebar={true}>
-                    {events && <VenueDetailsStyle>
-                        <div className="left-side">
-                            <CustomCarousel
-                                // images={[
-                                //   venueDetail.coverPhotoUrl,
-                                //   ...venueDetail.additionalPhotosUrls,
-                                // ]}
-                            >
-                                {[
-                                    venueDetail.coverPhotoUrl,
-                                    venueDetail.additionalPhotosUrls[0],
-                                ]?.map((image: any) => (
-                                    <img
-                                        alt="carousel tab"
-                                        src={`${process.env.REACT_APP_BASE_URL}/images/${image}`}
-                                    />
-                                ))}
-                            </CustomCarousel>
-                            <LogoWithHeading
-                                heading={venueDetail.name}
-                                logo={venueDetail.logoUrl}
-                                averageRating={events.averageRating}
-                                reviewCount={events.reviewCount}
-                            />
-
-                            <div className="buttons-wrapper" id={"tab"}>
-                                {venueDetail.categoryTags.map((categoryTag: any) => (
-                                    <OutlineButtonStyle>{categoryTag}</OutlineButtonStyle>
-                                ))}
-                            </div>
-
-                            <TabsStyle
-                                defaultActiveKey="1"
-                                onChange={(key) => {
-                                    if (key === "2") {
-                                        setEvents(events)
-                                    } else if (key === "3") {
-                                        getReviews();
+                        <div>
+                            <Grid item container>
+                                <div
+                                    style={{cursor: "pointer"}}
+                                    className="icon-with-content"
+                                    onClick={() =>
+                                        window.open(
+                                            `http://maps.google.com?q=${venueDetail.location.lat},${venueDetail.location.lng}`,
+                                            "_blank"
+                                        )
                                     }
-                                }}
-                            >
-                                <TabPaneStyle tab="Info" key="1">
-                                    <HeadingWithContent description={[venueDetail?.venueBio]}
-                                                        heading={venueDetail.name}/>
-                                    {/* <HeadingWithContent
-                heading="This is heading for venue"
-                description={[
-                  "Asperiores eveniet tempora possimus ut. Vel minus voluptas et quo. Minus molestias fugiat et. Ut deserunt provident ab id numquam quo laborum. Asperiores facilis voluptates voluptatibus magnam. Et est quo expedita molestiae vel porro. Dicta est earum ab dignissimos sit. Dolorem deserunt eius. Ut quia dolore alias. Ad possimus tenetur consequatur quae odit deleniti magnam qui quidem. Et distinctio et rerum illo dolor. Voluptatem impedit enim sint ducimus corrupti eaque suscipit fuga. Asperiores eveniet tempora possimus ut. Vel minus voluptas et quo. Minus molestias fugiat et. Ut deserunt provident ab id numquam quo laborum. Asperiores facilis voluptates voluptatibus magnam. Et est quo expedita molestiae vel porro. Dicta est earum ab dignissimos sit. Dolorem deserunt eius. Ut quia dolore alias. Ad possimus tenetur consequatur quae odit deleniti magnam qui quidem. Et distinctio et rerum illo dolor. Voluptatem impedit enim sint ducimus corrupti eaque suscipit fuga. Asperiores eveniet tempora possimus ut. Vel minus voluptas et quo. Minus molestias fugiat et. Ut deserunt provident ab id numquam quo laborum. Asperiores facilis voluptates voluptatibus magnam. Et est quo expedita molestiae vel porro. Dicta est earum ab dignissimos sit. Dolorem deserunt eius. Ut quia dolore alias. Ad possimus tenetur consequatur quae odit deleniti magnam qui quidem. Et distinctio et rerum illo dolor. Voluptatem impedit enim sint ducimus corrupti eaque suscipit fuga.",
-                ]}
-              /> */}
-                                </TabPaneStyle>
-                                <TabPaneStyle tab="Upcoming Events" key="2">
-                                    <div className="table-wrapper" onClick={() => {
+                                >
+                                    <img alt="icon" src="/images/icons/address-icon.svg"/>
+                                    <span>{venueDetail.location.address}</span>
+                                </div>
+                            </Grid>
+                            <Grid container alignItems={"center"} justifyContent={"space-between"}
+                                  style={{marginTop: "50px"}}>
 
-                                    }}>
-                                        {isLoading ? <Spinner/> :
-                                            <UpcomingEvents events={events.events} venue={venueDetail}
-                                                            isDetails={true} fromPartner={fromPartner}/>}
-                                    </div>
-                                </TabPaneStyle>
-                                <TabPaneStyle tab="Reviews" key="3">
-                                    <div className="table-wrapper">
-                                        <Reviews
-                                            reviews={reviews}
-                                            venueId={venueDetail._id}
-                                            getReviews={getReviews}
-                                            getVenue={getVenue}
-                                            review_type={"venue"}
-                                            count={count}
-                                            fromPartner={fromPartner}
-                                        />
-                                    </div>
-                                </TabPaneStyle>
-                            </TabsStyle>
-                        </div>
 
-                        <div className="venue-info-wrapper">
-                            <div
-                                className="map-wrapper"
-                                onClick={() =>
-                                    window.open(
-                                        `http://maps.google.com?q=${venueDetail.location.lat},${venueDetail.location.lng}`,
-                                        "_blank"
-                                    )
-                                }
-                            >
-                                <img
-                                    src={!venueDetail.location ? "/images/explore-venue/map-2.png"
-                                        :
-                                        `https://maps.googleapis.com/maps/api/staticmap?size=600x400&markers=icon%3Ahttps://musicpassonline.com:3000/images/location.png%7C${venueDetail.location.lat}%2C${venueDetail.location.lng}&visible=${venueDetail.location.lat}%2C${venueDetail.location.lng}%7C${venueDetail.location.lat}%2C${venueDetail.location.lng}&style=element%3Ageometry%7Ccolor%3A0x242f3e&style=element%3Alabels.text.stroke%7Ccolor%3A0x242f3e&style=element%3Alabels.text.fill%7Ccolor%3A0x746855&style=feature%3Aadministrative.locality%7Celement%3Alabels.text.fill%7Ccolor%3A0xd59563&style=feature%3Apoi%7Celement%3Alabels.text.fill%7Ccolor%3A0xd59563&style=feature%3Apoi.park%7Celement%3Ageometry%7Ccolor%3A0x263c3f&style=feature%3Apoi.park%7Celement%3Alabels.text.fill%7Ccolor%3A0x6b9a76&style=feature%3Aroad%7Celement%3Ageometry%7Ccolor%3A0x38414e&style=feature%3Aroad%7Celement%3Ageometry.stroke%7Ccolor%3A0x212a37&style=feature%3Aroad%7Celement%3Alabels.text.fill%7Ccolor%3A0x9ca5b3&style=feature%3Aroad.highway%7Celement%3Ageometry%7Ccolor%3A0x746855&style=feature%3Aroad.highway%7Celement%3Ageometry.stroke%7Ccolor%3A0x1f2835&style=feature%3Aroad.highway%7Celement%3Alabels.text.fill%7Ccolor%3A0xf3d19c&style=feature%3Atransit%7Celement%3Ageometry%7Ccolor%3A0x2f3948&style=feature%3Atransit.station%7Celement%3Alabels.text.fill%7Ccolor%3A0xd59563&style=feature%3Awater%7Celement%3Ageometry%7Ccolor%3A0x17263c&style=feature%3Awater%7Celement%3Alabels.text.fill%7Ccolor%3A0x515c6d&style=feature%3Awater%7Celement%3Alabels.text.stroke%7Ccolor%3A0x17263c&key=AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew`}
-                                    className="map"
-                                    alt="map"
-                                />
-                            </div>
-
-                            <div
-                                style={{cursor: "pointer"}}
-                                className="icon-with-content"
-                                onClick={() =>
-                                    window.open(
-                                        `http://maps.google.com?q=${venueDetail.location.lat},${venueDetail.location.lng}`,
-                                        "_blank"
-                                    )
-                                }
-                            >
-                                <img alt="icon" src="/images/icons/address-icon.svg"/>
-                                <span>{venueDetail.location.address}</span>
-                            </div>
-
-                            <Grid container alignItems={"center"} justifyContent={"space-between"} style={{marginTop:"50px"}}>
                                 {venueDetail["socialMediaAndMarketingLinks"].phoneNumber &&
-                                <Grid style={{cursor:"pointer"}} item onClick={(e)=>openLink('tel:'+venueDetail["socialMediaAndMarketingLinks"].phoneNumber)}>
+                                <Grid item
+                                      onClick={(e) => openLink('tel:' + venueDetail["socialMediaAndMarketingLinks"].phoneNumber)}>
                                     <img alt="icon" src="/images/icons/phone-icon.svg"/>
                                 </Grid>
                                 }
                                 {venueDetail["socialMediaAndMarketingLinks"].youtube &&
-                                <Grid style={{cursor:"pointer"}} item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].youtube)}>
+                                <Grid style={{cursor: "pointer"}} item
+                                      onClick={(e) => openLink(venueDetail["socialMediaAndMarketingLinks"].youtube)}>
                                     <img alt="icon" src="/images/icons/website-icon.svg"/>
                                 </Grid>
                                 }
                                 {venueDetail["socialMediaAndMarketingLinks"].instagram &&
-                                <Grid style={{cursor:"pointer"}} item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].instagram)}>
+                                <Grid style={{cursor: "pointer"}} item
+                                      onClick={(e) => openLink(venueDetail["socialMediaAndMarketingLinks"].instagram)}>
                                     <img alt="icon" src="/images/icons/instagram-icon.svg"/>
                                 </Grid>
                                 }
                                 {venueDetail["socialMediaAndMarketingLinks"].facebook &&
-                                <Grid style={{cursor:"pointer"}} item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].facebook)}>
+                                <Grid style={{cursor: "pointer"}} item
+                                      onClick={(e) => openLink(venueDetail["socialMediaAndMarketingLinks"].facebook)}>
                                     <img alt="icon" src="/images/icons/facebook-icon.svg"/>
                                 </Grid>
                                 }
                                 {venueDetail["socialMediaAndMarketingLinks"].twitter &&
-                                <Grid style={{cursor:"pointer"}} item onClick={(e)=>openLink(venueDetail["socialMediaAndMarketingLinks"].twitter)}>
+                                <Grid style={{cursor: "pointer"}} item
+                                      onClick={(e) => openLink(venueDetail["socialMediaAndMarketingLinks"].twitter)}>
                                     <img alt="icon" src="/images/icons/twitter-icon.svg"/>
                                 </Grid>
                                 }
                             </Grid>
+
 
                             {attributeValues && attributeValues.length > 0 &&
                             <Formik initialValues={{}} onSubmit={() => {
@@ -543,7 +372,338 @@ export default function VenueDetails() {
                             </Formik>
                             }
                         </div>
-                    </VenueDetailsStyle>}
+                    </div>
+                </VenueDetailsStyle>
+
+                }
+            </>
+            }
+            {
+                fromPartner &&
+                <>
+
+                    {isLoading && <Loading/>}
+                    <Dashboard hideSidebar={true}>
+                        {events && <VenueDetailsStyle selectedTab={"one"}>
+                            <div className="left-side">
+                                <CustomCarousel
+                                    // images={[
+                                    //   venueDetail.coverPhotoUrl,
+                                    //   ...venueDetail.additionalPhotosUrls,
+                                    // ]}
+                                >
+                                    {[
+                                        venueDetail.coverPhotoUrl,
+                                        venueDetail.additionalPhotosUrls[0],
+                                    ]?.map((image: any) => (
+                                        <img
+                                            alt="carousel tab"
+                                            src={`${process.env.REACT_APP_BASE_URL}/images/${image}`}
+                                        />
+                                    ))}
+                                </CustomCarousel>
+                                <LogoWithHeading
+                                    heading={venueDetail.name}
+                                    logo={venueDetail.logoUrl}
+                                    averageRating={events.averageRating}
+                                    reviewCount={events.reviewCount}
+                                />
+
+                                <div className="buttons-wrapper" id={"tab"}>
+                                    {venueDetail.categoryTags.map((categoryTag: any) => (
+                                        <OutlineButtonStyle>{categoryTag}</OutlineButtonStyle>
+                                    ))}
+                                </div>
+
+                                <TabsStyle
+                                    defaultActiveKey="1"
+                                    onChange={(key) => {
+                                        if (key === "2") {
+                                            setEvents(events)
+                                        } else if (key === "3") {
+                                            getReviews();
+                                        }
+                                    }}
+                                >
+                                    <TabPaneStyle tab="Info" key="1">
+                                        <HeadingWithContent description={[venueDetail?.venueBio]}
+                                                            heading={venueDetail.name}/>
+                                        {/* <HeadingWithContent
+                heading="This is heading for venue"
+                description={[
+                  "Asperiores eveniet tempora possimus ut. Vel minus voluptas et quo. Minus molestias fugiat et. Ut deserunt provident ab id numquam quo laborum. Asperiores facilis voluptates voluptatibus magnam. Et est quo expedita molestiae vel porro. Dicta est earum ab dignissimos sit. Dolorem deserunt eius. Ut quia dolore alias. Ad possimus tenetur consequatur quae odit deleniti magnam qui quidem. Et distinctio et rerum illo dolor. Voluptatem impedit enim sint ducimus corrupti eaque suscipit fuga. Asperiores eveniet tempora possimus ut. Vel minus voluptas et quo. Minus molestias fugiat et. Ut deserunt provident ab id numquam quo laborum. Asperiores facilis voluptates voluptatibus magnam. Et est quo expedita molestiae vel porro. Dicta est earum ab dignissimos sit. Dolorem deserunt eius. Ut quia dolore alias. Ad possimus tenetur consequatur quae odit deleniti magnam qui quidem. Et distinctio et rerum illo dolor. Voluptatem impedit enim sint ducimus corrupti eaque suscipit fuga. Asperiores eveniet tempora possimus ut. Vel minus voluptas et quo. Minus molestias fugiat et. Ut deserunt provident ab id numquam quo laborum. Asperiores facilis voluptates voluptatibus magnam. Et est quo expedita molestiae vel porro. Dicta est earum ab dignissimos sit. Dolorem deserunt eius. Ut quia dolore alias. Ad possimus tenetur consequatur quae odit deleniti magnam qui quidem. Et distinctio et rerum illo dolor. Voluptatem impedit enim sint ducimus corrupti eaque suscipit fuga.",
+                ]}
+              /> */}
+                                    </TabPaneStyle>
+                                    <TabPaneStyle tab="Upcoming Events" key="2">
+                                        <div className="table-wrapper" onClick={() => {
+
+                                        }}>
+                                            {isLoading ? <Spinner/> :
+                                                <UpcomingEvents events={events.events} venue={venueDetail}
+                                                                isDetails={true} fromPartner={fromPartner}/>}
+                                        </div>
+                                    </TabPaneStyle>
+                                    <TabPaneStyle tab="Reviews" key="3">
+                                        <div className="table-wrapper">
+                                            <Reviews
+                                                reviews={reviews}
+                                                venueId={venueDetail._id}
+                                                getReviews={getReviews}
+                                                getVenue={getVenue}
+                                                review_type={"venue"}
+                                                count={count}
+                                                fromPartner={fromPartner}
+                                            />
+                                        </div>
+                                    </TabPaneStyle>
+                                </TabsStyle>
+                            </div>
+
+
+                            <div className="venue-info-wrapper">
+                                <div
+                                    className="map-wrapper"
+                                    onClick={() =>
+                                        window.open(
+                                            `http://maps.google.com?q=${venueDetail.location.lat},${venueDetail.location.lng}`,
+                                            "_blank"
+                                        )
+                                    }
+                                >
+                                    <img
+                                        src={!venueDetail.location ? "/images/explore-venue/map-2.png"
+                                            :
+                                            `https://maps.googleapis.com/maps/api/staticmap?size=600x400&markers=icon%3Ahttps://musicpassonline.com:3000/images/location.png%7C${venueDetail.location.lat}%2C${venueDetail.location.lng}&visible=${venueDetail.location.lat}%2C${venueDetail.location.lng}%7C${venueDetail.location.lat}%2C${venueDetail.location.lng}&style=element%3Ageometry%7Ccolor%3A0x242f3e&style=element%3Alabels.text.stroke%7Ccolor%3A0x242f3e&style=element%3Alabels.text.fill%7Ccolor%3A0x746855&style=feature%3Aadministrative.locality%7Celement%3Alabels.text.fill%7Ccolor%3A0xd59563&style=feature%3Apoi%7Celement%3Alabels.text.fill%7Ccolor%3A0xd59563&style=feature%3Apoi.park%7Celement%3Ageometry%7Ccolor%3A0x263c3f&style=feature%3Apoi.park%7Celement%3Alabels.text.fill%7Ccolor%3A0x6b9a76&style=feature%3Aroad%7Celement%3Ageometry%7Ccolor%3A0x38414e&style=feature%3Aroad%7Celement%3Ageometry.stroke%7Ccolor%3A0x212a37&style=feature%3Aroad%7Celement%3Alabels.text.fill%7Ccolor%3A0x9ca5b3&style=feature%3Aroad.highway%7Celement%3Ageometry%7Ccolor%3A0x746855&style=feature%3Aroad.highway%7Celement%3Ageometry.stroke%7Ccolor%3A0x1f2835&style=feature%3Aroad.highway%7Celement%3Alabels.text.fill%7Ccolor%3A0xf3d19c&style=feature%3Atransit%7Celement%3Ageometry%7Ccolor%3A0x2f3948&style=feature%3Atransit.station%7Celement%3Alabels.text.fill%7Ccolor%3A0xd59563&style=feature%3Awater%7Celement%3Ageometry%7Ccolor%3A0x17263c&style=feature%3Awater%7Celement%3Alabels.text.fill%7Ccolor%3A0x515c6d&style=feature%3Awater%7Celement%3Alabels.text.stroke%7Ccolor%3A0x17263c&key=AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew`}
+                                        className="map"
+                                        alt="map"
+                                    />
+                                </div>
+
+
+                                <div>
+                                    <Grid item container>
+                                        <div
+                                            style={{cursor: "pointer"}}
+                                            className="icon-with-content"
+                                            onClick={() =>
+                                                window.open(
+                                                    `http://maps.google.com?q=${venueDetail.location.lat},${venueDetail.location.lng}`,
+                                                    "_blank"
+                                                )
+                                            }
+                                        >
+                                            <img alt="icon" src="/images/icons/address-icon.svg"/>
+                                            <span>{venueDetail.location.address}</span>
+                                        </div>
+                                    </Grid>
+                                    <Grid container alignItems={"center"} justifyContent={"space-between"}
+                                          style={{marginTop: "50px"}}>
+
+
+                                        {venueDetail["socialMediaAndMarketingLinks"].phoneNumber &&
+                                        <Grid item
+                                              onClick={(e) => openLink('tel:' + venueDetail["socialMediaAndMarketingLinks"].phoneNumber)}>
+                                            <img alt="icon" src="/images/icons/phone-icon.svg"/>
+                                        </Grid>
+                                        }
+                                        {venueDetail["socialMediaAndMarketingLinks"].youtube &&
+                                        <Grid style={{cursor: "pointer"}} item
+                                              onClick={(e) => openLink(venueDetail["socialMediaAndMarketingLinks"].youtube)}>
+                                            <img alt="icon" src="/images/icons/website-icon.svg"/>
+                                        </Grid>
+                                        }
+                                        {venueDetail["socialMediaAndMarketingLinks"].instagram &&
+                                        <Grid style={{cursor: "pointer"}} item
+                                              onClick={(e) => openLink(venueDetail["socialMediaAndMarketingLinks"].instagram)}>
+                                            <img alt="icon" src="/images/icons/instagram-icon.svg"/>
+                                        </Grid>
+                                        }
+                                        {venueDetail["socialMediaAndMarketingLinks"].facebook &&
+                                        <Grid style={{cursor: "pointer"}} item
+                                              onClick={(e) => openLink(venueDetail["socialMediaAndMarketingLinks"].facebook)}>
+                                            <img alt="icon" src="/images/icons/facebook-icon.svg"/>
+                                        </Grid>
+                                        }
+                                        {venueDetail["socialMediaAndMarketingLinks"].twitter &&
+                                        <Grid style={{cursor: "pointer"}} item
+                                              onClick={(e) => openLink(venueDetail["socialMediaAndMarketingLinks"].twitter)}>
+                                            <img alt="icon" src="/images/icons/twitter-icon.svg"/>
+                                        </Grid>
+                                        }
+                                    </Grid>
+
+
+                                    {attributeValues && attributeValues.length > 0 &&
+                                    <Formik initialValues={{}} onSubmit={() => {
+                                    }}>
+                                        {() => (
+                                            <Form className="attributes-wrapper">
+                                                <LabelWithTag label={"Amenities"} tagType="none"/>
+                                                <div className="list-wrapper">
+                                                    {attributeValues.map((attribute: any) => {
+                                                        return (
+                                                            <InputCheckbox
+                                                                name={attribute.name}
+                                                                onClick={() => {
+                                                                }}
+                                                                className=""
+                                                                label={attribute.name}
+                                                                isCorrectOption={attribute.value}
+                                                            />
+                                                        );
+                                                    })}
+                                                </div>
+                                            </Form>
+                                        )}
+                                    </Formik>
+                                    }
+
+                                    {safetyValues && safetyValues.length > 0 &&
+                                    <Formik initialValues={{}} onSubmit={() => {
+                                    }}>
+                                        {() => (
+                                            <Form className="attributes-wrapper">
+                                                <LabelWithTag label={"Safety Guidelines"} tagType="none"/>
+                                                <div className="list-wrapper">
+                                                    {safetyValues.map((attribute: any) => {
+                                                        return (
+                                                            <InputCheckbox
+                                                                name={attribute.name}
+                                                                onClick={() => {
+                                                                }}
+                                                                className=""
+                                                                label={attribute.name}
+                                                                isCorrectOption={attribute.value}
+                                                            />
+                                                        );
+                                                    })}
+                                                </div>
+                                            </Form>
+                                        )}
+                                    </Formik>
+                                    }
+                                </div>
+                            </div>
+
+                            <div className="venue-info-wrapper">
+                                <div
+                                    className="map-wrapper"
+                                    onClick={() =>
+                                        window.open(
+                                            `http://maps.google.com?q=${venueDetail.location.lat},${venueDetail.location.lng}`,
+                                            "_blank"
+                                        )
+                                    }
+                                >
+                                    <img
+                                        src={!venueDetail.location ? "/images/explore-venue/map-2.png"
+                                            :
+                                            `https://maps.googleapis.com/maps/api/staticmap?size=600x400&markers=icon%3Ahttps://musicpassonline.com:3000/images/location.png%7C${venueDetail.location.lat}%2C${venueDetail.location.lng}&visible=${venueDetail.location.lat}%2C${venueDetail.location.lng}%7C${venueDetail.location.lat}%2C${venueDetail.location.lng}&style=element%3Ageometry%7Ccolor%3A0x242f3e&style=element%3Alabels.text.stroke%7Ccolor%3A0x242f3e&style=element%3Alabels.text.fill%7Ccolor%3A0x746855&style=feature%3Aadministrative.locality%7Celement%3Alabels.text.fill%7Ccolor%3A0xd59563&style=feature%3Apoi%7Celement%3Alabels.text.fill%7Ccolor%3A0xd59563&style=feature%3Apoi.park%7Celement%3Ageometry%7Ccolor%3A0x263c3f&style=feature%3Apoi.park%7Celement%3Alabels.text.fill%7Ccolor%3A0x6b9a76&style=feature%3Aroad%7Celement%3Ageometry%7Ccolor%3A0x38414e&style=feature%3Aroad%7Celement%3Ageometry.stroke%7Ccolor%3A0x212a37&style=feature%3Aroad%7Celement%3Alabels.text.fill%7Ccolor%3A0x9ca5b3&style=feature%3Aroad.highway%7Celement%3Ageometry%7Ccolor%3A0x746855&style=feature%3Aroad.highway%7Celement%3Ageometry.stroke%7Ccolor%3A0x1f2835&style=feature%3Aroad.highway%7Celement%3Alabels.text.fill%7Ccolor%3A0xf3d19c&style=feature%3Atransit%7Celement%3Ageometry%7Ccolor%3A0x2f3948&style=feature%3Atransit.station%7Celement%3Alabels.text.fill%7Ccolor%3A0xd59563&style=feature%3Awater%7Celement%3Ageometry%7Ccolor%3A0x17263c&style=feature%3Awater%7Celement%3Alabels.text.fill%7Ccolor%3A0x515c6d&style=feature%3Awater%7Celement%3Alabels.text.stroke%7Ccolor%3A0x17263c&key=AIzaSyB4oh8lVm9cjXA-V0GovELsSVY5Lr9NMew`}
+                                        className="map"
+                                        alt="map"
+                                    />
+                                </div>
+
+                                <div
+                                    style={{cursor: "pointer"}}
+                                    className="icon-with-content"
+                                    onClick={() =>
+                                        window.open(
+                                            `http://maps.google.com?q=${venueDetail.location.lat},${venueDetail.location.lng}`,
+                                            "_blank"
+                                        )
+                                    }
+                                >
+                                    <img alt="icon" src="/images/icons/address-icon.svg"/>
+                                    <span>{venueDetail.location.address}</span>
+                                </div>
+
+                                <Grid container alignItems={"center"} justifyContent={"space-between"}
+                                      style={{marginTop: "50px"}}>
+                                    {venueDetail["socialMediaAndMarketingLinks"].phoneNumber &&
+                                    <Grid style={{cursor: "pointer"}} item
+                                          onClick={(e) => openLink('tel:' + venueDetail["socialMediaAndMarketingLinks"].phoneNumber)}>
+                                        <img alt="icon" src="/images/icons/phone-icon.svg"/>
+                                    </Grid>
+                                    }
+                                    {venueDetail["socialMediaAndMarketingLinks"].youtube &&
+                                    <Grid style={{cursor: "pointer"}} item
+                                          onClick={(e) => openLink(venueDetail["socialMediaAndMarketingLinks"].youtube)}>
+                                        <img alt="icon" src="/images/icons/website-icon.svg"/>
+                                    </Grid>
+                                    }
+                                    {venueDetail["socialMediaAndMarketingLinks"].instagram &&
+                                    <Grid style={{cursor: "pointer"}} item
+                                          onClick={(e) => openLink(venueDetail["socialMediaAndMarketingLinks"].instagram)}>
+                                        <img alt="icon" src="/images/icons/instagram-icon.svg"/>
+                                    </Grid>
+                                    }
+                                    {venueDetail["socialMediaAndMarketingLinks"].facebook &&
+                                    <Grid style={{cursor: "pointer"}} item
+                                          onClick={(e) => openLink(venueDetail["socialMediaAndMarketingLinks"].facebook)}>
+                                        <img alt="icon" src="/images/icons/facebook-icon.svg"/>
+                                    </Grid>
+                                    }
+                                    {venueDetail["socialMediaAndMarketingLinks"].twitter &&
+                                    <Grid style={{cursor: "pointer"}} item
+                                          onClick={(e) => openLink(venueDetail["socialMediaAndMarketingLinks"].twitter)}>
+                                        <img alt="icon" src="/images/icons/twitter-icon.svg"/>
+                                    </Grid>
+                                    }
+                                </Grid>
+
+                                {attributeValues && attributeValues.length > 0 &&
+                                <Formik initialValues={{}} onSubmit={() => {
+                                }}>
+                                    {() => (
+                                        <Form className="attributes-wrapper">
+                                            <LabelWithTag label={"Amenities"} tagType="none"/>
+                                            <div className="list-wrapper">
+                                                {attributeValues.map((attribute: any) => {
+                                                    return (
+                                                        <InputCheckbox
+                                                            name={attribute.name}
+                                                            onClick={() => {
+                                                            }}
+                                                            className=""
+                                                            label={attribute.name}
+                                                            isCorrectOption={attribute.value}
+                                                        />
+                                                    );
+                                                })}
+                                            </div>
+                                        </Form>
+                                    )}
+                                </Formik>
+                                }
+
+                                {safetyValues && safetyValues.length > 0 &&
+                                <Formik initialValues={{}} onSubmit={() => {
+                                }}>
+                                    {() => (
+                                        <Form className="attributes-wrapper">
+                                            <LabelWithTag label={"Safety Guidelines"} tagType="none"/>
+                                            <div className="list-wrapper">
+                                                {safetyValues.map((attribute: any) => {
+                                                    return (
+                                                        <InputCheckbox
+                                                            name={attribute.name}
+                                                            onClick={() => {
+                                                            }}
+                                                            className=""
+                                                            label={attribute.name}
+                                                            isCorrectOption={attribute.value}
+                                                        />
+                                                    );
+                                                })}
+                                            </div>
+                                        </Form>
+                                    )}
+                                </Formik>
+                                }
+                            </div>
+                        </VenueDetailsStyle>}
                     </Dashboard>
                 </>
             }

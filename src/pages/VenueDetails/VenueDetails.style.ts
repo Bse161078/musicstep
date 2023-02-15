@@ -3,15 +3,38 @@ import styled from "styled-components";
 import { OutlineButtonStyle } from "../../styles/Common.style";
 import { TabsStyle } from "../../styles/Fields.style";
 
-export const VenueDetailsStyle = styled.div`
+
+type VenueDetailsProps = {
+    selectedTab?:string;
+};
+export const VenueDetailsStyle = styled.div<VenueDetailsProps>`
   display: grid;
   grid-template-columns: 1fr minmax(auto, 400px);
   align-items: flex-start;
   padding-top: 50px;
   padding-bottom: 50px;
-  @media (max-width: 1600px) {
-    grid-template-columns: 1.5fr 1fr;
-  }
+  
+  ${props => props.selectedTab && props.selectedTab==="two"  && `
+
+     @media (max-width: 1600px) {
+     grid-template-columns: 1fr;
+     grid-gap: 10px;
+     }
+     
+     @media (min-width: 1600px) {
+     grid-template-columns: 1.5fr 1fr;
+     }
+  `}
+  
+  ${props => props.selectedTab && (props.selectedTab == "one" || props.selectedTab==="three") && `
+
+     @media (max-width: 1600px) {
+     grid-template-columns: 1.5fr 1fr;
+     }
+  `}
+  
+  
+
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -97,6 +120,24 @@ export const VenueDetailsStyle = styled.div`
     border-left: 1px solid ${rgba("#0c0c0c", 0.3)};
     position: sticky;
     top: 106px;
+    margin-top:20px;
+
+     ${props => props.selectedTab && props.selectedTab === "two" && `
+
+   
+
+     @media (max-width: 1599px) {
+     padding: 0px 120px 0px 120px;
+     grid-template-columns: 1fr 1fr;
+      display: grid;
+    grid-gap: 60px;
+    }
+    @media (max-width: 1024px) {
+        grid-template-columns: 1fr;
+        justify-content:center;
+    }
+    `}
+
 
     @media (max-width: 767px) {
       padding: 0 20px;
@@ -128,3 +169,136 @@ export const HeadingWithContentStyle = styled.div`
     font-size: 20px;
   }
 `;
+
+
+
+export const VenueUpcomingDetailsStyle = styled.div`
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 400px);
+  align-items: flex-start;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @media (min-width: 1600px) {
+    grid-template-columns: 1.5fr 1fr;
+  }
+
+  @media (max-width: 1600px) {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+
+  .attributes-wrapper {
+    .header {
+      font-size: 24px;
+      margin-top: 50px;
+      margin-bottom: 10px;
+    }
+
+    .ant-checkbox-wrapper  {
+      margin-left: 0;
+    }
+  }
+
+  .table-wrapper {
+    @media (max-width: 767px) {
+      overflow: auto;
+      width: 85vw;
+      display: grid;
+    }
+  }
+
+  .left-side {
+    padding: 0 10px;
+    padding-left: 120px;
+
+    @media (max-width: 768px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  .buttons-wrapper {
+    display: flex;
+    grid-column-gap: 20px;
+    justify-content: flex-start;
+    padding: 30px 0 40px 0;
+
+    ${OutlineButtonStyle} {
+      border: solid 1px rgba(12, 12, 12, 0.3);
+    }
+  }
+
+  ${TabsStyle} {
+    .ant-tabs-nav {
+      background: #f7f7f7;
+      border-radius: 50px;
+      margin-bottom: 30px;
+
+      &:before {
+        border-bottom: 0;
+      }
+
+      .ant-tabs-tab-btn {
+        font-size: 16px;
+      }
+    }
+
+    .ant-tabs-ink-bar {
+      display: none;
+    }
+  }
+
+  .icon-with-content {
+    display: flex;
+    grid-column-gap: 15px;
+    margin-bottom: 20px;
+    align-items: center;
+
+    span {
+      color: #0c0c0c;
+      opacity: 0.5;
+      font-size: 20px;
+    }
+  }
+
+  .venue-info-wrapper {
+    padding: 0px 60px;
+    border-left: 1px solid ${rgba("#0c0c0c", 0.3)};
+    position: sticky;
+    top: 106px;
+  
+    
+     @media (max-width: 1600px) {
+    padding: 0px 120px 0px 120px;
+        grid-template-columns: 1fr 1fr;
+      display: grid;
+
+    }
+  
+  @media (max-width: 1024px) {
+        padding: 0px 60px;
+        grid-template-columns: 1fr;
+
+    } 
+    
+    @media (max-width: 767px) {
+      padding: 0 20px;
+    }
+
+  .map-wrapper {
+    margin-bottom: 30px;
+    
+
+    .map {
+      width: 100%;
+      cursor: pointer;
+      
+      @media (max-width: 1600px) {
+      padding: 0 20px;
+    }
+      
+    }
+  }
+  }
+`;
+

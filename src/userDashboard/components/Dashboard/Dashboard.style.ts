@@ -7,7 +7,7 @@ export const DashboardStyle = styled.div`
   margin-top: 110px;
   margin-left: 60px;
 
-  @media (max-width: 767px) {
+  @media (max-width: px) {
     grid-template-columns: 1fr;
     margin: 20px;
   }
