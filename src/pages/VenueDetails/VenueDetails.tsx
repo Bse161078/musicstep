@@ -160,7 +160,6 @@ export default function VenueDetails() {
 
 
 
-    console.log("selected tab = ",selectedTab)
     return (
         <>
             {!fromPartner &&
@@ -169,7 +168,7 @@ export default function VenueDetails() {
 
                 {isLoading && <Loading/>}
                 {events && !hide &&
-                <VenueDetailsStyle selectedTab={selectedTab}>
+                <VenueDetailsStyle>
                     <div className="left-side">
                         <CustomCarousel
                             // images={[
@@ -179,10 +178,11 @@ export default function VenueDetails() {
                         >
                             {[
                                 venueDetail.coverPhotoUrl,
-                                venueDetail.additionalPhotosUrls[0],
+                                ...venueDetail.additionalPhotosUrls,
                             ]?.map((image: any) => (
                                 <img
                                     alt="carousel tab"
+                                    style={{maxHeight:"250px"}}
                                     src={`${process.env.REACT_APP_BASE_URL}/images/${image}`}
                                 />
                             ))}
@@ -384,7 +384,7 @@ export default function VenueDetails() {
 
                     {isLoading && <Loading/>}
                     <Dashboard hideSidebar={true}>
-                        {events && <VenueDetailsStyle selectedTab={"one"}>
+                        {events && <VenueDetailsStyle>
                             <div className="left-side">
                                 <CustomCarousel
                                     // images={[
@@ -394,10 +394,11 @@ export default function VenueDetails() {
                                 >
                                     {[
                                         venueDetail.coverPhotoUrl,
-                                        venueDetail.additionalPhotosUrls[0],
+                                        ...venueDetail.additionalPhotosUrls,
                                     ]?.map((image: any) => (
                                         <img
                                             alt="carousel tab"
+                                            style={{maxHeight:"250px"}}
                                             src={`${process.env.REACT_APP_BASE_URL}/images/${image}`}
                                         />
                                     ))}

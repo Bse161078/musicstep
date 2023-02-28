@@ -51,7 +51,7 @@ const PreviewOrganizationInfo = (props: PreviewOrganizationInfoProps) => {
       />
 
       <ContentHeader
-        heading="Add Organizer Profile"
+        heading="Organization"
         description="Details that apply across your events and venues."
       />
 

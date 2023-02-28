@@ -169,13 +169,15 @@ export default function ExploreVenue() {
     }
 
 
-
-    const venueFilter =
+    let venueFilter =
         venues &&
         venues.filter((venue: any) =>
             (venue?.name).toLowerCase().includes(state.search.toLowerCase()) ||
             ((venue.location.address.toLowerCase()).includes(state.search.toLowerCase()))
         );
+
+
+
     const venueLocations = venueFilter.filter(
         (venue: any) => venue.location && venue.location.address
     );

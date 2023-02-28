@@ -95,8 +95,8 @@ const CardWithContent = (props: CardWithContentProps) => {
     return (
         <>
             <Grid container>
-                <Box component={"p"} sx={{fontWeight:"bold",fontSize:{xs:"15px",md:"18px"}}} className="heading">{moment(event.state).format("ddd")},{" "}
-                    {moment(event.state).format("MMM") + " " + moment(event.state).date()}</Box>
+                <Box component={"p"} sx={{fontWeight:"bold",fontSize:{xs:"15px",md:"18px"}}} className="heading">{moment(event.city).format("ddd")},{" "}
+                    {moment(event.city).format("MMM") + " " + moment(event.city).date()}</Box>
             </Grid>
 
             <CardWithContentStyle>

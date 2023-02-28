@@ -137,9 +137,9 @@ export const EventDetailWrapper = ({event, venue, hideReserve}: EventDetailWrapp
 
                 <div className="date-time">
                     <p>
-                        {week[moment(event.date).day()]} , {moment(event.date).format("MMMM") +
+                        {week[moment(event.city).day()]} , {moment(event.city).format("MMMM") +
                         " " +
-                        moment(event.date).date()}
+                        moment(event.city).date()}
                     </p>
                     <p>
                         {moment(event.startingTime, ["hh:mm"]).format("h:mm a")} - {moment(event.endingTime, ["hh:mm"]).format("h:mm a")}

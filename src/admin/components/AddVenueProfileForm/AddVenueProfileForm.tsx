@@ -265,12 +265,17 @@ const AddVenueProfileForm = () => {
         bodyData.append("logo", e.logo);
         bodyData.append("coverPhoto", e.coverPhoto);
 
+        let addtionalPhotos:any=[];
         if (e.additionalPhotos) {
             const files = e.additionalPhotos;
             for (let i = 0; i < files.length; i++) {
-                bodyData.append(`additionalPhotos`, files[i]);
+                addtionalPhotos.push(files[i]);
             }
         }
+
+        addtionalPhotos.forEach((img:File) => {
+            bodyData.append(`additionalPhotos`, img);
+        });
 
         const res = await axios
             .post("/v1/venue", bodyData, {

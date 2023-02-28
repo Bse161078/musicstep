@@ -37,7 +37,18 @@ const EventReservation = ({reservations, cancelreservation, subscription, setPri
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [selectedReservation, setSelectedReservation] = useState(false);
 
-    reservations = reservations.filter((reserve: any) => (reserve.eventInfo).length > 0 && (new Date(reserve.eventInfo[0].date) >= new Date()));
+    const sortEvents=(reservations:any)=>{
+        return reservations.sort((a:any,b:any)=>{
+            const c:any = new Date(a.eventInfo[0].date);
+            const d:any = new Date(b.eventInfo[0].date);
+
+            return c-d;
+        });
+
+    }
+
+
+    reservations = sortEvents(reservations.filter((reserve: any) => (reserve.eventInfo).length > 0 && (new Date(reserve.eventInfo[0].date) >= new Date())));
 
     return (
         <>
@@ -72,7 +83,7 @@ const EventReservation = ({reservations, cancelreservation, subscription, setPri
                                             setSelectedReservation(reservation._id);
                                             setCancelModalVisible(true);
                                         }}
-                                        date={new Date(reservation.eventInfo[0].date)}
+                                        date={new Date(reservation.eventInfo[0].city)}
                                         originalTime={moment(reservation.eventInfo[0].startingTime)}
                                         categoryTags={[reservation.eventInfo[0].country]}
                                         reservation={reservation}

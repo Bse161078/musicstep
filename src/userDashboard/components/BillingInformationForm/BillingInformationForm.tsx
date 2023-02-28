@@ -39,10 +39,10 @@ const BillingInformationForm = () => {
             <Formik
                 validationSchema={BillingValidationSchema}
                 initialValues={{
-                    nameOnCard: billingInformation.fullName || "",
-                    cardNumber: billingInformation.cardNumber || "",
-                    cardMonth: billingInformation.expiryDate || "",
-                    cvc: billingInformation.cvc || "",
+                    nameOnCard:(billingInformation && billingInformation.fullName) || "",
+                    cardNumber:(billingInformation && billingInformation.cardNumber) || "",
+                    cardMonth: (billingInformation && billingInformation.expiryDate) || "",
+                    cvc: (billingInformation && billingInformation.cvc) || "",
                 }}
                 onSubmit={handleBillingFormSubmit}
             >

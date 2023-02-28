@@ -55,6 +55,7 @@ export default function VenueDetails() {
     const venueDetail = location.state.isOrganizer ? location.state.organizerDetail.venuesInfo[0] : location.state.organizerDetail;
     const [count, setCount] = useState(0);
     const fromPartner = location.state.isOrganizer;
+    const [selectedTab, setSelectedTab] = useState<any>("one");
 
 
     function getVenue() {
@@ -149,10 +150,12 @@ export default function VenueDetails() {
                             >
                                 {[
                                     organizerDetail.coverPhotoUrl,
-                                    organizerDetail.additionalPhotosUrls[0],
+                                    ...organizerDetail.additionalPhotosUrls,
                                 ]?.map((image: any) => (
                                     <img
                                         alt="carousel tab"
+                                        style={{maxHeight:"250px"}}
+
                                         src={`${process.env.REACT_APP_BASE_URL}/images/${image}`}
                                     />
                                 ))}
@@ -215,6 +218,7 @@ export default function VenueDetails() {
                                 </TabPaneStyle>
                             </TabsStyle>
                         </div>
+
 
                         <div className="venue-info-wrapper">
 
@@ -297,11 +301,12 @@ export default function VenueDetails() {
                                     // ]}
                                 >
                                     {[
-                                        venueDetail.coverPhotoUrl,
-                                        venueDetail.additionalPhotosUrls[0],
+                                        organizerDetail.coverPhotoUrl,
+                                        ...organizerDetail.additionalPhotosUrls,
                                     ]?.map((image: any) => (
                                         <img
                                             alt="carousel tab"
+                                            style={{maxHeight:"250px"}}
                                             src={`${process.env.REACT_APP_BASE_URL}/images/${image}`}
                                         />
                                     ))}

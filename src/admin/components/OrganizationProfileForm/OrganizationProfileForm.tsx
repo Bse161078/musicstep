@@ -351,12 +351,19 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
             bodyData.append("logo", e.logo);
             bodyData.append("coverPhoto", e.coverPhoto);
 
+            let addtionalPhotos:any=[];
             if (e.additionalPhotos) {
                 const files = e.additionalPhotos;
                 for (let i = 0; i < files.length; i++) {
-                    bodyData.append(`additionalPhotos`, files[i]);
+                    addtionalPhotos.push(files[i]);
                 }
             }
+
+            addtionalPhotos.forEach((img:File) => {
+                bodyData.append(`additionalPhotos`, img);
+            });
+
+
             setIsLoading(true);
             const res = await axios
                 .post("/v1/organizer", bodyData, {
@@ -425,7 +432,7 @@ const OrganizationProfileForm = (props: OrganizationProfileFormProps) => {
                     saveButtonText={props.currentPage === "add-organization" ? "Add" : props.currentPage === "preview-organization" ? "Update" : "Update"}
                     heading={
                         props.currentPage === "add-organization"
-                            ? "Add Organizer Profile"
+                            ? "Add Organization Profile"
                             : props.currentPage === "preview-organization"
                             ? "Preview Organization"
                             : "Edit Organizer Profile"

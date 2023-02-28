@@ -12,7 +12,18 @@ type EventHistoryModalProps = {
 
 const EventHistoryModal = (props: EventHistoryModalProps) => {
   const { isModalVisible, setIsModalVisible, reservations } = props;
-    const filteredReservation=reservations.filter((reservation:any)=>reservation && reservation.eventInfo && (reservation.eventInfo).length>0)
+
+    const sortEvents=(reservations:any)=>{
+        return reservations.sort((a:any,b:any)=>{
+            const c:any = new Date(a.eventInfo[0].date);
+            const d:any = new Date(b.eventInfo[0].date);
+
+            return d-c;
+        });
+
+    }
+
+    const filteredReservation=sortEvents(reservations.filter((reservation:any)=>reservation && reservation.eventInfo && (reservation.eventInfo).length>0));
 
     return (
     <ModalWrapper

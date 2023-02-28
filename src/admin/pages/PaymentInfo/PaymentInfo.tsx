@@ -5,7 +5,6 @@ import { PaymentInfoStyle } from "./PaymentInfo.style";
 
 export default function PaymentInfo() {
   const [currentPage, setCurrentPage] = useState("info-content");
-
   const CurrentPage = useMemo(() => {
     switch (currentPage) {
       case "info-content":
