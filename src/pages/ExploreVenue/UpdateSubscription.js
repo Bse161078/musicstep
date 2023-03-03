@@ -17,7 +17,7 @@ const UpdateSubscription = () => {
 
     const history = useHistory();
 
-    const stripePromise = loadStripe("pk_test_51KlypNIPUfXuvJ9SeWtumhiJ3BDNEVl0rzxcwsVjYliUjnUcpPQJvNCOxjg0NlUPR5NUuX6Iog038akazJrlNkBy00sn1itpn8");
+    const stripePromise = loadStripe("pk_live_51KlypNIPUfXuvJ9SMKa87LJ7AYk9zaeaKZvsqPMqjEBWsINJdwQfoidNPVyU9bKBMzyP3NCYKQf9kQdzijPwoiW600goa65vm0");
     const [clientSecret, setClientSecret] = useState("");
     const [loading, setLoading] = useState(false);
 
